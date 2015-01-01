@@ -10,16 +10,47 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var animationView: SpringView!
+    @IBOutlet weak var signupButton: SpringButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        animationView.x = 200
+        animationView.y = 200
+        animationView.duration = 1
+        animationView.animateNext({
+            
+            self.animationView.x = 0
+            self.animationView.y = 0
+            self.animationView.duration = 1
+            self.animationView.opacity = 0
+            self.animationView.scaleX = 0.5
+            self.animationView.scaleY = 0.5
+            self.animationView.animate()
+            
+        })
+    }
+    
+    @IBAction func signupButtonPressed(sender: AnyObject) {
+        animationView.reset()
+        animationView.scaleX = 0.8
+        animationView.scaleY = 0.8
+        animationView.rotate = -0.1
+        animationView.animate()
+    }
+    
+    @IBAction func replayButtonPressed(sender: AnyObject) {
+        animationView.reset()
+        animationView.animate()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
-
-
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        view.endEditing(true)
+    }
 }
 
