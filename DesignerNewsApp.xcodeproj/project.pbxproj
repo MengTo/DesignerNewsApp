@@ -28,6 +28,7 @@
 		96B6CCDB1A4DB04F003DDEEF /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6CCD01A4DB04F003DDEEF /* UnwindSegue.swift */; };
 		96C247671A53D90F00094221 /* SpringScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C247661A53D90F00094221 /* SpringScale.swift */; };
 		96C247691A53DC1800094221 /* SpringTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C247681A53DC1800094221 /* SpringTranslate.swift */; };
+		96DE93E51A5696CA005B3914 /* SpringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DE93E41A5696CA005B3914 /* SpringViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		96B6CCD01A4DB04F003DDEEF /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		96C247661A53D90F00094221 /* SpringScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringScale.swift; sourceTree = "<group>"; };
 		96C247681A53DC1800094221 /* SpringTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTranslate.swift; sourceTree = "<group>"; };
+		96DE93E41A5696CA005B3914 /* SpringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				96B6CCC51A4DB04F003DDEEF /* Spring */,
 				966128541A4DA63100A54A23 /* AppDelegate.swift */,
 				966128561A4DA63100A54A23 /* ViewController.swift */,
+				96DE93E41A5696CA005B3914 /* SpringViewController.swift */,
 				966128581A4DA63100A54A23 /* Main.storyboard */,
 				9661285B1A4DA63100A54A23 /* Images.xcassets */,
 				9661285D1A4DA63100A54A23 /* LaunchScreen.xib */,
@@ -271,6 +274,7 @@
 				96B6CCD11A4DB04F003DDEEF /* BlurView.swift in Sources */,
 				96B6CCDA1A4DB04F003DDEEF /* SpringAnimation.swift in Sources */,
 				96B6CCD71A4DB04F003DDEEF /* DesignableTextView.swift in Sources */,
+				96DE93E51A5696CA005B3914 /* SpringViewController.swift in Sources */,
 				96B6CCD61A4DB04F003DDEEF /* DesignableTextField.swift in Sources */,
 				963FD1971A55921000348D85 /* SpringView.swift in Sources */,
 				96B6CCD91A4DB04F003DDEEF /* Misc.swift in Sources */,

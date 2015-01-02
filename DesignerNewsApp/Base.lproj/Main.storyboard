@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hX2-Nz-kuf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
     </dependencies>
@@ -147,14 +147,6 @@
                                                 <constraint firstItem="qIv-bn-wJ8" firstAttribute="centerX" secondItem="fL3-8c-cpZ" secondAttribute="centerX" id="PN5-gU-x9N"/>
                                                 <constraint firstItem="qIv-bn-wJ8" firstAttribute="centerY" secondItem="fL3-8c-cpZ" secondAttribute="centerY" id="wrx-DZ-wJ6"/>
                                             </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="x">
-                                                    <real key="value" value="200"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="y">
-                                                    <real key="value" value="200"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
                                     <constraints>
@@ -184,6 +176,131 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Spring View Controller-->
+        <scene sceneID="bTJ-1L-6nC">
+            <objects>
+                <viewController id="hX2-Nz-kuf" customClass="SpringViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ycN-AR-vof"/>
+                        <viewControllerLayoutGuide type="bottom" id="1iR-3N-o1H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xn4-3h-LIW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2q-EJ-88R" customClass="SpringView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="D4M-DG-scL"/>
+                                    <constraint firstAttribute="height" constant="100" id="OOu-cd-Ya3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="flash"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yW6-lF-IUk" customClass="DesignableButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                                <rect key="frame" x="250" y="20" width="100" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Klb-FO-Svt"/>
+                                    <constraint firstAttribute="height" constant="33" id="dJm-Dc-rPx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="shake">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shakeButtonPressed:" destination="hX2-Nz-kuf" eventType="touchUpInside" id="kTM-y9-Ad8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd3-Xz-S3Q" customClass="DesignableButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                                <rect key="frame" x="250" y="58" width="100" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="DNp-7F-Hr4"/>
+                                    <constraint firstAttribute="height" constant="33" id="upk-6R-nDd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="pop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="popButtonPressed:" destination="hX2-Nz-kuf" eventType="touchUpInside" id="6sa-NT-RKK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-6d-0e9" customClass="DesignableButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                                <rect key="frame" x="250" y="96" width="100" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="5ls-Hs-pcb"/>
+                                    <constraint firstAttribute="height" constant="33" id="ANg-BH-WyP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="morph">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="morphButtonPressed:" destination="hX2-Nz-kuf" eventType="touchUpInside" id="OPl-bU-xFy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.67450980392156867" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="E2q-EJ-88R" secondAttribute="centerY" id="0gv-tm-3Gh"/>
+                            <constraint firstItem="yW6-lF-IUk" firstAttribute="top" secondItem="ycN-AR-vof" secondAttribute="bottom" id="0tc-GY-RzE"/>
+                            <constraint firstAttribute="centerX" secondItem="yW6-lF-IUk" secondAttribute="centerX" id="DyG-I1-kkE"/>
+                            <constraint firstItem="yW6-lF-IUk" firstAttribute="centerX" secondItem="bd3-Xz-S3Q" secondAttribute="centerX" id="Gqa-4h-Ek7"/>
+                            <constraint firstItem="LAu-6d-0e9" firstAttribute="top" secondItem="bd3-Xz-S3Q" secondAttribute="bottom" constant="5" id="LeF-bF-dfS"/>
+                            <constraint firstAttribute="centerX" secondItem="E2q-EJ-88R" secondAttribute="centerX" id="pVz-XB-xZb"/>
+                            <constraint firstItem="bd3-Xz-S3Q" firstAttribute="top" secondItem="yW6-lF-IUk" secondAttribute="bottom" constant="5" id="vMp-ND-f5C"/>
+                            <constraint firstItem="LAu-6d-0e9" firstAttribute="centerX" secondItem="bd3-Xz-S3Q" secondAttribute="centerX" id="vyV-Dk-PnT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ballView" destination="E2q-EJ-88R" id="rXO-eT-NRt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ct9-3E-5Y3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136" y="372"/>
         </scene>
     </scenes>
     <resources>
