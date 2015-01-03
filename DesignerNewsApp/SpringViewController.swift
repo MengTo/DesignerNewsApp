@@ -14,7 +14,8 @@ class SpringViewController: UIViewController {
     
     @IBAction func shakeButtonPressed(sender: AnyObject) {
         ballView.force = 2
-        ballView.animation = "slideLeft"
+        ballView.delay = 0.1
+        ballView.animation = "shake"
         ballView.animate()
     }
     @IBAction func popButtonPressed(sender: AnyObject) {
@@ -23,12 +24,14 @@ class SpringViewController: UIViewController {
         ballView.animate()
     }
     @IBAction func morphButtonPressed(sender: AnyObject) {
-        ballView.force = 1.5
-        ballView.duration = 3
-        ballView.animation = "flash"
-        ballView.animateNext({
-            println("yes")
-        })
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "transform.scale"
+        animation.values = [0, 30, -30, 30, 0]
+        animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+        animation.duration = 1
+        animation.additive = true
+        animation.repeatCount = 1
+        ballView.layer.addAnimation(animation, forKey: "shake")
     }
     
     override func viewDidLoad() {
