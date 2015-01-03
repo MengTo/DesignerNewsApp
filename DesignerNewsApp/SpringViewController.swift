@@ -40,6 +40,7 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func animateView() {
+        ballView.reset()
         ballView.animation = data[selectedRow]
         ballView.duration = selectedDuration
         ballView.delay = selectedDelay
@@ -57,6 +58,10 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         "flipX",
         "flipY",
         "fall",
+        "squeezeLeft",
+        "squeezeRight",
+        "squeezeDown",
+        "squeezeUp",
         "slideLeft",
         "slideRight",
         "slideDown",
