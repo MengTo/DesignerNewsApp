@@ -20,23 +20,23 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var animationPicker: UIPickerView!
     var selectedRow: Int = 0
     var selectedForce: CGFloat = 1
-    var selectedDuration: CGFloat = 0.7
+    var selectedDuration: CGFloat = 1
     var selectedDelay: CGFloat = 0
     
     @IBAction func forceSliderChanged(sender: AnyObject) {
         selectedForce = sender.valueForKey("value") as CGFloat
         animateView()
-        forceLabel.text = "Force: \(ceil(selectedForce))"
+        forceLabel.text = String(format: "Force: %.1f", Double(selectedForce))
     }
     @IBAction func durationSliderChanged(sender: AnyObject) {
         selectedDuration = sender.valueForKey("value") as CGFloat
         animateView()
-        durationLabel.text = "Duration: \(ceil(selectedDuration))"
+        durationLabel.text = String(format: "Duration: %.1f", Double(selectedDuration))
     }
     @IBAction func delaySliderChanged(sender: AnyObject) {
         selectedDelay = sender.valueForKey("value") as CGFloat
         animateView()
-        delayLabel.text = "Delay: \(ceil(selectedDelay))"
+        delayLabel.text = String(format: "Delay: %.1f", Double(selectedDelay))
     }
     
     func animateView() {
@@ -47,15 +47,16 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         ballView.animate()
     }
     
-    var data =
-    [
+    var data = [
         "shake",
         "pop",
         "morph",
         "squeeze",
-        "flash",
         "wobble",
         "swing",
+        "flipX",
+        "flipY",
+        "fall",
         "slideLeft",
         "slideRight",
         "slideDown",
@@ -63,11 +64,12 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         "fadeIn",
         "fadeOut",
         "fadeInLeft",
-        "fadeInright",
+        "fadeInRight",
         "fadeInDown",
         "fadeInUp",
         "zoomIn",
         "zoomOut",
+        "flash",
     ]
     
     override func viewDidLoad() {

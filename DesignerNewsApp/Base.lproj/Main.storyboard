@@ -225,8 +225,18 @@
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yya-i3-4uZ">
                                         <rect key="frame" x="0.0" y="98" width="600" height="162"/>
                                     </pickerView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.69999999999999996" minValue="0.5" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZkK-1d-lvS">
-                                        <rect key="frame" x="255" y="46" width="90" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="ttX-tL-Un6">
+                                        <rect key="frame" x="13" y="51" width="90" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="86" id="O9c-8j-r8L"/>
+                                            <constraint firstAttribute="height" constant="30" id="YD7-o5-dBM"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="forceSliderChanged:" destination="hX2-Nz-kuf" eventType="valueChanged" id="ks0-X0-VX6"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZkK-1d-lvS">
+                                        <rect key="frame" x="255" y="51" width="90" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="86" id="KAR-Wj-AZi"/>
                                         </constraints>
@@ -234,8 +244,8 @@
                                             <action selector="durationSliderChanged:" destination="hX2-Nz-kuf" eventType="valueChanged" id="92X-aM-QA2"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dOO-Mv-idq">
-                                        <rect key="frame" x="497" y="46" width="90" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="dOO-Mv-idq">
+                                        <rect key="frame" x="497" y="51" width="90" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="TLX-Xe-T7F"/>
                                             <constraint firstAttribute="width" constant="86" id="iYM-6Q-6gT"/>
@@ -245,50 +255,40 @@
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Force: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ush-jP-XnQ">
-                                        <rect key="frame" x="23" y="9" width="71" height="24"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <rect key="frame" x="36" y="88" width="45" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration: 0.7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDG-Y2-7ef">
-                                        <rect key="frame" x="244" y="9" width="112" height="24"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDG-Y2-7ef">
+                                        <rect key="frame" x="270" y="88" width="61" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delay: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="So0-SI-kEu">
-                                        <rect key="frame" x="507" y="9" width="70" height="24"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <rect key="frame" x="520" y="88" width="44.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="ttX-tL-Un6">
-                                        <rect key="frame" x="13" y="46" width="90" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="86" id="O9c-8j-r8L"/>
-                                            <constraint firstAttribute="height" constant="30" id="YD7-o5-dBM"/>
-                                        </constraints>
-                                        <connections>
-                                            <action selector="forceSliderChanged:" destination="hX2-Nz-kuf" eventType="valueChanged" id="ks0-X0-VX6"/>
-                                        </connections>
-                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="dOO-Mv-idq" secondAttribute="trailing" constant="15" id="5GN-QY-bHh"/>
-                                    <constraint firstItem="ush-jP-XnQ" firstAttribute="centerX" secondItem="ttX-tL-Un6" secondAttribute="centerX" constant="0.5" id="5nu-QZ-HQJ"/>
                                     <constraint firstAttribute="bottom" secondItem="Yya-i3-4uZ" secondAttribute="bottom" id="7f1-hV-qZU"/>
                                     <constraint firstItem="ttX-tL-Un6" firstAttribute="leading" secondItem="uey-0o-QIH" secondAttribute="leading" constant="15" id="Ajb-Y8-0YV"/>
                                     <constraint firstItem="Yya-i3-4uZ" firstAttribute="leading" secondItem="uey-0o-QIH" secondAttribute="leading" id="BvI-yP-hqC"/>
-                                    <constraint firstItem="Yya-i3-4uZ" firstAttribute="top" secondItem="dOO-Mv-idq" secondAttribute="bottom" constant="22" id="GLN-3j-jI3"/>
-                                    <constraint firstItem="Yya-i3-4uZ" firstAttribute="top" secondItem="ZkK-1d-lvS" secondAttribute="bottom" constant="22" id="Geg-If-Gze"/>
-                                    <constraint firstItem="gDG-Y2-7ef" firstAttribute="centerX" secondItem="ZkK-1d-lvS" secondAttribute="centerX" id="PdB-mj-0X0"/>
+                                    <constraint firstItem="ush-jP-XnQ" firstAttribute="top" secondItem="ttX-tL-Un6" secondAttribute="bottom" constant="7" id="CRX-0K-Pc4"/>
+                                    <constraint firstItem="Yya-i3-4uZ" firstAttribute="top" secondItem="dOO-Mv-idq" secondAttribute="bottom" constant="17" id="GLN-3j-jI3"/>
+                                    <constraint firstItem="Yya-i3-4uZ" firstAttribute="top" secondItem="ZkK-1d-lvS" secondAttribute="bottom" constant="17" id="Geg-If-Gze"/>
+                                    <constraint firstItem="ush-jP-XnQ" firstAttribute="centerX" secondItem="ttX-tL-Un6" secondAttribute="centerX" constant="0.5" id="PbQ-Wg-vcY"/>
                                     <constraint firstAttribute="trailing" secondItem="Yya-i3-4uZ" secondAttribute="trailing" id="QdL-fF-1mr"/>
-                                    <constraint firstItem="ttX-tL-Un6" firstAttribute="top" secondItem="ush-jP-XnQ" secondAttribute="bottom" constant="13" id="bnd-P2-mJU"/>
-                                    <constraint firstItem="ZkK-1d-lvS" firstAttribute="top" secondItem="gDG-Y2-7ef" secondAttribute="bottom" constant="13" id="cqZ-jq-vZE"/>
-                                    <constraint firstItem="dOO-Mv-idq" firstAttribute="top" secondItem="So0-SI-kEu" secondAttribute="bottom" constant="13" id="dmP-mC-D7G"/>
-                                    <constraint firstItem="So0-SI-kEu" firstAttribute="centerX" secondItem="dOO-Mv-idq" secondAttribute="centerX" id="juy-9J-aYb"/>
-                                    <constraint firstItem="Yya-i3-4uZ" firstAttribute="top" secondItem="ttX-tL-Un6" secondAttribute="bottom" constant="22" id="tg8-BK-V5W"/>
+                                    <constraint firstItem="gDG-Y2-7ef" firstAttribute="centerX" secondItem="ZkK-1d-lvS" secondAttribute="centerX" constant="0.5" id="Wyv-M7-ZeX"/>
+                                    <constraint firstItem="So0-SI-kEu" firstAttribute="top" secondItem="dOO-Mv-idq" secondAttribute="bottom" constant="7" id="Zcy-1J-eMv"/>
+                                    <constraint firstItem="gDG-Y2-7ef" firstAttribute="top" secondItem="ZkK-1d-lvS" secondAttribute="bottom" constant="7" id="i7b-da-1fx"/>
+                                    <constraint firstItem="So0-SI-kEu" firstAttribute="centerX" secondItem="dOO-Mv-idq" secondAttribute="centerX" constant="0.5" id="po9-Y9-eRg"/>
+                                    <constraint firstItem="Yya-i3-4uZ" firstAttribute="top" secondItem="ttX-tL-Un6" secondAttribute="bottom" constant="17" id="tg8-BK-V5W"/>
                                     <constraint firstItem="Yya-i3-4uZ" firstAttribute="centerX" secondItem="ZkK-1d-lvS" secondAttribute="centerX" id="upE-Z5-K7h"/>
                                 </constraints>
                             </view>
