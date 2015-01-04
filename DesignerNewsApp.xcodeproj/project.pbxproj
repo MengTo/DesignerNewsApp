@@ -15,6 +15,7 @@
 		9661285F1A4DA63100A54A23 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9661285D1A4DA63100A54A23 /* LaunchScreen.xib */; };
 		9661286B1A4DA63100A54A23 /* DesignerNewsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661286A1A4DA63100A54A23 /* DesignerNewsAppTests.swift */; };
 		967D68151A5442E600E3F9DA /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D68141A5442E600E3F9DA /* SpringButton.swift */; };
+		96A82C6A1A595CF900F4AB5E /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A82C691A595CF900F4AB5E /* OptionsViewController.swift */; };
 		96B6CCD11A4DB04F003DDEEF /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6CCC61A4DB04F003DDEEF /* BlurView.swift */; };
 		96B6CCD21A4DB04F003DDEEF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6CCC71A4DB04F003DDEEF /* Data.swift */; };
 		96B6CCD31A4DB04F003DDEEF /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6CCC81A4DB04F003DDEEF /* DesignableButton.swift */; };
@@ -54,6 +55,7 @@
 		966128691A4DA63100A54A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9661286A1A4DA63100A54A23 /* DesignerNewsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignerNewsAppTests.swift; sourceTree = "<group>"; };
 		967D68141A5442E600E3F9DA /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
+		96A82C691A595CF900F4AB5E /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		96B6CCC61A4DB04F003DDEEF /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		96B6CCC71A4DB04F003DDEEF /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		96B6CCC81A4DB04F003DDEEF /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				966128541A4DA63100A54A23 /* AppDelegate.swift */,
 				966128561A4DA63100A54A23 /* ViewController.swift */,
 				96DE93E41A5696CA005B3914 /* SpringViewController.swift */,
+				96A82C691A595CF900F4AB5E /* OptionsViewController.swift */,
 				966128581A4DA63100A54A23 /* Main.storyboard */,
 				9661285B1A4DA63100A54A23 /* Images.xcassets */,
 				9661285D1A4DA63100A54A23 /* LaunchScreen.xib */,
@@ -281,6 +284,7 @@
 				96B6CCD31A4DB04F003DDEEF /* DesignableButton.swift in Sources */,
 				96C247691A53DC1800094221 /* SpringTranslate.swift in Sources */,
 				96C247671A53D90F00094221 /* SpringScale.swift in Sources */,
+				96A82C6A1A595CF900F4AB5E /* OptionsViewController.swift in Sources */,
 				96B6CCDB1A4DB04F003DDEEF /* UnwindSegue.swift in Sources */,
 				96B6CCD41A4DB04F003DDEEF /* DesignableImageView.swift in Sources */,
 				967D68151A5442E600E3F9DA /* SpringButton.swift in Sources */,

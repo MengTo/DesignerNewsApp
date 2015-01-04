@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, OptionsViewControllerDelegate {
 
     @IBOutlet weak var delayLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
@@ -22,6 +22,8 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var selectedForce: CGFloat = 1
     var selectedDuration: CGFloat = 1
     var selectedDelay: CGFloat = 0
+    var selectedDamping: CGFloat = 0.7
+    var selectedVelocity: CGFloat = 0.7
     
     @IBAction func forceSliderChanged(sender: AnyObject) {
         selectedForce = sender.valueForKey("value") as CGFloat
@@ -38,6 +40,16 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         animateView()
         delayLabel.text = String(format: "Delay: %.1f", Double(selectedDelay))
     }
+
+    func dampingSliderChanged(sender: AnyObject) {
+        selectedDamping = sender.valueForKey("value") as CGFloat
+        animateView()
+    }
+    
+    func velocitySliderChanged(sender: AnyObject) {
+        selectedVelocity = sender.valueForKey("value") as CGFloat
+        animateView()
+    }
     
     func animateView() {
         ballView.reset()
@@ -45,6 +57,8 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         ballView.duration = selectedDuration
         ballView.delay = selectedDelay
         ballView.force = selectedForce
+        ballView.damping = selectedDamping
+        ballView.velocity = selectedVelocity
         ballView.animate()
     }
     
@@ -100,6 +114,12 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedRow = row
         animateView()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let optionsViewController = segue.destinationViewController as? OptionsViewController {
+            optionsViewController.delegate = self
+        }
     }
 
 }
