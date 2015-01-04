@@ -41,6 +41,7 @@ class OptionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         modalView.transform = CGAffineTransformMakeTranslation(0, 300)
         
         setOptions()
@@ -88,6 +89,8 @@ class OptionsViewController: UIViewController {
     @IBAction func resetButtonPressed(sender: AnyObject) {
         delegate?.resetButtonPressed(sender)
         dismissViewControllerAnimated(true, completion: nil)
+        
+        UIApplication.sharedApplication().sendAction("maximizeView:", to: nil, from: self, forEvent: nil)
     }
     
     @IBAction func dampingSliderChanged(sender: AnyObject) {
@@ -104,10 +107,14 @@ class OptionsViewController: UIViewController {
     
     @IBAction func closeButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+        
+        UIApplication.sharedApplication().sendAction("maximizeView:", to: nil, from: self, forEvent: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        
+        UIApplication.sharedApplication().sendAction("minimizeView:", to: nil, from: self, forEvent: nil)
         
         modalView.animate()
     }

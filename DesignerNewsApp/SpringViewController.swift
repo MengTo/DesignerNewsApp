@@ -73,6 +73,20 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         ballView.animate()
     }
     
+    func minimizeView(sender: AnyObject) {
+        spring(0.7, {
+            self.view.transform = CGAffineTransformMakeScale(0.94, 0.94)
+            self.view.backgroundColor = UIColor(rgba: "#E8EBF1")
+        })
+    }
+    
+    func maximizeView(sender: AnyObject) {
+        spring(0.7, {
+            self.view.transform = CGAffineTransformMakeScale(1, 1)
+            self.view.backgroundColor = UIColor.whiteColor()
+        })
+    }
+    
     var data = [
         "shake",
         "pop",
