@@ -19,46 +19,57 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var ballView: SpringView!
     @IBOutlet weak var animationPicker: UIPickerView!
     var selectedRow: Int = 0
-    var selectedForce: CGFloat = 1
-    var selectedDuration: CGFloat = 1
-    var selectedDelay: CGFloat = 0
-    var selectedDamping: CGFloat = 0.7
-    var selectedVelocity: CGFloat = 0.7
     
     @IBAction func forceSliderChanged(sender: AnyObject) {
-        selectedForce = sender.valueForKey("value") as CGFloat
+        ballView.force = sender.valueForKey("value") as CGFloat
         animateView()
-        forceLabel.text = String(format: "Force: %.1f", Double(selectedForce))
+        forceLabel.text = String(format: "Force: %.1f", Double(ballView.force))
     }
     @IBAction func durationSliderChanged(sender: AnyObject) {
-        selectedDuration = sender.valueForKey("value") as CGFloat
+        ballView.duration = sender.valueForKey("value") as CGFloat
         animateView()
-        durationLabel.text = String(format: "Duration: %.1f", Double(selectedDuration))
+        durationLabel.text = String(format: "Duration: %.1f", Double(ballView.duration))
     }
     @IBAction func delaySliderChanged(sender: AnyObject) {
-        selectedDelay = sender.valueForKey("value") as CGFloat
+        ballView.delay = sender.valueForKey("value") as CGFloat
         animateView()
-        delayLabel.text = String(format: "Delay: %.1f", Double(selectedDelay))
+        delayLabel.text = String(format: "Delay: %.1f", Double(ballView.delay))
     }
 
     func dampingSliderChanged(sender: AnyObject) {
-        selectedDamping = sender.valueForKey("value") as CGFloat
+        ballView.damping = sender.valueForKey("value") as CGFloat
         animateView()
     }
     
     func velocitySliderChanged(sender: AnyObject) {
-        selectedVelocity = sender.valueForKey("value") as CGFloat
+        ballView.velocity = sender.valueForKey("value") as CGFloat
+        animateView()
+    }
+    
+    func scaleSliderChanged(sender: AnyObject) {
+        ballView.scaleX = sender.valueForKey("value") as CGFloat
+        ballView.scaleY = sender.valueForKey("value") as CGFloat
+        animateView()
+    }
+    
+    func xSliderChanged(sender: AnyObject) {
+        ballView.x = sender.valueForKey("value") as CGFloat
+        animateView()
+    }
+    
+    func ySliderChanged(sender: AnyObject) {
+        ballView.y = sender.valueForKey("value") as CGFloat
+        animateView()
+    }
+    
+    func rotateSliderChanged(sender: AnyObject) {
+        ballView.rotate = sender.valueForKey("value") as CGFloat
         animateView()
     }
     
     func animateView() {
         ballView.reset()
         ballView.animation = data[selectedRow]
-        ballView.duration = selectedDuration
-        ballView.delay = selectedDelay
-        ballView.force = selectedForce
-        ballView.damping = selectedDamping
-        ballView.velocity = selectedVelocity
         ballView.animate()
     }
     
@@ -99,6 +110,39 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         animationPicker.showsSelectionIndicator = true
     }
     
+    @IBAction func ballButtonPressed(sender: AnyObject) {
+        
+        UIView.animateWithDuration(0.1, animations: {
+            self.ballView.backgroundColor = UIColor(rgba: "#69DBFF")
+        }, completion: { finished in
+            UIView.animateWithDuration(0.5, animations: {
+                self.ballView.backgroundColor = UIColor(rgba: "#279CEB")
+            })
+        })
+        
+        animateView()
+    }
+    
+    func resetButtonPressed(sender: AnyObject) {
+        ballView.reset()
+        ballView.force = 1
+        ballView.duration = 1
+        ballView.delay = 0
+        ballView.damping = 0.7
+        ballView.velocity = 0.7
+        ballView.scaleX = 1
+        ballView.scaleY = 1
+        ballView.rotate = 0
+        
+        forceSlider.setValue(Float(ballView.force), animated: true)
+        durationSlider.setValue(Float(ballView.duration), animated: true)
+        delaySlider.setValue(Float(ballView.delay), animated: true)
+        
+        forceLabel.text = String(format: "Force: %.1f", Double(ballView.force))
+        durationLabel.text = String(format: "Duration: %.1f", Double(ballView.duration))
+        delayLabel.text = String(format: "Delay: %.1f", Double(ballView.delay))
+    }
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -119,6 +163,7 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let optionsViewController = segue.destinationViewController as? OptionsViewController {
             optionsViewController.delegate = self
+            optionsViewController.data = ballView
         }
     }
 
