@@ -19,6 +19,7 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var ballView: SpringView!
     @IBOutlet weak var animationPicker: UIPickerView!
     var selectedRow: Int = 0
+    var selectedEasing: Int = 0
     
     @IBAction func forceSliderChanged(sender: AnyObject) {
         ballView.force = sender.valueForKey("value") as CGFloat
@@ -69,25 +70,26 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func animateView() {
         ballView.reset()
-        ballView.animation = data[selectedRow]
+        ballView.animation = data[0][selectedRow]
+        ballView.curve = data[1][selectedEasing]
         ballView.animate()
     }
     
     func minimizeView(sender: AnyObject) {
         spring(0.7, {
-            self.view.transform = CGAffineTransformMakeScale(0.94, 0.94)
-            self.view.backgroundColor = UIColor(rgba: "#E8EBF1")
+            self.view.transform = CGAffineTransformMakeScale(0.935, 0.935)
         })
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }
     
     func maximizeView(sender: AnyObject) {
         spring(0.7, {
             self.view.transform = CGAffineTransformMakeScale(1, 1)
-            self.view.backgroundColor = UIColor.whiteColor()
         })
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
     }
     
-    var data = [
+    var data = [[
         "shake",
         "pop",
         "morph",
@@ -114,7 +116,7 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         "zoomIn",
         "zoomOut",
         "flash",
-    ]
+    ], ["spring", "linear", "easeIn", "easeOut", "easeInOut"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,8 +135,35 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 self.ballView.backgroundColor = UIColor(rgba: "#279CEB")
             })
         })
-        
         animateView()
+    }
+    
+    var ballState = 0
+    func changeBall() {
+        switch ballState {
+        case 1:
+            UIView.animateWithDuration(3, animations: {
+                self.ballView.layer.cornerRadius = 10
+            })
+            ballState = 0
+        default:
+            UIView.animateWithDuration(3, animations: {
+                self.ballView.layer.cornerRadius = 50
+            })
+            ballState++
+        }
+        
+        let animation = CABasicAnimation()
+        animation.keyPath = "opacity"
+        animation.fromValue = 1
+        animation.toValue = 0
+        animation.duration = 0.2
+        animation.autoreverses = true
+        ballView.layer.addAnimation(animation, forKey: "fade")
+    }
+    
+    @IBAction func shapeButtonPressed(sender: AnyObject) {
+        changeBall()
     }
     
     func resetButtonPressed(sender: AnyObject) {
@@ -158,26 +187,35 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return data.count
+        return data[component].count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return data[row]
+        return data[component][row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedRow = row
-        animateView()
+        switch component {
+        case 0:
+            selectedRow = row
+            animateView()
+        default:
+            selectedEasing = row
+            animateView()
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let optionsViewController = segue.destinationViewController as? OptionsViewController {
             optionsViewController.delegate = self
             optionsViewController.data = ballView
+        }
+        else if let codeViewController = segue.destinationViewController as? CodeViewController {
+            codeViewController.data = ballView
         }
     }
 

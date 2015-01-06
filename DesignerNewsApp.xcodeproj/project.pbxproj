@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96022DD41A5AAC0900959158 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96022DD31A5AAC0900959158 /* CodeViewController.swift */; };
 		963FD1971A55921000348D85 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963FD1961A55921000348D85 /* SpringView.swift */; };
+		9641172E1A5AEE9E000E3A5A /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9641172C1A5AEE9E000E3A5A /* ProximaNova-Regular.otf */; };
 		966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966128541A4DA63100A54A23 /* AppDelegate.swift */; };
 		966128571A4DA63100A54A23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966128561A4DA63100A54A23 /* ViewController.swift */; };
 		9661285A1A4DA63100A54A23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966128581A4DA63100A54A23 /* Main.storyboard */; };
@@ -43,7 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96022DD31A5AAC0900959158 /* CodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		963FD1961A55921000348D85 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		9641172C1A5AEE9E000E3A5A /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		964117301A5AEF3C000E3A5A /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		964117311A5AEF3C000E3A5A /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
 		9661284F1A4DA63100A54A23 /* DesignerNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignerNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966128531A4DA63100A54A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966128541A4DA63100A54A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +96,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9641172B1A5AEE9E000E3A5A /* font */ = {
+			isa = PBXGroup;
+			children = (
+				9641172C1A5AEE9E000E3A5A /* ProximaNova-Regular.otf */,
+				964117301A5AEF3C000E3A5A /* ProximaNova-Light.otf */,
+				964117311A5AEF3C000E3A5A /* ProximaNova-Semibold.otf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		966128461A4DA63100A54A23 = {
 			isa = PBXGroup;
 			children = (
@@ -111,11 +127,13 @@
 		966128511A4DA63100A54A23 /* DesignerNewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				9641172B1A5AEE9E000E3A5A /* font */,
 				96B6CCC51A4DB04F003DDEEF /* Spring */,
 				966128541A4DA63100A54A23 /* AppDelegate.swift */,
 				966128561A4DA63100A54A23 /* ViewController.swift */,
 				96DE93E41A5696CA005B3914 /* SpringViewController.swift */,
 				96A82C691A595CF900F4AB5E /* OptionsViewController.swift */,
+				96022DD31A5AAC0900959158 /* CodeViewController.swift */,
 				966128581A4DA63100A54A23 /* Main.storyboard */,
 				9661285B1A4DA63100A54A23 /* Images.xcassets */,
 				9661285D1A4DA63100A54A23 /* LaunchScreen.xib */,
@@ -253,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9661285A1A4DA63100A54A23 /* Main.storyboard in Resources */,
+				9641172E1A5AEE9E000E3A5A /* ProximaNova-Regular.otf in Resources */,
 				9661285F1A4DA63100A54A23 /* LaunchScreen.xib in Resources */,
 				9661285C1A4DA63100A54A23 /* Images.xcassets in Resources */,
 			);
@@ -285,6 +304,7 @@
 				96C247691A53DC1800094221 /* SpringTranslate.swift in Sources */,
 				96C247671A53D90F00094221 /* SpringScale.swift in Sources */,
 				96A82C6A1A595CF900F4AB5E /* OptionsViewController.swift in Sources */,
+				96022DD41A5AAC0900959158 /* CodeViewController.swift in Sources */,
 				96B6CCDB1A4DB04F003DDEEF /* UnwindSegue.swift in Sources */,
 				96B6CCD41A4DB04F003DDEEF /* DesignableImageView.swift in Sources */,
 				967D68151A5442E600E3F9DA /* SpringButton.swift in Sources */,
