@@ -43,6 +43,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func closeButtonPressed(sender: AnyObject) {
+        dialogView.resetAll()
+        dialogView.animation = "zoomOut"
+        dialogView.animateNext({
+            self.dismissViewControllerAnimated(false, completion: nil)
+        })
+        spring(0.7, {
+            self.view.alpha = 0
+        })
+    }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         view.endEditing(true)
     }
@@ -58,6 +69,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        
+        dialogView.animate()
         
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     }

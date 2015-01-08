@@ -33,7 +33,7 @@ func postLogin(email: String, password: String, callback: (AnyObject?) -> ()) {
     }
 }
 
-func getStories(page: String, callback: (AnyObject?) -> ()) {
+func getStories(page: String, callback: (JSON) -> ()) {
     var request = baseURL + storiesURL
     var parameters = [
         "page": page,
@@ -41,7 +41,7 @@ func getStories(page: String, callback: (AnyObject?) -> ()) {
     ]
     
     Alamofire.request(.GET, request, parameters: parameters)
-        .responseJSON { (_, _, json, _) in
-            callback(json as? NSDictionary)
+        .response { (_, _, data, _) in
+            callback(JSON(data: data as NSData))
     }
 }
