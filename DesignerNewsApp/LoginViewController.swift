@@ -17,9 +17,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var originalCenter: CGPoint!
     
     @IBAction func signupButtonPressed(sender: AnyObject) {
-        dialogView.resetAll()
-        dialogView.animation = "shake"
-        dialogView.animate()
+        postLogin(emailTextField.text, passwordTextField.text) { (json) -> () in
+            if let token = json?["access_token"] as? String {
+                self.dialogView.resetAll()
+                self.dialogView.animation = "zoomOut"
+                self.dialogView.animate()
+            }
+            else {
+                self.dialogView.resetAll()
+                self.dialogView.animation = "shake"
+                self.dialogView.animate()
+            }
+        }
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
