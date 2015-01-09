@@ -19,10 +19,38 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         getStories("1", { (json) -> () in
             self.stories = json["stories"]
             self.tableView.reloadData()
+            self.hideLoading()
         })
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        showLoading()
+    }
+    
+    var loadingView: UIView!
+    
+    func showLoading() {
+        loadingView =
+        NSBundle.mainBundle().loadNibNamed("loadingView", owner: self, options: nil)[0] as UIView
+        loadingView.frame = view.bounds;
+        view.addSubview(loadingView)
+        
+        loadingView.alpha = 0
+        spring(0.7, {
+            self.loadingView.alpha = 1
+        })
+    }
+    
+    func hideLoading() {
+        loadingView.alpha = 1
+        spring(0.7, {
+            self.loadingView.alpha = 0
+        })
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

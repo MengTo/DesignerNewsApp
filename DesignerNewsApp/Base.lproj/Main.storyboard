@@ -345,6 +345,49 @@
             </objects>
             <point key="canvasLocation" x="946" y="1714"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="yv2-3z-LfO">
+            <objects>
+                <viewController id="KQB-FS-9gx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Y3-Jn-YYq"/>
+                        <viewControllerLayoutGuide type="bottom" id="ddl-Qf-buy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nAw-Jg-DAU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLU-by-I3f" customClass="SpringView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                <rect key="frame" x="275" y="275" width="50" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="w42-Vf-NqD">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Vhy-hc-ugy"/>
+                                            <constraint firstAttribute="width" constant="50" id="sjP-yv-VwX"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="w42-Vf-NqD" secondAttribute="centerX" id="JIh-oe-XLe"/>
+                                    <constraint firstAttribute="centerY" secondItem="w42-Vf-NqD" secondAttribute="centerY" id="OfE-fD-kqo"/>
+                                    <constraint firstAttribute="width" constant="50" id="Wyt-qM-gjX"/>
+                                    <constraint firstAttribute="height" constant="50" id="qJ9-Ov-kde"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="qLU-by-I3f" secondAttribute="centerY" id="czH-lW-ZHK"/>
+                            <constraint firstAttribute="centerX" secondItem="qLU-by-I3f" secondAttribute="centerX" id="w2K-DE-GCU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Loy-pu-grn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="946" y="2397"/>
+        </scene>
         <!--Article Table View Controller-->
         <scene sceneID="6Zb-FR-7t5">
             <objects>
@@ -532,5 +575,6 @@
         <image name="icon-password" width="25" height="25"/>
         <image name="icon-upvote" width="18" height="16"/>
         <image name="input-outline" width="250" height="44"/>
+        <image name="loading" width="50" height="50"/>
     </resources>
 </document>
