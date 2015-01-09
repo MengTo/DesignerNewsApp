@@ -9,7 +9,7 @@
 import UIKit
 import Haneke
 
-class StoriesTableViewController: UITableViewController {
+class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate {
 
     var stories: JSON = nil
     
@@ -37,6 +37,7 @@ class StoriesTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as StoriesTableViewCell
         configureCell(cell, indexPath: indexPath)
+        cell.delegate = self
         
         return cell
     }
@@ -48,15 +49,41 @@ class StoriesTableViewController: UITableViewController {
         cell.authorLabel.text = story["user_display_name"].string
         cell.upvoteButton.setTitle(toString(story["vote_count"]), forState: UIControlState.Normal)
         cell.commentButton.setTitle(toString(story["comment_count"]), forState: UIControlState.Normal)
-        cell.timeLabel.text = "4h"
+        
+        var timeAgo = dateFromString(story["created_at"].string!, "yyyy-MM-dd'T'HH:mm:ssZ")
+        cell.timeLabel.text = timeAgoSinceDate(timeAgo, true)
         
         if let badge = story["badge"].string? {
             cell.storyImageView.image = UIImage(named: "badge-\(badge)")
+        }
+        else {
+            cell.storyImageView.image = nil
         }
         
         if let urlString = story["user_portrait_url"].string? {
             let URL = NSURL(string: urlString)!
             cell.avatarImageView.hnk_setImageFromURL(URL)
         }
+        else {
+            cell.avatarImageView.image = UIImage(named: "content-avatar-default")
+        }
+    }
+    
+    func animateButton(layer: SpringButton) {
+        layer.animation = "pop"
+        layer.force = 2
+        layer.animate()
+    }
+    
+    func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+        var indexPath = tableView.indexPathForCell(cell)
+        
+        animateButton(cell.upvoteButton)
+    }
+    
+    func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+        var indexPath = tableView.indexPathForCell(cell)
+        
+        animateButton(cell.commentButton)
     }
 }

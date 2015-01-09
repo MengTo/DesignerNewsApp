@@ -105,7 +105,7 @@
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="icon-password" translatesAutoresizingMaskIntoConstraints="NO" id="Uwp-OQ-Ul4">
                                         <rect key="frame" x="30" y="171" width="25" height="25"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjX-8S-TVH" customClass="SpringButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjX-8S-TVH" customClass="DesignableButton" customModule="DesignerNewsApp" customModuleProvider="target">
                                         <rect key="frame" x="15" y="221" width="250" height="44"/>
                                         <color key="backgroundColor" red="0.1333333333" green="0.2901960784" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -205,7 +205,7 @@
             <objects>
                 <tableViewController id="VA5-Ik-jqO" customClass="StoriesTableViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="0v6-GZ-Lmr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -234,19 +234,13 @@
                                                 <constraint firstAttribute="width" constant="10" id="qf0-5Z-GaI"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="4h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5j-5x-WHS">
-                                            <rect key="frame" x="575" y="10" width="18" height="21"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                            <color key="textColor" red="0.16862745098039217" green="0.29803921568627451" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhA-Ak-tOp">
                                             <rect key="frame" x="46" y="37" width="41" height="18"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                             <color key="textColor" red="0.16862745098039217" green="0.29803921568627451" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YD-tF-TbO">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YD-tF-TbO" customClass="SpringButton" customModule="DesignerNewsApp" customModuleProvider="target">
                                             <rect key="frame" x="20" y="55" width="70" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="33" id="iuh-xB-qFn"/>
@@ -259,8 +253,11 @@
                                                 <color key="titleColor" red="0.16862745098039217" green="0.29803921568627451" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="upvoteButtonPressed:" destination="4Ds-Ol-7a4" eventType="touchUpInside" id="3U4-cH-crw"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgm-zA-wtS">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgm-zA-wtS" customClass="SpringButton" customModule="DesignerNewsApp" customModuleProvider="target">
                                             <rect key="frame" x="98" y="55" width="80" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="AIU-pI-Gx5"/>
@@ -273,7 +270,16 @@
                                                 <color key="titleColor" red="0.16862745100000001" green="0.29803921570000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="commentButtonPressed:" destination="4Ds-Ol-7a4" eventType="touchUpInside" id="FzA-Lu-OH2"/>
+                                            </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4h" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5j-5x-WHS">
+                                            <rect key="frame" x="565" y="10" width="27" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                            <color key="textColor" red="0.16862745098039217" green="0.29803921568627451" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="vea-AW-BMe" firstAttribute="centerX" secondItem="duG-Ge-feN" secondAttribute="centerX" id="4Ng-u7-xxh"/>
@@ -284,7 +290,7 @@
                                         <constraint firstItem="5YD-tF-TbO" firstAttribute="leading" secondItem="duG-Ge-feN" secondAttribute="leadingMargin" constant="12" id="JSt-5H-0tG"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="5YD-tF-TbO" secondAttribute="bottom" constant="3.5" id="MRu-ej-GZN"/>
                                         <constraint firstItem="V66-97-kXO" firstAttribute="top" secondItem="duG-Ge-feN" secondAttribute="topMargin" constant="2" id="O49-fr-oRs"/>
-                                        <constraint firstItem="h5j-5x-WHS" firstAttribute="leading" secondItem="vea-AW-BMe" secondAttribute="trailing" constant="10" id="RRf-bi-8We"/>
+                                        <constraint firstItem="h5j-5x-WHS" firstAttribute="leading" secondItem="vea-AW-BMe" secondAttribute="trailing" id="RRf-bi-8We"/>
                                         <constraint firstItem="V66-97-kXO" firstAttribute="leading" secondItem="duG-Ge-feN" secondAttribute="leadingMargin" id="W0x-Nv-C7E"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Kgm-zA-wtS" secondAttribute="bottom" constant="3.5" id="WNj-zj-8R6"/>
                                         <constraint firstItem="5YD-tF-TbO" firstAttribute="top" secondItem="QhA-Ak-tOp" secondAttribute="bottom" id="YTF-lg-xHr"/>
@@ -348,6 +354,7 @@
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

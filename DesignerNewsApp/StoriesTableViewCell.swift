@@ -8,12 +8,26 @@
 
 import UIKit
 
+protocol StoriesTableViewCellDelegate: class {
+    func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject)
+    func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject)
+}
+
 class StoriesTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var storyImageView: UIImageView!
-    @IBOutlet weak var commentButton: UIButton!
-    @IBOutlet weak var upvoteButton: UIButton!
+    @IBOutlet weak var commentButton: SpringButton!
+    @IBOutlet weak var upvoteButton: SpringButton!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    weak var delegate: StoriesTableViewCellDelegate?
+    
+    @IBAction func upvoteButtonPressed(sender: AnyObject) {
+        delegate?.upvoteButtonPressed(self, sender: sender)
+    }
+    @IBAction func commentButtonPressed(sender: AnyObject) {
+        delegate?.commentButtonPressed(self, sender: sender)
+    }
 }
