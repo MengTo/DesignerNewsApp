@@ -16,6 +16,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        showLoading()
         getStories("1", { (json) -> () in
             self.stories = json["stories"]
             self.tableView.reloadData()
@@ -24,12 +25,6 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        
-        showLoading()
     }
     
     var loadingView: UIView!
