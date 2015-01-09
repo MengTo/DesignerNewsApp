@@ -1,50 +1,41 @@
 //
-//  StoriesTableViewController.swift
+//  ArticleTableViewController.swift
 //  DesignerNewsApp
 //
-//  Created by Meng To on 2015-01-08.
+//  Created by Meng To on 2015-01-09.
 //  Copyright (c) 2015 Meng To. All rights reserved.
 //
 
 import UIKit
-import Haneke
 
-class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate {
+class ArticleTableViewController: UITableViewController {
 
-    var stories: JSON = nil
+    var data: AnyObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getStories("1", { (json) -> () in
-            self.stories = json["stories"]
-            self.tableView.reloadData()
-        })
         
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableViewAutomaticDimension
     }
-    
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stories.count
+        return 1
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as StoriesTableViewCell
-        configureCell(cell, story: stories[indexPath.row])
-        cell.delegate = self
+        
+        if indexPath.row == 0 {
+            configureCell(cell, story: JSON(data!))
+        }
         
         return cell
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var story = stories[indexPath.row].dictionaryObject
-        self.performSegueWithIdentifier("storiesToArticleSegue", sender: story)
     }
     
     func configureCell(cell: StoriesTableViewCell, story: JSON) {
@@ -72,30 +63,12 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         else {
             cell.avatarImageView.image = UIImage(named: "content-avatar-default")
         }
-    }
-    
-    func animateButton(layer: SpringButton) {
-        layer.animation = "pop"
-        layer.force = 2
-        layer.animate()
-    }
-    
-    func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
-        var indexPath = tableView.indexPathForCell(cell)
         
-        animateButton(cell.upvoteButton)
-    }
-    
-    func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
-        var indexPath = tableView.indexPathForCell(cell)
-        
-        animateButton(cell.commentButton)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "storiesToArticleSegue" {
-            let articleViewController = segue.destinationViewController as ArticleTableViewController
-            articleViewController.data = sender
+        if story["comment"].string != "" {
+            cell.commentLabel.text = story["comment"].string
+        }
+        else {
+            cell.commentLabel.text = nil
         }
     }
 }

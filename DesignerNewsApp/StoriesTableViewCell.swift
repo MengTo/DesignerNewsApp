@@ -21,6 +21,8 @@ class StoriesTableViewCell: UITableViewCell {
     @IBOutlet weak var commentButton: SpringButton!
     @IBOutlet weak var upvoteButton: SpringButton!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var commentLabel: UILabel!
     
     weak var delegate: StoriesTableViewCellDelegate?
     

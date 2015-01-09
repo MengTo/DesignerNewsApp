@@ -19,6 +19,8 @@
 		9694F1F21A5EEE0C00A6376A /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9694F1DD1A5EE79600A6376A /* Haneke.framework */; };
 		9694F1F31A5EEE0C00A6376A /* Haneke.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9694F1DD1A5EE79600A6376A /* Haneke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9694F1F71A5FAA8800A6376A /* KeyboardAvoidingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F1F61A5FAA8800A6376A /* KeyboardAvoidingScrollView.swift */; };
+		9694F2031A5FEAE800A6376A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F2021A5FEAE800A6376A /* ImageLoader.swift */; };
+		9694F2051A5FF13900A6376A /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F2041A5FF13900A6376A /* ArticleTableViewController.swift */; };
 		96A580041A5E290000FDE099 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A580031A5E290000FDE099 /* Model.swift */; };
 		96AEB7421A5E5C3F005989F4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A5800B1A5E4DF500FDE099 /* Alamofire.framework */; };
 		96AEB7431A5E5C3F005989F4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96A5800B1A5E4DF500FDE099 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -141,6 +143,8 @@
 		9694F1C51A5ED3F800A6376A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		9694F1D51A5EE79600A6376A /* Haneke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Haneke.xcodeproj; path = "HanekeSwift-master/Haneke.xcodeproj"; sourceTree = "<group>"; };
 		9694F1F61A5FAA8800A6376A /* KeyboardAvoidingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidingScrollView.swift; sourceTree = "<group>"; };
+		9694F2021A5FEAE800A6376A /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		9694F2041A5FF13900A6376A /* ArticleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
 		96A580031A5E290000FDE099 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTableViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				967CFD051A5C10700044B4E3 /* LoginViewController.swift */,
 				96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */,
 				96AF96161A5EABC9003926E2 /* StoriesTableViewCell.swift */,
+				9694F2041A5FF13900A6376A /* ArticleTableViewController.swift */,
 				966128581A4DA63100A54A23 /* Main.storyboard */,
 				9661285B1A4DA63100A54A23 /* Images.xcassets */,
 				9661285D1A4DA63100A54A23 /* LaunchScreen.xib */,
@@ -263,6 +268,7 @@
 		96B6CCC51A4DB04F003DDEEF /* Spring */ = {
 			isa = PBXGroup;
 			children = (
+				9694F2021A5FEAE800A6376A /* ImageLoader.swift */,
 				96B6CCC61A4DB04F003DDEEF /* BlurView.swift */,
 				96B6CCC71A4DB04F003DDEEF /* Data.swift */,
 				96B6CCC81A4DB04F003DDEEF /* DesignableButton.swift */,
@@ -450,9 +456,11 @@
 				96B6CCDB1A4DB04F003DDEEF /* UnwindSegue.swift in Sources */,
 				96AF96171A5EABC9003926E2 /* StoriesTableViewCell.swift in Sources */,
 				96B6CCD41A4DB04F003DDEEF /* DesignableImageView.swift in Sources */,
+				9694F2031A5FEAE800A6376A /* ImageLoader.swift in Sources */,
 				9694F1F71A5FAA8800A6376A /* KeyboardAvoidingScrollView.swift in Sources */,
 				967D68151A5442E600E3F9DA /* SpringButton.swift in Sources */,
 				967CFD061A5C10700044B4E3 /* LoginViewController.swift in Sources */,
+				9694F2051A5FF13900A6376A /* ArticleTableViewController.swift in Sources */,
 				96B6CCD51A4DB04F003DDEEF /* DesignableLabel.swift in Sources */,
 				96B6CCD81A4DB04F003DDEEF /* DesignableView.swift in Sources */,
 				96B6CCD21A4DB04F003DDEEF /* Data.swift in Sources */,
