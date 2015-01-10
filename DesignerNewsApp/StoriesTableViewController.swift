@@ -10,7 +10,9 @@ import UIKit
 import Haneke
 
 class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate {
-
+    
+    var transitionManager = TransitionManager()
+    
     var stories: JSON = nil
     
     override func viewDidLoad() {
@@ -74,6 +76,8 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         else if segue.identifier == "storiesToWebSegue" {
             let webViewController = segue.destinationViewController as WebViewController
             webViewController.data = sender
+            
+            webViewController.transitioningDelegate = self.transitionManager
         }
     }
     
