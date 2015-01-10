@@ -12,8 +12,8 @@ import Haneke
 class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate {
     
     var transitionManager = TransitionManager()
-    
     var stories: JSON = nil
+    var firstTime = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +27,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
     }
-    
-    var firstTime = true
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         if firstTime {
@@ -60,14 +59,18 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         self.performSegueWithIdentifier("storiesToWebSegue", sender: story)
     }
     
+    // MARK: StoriesTableViewCellDelegate
     func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)        
     }
     
     func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
-        var indexPath = tableView.indexPathForCell(cell)
+        var indexPath = tableView.indexPathForCell(cell)!
+        var story = stories[indexPath.row].dictionaryObject
+        performSegueWithIdentifier("storiesToArticleSegue", sender: story)
     }
     
+    // MARK: Misc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "storiesToArticleSegue" {
             let articleViewController = segue.destinationViewController as ArticleTableViewController

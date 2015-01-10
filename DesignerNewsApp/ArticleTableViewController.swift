@@ -18,7 +18,8 @@ class ArticleTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableViewAutomaticDimension
     }
-
+    
+    // MARK: TableViewDelegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -38,6 +39,7 @@ class ArticleTableViewController: UITableViewController {
         return cell
     }
     
+    // MARK: Misc
     func configureCell(cell: StoriesTableViewCell, story: JSON) {
         
         cell.titleLabel.text = story["title"].string
