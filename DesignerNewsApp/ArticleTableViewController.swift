@@ -38,8 +38,6 @@ class ArticleTableViewController: UITableViewController {
         return cell
     }
     
-    
-    
     func configureCell(cell: StoriesTableViewCell, story: JSON) {
         
         cell.titleLabel.text = story["title"].string

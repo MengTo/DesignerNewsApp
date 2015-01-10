@@ -35,6 +35,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         }
     }
     
+    // MARK: TableViewDelegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -54,7 +55,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var story = stories[indexPath.row].dictionaryObject
-        self.performSegueWithIdentifier("storiesToArticleSegue", sender: story)
+        self.performSegueWithIdentifier("storiesToWebSegue", sender: story)
     }
     
     func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
@@ -69,6 +70,10 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         if segue.identifier == "storiesToArticleSegue" {
             let articleViewController = segue.destinationViewController as ArticleTableViewController
             articleViewController.data = sender
+        }
+        else if segue.identifier == "storiesToWebSegue" {
+            let webViewController = segue.destinationViewController as WebViewController
+            webViewController.data = sender
         }
     }
     

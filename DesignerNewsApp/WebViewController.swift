@@ -12,18 +12,25 @@ class WebViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var webView: UIWebView!
+    var timer = NSTimer()
+    var data: AnyObject?
+    @IBOutlet weak var navBar: UINavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var story = JSON(data!)
         
-        var url = NSURL(string: "http://google.com")
+        var url = NSURL(string: story["url"].string!)
         let request = NSURLRequest(URL: url!)
         webView.loadRequest(request)
         
         webView.delegate = self
     }
     
-    var timer = NSTimer()
+    @IBAction func closeButtonPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
     func webViewDidFinishLoad(webView: UIWebView) {
         timer = NSTimer.scheduledTimerWithTimeInterval(
             0.1,
