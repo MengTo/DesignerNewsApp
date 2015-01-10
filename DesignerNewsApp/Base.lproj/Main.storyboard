@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="d4v-hq-Ei2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -339,54 +339,63 @@
                     </navigationItem>
                     <connections>
                         <segue destination="HBs-bl-KVv" kind="show" identifier="storiesToArticleSegue" id="3HB-vO-v5a"/>
+                        <segue destination="d4v-hq-Ei2" kind="presentation" id="Jya-5Y-T44"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py4-Yi-ebA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="946" y="1714"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="yv2-3z-LfO">
+        <!--Web View Controller-->
+        <scene sceneID="iA4-ga-MhR">
             <objects>
-                <viewController id="KQB-FS-9gx" sceneMemberID="viewController">
+                <viewController id="d4v-hq-Ei2" customClass="WebViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1Y3-Jn-YYq"/>
-                        <viewControllerLayoutGuide type="bottom" id="ddl-Qf-buy"/>
+                        <viewControllerLayoutGuide type="top" id="3Ar-Xp-zRy"/>
+                        <viewControllerLayoutGuide type="bottom" id="40T-Ab-wCU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nAw-Jg-DAU">
+                    <view key="view" contentMode="scaleToFill" id="6Fw-jD-FeC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLU-by-I3f" customClass="SpringView" customModule="DesignerNewsApp" customModuleProvider="target">
-                                <rect key="frame" x="275" y="275" width="50" height="50"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="w42-Vf-NqD">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Vhy-hc-ugy"/>
-                                            <constraint firstAttribute="width" constant="50" id="sjP-yv-VwX"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="w42-Vf-NqD" secondAttribute="centerX" id="JIh-oe-XLe"/>
-                                    <constraint firstAttribute="centerY" secondItem="w42-Vf-NqD" secondAttribute="centerY" id="OfE-fD-kqo"/>
-                                    <constraint firstAttribute="width" constant="50" id="Wyt-qM-gjX"/>
-                                    <constraint firstAttribute="height" constant="50" id="qJ9-Ov-kde"/>
-                                </constraints>
-                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GG0-kj-Hnt">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="AjT-w9-gEV">
+                                        <nil key="title"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="xPf-Is-W8A">
+                                <rect key="frame" x="0.0" y="42" width="600" height="3"/>
+                            </progressView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weA-Ht-NmR">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="qLU-by-I3f" secondAttribute="centerY" id="czH-lW-ZHK"/>
-                            <constraint firstAttribute="centerX" secondItem="qLU-by-I3f" secondAttribute="centerX" id="w2K-DE-GCU"/>
+                            <constraint firstItem="xPf-Is-W8A" firstAttribute="top" secondItem="3Ar-Xp-zRy" secondAttribute="bottom" constant="22" id="3OH-el-VlV"/>
+                            <constraint firstItem="xPf-Is-W8A" firstAttribute="trailing" secondItem="GG0-kj-Hnt" secondAttribute="trailing" id="FQW-tY-gLl"/>
+                            <constraint firstAttribute="trailing" secondItem="xPf-Is-W8A" secondAttribute="trailing" id="GK6-pN-ryt"/>
+                            <constraint firstItem="weA-Ht-NmR" firstAttribute="bottom" secondItem="40T-Ab-wCU" secondAttribute="top" id="QzG-M4-xev"/>
+                            <constraint firstItem="xPf-Is-W8A" firstAttribute="leading" secondItem="weA-Ht-NmR" secondAttribute="leading" id="ViY-6l-ndn"/>
+                            <constraint firstItem="weA-Ht-NmR" firstAttribute="top" secondItem="xPf-Is-W8A" secondAttribute="bottom" constant="0.5" id="ix9-PL-VY7"/>
+                            <constraint firstItem="xPf-Is-W8A" firstAttribute="leading" secondItem="GG0-kj-Hnt" secondAttribute="leading" id="j27-eQ-Sma"/>
+                            <constraint firstItem="xPf-Is-W8A" firstAttribute="trailing" secondItem="weA-Ht-NmR" secondAttribute="trailing" id="lH3-5x-bhY"/>
+                            <constraint firstItem="xPf-Is-W8A" firstAttribute="leading" secondItem="6Fw-jD-FeC" secondAttribute="leading" id="qvT-zR-m9n"/>
+                            <constraint firstItem="GG0-kj-Hnt" firstAttribute="bottom" secondItem="weA-Ht-NmR" secondAttribute="top" id="rrt-No-MEK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="xPf-Is-W8A" id="kJe-z8-mPi"/>
+                        <outlet property="webView" destination="weA-Ht-NmR" id="xFo-Mx-cX5"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Loy-pu-grn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6aB-Uq-ry8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="2397"/>
+            <point key="canvasLocation" x="1244" y="2478"/>
         </scene>
         <!--Article Table View Controller-->
         <scene sceneID="6Zb-FR-7t5">
@@ -541,7 +550,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pxf-D7-GjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724" y="1714"/>
+            <point key="canvasLocation" x="560" y="2478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qF7-6s-Vwa">
@@ -575,6 +584,5 @@
         <image name="icon-password" width="25" height="25"/>
         <image name="icon-upvote" width="18" height="16"/>
         <image name="input-outline" width="250" height="44"/>
-        <image name="loading" width="50" height="50"/>
     </resources>
 </document>

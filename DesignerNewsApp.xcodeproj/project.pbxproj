@@ -23,6 +23,7 @@
 		9694F2051A5FF13900A6376A /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F2041A5FF13900A6376A /* ArticleTableViewController.swift */; };
 		9694F2071A60496700A6376A /* loadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9694F2061A60496700A6376A /* loadingView.xib */; };
 		9694F2091A604A9700A6376A /* loadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F2081A604A9700A6376A /* loadingView.swift */; };
+		9694F20B1A6123D000A6376A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F20A1A6123D000A6376A /* WebViewController.swift */; };
 		96A580041A5E290000FDE099 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A580031A5E290000FDE099 /* Model.swift */; };
 		96AEB7421A5E5C3F005989F4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A5800B1A5E4DF500FDE099 /* Alamofire.framework */; };
 		96AEB7431A5E5C3F005989F4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96A5800B1A5E4DF500FDE099 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -149,6 +150,7 @@
 		9694F2041A5FF13900A6376A /* ArticleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
 		9694F2061A60496700A6376A /* loadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = loadingView.xib; path = ../../DesignerNewsApp/DesignerNewsApp/loadingView.xib; sourceTree = "<group>"; };
 		9694F2081A604A9700A6376A /* loadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = loadingView.swift; path = ../../DesignerNewsApp/DesignerNewsApp/loadingView.swift; sourceTree = "<group>"; };
+		9694F20A1A6123D000A6376A /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		96A580031A5E290000FDE099 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTableViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */,
 				96AF96161A5EABC9003926E2 /* StoriesTableViewCell.swift */,
 				9694F2041A5FF13900A6376A /* ArticleTableViewController.swift */,
+				9694F20A1A6123D000A6376A /* WebViewController.swift */,
 				966128581A4DA63100A54A23 /* Main.storyboard */,
 				9661285B1A4DA63100A54A23 /* Images.xcassets */,
 				9661285D1A4DA63100A54A23 /* LaunchScreen.xib */,
@@ -456,6 +459,7 @@
 				96B6CCD61A4DB04F003DDEEF /* DesignableTextField.swift in Sources */,
 				96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */,
 				963FD1971A55921000348D85 /* SpringView.swift in Sources */,
+				9694F20B1A6123D000A6376A /* WebViewController.swift in Sources */,
 				9694F1C61A5ED3F800A6376A /* SwiftyJSON.swift in Sources */,
 				96B6CCD91A4DB04F003DDEEF /* Misc.swift in Sources */,
 				9694F2091A604A9700A6376A /* loadingView.swift in Sources */,
