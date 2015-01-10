@@ -65,6 +65,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+        dialogView.alpha = 0
     }
     
     override func viewDidAppear(animated: Bool) {

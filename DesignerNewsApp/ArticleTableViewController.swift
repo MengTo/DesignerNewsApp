@@ -38,6 +38,8 @@ class ArticleTableViewController: UITableViewController {
         return cell
     }
     
+    
+    
     func configureCell(cell: StoriesTableViewCell, story: JSON) {
         
         cell.titleLabel.text = story["title"].string
@@ -55,13 +57,11 @@ class ArticleTableViewController: UITableViewController {
             cell.storyImageView.image = nil
         }
         
+        cell.avatarImageView.image = UIImage(named: "content-avatar-default")
         if let urlString = story["user_portrait_url"].string? {
             ImageLoader.sharedLoader.imageForUrl(urlString, completionHandler:{(image: UIImage?, url: String) in
                 cell.avatarImageView.image = image
             })
-        }
-        else {
-            cell.avatarImageView.image = UIImage(named: "content-avatar-default")
         }
         
         if story["comment"].string != "" {

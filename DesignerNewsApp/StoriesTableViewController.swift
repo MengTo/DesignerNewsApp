@@ -16,36 +16,23 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        showLoading()
         getStories("1", { (json) -> () in
             self.stories = json["stories"]
             self.tableView.reloadData()
-            self.hideLoading()
+            hideLoading()
         })
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    var loadingView: UIView!
-    
-    func showLoading() {
-        loadingView =
-        NSBundle.mainBundle().loadNibNamed("loadingView", owner: self, options: nil)[0] as UIView
-        loadingView.frame = view.bounds;
-        view.addSubview(loadingView)
-        
-        loadingView.alpha = 0
-        spring(0.7, {
-            self.loadingView.alpha = 1
-        })
-    }
-    
-    func hideLoading() {
-        loadingView.alpha = 1
-        spring(0.7, {
-            self.loadingView.alpha = 0
-        })
+    var firstTime = true
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        if firstTime {
+            showLoading(view)
+            firstTime = false
+        }
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -70,6 +57,21 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         self.performSegueWithIdentifier("storiesToArticleSegue", sender: story)
     }
     
+    func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+        var indexPath = tableView.indexPathForCell(cell)        
+    }
+    
+    func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+        var indexPath = tableView.indexPathForCell(cell)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "storiesToArticleSegue" {
+            let articleViewController = segue.destinationViewController as ArticleTableViewController
+            articleViewController.data = sender
+        }
+    }
+    
     func configureCell(cell: StoriesTableViewCell, story: JSON) {
         
         cell.titleLabel.text = story["title"].string
@@ -87,38 +89,11 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             cell.storyImageView.image = nil
         }
         
+        cell.avatarImageView.image = UIImage(named: "content-avatar-default")
         if let urlString = story["user_portrait_url"].string? {
             ImageLoader.sharedLoader.imageForUrl(urlString, completionHandler:{(image: UIImage?, url: String) in
                 cell.avatarImageView.image = image
             })
-        }
-        else {
-            cell.avatarImageView.image = UIImage(named: "content-avatar-default")
-        }
-    }
-    
-    func animateButton(layer: SpringButton) {
-        layer.animation = "pop"
-        layer.force = 2
-        layer.animate()
-    }
-    
-    func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
-        var indexPath = tableView.indexPathForCell(cell)
-        
-        animateButton(cell.upvoteButton)
-    }
-    
-    func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
-        var indexPath = tableView.indexPathForCell(cell)
-        
-        animateButton(cell.commentButton)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "storiesToArticleSegue" {
-            let articleViewController = segue.destinationViewController as ArticleTableViewController
-            articleViewController.data = sender
         }
     }
 }

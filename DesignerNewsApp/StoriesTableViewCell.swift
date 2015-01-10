@@ -28,8 +28,19 @@ class StoriesTableViewCell: UITableViewCell {
     
     @IBAction func upvoteButtonPressed(sender: AnyObject) {
         delegate?.upvoteButtonPressed(self, sender: sender)
+        
+        animateButton(upvoteButton)
     }
+    
     @IBAction func commentButtonPressed(sender: AnyObject) {
         delegate?.commentButtonPressed(self, sender: sender)
+        
+        animateButton(commentButton)
+    }
+    
+    func animateButton(layer: SpringButton) {
+        layer.animation = "pop"
+        layer.force = 2
+        layer.animate()
     }
 }
