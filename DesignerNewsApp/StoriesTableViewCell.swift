@@ -11,6 +11,7 @@ import UIKit
 protocol StoriesTableViewCellDelegate: class {
     func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject)
     func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject)
+    func replyButtonPressed(cell: StoriesTableViewCell, sender: AnyObject)
 }
 
 class StoriesTableViewCell: UITableViewCell {
@@ -19,6 +20,7 @@ class StoriesTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var storyImageView: UIImageView!
     @IBOutlet weak var commentButton: SpringButton!
+    @IBOutlet weak var replyButton: SpringButton!
     @IBOutlet weak var upvoteButton: SpringButton!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var commentTextView: UITextView!
@@ -28,14 +30,17 @@ class StoriesTableViewCell: UITableViewCell {
     
     @IBAction func upvoteButtonPressed(sender: AnyObject) {
         delegate?.upvoteButtonPressed(self, sender: sender)
-        
         animateButton(upvoteButton)
     }
     
     @IBAction func commentButtonPressed(sender: AnyObject) {
         delegate?.commentButtonPressed(self, sender: sender)
-        
         animateButton(commentButton)
+    }
+    
+    @IBAction func replyButtonPressed(sender: AnyObject) {
+        delegate?.replyButtonPressed(self, sender: sender)
+        animateButton(replyButton)
     }
     
     func animateButton(layer: SpringButton) {

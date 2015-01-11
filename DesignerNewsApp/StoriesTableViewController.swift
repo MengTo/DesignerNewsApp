@@ -61,13 +61,16 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     // MARK: StoriesTableViewCellDelegate
     func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
-        var indexPath = tableView.indexPathForCell(cell)        
+        var indexPath = tableView.indexPathForCell(cell)
     }
     
     func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         var story = stories[indexPath.row].dictionaryObject
         performSegueWithIdentifier("storiesToArticleSegue", sender: story)
+    }
+    
+    func replyButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
     }
     
     // MARK: Misc

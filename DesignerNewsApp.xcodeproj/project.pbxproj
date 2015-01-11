@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		963FD1971A55921000348D85 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963FD1961A55921000348D85 /* SpringView.swift */; };
+		964892151A62A84600214D53 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892141A62A84600214D53 /* CommentViewController.swift */; };
 		966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966128541A4DA63100A54A23 /* AppDelegate.swift */; };
 		9661285A1A4DA63100A54A23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966128581A4DA63100A54A23 /* Main.storyboard */; };
 		9661285C1A4DA63100A54A23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9661285B1A4DA63100A54A23 /* Images.xcassets */; };
@@ -16,8 +17,6 @@
 		967CFD061A5C10700044B4E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967CFD051A5C10700044B4E3 /* LoginViewController.swift */; };
 		967D68151A5442E600E3F9DA /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D68141A5442E600E3F9DA /* SpringButton.swift */; };
 		9694F1C61A5ED3F800A6376A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F1C51A5ED3F800A6376A /* SwiftyJSON.swift */; };
-		9694F1F21A5EEE0C00A6376A /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9694F1DD1A5EE79600A6376A /* Haneke.framework */; };
-		9694F1F31A5EEE0C00A6376A /* Haneke.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9694F1DD1A5EE79600A6376A /* Haneke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9694F1F71A5FAA8800A6376A /* KeyboardAvoidingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F1F61A5FAA8800A6376A /* KeyboardAvoidingScrollView.swift */; };
 		9694F2031A5FEAE800A6376A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F2021A5FEAE800A6376A /* ImageLoader.swift */; };
 		9694F2051A5FF13900A6376A /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F2041A5FF13900A6376A /* ArticleTableViewController.swift */; };
@@ -45,47 +44,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		964892121A62818A00214D53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 		966128651A4DA63100A54A23 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 966128471A4DA63100A54A23 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9661284E1A4DA63100A54A23;
 			remoteInfo = DesignerNewsApp;
-		};
-		9694F1DC1A5EE79600A6376A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9694F1D51A5EE79600A6376A /* Haneke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A095C9561980418C00CD0F4C;
-			remoteInfo = Haneke;
-		};
-		9694F1DE1A5EE79600A6376A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9694F1D51A5EE79600A6376A /* Haneke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A095C9611980418C00CD0F4C;
-			remoteInfo = HanekeTests;
-		};
-		9694F1E01A5EE79600A6376A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9694F1D51A5EE79600A6376A /* Haneke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A0026E9A19C9BFBC004DE0C6;
-			remoteInfo = HanekeDemo;
-		};
-		9694F1ED1A5EE7C000A6376A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9694F1D51A5EE79600A6376A /* Haneke.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A095C9551980418C00CD0F4C;
-			remoteInfo = Haneke;
-		};
-		9694F1F41A5EEE0C00A6376A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9694F1D51A5EE79600A6376A /* Haneke.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A095C9551980418C00CD0F4C;
-			remoteInfo = Haneke;
 		};
 		96A5800A1A5E4DF500FDE099 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -101,20 +72,6 @@
 			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
 			remoteInfo = AlamofireTests;
 		};
-		96A5800E1A5E4E2300FDE099 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
-		96AEB7441A5E5C3F005989F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -124,7 +81,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9694F1F31A5EEE0C00A6376A /* Haneke.framework in Embed Frameworks */,
 				96AEB7431A5E5C3F005989F4 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -134,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		963FD1961A55921000348D85 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		964892141A62A84600214D53 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		9661284F1A4DA63100A54A23 /* DesignerNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignerNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966128531A4DA63100A54A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966128541A4DA63100A54A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,7 +103,6 @@
 		967CFD051A5C10700044B4E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		967D68141A5442E600E3F9DA /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
 		9694F1C51A5ED3F800A6376A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		9694F1D51A5EE79600A6376A /* Haneke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Haneke.xcodeproj; path = "HanekeSwift-master/Haneke.xcodeproj"; sourceTree = "<group>"; };
 		9694F1F61A5FAA8800A6376A /* KeyboardAvoidingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidingScrollView.swift; sourceTree = "<group>"; };
 		9694F2021A5FEAE800A6376A /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		9694F2041A5FF13900A6376A /* ArticleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
@@ -177,7 +133,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9694F1F21A5EEE0C00A6376A /* Haneke.framework in Frameworks */,
 				96AEB7421A5E5C3F005989F4 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +152,6 @@
 			children = (
 				966128511A4DA63100A54A23 /* DesignerNewsApp */,
 				96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */,
-				9694F1D51A5EE79600A6376A /* Haneke.xcodeproj */,
 				966128671A4DA63100A54A23 /* DesignerNewsAppTests */,
 				966128501A4DA63100A54A23 /* Products */,
 			);
@@ -223,6 +177,7 @@
 				96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */,
 				96AF96161A5EABC9003926E2 /* StoriesTableViewCell.swift */,
 				9694F2041A5FF13900A6376A /* ArticleTableViewController.swift */,
+				964892141A62A84600214D53 /* CommentViewController.swift */,
 				9694F20A1A6123D000A6376A /* WebViewController.swift */,
 				966128581A4DA63100A54A23 /* Main.storyboard */,
 				9661285B1A4DA63100A54A23 /* Images.xcassets */,
@@ -255,16 +210,6 @@
 				966128691A4DA63100A54A23 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9694F1D61A5EE79600A6376A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9694F1DD1A5EE79600A6376A /* Haneke.framework */,
-				9694F1DF1A5EE79600A6376A /* HanekeTests.xctest */,
-				9694F1E11A5EE79600A6376A /* HanekeDemo.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		96A580061A5E4DF400FDE099 /* Products */ = {
@@ -318,10 +263,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				96A5800F1A5E4E2300FDE099 /* PBXTargetDependency */,
-				96AEB7451A5E5C3F005989F4 /* PBXTargetDependency */,
-				9694F1EE1A5EE7C000A6376A /* PBXTargetDependency */,
-				9694F1F51A5EEE0C00A6376A /* PBXTargetDependency */,
+				964892131A62818A00214D53 /* PBXTargetDependency */,
 			);
 			name = DesignerNewsApp;
 			productName = DesignerNewsApp;
@@ -381,10 +323,6 @@
 					ProductGroup = 96A580061A5E4DF400FDE099 /* Products */;
 					ProjectRef = 96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */;
 				},
-				{
-					ProductGroup = 9694F1D61A5EE79600A6376A /* Products */;
-					ProjectRef = 9694F1D51A5EE79600A6376A /* Haneke.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -395,27 +333,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9694F1DD1A5EE79600A6376A /* Haneke.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Haneke.framework;
-			remoteRef = 9694F1DC1A5EE79600A6376A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9694F1DF1A5EE79600A6376A /* HanekeTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = HanekeTests.xctest;
-			remoteRef = 9694F1DE1A5EE79600A6376A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9694F1E11A5EE79600A6376A /* HanekeDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = HanekeDemo.app;
-			remoteRef = 9694F1E01A5EE79600A6376A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		96A5800B1A5E4DF500FDE099 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -466,6 +383,7 @@
 				9694F2161A619F0500A6376A /* loadingView.swift in Sources */,
 				96B6CCD61A4DB04F003DDEEF /* DesignableTextField.swift in Sources */,
 				9694F2131A619EFA00A6376A /* TransitionZoom.swift in Sources */,
+				964892151A62A84600214D53 /* CommentViewController.swift in Sources */,
 				96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */,
 				963FD1971A55921000348D85 /* SpringView.swift in Sources */,
 				9694F20B1A6123D000A6376A /* WebViewController.swift in Sources */,
@@ -498,30 +416,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		964892131A62818A00214D53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = 964892121A62818A00214D53 /* PBXContainerItemProxy */;
+		};
 		966128661A4DA63100A54A23 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9661284E1A4DA63100A54A23 /* DesignerNewsApp */;
 			targetProxy = 966128651A4DA63100A54A23 /* PBXContainerItemProxy */;
-		};
-		9694F1EE1A5EE7C000A6376A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Haneke;
-			targetProxy = 9694F1ED1A5EE7C000A6376A /* PBXContainerItemProxy */;
-		};
-		9694F1F51A5EEE0C00A6376A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Haneke;
-			targetProxy = 9694F1F41A5EEE0C00A6376A /* PBXContainerItemProxy */;
-		};
-		96A5800F1A5E4E2300FDE099 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = 96A5800E1A5E4E2300FDE099 /* PBXContainerItemProxy */;
-		};
-		96AEB7451A5E5C3F005989F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = 96AEB7441A5E5C3F005989F4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
