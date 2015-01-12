@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Haneke
 
 class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate, LoginViewControllerDelegate {
     
@@ -112,6 +111,9 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         else if segue.identifier == "storiesToLoginSegue" {
             let loginViewController = segue.destinationViewController as LoginViewController
             loginViewController.delegate = self
+        }
+        else if segue.identifier == "storiesToMenuSegue" {
+            let menuViewController = segue.destinationViewController as MenuViewController
         }
     }
     
