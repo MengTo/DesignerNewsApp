@@ -26,10 +26,6 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         
         webView.delegate = self
     }
-    
-    @IBAction func closeButtonPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
 
     func webViewDidFinishLoad(webView: UIWebView) {
         timer = NSTimer.scheduledTimerWithTimeInterval(

@@ -12,9 +12,6 @@ class CommentViewController: UIViewController {
     
     @IBOutlet weak var commentTextView: UITextView!
     var data: AnyObject?
-    @IBAction func closeButtonPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

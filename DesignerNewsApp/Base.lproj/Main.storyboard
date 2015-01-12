@@ -339,7 +339,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="HBs-bl-KVv" kind="show" identifier="storiesToArticleSegue" id="3HB-vO-v5a"/>
-                        <segue destination="d4v-hq-Ei2" kind="modal" identifier="storiesToWebSegue" id="Jya-5Y-T44"/>
+                        <segue destination="d4v-hq-Ei2" kind="presentation" identifier="storiesToWebSegue" id="Jya-5Y-T44"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py4-Yi-ebA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -401,17 +401,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="40T-Ab-wCU" firstAttribute="top" secondItem="weA-Ht-NmR" secondAttribute="bottom" id="1EP-eg-zEy"/>
                             <constraint firstItem="xPf-Is-W8A" firstAttribute="top" secondItem="3Ar-Xp-zRy" secondAttribute="bottom" constant="42" id="3OH-el-VlV"/>
                             <constraint firstAttribute="trailing" secondItem="xPf-Is-W8A" secondAttribute="trailing" id="GK6-pN-ryt"/>
+                            <constraint firstAttribute="trailing" secondItem="weA-Ht-NmR" secondAttribute="trailing" id="Itn-nS-4mY"/>
                             <constraint firstItem="GG0-kj-Hnt" firstAttribute="leading" secondItem="6Fw-jD-FeC" secondAttribute="leading" id="M56-N1-utB"/>
-                            <constraint firstItem="weA-Ht-NmR" firstAttribute="top" secondItem="GG0-kj-Hnt" secondAttribute="bottom" id="PI9-lI-j8P"/>
-                            <constraint firstItem="weA-Ht-NmR" firstAttribute="bottom" secondItem="40T-Ab-wCU" secondAttribute="top" id="QzG-M4-xev"/>
-                            <constraint firstItem="xPf-Is-W8A" firstAttribute="leading" secondItem="weA-Ht-NmR" secondAttribute="leading" id="ViY-6l-ndn"/>
-                            <constraint firstItem="weA-Ht-NmR" firstAttribute="top" secondItem="xPf-Is-W8A" secondAttribute="bottom" constant="0.5" id="ix9-PL-VY7"/>
-                            <constraint firstItem="xPf-Is-W8A" firstAttribute="trailing" secondItem="weA-Ht-NmR" secondAttribute="trailing" id="lH3-5x-bhY"/>
+                            <constraint firstItem="weA-Ht-NmR" firstAttribute="leading" secondItem="6Fw-jD-FeC" secondAttribute="leading" id="VNe-dI-9yi"/>
                             <constraint firstItem="GG0-kj-Hnt" firstAttribute="top" secondItem="6Fw-jD-FeC" secondAttribute="top" id="q0G-Y3-aUD"/>
                             <constraint firstItem="xPf-Is-W8A" firstAttribute="leading" secondItem="6Fw-jD-FeC" secondAttribute="leading" id="qvT-zR-m9n"/>
                             <constraint firstAttribute="trailing" secondItem="GG0-kj-Hnt" secondAttribute="trailing" id="wru-a8-76D"/>
+                            <constraint firstItem="weA-Ht-NmR" firstAttribute="top" secondItem="GG0-kj-Hnt" secondAttribute="bottom" id="yPy-vB-27N"/>
                         </constraints>
                     </view>
                     <connections>
@@ -434,7 +433,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="140" id="C1A-B1-wor" customClass="StoriesTableViewCell" customModule="DesignerNewsApp" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="140" id="C1A-B1-wor" customClass="StoriesTableViewCell" customModule="DesignerNewsApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C1A-B1-wor" id="wN6-m4-OuH">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -562,7 +561,7 @@
                                     <outlet property="upvoteButton" destination="Cyw-gX-Mpj" id="aMs-ej-V7q"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="comment" rowHeight="110" id="nG4-aS-hFF" customClass="StoriesTableViewCell" customModule="DesignerNewsApp" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="comment" rowHeight="110" id="nG4-aS-hFF" customClass="StoriesTableViewCell" customModule="DesignerNewsApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nG4-aS-hFF" id="mwj-X7-b1i">
@@ -713,7 +712,7 @@
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="closeButtonPressed:" destination="Ud9-EQ-k4v" eventType="touchUpInside" id="bH4-YE-2qo"/>
+                                                            <segue destination="UtX-Fl-8WN" kind="unwind" unwindAction="unwindToViewController:" id="EOz-3X-wQC"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -740,6 +739,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7K-nZ-Icz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UtX-Fl-8WN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="626" y="3204"/>
         </scene>

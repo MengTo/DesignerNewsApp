@@ -9,11 +9,16 @@
 import UIKit
 import Haneke
 
-class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate {
+class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate, LoginViewControllerDelegate {
     
     var transitionManager = TransitionManager()
     var stories: JSON = nil
     var firstTime = true
+    var token = getToken(0)
+    
+    func loginCompleted() {
+        println("yes")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
 
     override func viewDidAppear(animated: Bool) {

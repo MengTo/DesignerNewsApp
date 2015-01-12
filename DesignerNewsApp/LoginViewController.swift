@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import CoreData
+
+protocol LoginViewControllerDelegate {
+    func loginCompleted()
+}
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -15,13 +20,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: DesignableTextField!
     @IBOutlet weak var passwordTextField: DesignableTextField!
     var originalCenter: CGPoint!
+    var delegate: LoginViewControllerDelegate?
     
     @IBAction func signupButtonPressed(sender: AnyObject) {
         postLogin(emailTextField.text, passwordTextField.text) { (json) -> () in
             if let token = json?["access_token"] as? String {
+                saveToken(token)
+                
                 self.dialogView.resetAll()
                 self.dialogView.animation = "zoomOut"
                 self.dialogView.animate()
+                delay(0.2, {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                    UIApplication.sharedApplication().sendAction("reset:", to: nil, from: self, forEvent: nil)
+                    self.delegate?.loginCompleted()
+                })
             }
             else {
                 self.dialogView.resetAll()

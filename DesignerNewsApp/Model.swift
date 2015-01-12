@@ -14,8 +14,18 @@ var storiesURL          = "/api/v1/stories"
 var storiesIDURL        = "/api/v1/stories/:id"
 var storiesRecentURL    = "/api/v1/stories/recent"
 var storiesSearchURL    = "/api/v1/stories/search"
+var storiesUpvoteURL    = "/api/v1/stories/:id/upvote"
+var storiesReplyURL     = "/api/v1/stories/:id/reply"
+var commentsURL         = "/api/v1/comments/:id"
+var commentsUpvoteURL   = "/api/v1/comments/:id/upvote"
+var commentsReplyURL    = "/api/v1/comments/:id/reply"
 var clientID            = "750ab22aac78be1c6d4bbe584f0e3477064f646720f327c5464bc127100a1a6d"
 var clientSecret        = "53e3822c49287190768e009a8f8e55d09041c5bf26d0ef982693f215c72d87da"
+
+func postComment(id: Int) {
+    var request = baseURL + commentsURL
+    
+}
 
 func postLogin(email: String, password: String, callback: (AnyObject?) -> ()) {
     var request = baseURL + loginURL
