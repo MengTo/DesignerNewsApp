@@ -12,7 +12,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8H-M0-QKM">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                    <color key="backgroundColor" red="0.1333333333" green="0.2901960784" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.17254901960784313" green="0.38823529411764707" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="mnG-Ge-QGv"/>
                     </constraints>

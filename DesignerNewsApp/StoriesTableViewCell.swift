@@ -45,7 +45,7 @@ class StoriesTableViewCell: UITableViewCell {
     
     func animateButton(layer: SpringButton) {
         layer.animation = "pop"
-        layer.force = 2
+        layer.force = 3
         layer.animate()
     }
 }

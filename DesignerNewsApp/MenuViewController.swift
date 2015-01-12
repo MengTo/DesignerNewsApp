@@ -12,6 +12,27 @@ class MenuViewController: UIViewController {
 
     @IBOutlet weak var dialogView: SpringView!
     
+    @IBAction func topButtonPressed(sender: AnyObject) {
+        animateView()
+    }
+    
+    @IBAction func recentButtonPressed(sender: AnyObject) {
+        animateView()
+    }
+    
+    @IBAction func creditsButtonPressed(sender: AnyObject) {
+        animateView()
+    }
+    
+    @IBAction func loginButtonPressed(sender: AnyObject) {
+        animateView()
+    }
+    
+    func animateView() {
+        dialogView.animation = "pop"
+        dialogView.animate()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,15 +42,12 @@ class MenuViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
-        dialogView.animateFrom = true
         dialogView.animation = "squeezeDown"
         dialogView.animate()
     }
     
     @IBAction func closeButtonPressed(sender: AnyObject) {
-        dialogView.resetAll()
         dialogView.animation = "fall"
-        dialogView.force = 2
         dialogView.animateNext { () -> () in
             self.dismissViewControllerAnimated(false, completion: nil)
         }

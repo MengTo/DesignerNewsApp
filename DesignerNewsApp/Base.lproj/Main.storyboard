@@ -107,7 +107,7 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjX-8S-TVH" customClass="DesignableButton" customModule="DesignerNewsApp" customModuleProvider="target">
                                         <rect key="frame" x="15" y="221" width="250" height="44"/>
-                                        <color key="backgroundColor" red="0.1333333333" green="0.2901960784" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.17254901960784313" green="0.38823529411764707" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="YTY-Pu-Whi"/>
                                             <constraint firstAttribute="height" constant="44" id="oDG-1D-jPe"/>
@@ -370,7 +370,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Stf-Cf-OsE"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.1333333333" green="0.2901960784" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.17254901960784313" green="0.38823529411764707" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -455,49 +455,57 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDv-Kt-KUq" customClass="SpringView" customModule="DesignerNewsApp" customModuleProvider="target">
                                 <rect key="frame" x="170" y="170" width="260" height="260"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vq0-Ce-a6L">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vq0-Ce-a6L">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="Bni-no-As6"/>
                                             <constraint firstAttribute="height" constant="130" id="VPV-qv-Web"/>
                                         </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="-30" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="big-top">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <state key="normal" image="big-top"/>
+                                        <connections>
+                                            <action selector="topButtonPressed:" destination="G2J-Ma-fKq" eventType="touchUpInside" id="N0K-3M-XzD"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OE-5c-FRw">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OE-5c-FRw">
                                         <rect key="frame" x="130" y="0.0" width="130" height="130"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="i4g-bF-mSs"/>
                                             <constraint firstAttribute="height" constant="130" id="r1l-qc-gSV"/>
                                         </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="-30" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="big-recent">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <state key="normal" image="big-recent"/>
+                                        <connections>
+                                            <action selector="recentButtonPressed:" destination="G2J-Ma-fKq" eventType="touchUpInside" id="CMj-BA-0f7"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awl-9u-mxN">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awl-9u-mxN">
                                         <rect key="frame" x="0.0" y="130" width="130" height="130"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="130" id="WIi-TV-ySn"/>
                                             <constraint firstAttribute="width" constant="130" id="jF6-vT-R4J"/>
                                         </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="-30" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="big-credits">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <state key="normal" image="big-credits"/>
+                                        <connections>
+                                            <action selector="creditsButtonPressed:" destination="G2J-Ma-fKq" eventType="touchUpInside" id="Qvr-d5-a1u"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDR-kG-0tz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDR-kG-0tz">
                                         <rect key="frame" x="130" y="130" width="130" height="130"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="130" id="6v9-oJ-m8C"/>
                                             <constraint firstAttribute="width" constant="130" id="wgt-QW-wvE"/>
                                         </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="-30" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="big-login">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <state key="normal" image="big-login"/>
+                                        <connections>
+                                            <action selector="loginButtonPressed:" destination="G2J-Ma-fKq" eventType="touchUpInside" id="Oz5-vo-7XL"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Stories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaA-rV-WKv">
                                         <rect key="frame" x="24" y="88" width="82" height="22"/>
@@ -848,7 +856,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="1af-D0-ely"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.1333333333" green="0.2901960784" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.17254901960784313" green="0.38823529411764707" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem id="vBQ-8X-zAv">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="T7H-z2-mee">
@@ -902,7 +910,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.1333333333" green="0.2901960784" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.17254901960784313" green="0.38823529411764707" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

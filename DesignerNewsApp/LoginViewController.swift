@@ -23,11 +23,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var delegate: LoginViewControllerDelegate?
     
     @IBAction func signupButtonPressed(sender: AnyObject) {
+        showLoading(view)
+        
         postLogin(emailTextField.text, passwordTextField.text) { (json) -> () in
+            hideLoading()
+            
             if let token = json?["access_token"] as? String {
                 saveToken(token)
                 
-                self.dialogView.resetAll()
                 self.dialogView.animation = "zoomOut"
                 self.dialogView.animate()
                 delay(0.2, {
@@ -37,7 +40,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 })
             }
             else {
-                self.dialogView.resetAll()
                 self.dialogView.animation = "shake"
                 self.dialogView.animate()
             }
@@ -57,7 +59,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func closeButtonPressed(sender: AnyObject) {
-        dialogView.resetAll()
         dialogView.animation = "zoomOut"
         dialogView.animateNext({
             self.dismissViewControllerAnimated(false, completion: nil)
