@@ -198,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPo-rc-sfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="984"/>
+            <point key="canvasLocation" x="-20" y="2478"/>
         </scene>
         <!--Recent-->
         <scene sceneID="Q2e-Ny-1C0">
@@ -333,13 +333,15 @@
                         <barButtonItem key="rightBarButtonItem" title="Login" id="uej-tB-xeq">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="maI-eQ-OKD" kind="presentation" modalPresentationStyle="overCurrentContext" animates="NO" id="CfN-rJ-xcI"/>
+                                <action selector="loginButtonPressed:" destination="VA5-Ik-jqO" id="3H0-DK-seP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="loginButton" destination="uej-tB-xeq" id="f8E-KV-P3z"/>
                         <segue destination="HBs-bl-KVv" kind="show" identifier="storiesToArticleSegue" id="3HB-vO-v5a"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="storiesToWebSegue" id="Jya-5Y-T44"/>
+                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="storiesToLoginSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="4dT-jd-Noy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py4-Yi-ebA" userLabel="First Responder" sceneMemberID="firstResponder"/>

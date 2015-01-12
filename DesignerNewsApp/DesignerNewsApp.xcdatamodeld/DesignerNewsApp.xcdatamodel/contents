@@ -7,7 +7,7 @@
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="User" positionX="-54" positionY="-96" width="128" height="60"/>
         <element name="Person" positionX="-54" positionY="0" width="128" height="60"/>
     </elements>
 </model>

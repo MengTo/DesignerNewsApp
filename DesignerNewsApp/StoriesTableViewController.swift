@@ -15,10 +15,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     var stories: JSON = nil
     var firstTime = true
     var token = getToken(0)
-    
-    func loginCompleted() {
-        println("yes")
-    }
+    @IBOutlet weak var loginButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +29,9 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        if token.isEmpty {
+            loginButton.title = "Login"
+        }
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -39,6 +39,24 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         if firstTime {
             showLoading(view)
             firstTime = false
+        }
+    }
+    
+    // MARK: Login
+    func loginCompleted() {
+        token = getToken(0)
+        loginButton.title = "Logout"
+        viewDidLoad()
+    }
+    
+    @IBAction func loginButtonPressed(sender: AnyObject) {
+        if token.isEmpty {
+            performSegueWithIdentifier("storiesToLoginSegue", sender: self)
+        }
+        else {
+            deleteToken(0)
+            token = ""
+            viewDidLoad()
         }
     }
     
@@ -90,6 +108,10 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             webViewController.data = sender
             
             webViewController.transitioningDelegate = self.transitionManager
+        }
+        else if segue.identifier == "storiesToLoginSegue" {
+            let loginViewController = segue.destinationViewController as LoginViewController
+            loginViewController.delegate = self
         }
     }
     
