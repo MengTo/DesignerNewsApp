@@ -22,7 +22,7 @@ var commentsReplyURL    = "/api/v1/comments/:id/reply"
 var clientID            = "750ab22aac78be1c6d4bbe584f0e3477064f646720f327c5464bc127100a1a6d"
 var clientSecret        = "53e3822c49287190768e009a8f8e55d09041c5bf26d0ef982693f215c72d87da"
 
-func postUpvote(id: String, callback: (JSON) -> ()) {
+func postUpvote(id: String) {
     Alamofire.request(Router.upvoteStory(id))
 }
 

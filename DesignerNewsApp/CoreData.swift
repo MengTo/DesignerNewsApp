@@ -9,17 +9,46 @@
 import UIKit
 import CoreData
 
-var dataTable = "User"
-var dataKey = "token"
-
 func saveToken(value: String) {
+    saveValue(value, "User", "token")
+}
+
+func deleteToken(row: Int) {
+    deleteValue(row, "User")
+}
+
+func getToken() -> String {
+    var results: AnyObject = getValue("User")
+    
+    var token = ""
+    if results.count > 0 {
+        token = results[0].valueForKey("token") as String!
+    }
+    return token
+}
+
+func saveStory(value: String) {
+    saveValue(value, "Story", "id")
+}
+
+func getStory() -> String {
+    var results: AnyObject = getValue("Story")
+    
+    var story = ""
+    if results.count > 0 {
+        story = results[0].valueForKey("id") as String!
+    }
+    return story
+}
+
+func saveValue(value: String, table: String, key: String) {
         
     let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     let managedContext = appDelegate.managedObjectContext!
     
-    let entity =  NSEntityDescription.entityForName(dataTable, inManagedObjectContext: managedContext)
+    let entity =  NSEntityDescription.entityForName(table, inManagedObjectContext: managedContext)
     let row = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-    row.setValue(value, forKey: dataKey)
+    row.setValue(value, forKey: key)
     
     var error: NSError?
     if !managedContext.save(&error) {
@@ -27,11 +56,11 @@ func saveToken(value: String) {
     }
 }
 
-func deleteToken(row: Int) {
+func deleteValue(row: Int, table: String) {
     let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     let managedContext = appDelegate.managedObjectContext!
     
-    let request = NSFetchRequest(entityName:dataTable)
+    let request = NSFetchRequest(entityName:table)
     var error: NSError?
     let results = managedContext.executeFetchRequest(request, error: &error) as [NSManagedObject]!
     
@@ -42,17 +71,13 @@ func deleteToken(row: Int) {
     }
 }
 
-func getToken() -> String {
+func getValue(table: String) -> AnyObject! {
     let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     let managedContext = appDelegate.managedObjectContext!
     
-    let request = NSFetchRequest(entityName:dataTable)
+    let request = NSFetchRequest(entityName: table)
     var error: NSError?
     let results = managedContext.executeFetchRequest(request, error: &error) as [NSManagedObject]!
     
-    var token = ""
-    if results.count > 0 {
-        token = results[0].valueForKey(dataKey) as String!
-    }
-    return token
+    return results
 }

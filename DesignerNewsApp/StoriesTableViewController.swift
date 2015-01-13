@@ -91,9 +91,10 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             performSegueWithIdentifier("storiesToLoginSegue", sender: self)
         }
         else {
-            postUpvote(id, { (data) -> () in
-                println(data)
-            })
+            postUpvote(id)
+            saveStory(id)
+            getStory()
+            cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
         }
     }
     
