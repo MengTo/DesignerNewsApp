@@ -22,6 +22,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var originalCenter: CGPoint!
     var delegate: LoginViewControllerDelegate?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        originalCenter = view.center
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        dialogView.alpha = 0
+        
+        animator = UIDynamicAnimator(referenceView: view)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        dialogView.animate()
+    }
+    
+    // MARK: Button
     @IBAction func signupButtonPressed(sender: AnyObject) {
         showLoading(view)
         
@@ -33,11 +53,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 self.dialogView.animation = "zoomOut"
                 self.dialogView.animate()
-                delay(0.2, {
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                    UIApplication.sharedApplication().sendAction("reset:", to: nil, from: self, forEvent: nil)
-                    self.delegate?.loginCompleted()
-                })
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                UIApplication.sharedApplication().sendAction("reset:", to: nil, from: self, forEvent: nil)
+                self.delegate?.loginCompleted()
             }
             else {
                 self.dialogView.animation = "shake"
@@ -46,6 +65,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func closeButtonPressed(sender: AnyObject) {
+        dialogView.animation = "zoomOut"
+        dialogView.animate()
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: UITextFieldDelegate
     func textFieldDidBeginEditing(textField: UITextField) {
         spring(0.7) {
             self.view.center.y = self.originalCenter.y - textField.center.y
@@ -58,36 +84,51 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func closeButtonPressed(sender: AnyObject) {
-        dialogView.animation = "zoomOut"
-        dialogView.animateNext({
-            self.dismissViewControllerAnimated(false, completion: nil)
-        })
-        spring(0.7, {
-            self.view.alpha = 0
-        })
-    }
-    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         view.endEditing(true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        originalCenter = view.center
-        
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        
-        dialogView.alpha = 0
-    }
+    // MARK: UIDynamicAnimator
+    var animator : UIDynamicAnimator!
+    var attachmentBehavior : UIAttachmentBehavior!
+    var gravityBehaviour : UIGravityBehavior!
+    var snapBehavior : UISnapBehavior!
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
+    @IBAction func handleGesture(sender: AnyObject) {
+        let myView = dialogView
+        let location = sender.locationInView(view)
+        let boxLocation = sender.locationInView(myView)
         
-        dialogView.animate()
-        
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        if sender.state == UIGestureRecognizerState.Began {
+            animator.removeBehavior(snapBehavior)
+            
+            let centerOffset = UIOffsetMake(boxLocation.x - CGRectGetMidX(myView.bounds), boxLocation.y - CGRectGetMidY(myView.bounds));
+            attachmentBehavior = UIAttachmentBehavior(item: myView, offsetFromCenter: centerOffset, attachedToAnchor: location)
+            attachmentBehavior.frequency = 0
+            
+            animator.addBehavior(attachmentBehavior)
+        }
+        else if sender.state == UIGestureRecognizerState.Changed {
+            attachmentBehavior.anchorPoint = location
+        }
+        else if sender.state == UIGestureRecognizerState.Ended {
+            animator.removeBehavior(attachmentBehavior)
+            
+            snapBehavior = UISnapBehavior(item: myView, snapToPoint: view.center)
+            animator.addBehavior(snapBehavior)
+            
+            let translation = sender.translationInView(view)
+            if translation.y > 100 {
+                animator.removeAllBehaviors()
+                
+                var gravity = UIGravityBehavior(items: [dialogView])
+                gravity.gravityDirection = CGVectorMake(0, 10)
+                animator.addBehavior(gravity)
+                
+                delay(0.3) {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+            }
+        }
     }
 }

@@ -137,6 +137,7 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="c88-aQ-M8L" firstAttribute="top" secondItem="MFi-g8-w52" secondAttribute="bottom" constant="10" id="4tQ-Bb-4rS"/>
                                     <constraint firstItem="JjX-8S-TVH" firstAttribute="leading" secondItem="4bh-8f-iPL" secondAttribute="leading" constant="15" id="9eZ-dT-iDd"/>
@@ -171,6 +172,9 @@
                                         <exclude reference="yWw-Cl-07z"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Da5-vB-AzK" appends="YES" id="p2d-c7-Hep"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -197,6 +201,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPo-rc-sfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Da5-vB-AzK">
+                    <connections>
+                        <action selector="handleGesture:" destination="maI-eQ-OKD" id="QdP-FT-7a8"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-20" y="2478"/>
         </scene>
@@ -346,7 +355,7 @@
                         <outlet property="loginButton" destination="uej-tB-xeq" id="f8E-KV-P3z"/>
                         <segue destination="HBs-bl-KVv" kind="show" identifier="storiesToArticleSegue" id="3HB-vO-v5a"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="storiesToWebSegue" id="Jya-5Y-T44"/>
-                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="storiesToLoginSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="4dT-jd-Noy"/>
+                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="storiesToLoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="4dT-jd-Noy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py4-Yi-ebA" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -48,7 +48,7 @@ class MenuViewController: UIViewController {
     
     @IBAction func closeButtonPressed(sender: AnyObject) {
         dialogView.animation = "fall"
-        dialogView.animateNext { () -> () in
+        dialogView.animateNext {
             self.dismissViewControllerAnimated(false, completion: nil)
         }
     }
