@@ -13,7 +13,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     var transitionManager = TransitionManager()
     var stories: JSON = nil
     var firstTime = true
-    var token = getToken(0)
+    var token = getToken()
     @IBOutlet weak var loginButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -43,7 +43,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     // MARK: Login
     func loginCompleted() {
-        token = getToken(0)
+        token = getToken()
         loginButton.title = "Logout"
         viewDidLoad()
     }
@@ -84,7 +84,17 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     // MARK: StoriesTableViewCellDelegate
     func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
-        var indexPath = tableView.indexPathForCell(cell)
+        var indexPath = tableView.indexPathForCell(cell)!
+        var id = toString(stories[indexPath.row]["id"].int!)
+        
+        if token.isEmpty {
+            performSegueWithIdentifier("storiesToLoginSegue", sender: self)
+        }
+        else {
+            postUpvote(id, { (data) -> () in
+                println(data)
+            })
+        }
     }
     
     func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {

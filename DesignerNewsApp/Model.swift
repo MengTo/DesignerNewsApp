@@ -22,9 +22,8 @@ var commentsReplyURL    = "/api/v1/comments/:id/reply"
 var clientID            = "750ab22aac78be1c6d4bbe584f0e3477064f646720f327c5464bc127100a1a6d"
 var clientSecret        = "53e3822c49287190768e009a8f8e55d09041c5bf26d0ef982693f215c72d87da"
 
-func postComment(id: Int) {
-    var request = baseURL + commentsURL
-    
+func postUpvote(id: String, callback: (JSON) -> ()) {
+    Alamofire.request(Router.upvoteStory(id))
 }
 
 func postLogin(email: String, password: String, callback: (AnyObject?) -> ()) {
@@ -53,5 +52,37 @@ func getStories(page: String, callback: (JSON) -> ()) {
     Alamofire.request(.GET, request, parameters: parameters)
         .response { (_, _, data, _) in
             callback(JSON(data: data as NSData))
+    }
+}
+
+var token = getToken()
+enum Router: URLRequestConvertible {
+    static let baseURLString = baseURL
+    static var OAuthToken: String?
+    
+    case upvoteStory(String)
+    
+    var method: Alamofire.Method {
+        switch self {
+        case .upvoteStory:
+            return .POST
+        }
+    }
+    
+    var path: String {
+        switch self {
+        case .upvoteStory(let id):
+            return "/api/v1/stories/\(id)/upvote"
+        }
+    }
+    
+    var URLRequest: NSURLRequest {
+        let URL = NSURL(string: Router.baseURLString)!
+        let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
+        mutableURLRequest.HTTPMethod = method.rawValue
+        
+        mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        return mutableURLRequest
     }
 }

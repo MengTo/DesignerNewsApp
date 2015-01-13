@@ -42,7 +42,7 @@ func deleteToken(row: Int) {
     }
 }
 
-func getToken(row: Int) -> String {
+func getToken() -> String {
     let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     let managedContext = appDelegate.managedObjectContext!
     
@@ -52,7 +52,7 @@ func getToken(row: Int) -> String {
     
     var token = ""
     if results.count > 0 {
-        token = results[row].valueForKey(dataKey) as String!
+        token = results[0].valueForKey(dataKey) as String!
     }
     return token
 }
