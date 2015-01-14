@@ -31,14 +31,9 @@ func saveStory(value: String) {
     saveValue(value, "Story", "id")
 }
 
-func getStory() -> String {
+func getStory() -> AnyObject {
     var results: AnyObject = getValue("Story")
-    
-    var story = ""
-    if results.count > 0 {
-        story = results[0].valueForKey("id") as String!
-    }
-    return story
+    return results
 }
 
 func saveValue(value: String, table: String, key: String) {

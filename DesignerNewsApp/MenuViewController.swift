@@ -9,7 +9,9 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-
+    
+    var token = getToken()
+    
     @IBOutlet weak var dialogView: SpringView!
     
     @IBAction func topButtonPressed(sender: AnyObject) {
@@ -26,7 +28,12 @@ class MenuViewController: UIViewController {
     
     @IBAction func loginButtonPressed(sender: AnyObject) {
         animateView()
+        performSegueWithIdentifier("LoginSegue", sender: self)
     }
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var recentLabel: UILabel!
+    @IBOutlet weak var creditsLabel: UILabel!
+    @IBOutlet weak var loginLabel: UILabel!
     
     func animateView() {
         dialogView.animation = "pop"
@@ -35,13 +42,17 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dialogView.alpha = 0
+                
+        if token.isEmpty {
+            loginLabel.text = "Login"
+        }
+        else {
+            loginLabel.text = "Logout"
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        
         dialogView.animation = "squeezeDown"
         dialogView.animate()
     }

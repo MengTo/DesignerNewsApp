@@ -14,6 +14,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     var stories: JSON = nil
     var firstTime = true
     var token = getToken()
+    var upvotes: AnyObject = getStory()
     @IBOutlet weak var loginButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -54,7 +55,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     @IBAction func loginButtonPressed(sender: AnyObject) {
         if token.isEmpty {
-            performSegueWithIdentifier("storiesToLoginSegue", sender: self)
+            performSegueWithIdentifier("LoginSegue", sender: self)
         }
         else {
             deleteToken(0)
@@ -83,7 +84,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var story = stories[indexPath.row].dictionaryObject
-        self.performSegueWithIdentifier("storiesToWebSegue", sender: story)
+        self.performSegueWithIdentifier("WebSegue", sender: story)
     }
     
     // MARK: StoriesTableViewCellDelegate
@@ -92,12 +93,14 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         var id = toString(stories[indexPath.row]["id"].int!)
         
         if token.isEmpty {
-            performSegueWithIdentifier("storiesToLoginSegue", sender: self)
+            performSegueWithIdentifier("LoginSegue", sender: self)
         }
         else {
             postUpvote(id)
             saveStory(id)
-            getStory()
+            let upvoteInt = stories[indexPath.row]["vote_count"].int! + 1
+            let upvoteString = toString(upvoteInt)
+            cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
             cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
         }
     }
@@ -105,7 +108,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         var story = stories[indexPath.row].dictionaryObject
-        performSegueWithIdentifier("storiesToArticleSegue", sender: story)
+        performSegueWithIdentifier("ArticleSegue", sender: story)
     }
     
     func replyButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
@@ -113,11 +116,11 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     // MARK: Misc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "storiesToArticleSegue" {
+        if segue.identifier == "ArticleSegue" {
             let articleViewController = segue.destinationViewController as ArticleTableViewController
             articleViewController.data = sender
         }
-        else if segue.identifier == "storiesToWebSegue" {
+        else if segue.identifier == "WebSegue" {
             let webViewController = segue.destinationViewController as WebViewController
             webViewController.data = sender
             
@@ -125,11 +128,11 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             
             UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
         }
-        else if segue.identifier == "storiesToLoginSegue" {
+        else if segue.identifier == "LoginSegue" {
             let loginViewController = segue.destinationViewController as LoginViewController
             loginViewController.delegate = self
         }
-        else if segue.identifier == "storiesToMenuSegue" {
+        else if segue.identifier == "MenuSegue" {
             let menuViewController = segue.destinationViewController as MenuViewController
         }
     }

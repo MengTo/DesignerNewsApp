@@ -26,7 +26,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "articleToCommentSegue" {
+        if segue.identifier == "CommentSegue" {
             let toView = segue.destinationViewController as CommentViewController
             toView.data = sender
             

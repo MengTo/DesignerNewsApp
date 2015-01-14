@@ -207,7 +207,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-20" y="2478"/>
+            <point key="canvasLocation" x="-452" y="2478"/>
         </scene>
         <!--Top Stories-->
         <scene sceneID="Q2e-Ny-1C0">
@@ -341,7 +341,7 @@
                     <navigationItem key="navigationItem" title="Top Stories" id="JGT-YY-uoi">
                         <barButtonItem key="leftBarButtonItem" image="icon-hamburger" id="fHU-Wp-9Rv">
                             <connections>
-                                <segue destination="G2J-Ma-fKq" kind="presentation" identifier="storiesToMenuSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="ebu-3w-gAh"/>
+                                <segue destination="G2J-Ma-fKq" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="ebu-3w-gAh"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Login" id="uej-tB-xeq">
@@ -353,9 +353,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="loginButton" destination="uej-tB-xeq" id="f8E-KV-P3z"/>
-                        <segue destination="HBs-bl-KVv" kind="show" identifier="storiesToArticleSegue" id="3HB-vO-v5a"/>
-                        <segue destination="d4v-hq-Ei2" kind="presentation" identifier="storiesToWebSegue" id="Jya-5Y-T44"/>
-                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="storiesToLoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="4dT-jd-Noy"/>
+                        <segue destination="HBs-bl-KVv" kind="show" identifier="ArticleSegue" id="3HB-vO-v5a"/>
+                        <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="Jya-5Y-T44"/>
+                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="4dT-jd-Noy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py4-Yi-ebA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -384,6 +384,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="TeC-C0-JBB"/>
                                 </constraints>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="4"/>
+                                </variation>
+                                <variation key="widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="20" width="800" height="4"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="20" width="800" height="4"/>
+                                </variation>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHb-EQ-22x" customClass="SpringButton" customModule="DesignerNewsApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="40" width="44" height="44"/>
@@ -434,7 +443,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aB-Uq-ry8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="TPO-Ch-8WP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1269" y="2478"/>
+            <point key="canvasLocation" x="946" y="2478"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="3vp-a1-YWc">
@@ -566,6 +575,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animateFrom" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -580,12 +590,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="creditsLabel" destination="voa-Y1-LZ6" id="OdH-M1-jG0"/>
                         <outlet property="dialogView" destination="gDv-Kt-KUq" id="PR1-NR-LNF"/>
+                        <outlet property="loginLabel" destination="9fv-eC-1JO" id="0hL-qt-uhk"/>
+                        <outlet property="recentLabel" destination="8hj-pg-WtG" id="gIc-VZ-Ln5"/>
+                        <outlet property="topLabel" destination="JaA-rV-WKv" id="k8O-NT-LDT"/>
+                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" animates="NO" id="k70-GR-7l8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ght-xt-R2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="2478"/>
+            <point key="canvasLocation" x="246" y="2478"/>
         </scene>
         <!--Article Table View Controller-->
         <scene sceneID="6Zb-FR-7t5">
@@ -831,12 +846,12 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="Ud9-EQ-k4v" kind="presentation" identifier="articleToCommentSegue" id="AAA-ja-nOX"/>
+                        <segue destination="Ud9-EQ-k4v" kind="presentation" identifier="CommentSegue" id="AAA-ja-nOX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pxf-D7-GjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="626" y="2478"/>
+            <point key="canvasLocation" x="1638" y="1714"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="Wpy-Nm-Db8">
@@ -905,7 +920,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7K-nZ-Icz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UtX-Fl-8WN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="626" y="3204"/>
+            <point key="canvasLocation" x="1638" y="2478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qF7-6s-Vwa">
@@ -930,7 +945,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0C4-1R-y3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134" y="1714"/>
+            <point key="canvasLocation" x="246" y="1714"/>
         </scene>
     </scenes>
     <resources>
@@ -947,4 +962,7 @@
         <image name="icon-upvote" width="18" height="16"/>
         <image name="input-outline" width="250" height="44"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4dT-jd-Noy"/>
+    </inferredMetricsTieBreakers>
 </document>
