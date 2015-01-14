@@ -8,18 +8,27 @@
 
 import UIKit
 
+protocol MenuViewControllerDelegate: class {
+    func topButtonPressed()
+    func recentButtonPressed()
+}
+
 class MenuViewController: UIViewController {
+    weak var delegate: MenuViewControllerDelegate?
     
     var token = getToken()
-    
     @IBOutlet weak var dialogView: SpringView!
     
     @IBAction func topButtonPressed(sender: AnyObject) {
         animateView()
+        delegate?.topButtonPressed()
+        closeButtonPressed(self)
     }
     
     @IBAction func recentButtonPressed(sender: AnyObject) {
         animateView()
+        delegate?.recentButtonPressed()
+        closeButtonPressed(self)
     }
     
     @IBAction func creditsButtonPressed(sender: AnyObject) {
@@ -49,12 +58,18 @@ class MenuViewController: UIViewController {
         else {
             loginLabel.text = "Logout"
         }
+        
+        dialogView.alpha = 0
     }
     
+    var firstTime = true
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        dialogView.animation = "squeezeDown"
-        dialogView.animate()
+        if firstTime {
+            dialogView.animation = "squeezeDown"
+            dialogView.animate()
+            firstTime = false
+        }
     }
     
     @IBAction func closeButtonPressed(sender: AnyObject) {

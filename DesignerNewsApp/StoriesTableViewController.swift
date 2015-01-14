@@ -8,23 +8,20 @@
 
 import UIKit
 
-class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate, LoginViewControllerDelegate {
+class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate {
     
     var transitionManager = TransitionManager()
     var stories: JSON = nil
     var firstTime = true
     var token = getToken()
     var upvotes: AnyObject = getStory()
+    var storySection = ""
     @IBOutlet weak var loginButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getStories("1", { (json) -> () in
-            self.stories = json["stories"]
-            self.tableView.reloadData()
-            hideLoading()
-        })
+        loadStories()
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -44,6 +41,27 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             firstTime = false
         }
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+    }
+    
+    func loadStories() {
+        getStories(storySection, "1", { (json) -> () in
+            self.stories = json["stories"]
+            self.tableView.reloadData()
+            hideLoading()
+        })
+    }
+    
+    // MARK: MenuViewControllerDelegate
+    func topButtonPressed() {
+        showLoading(view)
+        storySection = ""
+        loadStories()
+    }
+    
+    func recentButtonPressed() {
+        showLoading(view)
+        storySection = "recent"
+        loadStories()
     }
     
     // MARK: Login
@@ -134,6 +152,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         }
         else if segue.identifier == "MenuSegue" {
             let menuViewController = segue.destinationViewController as MenuViewController
+            menuViewController.delegate = self
         }
     }
     

@@ -42,8 +42,8 @@ func postLogin(email: String, password: String, callback: (AnyObject?) -> ()) {
     }
 }
 
-func getStories(page: String, callback: (JSON) -> ()) {
-    var request = baseURL + storiesURL
+func getStories(section: String, page: String, callback: (JSON) -> ()) {
+    var request = baseURL + storiesURL + "/" + section
     var parameters = [
         "page": page,
         "client_id": clientID

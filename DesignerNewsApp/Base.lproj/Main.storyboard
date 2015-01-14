@@ -595,7 +595,7 @@
                         <outlet property="loginLabel" destination="9fv-eC-1JO" id="0hL-qt-uhk"/>
                         <outlet property="recentLabel" destination="8hj-pg-WtG" id="gIc-VZ-Ln5"/>
                         <outlet property="topLabel" destination="JaA-rV-WKv" id="k8O-NT-LDT"/>
-                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" animates="NO" id="k70-GR-7l8"/>
+                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalTransitionStyle="crossDissolve" animates="NO" id="k70-GR-7l8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ght-xt-R2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -963,6 +963,6 @@
         <image name="input-outline" width="250" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4dT-jd-Noy"/>
+        <segue reference="k70-GR-7l8"/>
     </inferredMetricsTieBreakers>
 </document>
