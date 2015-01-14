@@ -15,6 +15,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     var timer = NSTimer()
     var data: AnyObject?
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var closeButton: SpringButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,14 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         webView.loadRequest(request)
         
         webView.delegate = self
+        
+        closeButton.alpha = 0
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        closeButton.animation = "squeezeRight"
+        closeButton.animate()
     }
 
     func webViewDidFinishLoad(webView: UIWebView) {

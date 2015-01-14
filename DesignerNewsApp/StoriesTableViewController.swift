@@ -18,7 +18,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         getStories("1", { (json) -> () in
             self.stories = json["stories"]
             self.tableView.reloadData()
@@ -31,6 +31,9 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         if token.isEmpty {
             loginButton.title = "Login"
         }
+        else {
+            loginButton.title = "Logout"
+        }
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -39,6 +42,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             showLoading(view)
             firstTime = false
         }
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
     }
     
     // MARK: Login
@@ -118,6 +122,8 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             webViewController.data = sender
             
             webViewController.transitioningDelegate = self.transitionManager
+            
+            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
         }
         else if segue.identifier == "storiesToLoginSegue" {
             let loginViewController = segue.destinationViewController as LoginViewController
