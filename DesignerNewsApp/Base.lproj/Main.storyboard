@@ -351,6 +351,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="jrj-W6-HAL">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
                         <outlet property="loginButton" destination="uej-tB-xeq" id="f8E-KV-P3z"/>
                         <segue destination="HBs-bl-KVv" kind="show" identifier="ArticleSegue" id="3HB-vO-v5a"/>
@@ -576,6 +579,7 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="animateFrom" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="squeezeDown"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -963,6 +967,6 @@
         <image name="input-outline" width="250" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="k70-GR-7l8"/>
+        <segue reference="4dT-jd-Noy"/>
     </inferredMetricsTieBreakers>
 </document>

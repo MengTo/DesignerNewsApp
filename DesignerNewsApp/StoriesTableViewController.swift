@@ -21,7 +21,9 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadStories()
+        loadStories(self)
+        
+        refreshControl?.addTarget(self, action: "loadStories:", forControlEvents: UIControlEvents.ValueChanged)
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -43,11 +45,12 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
     }
     
-    func loadStories() {
+    func loadStories(sender: AnyObject) {
         getStories(storySection, "1", { (json) -> () in
             self.stories = json["stories"]
             self.tableView.reloadData()
             hideLoading()
+            self.refreshControl?.endRefreshing()
         })
     }
     
@@ -55,13 +58,13 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     func topButtonPressed() {
         showLoading(view)
         storySection = ""
-        loadStories()
+        loadStories(self)
     }
     
     func recentButtonPressed() {
         showLoading(view)
         storySection = "recent"
-        loadStories()
+        loadStories(self)
     }
     
     // MARK: Login
