@@ -30,9 +30,11 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         
         if token.isEmpty {
             loginButton.title = "Login"
+            loginButton.enabled = true
         }
         else {
-            loginButton.title = "Logout"
+            loginButton.title = ""
+            loginButton.enabled = false
         }
     }
 
@@ -70,7 +72,8 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     // MARK: Login
     func loginCompleted() {
         token = getToken()
-        loginButton.title = "Logout"
+        loginButton.title = ""
+        loginButton.enabled = false
         viewDidLoad()
     }
     
@@ -83,6 +86,12 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             token = ""
             viewDidLoad()
         }
+    }
+    
+    func logoutButtonPressed() {
+        deleteToken(0)
+        token = ""
+        viewDidLoad()
     }
     
     // MARK: TableViewDelegate
