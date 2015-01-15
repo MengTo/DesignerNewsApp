@@ -72,19 +72,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: UITextFieldDelegate
-    func textFieldDidBeginEditing(textField: UITextField) {
-        spring(0.7) {
-            self.view.center.y = self.originalCenter.y - textField.center.y
-        }
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        spring(0.7) {
-            self.view.center = self.originalCenter
-        }
-    }
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    @IBAction func scrollViewPressed(sender: AnyObject) {
         view.endEditing(true)
     }
     

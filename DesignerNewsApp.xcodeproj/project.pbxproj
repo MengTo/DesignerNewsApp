@@ -31,6 +31,10 @@
 		961889A61A67AA8D00295A64 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618898E1A67AA8D00295A64 /* TransitionManager.swift */; };
 		961889A71A67AA8D00295A64 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618898F1A67AA8D00295A64 /* TransitionZoom.swift */; };
 		961889A81A67AA8D00295A64 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889901A67AA8D00295A64 /* UnwindSegue.swift */; };
+		961889B21A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AB1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m */; };
+		961889B31A67F15900295A64 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AD1A67F15900295A64 /* TPKeyboardAvoidingScrollView.m */; };
+		961889B41A67F15900295A64 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AF1A67F15900295A64 /* TPKeyboardAvoidingTableView.m */; };
+		961889B51A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889B11A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		964892151A62A84600214D53 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892141A62A84600214D53 /* CommentViewController.swift */; };
 		964892621A63AB2600214D53 /* DesignerNewsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 964892601A63AB2600214D53 /* DesignerNewsApp.xcdatamodeld */; };
 		964892651A63C6E600214D53 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892641A63C6E600214D53 /* CoreData.swift */; };
@@ -120,6 +124,14 @@
 		9618898E1A67AA8D00295A64 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		9618898F1A67AA8D00295A64 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		961889901A67AA8D00295A64 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		961889AA1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		961889AB1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		961889AC1A67F15900295A64 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		961889AD1A67F15900295A64 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		961889AE1A67F15900295A64 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		961889AF1A67F15900295A64 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		961889B01A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		961889B11A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		964892141A62A84600214D53 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		964892611A63AB2600214D53 /* DesignerNewsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DesignerNewsApp.xcdatamodel; sourceTree = "<group>"; };
 		964892641A63C6E600214D53 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
@@ -134,7 +146,7 @@
 		966128691A4DA63100A54A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9661286A1A4DA63100A54A23 /* DesignerNewsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignerNewsAppTests.swift; sourceTree = "<group>"; };
 		967CFD051A5C10700044B4E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		9694F1C51A5ED3F800A6376A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		9694F1C51A5ED3F800A6376A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
 		9694F2041A5FF13900A6376A /* ArticleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
 		9694F20A1A6123D000A6376A /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		96A580031A5E290000FDE099 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -193,6 +205,31 @@
 			path = ../../Spring/Spring;
 			sourceTree = "<group>";
 		};
+		961889A91A67F15900295A64 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				961889AA1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.h */,
+				961889AB1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m */,
+				961889AC1A67F15900295A64 /* TPKeyboardAvoidingScrollView.h */,
+				961889AD1A67F15900295A64 /* TPKeyboardAvoidingScrollView.m */,
+				961889AE1A67F15900295A64 /* TPKeyboardAvoidingTableView.h */,
+				961889AF1A67F15900295A64 /* TPKeyboardAvoidingTableView.m */,
+				961889B01A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				961889B11A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			name = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		961889B61A67F93800295A64 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				9694F1C51A5ED3F800A6376A /* SwiftyJSON.swift */,
+				961889A91A67F15900295A64 /* TPKeyboardAvoiding */,
+			);
+			name = Libraries;
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
 		966128461A4DA63100A54A23 = {
 			isa = PBXGroup;
 			children = (
@@ -230,7 +267,7 @@
 				966128581A4DA63100A54A23 /* Main.storyboard */,
 				9661285B1A4DA63100A54A23 /* Images.xcassets */,
 				9661285D1A4DA63100A54A23 /* LaunchScreen.xib */,
-				9694F1C51A5ED3F800A6376A /* SwiftyJSON.swift */,
+				961889B61A67F93800295A64 /* Libraries */,
 				966128521A4DA63100A54A23 /* Supporting Files */,
 			);
 			path = DesignerNewsApp;
@@ -407,10 +444,13 @@
 				961889A21A67AA8D00295A64 /* SpringLabel.swift in Sources */,
 				966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */,
 				961889A71A67AA8D00295A64 /* TransitionZoom.swift in Sources */,
+				961889B21A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				961889B31A67F15900295A64 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				9618899A1A67AA8D00295A64 /* KeyboardAvoidingScrollView.swift in Sources */,
 				961889A11A67AA8D00295A64 /* SpringImageView.swift in Sources */,
 				964892151A62A84600214D53 /* CommentViewController.swift in Sources */,
 				961889A31A67AA8D00295A64 /* SpringTextField.swift in Sources */,
+				961889B51A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */,
 				9618899D1A67AA8D00295A64 /* Misc.swift in Sources */,
 				9618899B1A67AA8D00295A64 /* loadingView.swift in Sources */,
@@ -426,6 +466,7 @@
 				961889A81A67AA8D00295A64 /* UnwindSegue.swift in Sources */,
 				96AF96171A5EABC9003926E2 /* StoriesTableViewCell.swift in Sources */,
 				961889A51A67AA8D00295A64 /* SpringView.swift in Sources */,
+				961889B41A67F15900295A64 /* TPKeyboardAvoidingTableView.m in Sources */,
 				961889911A67AA8D00295A64 /* BlurView.swift in Sources */,
 				961889951A67AA8D00295A64 /* DesignableLabel.swift in Sources */,
 				961889A41A67AA8D00295A64 /* SpringTextView.swift in Sources */,
