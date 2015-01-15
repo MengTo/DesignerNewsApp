@@ -36,6 +36,20 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
     
     // MARK: StoriesTableViewCellDelegate
     func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+        var indexPath = tableView.indexPathForCell(cell)!
+        var id = toString(story["id"].int!)
+        
+        if token.isEmpty {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        }
+        else {
+            postUpvote(id)
+            saveUpvote(id)
+            let upvoteInt = story["vote_count"].int! + 1
+            let upvoteString = toString(upvoteInt)
+            cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
+            cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
+        }
     }
     
     func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
@@ -45,7 +59,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         var indexPath = tableView.indexPathForCell(cell)!
         var comment = comments[indexPath.row].dictionaryObject
         
-        performSegueWithIdentifier("articleToCommentSegue", sender: comment)
+        performSegueWithIdentifier("CommentSegue", sender: comment)
     }
     
     // MARK: TableViewDelegate

@@ -27,13 +27,20 @@ func getToken() -> String {
     return token
 }
 
-func saveStory(value: String) {
+func saveUpvote(value: String) {
     saveValue(value, "Story", "id")
 }
 
-func getStory() -> AnyObject {
-    var results: AnyObject = getValue("Story")
-    return results
+func getUpvotes() -> NSArray {
+    var results: NSArray = getValue("Story") as NSArray
+    
+    var upvotes = [""]
+    for result in results {
+        let value = result.valueForKey("id") as String
+        upvotes.append(value)
+    }
+    
+    return upvotes as NSArray
 }
 
 func saveValue(value: String, table: String, key: String) {

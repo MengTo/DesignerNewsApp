@@ -42,8 +42,8 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         if firstTime {
-            dialogView.animation = "squeezeDown"
             dialogView.animate()
+            
             firstTime = false
         }
     }
@@ -89,7 +89,6 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
         dismissViewControllerAnimated(true, completion: nil)
         delegate?.loginCompleted()
     }
-    
     
     // MARK: Misc
     func animateView() {

@@ -14,7 +14,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     var stories: JSON = nil
     var firstTime = true
     var token = getToken()
-    var upvotes: AnyObject = getStory()
+    var upvotes = getUpvotes()
     var storySection = ""
     @IBOutlet weak var loginButton: UIBarButtonItem!
     
@@ -50,6 +50,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     func loadStories(sender: AnyObject) {
         getStories(storySection, "1", { (json) -> () in
             self.stories = json["stories"]
+            self.upvotes = getUpvotes()
             self.tableView.reloadData()
             hideLoading()
             self.refreshControl?.endRefreshing()
@@ -127,7 +128,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         }
         else {
             postUpvote(id)
-            saveStory(id)
+            saveUpvote(id)
             let upvoteInt = stories[indexPath.row]["vote_count"].int! + 1
             let upvoteString = toString(upvoteInt)
             cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
@@ -183,6 +184,17 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         }
         else {
             cell.storyImageView.image = nil
+        }
+        
+        if let id = story["id"].int? {
+            if upvotes.containsObject(toString(id)) {
+                let image = UIImage(named: "icon-upvote-active")
+                cell.upvoteButton.setImage(image, forState: UIControlState.Normal)
+            }
+            else {
+                let image = UIImage(named: "icon-upvote")
+                cell.upvoteButton.setImage(image, forState: UIControlState.Normal)
+            }
         }
         
         cell.avatarImageView.image = UIImage(named: "content-avatar-default")
