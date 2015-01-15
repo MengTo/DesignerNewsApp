@@ -35,6 +35,7 @@
 		961889B31A67F15900295A64 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AD1A67F15900295A64 /* TPKeyboardAvoidingScrollView.m */; };
 		961889B41A67F15900295A64 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AF1A67F15900295A64 /* TPKeyboardAvoidingTableView.m */; };
 		961889B51A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889B11A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		961889B81A680D3800295A64 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889B71A680D3800295A64 /* LearnViewController.swift */; };
 		964892151A62A84600214D53 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892141A62A84600214D53 /* CommentViewController.swift */; };
 		964892621A63AB2600214D53 /* DesignerNewsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 964892601A63AB2600214D53 /* DesignerNewsApp.xcdatamodeld */; };
 		964892651A63C6E600214D53 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892641A63C6E600214D53 /* CoreData.swift */; };
@@ -132,6 +133,7 @@
 		961889AF1A67F15900295A64 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		961889B01A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		961889B11A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		961889B71A680D3800295A64 /* LearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		964892141A62A84600214D53 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		964892611A63AB2600214D53 /* DesignerNewsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DesignerNewsApp.xcdatamodel; sourceTree = "<group>"; };
 		964892641A63C6E600214D53 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				964892141A62A84600214D53 /* CommentViewController.swift */,
 				9694F20A1A6123D000A6376A /* WebViewController.swift */,
 				964892661A63F5D900214D53 /* MenuViewController.swift */,
+				961889B71A680D3800295A64 /* LearnViewController.swift */,
 				964892601A63AB2600214D53 /* DesignerNewsApp.xcdatamodeld */,
 				966128581A4DA63100A54A23 /* Main.storyboard */,
 				9661285B1A4DA63100A54A23 /* Images.xcassets */,
@@ -439,6 +442,7 @@
 				961889961A67AA8D00295A64 /* DesignableTextField.swift in Sources */,
 				961889971A67AA8D00295A64 /* DesignableTextView.swift in Sources */,
 				964892671A63F5D900214D53 /* MenuViewController.swift in Sources */,
+				961889B81A680D3800295A64 /* LearnViewController.swift in Sources */,
 				961889A01A67AA8D00295A64 /* SpringButton.swift in Sources */,
 				964892651A63C6E600214D53 /* CoreData.swift in Sources */,
 				961889A21A67AA8D00295A64 /* SpringLabel.swift in Sources */,

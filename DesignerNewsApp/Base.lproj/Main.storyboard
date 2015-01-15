@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -440,6 +440,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="22"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="squeezeRight"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="TPO-Ch-8WP" kind="unwind" unwindAction="unwindToViewController:" id="VK0-vl-dkd"/>
@@ -545,6 +546,7 @@
                                         </state>
                                         <connections>
                                             <action selector="creditsButtonPressed:" destination="G2J-Ma-fKq" eventType="touchUpInside" id="Qvr-d5-a1u"/>
+                                            <segue destination="4zs-Hs-umC" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="BgV-GW-NeV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDR-kG-0tz">
@@ -580,8 +582,8 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voa-Y1-LZ6">
-                                        <rect key="frame" x="39" y="218" width="53" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voa-Y1-LZ6">
+                                        <rect key="frame" x="29" y="218" width="72" height="22"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -642,6 +644,148 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ght-xt-R2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="246" y="2478"/>
+        </scene>
+        <!--Learn View Controller-->
+        <scene sceneID="zqN-NC-UG3">
+            <objects>
+                <viewController id="4zs-Hs-umC" customClass="LearnViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A5S-La-og1"/>
+                        <viewControllerLayoutGuide type="bottom" id="tdf-ip-2sO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LtK-kh-hnJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHt-DE-sXj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HTC-lj-Pig">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmD-5I-dN9">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="ypX-MN-WmI" kind="unwind" unwindAction="unwindToViewController:" id="nQA-26-X1p"/>
+                                            </connections>
+                                        </button>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-Ms-d8p" customClass="DesignableView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                            <rect key="frame" x="160" y="160" width="280" height="280"/>
+                                            <subviews>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bg-credits + low-poly-texture-3" translatesAutoresizingMaskIntoConstraints="NO" id="XBV-xJ-PCT" customClass="SpringImageView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="140"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeIn"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-book" translatesAutoresizingMaskIntoConstraints="NO" id="seR-gK-b3z" customClass="SpringImageView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                    <rect key="frame" x="70" y="20" width="125" height="122"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                            <real key="value" value="0.29999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="opacity">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-sketch" translatesAutoresizingMaskIntoConstraints="NO" id="WRf-48-4Xg" customClass="SpringImageView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="40" width="64" height="61"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-xcode" translatesAutoresizingMaskIntoConstraints="NO" id="rj4-zH-nbf" customClass="SpringImageView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                    <rect key="frame" x="201" y="40" width="64" height="59"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideLeft"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHC-xX-6kw">
+                                                    <rect key="frame" x="0.0" y="140" width="280" height="70"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                    <state key="normal" title="Learn Sketch + Swift">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpW-J5-9z5">
+                                                    <rect key="frame" x="0.0" y="210" width="280" height="70"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="@MengTo" image="icon-twitter">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.29803921568627451" green="0.72156862745098038" blue="0.7686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="280" id="CTI-Va-MKJ"/>
+                                                <constraint firstAttribute="width" constant="280" id="ryB-cD-ijO"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="Wpn-f9-R5G" appends="YES" id="Fgc-DB-ZDs"/>
+                                            </connections>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="SmD-5I-dN9" secondAttribute="bottom" id="2Uf-7j-k5l"/>
+                                        <constraint firstItem="SmD-5I-dN9" firstAttribute="top" secondItem="HTC-lj-Pig" secondAttribute="top" id="IxQ-7a-L58"/>
+                                        <constraint firstAttribute="trailing" secondItem="SmD-5I-dN9" secondAttribute="trailing" id="Wqj-1d-VT3"/>
+                                        <constraint firstAttribute="centerX" secondItem="6wn-Ms-d8p" secondAttribute="centerX" id="fh1-NS-9Oc"/>
+                                        <constraint firstItem="SmD-5I-dN9" firstAttribute="leading" secondItem="HTC-lj-Pig" secondAttribute="leading" id="jQj-5V-hk2"/>
+                                        <constraint firstAttribute="centerY" secondItem="6wn-Ms-d8p" secondAttribute="centerY" id="jYT-UA-7pL"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RHt-DE-sXj" firstAttribute="top" secondItem="LtK-kh-hnJ" secondAttribute="topMargin" id="5aR-uk-nqL"/>
+                            <constraint firstItem="RHt-DE-sXj" firstAttribute="leading" secondItem="LtK-kh-hnJ" secondAttribute="leading" id="A9r-xa-igD"/>
+                            <constraint firstAttribute="trailing" secondItem="RHt-DE-sXj" secondAttribute="trailing" id="I1V-vB-Puf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RHt-DE-sXj" secondAttribute="trailing" constant="-16" id="Qp8-ae-j1O"/>
+                            <constraint firstItem="tdf-ip-2sO" firstAttribute="top" secondItem="RHt-DE-sXj" secondAttribute="bottom" id="wmE-6e-71R"/>
+                            <constraint firstItem="RHt-DE-sXj" firstAttribute="leading" secondItem="LtK-kh-hnJ" secondAttribute="leadingMargin" constant="-16" id="ylU-E6-xcm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Qp8-ae-j1O"/>
+                                <exclude reference="ylU-E6-xcm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="bgImageView" destination="XBV-xJ-PCT" id="ju4-hf-3Jc"/>
+                        <outlet property="bookImageView" destination="seR-gK-b3z" id="SAa-ud-bE4"/>
+                        <outlet property="dialogView" destination="6wn-Ms-d8p" id="NkG-mg-uf4"/>
+                        <outlet property="sketchImageView" destination="WRf-48-4Xg" id="eUD-uU-G1f"/>
+                        <outlet property="xcodeImageView" destination="rj4-zH-nbf" id="Uun-wr-Xei"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hg2-l0-HD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ypX-MN-WmI" userLabel="Exit" sceneMemberID="exit"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Wpn-f9-R5G">
+                    <connections>
+                        <action selector="handleGesture:" destination="4zs-Hs-umC" id="Rrb-Z5-zaG"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="246" y="3280"/>
         </scene>
         <!--Article Table View Controller-->
         <scene sceneID="6Zb-FR-7t5">
@@ -1003,20 +1147,25 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg-credits + low-poly-texture-3" width="280" height="140"/>
         <image name="big-credits" width="47" height="44"/>
         <image name="big-login" width="38" height="38"/>
         <image name="big-recent" width="36" height="36"/>
         <image name="big-top" width="41" height="39"/>
+        <image name="icon-book" width="125" height="122"/>
         <image name="icon-close" width="19" height="20"/>
         <image name="icon-comment" width="17" height="15"/>
         <image name="icon-hamburger" width="22" height="16"/>
         <image name="icon-mail" width="26" height="18"/>
         <image name="icon-password" width="25" height="25"/>
         <image name="icon-reply" width="20" height="15"/>
+        <image name="icon-sketch" width="64" height="61"/>
+        <image name="icon-twitter" width="18" height="14"/>
         <image name="icon-upvote" width="18" height="16"/>
+        <image name="icon-xcode" width="64" height="59"/>
         <image name="input-outline" width="250" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4dT-jd-Noy"/>
+        <segue reference="k70-GR-7l8"/>
     </inferredMetricsTieBreakers>
 </document>
