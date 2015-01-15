@@ -116,14 +116,18 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
             })
         }
         
+        cell.commentTextView.layoutSubviews()
+        cell.commentTextView.sizeToFit()
+        cell.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
+        
         if let comment = data["body"].string? {
-            cell.commentLabel.text = comment
+            cell.commentTextView.text = comment
         }
         
         if let comment = data["comment"].string? {
-            cell.commentLabel.text = comment
+            cell.commentTextView.text = comment
             if comment == "" {
-                cell.commentLabel.hidden = true
+                cell.commentTextView.hidden = true
             }
         }
     }
