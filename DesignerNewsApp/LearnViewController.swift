@@ -19,21 +19,7 @@ class LearnViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        xcodeImageView.alpha = 0
-        bookImageView.alpha = 0
-        sketchImageView.alpha = 0
-        dialogView.alpha = 0
-        
         animator = UIDynamicAnimator(referenceView: view)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        
-        xcodeImageView.animate()
-        bookImageView.animate()
-        sketchImageView.animate()
-        dialogView.animate()
     }
     
     // MARK: UIDynamicAnimator

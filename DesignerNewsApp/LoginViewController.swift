@@ -31,8 +31,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         
         animator = UIDynamicAnimator(referenceView: view)
-        
-        dialogView.alpha = 0
     }
     
     override func viewDidAppear(animated: Bool) {

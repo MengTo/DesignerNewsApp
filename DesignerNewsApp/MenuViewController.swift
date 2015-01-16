@@ -34,8 +34,6 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
         else {
             loginLabel.text = "Logout"
         }
-        
-        dialogView.alpha = 0
     }
     
     var firstTime = true
