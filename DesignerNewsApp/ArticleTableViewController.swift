@@ -120,15 +120,16 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         cell.commentTextView.sizeToFit()
         cell.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
         
-        if let comment = data["body"].string? {
-            cell.commentTextView.text = comment
+        if let comment = data["body_html"].string? {
+            cell.commentTextView.attributedText = htmlToAttributedString(comment)
         }
         
-        if let comment = data["comment"].string? {
-            cell.commentTextView.text = comment
+        if let comment = data["comment_html"].string? {
+            cell.commentTextView.attributedText = htmlToAttributedString(comment)
             if comment == "" {
                 cell.commentTextView.hidden = true
             }
         }
+        cell.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
     }
 }
