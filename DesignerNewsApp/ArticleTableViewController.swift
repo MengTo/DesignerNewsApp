@@ -13,7 +13,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
     var data: AnyObject?
     var story: JSON!
     var comments: JSON!
-    var transitionManager = TransitionManager()
+    private let transitionManager = TransitionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()

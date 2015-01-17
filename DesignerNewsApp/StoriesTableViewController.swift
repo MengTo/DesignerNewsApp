@@ -10,7 +10,7 @@ import UIKit
 
 class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate {
     
-    var transitionManager = TransitionManager()
+    private let transitionManager = TransitionManager()
     var stories: JSON = nil
     var firstTime = true
     var token = getToken()
@@ -27,15 +27,6 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        if token.isEmpty {
-            loginButton.title = "Login"
-            loginButton.enabled = true
-        }
-        else {
-            loginButton.title = ""
-            loginButton.enabled = false
-        }
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -55,6 +46,15 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             hideLoading()
             self.refreshControl?.endRefreshing()
         })
+        
+        if token.isEmpty {
+            loginButton.title = "Login"
+            loginButton.enabled = true
+        }
+        else {
+            loginButton.title = ""
+            loginButton.enabled = false
+        }
     }
     
     // MARK: MenuViewControllerDelegate
@@ -73,9 +73,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     // MARK: Login
     func loginCompleted() {
         token = getToken()
-        loginButton.title = ""
-        loginButton.enabled = false
-        viewDidLoad()
+        loadStories(self)
     }
     
     @IBAction func loginButtonPressed(sender: AnyObject) {
@@ -85,14 +83,14 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         else {
             deleteToken(0)
             token = ""
-            viewDidLoad()
+            loadStories(self)
         }
     }
     
     func logoutButtonPressed() {
         deleteToken(0)
         token = ""
-        viewDidLoad()
+        loadStories(self)
     }
     
     // MARK: TableViewDelegate
@@ -171,6 +169,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     func configureCell(cell: StoriesTableViewCell, story: JSON) {
         
+        cell.titleLabel.layoutSubviews()
         cell.titleLabel.text = story["title"].string
         cell.authorLabel.text = story["user_display_name"].string
         cell.upvoteButton.setTitle(toString(story["vote_count"]), forState: UIControlState.Normal)
