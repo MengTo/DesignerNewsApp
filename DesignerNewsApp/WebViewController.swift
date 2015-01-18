@@ -13,13 +13,12 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var webView: UIWebView!
     var timer = NSTimer()
-    var data: AnyObject?
+    var story: JSON = nil
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var closeButton: SpringButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var story = JSON(data!)
         
         var url = NSURL(string: story["url"].string!)
         let request = NSURLRequest(URL: url!)

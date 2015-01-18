@@ -25,12 +25,22 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         comments = story["comments"]
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CommentSegue" {
             let toView = segue.destinationViewController as CommentViewController
             toView.data = sender
             
             toView.transitioningDelegate = self.transitionManager
+        }
+        else if segue.identifier == "WebSegue" {
+            let toView = segue.destinationViewController as WebViewController
+            toView.story = story
         }
     }
     
@@ -90,6 +100,13 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         cell.delegate = self
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0 {
+            performSegueWithIdentifier("WebSegue", sender: self)
+            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+        }
     }
     
     // MARK: Misc

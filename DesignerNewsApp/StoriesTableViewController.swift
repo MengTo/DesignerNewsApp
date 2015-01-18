@@ -151,7 +151,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         }
         else if segue.identifier == "WebSegue" {
             let webViewController = segue.destinationViewController as WebViewController
-            webViewController.data = sender
+            webViewController.story = JSON(sender!)
             
             webViewController.transitioningDelegate = self.transitionManager
             
