@@ -119,13 +119,14 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         cell.commentTextView.layoutSubviews()
         cell.commentTextView.sizeToFit()
         cell.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
+        let cssString = "<style>img { max-width: 320px; } </style>"
         
         if let comment = data["body_html"].string? {
-            cell.commentTextView.attributedText = htmlToAttributedString(comment)
+            cell.commentTextView.attributedText = htmlToAttributedString(cssString + comment)
         }
         
         if let comment = data["comment_html"].string? {
-            cell.commentTextView.attributedText = htmlToAttributedString(comment)
+            cell.commentTextView.attributedText = htmlToAttributedString(cssString + comment)
             if comment == "" {
                 cell.commentTextView.hidden = true
             }
