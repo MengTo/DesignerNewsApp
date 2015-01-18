@@ -17,6 +17,14 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var closeButton: SpringButton!
     
+    @IBAction func shareButtonPressed(sender: AnyObject) {
+        var shareString = story["title"].string!
+        var shareURL = NSURL(string: "http://google.com")!
+        let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: nil)
+        activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
+        presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,13 +33,6 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         webView.loadRequest(request)
         
         webView.delegate = self
-        
-        closeButton.alpha = 0
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        closeButton.animate()
     }
 
     func webViewDidFinishLoad(webView: UIWebView) {

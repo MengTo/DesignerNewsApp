@@ -23,6 +23,14 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         
         story = JSON(data!)
         comments = story["comments"]
+        commentsFromArray(data?.valueForKey("comments") as NSArray)
+    }
+    
+    func commentsFromArray(comments: NSArray) {
+        var newComments = NSMutableArray()
+        comments.enumerateObjectsUsingBlock { (comment, idx, stop) -> Void in
+            
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -42,6 +50,14 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
             let toView = segue.destinationViewController as WebViewController
             toView.story = story
         }
+    }
+    
+    @IBAction func shareBarButtonPressed(sender: AnyObject) {
+        var shareString = story["title"].string!
+        var shareURL = NSURL(string: story["url"].string!)!
+        let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: nil)
+        activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
+        presentViewController(activityViewController, animated: true, completion: nil)
     }
     
     // MARK: StoriesTableViewCellDelegate
