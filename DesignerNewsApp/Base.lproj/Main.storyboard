@@ -293,6 +293,9 @@
                                                 <color key="titleColor" red="0.58823529411764708" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <state key="highlighted" image="icon-upvote-active">
+                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </state>
                                             <connections>
                                                 <action selector="upvoteButtonPressed:" destination="4Ds-Ol-7a4" eventType="touchUpInside" id="3U4-cH-crw"/>
                                             </connections>
@@ -309,6 +312,9 @@
                                             <state key="normal" title="313" image="icon-comment">
                                                 <color key="titleColor" red="0.58823529411764708" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" image="icon-upvote-active">
+                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
                                                 <action selector="commentButtonPressed:" destination="4Ds-Ol-7a4" eventType="touchUpInside" id="FzA-Lu-OH2"/>
@@ -1218,11 +1224,12 @@
         <image name="icon-sketch" width="64" height="61"/>
         <image name="icon-twitter" width="18" height="14"/>
         <image name="icon-upvote" width="18" height="16"/>
+        <image name="icon-upvote-active" width="17" height="15"/>
         <image name="icon-xcode" width="64" height="59"/>
         <image name="input-outline" width="250" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WYa-K1-lob"/>
-        <segue reference="k70-GR-7l8"/>
+        <segue reference="Jya-5Y-T44"/>
+        <segue reference="4dT-jd-Noy"/>
     </inferredMetricsTieBreakers>
 </document>

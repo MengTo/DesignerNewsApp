@@ -132,7 +132,12 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
             cell.titleLabel.text = title
         }
         
-        cell.authorLabel.text = data["user_display_name"].string
+        if let name = data["user_display_name"].string? {
+            if let job = data["user_job"].string? {
+                cell.authorLabel.text = name + ", " + job
+            }
+        }
+        
         cell.upvoteButton.setTitle(toString(data["vote_count"]), forState: UIControlState.Normal)
         
         let timeAgo = dateFromString(data["created_at"].string!, "yyyy-MM-dd'T'HH:mm:ssZ")

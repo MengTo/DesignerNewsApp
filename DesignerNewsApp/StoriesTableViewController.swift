@@ -171,7 +171,13 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         
         cell.titleLabel.layoutSubviews()
         cell.titleLabel.text = story["title"].string
-        cell.authorLabel.text = story["user_display_name"].string
+        
+        if let name = story["user_display_name"].string? {
+            if let job = story["user_job"].string? {
+                cell.authorLabel.text = name + ", " + job
+            }
+        }
+        
         cell.upvoteButton.setTitle(toString(story["vote_count"]), forState: UIControlState.Normal)
         cell.commentButton.setTitle(toString(story["comment_count"]), forState: UIControlState.Normal)
         
