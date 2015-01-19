@@ -426,8 +426,10 @@
                                     <constraint firstAttribute="height" constant="2" id="D6i-ET-q52"/>
                                     <constraint firstAttribute="width" constant="600" id="kCZ-Ex-FHs"/>
                                 </constraints>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="20" width="400" height="4"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="kCZ-Ex-FHs"/>
+                                    </mask>
                                 </variation>
                                 <variation key="widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="0.0" y="20" width="800" height="4"/>
@@ -491,6 +493,7 @@
                             <constraint firstItem="weA-Ht-NmR" firstAttribute="top" secondItem="xPf-Is-W8A" secondAttribute="bottom" constant="-3" id="9H2-WZ-k9Q"/>
                             <constraint firstItem="xPf-Is-W8A" firstAttribute="leading" secondItem="6Fw-jD-FeC" secondAttribute="leading" id="G11-Mi-65h"/>
                             <constraint firstAttribute="trailing" secondItem="weA-Ht-NmR" secondAttribute="trailing" id="Itn-nS-4mY"/>
+                            <constraint firstItem="xPf-Is-W8A" firstAttribute="leading" secondItem="6Fw-jD-FeC" secondAttribute="leading" id="PBI-mB-Elm"/>
                             <constraint firstItem="weA-Ht-NmR" firstAttribute="top" secondItem="3Ar-Xp-zRy" secondAttribute="bottom" id="QXn-5G-m3o"/>
                             <constraint firstItem="40T-Ab-wCU" firstAttribute="top" secondItem="hHb-EQ-22x" secondAttribute="bottom" constant="20" id="SJp-J5-bQN"/>
                             <constraint firstItem="weA-Ht-NmR" firstAttribute="leading" secondItem="6Fw-jD-FeC" secondAttribute="leading" id="VNe-dI-9yi"/>
@@ -499,6 +502,7 @@
                             <constraint firstItem="40T-Ab-wCU" firstAttribute="top" secondItem="xPf-Is-W8A" secondAttribute="bottom" id="l7z-ew-BPK"/>
                             <constraint firstItem="hHb-EQ-22x" firstAttribute="leading" secondItem="6Fw-jD-FeC" secondAttribute="leadingMargin" constant="4" id="mb8-7U-XeF"/>
                             <constraint firstItem="xPf-Is-W8A" firstAttribute="top" secondItem="3Ar-Xp-zRy" secondAttribute="bottom" id="phD-3O-0xA"/>
+                            <constraint firstAttribute="trailing" secondItem="xPf-Is-W8A" secondAttribute="trailing" id="q6u-vc-Puz"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -776,8 +780,15 @@
                                                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9r-BU-xop">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="0.0" y="210" width="280" height="0.5"/>
+                                                    </variation>
+                                                </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.18039215689999999" green="0.1960784314" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.29803921568627451" green="0.72156862745098038" blue="0.7686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                                             <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="280" id="CTI-Va-MKJ"/>
@@ -790,6 +801,16 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="c9r-BU-xop"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="c9r-BU-xop"/>
+                                                </mask>
+                                            </variation>
                                             <connections>
                                                 <outletCollection property="gestureRecognizers" destination="Wpn-f9-R5G" appends="YES" id="Fgc-DB-ZDs"/>
                                             </connections>

@@ -27,6 +27,8 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 20)!], forState: UIControlState.Normal)
     }
 
     override func viewDidAppear(animated: Bool) {
