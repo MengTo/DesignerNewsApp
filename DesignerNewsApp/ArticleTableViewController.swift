@@ -23,14 +23,6 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         
         story = JSON(data!)
         comments = story["comments"]
-        commentsFromArray(data?.valueForKey("comments") as NSArray)
-    }
-    
-    func commentsFromArray(comments: NSArray) {
-        var newComments = NSMutableArray()
-        comments.enumerateObjectsUsingBlock { (comment, idx, stop) -> Void in
-            
-        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -49,6 +41,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         else if segue.identifier == "WebSegue" {
             let toView = segue.destinationViewController as WebViewController
             toView.story = story
+            toView.transitioningDelegate = self.transitionManager
         }
     }
     
