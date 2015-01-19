@@ -76,7 +76,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-    func textFieldDidBeginEditing(textField: UITextField!) {
+    func textFieldDidBeginEditing(textField: UITextField) {
         if textField == emailTextField {
             emailImageView.image = UIImage(named: "icon-mail-active")
             emailImageView.animate()
