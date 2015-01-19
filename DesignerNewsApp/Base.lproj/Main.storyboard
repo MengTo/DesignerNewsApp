@@ -95,8 +95,11 @@
                                                                 </mask>
                                                             </variation>
                                                         </textField>
-                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" image="icon-password" translatesAutoresizingMaskIntoConstraints="NO" id="Uwp-OQ-Ul4">
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" image="icon-password" translatesAutoresizingMaskIntoConstraints="NO" id="Uwp-OQ-Ul4" customClass="SpringImageView" customModule="DesignerNewsApp" customModuleProvider="target">
                                                             <rect key="frame" x="30" y="171" width="25" height="25"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjX-8S-TVH" customClass="DesignableButton" customModule="DesignerNewsApp" customModuleProvider="target">
                                                             <rect key="frame" x="15" y="221" width="250" height="44"/>
@@ -125,8 +128,11 @@
                                                                 <action selector="signupButtonPressed:" destination="maI-eQ-OKD" eventType="touchUpInside" id="5v1-9G-ral"/>
                                                             </connections>
                                                         </button>
-                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" image="icon-mail" translatesAutoresizingMaskIntoConstraints="NO" id="x3V-hL-JEo">
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" image="icon-mail" translatesAutoresizingMaskIntoConstraints="NO" id="x3V-hL-JEo" customClass="SpringImageView" customModule="DesignerNewsApp" customModuleProvider="target">
                                                             <rect key="frame" x="30" y="121" width="26" height="18"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -220,7 +226,9 @@
                     </view>
                     <connections>
                         <outlet property="dialogView" destination="4bh-8f-iPL" id="0y9-Qe-rb4"/>
+                        <outlet property="emailImageView" destination="x3V-hL-JEo" id="ULE-VT-RHd"/>
                         <outlet property="emailTextField" destination="MFi-g8-w52" id="fWe-eG-h1E"/>
+                        <outlet property="passwordImageView" destination="Uwp-OQ-Ul4" id="9lM-1v-luC"/>
                         <outlet property="passwordTextField" destination="c88-aQ-M8L" id="DPO-wT-NmH"/>
                         <outlet property="signupButton" destination="JjX-8S-TVH" id="hQ2-5x-uTT"/>
                     </connections>
