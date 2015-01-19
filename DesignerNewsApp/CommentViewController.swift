@@ -12,10 +12,15 @@ class CommentViewController: UIViewController {
     
     @IBOutlet weak var commentTextView: UITextView!
     var data: AnyObject?
+    @IBOutlet weak var navTitle: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         commentTextView.becomeFirstResponder()
+        
+        var comment = JSON(data!)
+        
+        navTitle.title = "Comment"
     }
 }

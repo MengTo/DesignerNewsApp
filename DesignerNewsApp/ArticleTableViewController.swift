@@ -12,7 +12,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
 
     var data: AnyObject?
     var story: JSON!
-    var comments: JSON!
+    var comments: [JSON] = []
     private let transitionManager = TransitionManager()
     
     override func viewDidLoad() {
@@ -22,7 +22,10 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         tableView.rowHeight = UITableViewAutomaticDimension
         
         story = JSON(data!)
-        comments = story["comments"]
+        
+        let nestedComments = story["comments"].array ?? []
+        let flattenedComments = nestedComments.map(commentsForComment).reduce([], +)
+        comments = flattenedComments
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -51,6 +54,13 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: nil)
         activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
         presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
+    func commentsForComment(comment: JSON) -> [JSON] {
+        let comments = comment["comments"].array ?? []
+        return comments.reduce([comment]) { acc, x in
+            acc + self.commentsForComment(x)
+        }
     }
     
     // MARK: StoriesTableViewCellDelegate
@@ -145,6 +155,19 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
             ImageLoader.sharedLoader.imageForUrl(urlString, completionHandler:{(image: UIImage?, url: String) in
                 cell.avatarImageView.image = image
             })
+        }
+        
+        if let depth = data["depth"].int? {
+            if depth > 0 {
+                cell.indentView.hidden = false
+                cell.avatarLeftConstant.constant = CGFloat(depth) * 20 + 15
+                cell.separatorInset = UIEdgeInsets(top: 0, left: CGFloat(depth) * 20 + 15, bottom: 0, right: 0)
+            }
+            else {
+                cell.avatarLeftConstant.constant = 0
+                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                cell.indentView.hidden = true
+            }
         }
         
         cell.commentTextView.layoutSubviews()
