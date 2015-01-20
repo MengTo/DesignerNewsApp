@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A6D719D1A6E6E74003968BA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D719C1A6E6E74003968BA /* Token.swift */; };
 		961889B21A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AB1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m */; };
 		961889B31A67F15900295A64 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AD1A67F15900295A64 /* TPKeyboardAvoidingScrollView.m */; };
 		961889B41A67F15900295A64 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AF1A67F15900295A64 /* TPKeyboardAvoidingTableView.m */; };
@@ -113,6 +114,7 @@
 
 /* Begin PBXFileReference section */
 		1A4FDA211A6E43FE0099D309 /* SpringApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SpringApp.xcodeproj; path = Spring/SpringApp.xcodeproj; sourceTree = "<group>"; };
+		1A6D719C1A6E6E74003968BA /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		961889AA1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		961889AB1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		961889AC1A67F15900295A64 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				966128541A4DA63100A54A23 /* AppDelegate.swift */,
 				96A580031A5E290000FDE099 /* Model.swift */,
 				964892641A63C6E600214D53 /* CoreData.swift */,
+				1A6D719C1A6E6E74003968BA /* Token.swift */,
 				967CFD051A5C10700044B4E3 /* LoginViewController.swift */,
 				96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */,
 				96AF96161A5EABC9003926E2 /* StoriesTableViewCell.swift */,
@@ -445,6 +448,7 @@
 				964892151A62A84600214D53 /* CommentViewController.swift in Sources */,
 				961889B51A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */,
+				1A6D719D1A6E6E74003968BA /* Token.swift in Sources */,
 				9694F20B1A6123D000A6376A /* WebViewController.swift in Sources */,
 				9694F1C61A5ED3F800A6376A /* SwiftyJSON.swift in Sources */,
 				96A580041A5E290000FDE099 /* Model.swift in Sources */,

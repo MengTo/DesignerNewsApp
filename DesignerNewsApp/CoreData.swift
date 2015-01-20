@@ -9,24 +9,6 @@
 import UIKit
 import CoreData
 
-func saveToken(value: String) {
-    saveValue(value, "User", "token")
-}
-
-func deleteToken(row: Int) {
-    deleteValue(row, "User")
-}
-
-func getToken() -> String {
-    var results: AnyObject = getValue("User")
-    
-    var token = ""
-    if results.count > 0 {
-        token = results[0].valueForKey("token") as String!
-    }
-    return token
-}
-
 func saveUpvote(value: String) {
     saveValue(value, "Story", "id")
 }

@@ -105,7 +105,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
 
     func logout() {
-        deleteToken(0)
+        deleteToken()
         token = ""
         loadStories(self)
     }
