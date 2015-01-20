@@ -75,9 +75,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
 
     func menuViewControllerDidSelectLogout(controller: MenuViewController) {
-        deleteToken(0)
-        token = ""
-        loadStories(self)
+        logout()
     }
 
     func menuViewControllerDidLogin(controller: MenuViewController) {
@@ -95,15 +93,19 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             performSegueWithIdentifier("LoginSegue", sender: self)
         }
         else {
-            deleteToken(0)
-            token = ""
-            loadStories(self)
+            logout()
         }
     }
 
     // MARK: Misc
     func loginCompleted() {
         token = getToken()
+        loadStories(self)
+    }
+
+    func logout() {
+        deleteToken(0)
+        token = ""
         loadStories(self)
     }
 
