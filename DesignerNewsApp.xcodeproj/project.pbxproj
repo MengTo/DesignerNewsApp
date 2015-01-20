@@ -46,13 +46,6 @@
 			remoteGlobalIDString = 964117501A5BE90A000E3A5A;
 			remoteInfo = SpringAppTests;
 		};
-		1A4FDA6C1A6E44B60099D309 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A4FDA211A6E43FE0099D309 /* SpringApp.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1A4FDA321A6E44780099D309;
-			remoteInfo = Spring;
-		};
 		1A4FDA701A6E44B70099D309 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A4FDA211A6E43FE0099D309 /* SpringApp.xcodeproj */;
@@ -66,6 +59,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 1A4FDA3D1A6E44780099D309;
 			remoteInfo = SpringTests;
+		};
+		1A6D71921A6E5F43003968BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A4FDA211A6E43FE0099D309 /* SpringApp.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A4FDA321A6E44780099D309;
+			remoteInfo = Spring;
 		};
 		964892121A62818A00214D53 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -292,7 +292,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1A4FDA6D1A6E44B60099D309 /* PBXTargetDependency */,
+				1A6D71931A6E5F43003968BA /* PBXTargetDependency */,
 				964892131A62818A00214D53 /* PBXTargetDependency */,
 			);
 			name = DesignerNewsApp;
@@ -467,10 +467,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1A4FDA6D1A6E44B60099D309 /* PBXTargetDependency */ = {
+		1A6D71931A6E5F43003968BA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Spring;
-			targetProxy = 1A4FDA6C1A6E44B60099D309 /* PBXContainerItemProxy */;
+			targetProxy = 1A6D71921A6E5F43003968BA /* PBXContainerItemProxy */;
 		};
 		964892131A62818A00214D53 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
