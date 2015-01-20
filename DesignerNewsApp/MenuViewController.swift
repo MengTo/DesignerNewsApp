@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MenuViewControllerDelegate: class {
+protocol MenuViewControllerDelegate : NSObjectProtocol {
     func menuViewControllerDidSelectTopStories(controller:MenuViewController)
     func menuViewControllerDidSelectRecent(controller:MenuViewController)
     func menuViewControllerDidSelectLogout(controller:MenuViewController)

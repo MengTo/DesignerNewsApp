@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-protocol LoginViewControllerDelegate : class {
+protocol LoginViewControllerDelegate : NSObjectProtocol {
     func loginViewControllerDidLogin(controller:LoginViewController)
 }
 
