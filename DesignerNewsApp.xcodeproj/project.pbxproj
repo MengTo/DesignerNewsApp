@@ -17,8 +17,8 @@
 		961889981A67AA8D00295A64 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889801A67AA8D00295A64 /* DesignableView.swift */; };
 		961889991A67AA8D00295A64 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889811A67AA8D00295A64 /* ImageLoader.swift */; };
 		9618899A1A67AA8D00295A64 /* KeyboardAvoidingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889821A67AA8D00295A64 /* KeyboardAvoidingScrollView.swift */; };
-		9618899B1A67AA8D00295A64 /* loadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889831A67AA8D00295A64 /* loadingView.swift */; };
-		9618899C1A67AA8D00295A64 /* loadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961889841A67AA8D00295A64 /* loadingView.xib */; };
+		9618899B1A67AA8D00295A64 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889831A67AA8D00295A64 /* LoadingView.swift */; };
+		9618899C1A67AA8D00295A64 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961889841A67AA8D00295A64 /* LoadingView.xib */; };
 		9618899D1A67AA8D00295A64 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889851A67AA8D00295A64 /* Misc.swift */; };
 		9618899E1A67AA8D00295A64 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889861A67AA8D00295A64 /* Spring.swift */; };
 		9618899F1A67AA8D00295A64 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889871A67AA8D00295A64 /* SpringAnimation.swift */; };
@@ -111,8 +111,8 @@
 		961889801A67AA8D00295A64 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		961889811A67AA8D00295A64 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		961889821A67AA8D00295A64 /* KeyboardAvoidingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidingScrollView.swift; sourceTree = "<group>"; };
-		961889831A67AA8D00295A64 /* loadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadingView.swift; sourceTree = "<group>"; };
-		961889841A67AA8D00295A64 /* loadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loadingView.xib; sourceTree = "<group>"; };
+		961889831A67AA8D00295A64 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		961889841A67AA8D00295A64 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		961889851A67AA8D00295A64 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		961889861A67AA8D00295A64 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
 		961889871A67AA8D00295A64 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
@@ -188,8 +188,8 @@
 				961889801A67AA8D00295A64 /* DesignableView.swift */,
 				961889811A67AA8D00295A64 /* ImageLoader.swift */,
 				961889821A67AA8D00295A64 /* KeyboardAvoidingScrollView.swift */,
-				961889831A67AA8D00295A64 /* loadingView.swift */,
-				961889841A67AA8D00295A64 /* loadingView.xib */,
+				961889831A67AA8D00295A64 /* LoadingView.swift */,
+				961889841A67AA8D00295A64 /* LoadingView.xib */,
 				961889851A67AA8D00295A64 /* Misc.swift */,
 				961889861A67AA8D00295A64 /* Spring.swift */,
 				961889871A67AA8D00295A64 /* SpringAnimation.swift */,
@@ -417,7 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9661285A1A4DA63100A54A23 /* Main.storyboard in Resources */,
-				9618899C1A67AA8D00295A64 /* loadingView.xib in Resources */,
+				9618899C1A67AA8D00295A64 /* LoadingView.xib in Resources */,
 				9661285F1A4DA63100A54A23 /* LaunchScreen.xib in Resources */,
 				9661285C1A4DA63100A54A23 /* Images.xcassets in Resources */,
 			);
@@ -457,7 +457,7 @@
 				961889B51A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */,
 				9618899D1A67AA8D00295A64 /* Misc.swift in Sources */,
-				9618899B1A67AA8D00295A64 /* loadingView.swift in Sources */,
+				9618899B1A67AA8D00295A64 /* LoadingView.swift in Sources */,
 				961889981A67AA8D00295A64 /* DesignableView.swift in Sources */,
 				9694F20B1A6123D000A6376A /* WebViewController.swift in Sources */,
 				9694F1C61A5ED3F800A6376A /* SwiftyJSON.swift in Sources */,
