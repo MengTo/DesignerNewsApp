@@ -31,6 +31,7 @@
 		96AEB7431A5E5C3F005989F4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96A5800B1A5E4DF500FDE099 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */; };
 		96AF96171A5EABC9003926E2 /* StoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF96161A5EABC9003926E2 /* StoriesTableViewCell.swift */; };
+		B78F90381A6EF75800883A5B /* DesignerNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F90371A6EF75800883A5B /* DesignerNewsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTableViewController.swift; sourceTree = "<group>"; };
 		96AF96161A5EABC9003926E2 /* StoriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTableViewCell.swift; sourceTree = "<group>"; };
+		B78F90371A6EF75800883A5B /* DesignerNewsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerNewsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 		966128511A4DA63100A54A23 /* DesignerNewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				B78F90371A6EF75800883A5B /* DesignerNewsService.swift */,
 				966128541A4DA63100A54A23 /* AppDelegate.swift */,
 				96A580031A5E290000FDE099 /* Model.swift */,
 				964892641A63C6E600214D53 /* CoreData.swift */,
@@ -451,6 +454,7 @@
 				961889B51A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */,
 				1A6D719D1A6E6E74003968BA /* Token.swift in Sources */,
+				B78F90381A6EF75800883A5B /* DesignerNewsService.swift in Sources */,
 				9694F20B1A6123D000A6376A /* WebViewController.swift in Sources */,
 				9694F1C61A5ED3F800A6376A /* SwiftyJSON.swift in Sources */,
 				96A580041A5E290000FDE099 /* Model.swift in Sources */,
