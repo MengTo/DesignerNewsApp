@@ -1,13 +1,13 @@
 //
-//  Story.swift
+//  Comment.swift
 //  DesignerNewsApp
 //
 //  Created by André Schneider on 20.01.15.
 //  Copyright (c) 2015 Meng To. All rights reserved.
 //
 
-struct Story {
+struct Comment {
     let id: String
-    let title: String
-    let comments: [Comment]
+    let body: String
+    let depth: Int
 }

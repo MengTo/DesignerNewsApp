@@ -34,6 +34,7 @@
 		B78F90381A6EF75800883A5B /* DesignerNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F90371A6EF75800883A5B /* DesignerNewsService.swift */; };
 		B78F903E1A6EFAAA00883A5B /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F903D1A6EFAAA00883A5B /* JSONParser.swift */; };
 		B78F90411A6EFBAF00883A5B /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F90401A6EFBAF00883A5B /* Story.swift */; };
+		B78F90431A6EFF2100883A5B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F90421A6EFF2100883A5B /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		B78F90371A6EF75800883A5B /* DesignerNewsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerNewsService.swift; sourceTree = "<group>"; };
 		B78F903D1A6EFAAA00883A5B /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		B78F90401A6EFBAF00883A5B /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		B78F90421A6EFF2100883A5B /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				B78F90401A6EFBAF00883A5B /* Story.swift */,
+				B78F90421A6EFF2100883A5B /* Comment.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				B78F903E1A6EFAAA00883A5B /* JSONParser.swift in Sources */,
 				964892151A62A84600214D53 /* CommentViewController.swift in Sources */,
 				961889B51A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				B78F90431A6EFF2100883A5B /* Comment.swift in Sources */,
 				96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */,
 				1A6D719D1A6E6E74003968BA /* Token.swift in Sources */,
 				B78F90381A6EF75800883A5B /* DesignerNewsService.swift in Sources */,
