@@ -83,12 +83,16 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     }
     
     // MARK: LoginViewControllerDelegate
+    func loginViewControllerDidLogin(controller: LoginViewController) {
+        loginCompleted()
+    }
+
+    // MARK: Misc
     func loginCompleted() {
         dismissViewControllerAnimated(true, completion: nil)
         delegate?.menuViewControllerDidLogin(self)
     }
-    
-    // MARK: Misc
+
     func animateView() {
         dialogView.animation = "pop"
         dialogView.animate()

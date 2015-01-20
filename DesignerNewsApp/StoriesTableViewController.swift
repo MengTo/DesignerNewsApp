@@ -84,6 +84,11 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         loginCompleted()
     }
 
+    // MARK: LoginViewControllerDelegate
+    func loginViewControllerDidLogin(controller: LoginViewController) {
+        loginCompleted()
+    }
+
     // MARK: Login
     @IBAction func loginButtonPressed(sender: AnyObject) {
         if token.isEmpty {
@@ -96,6 +101,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         }
     }
 
+    // MARK: Misc
     func loginCompleted() {
         token = getToken()
         loadStories(self)
