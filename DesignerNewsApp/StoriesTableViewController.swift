@@ -36,7 +36,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         if firstTime {
-            showLoading(view)
+            view.showLoading()
             firstTime = false
         }
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
@@ -47,7 +47,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             self.stories = json["stories"]
             self.upvotes = getUpvotes()
             self.tableView.reloadData()
-            hideLoading()
+            self.view.hideLoading()
             self.refreshControl?.endRefreshing()
         })
         
@@ -63,13 +63,13 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     // MARK: MenuViewControllerDelegate
     func topButtonPressed() {
-        showLoading(view)
+        view.showLoading()
         storySection = ""
         loadStories(self)
     }
     
     func recentButtonPressed() {
-        showLoading(view)
+        view.showLoading()
         storySection = "recent"
         loadStories(self)
     }

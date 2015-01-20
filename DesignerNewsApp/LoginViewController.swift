@@ -43,10 +43,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Button
     @IBAction func signupButtonPressed(sender: AnyObject) {
-        showLoading(view)
+        view.showLoading()
         
         postLogin(emailTextField.text, passwordTextField.text) { (json) -> () in
-            hideLoading()
+            self.view.hideLoading()
             
             if let token = json?["access_token"] as? String {
                 saveToken(token)
