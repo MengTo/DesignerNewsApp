@@ -9,10 +9,10 @@
 import UIKit
 
 protocol MenuViewControllerDelegate: class {
-    func topButtonPressed()
-    func recentButtonPressed()
-    func logoutButtonPressed()
-    func loginCompleted()
+    func menuViewControllerDidSelectTopStories(controller:MenuViewController)
+    func menuViewControllerDidSelectRecent(controller:MenuViewController)
+    func menuViewControllerDidSelectLogout(controller:MenuViewController)
+    func menuViewControllerDidLogin(controller:MenuViewController)
 }
 
 class MenuViewController: UIViewController, LoginViewControllerDelegate {
@@ -49,13 +49,13 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     // MARK: Buttons
     @IBAction func topButtonPressed(sender: AnyObject) {
         animateView()
-        delegate?.topButtonPressed()
+        delegate?.menuViewControllerDidSelectTopStories(self)
         closeButtonPressed(self)
     }
     
     @IBAction func recentButtonPressed(sender: AnyObject) {
         animateView()
-        delegate?.recentButtonPressed()
+        delegate?.menuViewControllerDidSelectRecent(self)
         closeButtonPressed(self)
     }
     
@@ -70,7 +70,7 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
             performSegueWithIdentifier("LoginSegue", sender: self)
         }
         else {
-            delegate?.logoutButtonPressed()
+            delegate?.menuViewControllerDidLogin(self)
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
@@ -85,7 +85,7 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     // MARK: LoginViewControllerDelegate
     func loginCompleted() {
         dismissViewControllerAnimated(true, completion: nil)
-        delegate?.loginCompleted()
+        delegate?.menuViewControllerDidLogin(self)
     }
     
     // MARK: Misc

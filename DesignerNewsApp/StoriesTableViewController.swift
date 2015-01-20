@@ -62,24 +62,29 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     // MARK: MenuViewControllerDelegate
-    func topButtonPressed() {
+    func menuViewControllerDidSelectTopStories(controller: MenuViewController) {
         view.showLoading()
         storySection = ""
         loadStories(self)
     }
     
-    func recentButtonPressed() {
+    func menuViewControllerDidSelectRecent(controller: MenuViewController) {
         view.showLoading()
         storySection = "recent"
         loadStories(self)
     }
-    
-    // MARK: Login
-    func loginCompleted() {
-        token = getToken()
+
+    func menuViewControllerDidSelectLogout(controller: MenuViewController) {
+        deleteToken(0)
+        token = ""
         loadStories(self)
     }
-    
+
+    func menuViewControllerDidLogin(controller: MenuViewController) {
+        loginCompleted()
+    }
+
+    // MARK: Login
     @IBAction func loginButtonPressed(sender: AnyObject) {
         if token.isEmpty {
             performSegueWithIdentifier("LoginSegue", sender: self)
@@ -90,13 +95,12 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             loadStories(self)
         }
     }
-    
-    func logoutButtonPressed() {
-        deleteToken(0)
-        token = ""
+
+    func loginCompleted() {
+        token = getToken()
         loadStories(self)
     }
-    
+
     // MARK: TableViewDelegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -172,7 +176,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     func configureCell(cell: StoriesTableViewCell, story: JSON) {
-        
+
         cell.titleLabel.layoutSubviews()
         cell.titleLabel.text = story["title"].string
         
