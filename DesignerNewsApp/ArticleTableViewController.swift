@@ -64,7 +64,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     // MARK: StoriesTableViewCellDelegate
-    func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+    func storiesTableViewCell(cell: StoriesTableViewCell, upvoteButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         var id = toString(story["id"].int!)
         
@@ -80,11 +80,12 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
             cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
         }
     }
-    
-    func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+
+    func storiesTableViewCell(cell: StoriesTableViewCell, commentButtonPressed sender: AnyObject) {
+        // TODO
     }
-    
-    func replyButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+
+    func storiesTableViewCell(cell: StoriesTableViewCell, replyButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         var comment = comments[indexPath.row].dictionaryObject
         

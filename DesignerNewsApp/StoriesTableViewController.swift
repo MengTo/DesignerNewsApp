@@ -133,7 +133,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     // MARK: StoriesTableViewCellDelegate
-    func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+    func storiesTableViewCell(cell: StoriesTableViewCell, upvoteButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         var id = toString(stories[indexPath.row]["id"].int!)
         
@@ -149,14 +149,15 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
         }
     }
-    
-    func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+
+    func storiesTableViewCell(cell: StoriesTableViewCell, commentButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         var story = stories[indexPath.row].dictionaryObject
         performSegueWithIdentifier("ArticleSegue", sender: story)
     }
-    
-    func replyButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+
+    func storiesTableViewCell(cell: StoriesTableViewCell, replyButtonPressed sender: AnyObject) {
+        // TODO
     }
     
     // MARK: Misc
