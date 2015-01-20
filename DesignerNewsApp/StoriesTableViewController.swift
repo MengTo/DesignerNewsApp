@@ -12,7 +12,7 @@ import Spring
 class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate {
     
     private let transitionManager = TransitionManager()
-    var stories: JSON = nil
+    var stories = [Story]()
     var firstTime = true
     var token = getToken()
     var upvotes = getUpvotes()
@@ -44,13 +44,14 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     func loadStories(sender: AnyObject) {
-        getStories(storySection, "1", { (json) -> () in
-            self.stories = json["stories"]
+
+        DesignerNewsService.getStories(storySection, page: 1) { stories in
+            self.stories = stories
             self.upvotes = getUpvotes()
             self.tableView.reloadData()
             self.view.hideLoading()
             self.refreshControl?.endRefreshing()
-        })
+        }
         
         if token.isEmpty {
             loginButton.title = "Login"
@@ -129,14 +130,14 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var story = stories[indexPath.row].dictionaryObject
-        self.performSegueWithIdentifier("WebSegue", sender: story)
+        let story = stories[indexPath.row]
+        self.performSegueWithIdentifier("WebSegue", sender: nil)
     }
     
     // MARK: StoriesTableViewCellDelegate
     func storiesTableViewCell(cell: StoriesTableViewCell, upvoteButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
-        var id = toString(stories[indexPath.row]["id"].int!)
+        let id = toString(stories[indexPath.row].id)
         
         if token.isEmpty {
             performSegueWithIdentifier("LoginSegue", sender: self)
@@ -144,7 +145,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         else {
             postUpvote(id)
             saveUpvote(id)
-            let upvoteInt = stories[indexPath.row]["vote_count"].int! + 1
+            let upvoteInt = stories[indexPath.row].voteCount + 1
             let upvoteString = toString(upvoteInt)
             cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
             cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
@@ -153,8 +154,8 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
 
     func storiesTableViewCell(cell: StoriesTableViewCell, commentButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
-        var story = stories[indexPath.row].dictionaryObject
-        performSegueWithIdentifier("ArticleSegue", sender: story)
+        let story = stories[indexPath.row]
+        performSegueWithIdentifier("ArticleSegue", sender: nil)
     }
 
     func storiesTableViewCell(cell: StoriesTableViewCell, replyButtonPressed sender: AnyObject) {
@@ -185,46 +186,23 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         }
     }
     
-    func configureCell(cell: StoriesTableViewCell, story: JSON) {
-
+    func configureCell(cell: StoriesTableViewCell, story: Story) {
         cell.titleLabel.layoutSubviews()
-        cell.titleLabel.text = story["title"].string
-        
-        if let name = story["user_display_name"].string? {
-            if let job = story["user_job"].string? {
-                cell.authorLabel.text = name + ", " + job
-            }
-        }
-        
-        cell.upvoteButton.setTitle(toString(story["vote_count"]), forState: UIControlState.Normal)
-        cell.commentButton.setTitle(toString(story["comment_count"]), forState: UIControlState.Normal)
-        
-        var timeAgo = dateFromString(story["created_at"].string!, "yyyy-MM-dd'T'HH:mm:ssZ")
-        cell.timeLabel.text = timeAgoSinceDate(timeAgo, true)
-        
-        if let badge = story["badge"].string? {
-            cell.storyImageView.image = UIImage(named: "badge-\(badge)")
-        }
-        else {
-            cell.storyImageView.image = nil
-        }
-        
-        if let id = story["id"].int? {
-            if upvotes.containsObject(toString(id)) {
-                let image = UIImage(named: "icon-upvote-active")
-                cell.upvoteButton.setImage(image, forState: UIControlState.Normal)
-            }
-            else {
-                let image = UIImage(named: "icon-upvote")
-                cell.upvoteButton.setImage(image, forState: UIControlState.Normal)
-            }
-        }
-        
+        cell.titleLabel.text = story.title
+        cell.authorLabel.text = story.userDisplayName + ", " + story.userJob
+        cell.upvoteButton.setTitle(toString(story.voteCount), forState: UIControlState.Normal)
+        cell.commentButton.setTitle(toString(story.commentCount), forState: UIControlState.Normal)
+        cell.storyImageView.image = story.badge.isEmpty ? nil : UIImage(named: "badge-\(story.badge)")
+
+        let date = dateFromString(story.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
+        cell.timeLabel.text = timeAgoSinceDate(date, true)
+
+        let imageName = upvotes.containsObject(toString(story.id)) ? "icon-upvote-active" : "icon-upvote"
+        cell.upvoteButton.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
+
         cell.avatarImageView.image = UIImage(named: "content-avatar-default")
-        if let urlString = story["user_portrait_url"].string? {
-            ImageLoader.sharedLoader.imageForUrl(urlString, completionHandler:{(image: UIImage?, url: String) in
-                cell.avatarImageView.image = image
-            })
-        }
+        ImageLoader.sharedLoader.imageForUrl(story.userPortraitUrl, completionHandler:{(image: UIImage?, url: String) in
+            cell.avatarImageView.image = image
+        })
     }
 }

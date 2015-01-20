@@ -7,7 +7,14 @@
 //
 
 struct Story {
-    let id: String
+    let id: Int
     let title: String
+    let userDisplayName: String
+    let userJob: String
+    let voteCount: Int
+    let commentCount: Int
+    let createdAt: String
+    let badge: String
+    let userPortraitUrl: String
     let comments: [Comment]
 }
