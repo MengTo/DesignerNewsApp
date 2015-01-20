@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 protocol StoriesTableViewCellDelegate: NSObjectProtocol {
     func storiesTableViewCell(cell: StoriesTableViewCell, upvoteButtonPressed sender: AnyObject)

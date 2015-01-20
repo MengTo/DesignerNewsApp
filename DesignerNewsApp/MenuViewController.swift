@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 protocol MenuViewControllerDelegate : NSObjectProtocol {
     func menuViewControllerDidSelectTopStories(controller:MenuViewController)

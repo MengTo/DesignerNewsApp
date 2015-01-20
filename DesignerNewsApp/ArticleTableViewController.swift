@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 class ArticleTableViewController: UITableViewController, StoriesTableViewCellDelegate {
 

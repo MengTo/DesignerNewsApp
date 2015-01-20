@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +36,7 @@
                                                         <action selector="closeButtonPressed:" destination="maI-eQ-OKD" eventType="touchUpInside" id="Uqi-6E-fhu"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bh-8f-iPL" customClass="SpringView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bh-8f-iPL" customClass="SpringView" customModule="Spring">
                                                     <rect key="frame" x="160" y="160" width="280" height="280"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iX-v0-KfP">
@@ -51,7 +51,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" background="input-outline" translatesAutoresizingMaskIntoConstraints="NO" id="MFi-g8-w52" customClass="DesignableTextField" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" background="input-outline" translatesAutoresizingMaskIntoConstraints="NO" id="MFi-g8-w52" customClass="DesignableTextField" customModule="Spring">
                                                             <rect key="frame" x="15" y="108" width="250" height="44"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="250" id="s1a-0J-GkJ"/>
@@ -73,7 +73,7 @@
                                                                 </mask>
                                                             </variation>
                                                         </textField>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" background="input-outline" translatesAutoresizingMaskIntoConstraints="NO" id="c88-aQ-M8L" customClass="DesignableTextField" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" background="input-outline" translatesAutoresizingMaskIntoConstraints="NO" id="c88-aQ-M8L" customClass="DesignableTextField" customModule="Spring">
                                                             <rect key="frame" x="15" y="162" width="250" height="44"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="44" id="pKU-bk-xBe"/>
@@ -95,13 +95,13 @@
                                                                 </mask>
                                                             </variation>
                                                         </textField>
-                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" image="icon-password" translatesAutoresizingMaskIntoConstraints="NO" id="Uwp-OQ-Ul4" customClass="SpringImageView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" image="icon-password" translatesAutoresizingMaskIntoConstraints="NO" id="Uwp-OQ-Ul4" customClass="SpringImageView" customModule="Spring">
                                                             <rect key="frame" x="30" y="171" width="25" height="25"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjX-8S-TVH" customClass="DesignableButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjX-8S-TVH" customClass="DesignableButton" customModule="Spring">
                                                             <rect key="frame" x="15" y="221" width="250" height="44"/>
                                                             <color key="backgroundColor" red="0.17254901960784313" green="0.38823529411764707" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
@@ -128,7 +128,7 @@
                                                                 <action selector="signupButtonPressed:" destination="maI-eQ-OKD" eventType="touchUpInside" id="5v1-9G-ral"/>
                                                             </connections>
                                                         </button>
-                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" image="icon-mail" translatesAutoresizingMaskIntoConstraints="NO" id="x3V-hL-JEo" customClass="SpringImageView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" image="icon-mail" translatesAutoresizingMaskIntoConstraints="NO" id="x3V-hL-JEo" customClass="SpringImageView" customModule="Spring">
                                                             <rect key="frame" x="30" y="121" width="26" height="18"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
@@ -288,7 +288,7 @@
                                             <color key="textColor" red="0.58823529411764708" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YD-tF-TbO" customClass="SpringButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YD-tF-TbO" customClass="SpringButton" customModule="Spring">
                                             <rect key="frame" x="25" y="55" width="70" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="33" id="iuh-xB-qFn"/>
@@ -308,7 +308,7 @@
                                                 <action selector="upvoteButtonPressed:" destination="4Ds-Ol-7a4" eventType="touchUpInside" id="3U4-cH-crw"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgm-zA-wtS" customClass="SpringButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgm-zA-wtS" customClass="SpringButton" customModule="Spring">
                                             <rect key="frame" x="95" y="55" width="70" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="AIU-pI-Gx5"/>
@@ -443,7 +443,7 @@
                                     <rect key="frame" x="0.0" y="20" width="800" height="4"/>
                                 </variation>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHb-EQ-22x" customClass="SpringButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHb-EQ-22x" customClass="SpringButton" customModule="Spring">
                                 <rect key="frame" x="20" y="536" width="44" height="44"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.61176470589999998" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -466,7 +466,7 @@
                                     <segue destination="TPO-Ch-8WP" kind="unwind" unwindAction="unwindToViewController:" id="VK0-vl-dkd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doe-yo-c8f" customClass="SpringButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doe-yo-c8f" customClass="SpringButton" customModule="Spring">
                                 <rect key="frame" x="84" y="536" width="44" height="44"/>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.1960784314" blue="0.23529411759999999" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -550,7 +550,7 @@
                                     <action selector="closeButtonPressed:" destination="G2J-Ma-fKq" eventType="touchUpInside" id="378-3t-CC7"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDv-Kt-KUq" customClass="SpringView" customModule="DesignerNewsApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDv-Kt-KUq" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="170" y="170" width="260" height="260"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vq0-Ce-a6L">
@@ -723,17 +723,17 @@
                                                 <segue destination="ypX-MN-WmI" kind="unwind" unwindAction="unwindToViewController:" id="nQA-26-X1p"/>
                                             </connections>
                                         </button>
-                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-Ms-d8p" customClass="DesignableView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-Ms-d8p" customClass="DesignableView" customModule="Spring">
                                             <rect key="frame" x="160" y="160" width="280" height="280"/>
                                             <subviews>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bg-credits + low-poly-texture-3" translatesAutoresizingMaskIntoConstraints="NO" id="XBV-xJ-PCT" customClass="SpringImageView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bg-credits + low-poly-texture-3" translatesAutoresizingMaskIntoConstraints="NO" id="XBV-xJ-PCT" customClass="SpringImageView" customModule="Spring">
                                                     <rect key="frame" x="0.0" y="0.0" width="280" height="140"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeIn"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-book" translatesAutoresizingMaskIntoConstraints="NO" id="seR-gK-b3z" customClass="SpringImageView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-book" translatesAutoresizingMaskIntoConstraints="NO" id="seR-gK-b3z" customClass="SpringImageView" customModule="Spring">
                                                     <rect key="frame" x="70" y="20" width="125" height="122"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
@@ -746,7 +746,7 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-sketch" translatesAutoresizingMaskIntoConstraints="NO" id="WRf-48-4Xg" customClass="SpringImageView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-sketch" translatesAutoresizingMaskIntoConstraints="NO" id="WRf-48-4Xg" customClass="SpringImageView" customModule="Spring">
                                                     <rect key="frame" x="15" y="40" width="64" height="61"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
@@ -756,7 +756,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-xcode" translatesAutoresizingMaskIntoConstraints="NO" id="rj4-zH-nbf" customClass="SpringImageView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-xcode" translatesAutoresizingMaskIntoConstraints="NO" id="rj4-zH-nbf" customClass="SpringImageView" customModule="Spring">
                                                     <rect key="frame" x="201" y="40" width="64" height="59"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideLeft"/>
@@ -914,7 +914,7 @@
                                             <color key="textColor" red="0.58823529411764708" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyw-gX-Mpj" customClass="SpringButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyw-gX-Mpj" customClass="SpringButton" customModule="Spring">
                                             <rect key="frame" x="25" y="55" width="60" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="33" id="3av-sQ-2rE"/>
@@ -931,7 +931,7 @@
                                                 <action selector="upvoteButtonPressed:" destination="C1A-B1-wor" eventType="touchUpInside" id="Lc1-5Y-ICj"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x5-5s-FkO" customClass="SpringButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x5-5s-FkO" customClass="SpringButton" customModule="Spring">
                                             <rect key="frame" x="85" y="55" width="80" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="u6H-QV-THy"/>
@@ -1026,7 +1026,7 @@
                                             <color key="textColor" red="0.58823529411764708" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-ww-iWK" customClass="SpringButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-ww-iWK" customClass="SpringButton" customModule="Spring">
                                             <rect key="frame" x="25" y="29" width="60" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="Z9x-Kz-88e"/>
@@ -1043,7 +1043,7 @@
                                                 <action selector="upvoteButtonPressed:" destination="nG4-aS-hFF" eventType="touchUpInside" id="MfG-6l-wFb"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGU-1m-Bb5" customClass="SpringButton" customModule="DesignerNewsApp" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGU-1m-Bb5" customClass="SpringButton" customModule="Spring">
                                             <rect key="frame" x="85" y="29" width="80" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="0ZW-iM-6PG"/>
@@ -1066,7 +1066,7 @@
                                             <color key="textColor" red="0.58823529411764708" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" scrollEnabled="NO" editable="NO" text="Text" translatesAutoresizingMaskIntoConstraints="NO" id="mFK-Kb-FE2">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" misplaced="YES" scrollEnabled="NO" editable="NO" text="Text" translatesAutoresizingMaskIntoConstraints="NO" id="mFK-Kb-FE2">
                                             <rect key="frame" x="35" y="61" width="550" height="38"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -1170,7 +1170,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryR-5a-L7g" customClass="DesignableTextView" customModule="DesignerNewsApp" customModuleProvider="target">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryR-5a-L7g" customClass="DesignableTextView" customModule="Spring">
                                 <rect key="frame" x="10" y="74" width="580" height="516"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>

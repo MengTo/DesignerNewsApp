@@ -1,3 +1,6 @@
 [submodule "Alamofire"]
 	path = Alamofire
 	url = https://github.com/Alamofire/Alamofire.git
+[submodule "Spring"]
+	path = Spring
+	url = git@github.com:MengTo/Spring.git
