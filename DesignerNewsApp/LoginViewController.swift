@@ -9,8 +9,8 @@
 import UIKit
 import CoreData
 
-protocol LoginViewControllerDelegate {
-    func loginCompleted()
+protocol LoginViewControllerDelegate : NSObjectProtocol {
+    func loginViewControllerDidLogin(controller:LoginViewController)
 }
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
@@ -22,7 +22,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: DesignableTextField!
     @IBOutlet weak var passwordTextField: DesignableTextField!
     var originalCenter: CGPoint!
-    var delegate: LoginViewControllerDelegate?
+    weak var delegate: LoginViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +56,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 self.dismissViewControllerAnimated(true, completion: nil)
                 UIApplication.sharedApplication().sendAction("reset:", to: nil, from: self, forEvent: nil)
-                self.delegate?.loginCompleted()
+                self.delegate?.loginViewControllerDidLogin(self)
             }
             else {
                 self.dialogView.animation = "shake"

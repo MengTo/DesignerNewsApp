@@ -62,41 +62,53 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     // MARK: MenuViewControllerDelegate
-    func topButtonPressed() {
+    func menuViewControllerDidSelectTopStories(controller: MenuViewController) {
         view.showLoading()
         storySection = ""
         loadStories(self)
     }
     
-    func recentButtonPressed() {
+    func menuViewControllerDidSelectRecent(controller: MenuViewController) {
         view.showLoading()
         storySection = "recent"
         loadStories(self)
     }
-    
-    // MARK: Login
-    func loginCompleted() {
-        token = getToken()
-        loadStories(self)
+
+    func menuViewControllerDidSelectLogout(controller: MenuViewController) {
+        logout()
     }
-    
+
+    func menuViewControllerDidLogin(controller: MenuViewController) {
+        loginCompleted()
+    }
+
+    // MARK: LoginViewControllerDelegate
+    func loginViewControllerDidLogin(controller: LoginViewController) {
+        loginCompleted()
+    }
+
+    // MARK: Login
     @IBAction func loginButtonPressed(sender: AnyObject) {
         if token.isEmpty {
             performSegueWithIdentifier("LoginSegue", sender: self)
         }
         else {
-            deleteToken(0)
-            token = ""
-            loadStories(self)
+            logout()
         }
     }
-    
-    func logoutButtonPressed() {
+
+    // MARK: Misc
+    func loginCompleted() {
+        token = getToken()
+        loadStories(self)
+    }
+
+    func logout() {
         deleteToken(0)
         token = ""
         loadStories(self)
     }
-    
+
     // MARK: TableViewDelegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -121,7 +133,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     // MARK: StoriesTableViewCellDelegate
-    func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+    func storiesTableViewCell(cell: StoriesTableViewCell, upvoteButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         var id = toString(stories[indexPath.row]["id"].int!)
         
@@ -137,14 +149,15 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
         }
     }
-    
-    func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+
+    func storiesTableViewCell(cell: StoriesTableViewCell, commentButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         var story = stories[indexPath.row].dictionaryObject
         performSegueWithIdentifier("ArticleSegue", sender: story)
     }
-    
-    func replyButtonPressed(cell: StoriesTableViewCell, sender: AnyObject) {
+
+    func storiesTableViewCell(cell: StoriesTableViewCell, replyButtonPressed sender: AnyObject) {
+        // TODO
     }
     
     // MARK: Misc
@@ -172,7 +185,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     func configureCell(cell: StoriesTableViewCell, story: JSON) {
-        
+
         cell.titleLabel.layoutSubviews()
         cell.titleLabel.text = story["title"].string
         

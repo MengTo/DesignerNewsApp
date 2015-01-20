@@ -8,10 +8,10 @@
 
 import UIKit
 
-protocol StoriesTableViewCellDelegate: class {
-    func upvoteButtonPressed(cell: StoriesTableViewCell, sender: AnyObject)
-    func commentButtonPressed(cell: StoriesTableViewCell, sender: AnyObject)
-    func replyButtonPressed(cell: StoriesTableViewCell, sender: AnyObject)
+protocol StoriesTableViewCellDelegate: NSObjectProtocol {
+    func storiesTableViewCell(cell: StoriesTableViewCell, upvoteButtonPressed sender: AnyObject)
+    func storiesTableViewCell(cell: StoriesTableViewCell, commentButtonPressed sender: AnyObject)
+    func storiesTableViewCell(cell: StoriesTableViewCell, replyButtonPressed sender: AnyObject)
 }
 
 class StoriesTableViewCell: UITableViewCell {
@@ -31,17 +31,17 @@ class StoriesTableViewCell: UITableViewCell {
     weak var delegate: StoriesTableViewCellDelegate?
     
     @IBAction func upvoteButtonPressed(sender: AnyObject) {
-        delegate?.upvoteButtonPressed(self, sender: sender)
+        delegate?.storiesTableViewCell(self, upvoteButtonPressed: sender)
         animateButton(upvoteButton)
     }
     
     @IBAction func commentButtonPressed(sender: AnyObject) {
-        delegate?.commentButtonPressed(self, sender: sender)
+        delegate?.storiesTableViewCell(self, commentButtonPressed: sender)
         animateButton(commentButton)
     }
     
     @IBAction func replyButtonPressed(sender: AnyObject) {
-        delegate?.replyButtonPressed(self, sender: sender)
+        delegate?.storiesTableViewCell(self, replyButtonPressed: sender)
         animateButton(replyButton)
     }
     
