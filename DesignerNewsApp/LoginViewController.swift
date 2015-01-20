@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Spring
 
 protocol LoginViewControllerDelegate : NSObjectProtocol {
     func loginViewControllerDidLogin(controller:LoginViewController)
