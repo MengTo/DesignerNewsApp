@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A6D71961A6E6191003968BA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D71951A6E6191003968BA /* Token.swift */; };
 		961889911A67AA8D00295A64 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889791A67AA8D00295A64 /* BlurView.swift */; };
 		961889921A67AA8D00295A64 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618897A1A67AA8D00295A64 /* Data.swift */; };
 		961889931A67AA8D00295A64 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618897B1A67AA8D00295A64 /* DesignableButton.swift */; };
@@ -101,6 +102,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A6D71951A6E6191003968BA /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		961889791A67AA8D00295A64 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		9618897A1A67AA8D00295A64 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		9618897B1A67AA8D00295A64 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				966128541A4DA63100A54A23 /* AppDelegate.swift */,
 				96A580031A5E290000FDE099 /* Model.swift */,
 				964892641A63C6E600214D53 /* CoreData.swift */,
+				1A6D71951A6E6191003968BA /* Token.swift */,
 				967CFD051A5C10700044B4E3 /* LoginViewController.swift */,
 				96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */,
 				96AF96161A5EABC9003926E2 /* StoriesTableViewCell.swift */,
@@ -458,6 +461,7 @@
 				96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */,
 				9618899D1A67AA8D00295A64 /* Misc.swift in Sources */,
 				9618899B1A67AA8D00295A64 /* LoadingView.swift in Sources */,
+				1A6D71961A6E6191003968BA /* Token.swift in Sources */,
 				961889981A67AA8D00295A64 /* DesignableView.swift in Sources */,
 				9694F20B1A6123D000A6376A /* WebViewController.swift in Sources */,
 				9694F1C61A5ED3F800A6376A /* SwiftyJSON.swift in Sources */,
