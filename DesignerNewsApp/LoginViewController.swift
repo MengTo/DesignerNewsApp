@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Spring
 
-protocol LoginViewControllerDelegate : NSObjectProtocol {
+protocol LoginViewControllerDelegate : class {
     func loginViewControllerDidLogin(controller:LoginViewController)
 }
 

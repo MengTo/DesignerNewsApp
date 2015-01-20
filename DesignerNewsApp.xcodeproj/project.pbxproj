@@ -23,6 +23,7 @@
 		9661285F1A4DA63100A54A23 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9661285D1A4DA63100A54A23 /* LaunchScreen.xib */; };
 		9661286B1A4DA63100A54A23 /* DesignerNewsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661286A1A4DA63100A54A23 /* DesignerNewsAppTests.swift */; };
 		967CFD061A5C10700044B4E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967CFD051A5C10700044B4E3 /* LoginViewController.swift */; };
+		96879AA01A6E786D00717E59 /* Spring.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4FDA711A6E44B70099D309 /* Spring.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9694F1C61A5ED3F800A6376A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F1C51A5ED3F800A6376A /* SwiftyJSON.swift */; };
 		9694F2051A5FF13900A6376A /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F2041A5FF13900A6376A /* ArticleTableViewController.swift */; };
 		9694F20B1A6123D000A6376A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F20A1A6123D000A6376A /* WebViewController.swift */; };
@@ -105,6 +106,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				96879AA01A6E786D00717E59 /* Spring.framework in Embed Frameworks */,
 				96AEB7431A5E5C3F005989F4 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";

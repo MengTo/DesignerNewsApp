@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-protocol MenuViewControllerDelegate : NSObjectProtocol {
+protocol MenuViewControllerDelegate : class {
     func menuViewControllerDidSelectTopStories(controller:MenuViewController)
     func menuViewControllerDidSelectRecent(controller:MenuViewController)
     func menuViewControllerDidSelectLogout(controller:MenuViewController)

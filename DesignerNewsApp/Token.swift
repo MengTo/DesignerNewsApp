@@ -21,5 +21,5 @@ func deleteToken() {
 }
 
 func getToken() -> String {
-    return NSUserDefaults.standardUserDefaults().stringForKey(kTokenKey)  ?? ""
+    return NSUserDefaults.standardUserDefaults().stringForKey(kTokenKey) ?? ""
 }
