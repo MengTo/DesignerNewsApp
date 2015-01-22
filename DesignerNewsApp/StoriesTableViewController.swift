@@ -112,9 +112,6 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
 
     // MARK: TableViewDelegate
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stories.count
