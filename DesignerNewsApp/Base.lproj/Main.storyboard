@@ -1005,7 +1005,7 @@
                                     <outlet property="upvoteButton" destination="Cyw-gX-Mpj" id="aMs-ej-V7q"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationLevel="2" indentationWidth="10" reuseIdentifier="comment" rowHeight="100" id="nG4-aS-hFF" customClass="StoriesTableViewCell" customModule="DesignerNewsApp" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationLevel="2" indentationWidth="10" reuseIdentifier="comment" rowHeight="100" id="nG4-aS-hFF" customClass="CommentTableViewCell" customModule="DesignerNewsApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nG4-aS-hFF" id="mwj-X7-b1i">
