@@ -9,6 +9,7 @@
 struct Story {
     let id: Int
     let title: String
+    let url: String
     let userDisplayName: String
     let userJob: String
     let voteCount: Int
