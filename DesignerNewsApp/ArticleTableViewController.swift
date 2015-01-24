@@ -102,12 +102,15 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
 
         if let storyCell = cell as? StoriesTableViewCell {
-            storyCell.configureWithStory(story)
+            let commentText = getAttributedTextAndCacheIfNecessary(story.commentHTML, id: story.id)
+            storyCell.configureWithStory(story, attributedCommentText: commentText)
             storyCell.delegate = self
         }
 
         if let commentCell = cell as? CommentTableViewCell {
-            commentCell.configureWithComment(story.comments[indexPath.row-1])
+            let comment = story.comments[indexPath.row-1]
+            let bodyText = getAttributedTextAndCacheIfNecessary(comment.bodyHTML, id: comment.id)
+            commentCell.configureWithComment(comment, attributedBodyText: bodyText)
         }
 
         return cell

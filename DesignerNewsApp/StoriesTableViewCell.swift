@@ -53,7 +53,7 @@ class StoriesTableViewCell: UITableViewCell {
 }
 
 extension StoriesTableViewCell {
-    func configureWithStory(story: Story, isUpvoted: Bool = false) {
+    func configureWithStory(story: Story, attributedCommentText: NSAttributedString? = nil, isUpvoted: Bool = false) {
         self.titleLabel.text = story.title
         self.authorLabel.text = story.userDisplayName + ", " + story.userJob
         self.upvoteButton.setTitle(toString(story.voteCount), forState: UIControlState.Normal)
@@ -74,8 +74,7 @@ extension StoriesTableViewCell {
             commentTextView.layoutSubviews()
             commentTextView.sizeToFit()
             commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
-            // TODO: Implement Cache, inject in mehtod, or at parser level
-            //self.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(story.commentHTML, id: story.id)
+            commentTextView.attributedText = attributedCommentText ?? NSAttributedString(string: story.commentHTML)
             commentTextView.font = UIFont(name: "Avenir Next", size: 16)
         }
 
