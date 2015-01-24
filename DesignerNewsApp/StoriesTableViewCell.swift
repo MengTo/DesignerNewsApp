@@ -51,4 +51,12 @@ class StoriesTableViewCell: UITableViewCell {
         layer.force = 3
         layer.animate()
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        if let titleLabel = self.titleLabel {
+            titleLabel.preferredMaxLayoutWidth = titleLabel.frame.size.width ?? 0
+        }
+    }
 }
