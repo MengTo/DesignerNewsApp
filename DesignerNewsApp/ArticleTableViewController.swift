@@ -11,24 +11,14 @@ import Spring
 
 class ArticleTableViewController: UITableViewController, StoriesTableViewCellDelegate {
 
-    var data: AnyObject?
-    private var story: JSON!
-    private var comments: [JSON] = []
+    var story: Story!
     private var cachedAttributedText = [NSNumber:NSAttributedString]()
     private let transitionManager = TransitionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        story = JSON(data!)
-        
-        let nestedComments = story["comments"].array ?? []
-        let flattenedComments = nestedComments.map(commentsForComment).reduce([], +)
-        comments = flattenedComments
-
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -46,14 +36,15 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         }
         else if segue.identifier == "WebSegue" {
             let toView = segue.destinationViewController as WebViewController
-            toView.story = story
-            toView.transitioningDelegate = self.transitionManager
+            // TODO: USe concrete Story instead of JSON
+//            toView.story = story
+//            toView.transitioningDelegate = self.transitionManager
         }
     }
     
     @IBAction func shareBarButtonPressed(sender: AnyObject) {
-        var shareString = story["title"].string!
-        var shareURL = NSURL(string: story["url"].string!)!
+        var shareString = story.title
+        var shareURL = NSURL(string: story.url)!
         let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: nil)
         activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
         presentViewController(activityViewController, animated: true, completion: nil)
@@ -69,7 +60,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
     // MARK: StoriesTableViewCellDelegate
     func storiesTableViewCell(cell: StoriesTableViewCell, upvoteButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
-        var id = toString(story["id"].int!)
+        var id = toString(story.id)
         
         if token.isEmpty {
             performSegueWithIdentifier("LoginSegue", sender: self)
@@ -77,7 +68,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         else {
             postUpvote(id)
             saveUpvote(id)
-            let upvoteInt = story["vote_count"].int! + 1
+            let upvoteInt = story.voteCount + 1
             let upvoteString = toString(upvoteInt)
             cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
             cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
@@ -90,9 +81,9 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
 
     func storiesTableViewCell(cell: StoriesTableViewCell, replyButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
-        var comment = comments[indexPath.row].dictionaryObject
-        
-        performSegueWithIdentifier("CommentSegue", sender: comment)
+        // TODO: Pass a concrete Comment to the Comment View Controller
+//        var comment = comments[indexPath.row].dictionaryObject
+//        performSegueWithIdentifier("CommentSegue", sender: comment)
     }
     
     // MARK: TableViewDelegate
@@ -101,20 +92,20 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 + comments.count
+        return 1 + story.comments.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let identifier = indexPath.row == 0 ? "StroyCell" : "CommentCell"
+        let identifier = indexPath.row == 0 ? "StoryCell" : "CommentCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
         
         if indexPath.row == 0 {
-            configureStoryCell(cell as StoriesTableViewCell, data: story!)
+            configureStoryCell(cell as StoriesTableViewCell, story: story)
         }
         else {
-            configureCommentCell(cell as CommentTableViewCell, data: comments[indexPath.row-1])
+            configureCommentCell(cell as CommentTableViewCell, comment: story.comments[indexPath.row-1])
         }
 
         return cell
@@ -128,81 +119,61 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     // MARK: Misc
-    func configureStoryCell(cell: StoriesTableViewCell, data: JSON!) {
+    func configureStoryCell(cell: StoriesTableViewCell, story: Story) {
 
         cell.delegate = self
-        
-        if let title = data["title"].string? {
-            cell.titleLabel.text = title
-        }
-        
-        if let name = data["user_display_name"].string? {
-            if let job = data["user_job"].string? {
-                cell.authorLabel.text = name + ", " + job
-            }
-        }
-        
-        cell.upvoteButton.setTitle(toString(data["vote_count"]), forState: UIControlState.Normal)
-        
-        let timeAgo = dateFromString(data["created_at"].string!, "yyyy-MM-dd'T'HH:mm:ssZ")
-        cell.timeLabel.text = timeAgoSinceDate(timeAgo, true)
-        
-        if let badge = data["badge"].string? {
-            cell.storyImageView.image = UIImage(named: "badge-\(badge)")
-        }
-        
+
+        cell.titleLabel.text = story.title
+        cell.authorLabel.text = story.userDisplayName + ", " + story.userJob
+        cell.upvoteButton.setTitle(toString(story.voteCount), forState: UIControlState.Normal)
+        cell.storyImageView.image = story.badge.isEmpty ? nil : UIImage(named: "badge-\(story.badge)")
         cell.avatarImageView.image = UIImage(named: "content-avatar-default")
-        if let urlString = data["user_portrait_url"].string? {
-            ImageLoader.sharedLoader.imageForUrl(urlString, completionHandler:{(image: UIImage?, url: String) in
-                cell.avatarImageView.image = image
-            })
-        }
+
+        let timeAgo = dateFromString(story.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
+        cell.timeLabel.text = timeAgoSinceDate(timeAgo, true)
+
+        ImageLoader.sharedLoader.imageForUrl(story.userPortraitUrl, completionHandler:{ image, _ in
+            cell.avatarImageView.image = image
+        })
         
         cell.commentTextView.layoutSubviews()
         cell.commentTextView.sizeToFit()
         cell.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
-        cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(data)
+        // TODO: Add chache
+        //cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(data)
         cell.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
     }
 
 
-    func configureCommentCell(cell: CommentTableViewCell, data: JSON!) {
+    func configureCommentCell(cell: CommentTableViewCell, comment: Comment) {
 
-        if let name = data["user_display_name"].string? {
-            if let job = data["user_job"].string? {
-                cell.authorLabel.text = name + ", " + job
-            }
-        }
+        cell.authorLabel.text = story.userDisplayName + ", " + story.userJob
+        cell.upvoteButton.setTitle(toString(story.voteCount), forState: UIControlState.Normal)
+        cell.avatarImageView.image = UIImage(named: "content-avatar-default")
 
-        cell.upvoteButton.setTitle(toString(data["vote_count"]), forState: UIControlState.Normal)
-
-        let timeAgo = dateFromString(data["created_at"].string!, "yyyy-MM-dd'T'HH:mm:ssZ")
+        let timeAgo = dateFromString(story.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
         cell.timeLabel.text = timeAgoSinceDate(timeAgo, true)
 
-        cell.avatarImageView.image = UIImage(named: "content-avatar-default")
-        if let urlString = data["user_portrait_url"].string? {
-            ImageLoader.sharedLoader.imageForUrl(urlString, completionHandler:{(image: UIImage?, url: String) in
-                cell.avatarImageView.image = image
-            })
-        }
+        ImageLoader.sharedLoader.imageForUrl(story.userPortraitUrl, completionHandler:{ image, _ in
+            cell.avatarImageView.image = image
+        })
 
-        if let depth = data["depth"].int? {
-            if depth > 0 {
-                cell.indentView.hidden = false
-                cell.avatarLeftConstant.constant = CGFloat(depth) * 20 + 15
-                cell.separatorInset = UIEdgeInsets(top: 0, left: CGFloat(depth) * 20 + 15, bottom: 0, right: 0)
-            }
-            else {
-                cell.avatarLeftConstant.constant = 0
-                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-                cell.indentView.hidden = true
-            }
+        if comment.depth > 0 {
+            cell.indentView.hidden = false
+            cell.avatarLeftConstant.constant = CGFloat(comment.depth) * 20 + 15
+            cell.separatorInset = UIEdgeInsets(top: 0, left: CGFloat(comment.depth) * 20 + 15, bottom: 0, right: 0)
+        }
+        else {
+            cell.avatarLeftConstant.constant = 0
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            cell.indentView.hidden = true
         }
 
         cell.commentTextView.layoutSubviews()
         cell.commentTextView.sizeToFit()
         cell.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
-        cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(data)
+        // TODO: Add chache
+        //cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(data)
         cell.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
     }
 

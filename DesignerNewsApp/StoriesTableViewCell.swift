@@ -29,8 +29,10 @@ class StoriesTableViewCell: UITableViewCell {
     weak var delegate: StoriesTableViewCellDelegate?
     
     @IBAction func upvoteButtonPressed(sender: AnyObject) {
+        setSelected(true, animated: false)
         delegate?.storiesTableViewCell(self, upvoteButtonPressed: sender)
         animateButton(upvoteButton)
+        setSelected(false, animated: false)
     }
     
     @IBAction func commentButtonPressed(sender: AnyObject) {
