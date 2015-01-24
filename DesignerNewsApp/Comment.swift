@@ -7,7 +7,7 @@
 //
 
 struct Comment {
-    let id: String
+    let id: Int
     let body: String
     let depth: Int
 }

@@ -17,6 +17,7 @@ struct JSONParser {
         let id = story["id"] as? Int ?? 0
         let title = story["title"] as? String ?? ""
         let url = story["url"] as? String ?? ""
+        let commentHTML = story["comment_html"] as? String ?? ""
         let userDisplayName = story["user_display_name"] as? String ?? ""
         let userJob = story["user_job"] as? String ?? ""
         let voteCount = story["vote_count"] as? Int ?? 0
@@ -29,11 +30,11 @@ struct JSONParser {
         let parsedComments = unparsedComments.map(flattenedComments)
         let flattenedParsedComments = parsedComments.reduce([], +)
 
-        return Story(id: id, title: title, url: url, userDisplayName: userDisplayName, userJob: userJob, voteCount: voteCount, commentCount: commentCount, createdAt: createdAt, badge: badge, userPortraitUrl: userPortraitUrl, comments: flattenedParsedComments)
+        return Story(id: id, title: title, url: url, commentHTML: commentHTML, userDisplayName: userDisplayName, userJob: userJob, voteCount: voteCount, commentCount: commentCount, createdAt: createdAt, badge: badge, userPortraitUrl: userPortraitUrl, comments: flattenedParsedComments)
     }
 
     private static func parseComment(comment: NSDictionary) -> Comment {
-        let id = comment["id"] as? String ?? ""
+        let id = comment["id"] as? Int ?? 0
         let body = comment["body"] as? String ?? ""
         let depth = comment["depth"] as? Int ?? 0
         return Comment(id: id, body: body, depth: depth)

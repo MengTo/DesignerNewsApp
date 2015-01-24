@@ -12,7 +12,7 @@ import Spring
 class ArticleTableViewController: UITableViewController, StoriesTableViewCellDelegate {
 
     var story: Story!
-    private var cachedAttributedText = [NSNumber:NSAttributedString]()
+    private var cachedAttributedText = [Int: NSAttributedString]()
     private let transitionManager = TransitionManager()
     
     override func viewDidLoad() {
@@ -140,7 +140,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         cell.commentTextView.sizeToFit()
         cell.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
         // TODO: Add chache
-        //cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(data)
+        cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(story.commentHTML, id: story.id)
         cell.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
     }
 
@@ -172,36 +172,21 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         cell.commentTextView.layoutSubviews()
         cell.commentTextView.sizeToFit()
         cell.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
-        // TODO: Add chache
-        //cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(data)
+        cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(comment.body, id: comment.id)
         cell.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
     }
 
-    func getAttributedTextAndCacheIfNecessary(data : JSON) -> NSAttributedString? {
-
-        if let id = data["id"].number {
-
-            // Check cache
-            var attributedText : NSAttributedString? = self.cachedAttributedText[id]
-
-            if attributedText == nil {
-                // Not in cache so we create the attributed string
-                let cssString = "<style>img { max-width: 320px; } </style>"
-                if let comment = data["body_html"].string? {
-                    attributedText = htmlToAttributedString(cssString + comment)
-                }
-
-                if let comment = data["comment_html"].string? {
-                    attributedText = htmlToAttributedString(cssString + comment)
-                }
-
-                // Save to cache
-                self.cachedAttributedText[id] = attributedText
-            }
-
+    func getAttributedTextAndCacheIfNecessary(text: String, id: Int) -> NSAttributedString? {
+        let cachedAttributedText = self.cachedAttributedText[id]
+        if cachedAttributedText == nil {
+            // Not in cache so we create the attributed string
+            let cssString = "<style>img { max-width: 320px; } </style>"
+            // Save to cache
+            let attributedText = htmlToAttributedString(cssString + text)
+            self.cachedAttributedText[id] = attributedText
             return attributedText
         }
-        return nil
+        return cachedAttributedText
     }
 }
 
