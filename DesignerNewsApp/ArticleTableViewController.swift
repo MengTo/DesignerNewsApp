@@ -107,7 +107,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         }
 
         if let commentCell = cell as? CommentTableViewCell {
-            configureCommentCell(commentCell, comment: story.comments[indexPath.row-1])
+            commentCell.configureWithComment(story.comments[indexPath.row-1])
         }
 
         return cell
@@ -121,37 +121,6 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     // MARK: Misc
-
-    func configureCommentCell(cell: CommentTableViewCell, comment: Comment) {
-
-        cell.authorLabel.text = comment.userDisplayName + ", " + comment.userJob
-        cell.upvoteButton.setTitle(toString(comment.voteCount), forState: UIControlState.Normal)
-        cell.avatarImageView.image = UIImage(named: "content-avatar-default")
-
-        let timeAgo = dateFromString(comment.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
-        cell.timeLabel.text = timeAgoSinceDate(timeAgo, true)
-
-        ImageLoader.sharedLoader.imageForUrl(comment.userPortraitUrl, completionHandler:{ image, _ in
-            cell.avatarImageView.image = image
-        })
-
-        if comment.depth > 0 {
-            cell.indentView.hidden = false
-            cell.avatarLeftConstant.constant = CGFloat(comment.depth) * 20 + 15
-            cell.separatorInset = UIEdgeInsets(top: 0, left: CGFloat(comment.depth) * 20 + 15, bottom: 0, right: 0)
-        }
-        else {
-            cell.avatarLeftConstant.constant = 0
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            cell.indentView.hidden = true
-        }
-
-        cell.commentTextView.layoutSubviews()
-        cell.commentTextView.sizeToFit()
-        cell.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
-        cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(comment.bodyHTML, id: comment.id)
-        cell.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
-    }
 
     func getAttributedTextAndCacheIfNecessary(text: String, id: Int) -> NSAttributedString? {
         let cachedAttributedText = self.cachedAttributedText[id]
