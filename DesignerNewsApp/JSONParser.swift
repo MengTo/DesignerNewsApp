@@ -35,9 +35,15 @@ struct JSONParser {
 
     private static func parseComment(comment: NSDictionary) -> Comment {
         let id = comment["id"] as? Int ?? 0
-        let body = comment["body"] as? String ?? ""
+        let bodyHTML = comment["body_html"] as? String ?? ""
         let depth = comment["depth"] as? Int ?? 0
-        return Comment(id: id, body: body, depth: depth)
+        let userDisplayName = comment["user_display_name"] as? String ?? ""
+        let userJob = comment["user_job"] as? String ?? ""
+        let voteCount = comment["vote_count"] as? Int ?? 0
+        let createdAt = comment["created_at"] as? String ?? ""
+        let userPortraitUrl = comment["user_portrait_url"] as? String ?? ""
+
+        return Comment(id: id, bodyHTML: bodyHTML, depth: depth, userDisplayName: userDisplayName, userJob: userJob, voteCount: voteCount, createdAt: createdAt, userPortraitUrl: userPortraitUrl)
     }
 
     private static func flattenedComments(comment: NSDictionary) -> [Comment] {

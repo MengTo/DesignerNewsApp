@@ -8,6 +8,11 @@
 
 struct Comment {
     let id: Int
-    let body: String
+    let bodyHTML: String
     let depth: Int
+    let userDisplayName: String
+    let userJob: String
+    let voteCount: Int
+    let createdAt: String
+    let userPortraitUrl: String
 }

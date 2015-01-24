@@ -147,14 +147,14 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
 
     func configureCommentCell(cell: CommentTableViewCell, comment: Comment) {
 
-        cell.authorLabel.text = story.userDisplayName + ", " + story.userJob
-        cell.upvoteButton.setTitle(toString(story.voteCount), forState: UIControlState.Normal)
+        cell.authorLabel.text = comment.userDisplayName + ", " + comment.userJob
+        cell.upvoteButton.setTitle(toString(comment.voteCount), forState: UIControlState.Normal)
         cell.avatarImageView.image = UIImage(named: "content-avatar-default")
 
-        let timeAgo = dateFromString(story.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
+        let timeAgo = dateFromString(comment.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
         cell.timeLabel.text = timeAgoSinceDate(timeAgo, true)
 
-        ImageLoader.sharedLoader.imageForUrl(story.userPortraitUrl, completionHandler:{ image, _ in
+        ImageLoader.sharedLoader.imageForUrl(comment.userPortraitUrl, completionHandler:{ image, _ in
             cell.avatarImageView.image = image
         })
 
@@ -172,7 +172,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         cell.commentTextView.layoutSubviews()
         cell.commentTextView.sizeToFit()
         cell.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
-        cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(comment.body, id: comment.id)
+        cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(comment.bodyHTML, id: comment.id)
         cell.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
     }
 
