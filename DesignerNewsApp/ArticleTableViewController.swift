@@ -100,12 +100,14 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         let identifier = indexPath.row == 0 ? "StoryCell" : "CommentCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
-        
-        if indexPath.row == 0 {
-            configureStoryCell(cell as StoriesTableViewCell, story: story)
+
+        if let storyCell = cell as? StoriesTableViewCell {
+            storyCell.configureWithStory(story)
+            storyCell.delegate = self
         }
-        else {
-            configureCommentCell(cell as CommentTableViewCell, comment: story.comments[indexPath.row-1])
+
+        if let commentCell = cell as? CommentTableViewCell {
+            configureCommentCell(commentCell, comment: story.comments[indexPath.row-1])
         }
 
         return cell
@@ -119,30 +121,6 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     // MARK: Misc
-    func configureStoryCell(cell: StoriesTableViewCell, story: Story) {
-
-        cell.delegate = self
-
-        cell.titleLabel.text = story.title
-        cell.authorLabel.text = story.userDisplayName + ", " + story.userJob
-        cell.upvoteButton.setTitle(toString(story.voteCount), forState: UIControlState.Normal)
-        cell.storyImageView.image = story.badge.isEmpty ? nil : UIImage(named: "badge-\(story.badge)")
-        cell.avatarImageView.image = UIImage(named: "content-avatar-default")
-
-        let timeAgo = dateFromString(story.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
-        cell.timeLabel.text = timeAgoSinceDate(timeAgo, true)
-
-        ImageLoader.sharedLoader.imageForUrl(story.userPortraitUrl, completionHandler:{ image, _ in
-            cell.avatarImageView.image = image
-        })
-        
-        cell.commentTextView.layoutSubviews()
-        cell.commentTextView.sizeToFit()
-        cell.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
-        cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(story.commentHTML, id: story.id)
-        cell.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
-    }
-
 
     func configureCommentCell(cell: CommentTableViewCell, comment: Comment) {
 

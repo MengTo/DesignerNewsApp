@@ -120,7 +120,10 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as StoriesTableViewCell
-        configureCell(cell, story: stories[indexPath.row])
+
+        let story = stories[indexPath.row]
+        let isUpvoted = upvotes.containsObject(toString(story.id))
+        cell.configureWithStory(story, isUpvoted: isUpvoted)
         cell.delegate = self
         
         return cell
@@ -183,25 +186,5 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             let menuViewController = segue.destinationViewController as MenuViewController
             menuViewController.delegate = self
         }
-    }
-    
-    func configureCell(cell: StoriesTableViewCell, story: Story) {
-        cell.titleLabel.layoutSubviews()
-        cell.titleLabel.text = story.title
-        cell.authorLabel.text = story.userDisplayName + ", " + story.userJob
-        cell.upvoteButton.setTitle(toString(story.voteCount), forState: UIControlState.Normal)
-        cell.commentButton.setTitle(toString(story.commentCount), forState: UIControlState.Normal)
-        cell.storyImageView.image = story.badge.isEmpty ? nil : UIImage(named: "badge-\(story.badge)")
-
-        let date = dateFromString(story.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
-        cell.timeLabel.text = timeAgoSinceDate(date, true)
-
-        let imageName = upvotes.containsObject(toString(story.id)) ? "icon-upvote-active" : "icon-upvote"
-        cell.upvoteButton.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
-
-        cell.avatarImageView.image = UIImage(named: "content-avatar-default")
-        ImageLoader.sharedLoader.imageForUrl(story.userPortraitUrl, completionHandler:{(image: UIImage?, url: String) in
-            cell.avatarImageView.image = image
-        })
     }
 }

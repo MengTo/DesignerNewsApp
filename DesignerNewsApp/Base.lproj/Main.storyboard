@@ -1281,7 +1281,7 @@
         <image name="input-outline" width="250" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Jya-5Y-T44"/>
         <segue reference="4dT-jd-Noy"/>
-        <segue reference="WYa-K1-lob"/>
     </inferredMetricsTieBreakers>
 </document>
