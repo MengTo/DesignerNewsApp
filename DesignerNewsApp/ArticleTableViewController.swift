@@ -139,7 +139,6 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         cell.commentTextView.layoutSubviews()
         cell.commentTextView.sizeToFit()
         cell.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
-        // TODO: Add chache
         cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(story.commentHTML, id: story.id)
         cell.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
     }
