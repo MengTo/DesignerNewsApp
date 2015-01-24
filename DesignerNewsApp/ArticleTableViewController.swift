@@ -174,11 +174,9 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
             }
         }
         
-        cell.commentTextView.layoutSubviews()
-        cell.commentTextView.sizeToFit()
-        cell.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
         cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(data)
         cell.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
+        cell.commentTextView.textContainerInset = UIEdgeInsetsMake(4, -5, -20, 4)
     }
 
     func getAttributedTextAndCacheIfNecessary(data : JSON) -> NSAttributedString? {
