@@ -156,7 +156,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     func storyTableViewCell(cell: StoryTableViewCell, commentButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         let story = stories[indexPath.row]
-        performSegueWithIdentifier("ArticleSegue", sender: cell)
+        performSegueWithIdentifier("CommentsSegue", sender: cell)
     }
 
     func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject) {
@@ -165,11 +165,11 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     
     // MARK: Misc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ArticleSegue" {
+        if segue.identifier == "CommentsSegue" {
             let indexPath = tableView.indexPathForCell(sender as UITableViewCell)
             let story = stories[indexPath!.row]
-            let articleViewController = segue.destinationViewController as ArticleTableViewController
-            articleViewController.story = story
+            let commentsViewController = segue.destinationViewController as CommentsTableViewController
+            commentsViewController.story = story
         }
         else if segue.identifier == "WebSegue" {
             let webViewController = segue.destinationViewController as WebViewController

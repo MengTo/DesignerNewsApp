@@ -401,7 +401,7 @@
                     </refreshControl>
                     <connections>
                         <outlet property="loginButton" destination="uej-tB-xeq" id="f8E-KV-P3z"/>
-                        <segue destination="HBs-bl-KVv" kind="show" identifier="ArticleSegue" id="3HB-vO-v5a"/>
+                        <segue destination="HBs-bl-KVv" kind="show" identifier="CommentsSegue" id="3HB-vO-v5a"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="Jya-5Y-T44"/>
                         <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="4dT-jd-Noy"/>
                     </connections>
@@ -865,10 +865,10 @@
             </objects>
             <point key="canvasLocation" x="246" y="3280"/>
         </scene>
-        <!--Article Table View Controller-->
+        <!--Comments Table View Controller-->
         <scene sceneID="6Zb-FR-7t5">
             <objects>
-                <tableViewController id="HBs-bl-KVv" customClass="ArticleTableViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="HBs-bl-KVv" customClass="CommentsTableViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XQw-Jb-uLW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

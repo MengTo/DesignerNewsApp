@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-class ArticleTableViewController: UITableViewController, StoryTableViewCellDelegate {
+class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate {
 
     var story: Story!
     private var cachedAttributedText = [Int: NSAttributedString]()
