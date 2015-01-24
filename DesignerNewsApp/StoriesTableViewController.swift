@@ -187,7 +187,6 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     func configureCell(cell: StoriesTableViewCell, story: JSON) {
 
-        cell.titleLabel.layoutSubviews()
         cell.titleLabel.text = story["title"].string
         
         if let name = story["user_display_name"].string? {
