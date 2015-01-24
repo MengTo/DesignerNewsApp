@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate {
+class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate {
     
     private let transitionManager = TransitionManager()
     var stories = [Story]()
@@ -119,7 +119,7 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as StoriesTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as StoryTableViewCell
 
         let story = stories[indexPath.row]
         let isUpvoted = upvotes.containsObject(toString(story.id))
@@ -135,7 +135,8 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     // MARK: StoriesTableViewCellDelegate
-    func storiesTableViewCell(cell: StoriesTableViewCell, upvoteButtonPressed sender: AnyObject) {
+
+    func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         let id = toString(stories[indexPath.row].id)
         
@@ -152,13 +153,13 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
         }
     }
 
-    func storiesTableViewCell(cell: StoriesTableViewCell, commentButtonPressed sender: AnyObject) {
+    func storyTableViewCell(cell: StoryTableViewCell, commentButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         let story = stories[indexPath.row]
         performSegueWithIdentifier("ArticleSegue", sender: cell)
     }
 
-    func storiesTableViewCell(cell: StoriesTableViewCell, replyButtonPressed sender: AnyObject) {
+    func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject) {
         // TODO
     }
     

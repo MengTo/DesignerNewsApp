@@ -9,13 +9,13 @@
 import UIKit
 import Spring
 
-protocol StoriesTableViewCellDelegate: class {
-    func storiesTableViewCell(cell: StoriesTableViewCell, upvoteButtonPressed sender: AnyObject)
-    func storiesTableViewCell(cell: StoriesTableViewCell, commentButtonPressed sender: AnyObject)
-    func storiesTableViewCell(cell: StoriesTableViewCell, replyButtonPressed sender: AnyObject)
+protocol StoryTableViewCellDelegate: class {
+    func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject)
+    func storyTableViewCell(cell: StoryTableViewCell, commentButtonPressed sender: AnyObject)
+    func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject)
 }
 
-class StoriesTableViewCell: UITableViewCell {
+class StoryTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -26,22 +26,22 @@ class StoriesTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var commentTextView: UITextView?
     
-    weak var delegate: StoriesTableViewCellDelegate?
+    weak var delegate: StoryTableViewCellDelegate?
     
     @IBAction func upvoteButtonPressed(sender: AnyObject) {
         setSelected(true, animated: false)
-        delegate?.storiesTableViewCell(self, upvoteButtonPressed: sender)
+        delegate?.storyTableViewCell(self, upvoteButtonPressed: sender)
         animateButton(upvoteButton)
         setSelected(false, animated: false)
     }
     
     @IBAction func commentButtonPressed(sender: AnyObject) {
-        delegate?.storiesTableViewCell(self, commentButtonPressed: sender)
+        delegate?.storyTableViewCell(self, commentButtonPressed: sender)
         animateButton(commentButton!)
     }
     
     @IBAction func replyButtonPressed(sender: AnyObject) {
-        delegate?.storiesTableViewCell(self, replyButtonPressed: sender)
+        delegate?.storyTableViewCell(self, replyButtonPressed: sender)
         animateButton(replyButton!)
     }
     
@@ -52,7 +52,7 @@ class StoriesTableViewCell: UITableViewCell {
     }
 }
 
-extension StoriesTableViewCell {
+extension StoryTableViewCell {
     func configureWithStory(story: Story, attributedCommentText: NSAttributedString? = nil, isUpvoted: Bool = false) {
         self.titleLabel.text = story.title
         self.authorLabel.text = story.userDisplayName + ", " + story.userJob

@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-class ArticleTableViewController: UITableViewController, StoriesTableViewCellDelegate {
+class ArticleTableViewController: UITableViewController, StoryTableViewCellDelegate {
 
     var story: Story!
     private var cachedAttributedText = [Int: NSAttributedString]()
@@ -58,7 +58,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     // MARK: StoriesTableViewCellDelegate
-    func storiesTableViewCell(cell: StoriesTableViewCell, upvoteButtonPressed sender: AnyObject) {
+    func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         var id = toString(story.id)
         
@@ -75,11 +75,11 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         }
     }
 
-    func storiesTableViewCell(cell: StoriesTableViewCell, commentButtonPressed sender: AnyObject) {
+    func storyTableViewCell(cell: StoryTableViewCell, commentButtonPressed sender: AnyObject) {
         // TODO
     }
 
-    func storiesTableViewCell(cell: StoriesTableViewCell, replyButtonPressed sender: AnyObject) {
+    func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         // TODO: Pass a concrete Comment to the Comment View Controller
 //        var comment = comments[indexPath.row].dictionaryObject
@@ -101,7 +101,7 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
 
-        if let storyCell = cell as? StoriesTableViewCell {
+        if let storyCell = cell as? StoryTableViewCell {
             let commentText = getAttributedTextAndCacheIfNecessary(story.commentHTML, id: story.id)
             storyCell.configureWithStory(story, attributedCommentText: commentText)
             storyCell.delegate = self
