@@ -16,19 +16,19 @@ struct DesignerNewsService {
     private static let clientID = "750ab22aac78be1c6d4bbe584f0e3477064f646720f327c5464bc127100a1a6d"
 
     static func getStories(section: String, page: Int, response: ([Story]) -> ()) {
-        let request = baseURL + storiesURL + "/" + section
+        let urlString = baseURL + storiesURL + "/" + section
         let parameters = [
             "page": toString(page),
             "client_id": clientID
         ]
-        Alamofire.request(.GET, request, parameters: parameters).response { (_, _, data, _) in
+        Alamofire.request(.GET, urlString, parameters: parameters).response { (_, _, data, _) in
             let stories = JSONParser.parseStories(data as? NSData)
             response(stories)
         }
     }
 
     static func postLogin(email: String, password: String, response: String? -> ()) {
-        var request = baseURL + loginURL
+        var urlString = baseURL + loginURL
         var parameters = [
             "grant_type": "password",
             "username": email,
@@ -37,7 +37,7 @@ struct DesignerNewsService {
             "client_secret": clientSecret
         ]
 
-        Alamofire.request(.POST, request, parameters: parameters)
+        Alamofire.request(.POST, urlString, parameters: parameters)
             .responseJSON { (_, _, json, _) in
                 let responseDictionary = json as? NSDictionary
                 let token = responseDictionary?["access_token"] as? String
