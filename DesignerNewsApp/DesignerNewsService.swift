@@ -29,7 +29,6 @@ struct DesignerNewsService {
     }
 
     static func getStories(section: String, page: Int, response: ([Story]) -> ()) {
-
         let urlString = baseURL + ResourcePath.Stories.description + "/" + section
         let parameters = [
             "page": toString(page),
@@ -42,8 +41,8 @@ struct DesignerNewsService {
     }
 
     static func postLogin(email: String, password: String, response: (token: String?) -> ()) {
-        var urlString = baseURL + ResourcePath.Login.description
-        var parameters = [
+        let urlString = baseURL + ResourcePath.Login.description
+        let parameters = [
             "grant_type": "password",
             "username": email,
             "password": password,
@@ -60,7 +59,6 @@ struct DesignerNewsService {
     }
 
     static func upvoteStoryWithId(storyId: Int, token: String, response: (successful: Bool) -> ()) {
-
         let urlString = baseURL + ResourcePath.StoryUpvote(storyId: storyId).description
         let mutableURLRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         mutableURLRequest.HTTPMethod = "POST"
