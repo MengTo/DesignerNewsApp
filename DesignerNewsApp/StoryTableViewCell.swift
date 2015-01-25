@@ -50,6 +50,11 @@ class StoryTableViewCell: UITableViewCell {
         layer.force = 3
         layer.animate()
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.titleLabel.preferredMaxLayoutWidth = self.titleLabel.frame.size.width
+    }
 }
 
 extension StoryTableViewCell {
