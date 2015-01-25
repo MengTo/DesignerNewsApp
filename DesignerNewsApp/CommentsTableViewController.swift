@@ -36,9 +36,8 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         }
         else if segue.identifier == "WebSegue" {
             let toView = segue.destinationViewController as WebViewController
-            // TODO: USe concrete Story instead of JSON
-//            toView.story = story
-//            toView.transitioningDelegate = self.transitionManager
+            toView.story = story
+            toView.transitioningDelegate = self.transitionManager
         }
     }
     
