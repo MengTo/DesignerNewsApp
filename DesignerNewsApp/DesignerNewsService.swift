@@ -28,7 +28,7 @@ struct DesignerNewsService {
         }
     }
 
-    static func getStories(section: String, page: Int, response: ([Story]) -> ()) {
+    static func storiesForSection(section: String, page: Int, response: ([Story]) -> ()) {
         let urlString = baseURL + ResourcePath.Stories.description + "/" + section
         let parameters = [
             "page": toString(page),
@@ -40,7 +40,7 @@ struct DesignerNewsService {
         }
     }
 
-    static func postLogin(email: String, password: String, response: (token: String?) -> ()) {
+    static func loginWithEmail(email: String, password: String, response: (token: String?) -> ()) {
         let urlString = baseURL + ResourcePath.Login.description
         let parameters = [
             "grant_type": "password",

@@ -44,7 +44,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, DragDropBehavi
     // MARK: Button
     @IBAction func signupButtonPressed(sender: AnyObject) {
         view.showLoading()
-        DesignerNewsService.postLogin(emailTextField.text, password: passwordTextField.text) { token in
+        DesignerNewsService.loginWithEmail(emailTextField.text, password: passwordTextField.text) { token in
             self.view.hideLoading()
             if let token = token {
                 saveToken(token)

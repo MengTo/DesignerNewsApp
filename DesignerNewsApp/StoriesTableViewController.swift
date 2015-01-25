@@ -45,7 +45,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     
     func loadStories(sender: AnyObject) {
 
-        DesignerNewsService.getStories(storySection, page: 1) { stories in
+        DesignerNewsService.storiesForSection(storySection, page: 1) { stories in
             self.stories = stories
             self.upvotes = getUpvotes()
             self.tableView.reloadData()
