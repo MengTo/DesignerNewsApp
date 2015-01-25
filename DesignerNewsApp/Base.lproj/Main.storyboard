@@ -256,7 +256,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="35" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="17.5" reuseIdentifier="cell" rowHeight="100" id="4Ds-Ol-7a4" customClass="StoriesTableViewCell" customModule="DesignerNewsApp" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="17.5" reuseIdentifier="cell" rowHeight="100" id="4Ds-Ol-7a4" customClass="StoryTableViewCell" customModule="DesignerNewsApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Ds-Ol-7a4" id="duG-Ge-feN">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -401,7 +401,7 @@
                     </refreshControl>
                     <connections>
                         <outlet property="loginButton" destination="uej-tB-xeq" id="f8E-KV-P3z"/>
-                        <segue destination="HBs-bl-KVv" kind="show" identifier="ArticleSegue" id="3HB-vO-v5a"/>
+                        <segue destination="HBs-bl-KVv" kind="show" identifier="CommentsSegue" id="3HB-vO-v5a"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="Jya-5Y-T44"/>
                         <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="4dT-jd-Noy"/>
                     </connections>
@@ -865,17 +865,17 @@
             </objects>
             <point key="canvasLocation" x="246" y="3280"/>
         </scene>
-        <!--Article Table View Controller-->
+        <!--Comments Table View Controller-->
         <scene sceneID="6Zb-FR-7t5">
             <objects>
-                <tableViewController id="HBs-bl-KVv" customClass="ArticleTableViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="HBs-bl-KVv" customClass="CommentsTableViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XQw-Jb-uLW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="35" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="cell" rowHeight="140" id="C1A-B1-wor" customClass="StoriesTableViewCell" customModule="DesignerNewsApp" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="StoryCell" rowHeight="140" id="C1A-B1-wor" customClass="StoryTableViewCell" customModule="DesignerNewsApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C1A-B1-wor" id="wN6-m4-OuH">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1005,7 +1005,7 @@
                                     <outlet property="upvoteButton" destination="Cyw-gX-Mpj" id="aMs-ej-V7q"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationLevel="2" indentationWidth="10" reuseIdentifier="comment" rowHeight="100" id="nG4-aS-hFF" customClass="StoriesTableViewCell" customModule="DesignerNewsApp" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationLevel="2" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="100" id="nG4-aS-hFF" customClass="CommentTableViewCell" customModule="DesignerNewsApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nG4-aS-hFF" id="mwj-X7-b1i">
@@ -1282,7 +1282,7 @@
         <image name="input-outline" width="250" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jya-5Y-T44"/>
         <segue reference="4dT-jd-Noy"/>
+        <segue reference="WYa-K1-lob"/>
     </inferredMetricsTieBreakers>
 </document>

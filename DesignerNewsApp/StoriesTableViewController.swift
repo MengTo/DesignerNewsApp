@@ -9,10 +9,10 @@
 import UIKit
 import Spring
 
-class StoriesTableViewController: UITableViewController, StoriesTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate {
+class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate {
     
     private let transitionManager = TransitionManager()
-    var stories: JSON = nil
+    var stories = [Story]()
     var firstTime = true
     var token = getToken()
     var upvotes = getUpvotes()
@@ -44,13 +44,14 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
     
     func loadStories(sender: AnyObject) {
-        getStories(storySection, "1", { (json) -> () in
-            self.stories = json["stories"]
+
+        DesignerNewsService.storiesForSection(storySection, page: 1) { stories in
+            self.stories = stories
             self.upvotes = getUpvotes()
             self.tableView.reloadData()
             self.view.hideLoading()
             self.refreshControl?.endRefreshing()
-        })
+        }
         
         if token.isEmpty {
             loginButton.title = "Login"
@@ -111,9 +112,6 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     }
 
     // MARK: TableViewDelegate
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stories.count
@@ -121,55 +119,64 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as StoriesTableViewCell
-        configureCell(cell, story: stories[indexPath.row])
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as StoryTableViewCell
+
+        let story = stories[indexPath.row]
+        let isUpvoted = upvotes.containsObject(toString(story.id))
+        cell.configureWithStory(story, isUpvoted: isUpvoted)
         cell.delegate = self
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var story = stories[indexPath.row].dictionaryObject
-        self.performSegueWithIdentifier("WebSegue", sender: story)
+        self.performSegueWithIdentifier("WebSegue", sender: tableView.cellForRowAtIndexPath(indexPath))
     }
     
     // MARK: StoriesTableViewCellDelegate
-    func storiesTableViewCell(cell: StoriesTableViewCell, upvoteButtonPressed sender: AnyObject) {
-        var indexPath = tableView.indexPathForCell(cell)!
-        var id = toString(stories[indexPath.row]["id"].int!)
-        
+
+    func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject) {
+
         if token.isEmpty {
             performSegueWithIdentifier("LoginSegue", sender: self)
         }
         else {
-            postUpvote(id)
-            saveUpvote(id)
-            let upvoteInt = stories[indexPath.row]["vote_count"].int! + 1
+
+            let indexPath = tableView.indexPathForCell(cell)!
+            let storyId = stories[indexPath.row].id
+
+            DesignerNewsService.upvoteStoryWithId(storyId, token: token) { successful in
+                println(successful)
+            }
+
+            saveUpvote(toString(storyId))
+            let upvoteInt = stories[indexPath.row].voteCount + 1
             let upvoteString = toString(upvoteInt)
             cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
             cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
         }
     }
 
-    func storiesTableViewCell(cell: StoriesTableViewCell, commentButtonPressed sender: AnyObject) {
+    func storyTableViewCell(cell: StoryTableViewCell, commentButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
-        var story = stories[indexPath.row].dictionaryObject
-        performSegueWithIdentifier("ArticleSegue", sender: story)
-    }
-
-    func storiesTableViewCell(cell: StoriesTableViewCell, replyButtonPressed sender: AnyObject) {
-        // TODO
+        let story = stories[indexPath.row]
+        performSegueWithIdentifier("CommentsSegue", sender: cell)
     }
     
     // MARK: Misc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ArticleSegue" {
-            let articleViewController = segue.destinationViewController as ArticleTableViewController
-            articleViewController.data = sender
+        if segue.identifier == "CommentsSegue" {
+            let indexPath = tableView.indexPathForCell(sender as UITableViewCell)
+            let story = stories[indexPath!.row]
+            let commentsViewController = segue.destinationViewController as CommentsTableViewController
+            commentsViewController.story = story
         }
         else if segue.identifier == "WebSegue" {
+            let indexPath = tableView.indexPathForCell(sender as UITableViewCell)
+            let story = stories[indexPath!.row]
+
             let webViewController = segue.destinationViewController as WebViewController
-            webViewController.story = JSON(sender!)
+            webViewController.story = story
             
             webViewController.transitioningDelegate = self.transitionManager
             
@@ -184,46 +191,5 @@ class StoriesTableViewController: UITableViewController, StoriesTableViewCellDel
             menuViewController.delegate = self
         }
     }
-    
-    func configureCell(cell: StoriesTableViewCell, story: JSON) {
 
-        cell.titleLabel.text = story["title"].string
-        
-        if let name = story["user_display_name"].string? {
-            if let job = story["user_job"].string? {
-                cell.authorLabel.text = name + ", " + job
-            }
-        }
-        
-        cell.upvoteButton.setTitle(toString(story["vote_count"]), forState: UIControlState.Normal)
-        cell.commentButton.setTitle(toString(story["comment_count"]), forState: UIControlState.Normal)
-        
-        var timeAgo = dateFromString(story["created_at"].string!, "yyyy-MM-dd'T'HH:mm:ssZ")
-        cell.timeLabel.text = timeAgoSinceDate(timeAgo, true)
-        
-        if let badge = story["badge"].string? {
-            cell.storyImageView.image = UIImage(named: "badge-\(badge)")
-        }
-        else {
-            cell.storyImageView.image = nil
-        }
-        
-        if let id = story["id"].int? {
-            if upvotes.containsObject(toString(id)) {
-                let image = UIImage(named: "icon-upvote-active")
-                cell.upvoteButton.setImage(image, forState: UIControlState.Normal)
-            }
-            else {
-                let image = UIImage(named: "icon-upvote")
-                cell.upvoteButton.setImage(image, forState: UIControlState.Normal)
-            }
-        }
-        
-        cell.avatarImageView.image = UIImage(named: "content-avatar-default")
-        if let urlString = story["user_portrait_url"].string? {
-            ImageLoader.sharedLoader.imageForUrl(urlString, completionHandler:{(image: UIImage?, url: String) in
-                cell.avatarImageView.image = image
-            })
-        }
-    }
 }
