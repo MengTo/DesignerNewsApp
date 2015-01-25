@@ -75,10 +75,6 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         }
     }
 
-    func storyTableViewCell(cell: StoryTableViewCell, commentButtonPressed sender: AnyObject) {
-        // TODO
-    }
-
     func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject) {
         performSegueWithIdentifier("CommentSegue", sender: cell)
     }
