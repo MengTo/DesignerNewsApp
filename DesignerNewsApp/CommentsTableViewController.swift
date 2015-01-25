@@ -85,7 +85,22 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
 
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject) {
-        // TODO: Implement upvote
+        if getToken().isEmpty {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        }
+        else {
+            let indexPath = self.tableView.indexPathForCell(cell)
+            let comment = self.getCommentForIndexPath(indexPath!)
+            DesignerNewsService.upvoteCommentWithId(comment.id, token: getToken()) { successful in
+                if successful {
+                    saveUpvote(toString(comment.id))
+                    let upvoteInt = comment.voteCount + 1
+                    let upvoteString = toString(upvoteInt)
+                    cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
+                    cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
+                }
+            }
+        }
     }
 
     // MARK: TableViewDelegate
