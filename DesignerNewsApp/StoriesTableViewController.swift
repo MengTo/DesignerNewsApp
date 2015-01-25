@@ -130,8 +130,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let story = stories[indexPath.row]
-        self.performSegueWithIdentifier("WebSegue", sender: nil)
+        self.performSegueWithIdentifier("WebSegue", sender: tableView.cellForRowAtIndexPath(indexPath))
     }
     
     // MARK: StoriesTableViewCellDelegate
@@ -172,8 +171,11 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             commentsViewController.story = story
         }
         else if segue.identifier == "WebSegue" {
+            let indexPath = tableView.indexPathForCell(sender as UITableViewCell)
+            let story = stories[indexPath!.row]
+
             let webViewController = segue.destinationViewController as WebViewController
-            webViewController.story = JSON(sender!)
+            webViewController.story = story
             
             webViewController.transitioningDelegate = self.transitionManager
             
