@@ -61,19 +61,17 @@ struct DesignerNewsService {
     }
 
     static func upvoteStoryWithId(storyId: Int, token: String, response: (successful: Bool) -> ()) {
-        let urlString = baseURL + ResourcePath.StoryUpvote(storyId: storyId).description
-        let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
-        request.HTTPMethod = "POST"
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-
-        Alamofire.request(request).responseJSON { (_, urlResponse, _, _) in
-            let successful = urlResponse?.statusCode == 200
-            response(successful: successful)
-        }
+        let resourcePath = ResourcePath.StoryUpvote(storyId: storyId)
+        upvoteWithResourcePath(resourcePath, token: token, response: response)
     }
 
     static func upvoteCommentWithId(commentId: Int, token: String, response: (successful: Bool) -> ()) {
-        let urlString = baseURL + ResourcePath.CommentUpvote(commentId: commentId).description
+        let resourcePath = ResourcePath.CommentUpvote(commentId: commentId)
+        upvoteWithResourcePath(resourcePath, token: token, response: response)
+    }
+
+    private static func upvoteWithResourcePath(path: ResourcePath, token: String, response: (successful: Bool) -> ()) {
+        let urlString = baseURL + path.description
         let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         request.HTTPMethod = "POST"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
