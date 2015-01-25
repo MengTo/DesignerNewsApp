@@ -191,4 +191,5 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             menuViewController.delegate = self
         }
     }
+
 }

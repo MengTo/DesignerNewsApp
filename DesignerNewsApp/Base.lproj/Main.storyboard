@@ -320,7 +320,7 @@
                                                 <color key="titleColor" red="0.58823529411764708" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="highlighted" image="icon-upvote-active">
+                                            <state key="highlighted" image="icon-comment-active">
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -1269,6 +1269,7 @@
         <image name="icon-book" width="125" height="122"/>
         <image name="icon-close" width="19" height="20"/>
         <image name="icon-comment" width="17" height="15"/>
+        <image name="icon-comment-active" width="17" height="15"/>
         <image name="icon-hamburger" width="22" height="16"/>
         <image name="icon-mail" width="26" height="18"/>
         <image name="icon-password" width="25" height="25"/>
