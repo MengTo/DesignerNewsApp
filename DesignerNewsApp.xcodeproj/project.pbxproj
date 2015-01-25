@@ -10,6 +10,8 @@
 		1A6D719D1A6E6E74003968BA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D719C1A6E6E74003968BA /* Token.swift */; };
 		1A7D78A01A70F8FE0061D6F6 /* DragDropBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */; };
 		1A908E471A74A44600F30022 /* Commentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A908E461A74A44600F30022 /* Commentable.swift */; };
+		1A908E651A753B5400F30022 /* NSAttributedString+DDHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A908E641A753B5400F30022 /* NSAttributedString+DDHTML.m */; };
+		1A908E671A753B6C00F30022 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A908E661A753B6C00F30022 /* libxml2.dylib */; };
 		961889B21A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AB1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m */; };
 		961889B31A67F15900295A64 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AD1A67F15900295A64 /* TPKeyboardAvoidingScrollView.m */; };
 		961889B41A67F15900295A64 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AF1A67F15900295A64 /* TPKeyboardAvoidingTableView.m */; };
@@ -124,6 +126,10 @@
 		1A6D719C1A6E6E74003968BA /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragDropBehavior.swift; sourceTree = "<group>"; };
 		1A908E461A74A44600F30022 /* Commentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commentable.swift; sourceTree = "<group>"; };
+		1A908E611A75382200F30022 /* DesignerNewsApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignerNewsApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		1A908E631A753B5400F30022 /* NSAttributedString+DDHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+DDHTML.h"; sourceTree = "<group>"; };
+		1A908E641A753B5400F30022 /* NSAttributedString+DDHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+DDHTML.m"; sourceTree = "<group>"; };
+		1A908E661A753B6C00F30022 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		961889AA1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		961889AB1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		961889AC1A67F15900295A64 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A908E671A753B6C00F30022 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +195,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1A908E621A753B5400F30022 /* NSAttributedString+DDHTML */ = {
+			isa = PBXGroup;
+			children = (
+				1A908E631A753B5400F30022 /* NSAttributedString+DDHTML.h */,
+				1A908E641A753B5400F30022 /* NSAttributedString+DDHTML.m */,
+			);
+			path = "NSAttributedString+DDHTML";
+			sourceTree = "<group>";
+		};
 		961889A91A67F15900295A64 /* TPKeyboardAvoiding */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +222,7 @@
 		961889B61A67F93800295A64 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				1A908E621A753B5400F30022 /* NSAttributedString+DDHTML */,
 				961889A91A67F15900295A64 /* TPKeyboardAvoiding */,
 			);
 			name = Libraries;
@@ -215,6 +232,7 @@
 		966128461A4DA63100A54A23 = {
 			isa = PBXGroup;
 			children = (
+				1A908E661A753B6C00F30022 /* libxml2.dylib */,
 				966128511A4DA63100A54A23 /* DesignerNewsApp */,
 				96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */,
 				1A4FDA211A6E43FE0099D309 /* SpringApp.xcodeproj */,
@@ -235,6 +253,7 @@
 		966128511A4DA63100A54A23 /* DesignerNewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				1A908E611A75382200F30022 /* DesignerNewsApp-Bridging-Header.h */,
 				B7E4D3311A719831001DC9B6 /* Cells */,
 				B78F903F1A6EFB9800883A5B /* Models */,
 				B78F903D1A6EFAAA00883A5B /* JSONParser.swift */,
@@ -365,10 +384,11 @@
 				TargetAttributes = {
 					9661284E1A4DA63100A54A23 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 68WS2M23VC;
+						DevelopmentTeam = 78BJD4M4CR;
 					};
 					966128631A4DA63100A54A23 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 78BJD4M4CR;
 						TestTargetID = 9661284E1A4DA63100A54A23;
 					};
 				};
@@ -473,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				964892671A63F5D900214D53 /* MenuViewController.swift in Sources */,
+				1A908E651A753B5400F30022 /* NSAttributedString+DDHTML.m in Sources */,
 				961889B81A680D3800295A64 /* LearnViewController.swift in Sources */,
 				964892651A63C6E600214D53 /* CoreData.swift in Sources */,
 				966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */,
@@ -630,11 +651,17 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SDKROOT}/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = DesignerNewsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/$(PRODUCT_NAME)-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -646,11 +673,17 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SDKROOT}/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = DesignerNewsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/$(PRODUCT_NAME)-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

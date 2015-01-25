@@ -44,7 +44,7 @@ class CommentTableViewCell: UITableViewCell {
 }
 
 extension CommentTableViewCell {
-    func configureWithComment(comment: Comment, attributedBodyText: NSAttributedString? = nil, isUpvoted: Bool = false) {
+    func configureWithComment(comment: Comment, isUpvoted: Bool = false) {
         self.authorLabel.text = comment.userDisplayName + ", " + comment.userJob
         self.upvoteButton.setTitle(toString(comment.voteCount), forState: UIControlState.Normal)
         self.avatarImageView.image = UIImage(named: "content-avatar-default")
@@ -69,8 +69,8 @@ extension CommentTableViewCell {
 
         self.commentTextView.layoutSubviews()
         self.commentTextView.sizeToFit()
-        self.commentTextView.textContainerInset = UIEdgeInsetsMake(4, -4, -16, 4)
-        commentTextView.attributedText = attributedBodyText ?? NSAttributedString(string: comment.bodyHTML)
+        self.commentTextView.textContainerInset = UIEdgeInsetsMake(4, -4, -4, 4)
+        commentTextView.attributedText = NSAttributedString(fromHTML: "<style>img { max-width: 320px; } </style>" + comment.bodyHTML, boldFont: UIFont(name: "Avenir Next Bold", size: 16), italicFont: UIFont(name: "Avenir Next Italic", size: 16))
         self.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
     }
 }

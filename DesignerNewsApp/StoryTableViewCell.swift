@@ -58,7 +58,7 @@ class StoryTableViewCell: UITableViewCell {
 }
 
 extension StoryTableViewCell {
-    func configureWithStory(story: Story, attributedCommentText: NSAttributedString? = nil, isUpvoted: Bool = false) {
+    func configureWithStory(story: Story, isUpvoted: Bool = false) {
         self.titleLabel.text = story.title
         self.authorLabel.text = story.userDisplayName + ", " + story.userJob
         self.upvoteButton.setTitle(toString(story.voteCount), forState: UIControlState.Normal)
@@ -79,7 +79,7 @@ extension StoryTableViewCell {
             commentTextView.layoutSubviews()
             commentTextView.sizeToFit()
             commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
-            commentTextView.attributedText = attributedCommentText ?? NSAttributedString(string: story.commentHTML)
+            commentTextView.attributedText = NSAttributedString(fromHTML: "<style>img { max-width: 320px; } </style>" + story.commentHTML, boldFont: UIFont(name: "Avenir Next Bold", size: 16), italicFont: UIFont(name: "Avenir Next Italic", size: 16))
             commentTextView.font = UIFont(name: "Avenir Next", size: 16)
         }
 

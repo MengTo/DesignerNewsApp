@@ -103,15 +103,13 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
 
         if let storyCell = cell as? StoryTableViewCell {
-            let commentText = getAttributedTextAndCacheIfNecessary(story.commentHTML, id: story.id)
-            storyCell.configureWithStory(story, attributedCommentText: commentText)
+            storyCell.configureWithStory(story)
             storyCell.delegate = self
         }
 
         if let commentCell = cell as? CommentTableViewCell {
             let comment = self.getCommentForIndexPath(indexPath)
-            let bodyText = getAttributedTextAndCacheIfNecessary(comment.bodyHTML, id: comment.id)
-            commentCell.configureWithComment(comment, attributedBodyText: bodyText)
+            commentCell.configureWithComment(comment)
             commentCell.delegate = self
         }
 
@@ -126,19 +124,6 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
     
     // MARK: Misc
-
-    func getAttributedTextAndCacheIfNecessary(text: String, id: Int) -> NSAttributedString? {
-        let cachedAttributedText = self.cachedAttributedText[id]
-        if cachedAttributedText == nil {
-            // Not in cache so we create the attributed string
-            let cssString = "<style>img { max-width: 320px; } </style>"
-            // Save to cache
-            let attributedText = htmlToAttributedString(cssString + text)
-            self.cachedAttributedText[id] = attributedText
-            return attributedText
-        }
-        return cachedAttributedText
-    }
 
     func getCommentForIndexPath(indexPath: NSIndexPath) -> Comment {
         return story.comments[indexPath.row - 1]
