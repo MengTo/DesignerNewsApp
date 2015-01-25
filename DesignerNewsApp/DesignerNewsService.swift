@@ -60,14 +60,13 @@ struct DesignerNewsService {
 
     static func upvoteStoryWithId(storyId: Int, token: String, response: (successful: Bool) -> ()) {
         let urlString = baseURL + ResourcePath.StoryUpvote(storyId: storyId).description
-        let mutableURLRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
-        mutableURLRequest.HTTPMethod = "POST"
-        mutableURLRequest.setValue("Bearer \(getToken())", forHTTPHeaderField: "Authorization")
+        let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        request.HTTPMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
-        Alamofire.request(mutableURLRequest).responseJSON { (_, _, json, _) in
-            // FIXME: Upvote is not working and call response closure after json structure is known.
-            println(json)
+        Alamofire.request(request).responseJSON { (_, urlResponse, _, _) in
+            let successful = urlResponse?.statusCode == 200
+            response(successful: successful)
         }
-
     }
 }

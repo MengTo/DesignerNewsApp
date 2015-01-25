@@ -64,13 +64,14 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         }
         else {
             DesignerNewsService.upvoteStoryWithId(story.id, token: getToken()) { successful in
-
+                if successful {
+                    saveUpvote(toString(self.story.id))
+                    let upvoteInt = self.story.voteCount + 1
+                    let upvoteString = toString(upvoteInt)
+                    cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
+                    cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
+                }
             }
-            saveUpvote(toString(story.id))
-            let upvoteInt = story.voteCount + 1
-            let upvoteString = toString(upvoteInt)
-            cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
-            cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
         }
     }
 
