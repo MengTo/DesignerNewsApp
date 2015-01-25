@@ -29,7 +29,6 @@
 		9694F1C61A5ED3F800A6376A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F1C51A5ED3F800A6376A /* SwiftyJSON.swift */; };
 		9694F2051A5FF13900A6376A /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F2041A5FF13900A6376A /* CommentsTableViewController.swift */; };
 		9694F20B1A6123D000A6376A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694F20A1A6123D000A6376A /* WebViewController.swift */; };
-		96A580041A5E290000FDE099 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A580031A5E290000FDE099 /* Model.swift */; };
 		96AEB7431A5E5C3F005989F4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96A5800B1A5E4DF500FDE099 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */; };
 		96AF96171A5EABC9003926E2 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF96161A5EABC9003926E2 /* StoryTableViewCell.swift */; };
@@ -152,7 +151,6 @@
 		9694F1C51A5ED3F800A6376A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
 		9694F2041A5FF13900A6376A /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		9694F20A1A6123D000A6376A /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		96A580031A5E290000FDE099 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTableViewController.swift; sourceTree = "<group>"; };
 		96AF96161A5EABC9003926E2 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 				B78F903D1A6EFAAA00883A5B /* JSONParser.swift */,
 				B78F90371A6EF75800883A5B /* DesignerNewsService.swift */,
 				966128541A4DA63100A54A23 /* AppDelegate.swift */,
-				96A580031A5E290000FDE099 /* Model.swift */,
 				964892641A63C6E600214D53 /* CoreData.swift */,
 				1A6D719C1A6E6E74003968BA /* Token.swift */,
 				967CFD051A5C10700044B4E3 /* LoginViewController.swift */,
@@ -496,7 +493,6 @@
 				9694F20B1A6123D000A6376A /* WebViewController.swift in Sources */,
 				9694F1C61A5ED3F800A6376A /* SwiftyJSON.swift in Sources */,
 				B78F90411A6EFBAF00883A5B /* Story.swift in Sources */,
-				96A580041A5E290000FDE099 /* Model.swift in Sources */,
 				96AF96171A5EABC9003926E2 /* StoryTableViewCell.swift in Sources */,
 				B7E4D3371A719855001DC9B6 /* CommentTableViewCell.swift in Sources */,
 				961889B41A67F15900295A64 /* TPKeyboardAvoidingTableView.m in Sources */,

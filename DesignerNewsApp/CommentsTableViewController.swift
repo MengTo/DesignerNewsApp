@@ -59,15 +59,14 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     // MARK: StoriesTableViewCellDelegate
     func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject) {
-        var indexPath = tableView.indexPathForCell(cell)!
-        var id = toString(story.id)
-        
         if getToken().isEmpty {
             performSegueWithIdentifier("LoginSegue", sender: self)
         }
         else {
-            postUpvote(id)
-            saveUpvote(id)
+            DesignerNewsService.upvoteStoryWithId(story.id, token: getToken()) { successful in
+
+            }
+            saveUpvote(toString(story.id))
             let upvoteInt = story.voteCount + 1
             let upvoteString = toString(upvoteInt)
             cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
