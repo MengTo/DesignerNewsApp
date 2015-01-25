@@ -18,12 +18,14 @@ struct DesignerNewsService {
         case Login
         case Stories
         case StoryUpvote(storyId: Int)
+        case CommentUpvote(commentId: Int)
 
         var description: String {
             switch self {
             case .Login: return "/oauth/token"
             case .Stories: return "/api/v1/stories"
             case .StoryUpvote(let id): return "/api/v1/stories/\(id)/upvote"
+            case .CommentUpvote(let id): return "/api/v1/comments/\(id)/upvote"
             }
         }
     }
@@ -60,6 +62,18 @@ struct DesignerNewsService {
 
     static func upvoteStoryWithId(storyId: Int, token: String, response: (successful: Bool) -> ()) {
         let urlString = baseURL + ResourcePath.StoryUpvote(storyId: storyId).description
+        let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        request.HTTPMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        Alamofire.request(request).responseJSON { (_, urlResponse, _, _) in
+            let successful = urlResponse?.statusCode == 200
+            response(successful: successful)
+        }
+    }
+
+    static func upvoteCommentWithId(commentId: Int, token: String, response: (successful: Bool) -> ()) {
+        let urlString = baseURL + ResourcePath.CommentUpvote(commentId: commentId).description
         let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         request.HTTPMethod = "POST"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
