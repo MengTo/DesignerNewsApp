@@ -63,13 +63,13 @@ extension CommentTableViewCell {
         }
         else {
             self.avatarLeftConstant.constant = 0
-            self.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            self.separatorInset = UIEdgeInsets(top: 0, left: 35, bottom: 0, right: 0)
             self.indentView.hidden = true
         }
 
         self.commentTextView.layoutSubviews()
         self.commentTextView.sizeToFit()
-        self.commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
+        self.commentTextView.textContainerInset = UIEdgeInsetsMake(4, -4, -16, 4)
         commentTextView.attributedText = attributedBodyText ?? NSAttributedString(string: comment.bodyHTML)
         self.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
     }
