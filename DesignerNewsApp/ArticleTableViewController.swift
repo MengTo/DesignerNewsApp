@@ -169,14 +169,14 @@ class ArticleTableViewController: UITableViewController, StoriesTableViewCellDel
             }
             else {
                 cell.avatarLeftConstant.constant = 0
-                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                cell.separatorInset = UIEdgeInsets(top: 0, left: 35, bottom: 0, right: 0)
                 cell.indentView.hidden = true
             }
         }
         
         cell.commentTextView.attributedText = getAttributedTextAndCacheIfNecessary(data)
         cell.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
-        cell.commentTextView.textContainerInset = UIEdgeInsetsMake(4, -5, -20, 4)
+        cell.commentTextView.textContainerInset = UIEdgeInsetsMake(4, -4, -16, 4)
     }
 
     func getAttributedTextAndCacheIfNecessary(data : JSON) -> NSAttributedString? {
