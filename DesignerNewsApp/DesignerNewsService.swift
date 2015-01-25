@@ -27,7 +27,7 @@ struct DesignerNewsService {
         }
     }
 
-    static func postLogin(email: String, password: String, response: String? -> ()) {
+    static func postLogin(email: String, password: String, response: (token: String?) -> ()) {
         var urlString = baseURL + loginURL
         var parameters = [
             "grant_type": "password",
@@ -41,7 +41,11 @@ struct DesignerNewsService {
             .responseJSON { (_, _, json, _) in
                 let responseDictionary = json as? NSDictionary
                 let token = responseDictionary?["access_token"] as? String
-                response(token)
+                response(token: token)
         }
+    }
+
+    static func upvoteStoryWithId(storyId: Int, token: String, response: (successful: Bool) -> ()) {
+
     }
 }
