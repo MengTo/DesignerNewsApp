@@ -55,7 +55,6 @@ func getStories(section: String, page: String, callback: (JSON) -> ()) {
     }
 }
 
-var token = getToken()
 enum Router: URLRequestConvertible {
     static let baseURLString = baseURL
     static var OAuthToken: String?
@@ -81,7 +80,7 @@ enum Router: URLRequestConvertible {
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue
         
-        mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        mutableURLRequest.setValue("Bearer \(getToken())", forHTTPHeaderField: "Authorization")
         
         return mutableURLRequest
     }

@@ -62,7 +62,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         var indexPath = tableView.indexPathForCell(cell)!
         var id = toString(story.id)
         
-        if token.isEmpty {
+        if getToken().isEmpty {
             performSegueWithIdentifier("LoginSegue", sender: self)
         }
         else {

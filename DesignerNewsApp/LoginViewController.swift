@@ -44,21 +44,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate, DragDropBehavi
     // MARK: Button
     @IBAction func signupButtonPressed(sender: AnyObject) {
         view.showLoading()
-        
-        postLogin(emailTextField.text, passwordTextField.text) { (json) -> () in
+        DesignerNewsService.postLogin(emailTextField.text, password: passwordTextField.text) { token in
             self.view.hideLoading()
-            
-            if let token = json?["access_token"] as? String {
+            if let token = token {
                 saveToken(token)
-                
                 self.dialogView.animation = "zoomOut"
                 self.dialogView.animate()
-                
                 self.dismissViewControllerAnimated(true, completion: nil)
                 UIApplication.sharedApplication().sendAction("reset:", to: nil, from: self, forEvent: nil)
                 self.delegate?.loginViewControllerDidLogin(self)
-            }
-            else {
+            } else {
                 self.dialogView.animation = "shake"
                 self.dialogView.animate()
             }
