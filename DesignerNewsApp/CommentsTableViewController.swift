@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate {
+class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate {
 
     var story: Story!
     private var cachedAttributedText = [Int: NSAttributedString]()
@@ -29,8 +29,16 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CommentSegue" {
+
             let toView = segue.destinationViewController as CommentViewController
-            toView.data = sender
+
+            if let cell = sender as? CommentTableViewCell {
+                let indexPath = self.tableView.indexPathForCell(cell)
+                let comment = self.getCommentForIndexPath(indexPath!)
+                toView.commentable = comment
+            } else if let cell = sender as? StoryTableViewCell {
+                toView.commentable = story
+            }
             
             toView.transitioningDelegate = self.transitionManager
         }
@@ -48,14 +56,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
         presentViewController(activityViewController, animated: true, completion: nil)
     }
-    
-    func commentsForComment(comment: JSON) -> [JSON] {
-        let comments = comment["comments"].array ?? []
-        return comments.reduce([comment]) { acc, x in
-            acc + self.commentsForComment(x)
-        }
-    }
-    
+
     // MARK: StoriesTableViewCellDelegate
     func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
@@ -79,12 +80,18 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
 
     func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject) {
-        var indexPath = tableView.indexPathForCell(cell)!
-        // TODO: Pass a concrete Comment to the Comment View Controller
-//        var comment = comments[indexPath.row].dictionaryObject
-//        performSegueWithIdentifier("CommentSegue", sender: comment)
+        performSegueWithIdentifier("CommentSegue", sender: cell)
     }
-    
+
+    // MARK: CommentTableViewCellDelegate
+    func commentTableViewCell(cell: CommentTableViewCell, replyButtonPressed sender: AnyObject) {
+        performSegueWithIdentifier("CommentSegue", sender: cell)
+    }
+
+    func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject) {
+        // TODO: Implement upvote
+    }
+
     // MARK: TableViewDelegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -107,9 +114,10 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         }
 
         if let commentCell = cell as? CommentTableViewCell {
-            let comment = story.comments[indexPath.row-1]
+            let comment = self.getCommentForIndexPath(indexPath)
             let bodyText = getAttributedTextAndCacheIfNecessary(comment.bodyHTML, id: comment.id)
             commentCell.configureWithComment(comment, attributedBodyText: bodyText)
+            commentCell.delegate = self
         }
 
         return cell
@@ -135,6 +143,10 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             return attributedText
         }
         return cachedAttributedText
+    }
+
+    func getCommentForIndexPath(indexPath: NSIndexPath) -> Comment {
+        return story.comments[indexPath.row - 1]
     }
 }
 
