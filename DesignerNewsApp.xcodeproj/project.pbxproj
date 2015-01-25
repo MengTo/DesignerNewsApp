@@ -235,25 +235,12 @@
 		966128511A4DA63100A54A23 /* DesignerNewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				B70191001A7550B600ED4D3D /* Behaviours */,
+				B70190FF1A754DE300ED4D3D /* Services */,
+				B70190FA1A754DC900ED4D3D /* View Controllers */,
 				B7E4D3311A719831001DC9B6 /* Cells */,
 				B78F903F1A6EFB9800883A5B /* Models */,
-				B78F903D1A6EFAAA00883A5B /* JSONParser.swift */,
-				B78F90371A6EF75800883A5B /* DesignerNewsService.swift */,
-				966128541A4DA63100A54A23 /* AppDelegate.swift */,
-				964892641A63C6E600214D53 /* CoreData.swift */,
-				1A6D719C1A6E6E74003968BA /* Token.swift */,
-				967CFD051A5C10700044B4E3 /* LoginViewController.swift */,
-				96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */,
-				9694F2041A5FF13900A6376A /* CommentsTableViewController.swift */,
-				964892141A62A84600214D53 /* CommentViewController.swift */,
-				9694F20A1A6123D000A6376A /* WebViewController.swift */,
-				964892661A63F5D900214D53 /* MenuViewController.swift */,
-				961889B71A680D3800295A64 /* LearnViewController.swift */,
-				1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */,
-				964892601A63AB2600214D53 /* DesignerNewsApp.xcdatamodeld */,
 				966128581A4DA63100A54A23 /* Main.storyboard */,
-				9661285B1A4DA63100A54A23 /* Images.xcassets */,
-				9661285D1A4DA63100A54A23 /* LaunchScreen.xib */,
 				961889B61A67F93800295A64 /* Libraries */,
 				966128521A4DA63100A54A23 /* Supporting Files */,
 			);
@@ -263,6 +250,9 @@
 		966128521A4DA63100A54A23 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9661285D1A4DA63100A54A23 /* LaunchScreen.xib */,
+				9661285B1A4DA63100A54A23 /* Images.xcassets */,
+				964892601A63AB2600214D53 /* DesignerNewsApp.xcdatamodeld */,
 				966128531A4DA63100A54A23 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -292,6 +282,40 @@
 				96A5800D1A5E4DF500FDE099 /* AlamofireTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B70190FA1A754DC900ED4D3D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				967CFD051A5C10700044B4E3 /* LoginViewController.swift */,
+				96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */,
+				9694F2041A5FF13900A6376A /* CommentsTableViewController.swift */,
+				964892141A62A84600214D53 /* CommentViewController.swift */,
+				9694F20A1A6123D000A6376A /* WebViewController.swift */,
+				964892661A63F5D900214D53 /* MenuViewController.swift */,
+				961889B71A680D3800295A64 /* LearnViewController.swift */,
+				966128541A4DA63100A54A23 /* AppDelegate.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B70190FF1A754DE300ED4D3D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B78F903D1A6EFAAA00883A5B /* JSONParser.swift */,
+				B78F90371A6EF75800883A5B /* DesignerNewsService.swift */,
+				964892641A63C6E600214D53 /* CoreData.swift */,
+				1A6D719C1A6E6E74003968BA /* Token.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		B70191001A7550B600ED4D3D /* Behaviours */ = {
+			isa = PBXGroup;
+			children = (
+				1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */,
+			);
+			name = Behaviours;
 			sourceTree = "<group>";
 		};
 		B78F903F1A6EFB9800883A5B /* Models */ = {
