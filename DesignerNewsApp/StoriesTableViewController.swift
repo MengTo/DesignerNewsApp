@@ -157,10 +157,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         let story = stories[indexPath.row]
         performSegueWithIdentifier("CommentsSegue", sender: cell)
     }
-
-    func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject) {
-        // TODO
-    }
     
     // MARK: Misc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

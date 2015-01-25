@@ -9,10 +9,10 @@
 import UIKit
 import Spring
 
-protocol StoryTableViewCellDelegate: class {
+@objc protocol StoryTableViewCellDelegate: class {
     func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject)
-    func storyTableViewCell(cell: StoryTableViewCell, commentButtonPressed sender: AnyObject)
-    func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject)
+    optional func storyTableViewCell(cell: StoryTableViewCell, commentButtonPressed sender: AnyObject)
+    optional func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject)
 }
 
 class StoryTableViewCell: UITableViewCell {
@@ -36,12 +36,12 @@ class StoryTableViewCell: UITableViewCell {
     }
     
     @IBAction func commentButtonPressed(sender: AnyObject) {
-        delegate?.storyTableViewCell(self, commentButtonPressed: sender)
+        delegate?.storyTableViewCell?(self, commentButtonPressed: sender)
         animateButton(commentButton!)
     }
     
     @IBAction func replyButtonPressed(sender: AnyObject) {
-        delegate?.storyTableViewCell(self, replyButtonPressed: sender)
+        delegate?.storyTableViewCell?(self, replyButtonPressed: sender)
         animateButton(replyButton!)
     }
     
