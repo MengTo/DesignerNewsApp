@@ -24,7 +24,9 @@ class StoryTableViewCell: UITableViewCell {
     @IBOutlet weak var replyButton: SpringButton?
     @IBOutlet weak var upvoteButton: SpringButton!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var commentTextView: UITextView?
+    @IBOutlet weak var commentTextView: CoreTextView?
+
+    var story : Story?
     
     weak var delegate: StoryTableViewCellDelegate?
     
@@ -59,6 +61,7 @@ class StoryTableViewCell: UITableViewCell {
 
 extension StoryTableViewCell {
     func configureWithStory(story: Story, isUpvoted: Bool = false) {
+
         self.titleLabel.text = story.title
         self.authorLabel.text = story.userDisplayName + ", " + story.userJob
         self.upvoteButton.setTitle(toString(story.voteCount), forState: UIControlState.Normal)
@@ -76,11 +79,9 @@ extension StoryTableViewCell {
         })
 
         if let commentTextView = self.commentTextView {
-            commentTextView.layoutSubviews()
-            commentTextView.sizeToFit()
-            commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
-            commentTextView.attributedText = NSAttributedString(fromHTML: "<style>img { max-width: 320px; } </style>" + story.commentHTML, boldFont: UIFont(name: "Avenir Next Bold", size: 16), italicFont: UIFont(name: "Avenir Next Italic", size: 16))
-            commentTextView.font = UIFont(name: "Avenir Next", size: 16)
+            let data = ("<style>img { max-width: 320px; } p {font-family:\"Avenir Next\";font-size:16px}</style>" + story.commentHTML).dataUsingEncoding(NSUTF8StringEncoding)
+            let attributedString = NSAttributedString(HTMLData: data, documentAttributes: nil)
+            commentTextView.attributedString = attributedString
         }
 
         if let commentButton = self.commentButton {

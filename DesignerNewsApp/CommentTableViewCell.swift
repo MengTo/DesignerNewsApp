@@ -20,7 +20,7 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var replyButton: SpringButton!
     @IBOutlet weak var upvoteButton: SpringButton!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var commentTextView: CoreTextView!
     @IBOutlet weak var avatarLeftConstant: NSLayoutConstraint!
     @IBOutlet weak var indentView: UIView!
 
@@ -59,6 +59,7 @@ extension CommentTableViewCell {
         if comment.depth > 0 {
             self.indentView.hidden = false
             self.avatarLeftConstant.constant = CGFloat(comment.depth) * 20 + 15
+
             self.separatorInset = UIEdgeInsets(top: 0, left: CGFloat(comment.depth) * 20 + 15, bottom: 0, right: 0)
         }
         else {
@@ -67,10 +68,9 @@ extension CommentTableViewCell {
             self.indentView.hidden = true
         }
 
-        self.commentTextView.layoutSubviews()
-        self.commentTextView.sizeToFit()
-        self.commentTextView.textContainerInset = UIEdgeInsetsMake(4, -4, -4, 4)
-        commentTextView.attributedText = NSAttributedString(fromHTML: "<style>img { max-width: 320px; } </style>" + comment.bodyHTML, boldFont: UIFont(name: "Avenir Next Bold", size: 16), italicFont: UIFont(name: "Avenir Next Italic", size: 16))
-        self.commentTextView.font = UIFont(name: "Avenir Next", size: 16)
+        self.commentTextView.invalidateIntrinsicContentSize()
+
+        let data = ("<style>img { max-width: 320px; } p {font-family:\"Avenir Next\";font-size:16px}</style>" + comment.bodyHTML).dataUsingEncoding(NSUTF8StringEncoding)
+        commentTextView.attributedString = NSAttributedString(HTMLData: data, documentAttributes: nil)
     }
 }

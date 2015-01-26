@@ -19,6 +19,10 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         super.viewDidLoad()
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableViewAutomaticDimension
+
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+        })
     }
     
     override func viewDidAppear(animated: Bool) {

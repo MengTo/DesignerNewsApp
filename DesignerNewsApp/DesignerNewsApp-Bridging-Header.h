@@ -9,6 +9,9 @@
 #ifndef DesignerNewsApp_DesignerNewsApp_Bridging_Header_h
 #define DesignerNewsApp_DesignerNewsApp_Bridging_Header_h
 
-#import "NSAttributedString+DDHTML.h"
+//#import "NSAttributedString+DDHTML.h"
+#import <UIKit/UIKit.h>
+#import "DTCoreText.h"
+#import "NSAttributedString+HTML.h"
 
 #endif

@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		1A6D719D1A6E6E74003968BA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D719C1A6E6E74003968BA /* Token.swift */; };
 		1A7D78A01A70F8FE0061D6F6 /* DragDropBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */; };
+		1A8D9C811A75E3000032DA0F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C801A75E3000032DA0F /* ImageIO.framework */; };
+		1A8D9C821A75E3090032DA0F /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C731A75E2A10032DA0F /* libDTCoreText.a */; };
+		1A8D9C841A75E30F0032DA0F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C831A75E30F0032DA0F /* QuartzCore.framework */; };
+		1A8D9C871A75E31B0032DA0F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C861A75E31B0032DA0F /* MobileCoreServices.framework */; };
+		1A8D9C8A1A75E33E0032DA0F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C891A75E33E0032DA0F /* CoreText.framework */; };
 		1A908E471A74A44600F30022 /* Commentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A908E461A74A44600F30022 /* Commentable.swift */; };
-		1A908E651A753B5400F30022 /* NSAttributedString+DDHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A908E641A753B5400F30022 /* NSAttributedString+DDHTML.m */; };
 		1A908E671A753B6C00F30022 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A908E661A753B6C00F30022 /* libxml2.dylib */; };
+		1A9183091A75EE1900606F35 /* CoreTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9183081A75EE1900606F35 /* CoreTextView.swift */; };
 		961889B21A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AB1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m */; };
 		961889B31A67F15900295A64 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AD1A67F15900295A64 /* TPKeyboardAvoidingScrollView.m */; };
 		961889B41A67F15900295A64 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AF1A67F15900295A64 /* TPKeyboardAvoidingTableView.m */; };
@@ -76,6 +81,55 @@
 			remoteGlobalIDString = 1A4FDA321A6E44780099D309;
 			remoteInfo = Spring;
 		};
+		1A8D9C6E1A75E2A10032DA0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A8D9C611A75E2A00032DA0F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
+			remoteInfo = DemoApp;
+		};
+		1A8D9C701A75E2A10032DA0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A8D9C611A75E2A00032DA0F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A70F119B14863198009202BF;
+			remoteInfo = "Static Framework";
+		};
+		1A8D9C721A75E2A10032DA0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A8D9C611A75E2A00032DA0F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A70F11DE148632CD009202BF;
+			remoteInfo = "Static Library";
+		};
+		1A8D9C741A75E2A10032DA0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A8D9C611A75E2A00032DA0F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A788CA681486456100E1AFD9;
+			remoteInfo = UnitTest;
+		};
+		1A8D9C761A75E2A10032DA0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A8D9C611A75E2A00032DA0F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A78D9F781965B7DD00C80986;
+			remoteInfo = MacUnitTest;
+		};
+		1A8D9C781A75E2A10032DA0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A8D9C611A75E2A00032DA0F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A7F7EFCD1573603100F5A4D0;
+			remoteInfo = "Static Library (no DTFoundation)";
+		};
+		1A8D9C7A1A75E2A10032DA0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A8D9C611A75E2A00032DA0F /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E2262DC61638331500BFDAD7;
+			remoteInfo = "Mac Framework";
+		};
 		964892121A62818A00214D53 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */;
@@ -125,11 +179,15 @@
 		1A4FDA211A6E43FE0099D309 /* SpringApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SpringApp.xcodeproj; path = Spring/SpringApp.xcodeproj; sourceTree = "<group>"; };
 		1A6D719C1A6E6E74003968BA /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragDropBehavior.swift; sourceTree = "<group>"; };
+		1A8D9C611A75E2A00032DA0F /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = Externals/DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
+		1A8D9C801A75E3000032DA0F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		1A8D9C831A75E30F0032DA0F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1A8D9C861A75E31B0032DA0F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1A8D9C891A75E33E0032DA0F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		1A908E461A74A44600F30022 /* Commentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commentable.swift; sourceTree = "<group>"; };
 		1A908E611A75382200F30022 /* DesignerNewsApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignerNewsApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		1A908E631A753B5400F30022 /* NSAttributedString+DDHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+DDHTML.h"; sourceTree = "<group>"; };
-		1A908E641A753B5400F30022 /* NSAttributedString+DDHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+DDHTML.m"; sourceTree = "<group>"; };
 		1A908E661A753B6C00F30022 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		1A9183081A75EE1900606F35 /* CoreTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextView.swift; sourceTree = "<group>"; };
 		961889AA1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		961889AB1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		961889AC1A67F15900295A64 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -170,6 +228,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A8D9C8A1A75E33E0032DA0F /* CoreText.framework in Frameworks */,
+				1A8D9C871A75E31B0032DA0F /* MobileCoreServices.framework in Frameworks */,
+				1A8D9C841A75E30F0032DA0F /* QuartzCore.framework in Frameworks */,
+				1A8D9C821A75E3090032DA0F /* libDTCoreText.a in Frameworks */,
+				1A8D9C811A75E3000032DA0F /* ImageIO.framework in Frameworks */,
 				1A908E671A753B6C00F30022 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,13 +258,40 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1A908E621A753B5400F30022 /* NSAttributedString+DDHTML */ = {
+		1A8D9C621A75E2A00032DA0F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A908E631A753B5400F30022 /* NSAttributedString+DDHTML.h */,
-				1A908E641A753B5400F30022 /* NSAttributedString+DDHTML.m */,
+				1A8D9C6F1A75E2A10032DA0F /* RTDemoApp.app */,
+				1A8D9C711A75E2A10032DA0F /* DTCoreText.framework */,
+				1A8D9C731A75E2A10032DA0F /* libDTCoreText.a */,
+				1A8D9C751A75E2A10032DA0F /* UnitTest.xctest */,
+				1A8D9C771A75E2A10032DA0F /* MacUnitTest.xctest */,
+				1A8D9C791A75E2A10032DA0F /* libDTCoreText_no_DTFoundation.a */,
+				1A8D9C7B1A75E2A10032DA0F /* DTCoreText.framework */,
 			);
-			path = "NSAttributedString+DDHTML";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A8D9C7F1A75E2A70032DA0F /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */,
+				1A4FDA211A6E43FE0099D309 /* SpringApp.xcodeproj */,
+				1A8D9C611A75E2A00032DA0F /* DTCoreText.xcodeproj */,
+			);
+			name = Externals;
+			sourceTree = "<group>";
+		};
+		1A8D9C881A75E31F0032DA0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A8D9C891A75E33E0032DA0F /* CoreText.framework */,
+				1A8D9C861A75E31B0032DA0F /* MobileCoreServices.framework */,
+				1A8D9C831A75E30F0032DA0F /* QuartzCore.framework */,
+				1A8D9C801A75E3000032DA0F /* ImageIO.framework */,
+				1A908E661A753B6C00F30022 /* libxml2.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		961889A91A67F15900295A64 /* TPKeyboardAvoiding */ = {
@@ -222,7 +312,6 @@
 		961889B61A67F93800295A64 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				1A908E621A753B5400F30022 /* NSAttributedString+DDHTML */,
 				961889A91A67F15900295A64 /* TPKeyboardAvoiding */,
 			);
 			name = Libraries;
@@ -232,10 +321,9 @@
 		966128461A4DA63100A54A23 = {
 			isa = PBXGroup;
 			children = (
-				1A908E661A753B6C00F30022 /* libxml2.dylib */,
 				966128511A4DA63100A54A23 /* DesignerNewsApp */,
-				96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */,
-				1A4FDA211A6E43FE0099D309 /* SpringApp.xcodeproj */,
+				1A8D9C7F1A75E2A70032DA0F /* Externals */,
+				1A8D9C881A75E31F0032DA0F /* Frameworks */,
 				966128671A4DA63100A54A23 /* DesignerNewsAppTests */,
 				966128501A4DA63100A54A23 /* Products */,
 			);
@@ -254,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				1A908E611A75382200F30022 /* DesignerNewsApp-Bridging-Header.h */,
+				1A9183081A75EE1900606F35 /* CoreTextView.swift */,
 				B7E4D3311A719831001DC9B6 /* Cells */,
 				B78F903F1A6EFB9800883A5B /* Models */,
 				B78F903D1A6EFAAA00883A5B /* JSONParser.swift */,
@@ -410,6 +499,10 @@
 					ProjectRef = 96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */;
 				},
 				{
+					ProductGroup = 1A8D9C621A75E2A00032DA0F /* Products */;
+					ProjectRef = 1A8D9C611A75E2A00032DA0F /* DTCoreText.xcodeproj */;
+				},
+				{
 					ProductGroup = 1A4FDA221A6E43FE0099D309 /* Products */;
 					ProjectRef = 1A4FDA211A6E43FE0099D309 /* SpringApp.xcodeproj */;
 				},
@@ -449,6 +542,55 @@
 			fileType = wrapper.cfbundle;
 			path = SpringTests.xctest;
 			remoteRef = 1A4FDA721A6E44B70099D309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1A8D9C6F1A75E2A10032DA0F /* RTDemoApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = RTDemoApp.app;
+			remoteRef = 1A8D9C6E1A75E2A10032DA0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1A8D9C711A75E2A10032DA0F /* DTCoreText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DTCoreText.framework;
+			remoteRef = 1A8D9C701A75E2A10032DA0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1A8D9C731A75E2A10032DA0F /* libDTCoreText.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDTCoreText.a;
+			remoteRef = 1A8D9C721A75E2A10032DA0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1A8D9C751A75E2A10032DA0F /* UnitTest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTest.xctest;
+			remoteRef = 1A8D9C741A75E2A10032DA0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1A8D9C771A75E2A10032DA0F /* MacUnitTest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MacUnitTest.xctest;
+			remoteRef = 1A8D9C761A75E2A10032DA0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1A8D9C791A75E2A10032DA0F /* libDTCoreText_no_DTFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDTCoreText_no_DTFoundation.a;
+			remoteRef = 1A8D9C781A75E2A10032DA0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1A8D9C7B1A75E2A10032DA0F /* DTCoreText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DTCoreText.framework;
+			remoteRef = 1A8D9C7A1A75E2A10032DA0F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		96A5800B1A5E4DF500FDE099 /* Alamofire.framework */ = {
@@ -493,7 +635,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				964892671A63F5D900214D53 /* MenuViewController.swift in Sources */,
-				1A908E651A753B5400F30022 /* NSAttributedString+DDHTML.m in Sources */,
 				961889B81A680D3800295A64 /* LearnViewController.swift in Sources */,
 				964892651A63C6E600214D53 /* CoreData.swift in Sources */,
 				966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */,
@@ -511,6 +652,7 @@
 				9694F20B1A6123D000A6376A /* WebViewController.swift in Sources */,
 				B78F90411A6EFBAF00883A5B /* Story.swift in Sources */,
 				96AF96171A5EABC9003926E2 /* StoryTableViewCell.swift in Sources */,
+				1A9183091A75EE1900606F35 /* CoreTextView.swift in Sources */,
 				B7E4D3371A719855001DC9B6 /* CommentTableViewCell.swift in Sources */,
 				961889B41A67F15900295A64 /* TPKeyboardAvoidingTableView.m in Sources */,
 				967CFD061A5C10700044B4E3 /* LoginViewController.swift in Sources */,
@@ -647,6 +789,7 @@
 		9661286F1A4DA63100A54A23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -659,16 +802,22 @@
 				INFOPLIST_FILE = DesignerNewsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/$(PRODUCT_NAME)-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "Externals/DTCoreText/Core/** Externals/DTCoreText/Externals/DTFoundation/Core/**";
 			};
 			name = Debug;
 		};
 		966128701A4DA63100A54A23 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -681,10 +830,15 @@
 				INFOPLIST_FILE = DesignerNewsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/$(PRODUCT_NAME)-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "Externals/DTCoreText/Core/** Externals/DTCoreText/Externals/DTFoundation/Core/**";
 			};
 			name = Release;
 		};
