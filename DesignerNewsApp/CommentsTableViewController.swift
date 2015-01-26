@@ -20,6 +20,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableViewAutomaticDimension
 
+        // Reloading for the visible cells to layout correctly
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.tableView.reloadData()
         })
@@ -116,6 +117,10 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         let identifier = indexPath.row == 0 ? "StoryCell" : "CommentCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
+
+        // In order to make sure the cell have correct size while dequeuing,
+        // manually set the frame to it's parent's bounds
+        cell.frame = tableView.bounds
 
         if let storyCell = cell as? StoryTableViewCell {
             storyCell.configureWithStory(story)

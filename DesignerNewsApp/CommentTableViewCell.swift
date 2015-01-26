@@ -56,6 +56,18 @@ class CommentTableViewCell: UITableViewCell, CoreTextViewDelegate {
 
 extension CommentTableViewCell {
     func configureWithComment(comment: Comment, isUpvoted: Bool = false) {
+
+        if comment.depth > 0 {
+            self.indentView.hidden = false
+            self.avatarLeftConstant.constant = CGFloat(comment.depth) * 20 + 15
+            self.separatorInset = UIEdgeInsets(top: 0, left: CGFloat(comment.depth) * 20 + 15, bottom: 0, right: 0)
+        }
+        else {
+            self.avatarLeftConstant.constant = 0
+            self.separatorInset = UIEdgeInsets(top: 0, left: 35, bottom: 0, right: 0)
+            self.indentView.hidden = true
+        }
+
         self.authorLabel.text = comment.userDisplayName + ", " + comment.userJob
         self.upvoteButton.setTitle(toString(comment.voteCount), forState: UIControlState.Normal)
         self.avatarImageView.image = UIImage(named: "content-avatar-default")
@@ -67,21 +79,12 @@ extension CommentTableViewCell {
             self.avatarImageView.image = image
         })
 
-        if comment.depth > 0 {
-            self.indentView.hidden = false
-            self.avatarLeftConstant.constant = CGFloat(comment.depth) * 20 + 15
-
-            self.separatorInset = UIEdgeInsets(top: 0, left: CGFloat(comment.depth) * 20 + 15, bottom: 0, right: 0)
-        }
-        else {
-            self.avatarLeftConstant.constant = 0
-            self.separatorInset = UIEdgeInsets(top: 0, left: 35, bottom: 0, right: 0)
-            self.indentView.hidden = true
-        }
-
-        self.commentTextView.invalidateIntrinsicContentSize()
+        // Make sure the textView are correctly framed before setting attributed string
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
 
         let data = ("<style>img { max-width: 320px; } p {font-family:\"Avenir Next\";font-size:16px}</style>" + comment.bodyHTML).dataUsingEncoding(NSUTF8StringEncoding)
         commentTextView.attributedString = NSAttributedString(HTMLData: data, documentAttributes: nil)
+
     }
 }
