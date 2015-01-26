@@ -12,13 +12,17 @@ import Spring
 class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate {
 
     var story: Story!
-    private var cachedAttributedText = [Int: NSAttributedString]()
     private let transitionManager = TransitionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableViewAutomaticDimension
+
+        // Reloading for the visible cells to layout correctly
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+        })
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -43,9 +47,12 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             toView.transitioningDelegate = self.transitionManager
         }
         else if segue.identifier == "WebSegue" {
-            let toView = segue.destinationViewController as WebViewController
-            toView.story = story
-            toView.transitioningDelegate = self.transitionManager
+            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+
+            let webViewController = segue.destinationViewController as WebViewController
+            webViewController.shareTitle = story.title
+            webViewController.url = NSURL(string: story.url)
+            webViewController.transitioningDelegate = self.transitionManager
         }
     }
     
@@ -79,6 +86,10 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         performSegueWithIdentifier("CommentSegue", sender: cell)
     }
 
+    func storyTableViewCell(cell: StoryTableViewCell, linkDidPress link: NSURL) {
+        performSegueWithIdentifier("WebSegue", sender: link)
+    }
+
     // MARK: CommentTableViewCellDelegate
     func commentTableViewCell(cell: CommentTableViewCell, replyButtonPressed sender: AnyObject) {
         performSegueWithIdentifier("CommentSegue", sender: cell)
@@ -103,6 +114,10 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         }
     }
 
+    func commentTableViewCell(cell: CommentTableViewCell, linkDidPress link: NSURL) {
+        performSegueWithIdentifier("WebSegue", sender: link)
+    }
+
     // MARK: TableViewDelegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -118,43 +133,31 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
 
+        // In order to make sure the cell have correct size while dequeuing,
+        // manually set the frame to it's parent's bounds
+        cell.frame = tableView.bounds
+
         if let storyCell = cell as? StoryTableViewCell {
-            let commentText = getAttributedTextAndCacheIfNecessary(story.commentHTML, id: story.id)
-            storyCell.configureWithStory(story, attributedCommentText: commentText)
+            storyCell.configureWithStory(story)
             storyCell.delegate = self
         }
 
         if let commentCell = cell as? CommentTableViewCell {
             let comment = self.getCommentForIndexPath(indexPath)
-            let bodyText = getAttributedTextAndCacheIfNecessary(comment.bodyHTML, id: comment.id)
-            commentCell.configureWithComment(comment, attributedBodyText: bodyText)
+            commentCell.configureWithComment(comment)
             commentCell.delegate = self
         }
 
         return cell
     }
-    
+
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
             performSegueWithIdentifier("WebSegue", sender: self)
-            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
         }
     }
     
     // MARK: Misc
-
-    func getAttributedTextAndCacheIfNecessary(text: String, id: Int) -> NSAttributedString? {
-        let cachedAttributedText = self.cachedAttributedText[id]
-        if cachedAttributedText == nil {
-            // Not in cache so we create the attributed string
-            let cssString = "<style>img { max-width: 320px; } </style>"
-            // Save to cache
-            let attributedText = htmlToAttributedString(cssString + text)
-            self.cachedAttributedText[id] = attributedText
-            return attributedText
-        }
-        return cachedAttributedText
-    }
 
     func getCommentForIndexPath(indexPath: NSIndexPath) -> Comment {
         return story.comments[indexPath.row - 1]

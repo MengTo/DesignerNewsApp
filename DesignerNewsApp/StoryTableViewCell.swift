@@ -13,9 +13,10 @@ import Spring
     func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject)
     optional func storyTableViewCell(cell: StoryTableViewCell, commentButtonPressed sender: AnyObject)
     optional func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject)
+    optional func storyTableViewCell(cell: StoryTableViewCell, linkDidPress link:NSURL)
 }
 
-class StoryTableViewCell: UITableViewCell {
+class StoryTableViewCell: UITableViewCell, CoreTextViewDelegate {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -24,9 +25,16 @@ class StoryTableViewCell: UITableViewCell {
     @IBOutlet weak var replyButton: SpringButton?
     @IBOutlet weak var upvoteButton: SpringButton!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var commentTextView: UITextView?
+    @IBOutlet weak var commentTextView: CoreTextView?
+
+    var story : Story?
     
     weak var delegate: StoryTableViewCellDelegate?
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.commentTextView?.linkDelegate = self
+    }
     
     @IBAction func upvoteButtonPressed(sender: AnyObject) {
         setSelected(true, animated: false)
@@ -55,10 +63,16 @@ class StoryTableViewCell: UITableViewCell {
         super.layoutSubviews()
         self.titleLabel.preferredMaxLayoutWidth = self.titleLabel.frame.size.width
     }
+
+    // MARK: CoreTextViewDelegate
+    func coreTextView(textView: CoreTextView, linkDidTap link: NSURL) {
+        self.delegate?.storyTableViewCell?(self, linkDidPress: link)
+    }
 }
 
 extension StoryTableViewCell {
-    func configureWithStory(story: Story, attributedCommentText: NSAttributedString? = nil, isUpvoted: Bool = false) {
+    func configureWithStory(story: Story, isUpvoted: Bool = false) {
+
         self.titleLabel.text = story.title
         self.authorLabel.text = story.userDisplayName + ", " + story.userJob
         self.upvoteButton.setTitle(toString(story.voteCount), forState: UIControlState.Normal)
@@ -76,11 +90,9 @@ extension StoryTableViewCell {
         })
 
         if let commentTextView = self.commentTextView {
-            commentTextView.layoutSubviews()
-            commentTextView.sizeToFit()
-            commentTextView.contentInset = UIEdgeInsetsMake(-4, -4, -4, -4)
-            commentTextView.attributedText = attributedCommentText ?? NSAttributedString(string: story.commentHTML)
-            commentTextView.font = UIFont(name: "Avenir Next", size: 16)
+            let data = ("<style>img { max-width: 320px; } p {font-family:\"Avenir Next\";font-size:16px}</style>" + story.commentHTML).dataUsingEncoding(NSUTF8StringEncoding)
+            let attributedString = NSAttributedString(HTMLData: data, documentAttributes: nil)
+            commentTextView.attributedString = attributedString
         }
 
         if let commentButton = self.commentButton {

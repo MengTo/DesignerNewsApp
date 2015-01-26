@@ -14,13 +14,14 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var webView: UIWebView!
     var timer = NSTimer()
-    var story: Story!
+    var shareTitle : String?
+    var url : NSURL!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var closeButton: SpringButton!
     
     @IBAction func shareButtonPressed(sender: AnyObject) {
-        var shareString = story.title
-        var shareURL = NSURL(string: "http://google.com")!
+        var shareString = self.shareTitle ?? ""
+        var shareURL = self.url
         let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: nil)
         activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
         presentViewController(activityViewController, animated: true, completion: nil)
@@ -29,13 +30,14 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var url = NSURL(string: story.url)
         let request = NSURLRequest(URL: url!)
         webView.loadRequest(request)
         webView.delegate = self
     }
 
     func webViewDidFinishLoad(webView: UIWebView) {
+        self.shareTitle = webView.stringByEvaluatingJavaScriptFromString("document.title");
+
         timer = NSTimer.scheduledTimerWithTimeInterval(
             0.1,
             target: self,

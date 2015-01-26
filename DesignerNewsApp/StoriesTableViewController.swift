@@ -170,12 +170,17 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             commentsViewController.story = story
         }
         else if segue.identifier == "WebSegue" {
-            let indexPath = tableView.indexPathForCell(sender as UITableViewCell)
-            let story = stories[indexPath!.row]
 
             let webViewController = segue.destinationViewController as WebViewController
-            webViewController.story = story
-            
+
+            if let indexPath = tableView.indexPathForCell(sender as UITableViewCell) {
+                let story = stories[indexPath.row]
+                webViewController.shareTitle = story.title
+                webViewController.url = NSURL(string: story.url)
+            } else if let url = sender as? NSURL {
+                webViewController.url = url
+            }
+
             webViewController.transitioningDelegate = self.transitionManager
             
             UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
