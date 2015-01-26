@@ -90,7 +90,7 @@ extension StoryTableViewCell {
         })
 
         if let commentTextView = self.commentTextView {
-            let data = ("<style>img { max-width: 320px; } p {font-family:\"Avenir Next\";font-size:16px}</style>" + story.commentHTML).dataUsingEncoding(NSUTF8StringEncoding)
+            let data = ("<style>img { max-width: 320px; } p {font-family:\"Avenir Next\";font-size:16px;line-height:20px;}</style>" + story.commentHTML).dataUsingEncoding(NSUTF8StringEncoding)
             let attributedString = NSAttributedString(HTMLData: data, documentAttributes: nil)
             commentTextView.attributedString = attributedString
         }
