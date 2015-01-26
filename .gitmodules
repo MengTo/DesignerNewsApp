@@ -1,8 +1,8 @@
-[submodule "Alamofire"]
-	path = Alamofire
+[submodule "Externals/Alamofire"]
+	path = Externals/Alamofire
 	url = https://github.com/Alamofire/Alamofire.git
-[submodule "Spring"]
-	path = Spring
+[submodule "Externals/Spring"]
+	path = Externals/Spring
 	url = git@github.com:MengTo/Spring.git
 [submodule "Externals/DTCoreText"]
 	path = Externals/DTCoreText
