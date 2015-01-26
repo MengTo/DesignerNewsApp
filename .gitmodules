@@ -6,4 +6,4 @@
 	url = git@github.com:MengTo/Spring.git
 [submodule "Externals/DTCoreText"]
 	path = Externals/DTCoreText
-	url = https://github.com/Cocoanetics/DTCoreText.git
+	url = git@github.com:JTExperiments/DTCoreText.git
