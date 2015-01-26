@@ -72,13 +72,14 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         }
         else {
             DesignerNewsService.upvoteStoryWithId(story.id, token: getToken()) { successful in
-
+                if successful {
+                    saveUpvote(toString(self.story.id))
+                    let upvoteInt = self.story.voteCount + 1
+                    let upvoteString = toString(upvoteInt)
+                    cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
+                    cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
+                }
             }
-            saveUpvote(toString(story.id))
-            let upvoteInt = story.voteCount + 1
-            let upvoteString = toString(upvoteInt)
-            cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
-            cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
         }
     }
 
@@ -96,7 +97,22 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
 
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject) {
-        // TODO
+        if getToken().isEmpty {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        }
+        else {
+            let indexPath = self.tableView.indexPathForCell(cell)
+            let comment = self.getCommentForIndexPath(indexPath!)
+            DesignerNewsService.upvoteCommentWithId(comment.id, token: getToken()) { successful in
+                if successful {
+                    saveUpvote(toString(comment.id))
+                    let upvoteInt = comment.voteCount + 1
+                    let upvoteString = toString(upvoteInt)
+                    cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
+                    cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
+                }
+            }
+        }
     }
 
     func commentTableViewCell(cell: CommentTableViewCell, linkDidPress link: NSURL) {

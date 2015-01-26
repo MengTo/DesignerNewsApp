@@ -18,12 +18,14 @@ struct DesignerNewsService {
         case Login
         case Stories
         case StoryUpvote(storyId: Int)
+        case CommentUpvote(commentId: Int)
 
         var description: String {
             switch self {
             case .Login: return "/oauth/token"
             case .Stories: return "/api/v1/stories"
             case .StoryUpvote(let id): return "/api/v1/stories/\(id)/upvote"
+            case .CommentUpvote(let id): return "/api/v1/comments/\(id)/upvote"
             }
         }
     }
@@ -59,15 +61,24 @@ struct DesignerNewsService {
     }
 
     static func upvoteStoryWithId(storyId: Int, token: String, response: (successful: Bool) -> ()) {
-        let urlString = baseURL + ResourcePath.StoryUpvote(storyId: storyId).description
-        let mutableURLRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
-        mutableURLRequest.HTTPMethod = "POST"
-        mutableURLRequest.setValue("Bearer \(getToken())", forHTTPHeaderField: "Authorization")
+        let resourcePath = ResourcePath.StoryUpvote(storyId: storyId)
+        upvoteWithResourcePath(resourcePath, token: token, response: response)
+    }
 
-        Alamofire.request(mutableURLRequest).responseJSON { (_, _, json, _) in
-            // FIXME: Upvote is not working and call response closure after json structure is known.
-            println(json)
+    static func upvoteCommentWithId(commentId: Int, token: String, response: (successful: Bool) -> ()) {
+        let resourcePath = ResourcePath.CommentUpvote(commentId: commentId)
+        upvoteWithResourcePath(resourcePath, token: token, response: response)
+    }
+
+    private static func upvoteWithResourcePath(path: ResourcePath, token: String, response: (successful: Bool) -> ()) {
+        let urlString = baseURL + path.description
+        let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        request.HTTPMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        Alamofire.request(request).responseJSON { (_, urlResponse, _, _) in
+            let successful = urlResponse?.statusCode == 200
+            response(successful: successful)
         }
-
     }
 }

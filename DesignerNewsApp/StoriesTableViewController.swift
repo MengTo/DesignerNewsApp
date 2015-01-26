@@ -21,7 +21,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         loadStories(self)
         
         refreshControl?.addTarget(self, action: "loadStories:", forControlEvents: UIControlEvents.ValueChanged)
@@ -141,19 +141,17 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             performSegueWithIdentifier("LoginSegue", sender: self)
         }
         else {
-
             let indexPath = tableView.indexPathForCell(cell)!
             let storyId = stories[indexPath.row].id
-
             DesignerNewsService.upvoteStoryWithId(storyId, token: token) { successful in
-                println(successful)
+                if successful {
+                    saveUpvote(toString(storyId))
+                    let upvoteInt = self.stories[indexPath.row].voteCount + 1
+                    let upvoteString = toString(upvoteInt)
+                    cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
+                    cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
+                }
             }
-
-            saveUpvote(toString(storyId))
-            let upvoteInt = stories[indexPath.row].voteCount + 1
-            let upvoteString = toString(upvoteInt)
-            cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
-            cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
         }
     }
 
