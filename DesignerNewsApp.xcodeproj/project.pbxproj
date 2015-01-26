@@ -341,15 +341,15 @@
 		966128511A4DA63100A54A23 /* DesignerNewsApp */ = {
 			isa = PBXGroup;
 			children = (
-				1A908E611A75382200F30022 /* DesignerNewsApp-Bridging-Header.h */,
-				1A9183081A75EE1900606F35 /* CoreTextView.swift */,
-				B70191001A7550B600ED4D3D /* Behaviours */,
-				B70190FF1A754DE300ED4D3D /* Services */,
-				B70190FA1A754DC900ED4D3D /* View Controllers */,
-				B7E4D3311A719831001DC9B6 /* Cells */,
-				B78F903F1A6EFB9800883A5B /* Models */,
 				966128581A4DA63100A54A23 /* Main.storyboard */,
+				B78F903F1A6EFB9800883A5B /* Models */,
+				B70191151A76566700ED4D3D /* Views */,
+				B70190FA1A754DC900ED4D3D /* View Controllers */,
+				B70190FF1A754DE300ED4D3D /* Services */,
+				B7E4D3311A719831001DC9B6 /* Cells */,
+				B70191001A7550B600ED4D3D /* Behaviours */,
 				961889B61A67F93800295A64 /* Libraries */,
+				B70191221A7656AF00ED4D3D /* Bridging */,
 				966128521A4DA63100A54A23 /* Supporting Files */,
 			);
 			path = DesignerNewsApp;
@@ -424,6 +424,22 @@
 				1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */,
 			);
 			name = Behaviours;
+			sourceTree = "<group>";
+		};
+		B70191151A76566700ED4D3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A9183081A75EE1900606F35 /* CoreTextView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B70191221A7656AF00ED4D3D /* Bridging */ = {
+			isa = PBXGroup;
+			children = (
+				1A908E611A75382200F30022 /* DesignerNewsApp-Bridging-Header.h */,
+			);
+			name = Bridging;
 			sourceTree = "<group>";
 		};
 		B78F903F1A6EFB9800883A5B /* Models */ = {
