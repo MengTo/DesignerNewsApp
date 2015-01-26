@@ -9,12 +9,13 @@
 import UIKit
 import Spring
 
-protocol CommentTableViewCellDelegate: class {
+@objc protocol CommentTableViewCellDelegate: class {
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject)
     func commentTableViewCell(cell: CommentTableViewCell, replyButtonPressed sender: AnyObject)
+    optional func commentTableViewCell(cell: CommentTableViewCell, linkDidPress link:NSURL)
 }
 
-class CommentTableViewCell: UITableViewCell {
+class CommentTableViewCell: UITableViewCell, CoreTextViewDelegate {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var replyButton: SpringButton!
@@ -25,6 +26,11 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var indentView: UIView!
 
     weak var delegate: CommentTableViewCellDelegate?
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.commentTextView.linkDelegate = self
+    }
 
     @IBAction func upvoteButtonPressed(sender: AnyObject) {
         delegate?.commentTableViewCell(self, upvoteButtonPressed: sender)
@@ -40,6 +46,11 @@ class CommentTableViewCell: UITableViewCell {
         layer.animation = "pop"
         layer.force = 3
         layer.animate()
+    }
+
+    // MARK: CoreTextViewDelegate
+    func coreTextView(textView: CoreTextView, linkDidTap link: NSURL) {
+        self.delegate?.commentTableViewCell?(self, linkDidPress: link)
     }
 }
 

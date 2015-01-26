@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol CoreTextViewDelegate : class {
+    func coreTextView(textView: CoreTextView, linkDidTap link:NSURL)
+}
+
 class CoreTextView: DTAttributedTextContentView, DTAttributedTextContentViewDelegate {
 
+    weak var linkDelegate : CoreTextViewDelegate?
     var textView : DTAttributedTextView!
     var url : NSURL?
 
@@ -21,7 +26,11 @@ class CoreTextView: DTAttributedTextContentView, DTAttributedTextContentViewDele
 
     func linkDidTap(sender: AnyObject) {
         if let url = self.url {
-            UIApplication.sharedApplication().openURL(url)
+            if let delegate = self.linkDelegate {
+                delegate.coreTextView(self, linkDidTap: url)
+            } else {
+                UIApplication.sharedApplication().openURL(url)
+            }
         }
     }
 

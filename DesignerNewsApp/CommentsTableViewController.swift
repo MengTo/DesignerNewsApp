@@ -47,9 +47,12 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             toView.transitioningDelegate = self.transitionManager
         }
         else if segue.identifier == "WebSegue" {
-            let toView = segue.destinationViewController as WebViewController
-            toView.story = story
-            toView.transitioningDelegate = self.transitionManager
+            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+
+            let webViewController = segue.destinationViewController as WebViewController
+            webViewController.shareTitle = story.title
+            webViewController.url = NSURL(string: story.url)
+            webViewController.transitioningDelegate = self.transitionManager
         }
     }
     
@@ -82,13 +85,21 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         performSegueWithIdentifier("CommentSegue", sender: cell)
     }
 
+    func storyTableViewCell(cell: StoryTableViewCell, linkDidPress link: NSURL) {
+        performSegueWithIdentifier("WebSegue", sender: link)
+    }
+
     // MARK: CommentTableViewCellDelegate
     func commentTableViewCell(cell: CommentTableViewCell, replyButtonPressed sender: AnyObject) {
         performSegueWithIdentifier("CommentSegue", sender: cell)
     }
 
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject) {
-        // TODO: Implement upvote
+        // TODO
+    }
+
+    func commentTableViewCell(cell: CommentTableViewCell, linkDidPress link: NSURL) {
+        performSegueWithIdentifier("WebSegue", sender: link)
     }
 
     // MARK: TableViewDelegate
@@ -119,11 +130,10 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
         return cell
     }
-    
+
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
             performSegueWithIdentifier("WebSegue", sender: self)
-            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
         }
     }
     

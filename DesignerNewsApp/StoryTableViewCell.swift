@@ -13,9 +13,10 @@ import Spring
     func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject)
     optional func storyTableViewCell(cell: StoryTableViewCell, commentButtonPressed sender: AnyObject)
     optional func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject)
+    optional func storyTableViewCell(cell: StoryTableViewCell, linkDidPress link:NSURL)
 }
 
-class StoryTableViewCell: UITableViewCell {
+class StoryTableViewCell: UITableViewCell, CoreTextViewDelegate {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -29,6 +30,11 @@ class StoryTableViewCell: UITableViewCell {
     var story : Story?
     
     weak var delegate: StoryTableViewCellDelegate?
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.commentTextView?.linkDelegate = self
+    }
     
     @IBAction func upvoteButtonPressed(sender: AnyObject) {
         setSelected(true, animated: false)
@@ -56,6 +62,11 @@ class StoryTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.titleLabel.preferredMaxLayoutWidth = self.titleLabel.frame.size.width
+    }
+
+    // MARK: CoreTextViewDelegate
+    func coreTextView(textView: CoreTextView, linkDidTap link: NSURL) {
+        self.delegate?.storyTableViewCell?(self, linkDidPress: link)
     }
 }
 
