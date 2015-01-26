@@ -12,7 +12,6 @@ import Spring
 class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate {
 
     var story: Story!
-    private var cachedAttributedText = [Int: NSAttributedString]()
     private let transitionManager = TransitionManager()
     
     override func viewDidLoad() {
