@@ -513,11 +513,10 @@
 				TargetAttributes = {
 					9661284E1A4DA63100A54A23 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 78BJD4M4CR;
 					};
 					966128631A4DA63100A54A23 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 78BJD4M4CR;
+						DevelopmentTeam = 68WS2M23VC;
 						TestTargetID = 9661284E1A4DA63100A54A23;
 					};
 				};
