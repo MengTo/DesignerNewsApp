@@ -50,8 +50,13 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
 
             let webViewController = segue.destinationViewController as WebViewController
-            webViewController.shareTitle = story.title
-            webViewController.url = NSURL(string: story.url)
+
+            if let url = sender as? NSURL {
+                webViewController.url = url
+            } else {
+                webViewController.shareTitle = story.title
+                webViewController.url = NSURL(string: story.url)
+            }
             webViewController.transitioningDelegate = self.transitionManager
         }
     }
