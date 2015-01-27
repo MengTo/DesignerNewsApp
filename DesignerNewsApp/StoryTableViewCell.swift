@@ -14,6 +14,8 @@ import Spring
     optional func storyTableViewCell(cell: StoryTableViewCell, commentButtonPressed sender: AnyObject)
     optional func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject)
     optional func storyTableViewCell(cell: StoryTableViewCell, linkDidPress link:NSURL)
+    optional func storyTableViewCellSizeDidChange(cell: StoryTableViewCell)
+
 }
 
 class StoryTableViewCell: UITableViewCell, CoreTextViewDelegate {
@@ -68,6 +70,10 @@ class StoryTableViewCell: UITableViewCell, CoreTextViewDelegate {
     func coreTextView(textView: CoreTextView, linkDidTap link: NSURL) {
         self.delegate?.storyTableViewCell?(self, linkDidPress: link)
     }
+
+    func coreTextView(textView: CoreTextView, newImageSizeDidCache size: CGSize) {
+        self.delegate?.storyTableViewCellSizeDidChange?(self)
+    }
 }
 
 extension StoryTableViewCell {
@@ -90,9 +96,19 @@ extension StoryTableViewCell {
         })
 
         if let commentTextView = self.commentTextView {
+
+            // Make sure the textView are correctly framed before setting attributed string
+            self.setNeedsLayout()
+            self.layoutIfNeeded()
+
             let data = ("<style>img { max-width: 320px; } p {font-family:\"Avenir Next\";font-size:16px;line-height:20px;}</style>" + story.commentHTML).dataUsingEncoding(NSUTF8StringEncoding)
+
             let attributedString = NSAttributedString(HTMLData: data, documentAttributes: nil)
+
+//            var options : [NSObject:AnyObject] = [NSObject:AnyObject]()
+//            let stringBuilder = DTHTMLAttributedStringBuilder(HTML: data, options: options, documentAttributes:nil)
             commentTextView.attributedString = attributedString
+
         }
 
         if let commentButton = self.commentButton {

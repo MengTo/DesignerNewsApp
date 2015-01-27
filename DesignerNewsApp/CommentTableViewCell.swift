@@ -13,6 +13,7 @@ import Spring
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject)
     func commentTableViewCell(cell: CommentTableViewCell, replyButtonPressed sender: AnyObject)
     optional func commentTableViewCell(cell: CommentTableViewCell, linkDidPress link:NSURL)
+    optional func commentTableViewCellSizeDidChange(cell: CommentTableViewCell)
 }
 
 class CommentTableViewCell: UITableViewCell, CoreTextViewDelegate {
@@ -51,6 +52,10 @@ class CommentTableViewCell: UITableViewCell, CoreTextViewDelegate {
     // MARK: CoreTextViewDelegate
     func coreTextView(textView: CoreTextView, linkDidTap link: NSURL) {
         self.delegate?.commentTableViewCell?(self, linkDidPress: link)
+    }
+
+    func coreTextView(textView: CoreTextView, newImageSizeDidCache size: CGSize) {
+        self.delegate?.commentTableViewCellSizeDidChange?(self)
     }
 }
 

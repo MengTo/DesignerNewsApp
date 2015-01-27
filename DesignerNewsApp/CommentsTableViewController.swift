@@ -95,6 +95,12 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         performSegueWithIdentifier("WebSegue", sender: link)
     }
 
+    func storyTableViewCellSizeDidChange(cell: StoryTableViewCell) {
+        if let indexPath = tableView.indexPathForCell(cell) {
+            self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+        }
+    }
+
     // MARK: CommentTableViewCellDelegate
     func commentTableViewCell(cell: CommentTableViewCell, replyButtonPressed sender: AnyObject) {
         performSegueWithIdentifier("CommentSegue", sender: cell)
@@ -121,6 +127,13 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     func commentTableViewCell(cell: CommentTableViewCell, linkDidPress link: NSURL) {
         performSegueWithIdentifier("WebSegue", sender: link)
+    }
+
+    func commentTableViewCellSizeDidChange(cell: CommentTableViewCell) {
+        if let indexPath = tableView.indexPathForCell(cell) {
+
+            self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+        }
     }
 
     // MARK: TableViewDelegate
