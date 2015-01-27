@@ -120,6 +120,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as StoryTableViewCell
+        cell.frame = tableView.bounds
 
         let story = stories[indexPath.row]
         let isUpvoted = upvotes.containsObject(toString(story.id))
