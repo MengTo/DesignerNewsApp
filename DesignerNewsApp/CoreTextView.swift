@@ -18,6 +18,7 @@ var imageSizes : [NSURL:CGSize] = [NSURL:CGSize]()
 class CoreTextView: DTAttributedTextContentView, DTAttributedTextContentViewDelegate, DTLazyImageViewDelegate {
 
     weak var linkDelegate : CoreTextViewDelegate?
+    private var imageViews = [DTLazyImageView]()
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -70,6 +71,8 @@ class CoreTextView: DTAttributedTextContentView, DTAttributedTextContentViewDele
             imageView.contentMode = UIViewContentMode.ScaleAspectFill
             imageView.clipsToBounds = true
             imageView.backgroundColor = UIColor(white: 0.98, alpha: 1.0)
+            imageView.shouldShowProgressiveDownload = true
+            imageViews.append(imageView)
             return imageView
         }
         return nil
@@ -135,4 +138,9 @@ class CoreTextView: DTAttributedTextContentView, DTAttributedTextContentViewDele
         return CGSizeMake(self.bounds.size.width, self.bounds.size.width/size.width * size.height)
     }
 
+    deinit {
+        for imageView in imageViews {
+            imageView.delegate = nil
+        }
+    }
 }
