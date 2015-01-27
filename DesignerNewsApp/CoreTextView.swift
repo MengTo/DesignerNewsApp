@@ -77,22 +77,26 @@ class CoreTextView: DTAttributedTextContentView, DTAttributedTextContentViewDele
         if let layoutFrame = self.layoutFrame {
             var attachments = layoutFrame.textAttachmentsWithPredicate(pred)
 
+            var needsNotifyNewImageSize = false
             for var i = 0; i < attachments.count; i++ {
                 if var one = attachments[i] as? DTImageTextAttachment {
                     one.originalSize = self.aspectFitImageSize(size)
                     if let cachedSize = imageSizes[one.contentURL] {
                         if !CGSizeEqualToSize(cachedSize, size) {
-                            imageSizes[one.contentURL] = size
+                            needsNotifyNewImageSize = true
                             self.linkDelegate?.coreTextView?(self, newImageSizeDidCache: size)
                         }
                     } else {
-                        imageSizes[one.contentURL] = size
-                        self.linkDelegate?.coreTextView?(self, newImageSizeDidCache: size)
+                        needsNotifyNewImageSize = true
                     }
+                    imageSizes[one.contentURL] = size
                 }
             }
             self.layouter = nil
             self.relayoutText()
+            if needsNotifyNewImageSize {
+                self.linkDelegate?.coreTextView?(self, newImageSizeDidCache: size)
+            }
         }
     }
 

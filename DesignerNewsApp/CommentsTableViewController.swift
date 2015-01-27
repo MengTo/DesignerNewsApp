@@ -97,7 +97,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     func storyTableViewCellSizeDidChange(cell: StoryTableViewCell) {
         if let indexPath = tableView.indexPathForCell(cell) {
-            self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+            self.tableView.reloadData()
         }
     }
 
@@ -131,8 +131,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     func commentTableViewCellSizeDidChange(cell: CommentTableViewCell) {
         if let indexPath = tableView.indexPathForCell(cell) {
-
-            self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+            self.tableView.reloadData()
         }
     }
 
