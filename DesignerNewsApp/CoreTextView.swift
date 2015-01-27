@@ -15,8 +15,6 @@ protocol CoreTextViewDelegate : class {
 class CoreTextView: DTAttributedTextContentView, DTAttributedTextContentViewDelegate {
 
     weak var linkDelegate : CoreTextViewDelegate?
-    var textView : DTAttributedTextView!
-    var url : NSURL?
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -24,8 +22,8 @@ class CoreTextView: DTAttributedTextContentView, DTAttributedTextContentViewDele
         self.edgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 
-    func linkDidTap(sender: AnyObject) {
-        if let url = self.url {
+    func linkDidTap(sender: DTLinkButton) {
+        if let url = sender.URL {
             if let delegate = self.linkDelegate {
                 delegate.coreTextView(self, linkDidTap: url)
             } else {
@@ -34,11 +32,18 @@ class CoreTextView: DTAttributedTextContentView, DTAttributedTextContentViewDele
         }
     }
 
-    func attributedTextContentView(attributedTextContentView: DTAttributedTextContentView!, viewForLink url: NSURL!, identifier: String!, frame: CGRect) -> UIView! {
-        self.url = url
-        let button = UIButton.buttonWithType(.Custom) as UIButton
-        button.frame = frame
+    func attributedTextContentView(attributedTextContentView: DTAttributedTextContentView!, viewForAttributedString string: NSAttributedString!, frame: CGRect) -> UIView! {
+
+        let attributes = string.attributesAtIndex(0, effectiveRange: nil)
+        let url = attributes[DTLinkAttribute] as? NSURL
+        let identifier = attributes[DTGUIDAttribute] as? String
+
+        let button = DTLinkButton(frame: frame)
+        button.URL = url
+        button.GUID = identifier
+        button.minimumHitSize = CGSizeMake(25, 25)
         button.addTarget(self, action: "linkDidTap:", forControlEvents: .TouchUpInside)
+
         return button
     }
 
