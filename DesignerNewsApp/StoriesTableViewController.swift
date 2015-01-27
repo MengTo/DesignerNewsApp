@@ -200,9 +200,9 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
 
     func reloadRowAtIndexPath(indexPath: NSIndexPath) {
-        tableView.beginUpdates()
+        //tableView.beginUpdates()
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
-        tableView.endUpdates()
+        //tableView.endUpdates()
     }
 
 }
