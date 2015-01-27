@@ -43,6 +43,7 @@
 		B78F90411A6EFBAF00883A5B /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F90401A6EFBAF00883A5B /* Story.swift */; };
 		B78F90431A6EFF2100883A5B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F90421A6EFF2100883A5B /* Comment.swift */; };
 		B7E4D3371A719855001DC9B6 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4D3361A719855001DC9B6 /* CommentTableViewCell.swift */; };
+		B7F9B1841A782CA8004AC5D0 /* NSUserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F9B1831A782CA8004AC5D0 /* NSUserDefaultsExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,6 +222,7 @@
 		B78F90401A6EFBAF00883A5B /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		B78F90421A6EFF2100883A5B /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		B7E4D3361A719855001DC9B6 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		B7F9B1831A782CA8004AC5D0 /* NSUserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +349,7 @@
 				B70190FA1A754DC900ED4D3D /* View Controllers */,
 				B70190FF1A754DE300ED4D3D /* Services */,
 				B7E4D3311A719831001DC9B6 /* Cells */,
+				B7F9B1911A782CAD004AC5D0 /* Extensions */,
 				B70191001A7550B600ED4D3D /* Behaviours */,
 				961889B61A67F93800295A64 /* Libraries */,
 				B70191221A7656AF00ED4D3D /* Bridging */,
@@ -459,6 +462,14 @@
 				B7E4D3361A719855001DC9B6 /* CommentTableViewCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		B7F9B1911A782CAD004AC5D0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B7F9B1831A782CA8004AC5D0 /* NSUserDefaultsExtensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -678,6 +689,7 @@
 				964892651A63C6E600214D53 /* CoreData.swift in Sources */,
 				966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */,
 				961889B21A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				B7F9B1841A782CA8004AC5D0 /* NSUserDefaultsExtensions.swift in Sources */,
 				1A7D78A01A70F8FE0061D6F6 /* DragDropBehavior.swift in Sources */,
 				961889B31A67F15900295A64 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				B78F903E1A6EFAAA00883A5B /* JSONParser.swift in Sources */,
