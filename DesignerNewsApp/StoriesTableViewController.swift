@@ -124,7 +124,8 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
         let story = stories[indexPath.row]
         let isUpvoted = upvotes.containsObject(toString(story.id))
-        cell.configureWithStory(story, isUpvoted: isUpvoted)
+        let isVisited = NSUserDefaults.standardUserDefaults().isStoryVisited(story.id)
+        cell.configureWithStory(story, isUpvoted: isUpvoted, isVisited: isVisited)
         cell.delegate = self
         
         return cell
