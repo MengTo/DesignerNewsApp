@@ -26,6 +26,13 @@ class CoreTextView: DTAttributedTextContentView, DTAttributedTextContentViewDele
         self.clipsToBounds = true
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        // Fix warning when layer is to high
+        CoreTextView.setLayerClass(NSClassFromString("DTTiledLayerWithoutFade"))
+    }
+
     func linkDidTap(sender: DTLinkButton) {
         if let url = sender.URL {
             if let delegate = self.linkDelegate {
