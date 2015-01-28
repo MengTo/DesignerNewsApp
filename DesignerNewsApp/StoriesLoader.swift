@@ -27,11 +27,11 @@ class StoriesLoader {
 
     func load(completion: (success:Bool, newStories:[Story])->()) {
 
-        if self.isLoading {
+        if isLoading {
             return
         }
 
-        self.isLoading = true
+        isLoading = true
         DesignerNewsService.storiesForSection(self.section.rawValue, page: self.page) { stories in
             self.hasMore = stories.count > 0
             self.isLoading = false
@@ -40,13 +40,12 @@ class StoriesLoader {
     }
 
     func next(completion: (success:Bool, newStories:[Story])->()) {
-
-        if self.isLoading {
+        if isLoading {
             return
         }
 
-        self.page++
-        self.load(completion)
+        ++page
+        load(completion)
     }
 }
 
