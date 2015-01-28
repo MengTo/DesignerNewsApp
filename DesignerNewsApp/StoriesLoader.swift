@@ -33,11 +33,7 @@ class StoriesLoader {
 
         self.isLoading = true
         DesignerNewsService.storiesForSection(self.section.rawValue, page: self.page) { stories in
-            if stories.count > 0 {
-                self.hasMore = true
-            } else {
-                self.hasMore = false
-            }
+            self.hasMore = stories.count > 0
             self.isLoading = false
             completion(success: true, newStories: stories)
         }
