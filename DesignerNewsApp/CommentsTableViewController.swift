@@ -65,6 +65,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         var shareString = story.title
         var shareURL = NSURL(string: story.url)!
         let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: nil)
+        activityViewController.setValue(shareString, forKey: "subject")
         activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
         presentViewController(activityViewController, animated: true, completion: nil)
     }

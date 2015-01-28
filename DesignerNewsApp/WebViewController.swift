@@ -23,6 +23,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         var shareString = self.shareTitle ?? ""
         var shareURL = self.url
         let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: nil)
+        activityViewController.setValue(shareString, forKey: "subject")
         activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
         presentViewController(activityViewController, animated: true, completion: nil)
     }
