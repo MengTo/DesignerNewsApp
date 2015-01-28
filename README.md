@@ -2,7 +2,7 @@
 
 ![](Screenshots/designer-news-app.jpg)
 
-Simple iOS client for [Designer News][], by the creator of [Design+Code][] and the team.
+Simple iOS client for [Designer News][], by the creator of [Design+Code][] and the team, written in Swift.
 
 ## Usage
 
@@ -29,6 +29,10 @@ $ open DesignerNewsApp.xcodeproj
 
 ![](Screenshots/designer-news-compile-and-run.jpg)
 
+# Requirements
+
+- Xcode 6.1
+- iOS 8
 
 # Credits
 
