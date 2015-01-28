@@ -48,7 +48,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
         view.showLoading()
 
-        self.storiesLoader.load(completion: { [unowned self] stories in
+        storiesLoader.load(completion: { [unowned self] stories in
             self.stories = stories
             self.upvotes = getUpvotes()
             self.tableView.reloadData()
@@ -67,7 +67,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
 
     func loadMoreStories() {
-        self.storiesLoader.next { [unowned self] stories in
+        storiesLoader.next { [unowned self] stories in
             self.stories += stories
             self.tableView.reloadData()
         }
@@ -75,12 +75,12 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     
     // MARK: MenuViewControllerDelegate
     func menuViewControllerDidSelectTopStories(controller: MenuViewController) {
-        self.storiesLoader = StoriesLoader(.Default)
+        storiesLoader = StoriesLoader(.Default)
         loadStories()
     }
     
     func menuViewControllerDidSelectRecent(controller: MenuViewController) {
-        self.storiesLoader = StoriesLoader(.Recent)
+        storiesLoader = StoriesLoader(.Recent)
         loadStories()
     }
 
@@ -126,7 +126,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     // MARK: TableViewDelegate
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stories.count + (self.storiesLoader.hasMore ? 1 : 0)
+        return stories.count + (storiesLoader.hasMore ? 1 : 0)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
