@@ -2,7 +2,7 @@
 
 ![](Screenshots/designer-news-app.jpg)
 
-Simple iOS client for [Designer News](), by the creator of [Design+Code]() and the team.
+Simple iOS client for [Designer News][], by the creator of [Design+Code][] and the team.
 
 ## Usage
 
@@ -32,9 +32,9 @@ $ open DesignerNewsApp.xcodeproj
 
 # Credits
 
-- [Alamofire]() for network request
-- [DTCoreText]() for fast and efficient HTML content display
-- [Spring]() for code-less animation
+- [Alamofire][] for network request
+- [DTCoreText][] for fast and efficient HTML content display
+- [Spring][] for code-less animation
 
 [Alamofire]:https://github.com/Alamofire/Alamofire
 [DTCoreText]:https://github.com/Cocoanetics/DTCoreText
