@@ -101,12 +101,9 @@ extension StoryTableViewCell {
             self.setNeedsLayout()
             self.layoutIfNeeded()
 
-            let data = ("<style>img { max-width: 320px; } p {font-family:\"Avenir Next\";font-size:16px;line-height:20px;}</style>" + story.commentHTML).dataUsingEncoding(NSUTF8StringEncoding)
+            let data = ("<style>p {font-family:\"Avenir Next\";font-size:16px;line-height:20px;}</style>" + story.commentHTML).dataUsingEncoding(NSUTF8StringEncoding)
 
             let attributedString = NSAttributedString(HTMLData: data, documentAttributes: nil)
-
-//            var options : [NSObject:AnyObject] = [NSObject:AnyObject]()
-//            let stringBuilder = DTHTMLAttributedStringBuilder(HTML: data, options: options, documentAttributes:nil)
             commentTextView.attributedString = attributedString
 
         }
