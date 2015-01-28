@@ -15,42 +15,35 @@ class StoriesLoader {
         case Recent = "recent"
     }
 
-    private (set) var page : Int = 1
-    private (set) var stories = [Story]()
     private (set) var hasMore : Bool = false
-    private (set) var isLoading : Bool = false
+    private var page : Int = 1
+    private var isLoading : Bool = false
     private let section : StorySection
 
     init(_ section: StorySection = .Default) {
         self.section = section
     }
 
-    func load(completion: (success:Bool, newStories:[Story])->()) {
-
-        if self.isLoading {
+    func load(page: Int = 1, completion: (stories:[Story]) ->()) {
+        if isLoading {
             return
         }
 
-        self.isLoading = true
-        DesignerNewsService.storiesForSection(self.section.rawValue, page: self.page) { stories in
-            if stories.count > 0 {
-                self.hasMore = true
-            } else {
-                self.hasMore = false
-            }
+        isLoading = true
+        DesignerNewsService.storiesForSection(self.section.rawValue, page: page) { stories in
+            self.hasMore = stories.count > 0
             self.isLoading = false
-            completion(success: true, newStories: stories)
+            completion(stories: stories)
         }
     }
 
-    func next(completion: (success:Bool, newStories:[Story])->()) {
-
-        if self.isLoading {
+    func next(completion: (stories:[Story]) ->()) {
+        if isLoading {
             return
         }
 
-        self.page++
-        self.load(completion)
+        ++page
+        load(page: page, completion)
     }
 }
 
