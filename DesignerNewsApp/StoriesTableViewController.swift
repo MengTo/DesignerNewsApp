@@ -48,15 +48,13 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
         view.showLoading()
 
-        self.storiesLoader.load { [weak self] (success, newStories) -> () in
-            if let strongSelf = self {
-                strongSelf.stories = newStories
-                strongSelf.upvotes = getUpvotes()
-                strongSelf.tableView.reloadData()
-                strongSelf.view.hideLoading()
-                strongSelf.refreshControl?.endRefreshing()
-            }
-        }
+        self.storiesLoader.load(completion: { [unowned self] stories in
+            self.stories = stories
+            self.upvotes = getUpvotes()
+            self.tableView.reloadData()
+            self.view.hideLoading()
+            self.refreshControl?.endRefreshing()
+        })
 
         if token.isEmpty {
             loginButton.title = "Login"
@@ -69,11 +67,9 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
 
     func loadMoreStories() {
-        self.storiesLoader.next { [weak self] (success, newStories) -> () in
-            if let strongSelf = self {
-                strongSelf.stories += newStories
-                strongSelf.tableView.reloadData()
-            }
+        self.storiesLoader.next { [unowned self] stories in
+            self.stories += stories
+            self.tableView.reloadData()
         }
     }
     
