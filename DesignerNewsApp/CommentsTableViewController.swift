@@ -156,7 +156,9 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         cell.frame = tableView.bounds
 
         if let storyCell = cell as? StoryTableViewCell {
-            storyCell.configureWithStory(story)
+            let isUpvoted = NSUserDefaults.standardUserDefaults().isStoryUpvoted(story.id)
+            let isVisited = NSUserDefaults.standardUserDefaults().isStoryVisited(story.id)
+            storyCell.configureWithStory(story, isUpvoted: isUpvoted, isVisited: isVisited)
             storyCell.delegate = self
         }
 
