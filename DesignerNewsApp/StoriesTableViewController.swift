@@ -141,14 +141,17 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
         let story = stories[indexPath.row]
         let isUpvoted = upvotes.containsObject(toString(story.id))
-        cell.configureWithStory(story, isUpvoted: isUpvoted)
+        let isVisited = NSUserDefaults.standardUserDefaults().isStoryVisited(story.id)
+        cell.configureWithStory(story, isUpvoted: isUpvoted, isVisited: isVisited)
         cell.delegate = self
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        NSUserDefaults.standardUserDefaults().setStoryAsVisited(stories[indexPath.row].id)
         self.performSegueWithIdentifier("WebSegue", sender: tableView.cellForRowAtIndexPath(indexPath))
+        reloadRowAtIndexPath(indexPath)
     }
 
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -217,6 +220,10 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             let menuViewController = segue.destinationViewController as MenuViewController
             menuViewController.delegate = self
         }
+    }
+
+    func reloadRowAtIndexPath(indexPath: NSIndexPath) {
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
     }
 
 }

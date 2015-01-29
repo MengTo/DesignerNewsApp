@@ -77,8 +77,9 @@ class StoryTableViewCell: UITableViewCell, CoreTextViewDelegate {
 }
 
 extension StoryTableViewCell {
-    func configureWithStory(story: Story, isUpvoted: Bool = false) {
+    func configureWithStory(story: Story, isUpvoted: Bool = false, isVisited: Bool = false) {
 
+        self.titleLabel.textColor = isVisited ? self.authorLabel.textColor : .blackColor()
         self.titleLabel.text = story.title
         self.authorLabel.text = story.userDisplayName + ", " + story.userJob
         self.upvoteButton.setTitle(toString(story.voteCount), forState: UIControlState.Normal)
