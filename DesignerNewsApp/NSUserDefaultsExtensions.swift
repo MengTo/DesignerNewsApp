@@ -21,8 +21,8 @@ extension NSUserDefaults {
         appendId(storyId, toKey: upvotedStoriesKey)
     }
 
-    func setCommentAsUpvoted(storyId: Int) {
-        appendId(storyId, toKey: upvotedCommentsKey)
+    func setCommentAsUpvoted(commentId: Int) {
+        appendId(commentId, toKey: upvotedCommentsKey)
     }
 
     func isStoryVisited(storyId: Int) -> Bool {
@@ -33,8 +33,8 @@ extension NSUserDefaults {
         return arrayForKey(upvotedStoriesKey, containsId: storyId)
     }
 
-    func isCommentUpvoted(storyId: Int) -> Bool {
-        return arrayForKey(upvotedCommentsKey, containsId: storyId)
+    func isCommentUpvoted(commentId: Int) -> Bool {
+        return arrayForKey(upvotedCommentsKey, containsId: commentId)
     }
 
 
