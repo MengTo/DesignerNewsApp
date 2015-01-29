@@ -73,11 +73,13 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     
     // MARK: MenuViewControllerDelegate
     func menuViewControllerDidSelectTopStories(controller: MenuViewController) {
+        title = "Top Stories"
         storiesLoader = StoriesLoader(.Default)
         loadStories()
     }
     
     func menuViewControllerDidSelectRecent(controller: MenuViewController) {
+        title = "Recent Stories"
         storiesLoader = StoriesLoader(.Recent)
         loadStories()
     }
