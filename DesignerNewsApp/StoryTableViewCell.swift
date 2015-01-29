@@ -21,7 +21,7 @@ import Spring
 class StoryTableViewCell: UITableViewCell, CoreTextViewDelegate {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var avatarImageView: AsyncImageView!
     @IBOutlet weak var storyImageView: UIImageView!
     @IBOutlet weak var commentButton: SpringButton?
     @IBOutlet weak var replyButton: SpringButton?
@@ -83,7 +83,6 @@ extension StoryTableViewCell {
         self.authorLabel.text = story.userDisplayName + ", " + story.userJob
         self.upvoteButton.setTitle(toString(story.voteCount), forState: UIControlState.Normal)
         self.storyImageView.image = story.badge.isEmpty ? nil : UIImage(named: "badge-\(story.badge)")
-        self.avatarImageView.image = UIImage(named: "content-avatar-default")
 
         let timeAgo = dateFromString(story.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
         self.timeLabel.text = timeAgoSinceDate(timeAgo, true)
@@ -91,9 +90,7 @@ extension StoryTableViewCell {
         let imageName = isUpvoted ? "icon-upvote-active" : "icon-upvote"
         self.upvoteButton.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
 
-        ImageLoader.sharedLoader.imageForUrl(story.userPortraitUrl, completionHandler:{ image, _ in
-            self.avatarImageView.image = image
-        })
+        self.avatarImageView.setURL(NSURL(string: story.userPortraitUrl), placeholderImage: UIImage(named: "content-avatar-default"))
 
         if let commentTextView = self.commentTextView {
 

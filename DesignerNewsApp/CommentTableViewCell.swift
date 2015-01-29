@@ -18,7 +18,7 @@ import Spring
 
 class CommentTableViewCell: UITableViewCell, CoreTextViewDelegate {
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var avatarImageView: AsyncImageView!
     @IBOutlet weak var replyButton: SpringButton!
     @IBOutlet weak var upvoteButton: SpringButton!
     @IBOutlet weak var timeLabel: UILabel!
@@ -75,14 +75,11 @@ extension CommentTableViewCell {
 
         self.authorLabel.text = comment.userDisplayName + ", " + comment.userJob
         self.upvoteButton.setTitle(toString(comment.voteCount), forState: UIControlState.Normal)
-        self.avatarImageView.image = UIImage(named: "content-avatar-default")
 
         let timeAgo = dateFromString(comment.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
         self.timeLabel.text = timeAgoSinceDate(timeAgo, true)
 
-        ImageLoader.sharedLoader.imageForUrl(comment.userPortraitUrl, completionHandler:{ image, _ in
-            self.avatarImageView.image = image
-        })
+        self.avatarImageView.setURL(NSURL(string: comment.userPortraitUrl), placeholderImage: UIImage(named: "content-avatar-default"))
 
         // Make sure the textView are correctly framed before setting attributed string
         self.setNeedsLayout()

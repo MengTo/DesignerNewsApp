@@ -274,7 +274,7 @@
                                                 <constraint firstAttribute="width" constant="20" id="tx9-eL-RCA"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6U6-ia-R5S">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6U6-ia-R5S" customClass="AsyncImageView" customModule="DesignerNewsApp" customModuleProvider="target">
                                             <rect key="frame" x="35" y="40" width="10" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="KFq-Ji-gOm"/>
@@ -893,7 +893,7 @@
                                                 <constraint firstAttribute="height" constant="20" id="mzD-lj-z6k"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="xC5-N7-dVN">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="xC5-N7-dVN" customClass="AsyncImageView" customModule="DesignerNewsApp" customModuleProvider="target">
                                             <rect key="frame" x="37" y="41" width="10" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" priority="999" constant="10" id="Gh1-Kh-T31"/>
@@ -1013,7 +1013,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nG4-aS-hFF" id="mwj-X7-b1i">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CkY-NW-Xvu">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CkY-NW-Xvu" customClass="AsyncImageView" customModule="DesignerNewsApp" customModuleProvider="target">
                                             <rect key="frame" x="8" y="10" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="VNm-oL-mtT"/>
