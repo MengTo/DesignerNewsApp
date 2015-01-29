@@ -15,7 +15,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     private var stories = [Story]()
     private var firstTime = true
     private var token = getToken()
-    private var upvotes = getUpvotes()
     private var storiesLoader = StoriesLoader()
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
@@ -50,7 +49,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
         storiesLoader.load(completion: { [unowned self] stories in
             self.stories = stories
-            self.upvotes = getUpvotes()
             self.tableView.reloadData()
             self.view.hideLoading()
             self.refreshControl?.endRefreshing()
@@ -140,7 +138,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         cell.frame = tableView.bounds
 
         let story = stories[indexPath.row]
-        let isUpvoted = upvotes.containsObject(toString(story.id))
+        let isUpvoted = NSUserDefaults.standardUserDefaults().isStoryUpvoted(story.id)
         let isVisited = NSUserDefaults.standardUserDefaults().isStoryVisited(story.id)
         cell.configureWithStory(story, isUpvoted: isUpvoted, isVisited: isVisited)
         cell.delegate = self
@@ -172,7 +170,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             let storyId = stories[indexPath.row].id
             DesignerNewsService.upvoteStoryWithId(storyId, token: token) { successful in
                 if successful {
-                    saveUpvote(toString(storyId))
+                    NSUserDefaults.standardUserDefaults().setStoryAsUpvoted(storyId)
                     let upvoteInt = self.stories[indexPath.row].voteCount + 1
                     let upvoteString = toString(upvoteInt)
                     cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
