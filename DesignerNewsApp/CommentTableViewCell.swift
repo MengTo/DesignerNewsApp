@@ -63,9 +63,10 @@ extension CommentTableViewCell {
     func configureWithComment(comment: Comment, isUpvoted: Bool = false) {
 
         if comment.depth > 0 {
+            let depth = comment.depth > 4 ? 4 : comment.depth
             self.indentView.hidden = false
-            self.avatarLeftConstant.constant = CGFloat(comment.depth) * 20 + 15
-            self.separatorInset = UIEdgeInsets(top: 0, left: CGFloat(comment.depth) * 20 + 15, bottom: 0, right: 0)
+            self.avatarLeftConstant.constant = CGFloat(depth) * 20 + 15
+            self.separatorInset = UIEdgeInsets(top: 0, left: CGFloat(depth) * 20 + 15, bottom: 0, right: 0)
         }
         else {
             self.avatarLeftConstant.constant = 0
