@@ -12,19 +12,20 @@ import Spring
 class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate {
     
     private let transitionManager = TransitionManager()
-    var stories = [Story]()
-    var firstTime = true
-    var token = getToken()
-    var upvotes = getUpvotes()
-    var storySection = ""
+    private var stories = [Story]()
+    private var firstTime = true
+    private var token = getToken()
+    private var upvotes = getUpvotes()
+    private var storiesLoader = StoriesLoader()
+
     @IBOutlet weak var loginButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadStories(self)
+        loadStories()
         
-        refreshControl?.addTarget(self, action: "loadStories:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(self, action: "refreshControlValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -43,16 +44,18 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
     }
     
-    func loadStories(sender: AnyObject) {
+    func loadStories() {
 
-        DesignerNewsService.storiesForSection(storySection, page: 1) { stories in
+        view.showLoading()
+
+        storiesLoader.load(completion: { [unowned self] stories in
             self.stories = stories
             self.upvotes = getUpvotes()
             self.tableView.reloadData()
             self.view.hideLoading()
             self.refreshControl?.endRefreshing()
-        }
-        
+        })
+
         if token.isEmpty {
             loginButton.title = "Login"
             loginButton.enabled = true
@@ -62,18 +65,23 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             loginButton.enabled = false
         }
     }
+
+    func loadMoreStories() {
+        storiesLoader.next { [unowned self] stories in
+            self.stories += stories
+            self.tableView.reloadData()
+        }
+    }
     
     // MARK: MenuViewControllerDelegate
     func menuViewControllerDidSelectTopStories(controller: MenuViewController) {
-        view.showLoading()
-        storySection = ""
-        loadStories(self)
+        storiesLoader = StoriesLoader(.Default)
+        loadStories()
     }
     
     func menuViewControllerDidSelectRecent(controller: MenuViewController) {
-        view.showLoading()
-        storySection = "recent"
-        loadStories(self)
+        storiesLoader = StoriesLoader(.Recent)
+        loadStories()
     }
 
     func menuViewControllerDidSelectLogout(controller: MenuViewController) {
@@ -89,7 +97,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         loginCompleted()
     }
 
-    // MARK: Login
+    // MARK: Action
     @IBAction func loginButtonPressed(sender: AnyObject) {
         if token.isEmpty {
             performSegueWithIdentifier("LoginSegue", sender: self)
@@ -99,27 +107,36 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         }
     }
 
+    func refreshControlValueChanged(sender: AnyObject) {
+        self.loadStories()
+    }
+
     // MARK: Misc
     func loginCompleted() {
         token = getToken()
-        loadStories(self)
+        loadStories()
     }
 
     func logout() {
         deleteToken()
         token = ""
-        loadStories(self)
+        loadStories()
     }
 
     // MARK: TableViewDelegate
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stories.count
+        return stories.count + (storiesLoader.hasMore ? 1 : 0)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as StoryTableViewCell
+
+        if indexPath.row == stories.count {
+            let cell = tableView.dequeueReusableCellWithIdentifier("loadingCell") as UITableViewCell
+            return cell
+        }
+
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as StoryTableViewCell
         cell.frame = tableView.bounds
 
         let story = stories[indexPath.row]
@@ -132,6 +149,12 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("WebSegue", sender: tableView.cellForRowAtIndexPath(indexPath))
+    }
+
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == self.stories.count {
+            self.loadMoreStories()
+        }
     }
     
     // MARK: StoriesTableViewCellDelegate

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2331C41A78DFAF002F8D80 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2331C31A78DFAF002F8D80 /* LoadingTableViewCell.swift */; };
+		1A2331D21A78E1AF002F8D80 /* StoriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2331D11A78E1AF002F8D80 /* StoriesLoader.swift */; };
 		1A6D719D1A6E6E74003968BA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D719C1A6E6E74003968BA /* Token.swift */; };
 		1A7D78A01A70F8FE0061D6F6 /* DragDropBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */; };
 		1A8D9C811A75E3000032DA0F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C801A75E3000032DA0F /* ImageIO.framework */; };
@@ -177,6 +179,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A2331C31A78DFAF002F8D80 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		1A2331D11A78E1AF002F8D80 /* StoriesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesLoader.swift; sourceTree = "<group>"; };
 		1A4FDA211A6E43FE0099D309 /* SpringApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SpringApp.xcodeproj; path = Spring/SpringApp.xcodeproj; sourceTree = "<group>"; };
 		1A6D719C1A6E6E74003968BA /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragDropBehavior.swift; sourceTree = "<group>"; };
@@ -416,6 +420,7 @@
 				B78F90371A6EF75800883A5B /* DesignerNewsService.swift */,
 				964892641A63C6E600214D53 /* CoreData.swift */,
 				1A6D719C1A6E6E74003968BA /* Token.swift */,
+				1A2331D11A78E1AF002F8D80 /* StoriesLoader.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 			children = (
 				96AF96161A5EABC9003926E2 /* StoryTableViewCell.swift */,
 				B7E4D3361A719855001DC9B6 /* CommentTableViewCell.swift */,
+				1A2331C31A78DFAF002F8D80 /* LoadingTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -686,6 +692,7 @@
 				B78F903E1A6EFAAA00883A5B /* JSONParser.swift in Sources */,
 				1A908E471A74A44600F30022 /* Commentable.swift in Sources */,
 				964892151A62A84600214D53 /* CommentViewController.swift in Sources */,
+				1A2331C41A78DFAF002F8D80 /* LoadingTableViewCell.swift in Sources */,
 				961889B51A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				B78F90431A6EFF2100883A5B /* Comment.swift in Sources */,
 				96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */,
@@ -698,6 +705,7 @@
 				1A9183091A75EE1900606F35 /* CoreTextView.swift in Sources */,
 				B7E4D3371A719855001DC9B6 /* CommentTableViewCell.swift in Sources */,
 				961889B41A67F15900295A64 /* TPKeyboardAvoidingTableView.m in Sources */,
+				1A2331D21A78E1AF002F8D80 /* StoriesLoader.swift in Sources */,
 				967CFD061A5C10700044B4E3 /* LoginViewController.swift in Sources */,
 				964892621A63AB2600214D53 /* DesignerNewsApp.xcdatamodeld in Sources */,
 				9694F2051A5FF13900A6376A /* CommentsTableViewController.swift in Sources */,
