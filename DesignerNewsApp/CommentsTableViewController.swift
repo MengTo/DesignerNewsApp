@@ -78,7 +78,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         else {
             DesignerNewsService.upvoteStoryWithId(story.id, token: getToken()) { successful in
                 if successful {
-                    saveUpvote(toString(self.story.id))
+                    NSUserDefaults.standardUserDefaults().setStoryAsUpvoted(self.story.id)
                     let upvoteInt = self.story.voteCount + 1
                     let upvoteString = toString(upvoteInt)
                     cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
@@ -116,7 +116,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             let comment = self.getCommentForIndexPath(indexPath!)
             DesignerNewsService.upvoteCommentWithId(comment.id, token: getToken()) { successful in
                 if successful {
-                    saveUpvote(toString(comment.id))
+                    NSUserDefaults.standardUserDefaults().setCommentAsUpvoted(comment.id)
                     let upvoteInt = comment.voteCount + 1
                     let upvoteString = toString(upvoteInt)
                     cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
