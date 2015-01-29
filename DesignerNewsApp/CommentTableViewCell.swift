@@ -77,6 +77,9 @@ extension CommentTableViewCell {
         self.authorLabel.text = comment.userDisplayName + ", " + comment.userJob
         self.upvoteButton.setTitle(toString(comment.voteCount), forState: UIControlState.Normal)
 
+        let imageName = isUpvoted ? "icon-upvote-active" : "icon-upvote"
+        self.upvoteButton.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
+
         let timeAgo = dateFromString(comment.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
         self.timeLabel.text = timeAgoSinceDate(timeAgo, true)
 
