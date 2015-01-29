@@ -164,7 +164,8 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
         if let commentCell = cell as? CommentTableViewCell {
             let comment = self.getCommentForIndexPath(indexPath)
-            commentCell.configureWithComment(comment)
+            let isUpvoted = NSUserDefaults.standardUserDefaults().isCommentUpvoted(comment.id)
+            commentCell.configureWithComment(comment, isUpvoted: isUpvoted)
             commentCell.delegate = self
         }
 
