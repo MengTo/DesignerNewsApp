@@ -12,6 +12,7 @@ extension NSUserDefaults {
     private var visitedStoriesKey: String { return "visitedStoriesKey" }
     private var upvotedStoriesKey: String { return "upvotedStoriesKey" }
     private var upvotedCommentsKey: String { return "upvotedCommentsKey" }
+    private var accessTokenKey: String { return "accessTokenKey" }
 
     func setStoryAsVisited(storyId: Int) {
         appendId(storyId, toKey: visitedStoriesKey)
@@ -37,6 +38,19 @@ extension NSUserDefaults {
         return arrayForKey(upvotedCommentsKey, containsId: commentId)
     }
 
+    func setAccessToken(token: String) {
+        NSUserDefaults.standardUserDefaults().setObject(token, forKey: accessTokenKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+
+    func deleteAccessToken() {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(accessTokenKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+
+    func accessToken() -> String? {
+        return NSUserDefaults.standardUserDefaults().stringForKey(accessTokenKey)
+    }
 
     // MARK: Helper
 
