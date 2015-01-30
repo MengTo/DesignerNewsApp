@@ -40,13 +40,7 @@ import UIKit
         if let userInfo = notification.userInfo {
             if let frameValue = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue {
                 let frame = frameValue.CGRectValue()
-
-                println("frame \(frame)")
-
                 keyboardVisibleHeight = frame.size.height
-                if CGRectIntersectsRect(UIScreen.mainScreen().bounds, frame) {
-
-                }
             }
 
             switch (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber, userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber) {
@@ -59,7 +53,6 @@ import UIKit
                     delay: 0,
                     options: options,
                     animations: {
-
                         self.invalidateIntrinsicContentSize()
                         self.superview?.layoutIfNeeded()
                     }, completion: { finished in
@@ -79,7 +72,6 @@ import UIKit
 
         if let userInfo = notification.userInfo {
 
-
             switch (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber, userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber) {
             case let (.Some(duration), .Some(curve)):
 
@@ -90,7 +82,6 @@ import UIKit
                     delay: 0,
                     options: options,
                     animations: {
-
                         self.invalidateIntrinsicContentSize()
                         self.superview?.layoutIfNeeded()
                     }, completion: { finished in
