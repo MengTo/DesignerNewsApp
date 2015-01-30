@@ -15,7 +15,7 @@
 		1A8D9C841A75E30F0032DA0F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C831A75E30F0032DA0F /* QuartzCore.framework */; };
 		1A8D9C871A75E31B0032DA0F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C861A75E31B0032DA0F /* MobileCoreServices.framework */; };
 		1A8D9C8A1A75E33E0032DA0F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C891A75E33E0032DA0F /* CoreText.framework */; };
-		1A908E471A74A44600F30022 /* Commentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A908E461A74A44600F30022 /* Commentable.swift */; };
+		1A908E471A74A44600F30022 /* Replyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A908E461A74A44600F30022 /* Replyable.swift */; };
 		1A908E671A753B6C00F30022 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A908E661A753B6C00F30022 /* libxml2.dylib */; };
 		1A9183091A75EE1900606F35 /* CoreTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9183081A75EE1900606F35 /* CoreTextView.swift */; };
 		1AAA95C21A79144000D5E8C8 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAA95C11A79144000D5E8C8 /* AsyncImageView.swift */; };
@@ -25,7 +25,7 @@
 		961889B41A67F15900295A64 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AF1A67F15900295A64 /* TPKeyboardAvoidingTableView.m */; };
 		961889B51A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889B11A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		961889B81A680D3800295A64 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889B71A680D3800295A64 /* LearnViewController.swift */; };
-		964892151A62A84600214D53 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892141A62A84600214D53 /* CommentViewController.swift */; };
+		964892151A62A84600214D53 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892141A62A84600214D53 /* ReplyViewController.swift */; };
 		964892671A63F5D900214D53 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892661A63F5D900214D53 /* MenuViewController.swift */; };
 		966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966128541A4DA63100A54A23 /* AppDelegate.swift */; };
 		9661285A1A4DA63100A54A23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966128581A4DA63100A54A23 /* Main.storyboard */; };
@@ -187,7 +187,7 @@
 		1A8D9C831A75E30F0032DA0F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1A8D9C861A75E31B0032DA0F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1A8D9C891A75E33E0032DA0F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		1A908E461A74A44600F30022 /* Commentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commentable.swift; sourceTree = "<group>"; };
+		1A908E461A74A44600F30022 /* Replyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Replyable.swift; sourceTree = "<group>"; };
 		1A908E611A75382200F30022 /* DesignerNewsApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignerNewsApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		1A908E661A753B6C00F30022 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		1A9183081A75EE1900606F35 /* CoreTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextView.swift; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 		961889B01A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		961889B11A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		961889B71A680D3800295A64 /* LearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
-		964892141A62A84600214D53 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		964892141A62A84600214D53 /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 		964892661A63F5D900214D53 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9661284F1A4DA63100A54A23 /* DesignerNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignerNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966128531A4DA63100A54A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -402,7 +402,7 @@
 				967CFD051A5C10700044B4E3 /* LoginViewController.swift */,
 				96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */,
 				9694F2041A5FF13900A6376A /* CommentsTableViewController.swift */,
-				964892141A62A84600214D53 /* CommentViewController.swift */,
+				964892141A62A84600214D53 /* ReplyViewController.swift */,
 				9694F20A1A6123D000A6376A /* WebViewController.swift */,
 				964892661A63F5D900214D53 /* MenuViewController.swift */,
 				961889B71A680D3800295A64 /* LearnViewController.swift */,
@@ -452,7 +452,7 @@
 			children = (
 				B78F90401A6EFBAF00883A5B /* Story.swift */,
 				B78F90421A6EFF2100883A5B /* Comment.swift */,
-				1A908E461A74A44600F30022 /* Commentable.swift */,
+				1A908E461A74A44600F30022 /* Replyable.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -695,8 +695,8 @@
 				1A7D78A01A70F8FE0061D6F6 /* DragDropBehavior.swift in Sources */,
 				961889B31A67F15900295A64 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				B78F903E1A6EFAAA00883A5B /* JSONParser.swift in Sources */,
-				1A908E471A74A44600F30022 /* Commentable.swift in Sources */,
-				964892151A62A84600214D53 /* CommentViewController.swift in Sources */,
+				1A908E471A74A44600F30022 /* Replyable.swift in Sources */,
+				964892151A62A84600214D53 /* ReplyViewController.swift in Sources */,
 				1A2331C41A78DFAF002F8D80 /* LoadingTableViewCell.swift in Sources */,
 				961889B51A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				B78F90431A6EFF2100883A5B /* Comment.swift in Sources */,

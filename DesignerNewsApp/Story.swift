@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Meng To. All rights reserved.
 //
 
-struct Story : Commentable {
+struct Story : Replyable {
     let id: Int
     let title: String
     let url: String

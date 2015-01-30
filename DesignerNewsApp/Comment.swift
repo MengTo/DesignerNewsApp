@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Meng To. All rights reserved.
 //
 
-struct Comment : Commentable {
+struct Comment : Replyable {
     let id: Int
     let bodyHTML: String
     let depth: Int

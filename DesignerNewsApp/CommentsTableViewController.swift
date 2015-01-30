@@ -34,14 +34,14 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CommentSegue" {
 
-            let toView = segue.destinationViewController as CommentViewController
+            let toView = segue.destinationViewController as ReplyViewController
 
             if let cell = sender as? CommentTableViewCell {
                 let indexPath = self.tableView.indexPathForCell(cell)
                 let comment = self.getCommentForIndexPath(indexPath!)
-                toView.commentable = comment
+                toView.replyable = comment
             } else if let cell = sender as? StoryTableViewCell {
-                toView.commentable = story
+                toView.replyable = story
             }
             
             toView.transitioningDelegate = self.transitionManager

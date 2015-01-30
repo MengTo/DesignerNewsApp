@@ -1,5 +1,5 @@
 //
-//  CommentViewController.swift
+//  ReplyViewController.swift
 //  DesignerNewsApp
 //
 //  Created by Meng To on 2015-01-11.
@@ -9,19 +9,28 @@
 import UIKit
 import Spring
 
-class CommentViewController: UIViewController {
+class ReplyViewController: UIViewController {
     
     @IBOutlet weak var commentTextView: UITextView!
-    var commentable : Commentable!
-    @IBOutlet weak var navTitle: UINavigationItem!
+    var replyable : Replyable!
+    @IBOutlet weak var titleItem: UINavigationItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         commentTextView.becomeFirstResponder()
+        titleItem.title = self.navigationTitle()
 
-        navTitle.title = "Comment"
+    }
 
+
+    func navigationTitle() -> String? {
+        if let story = replyable as? Story {
+            return "Comment"
+        } else if let comment = replyable as? Comment {
+            return "Reply"
+        }
+        return nil
     }
 
     // MARK: Action
