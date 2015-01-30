@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate {
+class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate, ReplyViewControllerDelegate {
 
     var story: Story!
     private let transitionManager = TransitionManager()
@@ -43,7 +43,8 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             } else if let cell = sender as? StoryTableViewCell {
                 toView.replyable = story
             }
-            
+
+            toView.delegate = self
             toView.transitioningDelegate = self.transitionManager
         }
         else if segue.identifier == "WebSegue" {
@@ -182,6 +183,26 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     func getCommentForIndexPath(indexPath: NSIndexPath) -> Comment {
         return story.comments[indexPath.row - 1]
+    }
+
+    // MARK: ReplyViewControllerDelegate
+
+    func replyViewController(controller: ReplyViewController, didReplyComment newComment: Comment, onReplyable replyable: Replyable) {
+
+        if let story = replyable as? Story {
+            self.story.addComment(newComment)
+            self.tableView.reloadData()
+        } else if let comment = replyable as? Comment {
+
+            for (index, onComment) in enumerate(self.story.comments) {
+                if onComment == comment {
+                    self.story.insertComment(newComment, atIndex: index+1)
+                    self.tableView.reloadData()
+                    break
+                }
+            }
+
+        }
     }
 }
 

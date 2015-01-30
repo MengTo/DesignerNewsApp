@@ -18,5 +18,13 @@ struct Story : Replyable {
     let createdAt: String
     let badge: String
     let userPortraitUrl: String
-    let comments: [Comment]
+    var comments: [Comment]
+
+    mutating func addComment(comment: Comment) {
+        self.comments.append(comment)
+    }
+
+    mutating func insertComment(comment: Comment, atIndex: Int) {
+        self.comments.insert(comment, atIndex: atIndex)
+    }
 }

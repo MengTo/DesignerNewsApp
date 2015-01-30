@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import Spring
 
 struct DesignerNewsService {
 
@@ -86,5 +87,54 @@ struct DesignerNewsService {
             let successful = urlResponse?.statusCode == 200
             response(successful: successful)
         }
+    }
+
+    static func replyStoryWithId(storyId: Int, token: String, body: String, response: (comment: Comment?) -> ()) {
+
+        let commentDict = [
+            "comment": [
+                "body": body,
+                "body_html": "<p>\(body)</p>",
+                "comments": [],
+                "created_at": "2014-01-24T16:53:08Z",
+                "depth": 0,
+                "id": 9000,
+                "vote_count": 0,
+                "url": "https://news.layervault.com/comments/9000",
+                "user_display_name": "Kelly S.",
+                "user_id": 1
+            ]
+        ]
+
+
+        delay(2) {
+            let comment = JSONParser.parseComment(commentDict["comment"]!)
+            response(comment: comment)
+        }
+
+    }
+
+    static func replyCommentWithId(commentId: Int, token: String, body: String, response: (comment: Comment?) -> ()) {
+
+        let commentDict = [
+            "comment": [
+                "body": body,
+                "body_html": "<p>\(body)</p>",
+                "comments": [],
+                "created_at": "2014-01-24T16:53:08Z",
+                "depth": 3,
+                "id": 9001,
+                "vote_count": 0,
+                "url": "https://news.layervault.com/comments/9001",
+                "user_display_name": "Kelly S.",
+                "user_id": 1
+            ]
+        ]
+
+        delay(2) {
+            let comment = JSONParser.parseComment(commentDict["comment"]!)
+            response(comment: comment)
+        }
+
     }
 }

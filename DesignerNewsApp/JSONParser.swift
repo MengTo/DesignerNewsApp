@@ -33,7 +33,7 @@ struct JSONParser {
         return Story(id: id, title: title, url: url, commentHTML: commentHTML, userDisplayName: userDisplayName, userJob: userJob, voteCount: voteCount, commentCount: commentCount, createdAt: createdAt, badge: badge, userPortraitUrl: userPortraitUrl, comments: flattenedParsedComments)
     }
 
-    private static func parseComment(comment: NSDictionary) -> Comment {
+    static func parseComment(comment: NSDictionary) -> Comment {
         let id = comment["id"] as? Int ?? 0
         let bodyHTML = comment["body_html"] as? String ?? ""
         let depth = comment["depth"] as? Int ?? 0
