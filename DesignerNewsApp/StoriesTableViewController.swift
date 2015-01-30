@@ -34,6 +34,15 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         loginButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let indexPath = self.selectedIndexPath {
+            tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: .None)
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.selectedIndexPath = nil
+        }
+    }
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if firstTime {
