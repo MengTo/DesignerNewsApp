@@ -13,13 +13,12 @@ protocol MenuViewControllerDelegate : class {
     func menuViewControllerDidSelectTopStories(controller:MenuViewController)
     func menuViewControllerDidSelectRecent(controller:MenuViewController)
     func menuViewControllerDidSelectLogout(controller:MenuViewController)
-    func menuViewControllerDidLogin(controller:MenuViewController)
+    func menuViewControllerDidSelectLogin(controller:MenuViewController)
 }
 
 class MenuViewController: UIViewController, LoginViewControllerDelegate {
     
     weak var delegate: MenuViewControllerDelegate?
-    var token = getToken()
     @IBOutlet weak var dialogView: SpringView!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var recentLabel: UILabel!
@@ -29,12 +28,8 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if token.isEmpty {
-            loginLabel.text = "Login"
-        }
-        else {
-            loginLabel.text = "Logout"
-        }
+        let token = LocalStore.accessToken()
+        loginLabel.text = token == nil ? "Login" : "Logout"
     }
     
     var firstTime = true
@@ -67,11 +62,10 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     @IBAction func loginButtonPressed(sender: AnyObject) {
         animateView()
         
-        if token.isEmpty {
+        if LocalStore.accessToken() == nil {
             performSegueWithIdentifier("LoginSegue", sender: self)
-        }
-        else {
-            delegate?.menuViewControllerDidLogin(self)
+        } else {
+            delegate?.menuViewControllerDidSelectLogout(self)
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
@@ -85,14 +79,11 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     
     // MARK: LoginViewControllerDelegate
     func loginViewControllerDidLogin(controller: LoginViewController) {
-        loginCompleted()
+        dismissViewControllerAnimated(true, completion: nil)
+        delegate?.menuViewControllerDidSelectLogin(self)
     }
 
     // MARK: Misc
-    func loginCompleted() {
-        dismissViewControllerAnimated(true, completion: nil)
-        delegate?.menuViewControllerDidLogin(self)
-    }
 
     func animateView() {
         dialogView.animation = "pop"
