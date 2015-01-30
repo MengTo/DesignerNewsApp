@@ -72,19 +72,18 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     // MARK: StoriesTableViewCellDelegate
     func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject) {
-        if getToken().isEmpty {
-            performSegueWithIdentifier("LoginSegue", sender: self)
-        }
-        else {
-            DesignerNewsService.upvoteStoryWithId(story.id, token: getToken()) { successful in
+        if let token = LocalStore.accessToken() {
+            DesignerNewsService.upvoteStoryWithId(story.id, token: token) { successful in
                 if successful {
-                    NSUserDefaults.standardUserDefaults().setStoryAsUpvoted(self.story.id)
+                    LocalStore.setStoryAsUpvoted(self.story.id)
                     let upvoteInt = self.story.voteCount + 1
                     let upvoteString = toString(upvoteInt)
                     cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
                     cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
                 }
             }
+        } else {
+            performSegueWithIdentifier("LoginSegue", sender: self)
         }
     }
 
@@ -108,21 +107,20 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
 
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject) {
-        if getToken().isEmpty {
-            performSegueWithIdentifier("LoginSegue", sender: self)
-        }
-        else {
+        if let token = LocalStore.accessToken() {
             let indexPath = self.tableView.indexPathForCell(cell)
             let comment = self.getCommentForIndexPath(indexPath!)
-            DesignerNewsService.upvoteCommentWithId(comment.id, token: getToken()) { successful in
+            DesignerNewsService.upvoteCommentWithId(comment.id, token: token) { successful in
                 if successful {
-                    NSUserDefaults.standardUserDefaults().setCommentAsUpvoted(comment.id)
+                    LocalStore.setCommentAsUpvoted(comment.id)
                     let upvoteInt = comment.voteCount + 1
                     let upvoteString = toString(upvoteInt)
                     cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
                     cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
                 }
             }
+        } else {
+            performSegueWithIdentifier("LoginSegue", sender: self)
         }
     }
 
@@ -156,15 +154,15 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         cell.frame = tableView.bounds
 
         if let storyCell = cell as? StoryTableViewCell {
-            let isUpvoted = NSUserDefaults.standardUserDefaults().isStoryUpvoted(story.id)
-            let isVisited = NSUserDefaults.standardUserDefaults().isStoryVisited(story.id)
+            let isUpvoted = LocalStore.isStoryUpvoted(story.id)
+            let isVisited = LocalStore.isStoryVisited(story.id)
             storyCell.configureWithStory(story, isUpvoted: isUpvoted, isVisited: isVisited)
             storyCell.delegate = self
         }
 
         if let commentCell = cell as? CommentTableViewCell {
             let comment = self.getCommentForIndexPath(indexPath)
-            let isUpvoted = NSUserDefaults.standardUserDefaults().isCommentUpvoted(comment.id)
+            let isUpvoted = LocalStore.isCommentUpvoted(comment.id)
             commentCell.configureWithComment(comment, isUpvoted: isUpvoted)
             commentCell.delegate = self
         }
