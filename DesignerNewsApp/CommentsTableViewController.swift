@@ -13,6 +13,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     var story: Story!
     private let transitionManager = TransitionManager()
+    private var scrollToIndexPath : NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,12 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         super.viewDidAppear(true)
         
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+
+        if let indexPath = self.scrollToIndexPath {
+            let point = CGPointMake(0, tableView.contentSize.height - CGRectGetHeight(tableView.frame))
+            tableView.setContentOffset(point, animated: true)
+            self.scrollToIndexPath = nil
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -192,6 +199,11 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         if let story = replyable as? Story {
             self.story.addComment(newComment)
             self.tableView.reloadData()
+
+            let indexPath = NSIndexPath(forRow: self.story.comments.count, inSection: 0)
+
+            scrollToIndexPath = indexPath
+
         } else if let comment = replyable as? Comment {
 
             for (index, onComment) in enumerate(self.story.comments) {
@@ -203,6 +215,10 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             }
 
         }
+    }
+
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        println("scrollViewOffset \(scrollView.contentOffset)")
     }
 }
 

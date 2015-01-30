@@ -89,52 +89,54 @@ struct DesignerNewsService {
         }
     }
 
-    static func replyStoryWithId(storyId: Int, token: String, body: String, response: (comment: Comment?) -> ()) {
+    static func replyStoryWithId(storyId: Int, token: String, body: String, response: (comment: Comment?, error: Error?) -> ()) {
 
-        let commentDict = [
-            "comment": [
-                "body": body,
-                "body_html": "<p>\(body)</p>",
-                "comments": [],
-                "created_at": "2014-01-24T16:53:08Z",
-                "depth": 0,
-                "id": 9000,
-                "vote_count": 0,
-                "url": "https://news.layervault.com/comments/9000",
-                "user_display_name": "Kelly S.",
-                "user_id": 1
-            ]
-        ]
+        let path = ResourcePath.StoryReply(storyId: storyId)
+        let urlString = baseURL + path.description
+        let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.HTTPMethod = "POST"
+        let data = ("comment[body]=\(body)" as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        request.HTTPBody = data
 
-
-        delay(2) {
-            let comment = JSONParser.parseComment(commentDict["comment"]!)
-            response(comment: comment)
+        Alamofire.request(request).responseJSON { (_, urlResponse, json, error) in
+            let successful = urlResponse?.statusCode == 200
+            if let message = json?["error"] as? String {
+                response(comment: nil, error: Error(message: message, code: urlResponse?.statusCode ?? 0))
+            } else if let commentDict = json?["comment"] as? NSDictionary {
+                let comment = JSONParser.parseComment(commentDict)
+                response(comment: comment, error: nil)
+            } else {
+                response(comment: nil, error: Error(message: error?.localizedDescription ?? "Something went wrong", code: error?.code ?? 0))
+            }
         }
 
     }
 
-    static func replyCommentWithId(commentId: Int, token: String, body: String, response: (comment: Comment?) -> ()) {
+    static func replyCommentWithId(commentId: Int, token: String, body: String, response: (comment: Comment?, error: Error?) -> ()) {
 
-        let commentDict = [
-            "comment": [
-                "body": body,
-                "body_html": "<p>\(body)</p>",
-                "comments": [],
-                "created_at": "2014-01-24T16:53:08Z",
-                "depth": 3,
-                "id": 9001,
-                "vote_count": 0,
-                "url": "https://news.layervault.com/comments/9001",
-                "user_display_name": "Kelly S.",
-                "user_id": 1
-            ]
-        ]
 
-        delay(2) {
-            let comment = JSONParser.parseComment(commentDict["comment"]!)
-            response(comment: comment)
+        let path = ResourcePath.CommentReply(commentId: commentId)
+        let urlString = baseURL + path.description
+        let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.HTTPMethod = "POST"
+        let data = ("comment[body]=\(body)" as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        request.HTTPBody = data
+
+        Alamofire.request(request).responseJSON { (_, urlResponse, json, error) in
+            let successful = urlResponse?.statusCode == 200
+
+            if let message = json?["error"] as? String {
+                response(comment: nil, error: Error(message: message, code: urlResponse?.statusCode ?? 0))
+            } else if let commentDict = json?["comment"] as? NSDictionary {
+                let comment = JSONParser.parseComment(commentDict)
+                response(comment: comment, error: nil)
+            } else {
+                response(comment: nil, error: Error(message: error?.localizedDescription ?? "Something went wrong", code: error?.code ?? 0))
+            }
         }
+
 
     }
 }

@@ -60,7 +60,7 @@ class ReplyViewController: UIViewController {
                         story.id,
                         token: token,
                         body: text,
-                        response: { comment in
+                        response: { comment, error in
 
                             if let comment = comment {
                                 self.dismissViewControllerAnimated(true, completion: nil)
@@ -69,7 +69,7 @@ class ReplyViewController: UIViewController {
                                 self.view.hideLoading()
                                 self.commentTextView.editable = true
 
-                                let alert = UIAlertView(title: "Error", message: "Failed to reply to this Story, please try again later.", delegate: nil, cancelButtonTitle: "OK")
+                                let alert = UIAlertView(title: "Error", message: error?.message, delegate: nil, cancelButtonTitle: "OK")
                                 alert.show()
                             }
 
@@ -77,11 +77,11 @@ class ReplyViewController: UIViewController {
 
                 } else if let comment = replyable as? Comment {
 
-                    DesignerNewsService.replyStoryWithId(
+                    DesignerNewsService.replyCommentWithId(
                         comment.id,
                         token: token,
                         body: text,
-                        response: { comment in
+                        response: { comment, error in
 
                             if let comment = comment {
                                 self.dismissViewControllerAnimated(true, completion: nil)
@@ -90,7 +90,7 @@ class ReplyViewController: UIViewController {
                                 self.view.hideLoading()
                                 self.commentTextView.editable = true
 
-                                let alert = UIAlertView(title: "Error", message: "Failed to reply to this Comment, please try again later.", delegate: nil, cancelButtonTitle: "OK")
+                                let alert = UIAlertView(title: "Error", message: error?.message, delegate: nil, cancelButtonTitle: "OK")
                                 alert.show()
                             }
                     })
