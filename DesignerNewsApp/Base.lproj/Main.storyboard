@@ -1160,7 +1160,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Ud9-EQ-k4v" kind="presentation" identifier="CommentSegue" id="AAA-ja-nOX"/>
+                        <segue destination="Ud9-EQ-k4v" kind="presentation" identifier="ReplySegue" id="AAA-ja-nOX"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="WYa-K1-lob"/>
                     </connections>
                 </tableViewController>

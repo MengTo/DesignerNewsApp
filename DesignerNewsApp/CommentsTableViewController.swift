@@ -32,7 +32,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "CommentSegue" {
+        if segue.identifier == "ReplySegue" {
 
             let toView = segue.destinationViewController as ReplyViewController
 
@@ -89,7 +89,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
 
     func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject) {
-        performSegueWithIdentifier("CommentSegue", sender: cell)
+        performSegueWithIdentifier("ReplySegue", sender: cell)
     }
 
     func storyTableViewCell(cell: StoryTableViewCell, linkDidPress link: NSURL) {
@@ -104,7 +104,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     // MARK: CommentTableViewCellDelegate
     func commentTableViewCell(cell: CommentTableViewCell, replyButtonPressed sender: AnyObject) {
-        performSegueWithIdentifier("CommentSegue", sender: cell)
+        performSegueWithIdentifier("ReplySegue", sender: cell)
     }
 
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject) {
