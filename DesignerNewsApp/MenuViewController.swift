@@ -13,7 +13,7 @@ protocol MenuViewControllerDelegate : class {
     func menuViewControllerDidSelectTopStories(controller:MenuViewController)
     func menuViewControllerDidSelectRecent(controller:MenuViewController)
     func menuViewControllerDidSelectLogout(controller:MenuViewController)
-    func menuViewControllerDidLogin(controller:MenuViewController)
+    func menuViewControllerDidSelectLogin(controller:MenuViewController)
 }
 
 class MenuViewController: UIViewController, LoginViewControllerDelegate {
@@ -65,7 +65,7 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
         if LocalStore.accessToken() == nil {
             performSegueWithIdentifier("LoginSegue", sender: self)
         } else {
-            delegate?.menuViewControllerDidLogin(self)
+            delegate?.menuViewControllerDidSelectLogout(self)
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
@@ -79,14 +79,11 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     
     // MARK: LoginViewControllerDelegate
     func loginViewControllerDidLogin(controller: LoginViewController) {
-        loginCompleted()
+        dismissViewControllerAnimated(true, completion: nil)
+        delegate?.menuViewControllerDidSelectLogin(self)
     }
 
     // MARK: Misc
-    func loginCompleted() {
-        dismissViewControllerAnimated(true, completion: nil)
-        delegate?.menuViewControllerDidLogin(self)
-    }
 
     func animateView() {
         dialogView.animation = "pop"

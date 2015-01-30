@@ -86,7 +86,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         logout()
     }
 
-    func menuViewControllerDidLogin(controller: MenuViewController) {
+    func menuViewControllerDidSelectLogin(controller: MenuViewController) {
         loginCompleted()
     }
 
