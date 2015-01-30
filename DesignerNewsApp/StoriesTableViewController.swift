@@ -56,8 +56,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         if NSUserDefaults.standardUserDefaults().accessToken() == nil {
             loginButton.title = "Login"
             loginButton.enabled = true
-        }
-        else {
+        } else {
             loginButton.title = ""
             loginButton.enabled = false
         }
@@ -100,8 +99,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     @IBAction func loginButtonPressed(sender: AnyObject) {
         if NSUserDefaults.standardUserDefaults().accessToken() == nil {
             performSegueWithIdentifier("LoginSegue", sender: self)
-        }
-        else {
+        } else {
             logout()
         }
     }

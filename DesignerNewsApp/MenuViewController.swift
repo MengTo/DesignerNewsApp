@@ -28,12 +28,8 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if NSUserDefaults.standardUserDefaults().accessToken() == nil {
-            loginLabel.text = "Login"
-        }
-        else {
-            loginLabel.text = "Logout"
-        }
+        let token = NSUserDefaults.standardUserDefaults().accessToken()
+        loginLabel.text = token == nil ? "Login" : "Logout"
     }
     
     var firstTime = true
@@ -68,8 +64,7 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
         
         if NSUserDefaults.standardUserDefaults().accessToken() == nil {
             performSegueWithIdentifier("LoginSegue", sender: self)
-        }
-        else {
+        } else {
             delegate?.menuViewControllerDidLogin(self)
             dismissViewControllerAnimated(true, completion: nil)
         }
