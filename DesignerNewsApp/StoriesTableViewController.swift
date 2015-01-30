@@ -14,7 +14,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     private let transitionManager = TransitionManager()
     private var stories = [Story]()
     private var firstTime = true
-    private var token = getToken()
     private var storiesLoader = StoriesLoader()
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
@@ -54,7 +53,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             self.refreshControl?.endRefreshing()
         })
 
-        if token.isEmpty {
+        if NSUserDefaults.standardUserDefaults().accessToken() == nil {
             loginButton.title = "Login"
             loginButton.enabled = true
         }
@@ -99,7 +98,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     // MARK: Action
     @IBAction func loginButtonPressed(sender: AnyObject) {
-        if token.isEmpty {
+        if NSUserDefaults.standardUserDefaults().accessToken() == nil {
             performSegueWithIdentifier("LoginSegue", sender: self)
         }
         else {
@@ -113,13 +112,11 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     // MARK: Misc
     func loginCompleted() {
-        token = getToken()
         loadStories()
     }
 
     func logout() {
-        deleteToken()
-        token = ""
+        NSUserDefaults.standardUserDefaults().deleteAccessToken()
         loadStories()
     }
 
@@ -164,10 +161,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject) {
 
-        if token.isEmpty {
-            performSegueWithIdentifier("LoginSegue", sender: self)
-        }
-        else {
+        if let token = NSUserDefaults.standardUserDefaults().accessToken() {
             let indexPath = tableView.indexPathForCell(cell)!
             let storyId = stories[indexPath.row].id
             DesignerNewsService.upvoteStoryWithId(storyId, token: token) { successful in
@@ -179,6 +173,8 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
                     cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
                 }
             }
+        } else {
+            performSegueWithIdentifier("LoginSegue", sender: self)
         }
     }
 

@@ -72,11 +72,8 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     // MARK: StoriesTableViewCellDelegate
     func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject) {
-        if getToken().isEmpty {
-            performSegueWithIdentifier("LoginSegue", sender: self)
-        }
-        else {
-            DesignerNewsService.upvoteStoryWithId(story.id, token: getToken()) { successful in
+        if let token = NSUserDefaults.standardUserDefaults().accessToken() {
+            DesignerNewsService.upvoteStoryWithId(story.id, token: token) { successful in
                 if successful {
                     NSUserDefaults.standardUserDefaults().setStoryAsUpvoted(self.story.id)
                     let upvoteInt = self.story.voteCount + 1
@@ -85,6 +82,8 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
                     cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
                 }
             }
+        } else {
+            performSegueWithIdentifier("LoginSegue", sender: self)
         }
     }
 
@@ -108,13 +107,10 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
 
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject) {
-        if getToken().isEmpty {
-            performSegueWithIdentifier("LoginSegue", sender: self)
-        }
-        else {
+        if let token = NSUserDefaults.standardUserDefaults().accessToken() {
             let indexPath = self.tableView.indexPathForCell(cell)
             let comment = self.getCommentForIndexPath(indexPath!)
-            DesignerNewsService.upvoteCommentWithId(comment.id, token: getToken()) { successful in
+            DesignerNewsService.upvoteCommentWithId(comment.id, token: token) { successful in
                 if successful {
                     NSUserDefaults.standardUserDefaults().setCommentAsUpvoted(comment.id)
                     let upvoteInt = comment.voteCount + 1
@@ -123,6 +119,8 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
                     cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
                 }
             }
+        } else {
+            performSegueWithIdentifier("LoginSegue", sender: self)
         }
     }
 

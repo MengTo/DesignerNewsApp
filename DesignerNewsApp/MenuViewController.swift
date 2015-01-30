@@ -19,7 +19,6 @@ protocol MenuViewControllerDelegate : class {
 class MenuViewController: UIViewController, LoginViewControllerDelegate {
     
     weak var delegate: MenuViewControllerDelegate?
-    var token = getToken()
     @IBOutlet weak var dialogView: SpringView!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var recentLabel: UILabel!
@@ -29,7 +28,7 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if token.isEmpty {
+        if NSUserDefaults.standardUserDefaults().accessToken() == nil {
             loginLabel.text = "Login"
         }
         else {
@@ -67,7 +66,7 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     @IBAction func loginButtonPressed(sender: AnyObject) {
         animateView()
         
-        if token.isEmpty {
+        if NSUserDefaults.standardUserDefaults().accessToken() == nil {
             performSegueWithIdentifier("LoginSegue", sender: self)
         }
         else {
