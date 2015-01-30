@@ -53,7 +53,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             self.refreshControl?.endRefreshing()
         })
 
-        if NSUserDefaults.standardUserDefaults().accessToken() == nil {
+        if LocalStore.accessToken() == nil {
             loginButton.title = "Login"
             loginButton.enabled = true
         } else {
@@ -97,7 +97,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     // MARK: Action
     @IBAction func loginButtonPressed(sender: AnyObject) {
-        if NSUserDefaults.standardUserDefaults().accessToken() == nil {
+        if LocalStore.accessToken() == nil {
             performSegueWithIdentifier("LoginSegue", sender: self)
         } else {
             logout()
@@ -114,7 +114,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
 
     func logout() {
-        NSUserDefaults.standardUserDefaults().deleteAccessToken()
+        LocalStore.deleteAccessToken()
         loadStories()
     }
 
@@ -135,8 +135,8 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         cell.frame = tableView.bounds
 
         let story = stories[indexPath.row]
-        let isUpvoted = NSUserDefaults.standardUserDefaults().isStoryUpvoted(story.id)
-        let isVisited = NSUserDefaults.standardUserDefaults().isStoryVisited(story.id)
+        let isUpvoted = LocalStore.isStoryUpvoted(story.id)
+        let isVisited = LocalStore.isStoryVisited(story.id)
         cell.configureWithStory(story, isUpvoted: isUpvoted, isVisited: isVisited)
         cell.delegate = self
         
@@ -144,7 +144,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        NSUserDefaults.standardUserDefaults().setStoryAsVisited(stories[indexPath.row].id)
+        LocalStore.setStoryAsVisited(stories[indexPath.row].id)
         self.performSegueWithIdentifier("WebSegue", sender: tableView.cellForRowAtIndexPath(indexPath))
         reloadRowAtIndexPath(indexPath)
     }
@@ -159,12 +159,12 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject) {
 
-        if let token = NSUserDefaults.standardUserDefaults().accessToken() {
+        if let token = LocalStore.accessToken() {
             let indexPath = tableView.indexPathForCell(cell)!
             let storyId = stories[indexPath.row].id
             DesignerNewsService.upvoteStoryWithId(storyId, token: token) { successful in
                 if successful {
-                    NSUserDefaults.standardUserDefaults().setStoryAsUpvoted(storyId)
+                    LocalStore.setStoryAsUpvoted(storyId)
                     let upvoteInt = self.stories[indexPath.row].voteCount + 1
                     let upvoteString = toString(upvoteInt)
                     cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)

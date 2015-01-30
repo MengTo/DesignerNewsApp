@@ -46,7 +46,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, DragDropBehavi
         DesignerNewsService.loginWithEmail(emailTextField.text, password: passwordTextField.text) { token in
             self.view.hideLoading()
             if let token = token {
-                NSUserDefaults.standardUserDefaults().setAccessToken(token)
+                LocalStore.setAccessToken(token)
                 self.dialogView.animation = "zoomOut"
                 self.dialogView.animate()
                 self.dismissViewControllerAnimated(true, completion: nil)

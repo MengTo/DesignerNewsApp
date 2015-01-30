@@ -28,7 +28,7 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let token = NSUserDefaults.standardUserDefaults().accessToken()
+        let token = LocalStore.accessToken()
         loginLabel.text = token == nil ? "Login" : "Logout"
     }
     
@@ -62,7 +62,7 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     @IBAction func loginButtonPressed(sender: AnyObject) {
         animateView()
         
-        if NSUserDefaults.standardUserDefaults().accessToken() == nil {
+        if LocalStore.accessToken() == nil {
             performSegueWithIdentifier("LoginSegue", sender: self)
         } else {
             delegate?.menuViewControllerDidLogin(self)
