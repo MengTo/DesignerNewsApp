@@ -39,17 +39,17 @@ extension NSUserDefaults {
     }
 
     func setAccessToken(token: String) {
-        NSUserDefaults.standardUserDefaults().setObject(token, forKey: accessTokenKey)
-        NSUserDefaults.standardUserDefaults().synchronize()
+        setObject(token, forKey: accessTokenKey)
+        synchronize()
     }
 
     func deleteAccessToken() {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey(accessTokenKey)
-        NSUserDefaults.standardUserDefaults().synchronize()
+        removeObjectForKey(accessTokenKey)
+        synchronize()
     }
 
     func accessToken() -> String? {
-        return NSUserDefaults.standardUserDefaults().stringForKey(accessTokenKey)
+        return stringForKey(accessTokenKey)
     }
 
     // MARK: Helper
