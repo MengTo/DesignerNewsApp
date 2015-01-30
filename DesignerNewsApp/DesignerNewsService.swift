@@ -7,7 +7,6 @@
 //
 
 import Alamofire
-import Spring
 
 struct DesignerNewsService {
 
@@ -100,7 +99,6 @@ struct DesignerNewsService {
         request.HTTPBody = data
 
         Alamofire.request(request).responseJSON { (_, urlResponse, json, error) in
-            let successful = urlResponse?.statusCode == 200
             if let message = json?["error"] as? String {
                 response(comment: nil, error: Error(message: message, code: urlResponse?.statusCode ?? 0))
             } else if let commentDict = json?["comment"] as? NSDictionary {
@@ -125,8 +123,6 @@ struct DesignerNewsService {
         request.HTTPBody = data
 
         Alamofire.request(request).responseJSON { (_, urlResponse, json, error) in
-            let successful = urlResponse?.statusCode == 200
-
             if let message = json?["error"] as? String {
                 response(comment: nil, error: Error(message: message, code: urlResponse?.statusCode ?? 0))
             } else if let commentDict = json?["comment"] as? NSDictionary {
