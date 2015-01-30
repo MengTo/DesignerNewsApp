@@ -14,12 +14,19 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var commentTextView: UITextView!
     var commentable : Commentable!
     @IBOutlet weak var navTitle: UINavigationItem!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         commentTextView.becomeFirstResponder()
 
         navTitle.title = "Comment"
+
+    }
+
+    // MARK: Action
+
+    @IBAction func sendButtonDidPress(sender: AnyObject) {
+        self.view.endEditing(true)
     }
 }
