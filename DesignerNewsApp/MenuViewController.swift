@@ -65,7 +65,7 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
         if LocalStore.accessToken() == nil {
             performSegueWithIdentifier("LoginSegue", sender: self)
         } else {
-            delegate?.menuViewControllerDidLogin(self)
+            delegate?.menuViewControllerDidSelectLogout(self)
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
