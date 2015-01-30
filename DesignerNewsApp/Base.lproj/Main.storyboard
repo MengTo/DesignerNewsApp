@@ -1232,7 +1232,7 @@
                             <constraint firstItem="ryR-5a-L7g" firstAttribute="leading" secondItem="qNq-oG-Xsb" secondAttribute="leading" constant="10" id="FV0-CZ-Fp4"/>
                             <constraint firstAttribute="trailing" secondItem="ryR-5a-L7g" secondAttribute="trailing" constant="10" id="PGz-Vj-Pue"/>
                             <constraint firstAttribute="trailing" secondItem="0xW-iB-99c" secondAttribute="trailing" id="XX0-xD-yTQ"/>
-                            <constraint firstItem="uqE-Tu-xKa" firstAttribute="top" secondItem="ryR-5a-L7g" secondAttribute="bottom" constant="10" id="cxS-gz-poI" customClass="KeyboardLayoutConstraint" customModule="DesignerNewsApp" customModuleProvider="target"/>
+                            <constraint firstItem="uqE-Tu-xKa" firstAttribute="top" secondItem="ryR-5a-L7g" secondAttribute="bottom" constant="10" id="cxS-gz-poI" customClass="KeyboardLayoutConstraint" customModule="Spring"/>
                             <constraint firstItem="0xW-iB-99c" firstAttribute="top" secondItem="qNq-oG-Xsb" secondAttribute="top" id="w8F-bP-VbN"/>
                         </constraints>
                     </view>
