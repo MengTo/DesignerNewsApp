@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Meng To. All rights reserved.
 //
 
-struct Story : Replyable {
+class Story : Replyable {
     let id: Int
     let title: String
     let url: String
@@ -14,13 +14,40 @@ struct Story : Replyable {
     let userDisplayName: String
     let userJob: String
     let voteCount: Int
-    let commentCount: Int
+    var commentCount: Int
     let createdAt: String
     let badge: String
     let userPortraitUrl: String
     var comments: [Comment]
 
-    mutating func insertComment(comment: Comment, atIndex: Int) {
+    init (id: Int,
+        title: String,
+        url: String,
+        commentHTML: String,
+        userDisplayName: String,
+        userJob: String,
+        voteCount: Int,
+        commentCount: Int,
+        createdAt: String,
+        badge: String,
+        userPortraitUrl: String,
+        comments: [Comment]) {
+            self.id  = id
+            self.title  = title
+            self.url  = url
+            self.commentHTML  = commentHTML
+            self.userDisplayName  = userDisplayName
+            self.userJob  = userJob
+            self.voteCount  = voteCount
+            self.commentCount  = commentCount
+            self.createdAt  = createdAt
+            self.badge  = badge 
+            self.userPortraitUrl  = userPortraitUrl 
+            self.comments = comments
+    }
+
+    func insertComment(comment: Comment, atIndex: Int) {
         self.comments.insert(comment, atIndex: atIndex)
+        self.commentCount++
     }
 }
