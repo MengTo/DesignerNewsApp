@@ -46,9 +46,7 @@ class ReplyViewController: UIViewController {
 
         if let text = commentTextView.text {
 
-            let token = getToken()
-
-            if token.length > 0 {
+            if let token = LocalStore.accessToken() {
 
                 view.endEditing(true)
                 view.showLoading()
