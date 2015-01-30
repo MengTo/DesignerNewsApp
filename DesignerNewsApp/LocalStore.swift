@@ -11,9 +11,14 @@ import UIKit
 struct LocalStore {
     private static let visitedStoriesKey = "visitedStoriesKey"
     private static let upvotedStoriesKey = "upvotedStoriesKey"
+    private static let repliedStoriesKey = "repliedStoriesKey"
     private static let upvotedCommentsKey = "upvotedCommentsKey"
     private static let accessTokenKey = "accessTokenKey"
     private static let userDefaults = NSUserDefaults.standardUserDefaults()
+
+    static func setStoryAsReplied(storyId: Int) {
+        appendId(storyId, toKey: repliedStoriesKey)
+    }
 
     static func setStoryAsVisited(storyId: Int) {
         appendId(storyId, toKey: visitedStoriesKey)
@@ -25,6 +30,10 @@ struct LocalStore {
 
     static func setCommentAsUpvoted(commentId: Int) {
         appendId(commentId, toKey: upvotedCommentsKey)
+    }
+
+    static func isStoryReplied(storyId: Int) -> Bool {
+        return arrayForKey(repliedStoriesKey, containsId: storyId)
     }
 
     static func isStoryVisited(storyId: Int) -> Bool {

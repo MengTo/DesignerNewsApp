@@ -188,11 +188,13 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
         if let story = replyable as? Story {
 
+            LocalStore.setStoryAsReplied(story.id)
             self.story.insertComment(newComment, atIndex: 0)
             self.tableView.reloadData()
 
         } else if let comment = replyable as? Comment {
 
+            LocalStore.setStoryAsReplied(story.id)
             for (index, onComment) in enumerate(self.story.comments) {
                 if onComment == comment {
                     self.story.insertComment(newComment, atIndex: index+1)
