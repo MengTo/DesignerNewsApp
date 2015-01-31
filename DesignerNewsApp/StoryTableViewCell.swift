@@ -29,8 +29,6 @@ class StoryTableViewCell: UITableViewCell, CoreTextViewDelegate {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var commentTextView: CoreTextView?
 
-    var story : Story?
-    
     weak var delegate: StoryTableViewCellDelegate?
 
     override func awakeFromNib() {
@@ -39,10 +37,8 @@ class StoryTableViewCell: UITableViewCell, CoreTextViewDelegate {
     }
     
     @IBAction func upvoteButtonPressed(sender: AnyObject) {
-        setSelected(true, animated: false)
         delegate?.storyTableViewCell(self, upvoteButtonPressed: sender)
         animateButton(upvoteButton)
-        setSelected(false, animated: false)
     }
     
     @IBAction func commentButtonPressed(sender: AnyObject) {
@@ -88,9 +84,7 @@ extension StoryTableViewCell {
         let timeAgo = dateFromString(story.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
         self.timeLabel.text = timeAgoSinceDate(timeAgo, true)
 
-        let imageName = isUpvoted ? "icon-upvote-active" : "icon-upvote"
-        self.upvoteButton.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
-
+        self.setIsUpvoted(isUpvoted)
         self.avatarImageView.setURL(NSURL(string: story.userPortraitUrl), placeholderImage: UIImage(named: "content-avatar-default"))
 
         if let commentTextView = self.commentTextView {
@@ -111,5 +105,11 @@ extension StoryTableViewCell {
             let imageName = isReplied ? "icon-comment-active" : "icon-comment"
             commentButton.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
         }
+    }
+
+    func setIsUpvoted(isUpvoted: Bool) {
+        let imageName = isUpvoted ? "icon-upvote-active" : "icon-upvote"
+        self.upvoteButton.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
+        self.userInteractionEnabled = !isUpvoted
     }
 }

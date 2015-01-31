@@ -73,15 +73,23 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     // MARK: StoriesTableViewCellDelegate
     func storyTableViewCell(cell: StoryTableViewCell, upvoteButtonPressed sender: AnyObject) {
         if let token = LocalStore.accessToken() {
-            DesignerNewsService.upvoteStoryWithId(story.id, token: token) { successful in
+            let indexPath = tableView.indexPathForCell(cell)!
+            let story = self.story
+            let storyId = story.id
+            story.upvote()
+            LocalStore.setStoryAsUpvoted(storyId)
+            configureCell(cell, atIndexPath: indexPath)
+
+            DesignerNewsService.upvoteStoryWithId(storyId, token: token) { successful in
                 if successful {
-                    LocalStore.setStoryAsUpvoted(self.story.id)
-                    let upvoteInt = self.story.voteCount + 1
-                    let upvoteString = toString(upvoteInt)
-                    cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
-                    cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
+
+                } else {
+                    story.downvote()
+                    LocalStore.removeStoryFromUpvoted(storyId)
+                    self.configureCell(cell, atIndexPath: indexPath)
                 }
             }
+
         } else {
             performSegueWithIdentifier("LoginSegue", sender: self)
         }
@@ -108,17 +116,24 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject) {
         if let token = LocalStore.accessToken() {
-            let indexPath = self.tableView.indexPathForCell(cell)
-            let comment = self.getCommentForIndexPath(indexPath!)
-            DesignerNewsService.upvoteCommentWithId(comment.id, token: token) { successful in
+
+            let indexPath = tableView.indexPathForCell(cell)!
+            let comment = self.getCommentForIndexPath(indexPath)
+            let commentId = comment.id
+            comment.upvote()
+            LocalStore.setCommentAsUpvoted(commentId)
+            configureCell(cell, atIndexPath: indexPath)
+
+            DesignerNewsService.upvoteCommentWithId(commentId, token: token) { successful in
                 if successful {
-                    LocalStore.setCommentAsUpvoted(comment.id)
-                    let upvoteInt = comment.voteCount + 1
-                    let upvoteString = toString(upvoteInt)
-                    cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
-                    cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
+
+                } else {
+                    comment.downvote()
+                    LocalStore.removeCommentFromUpvoted(commentId)
+                    self.configureCell(cell, atIndexPath: indexPath)
                 }
             }
+
         } else {
             performSegueWithIdentifier("LoginSegue", sender: self)
         }
@@ -153,6 +168,21 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         // manually set the frame to it's parent's bounds
         cell.frame = tableView.bounds
 
+        configureCell(cell, atIndexPath:indexPath)
+
+        return cell
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0 {
+            performSegueWithIdentifier("WebSegue", sender: self)
+        }
+    }
+    
+    // MARK: Misc
+
+    func configureCell(cell:UITableViewCell, atIndexPath indexPath:NSIndexPath) {
+
         if let storyCell = cell as? StoryTableViewCell {
             let isUpvoted = LocalStore.isStoryUpvoted(story.id)
             let isVisited = LocalStore.isStoryVisited(story.id)
@@ -167,16 +197,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             commentCell.delegate = self
         }
 
-        return cell
     }
-
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 0 {
-            performSegueWithIdentifier("WebSegue", sender: self)
-        }
-    }
-    
-    // MARK: Misc
 
     func getCommentForIndexPath(indexPath: NSIndexPath) -> Comment {
         return story.comments[indexPath.row - 1]

@@ -13,12 +13,12 @@ class Story : Replyable {
     let commentHTML: String
     let userDisplayName: String
     let userJob: String
-    let voteCount: Int
-    var commentCount: Int
+    private (set) var voteCount: Int
+    private (set) var commentCount: Int
     let createdAt: String
     let badge: String
     let userPortraitUrl: String
-    var comments: [Comment]
+    private (set) var comments: [Comment]
 
     init (id: Int,
         title: String,
@@ -47,7 +47,15 @@ class Story : Replyable {
     }
 
     func insertComment(comment: Comment, atIndex: Int) {
-        self.comments.insert(comment, atIndex: atIndex)
-        self.commentCount++
+        comments.insert(comment, atIndex: atIndex)
+        commentCount++
+    }
+
+    func upvote() {
+        voteCount++
+    }
+
+    func downvote() {
+        voteCount--
     }
 }

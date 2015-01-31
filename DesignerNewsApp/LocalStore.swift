@@ -28,8 +28,16 @@ struct LocalStore {
         appendId(storyId, toKey: upvotedStoriesKey)
     }
 
+    static func removeStoryFromUpvoted(storyId: Int) {
+        removeId(storyId, forKey: upvotedStoriesKey)
+    }
+
     static func setCommentAsUpvoted(commentId: Int) {
         appendId(commentId, toKey: upvotedCommentsKey)
+    }
+
+    static func removeCommentFromUpvoted(commentId: Int) {
+        removeId(commentId, forKey: upvotedCommentsKey)
     }
 
     static func isStoryReplied(storyId: Int) -> Bool {
@@ -58,6 +66,12 @@ struct LocalStore {
         userDefaults.synchronize()
     }
 
+    static func removeUpvotes() {
+        userDefaults.removeObjectForKey(upvotedStoriesKey)
+        userDefaults.removeObjectForKey(upvotedCommentsKey)
+        userDefaults.synchronize()
+    }
+
     static func accessToken() -> String? {
         return userDefaults.stringForKey(accessTokenKey)
     }
@@ -73,6 +87,15 @@ struct LocalStore {
         let elements = userDefaults.arrayForKey(key) as? [Int] ?? []
         if !contains(elements, id) {
             userDefaults.setObject(elements + [id], forKey: key)
+            userDefaults.synchronize()
+        }
+    }
+
+    static private func removeId(id: Int, forKey key: String) {
+        var elements = userDefaults.arrayForKey(key) as? [Int] ?? []
+        if let index = find(elements, id) {
+            elements.removeAtIndex(index)
+            userDefaults.setObject(elements, forKey: key)
             userDefaults.synchronize()
         }
     }

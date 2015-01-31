@@ -77,8 +77,7 @@ extension CommentTableViewCell {
         self.authorLabel.text = comment.userDisplayName + ", " + comment.userJob
         self.upvoteButton.setTitle(toString(comment.voteCount), forState: UIControlState.Normal)
 
-        let imageName = isUpvoted ? "icon-upvote-active" : "icon-upvote"
-        self.upvoteButton.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
+        self.setIsUpvoted(isUpvoted)
 
         let timeAgo = dateFromString(comment.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
         self.timeLabel.text = timeAgoSinceDate(timeAgo, true)
@@ -92,5 +91,11 @@ extension CommentTableViewCell {
         let data = ("<style>p {font-family:\"Avenir Next\";font-size:16px;line-height:20px}</style>" + comment.bodyHTML).dataUsingEncoding(NSUTF8StringEncoding)
         commentTextView.attributedString = NSAttributedString(HTMLData: data, documentAttributes: nil)
 
+    }
+
+    func setIsUpvoted(isUpvoted: Bool) {
+        let imageName = isUpvoted ? "icon-upvote-active" : "icon-upvote"
+        self.upvoteButton.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
+        self.userInteractionEnabled = !isUpvoted
     }
 }
