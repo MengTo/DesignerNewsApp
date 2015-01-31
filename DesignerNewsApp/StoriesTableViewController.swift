@@ -145,12 +145,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as StoryTableViewCell
         cell.frame = tableView.bounds
 
-        let story = stories[indexPath.row]
-        let isUpvoted = LocalStore.isStoryUpvoted(story.id)
-        let isVisited = LocalStore.isStoryVisited(story.id)
-        let isReplied = LocalStore.isStoryReplied(story.id)
-        cell.configureWithStory(story, isUpvoted: isUpvoted, isVisited: isVisited, isReplied: isReplied)
-        cell.delegate = self
+        configureCell(cell, atIndexPath:indexPath)
         
         return cell
     }
@@ -173,14 +168,19 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
         if let token = LocalStore.accessToken() {
             let indexPath = tableView.indexPathForCell(cell)!
-            let storyId = stories[indexPath.row].id
+            let story = self.stories[indexPath.row]
+            let storyId = story.id
+            story.upvote()
+            LocalStore.setStoryAsUpvoted(storyId)
+
+            configureCell(cell, atIndexPath: indexPath)
+
             DesignerNewsService.upvoteStoryWithId(storyId, token: token) { successful in
                 if successful {
-                    LocalStore.setStoryAsUpvoted(storyId)
-                    let upvoteInt = self.stories[indexPath.row].voteCount + 1
-                    let upvoteString = toString(upvoteInt)
-                    cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
-                    cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
+
+                } else {
+                    story.downvote()
+                    self.configureCell(cell, atIndexPath: indexPath)
                 }
             }
         } else {
@@ -231,8 +231,16 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         }
     }
 
+    func configureCell(cell: StoryTableViewCell, atIndexPath indexPath: NSIndexPath) {
+        let story = stories[indexPath.row]
+        let isUpvoted = LocalStore.isStoryUpvoted(story.id)
+        let isVisited = LocalStore.isStoryVisited(story.id)
+        let isReplied = LocalStore.isStoryReplied(story.id)
+        cell.configureWithStory(story, isUpvoted: isUpvoted, isVisited: isVisited, isReplied: isReplied)
+        cell.delegate = self
+    }
+
     func reloadRowAtIndexPath(indexPath: NSIndexPath) {
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
     }
-
 }
