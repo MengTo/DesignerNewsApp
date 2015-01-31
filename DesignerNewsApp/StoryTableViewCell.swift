@@ -93,7 +93,7 @@ extension StoryTableViewCell {
             self.setNeedsLayout()
             self.layoutIfNeeded()
 
-            let data = ("<style>p {font-family:\"Avenir Next\";font-size:16px;line-height:20px;}</style>" + story.commentHTML).dataUsingEncoding(NSUTF8StringEncoding)
+            let data = ("<style>p, li {font-family:\"Avenir Next\";font-size:16px;line-height:20px;}</style>" + story.commentHTML).dataUsingEncoding(NSUTF8StringEncoding)
 
             let attributedString = NSAttributedString(HTMLData: data, documentAttributes: nil)
             commentTextView.attributedString = attributedString

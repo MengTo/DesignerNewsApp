@@ -88,7 +88,7 @@ extension CommentTableViewCell {
         self.setNeedsLayout()
         self.layoutIfNeeded()
 
-        let data = ("<style>p {font-family:\"Avenir Next\";font-size:16px;line-height:20px}</style>" + comment.bodyHTML).dataUsingEncoding(NSUTF8StringEncoding)
+        let data = ("<style>p, li {font-family:\"Avenir Next\";font-size:16px;line-height:20px}</style>" + comment.bodyHTML).dataUsingEncoding(NSUTF8StringEncoding)
         commentTextView.attributedString = NSAttributedString(HTMLData: data, documentAttributes: nil)
 
     }
