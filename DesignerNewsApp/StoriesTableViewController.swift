@@ -23,7 +23,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         super.viewDidLoad()
         refreshControl?.addTarget(self, action: "refreshControlValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
         
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 125
         tableView.rowHeight = UITableViewAutomaticDimension
         
         navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
@@ -189,9 +189,11 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     func storyTableViewCell(cell: StoryTableViewCell, commentButtonPressed sender: AnyObject) {
         var indexPath = tableView.indexPathForCell(cell)!
         let story = stories[indexPath.row]
+        LocalStore.setStoryAsVisited(story.id)
         performSegueWithIdentifier("CommentsSegue", sender: cell)
+        reloadRowAtIndexPath(indexPath)
     }
-    
+
     // MARK: Misc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CommentsSegue" {
