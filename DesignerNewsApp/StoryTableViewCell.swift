@@ -77,7 +77,7 @@ class StoryTableViewCell: UITableViewCell, CoreTextViewDelegate {
 }
 
 extension StoryTableViewCell {
-    func configureWithStory(story: Story, isUpvoted: Bool = false, isVisited: Bool = false) {
+    func configureWithStory(story: Story, isUpvoted: Bool = false, isVisited: Bool = false, isReplied: Bool = false) {
 
         self.titleLabel.textColor = isVisited ? self.authorLabel.textColor : .blackColor()
         self.titleLabel.text = story.title
@@ -108,6 +108,8 @@ extension StoryTableViewCell {
 
         if let commentButton = self.commentButton {
             commentButton.setTitle(toString(story.commentCount), forState: UIControlState.Normal)
+            let imageName = isReplied ? "icon-comment-active" : "icon-comment"
+            commentButton.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
         }
     }
 }

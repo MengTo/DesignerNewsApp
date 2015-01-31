@@ -9,11 +9,11 @@
 import UIKit
 import Spring
 
-class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate {
+class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate, ReplyViewControllerDelegate {
 
     var story: Story!
     private let transitionManager = TransitionManager()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 140
@@ -26,24 +26,24 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
     
     override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        
+        super.viewDidAppear(animated)
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "CommentSegue" {
+        if segue.identifier == "ReplySegue" {
 
-            let toView = segue.destinationViewController as CommentViewController
+            let toView = segue.destinationViewController as ReplyViewController
 
             if let cell = sender as? CommentTableViewCell {
                 let indexPath = self.tableView.indexPathForCell(cell)
                 let comment = self.getCommentForIndexPath(indexPath!)
-                toView.commentable = comment
+                toView.replyable = comment
             } else if let cell = sender as? StoryTableViewCell {
-                toView.commentable = story
+                toView.replyable = story
             }
-            
+
+            toView.delegate = self
             toView.transitioningDelegate = self.transitionManager
         }
         else if segue.identifier == "WebSegue" {
@@ -88,7 +88,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
 
     func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject) {
-        performSegueWithIdentifier("CommentSegue", sender: cell)
+        performSegueWithIdentifier("ReplySegue", sender: cell)
     }
 
     func storyTableViewCell(cell: StoryTableViewCell, linkDidPress link: NSURL) {
@@ -103,7 +103,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     // MARK: CommentTableViewCellDelegate
     func commentTableViewCell(cell: CommentTableViewCell, replyButtonPressed sender: AnyObject) {
-        performSegueWithIdentifier("CommentSegue", sender: cell)
+        performSegueWithIdentifier("ReplySegue", sender: cell)
     }
 
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject) {
@@ -181,5 +181,30 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     func getCommentForIndexPath(indexPath: NSIndexPath) -> Comment {
         return story.comments[indexPath.row - 1]
     }
+
+    // MARK: ReplyViewControllerDelegate
+
+    func replyViewController(controller: ReplyViewController, didReplyComment newComment: Comment, onReplyable replyable: Replyable) {
+
+        if let story = replyable as? Story {
+
+            LocalStore.setStoryAsReplied(story.id)
+            self.story.insertComment(newComment, atIndex: 0)
+            self.tableView.reloadData()
+
+        } else if let comment = replyable as? Comment {
+
+            LocalStore.setStoryAsReplied(story.id)
+            for (index, onComment) in enumerate(self.story.comments) {
+                if onComment == comment {
+                    self.story.insertComment(newComment, atIndex: index+1)
+                    self.tableView.reloadData()
+                    break
+                }
+            }
+
+        }
+    }
+
 }
 

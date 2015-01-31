@@ -15,6 +15,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     private var stories = [Story]()
     private var firstTime = true
     private var storiesLoader = StoriesLoader()
+    private var selectedIndexPath : NSIndexPath?
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
     
@@ -33,13 +34,23 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         loginButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let indexPath = self.selectedIndexPath {
+            tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: .None)
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.selectedIndexPath = nil
+        }
+    }
+
     override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
+        super.viewDidAppear(animated)
         if firstTime {
             view.showLoading()
             firstTime = false
         }
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+        tableView.reloadData()
     }
     
     func loadStories() {
@@ -137,7 +148,8 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         let story = stories[indexPath.row]
         let isUpvoted = LocalStore.isStoryUpvoted(story.id)
         let isVisited = LocalStore.isStoryVisited(story.id)
-        cell.configureWithStory(story, isUpvoted: isUpvoted, isVisited: isVisited)
+        let isReplied = LocalStore.isStoryReplied(story.id)
+        cell.configureWithStory(story, isUpvoted: isUpvoted, isVisited: isVisited, isReplied: isReplied)
         cell.delegate = self
         
         return cell
@@ -189,6 +201,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             let story = stories[indexPath!.row]
             let commentsViewController = segue.destinationViewController as CommentsTableViewController
             commentsViewController.story = story
+            self.selectedIndexPath = indexPath
         }
         else if segue.identifier == "WebSegue" {
 
@@ -198,6 +211,8 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
                 let story = stories[indexPath.row]
                 webViewController.shareTitle = story.title
                 webViewController.url = NSURL(string: story.url)
+                self.selectedIndexPath = indexPath
+
             } else if let url = sender as? NSURL {
                 webViewController.url = url
             }

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Meng To. All rights reserved.
 //
 
-struct Comment : Commentable {
+struct Comment : Replyable, Equatable {
     let id: Int
     let bodyHTML: String
     let depth: Int
@@ -15,4 +15,8 @@ struct Comment : Commentable {
     let voteCount: Int
     let createdAt: String
     let userPortraitUrl: String
+}
+
+func ==(lhs: Comment, rhs: Comment) -> Bool {
+    return lhs.id == rhs.id
 }

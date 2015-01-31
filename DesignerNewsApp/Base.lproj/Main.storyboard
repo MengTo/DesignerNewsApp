@@ -1160,7 +1160,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Ud9-EQ-k4v" kind="presentation" identifier="CommentSegue" id="AAA-ja-nOX"/>
+                        <segue destination="Ud9-EQ-k4v" kind="presentation" identifier="ReplySegue" id="AAA-ja-nOX"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="WYa-K1-lob"/>
                     </connections>
                 </tableViewController>
@@ -1168,10 +1168,10 @@
             </objects>
             <point key="canvasLocation" x="1638" y="1713"/>
         </scene>
-        <!--Comment View Controller-->
+        <!--Reply View Controller-->
         <scene sceneID="Wpy-Nm-Db8">
             <objects>
-                <viewController id="Ud9-EQ-k4v" customClass="CommentViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ud9-EQ-k4v" customClass="ReplyViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vvx-Nr-kTB"/>
                         <viewControllerLayoutGuide type="bottom" id="uqE-Tu-xKa"/>
@@ -1239,7 +1239,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="commentTextView" destination="ryR-5a-L7g" id="8Cm-yZ-fbk"/>
-                        <outlet property="navTitle" destination="vBQ-8X-zAv" id="SYG-Ne-sFR"/>
+                        <outlet property="titleItem" destination="vBQ-8X-zAv" id="rz2-Vd-KdR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7K-nZ-Icz" userLabel="First Responder" sceneMemberID="firstResponder"/>
