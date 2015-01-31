@@ -81,9 +81,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             configureCell(cell, atIndexPath: indexPath)
 
             DesignerNewsService.upvoteStoryWithId(storyId, token: token) { successful in
-                if successful {
-
-                } else {
+                if !successful {
                     story.downvote()
                     LocalStore.removeStoryFromUpvoted(storyId)
                     self.configureCell(cell, atIndexPath: indexPath)
@@ -133,9 +131,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             configureCell(cell, atIndexPath: indexPath)
 
             DesignerNewsService.upvoteCommentWithId(commentId, token: token) { successful in
-                if successful {
-
-                } else {
+                if !successful {
                     comment.downvote()
                     LocalStore.removeCommentFromUpvoted(commentId)
                     self.configureCell(cell, atIndexPath: indexPath)
