@@ -116,17 +116,24 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject) {
         if let token = LocalStore.accessToken() {
-            let indexPath = self.tableView.indexPathForCell(cell)
-            let comment = self.getCommentForIndexPath(indexPath!)
-            DesignerNewsService.upvoteCommentWithId(comment.id, token: token) { successful in
+
+            let indexPath = tableView.indexPathForCell(cell)!
+            let comment = self.getCommentForIndexPath(indexPath)
+            let commentId = comment.id
+            comment.upvote()
+            LocalStore.setCommentAsUpvoted(commentId)
+            configureCell(cell, atIndexPath: indexPath)
+
+            DesignerNewsService.upvoteCommentWithId(commentId, token: token) { successful in
                 if successful {
-                    LocalStore.setCommentAsUpvoted(comment.id)
-                    let upvoteInt = comment.voteCount + 1
-                    let upvoteString = toString(upvoteInt)
-                    cell.upvoteButton.setTitle(upvoteString, forState: UIControlState.Normal)
-                    cell.upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
+
+                } else {
+                    comment.downvote()
+                    LocalStore.removeCommentFromUpvoted(commentId)
+                    self.configureCell(cell, atIndexPath: indexPath)
                 }
             }
+
         } else {
             performSegueWithIdentifier("LoginSegue", sender: self)
         }

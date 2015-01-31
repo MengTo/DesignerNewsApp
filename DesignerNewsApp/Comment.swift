@@ -6,15 +6,42 @@
 //  Copyright (c) 2015 Meng To. All rights reserved.
 //
 
-struct Comment : Replyable, Equatable {
+class Comment : Replyable, Equatable {
+
     let id: Int
     let bodyHTML: String
     let depth: Int
     let userDisplayName: String
     let userJob: String
-    let voteCount: Int
+    private (set) var voteCount: Int
     let createdAt: String
     let userPortraitUrl: String
+
+    init(id: Int,
+        bodyHTML: String,
+        depth: Int,
+        userDisplayName: String,
+        userJob: String,
+        voteCount: Int,
+        createdAt: String,
+        userPortraitUrl: String) {
+            self.id = id
+            self.bodyHTML = bodyHTML
+            self.depth = depth
+            self.userDisplayName = userDisplayName
+            self.userJob = userJob
+            self.voteCount = voteCount
+            self.createdAt = createdAt
+            self.userPortraitUrl = userPortraitUrl
+    }
+
+    func upvote() {
+        voteCount++
+    }
+
+    func downvote() {
+        voteCount--
+    }
 }
 
 func ==(lhs: Comment, rhs: Comment) -> Bool {

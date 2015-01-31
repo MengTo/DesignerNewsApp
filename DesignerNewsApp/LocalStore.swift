@@ -36,6 +36,10 @@ struct LocalStore {
         appendId(commentId, toKey: upvotedCommentsKey)
     }
 
+    static func removeCommentFromUpvoted(commentId: Int) {
+        removeId(commentId, forKey: upvotedCommentsKey)
+    }
+
     static func isStoryReplied(storyId: Int) -> Bool {
         return arrayForKey(repliedStoriesKey, containsId: storyId)
     }
@@ -59,6 +63,12 @@ struct LocalStore {
 
     static func deleteAccessToken() {
         userDefaults.removeObjectForKey(accessTokenKey)
+        userDefaults.synchronize()
+    }
+
+    static func removeUpvotes() {
+        userDefaults.removeObjectForKey(upvotedStoriesKey)
+        userDefaults.removeObjectForKey(upvotedCommentsKey)
         userDefaults.synchronize()
     }
 
