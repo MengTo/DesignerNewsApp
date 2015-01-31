@@ -16,7 +16,7 @@ struct DesignerNewsService {
     private static let clientID = "750ab22aac78be1c6d4bbe584f0e3477064f646720f327c5464bc127100a1a6d"
     private static let clientSecret = "53e3822c49287190768e009a8f8e55d09041c5bf26d0ef982693f215c72d87da"
 
-    enum ResourcePath: Printable {
+    private enum ResourcePath: Printable {
         case Login
         case Stories
         case StoryUpvote(storyId: Int)
@@ -76,6 +76,18 @@ struct DesignerNewsService {
         upvoteWithResourcePath(resourcePath, token: token, response: response)
     }
 
+    static func replyStoryWithId(storyId: Int, token: String, body: String, response: (comment: Comment?, error: Error?) -> ()) {
+        let resourcePath = ResourcePath.StoryReply(storyId: storyId)
+        replyWithResourcePath(resourcePath, token: token, body: body, response: response)
+    }
+
+    static func replyCommentWithId(commentId: Int, token: String, body: String, response: (comment: Comment?, error: Error?) -> ()) {
+        let resourcePath = ResourcePath.CommentReply(commentId: commentId)
+        replyWithResourcePath(resourcePath, token: token, body: body, response: response)
+    }
+
+    // MARK: Private Methods
+
     private static func upvoteWithResourcePath(path: ResourcePath, token: String, response: (successful: Bool) -> ()) {
         let urlString = baseURL + path.description
         let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
@@ -88,15 +100,13 @@ struct DesignerNewsService {
         }
     }
 
-    static func replyStoryWithId(storyId: Int, token: String, body: String, response: (comment: Comment?, error: Error?) -> ()) {
+    private static func replyWithResourcePath(path: ResourcePath, token: String, body: String, response: (comment: Comment?, error: Error?) -> ()) {
 
-        let path = ResourcePath.StoryReply(storyId: storyId)
         let urlString = baseURL + path.description
         let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.HTTPMethod = "POST"
-        let data = ("comment[body]=\(body)" as NSString).dataUsingEncoding(NSUTF8StringEncoding)
-        request.HTTPBody = data
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.HTTPBody = "comment[body]=\(body)".dataUsingEncoding(NSUTF8StringEncoding)
 
         Alamofire.request(request).responseJSON { (_, urlResponse, json, error) in
             if let message = json?["error"] as? String {
@@ -108,31 +118,5 @@ struct DesignerNewsService {
                 response(comment: nil, error: Error(message: error?.localizedDescription ?? "Something went wrong", code: error?.code ?? 0))
             }
         }
-
-    }
-
-    static func replyCommentWithId(commentId: Int, token: String, body: String, response: (comment: Comment?, error: Error?) -> ()) {
-
-
-        let path = ResourcePath.CommentReply(commentId: commentId)
-        let urlString = baseURL + path.description
-        let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.HTTPMethod = "POST"
-        let data = ("comment[body]=\(body)" as NSString).dataUsingEncoding(NSUTF8StringEncoding)
-        request.HTTPBody = data
-
-        Alamofire.request(request).responseJSON { (_, urlResponse, json, error) in
-            if let message = json?["error"] as? String {
-                response(comment: nil, error: Error(message: message, code: urlResponse?.statusCode ?? 0))
-            } else if let commentDict = json?["comment"] as? NSDictionary {
-                let comment = JSONParser.parseComment(commentDict)
-                response(comment: comment, error: nil)
-            } else {
-                response(comment: nil, error: Error(message: error?.localizedDescription ?? "Something went wrong", code: error?.code ?? 0))
-            }
-        }
-
-
     }
 }
