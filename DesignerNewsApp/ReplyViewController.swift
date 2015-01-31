@@ -53,52 +53,37 @@ class ReplyViewController: UIViewController {
                 commentTextView.editable = false
 
                 if let story = replyable as? Story {
-
                     DesignerNewsService.replyStoryWithId(
                         story.id,
                         token: token,
                         body: text,
-                        response: { comment, error in
-
-                            if let comment = comment {
-                                self.dismissViewControllerAnimated(true, completion: nil)
-                                self.delegate?.replyViewController(self, didReplyComment: comment, onReplyable: self.replyable)
-                            } else {
-                                self.view.hideLoading()
-                                self.commentTextView.editable = true
-
-                                let alert = UIAlertView(title: "Error", message: error?.message, delegate: nil, cancelButtonTitle: "OK")
-                                alert.show()
-                            }
-
-                    })
+                        response: handleResponse)
 
                 } else if let comment = replyable as? Comment {
-
                     DesignerNewsService.replyCommentWithId(
                         comment.id,
                         token: token,
                         body: text,
-                        response: { comment, error in
-
-                            if let comment = comment {
-                                self.dismissViewControllerAnimated(true, completion: nil)
-                                self.delegate?.replyViewController(self, didReplyComment: comment, onReplyable: self.replyable)
-                            } else {
-                                self.view.hideLoading()
-                                self.commentTextView.editable = true
-
-                                let alert = UIAlertView(title: "Error", message: error?.message, delegate: nil, cancelButtonTitle: "OK")
-                                alert.show()
-                            }
-                    })
-                    
+                        response: handleResponse)
                 }
             } else {
                 println("please login")
             }
         } else {
             println("please set text")
+        }
+    }
+
+    private func handleResponse(comment: Comment?, error: Error?) {
+        if let comment = comment {
+            self.dismissViewControllerAnimated(true, completion: nil)
+            self.delegate?.replyViewController(self, didReplyComment: comment, onReplyable: self.replyable)
+        } else {
+            self.view.hideLoading()
+            self.commentTextView.editable = true
+
+            let alert = UIAlertView(title: "Error", message: error?.message, delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
         }
     }
 }
