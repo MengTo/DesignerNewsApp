@@ -47,6 +47,10 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             firstTime = false
         }
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+
+        // Reload Data is important because we need
+        // to have our upvote and visited state updated
+        self.tableView.reloadData()
     }
     
     func loadStories() {
