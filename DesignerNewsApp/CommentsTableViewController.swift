@@ -96,7 +96,11 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
 
     func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject) {
-        performSegueWithIdentifier("ReplySegue", sender: cell)
+        if LocalStore.accessToken() == nil {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        } else {
+            performSegueWithIdentifier("ReplySegue", sender: cell)
+        }
     }
 
     func storyTableViewCell(cell: StoryTableViewCell, linkDidPress link: NSURL) {
@@ -111,7 +115,11 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     // MARK: CommentTableViewCellDelegate
     func commentTableViewCell(cell: CommentTableViewCell, replyButtonPressed sender: AnyObject) {
-        performSegueWithIdentifier("ReplySegue", sender: cell)
+        if LocalStore.accessToken() == nil {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        } else {
+            performSegueWithIdentifier("ReplySegue", sender: cell)
+        }
     }
 
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject) {
