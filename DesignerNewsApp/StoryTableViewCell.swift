@@ -110,6 +110,6 @@ extension StoryTableViewCell {
     func setIsUpvoted(isUpvoted: Bool) {
         let imageName = isUpvoted ? "icon-upvote-active" : "icon-upvote"
         self.upvoteButton.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
-        self.userInteractionEnabled = !isUpvoted
+        self.upvoteButton.userInteractionEnabled = !isUpvoted
     }
 }
