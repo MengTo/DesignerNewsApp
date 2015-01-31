@@ -189,8 +189,8 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
         if let storyCell = cell as? StoryTableViewCell {
             let isUpvoted = LocalStore.isStoryUpvoted(story.id)
-            let isVisited = LocalStore.isStoryVisited(story.id)
-            storyCell.configureWithStory(story, isUpvoted: isUpvoted, isVisited: isVisited)
+            // Ignore visited state to keep the StoryCell title in black text color
+            storyCell.configureWithStory(story, isUpvoted: isUpvoted, isVisited: false)
             storyCell.delegate = self
         }
 
