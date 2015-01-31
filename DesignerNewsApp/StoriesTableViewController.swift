@@ -21,9 +21,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        loadStories()
-        
         refreshControl?.addTarget(self, action: "refreshControlValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
         
         tableView.estimatedRowHeight = 100
@@ -46,11 +43,10 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if firstTime {
-            view.showLoading()
+            loadStories()
             firstTime = false
         }
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
-        tableView.reloadData()
     }
     
     func loadStories() {
