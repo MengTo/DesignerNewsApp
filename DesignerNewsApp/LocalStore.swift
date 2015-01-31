@@ -28,6 +28,10 @@ struct LocalStore {
         appendId(storyId, toKey: upvotedStoriesKey)
     }
 
+    static func removeStoryFromUpvoted(storyId: Int) {
+        removeId(storyId, forKey: upvotedStoriesKey)
+    }
+
     static func setCommentAsUpvoted(commentId: Int) {
         appendId(commentId, toKey: upvotedCommentsKey)
     }
@@ -73,6 +77,15 @@ struct LocalStore {
         let elements = userDefaults.arrayForKey(key) as? [Int] ?? []
         if !contains(elements, id) {
             userDefaults.setObject(elements + [id], forKey: key)
+            userDefaults.synchronize()
+        }
+    }
+
+    static private func removeId(id: Int, forKey key: String) {
+        var elements = userDefaults.arrayForKey(key) as? [Int] ?? []
+        if let index = find(elements, id) {
+            elements.removeAtIndex(index)
+            userDefaults.setObject(elements, forKey: key)
             userDefaults.synchronize()
         }
     }

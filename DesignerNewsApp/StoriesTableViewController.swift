@@ -172,7 +172,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             let storyId = story.id
             story.upvote()
             LocalStore.setStoryAsUpvoted(storyId)
-
             configureCell(cell, atIndexPath: indexPath)
 
             DesignerNewsService.upvoteStoryWithId(storyId, token: token) { successful in
@@ -180,6 +179,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
                 } else {
                     story.downvote()
+                    LocalStore.removeStoryFromUpvoted(storyId)
                     self.configureCell(cell, atIndexPath: indexPath)
                 }
             }

@@ -78,7 +78,6 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             let storyId = story.id
             story.upvote()
             LocalStore.setStoryAsUpvoted(storyId)
-
             configureCell(cell, atIndexPath: indexPath)
 
             DesignerNewsService.upvoteStoryWithId(storyId, token: token) { successful in
@@ -86,6 +85,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
                 } else {
                     story.downvote()
+                    LocalStore.removeStoryFromUpvoted(storyId)
                     self.configureCell(cell, atIndexPath: indexPath)
                 }
             }
