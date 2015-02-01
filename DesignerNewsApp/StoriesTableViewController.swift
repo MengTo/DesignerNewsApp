@@ -21,6 +21,23 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let token = LocalStore.accessToken() {
+            DesignerNewsService.me(token, response: { (me) -> () in
+
+                if let user = me?.users[0] {
+                    for upvote in user.links.upvotes {
+                        if let storyId = upvote.toInt() {
+                            println("set story as upvoted \(storyId)")
+                            LocalStore.setStoryAsUpvoted(storyId)
+                        }
+                    }
+                }
+
+                self.tableView.reloadData()
+            })
+        }
+        
         refreshControl?.addTarget(self, action: "refreshControlValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
         
         tableView.estimatedRowHeight = 125
@@ -126,6 +143,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     func logout() {
         LocalStore.deleteAccessToken()
+        LocalStore.removeUpvotes()
         loadStories()
     }
 

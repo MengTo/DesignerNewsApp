@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import Spring
 
 struct DesignerNewsService {
 
@@ -18,6 +19,7 @@ struct DesignerNewsService {
 
     private enum ResourcePath: Printable {
         case Login
+        case Me
         case Stories
         case StoryUpvote(storyId: Int)
         case StoryReply(storyId: Int)
@@ -27,6 +29,7 @@ struct DesignerNewsService {
         var description: String {
             switch self {
             case .Login: return "/oauth/token"
+            case .Me: return "/api/v2/me"
             case .Stories: return "/api/v1/stories"
             case .StoryUpvote(let id): return "/api/v1/stories/\(id)/upvote"
             case .StoryReply(let id): return "/api/v1/stories/\(id)/reply"
@@ -66,6 +69,47 @@ struct DesignerNewsService {
         }
     }
 
+    static func me(token: String, response: (me: Me?) -> ()) {
+
+        // Mock response
+        delay(2) {
+
+            let users = [
+                User(id: "3510", href: "https://api-news.layervault.com/api/v2/users/3510", links: Links(upvotes: [
+                    "39923",
+                    "56676",
+                    "186275",
+                    "186276",
+                    "186281",
+                    "186283",
+                    "186605",
+                    "186759",
+                    "186760",
+                    "187979",
+                    "187994",
+                    "188144"
+                    ])
+                )
+
+            ]
+            let me = Me(users: users)
+            response(me: me)
+
+        }
+
+        return
+
+        let urlString = baseURL + ResourcePath.Me.description
+        let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        request.HTTPMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        Alamofire.request(request)
+            .responseJSON { (_, _, json, _) in
+                let responseDictionary = json as? NSDictionary
+        }
+    }
+
     static func upvoteStoryWithId(storyId: Int, token: String, response: (successful: Bool) -> ()) {
         let resourcePath = ResourcePath.StoryUpvote(storyId: storyId)
         upvoteWithResourcePath(resourcePath, token: token, response: response)
@@ -89,6 +133,14 @@ struct DesignerNewsService {
     // MARK: Private Methods
 
     private static func upvoteWithResourcePath(path: ResourcePath, token: String, response: (successful: Bool) -> ()) {
+
+        // Upvote
+        delay(2) {
+            response(successful: true)
+        }
+
+        return
+
         let urlString = baseURL + path.description
         let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         request.HTTPMethod = "POST"
@@ -105,8 +157,8 @@ struct DesignerNewsService {
         let urlString = baseURL + path.description
         let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         request.HTTPMethod = "POST"
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.HTTPBody = "comment[body]=\(body)".dataUsingEncoding(NSUTF8StringEncoding)
+        let data = ("comment[body]=\(body)" as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        request.HTTPBody = data
 
         Alamofire.request(request).responseJSON { (_, urlResponse, json, error) in
             if let message = json?["error"] as? String {
@@ -118,5 +170,6 @@ struct DesignerNewsService {
                 response(comment: nil, error: Error(message: error?.localizedDescription ?? "Something went wrong", code: error?.code ?? 0))
             }
         }
+
     }
 }
