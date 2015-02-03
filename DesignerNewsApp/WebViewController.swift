@@ -13,7 +13,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var webView: UIWebView!
-    var timer = NSTimer()
+    private var hasFinishLoading = false
     var shareTitle : String?
     var url : NSURL!
     @IBOutlet weak var navBar: UINavigationBar!
@@ -36,27 +36,51 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         webView.delegate = self
     }
 
-    func webViewDidFinishLoad(webView: UIWebView) {
-        self.shareTitle = webView.stringByEvaluatingJavaScriptFromString("document.title");
+    func webViewDidStartLoad(webView: UIWebView) {
+        hasFinishLoading = false
+        updateProgress()
+    }
 
-        timer = NSTimer.scheduledTimerWithTimeInterval(
-            0.1,
-            target: self,
-            selector: Selector("updateProgress"),
-            userInfo: progressView,
-            repeats: true
-        )
+    func webViewDidFinishLoad(webView: UIWebView) {
+        shareTitle = webView.stringByEvaluatingJavaScriptFromString("document.title");
+        delay(1) { [weak self] in
+            if let _self = self {
+                _self.hasFinishLoading = true
+            }
+        }
     }
     
     func updateProgress() {
-        if progressView.progress == 1 {
+        if progressView.progress >= 1 {
             progressView.hidden = true
-            timer.invalidate()
+        } else {
+
+            if hasFinishLoading {
+                progressView.progress += 0.002
+            } else {
+                if progressView.progress <= 0.3 {
+                    progressView.progress += 0.004
+                } else if progressView.progress <= 0.6 {
+                    progressView.progress += 0.002
+                } else if progressView.progress <= 0.9 {
+                    progressView.progress += 0.001
+                } else if progressView.progress <= 0.94 {
+                    progressView.progress += 0.0001
+                } else {
+                    progressView.progress = 0.9401
+                }
+            }
+
+            delay(0.008) { [weak self] in
+                if let _self = self {
+                    _self.updateProgress()
+                }
+            }
         }
-        else {
-            UIView.animateWithDuration(0.1, animations: {
-                self.progressView.progress += 0.1
-            })
-        }
+    }
+
+    deinit {
+        webView.stopLoading()
+        webView.delegate = nil
     }
 }
