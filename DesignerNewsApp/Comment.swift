@@ -15,7 +15,7 @@ class Comment : Replyable, Equatable {
     let userJob: String
     private (set) var voteCount: Int
     let createdAt: String
-    let userPortraitUrl: String
+    let userPortraitUrl: String?
 
     init(id: Int,
         bodyHTML: String,
@@ -24,7 +24,7 @@ class Comment : Replyable, Equatable {
         userJob: String,
         voteCount: Int,
         createdAt: String,
-        userPortraitUrl: String) {
+        userPortraitUrl: String?) {
             self.id = id
             self.bodyHTML = bodyHTML
             self.depth = depth

@@ -85,7 +85,9 @@ extension StoryTableViewCell {
         self.timeLabel.text = timeAgoSinceDate(timeAgo, true)
 
         self.setIsUpvoted(isUpvoted)
-        self.avatarImageView.setURL(NSURL(string: story.userPortraitUrl), placeholderImage: UIImage(named: "content-avatar-default"))
+
+        self.avatarImageView.placeholderImage = UIImage(named: "content-avatar-default")
+        self.avatarImageView.url = story.userPortraitUrl?.toURL()
 
         if let commentTextView = self.commentTextView {
 

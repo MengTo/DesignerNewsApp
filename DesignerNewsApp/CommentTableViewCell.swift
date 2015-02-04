@@ -82,7 +82,8 @@ extension CommentTableViewCell {
         let timeAgo = dateFromString(comment.createdAt, "yyyy-MM-dd'T'HH:mm:ssZ")
         self.timeLabel.text = timeAgoSinceDate(timeAgo, true)
 
-        self.avatarImageView.setURL(NSURL(string: comment.userPortraitUrl), placeholderImage: UIImage(named: "content-avatar-default"))
+        self.avatarImageView.placeholderImage = UIImage(named: "content-avatar-default")
+        self.avatarImageView.url = comment.userPortraitUrl?.toURL()
 
         // Make sure the textView are correctly framed before setting attributed string
         self.setNeedsLayout()

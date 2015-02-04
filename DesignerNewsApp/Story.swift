@@ -17,7 +17,7 @@ class Story : Replyable {
     private (set) var commentCount: Int
     let createdAt: String
     let badge: String
-    let userPortraitUrl: String
+    let userPortraitUrl: String?
     private (set) var comments: [Comment]
 
     init (id: Int,
@@ -30,7 +30,7 @@ class Story : Replyable {
         commentCount: Int,
         createdAt: String,
         badge: String,
-        userPortraitUrl: String,
+        userPortraitUrl: String?,
         comments: [Comment]) {
             self.id  = id
             self.title  = title
