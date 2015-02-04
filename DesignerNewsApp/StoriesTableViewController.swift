@@ -101,6 +101,12 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         loginCompleted()
     }
 
+    func menuViewControllerDidSelectCloseMenu(controller: MenuViewController) {
+        if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
+            button.menuAnimation()
+        }
+    }
+
     // MARK: LoginViewControllerDelegate
     func loginViewControllerDidLogin(controller: LoginViewController) {
         loginCompleted()
