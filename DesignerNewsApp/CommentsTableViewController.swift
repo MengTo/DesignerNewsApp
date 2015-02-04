@@ -9,9 +9,23 @@
 import UIKit
 import Spring
 
-class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate, ReplyViewControllerDelegate {
+class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate, ReplyViewControllerDelegate, UISearchBarDelegate {
 
     var story: Story!
+    private var searchBar : UISearchBar?
+    private var comments : [Comment] {
+        return self.story.comments.filter {
+            comment in
+            if self.keyword.length > 0 {
+                if comment.hasKeyword(self.keyword) {
+                    return true
+                }
+                return false
+            }
+            return true
+        }
+    }
+    private var keyword : String = ""
     private let transitionManager = TransitionManager()
 
     override func viewDidLoad() {
@@ -159,7 +173,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 + story.comments.count
+        return 1 + comments.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -182,7 +196,20 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             performSegueWithIdentifier("WebSegue", sender: self)
         }
     }
-    
+
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if searchBar == nil {
+            searchBar = UISearchBar(frame: CGRectMake(0, 0, tableView.frame.size.width, 44))
+            searchBar?.text = self.keyword
+            searchBar?.delegate = self
+        }
+        return searchBar
+    }
+
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45;
+    }
+
     // MARK: Misc
 
     func configureCell(cell:UITableViewCell, atIndexPath indexPath:NSIndexPath) {
@@ -204,7 +231,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
 
     func getCommentForIndexPath(indexPath: NSIndexPath) -> Comment {
-        return story.comments[indexPath.row - 1]
+        return comments[indexPath.row - 1]
     }
 
     // MARK: ReplyViewControllerDelegate
@@ -220,7 +247,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         } else if let comment = replyable as? Comment {
 
             LocalStore.setStoryAsReplied(story.id)
-            for (index, onComment) in enumerate(self.story.comments) {
+            for (index, onComment) in enumerate(self.comments) {
                 if onComment == comment {
                     self.story.insertComment(newComment, atIndex: index+1)
                     self.tableView.reloadData()
@@ -231,5 +258,12 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         }
     }
 
+    // MARK: UISearchBarDelegate
+
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        keyword = searchText
+        tableView.reloadData()
+        searchBar.becomeFirstResponder()
+    }
 }
 
