@@ -415,7 +415,12 @@
                             <view key="customView" contentMode="scaleToFill" id="OcC-gl-EFu" customClass="MenuControl" customModule="DesignerNewsApp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="5" width="26" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="menuButtonTouched:" destination="VA5-Ik-jqO" eventType="touchUpInside" id="1PT-Bh-H4r"/>
                                 </connections>
