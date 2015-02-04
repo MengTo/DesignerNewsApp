@@ -12,22 +12,11 @@ import Spring
 class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate, UISearchBarDelegate {
     
     private let transitionManager = TransitionManager()
-    private var stories : [Story] {
-        return allStories.filter { (story) -> Bool in
-            if self.keyword.length > 0 {
-                if story.hasKeyword(self.keyword) {
-                    return true
-                } else {
-                    return false
-                }
-            }
-            return true
-        }
-    }
-    private var allStories = [Story]()
+    private var stories = [Story]()
     private var firstTime = true
     private var keyword : String = ""
-    private var storiesLoader = StoriesLoader()
+    private var lastStorySection : StoriesLoader.StorySection = .Default
+    private var storiesLoader = StoriesLoader(.Default)
     private var selectedIndexPath : NSIndexPath?
     private var searchBar : UISearchBar?
 
@@ -72,7 +61,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         view.showLoading()
 
         storiesLoader.load(completion: { [unowned self] stories in
-            self.allStories = stories
+            self.stories = stories
             self.tableView.reloadData()
             self.view.hideLoading()
             self.refreshControl?.endRefreshing()
@@ -89,21 +78,23 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     func loadMoreStories() {
         storiesLoader.next { [unowned self] stories in
-            self.allStories += stories
+            self.stories += stories
             self.tableView.reloadData()
         }
     }
     
     // MARK: MenuViewControllerDelegate
     func menuViewControllerDidSelectTopStories(controller: MenuViewController) {
-        title = "Top Stories"
-        storiesLoader = StoriesLoader(.Default)
+        lastStorySection = .Default
+        storiesLoader = StoriesLoader(self.lastStorySection)
+        clearSearch()
         loadStories()
     }
     
     func menuViewControllerDidSelectRecent(controller: MenuViewController) {
-        title = "Recent Stories"
-        storiesLoader = StoriesLoader(.Recent)
+        lastStorySection = .Recent
+        storiesLoader = StoriesLoader(self.lastStorySection)
+        clearSearch()
         loadStories()
     }
 
@@ -134,6 +125,20 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
 
     // MARK: Misc
+
+    func clearSearch() {
+        keyword = ""
+        searchBar?.text = nil
+
+        switch (self.lastStorySection) {
+        case .Recent:
+            title = "Recent Stories"
+        case .Default:
+            title = "Top Stories"
+        default: break
+        }
+    }
+
     func loginCompleted() {
         loadStories()
     }
@@ -185,6 +190,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             searchBar = UISearchBar(frame: CGRectMake(0, 0, tableView.frame.size.width, 44))
             searchBar?.text = self.keyword
             searchBar?.delegate = self
+//            searchBar?.showsCancelButton = true
         }
         return searchBar
     }
@@ -276,9 +282,33 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
 
     // MARK: UISearchBarDelegate
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        keyword = searchText
-        tableView.reloadData()
-        searchBar.becomeFirstResponder()
+
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        clearSearch()
+        searchBar.resignFirstResponder()
+    }
+
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        keyword = searchBar.text
+        searchBar.resignFirstResponder()
+    }
+
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+        searchBar.setShowsCancelButton(true, animated: true)
+        return true
+    }
+
+    func searchBarShouldEndEditing(searchBar: UISearchBar) -> Bool {
+        searchBar.setShowsCancelButton(false, animated: true)
+
+        if keyword.length > 0 {
+            title = "Search Results"
+            storiesLoader = StoriesLoader(.Search(keyword))
+            loadStories()
+        } else {
+            storiesLoader = StoriesLoader(self.lastStorySection)
+            loadStories()
+        }
+        return true
     }
 }

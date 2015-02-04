@@ -10,6 +10,8 @@ import Foundation
 
 class StoriesLoader {
 
+    typealias StoriesLoaderCompletion = (stories:[Story]) ->()
+
     enum StorySection : Printable {
         case Default
         case Recent
@@ -40,21 +42,24 @@ class StoriesLoader {
         }
     }
 
-    func load(page: Int = 1, completion: (stories:[Story]) ->()) {
+    func load(page: Int = 1, completion: StoriesLoaderCompletion) {
         if isLoading {
             return
         }
 
         isLoading = true
-        DesignerNewsService.storiesForSection(self.section.description, page: page, keyword: self.keyword) { stories in
-            switch (self.section) {
-            case .Search(_):
-                self.hasMore = false
-            default:
-                self.hasMore = stories.count > 0
+        DesignerNewsService.storiesForSection(self.section.description, page: page, keyword: self.keyword) { [weak self] stories in
+
+            if let strongSelf = self {
+                switch (strongSelf.section) {
+                case .Search(_):
+                    strongSelf.hasMore = false
+                default:
+                    strongSelf.hasMore = stories.count > 0
+                }
+                strongSelf.isLoading = false
+                completion(stories: stories)
             }
-            self.isLoading = false
-            completion(stories: stories)
         }
     }
 
