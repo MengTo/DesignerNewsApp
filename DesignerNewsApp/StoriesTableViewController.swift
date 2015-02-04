@@ -115,6 +115,10 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         }
     }
 
+    @IBAction func menuButtonTouched(sender: AnyObject) {
+        performSegueWithIdentifier("MenuSegue", sender: sender)
+    }
+
     func refreshControlValueChanged(sender: AnyObject) {
         self.loadStories()
     }
