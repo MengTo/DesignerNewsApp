@@ -106,7 +106,7 @@ import UIKit
 
         bottomView.frame = CGRectMake(0, bounds.maxY - height, width, height)
         bottomView.userInteractionEnabled = false
-        bottomView.backgroundColor = color;
+        bottomView.backgroundColor = color
 
         addSubview(topView)
         addSubview(centerView)
