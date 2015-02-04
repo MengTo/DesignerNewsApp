@@ -9,13 +9,27 @@
 import UIKit
 import Spring
 
-class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate {
+class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate, UISearchBarDelegate {
     
     private let transitionManager = TransitionManager()
-    private var stories = [Story]()
+    private var stories : [Story] {
+        return allStories.filter { (story) -> Bool in
+            if self.keyword.length > 0 {
+                if story.hasKeyword(self.keyword) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            return true
+        }
+    }
+    private var allStories = [Story]()
     private var firstTime = true
+    private var keyword : String = ""
     private var storiesLoader = StoriesLoader()
     private var selectedIndexPath : NSIndexPath?
+    private var searchBar : UISearchBar?
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
     
@@ -58,7 +72,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         view.showLoading()
 
         storiesLoader.load(completion: { [unowned self] stories in
-            self.stories = stories
+            self.allStories = stories
             self.tableView.reloadData()
             self.view.hideLoading()
             self.refreshControl?.endRefreshing()
@@ -75,7 +89,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     func loadMoreStories() {
         storiesLoader.next { [unowned self] stories in
-            self.stories += stories
+            self.allStories += stories
             self.tableView.reloadData()
         }
     }
@@ -138,7 +152,11 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         if indexPath.row == stories.count {
-            let cell = tableView.dequeueReusableCellWithIdentifier("loadingCell") as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("loadingCell") as LoadingTableViewCell
+
+            if keyword.length > 0 {
+                cell.stopAnimating()
+            }
             return cell
         }
 
@@ -157,9 +175,22 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
 
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == self.stories.count {
+        if indexPath.row == self.stories.count && self.keyword.length == 0 {
             self.loadMoreStories()
         }
+    }
+
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if searchBar == nil {
+            searchBar = UISearchBar(frame: CGRectMake(0, 0, tableView.frame.size.width, 44))
+            searchBar?.text = self.keyword
+            searchBar?.delegate = self
+        }
+        return searchBar
+    }
+
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45;
     }
     
     // MARK: StoriesTableViewCellDelegate
@@ -242,5 +273,12 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     func reloadRowAtIndexPath(indexPath: NSIndexPath) {
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+    }
+
+    // MARK: UISearchBarDelegate
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        keyword = searchText
+        tableView.reloadData()
+        searchBar.becomeFirstResponder()
     }
 }

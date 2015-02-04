@@ -58,4 +58,12 @@ class Story : Replyable {
     func downvote() {
         voteCount--
     }
+
+    func hasKeyword(keyword: String) -> Bool {
+        if self.title.lowercaseString.rangeOfString(keyword) != nil || self.userDisplayName.lowercaseString.rangeOfString(keyword) != nil {
+            return true
+        }
+
+        return false
+    }
 }
