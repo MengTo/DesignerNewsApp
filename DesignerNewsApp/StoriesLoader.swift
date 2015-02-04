@@ -10,18 +10,34 @@ import Foundation
 
 class StoriesLoader {
 
-    enum StorySection : String {
-        case Default = ""
-        case Recent = "recent"
+    enum StorySection : Printable {
+        case Default
+        case Recent
+        case Search(_ : String)
+
+        var description : String {
+            switch (self) {
+
+            case .Default: return ""
+            case .Recent: return "recent"
+            case .Search(_): return "search"
+            }
+        }
     }
 
     private (set) var hasMore : Bool = false
     private var page : Int = 1
     private var isLoading : Bool = false
     private let section : StorySection
+    private let keyword : String?
 
     init(_ section: StorySection = .Default) {
         self.section = section
+        switch (section) {
+        case let .Search(keyword):
+            self.keyword = keyword
+        default: break
+        }
     }
 
     func load(page: Int = 1, completion: (stories:[Story]) ->()) {
@@ -30,8 +46,13 @@ class StoriesLoader {
         }
 
         isLoading = true
-        DesignerNewsService.storiesForSection(self.section.rawValue, page: page) { stories in
-            self.hasMore = stories.count > 0
+        DesignerNewsService.storiesForSection(self.section.description, page: page, keyword: self.keyword) { stories in
+            switch (self.section) {
+            case .Search(_):
+                self.hasMore = false
+            default:
+                self.hasMore = stories.count > 0
+            }
             self.isLoading = false
             completion(stories: stories)
         }
