@@ -44,6 +44,7 @@
 		B78F903E1A6EFAAA00883A5B /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F903D1A6EFAAA00883A5B /* JSONParser.swift */; };
 		B78F90411A6EFBAF00883A5B /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F90401A6EFBAF00883A5B /* Story.swift */; };
 		B78F90431A6EFF2100883A5B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F90421A6EFF2100883A5B /* Comment.swift */; };
+		B790E5311A82C6BC0007B392 /* MenuControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B790E5301A82C6BC0007B392 /* MenuControl.swift */; };
 		B7E4D3371A719855001DC9B6 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4D3361A719855001DC9B6 /* CommentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -224,6 +225,7 @@
 		B78F903D1A6EFAAA00883A5B /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		B78F90401A6EFBAF00883A5B /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		B78F90421A6EFF2100883A5B /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		B790E5301A82C6BC0007B392 /* MenuControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuControl.swift; sourceTree = "<group>"; };
 		B7E4D3361A719855001DC9B6 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -434,6 +436,7 @@
 			children = (
 				1A9183081A75EE1900606F35 /* CoreTextView.swift */,
 				1AAA95C11A79144000D5E8C8 /* AsyncImageView.swift */,
+				B790E5301A82C6BC0007B392 /* MenuControl.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				1A2331D21A78E1AF002F8D80 /* StoriesLoader.swift in Sources */,
 				967CFD061A5C10700044B4E3 /* LoginViewController.swift in Sources */,
 				9694F2051A5FF13900A6376A /* CommentsTableViewController.swift in Sources */,
+				B790E5311A82C6BC0007B392 /* MenuControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
