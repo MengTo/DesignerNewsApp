@@ -18,15 +18,76 @@ import UIKit
         }
     }
 
+    var isDisplayingMenu: Bool { return centerView.alpha == 1 }
+
     private let topView = UIView()
     private let centerView = UIView()
     private let bottomView = UIView()
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        addTarget()
+    }
+
+    override init() {
+        super.init()
+        addTarget()
+    }
+
+    override init(var frame: CGRect) {
+        super.init(frame: frame)
+        addTarget()
+    }
 
     override func layoutSubviews() {
         if subviews.isEmpty {
             setUp()
         }
+    }
 
+    func closeAnimation() {
+        UIView.animateWithDuration(
+            0.7,
+            delay: 0,
+            usingSpringWithDamping: 0.6,
+            initialSpringVelocity: 0.7,
+            options: .CurveEaseOut,
+            animations: {
+                self.centerView.alpha = 0
+                self.topView.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_4)*5)
+                self.topView.center = self.centerView.center
+                self.bottomView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_4)*5)
+                self.bottomView.center = self.centerView.center
+            },
+            completion: nil)
+    }
+
+    func menuAnimation() {
+        UIView.animateWithDuration(
+            0.7,
+            delay: 0,
+            usingSpringWithDamping: 0.6,
+            initialSpringVelocity: 0.5,
+            options: .CurveEaseInOut,
+            animations: {
+                self.centerView.alpha = 1
+                self.topView.transform = CGAffineTransformIdentity
+                self.bottomView.transform = CGAffineTransformIdentity
+                let centerX = self.bounds.midX
+                self.topView.center = CGPoint(x: centerX, y: self.topView.bounds.midY)
+                self.bottomView.center = CGPoint(x: centerX, y: self.bounds.maxY - self.bottomView.bounds.midY)
+            },
+            completion: nil)
+    }
+
+    func touchUpInside() {
+        isDisplayingMenu ? closeAnimation() : menuAnimation()
+    }
+
+    // MARK: Private Methods
+
+    private func addTarget() {
+        addTarget(self, action: "touchUpInside", forControlEvents: .TouchUpInside)
     }
 
     private func setUp() {
