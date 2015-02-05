@@ -21,6 +21,7 @@
 		1A935E301A837A670059BCBC /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A935E2A1A837A670059BCBC /* TPKeyboardAvoidingScrollView.m */; };
 		1A935E311A837A670059BCBC /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A935E2C1A837A670059BCBC /* TPKeyboardAvoidingTableView.m */; };
 		1A935E321A837A670059BCBC /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A935E2E1A837A670059BCBC /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		1A935E361A837B6A0059BCBC /* SoundEffectPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A935E351A837B6A0059BCBC /* SoundEffectPlayer.m */; };
 		1AAA95C21A79144000D5E8C8 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAA95C11A79144000D5E8C8 /* AsyncImageView.swift */; };
 		1AB33B591A7660E800E3AB55 /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB33B501A7660B300E3AB55 /* libDTCoreText.a */; };
 		1AED4A711A7BBCCA004C689E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AED4A701A7BBCCA004C689E /* Error.swift */; };
@@ -199,6 +200,8 @@
 		1A935E2C1A837A670059BCBC /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		1A935E2D1A837A670059BCBC /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		1A935E2E1A837A670059BCBC /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		1A935E341A837B6A0059BCBC /* SoundEffectPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffectPlayer.h; sourceTree = "<group>"; };
+		1A935E351A837B6A0059BCBC /* SoundEffectPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffectPlayer.m; sourceTree = "<group>"; };
 		1AAA95C11A79144000D5E8C8 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		1AB33B3F1A7660B300E3AB55 /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
 		1AED4A701A7BBCCA004C689E /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -289,6 +292,7 @@
 		1A935E251A837A670059BCBC /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				1A935E331A837B6A0059BCBC /* SoundEffectPlayer */,
 				1A935E261A837A670059BCBC /* TPKeyboardAvoiding */,
 			);
 			path = Libraries;
@@ -307,6 +311,15 @@
 				1A935E2E1A837A670059BCBC /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 			);
 			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		1A935E331A837B6A0059BCBC /* SoundEffectPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				1A935E341A837B6A0059BCBC /* SoundEffectPlayer.h */,
+				1A935E351A837B6A0059BCBC /* SoundEffectPlayer.m */,
+			);
+			path = SoundEffectPlayer;
 			sourceTree = "<group>";
 		};
 		1AB33B401A7660B300E3AB55 /* Products */ = {
@@ -686,6 +699,7 @@
 				966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */,
 				B773D86F1A7BC101008E8A65 /* LocalStore.swift in Sources */,
 				1A7D78A01A70F8FE0061D6F6 /* DragDropBehavior.swift in Sources */,
+				1A935E361A837B6A0059BCBC /* SoundEffectPlayer.m in Sources */,
 				1A935E311A837A670059BCBC /* TPKeyboardAvoidingTableView.m in Sources */,
 				1AED4A711A7BBCCA004C689E /* Error.swift in Sources */,
 				B78F903E1A6EFAAA00883A5B /* JSONParser.swift in Sources */,
