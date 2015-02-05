@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -411,10 +411,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Top Stories" id="JGT-YY-uoi">
-                        <barButtonItem key="leftBarButtonItem" image="icon-hamburger" id="fHU-Wp-9Rv">
-                            <connections>
-                                <segue destination="G2J-Ma-fKq" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="ebu-3w-gAh"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" id="ttR-gz-v7X">
+                            <view key="customView" contentMode="scaleToFill" id="OcC-gl-EFu" customClass="MenuControl" customModule="DesignerNewsApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="5" width="26" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="menuButtonTouched:" destination="VA5-Ik-jqO" eventType="touchUpInside" id="1PT-Bh-H4r"/>
+                                </connections>
+                            </view>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Login" id="uej-tB-xeq">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -431,6 +441,7 @@
                         <segue destination="HBs-bl-KVv" kind="show" identifier="CommentsSegue" id="3HB-vO-v5a"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="Jya-5Y-T44"/>
                         <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="4dT-jd-Noy"/>
+                        <segue destination="G2J-Ma-fKq" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="hNl-2w-BvP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py4-Yi-ebA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -558,7 +569,7 @@
         <!--Menu View Controller-->
         <scene sceneID="3vp-a1-YWc">
             <objects>
-                <viewController id="G2J-Ma-fKq" customClass="MenuViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="G2J-Ma-fKq" customClass="MenuViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jXQ-sd-MWV"/>
                         <viewControllerLayoutGuide type="bottom" id="C8C-X9-cKH"/>
@@ -1292,7 +1303,6 @@
         <image name="icon-close" width="19" height="20"/>
         <image name="icon-comment" width="17" height="15"/>
         <image name="icon-comment-active" width="17" height="15"/>
-        <image name="icon-hamburger" width="22" height="16"/>
         <image name="icon-mail" width="26" height="18"/>
         <image name="icon-password" width="25" height="25"/>
         <image name="icon-reply" width="20" height="15"/>
@@ -1305,6 +1315,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jya-5Y-T44"/>
-        <segue reference="4dT-jd-Noy"/>
+        <segue reference="k70-GR-7l8"/>
     </inferredMetricsTieBreakers>
 </document>

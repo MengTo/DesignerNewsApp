@@ -14,6 +14,7 @@ protocol MenuViewControllerDelegate : class {
     func menuViewControllerDidSelectRecent(controller:MenuViewController)
     func menuViewControllerDidSelectLogout(controller:MenuViewController)
     func menuViewControllerDidSelectLogin(controller:MenuViewController)
+    func menuViewControllerDidSelectCloseMenu(controller:MenuViewController)
 }
 
 class MenuViewController: UIViewController, LoginViewControllerDelegate {
@@ -65,12 +66,14 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
         if LocalStore.accessToken() == nil {
             performSegueWithIdentifier("LoginSegue", sender: self)
         } else {
+            delegate?.menuViewControllerDidSelectCloseMenu(self)
             delegate?.menuViewControllerDidSelectLogout(self)
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
     @IBAction func closeButtonPressed(sender: AnyObject) {
+        delegate?.menuViewControllerDidSelectCloseMenu(self)
         dialogView.animation = "fall"
         dialogView.animateNext {
             self.dismissViewControllerAnimated(false, completion: nil)
@@ -79,8 +82,9 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     
     // MARK: LoginViewControllerDelegate
     func loginViewControllerDidLogin(controller: LoginViewController) {
-        dismissViewControllerAnimated(true, completion: nil)
+        delegate?.menuViewControllerDidSelectCloseMenu(self)
         delegate?.menuViewControllerDidSelectLogin(self)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     // MARK: Misc
