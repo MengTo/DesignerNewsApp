@@ -308,7 +308,7 @@
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="playUpvote:" destination="Agm-8v-eIZ" eventType="touchUpInside" id="M63-2D-AFL"/>
+                                                <action selector="playUpvote:" destination="lU0-u0-TnE" eventType="touchUpInside" id="UKd-yw-dV6"/>
                                                 <action selector="upvoteButtonPressed:" destination="4Ds-Ol-7a4" eventType="touchUpInside" id="3U4-cH-crw"/>
                                             </connections>
                                         </button>
@@ -435,13 +435,12 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="jrj-W6-HAL">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
-                            <action selector="playRefresh:" destination="Agm-8v-eIZ" eventType="valueChanged" id="4iH-NZ-waR"/>
+                            <action selector="playRefresh:" destination="lU0-u0-TnE" eventType="valueChanged" id="N8a-NL-n0r"/>
                             <action selector="refreshControlValueChanged:" destination="VA5-Ik-jqO" eventType="valueChanged" id="U1X-7T-KYP"/>
                         </connections>
                     </refreshControl>
                     <connections>
                         <outlet property="loginButton" destination="uej-tB-xeq" id="f8E-KV-P3z"/>
-                        <outlet property="playSoundBehavior" destination="Agm-8v-eIZ" id="p3T-7Q-6Ts"/>
                         <segue destination="HBs-bl-KVv" kind="show" identifier="CommentsSegue" id="3HB-vO-v5a"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="Jya-5Y-T44"/>
                         <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="4dT-jd-Noy"/>
@@ -449,7 +448,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py4-Yi-ebA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="Agm-8v-eIZ" customClass="PlaySoundBehavior" customModule="DesignerNewsApp" customModuleProvider="target"/>
+                <customObject id="lU0-u0-TnE" customClass="SoundPlayer" customModule="DesignerNewsApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="946" y="1714"/>
         </scene>
@@ -1191,7 +1190,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pxf-D7-GjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="2ff-Ph-Sll" customClass="PlaySoundBehavior" customModule="DesignerNewsApp" customModuleProvider="target"/>
+                <customObject id="2ff-Ph-Sll" customClass="SoundPlayer" customModule="DesignerNewsApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1638" y="1713"/>
         </scene>

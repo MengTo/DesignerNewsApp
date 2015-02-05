@@ -18,7 +18,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     private var selectedIndexPath : NSIndexPath?
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
-    @IBOutlet var playSoundBehavior: PlaySoundBehavior!
     
     override func viewDidLoad() {
         super.viewDidLoad()

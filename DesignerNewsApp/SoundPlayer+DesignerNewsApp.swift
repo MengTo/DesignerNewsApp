@@ -1,5 +1,5 @@
 //
-//  PlaySoundBehavior.swift
+//  SoundPlayer+DesignerNewsApp.swift
 //  DesignerNewsApp
 //
 //  Created by James Tang on 5/2/15.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class PlaySoundBehavior: NSObject {
+extension SoundPlayer {
 
     @IBAction func playRefresh(sender: AnyObject) {
-        SoundEffectPlayer.sharedPlayer().playSoundNamed("refresh", fileExtension: "wav")
+        self.playSound("refresh.wav")
     }
 
     @IBAction func playUpvote(sender: AnyObject) {
-        SoundEffectPlayer.sharedPlayer().playSoundNamed("upvote", fileExtension: "wav")
+        self.playSound("upvote.wav")
     }
 
 }
