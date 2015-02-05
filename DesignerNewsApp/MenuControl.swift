@@ -24,23 +24,9 @@ import UIKit
     private let centerView = UIView()
     private let bottomView = UIView()
 
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        addTarget()
-    }
-
-    override init() {
-        super.init()
-        addTarget()
-    }
-
-    override init(var frame: CGRect) {
-        super.init(frame: frame)
-        addTarget()
-    }
-
     override func layoutSubviews() {
         if subviews.isEmpty {
+            addTarget()
             setUp()
         }
     }
