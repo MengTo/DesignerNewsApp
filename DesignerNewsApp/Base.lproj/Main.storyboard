@@ -448,7 +448,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py4-Yi-ebA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="lU0-u0-TnE" customClass="SoundPlayer" customModule="DesignerNewsApp" customModuleProvider="target"/>
+                <customObject id="lU0-u0-TnE" customClass="SoundPlayer" customModule="Spring"/>
             </objects>
             <point key="canvasLocation" x="946" y="1714"/>
         </scene>
@@ -1190,7 +1190,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pxf-D7-GjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="2ff-Ph-Sll" customClass="SoundPlayer" customModule="DesignerNewsApp" customModuleProvider="target"/>
+                <customObject id="2ff-Ph-Sll" customClass="SoundPlayer" customModule="Spring"/>
             </objects>
             <point key="canvasLocation" x="1638" y="1713"/>
         </scene>
