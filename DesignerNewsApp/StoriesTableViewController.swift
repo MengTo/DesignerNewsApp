@@ -106,6 +106,12 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         loginCompleted()
     }
 
+    func menuViewControllerDidSelectCloseMenu(controller: MenuViewController) {
+        if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
+            button.menuAnimation()
+        }
+    }
+
     // MARK: LoginViewControllerDelegate
     func loginViewControllerDidLogin(controller: LoginViewController) {
         loginCompleted()
@@ -118,6 +124,10 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         } else {
             logout()
         }
+    }
+
+    @IBAction func menuButtonTouched(sender: AnyObject) {
+        performSegueWithIdentifier("MenuSegue", sender: sender)
     }
 
     func refreshControlValueChanged(sender: AnyObject) {
