@@ -21,7 +21,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshControl?.addTarget(self, action: "refreshControlValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
         
         tableView.estimatedRowHeight = 125
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -125,7 +124,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         performSegueWithIdentifier("MenuSegue", sender: sender)
     }
 
-    func refreshControlValueChanged(sender: AnyObject) {
+    @IBAction func refreshControlValueChanged(sender: AnyObject) {
         self.loadStories()
     }
 
