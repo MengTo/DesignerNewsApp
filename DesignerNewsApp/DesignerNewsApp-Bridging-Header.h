@@ -11,5 +11,6 @@
 
 #import <UIKit/UIKit.h>
 #import "DTCoreText.h"
+#import "SoundEffectPlayer.h"
 
 #endif
