@@ -91,3 +91,35 @@ class PushBackTransitioning: NSObject, UIViewControllerTransitioningDelegate, UI
         return self
     }
 }
+
+class PushBackTransitioningSegue : UIStoryboardSegue {
+
+    override func perform() {
+
+        let sourceViewController = self.sourceViewController as UIViewController
+        let destinationViewController = self.destinationViewController as UIViewController
+
+        sourceViewController.pushBackViewController(destinationViewController)
+    }
+
+}
+
+extension UIViewController {
+
+    private var pushBackTransitioning : PushBackTransitioning {
+        set {
+            self.view.layer.setValue(newValue, forKey: "PushBackTransitioning")
+        }
+        get {
+            return self.view.layer.valueForKey("PushBackTransitioning") as PushBackTransitioning
+        }
+    }
+
+    func pushBackViewController(viewController : UIViewController) {
+        let pushBackTransitioning = PushBackTransitioning()
+        pushBackTransitioning.viewController = viewController
+        viewController.pushBackTransitioning = pushBackTransitioning
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+
+}

@@ -442,7 +442,7 @@
                     <connections>
                         <outlet property="loginButton" destination="uej-tB-xeq" id="f8E-KV-P3z"/>
                         <segue destination="HBs-bl-KVv" kind="show" identifier="CommentsSegue" id="3HB-vO-v5a"/>
-                        <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="Jya-5Y-T44"/>
+                        <segue destination="d4v-hq-Ei2" kind="custom" identifier="WebSegue" customClass="PushBackTransitioningSegue" customModule="DesignerNewsApp" customModuleProvider="target" id="Jya-5Y-T44"/>
                         <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="4dT-jd-Noy"/>
                         <segue destination="G2J-Ma-fKq" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="hNl-2w-BvP"/>
                     </connections>
@@ -565,15 +565,10 @@
                         <outlet property="webView" destination="weA-Ht-NmR" id="xFo-Mx-cX5"/>
                     </connections>
                 </viewController>
-                <customObject id="OvL-gp-aHq" customClass="PushBackTransitioning" customModule="DesignerNewsApp" customModuleProvider="target">
-                    <connections>
-                        <outlet property="viewController" destination="d4v-hq-Ei2" id="Bkb-dC-h0j"/>
-                    </connections>
-                </customObject>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aB-Uq-ry8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="TPO-Ch-8WP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="946" y="2478"/>
+            <point key="canvasLocation" x="946" y="2529"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="3vp-a1-YWc">
@@ -1189,8 +1184,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Ud9-EQ-k4v" kind="presentation" identifier="ReplySegue" id="AAA-ja-nOX"/>
-                        <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="WYa-K1-lob"/>
+                        <segue destination="Ud9-EQ-k4v" kind="custom" identifier="ReplySegue" customClass="PushBackTransitioningSegue" customModule="DesignerNewsApp" customModuleProvider="target" id="AAA-ja-nOX"/>
+                        <segue destination="d4v-hq-Ei2" kind="custom" identifier="WebSegue" customClass="PushBackTransitioningSegue" customModule="DesignerNewsApp" customModuleProvider="target" id="WYa-K1-lob"/>
                         <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="Sm2-a6-0WS"/>
                     </connections>
                 </tableViewController>
@@ -1275,13 +1270,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7K-nZ-Icz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UtX-Fl-8WN" userLabel="Exit" sceneMemberID="exit"/>
-                <customObject id="fY0-Ow-hyQ" customClass="PushBackTransitioning" customModule="DesignerNewsApp" customModuleProvider="target">
-                    <connections>
-                        <outlet property="viewController" destination="Ud9-EQ-k4v" id="oS0-sB-aRh"/>
-                    </connections>
-                </customObject>
             </objects>
-            <point key="canvasLocation" x="1638" y="2478"/>
+            <point key="canvasLocation" x="1638" y="2529"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qF7-6s-Vwa">
@@ -1331,7 +1321,7 @@
         <image name="input-outline" width="250" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WYa-K1-lob"/>
-        <segue reference="Sm2-a6-0WS"/>
+        <segue reference="4dT-jd-Noy"/>
+        <segue reference="Jya-5Y-T44"/>
     </inferredMetricsTieBreakers>
 </document>
