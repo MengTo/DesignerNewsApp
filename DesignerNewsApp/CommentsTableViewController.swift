@@ -12,7 +12,6 @@ import Spring
 class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate, ReplyViewControllerDelegate {
 
     var story: Story!
-    private let transitionManager = TransitionManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +43,6 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             }
 
             toView.delegate = self
-            toView.transitioningDelegate = self.transitionManager
         }
         else if segue.identifier == "WebSegue" {
             UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
@@ -57,7 +55,6 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
                 webViewController.shareTitle = story.title
                 webViewController.url = NSURL(string: story.url)
             }
-            webViewController.transitioningDelegate = self.transitionManager
         }
     }
     

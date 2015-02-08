@@ -25,6 +25,12 @@ import Spring
 
 class CustomTransitionManager: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
+    @IBOutlet weak var viewController: UIViewController! {
+        didSet {
+            viewController.transitioningDelegate = self
+        }
+    }
+
     private var isPresenting = true
     private let duration = 0.3
 
