@@ -25,12 +25,6 @@ import Spring
 
 class PushBackTransitioning: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
-    @IBOutlet weak var viewController: UIViewController! {
-        didSet {
-            viewController.transitioningDelegate = self
-        }
-    }
-
     private var isPresenting = true
     private let duration = 0.3
 
@@ -93,33 +87,13 @@ class PushBackTransitioning: NSObject, UIViewControllerTransitioningDelegate, UI
 }
 
 class PushBackTransitioningSegue : UIStoryboardSegue {
-
     override func perform() {
-
         let sourceViewController = self.sourceViewController as UIViewController
         let destinationViewController = self.destinationViewController as UIViewController
 
-        sourceViewController.pushBackViewController(destinationViewController)
-    }
-
-}
-
-extension UIViewController {
-
-    private var pushBackTransitioning : PushBackTransitioning {
-        set {
-            self.view.layer.setValue(newValue, forKey: "PushBackTransitioning")
-        }
-        get {
-            return self.view.layer.valueForKey("PushBackTransitioning") as PushBackTransitioning
-        }
-    }
-
-    func pushBackViewController(viewController : UIViewController) {
         let pushBackTransitioning = PushBackTransitioning()
-        pushBackTransitioning.viewController = viewController
-        viewController.pushBackTransitioning = pushBackTransitioning
-        self.presentViewController(viewController, animated: true, completion: nil)
+        destinationViewController.transitioningDelegate = pushBackTransitioning
+        sourceViewController.view.layer.setValue(pushBackTransitioning, forKey: "PushBackTransitioning")
+        sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
     }
-
 }
