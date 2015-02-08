@@ -23,7 +23,7 @@
 import UIKit
 import Spring
 
-class CustomTransitionManager: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+class PushBackTransitioning: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
     @IBOutlet weak var viewController: UIViewController! {
         didSet {
