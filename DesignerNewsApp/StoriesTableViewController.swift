@@ -10,8 +10,7 @@ import UIKit
 import Spring
 
 class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate {
-    
-    private let transitionManager = TransitionManager()
+
     private var stories = [Story]()
     private var firstTime = true
     private var storiesLoader = StoriesLoader()
@@ -226,8 +225,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
                 webViewController.url = url
             }
 
-            webViewController.transitioningDelegate = self.transitionManager
-            
             UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
         }
         else if segue.identifier == "LoginSegue" {
