@@ -24,8 +24,6 @@
 		1A935E391A837B980059BCBC /* refresh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A935E371A837B980059BCBC /* refresh.wav */; };
 		1A935E3A1A837B980059BCBC /* upvote.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A935E381A837B980059BCBC /* upvote.wav */; };
 		1A935E3C1A837C640059BCBC /* SoundPlayer+DesignerNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A935E3B1A837C640059BCBC /* SoundPlayer+DesignerNewsApp.swift */; };
-		1AA7E1741AA369BE00762D75 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7E1731AA369BE00762D75 /* AsyncButton.swift */; };
-		1AAA95C21A79144000D5E8C8 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAA95C11A79144000D5E8C8 /* AsyncImageView.swift */; };
 		1AB33B591A7660E800E3AB55 /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB33B501A7660B300E3AB55 /* libDTCoreText.a */; };
 		1AED4A711A7BBCCA004C689E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AED4A701A7BBCCA004C689E /* Error.swift */; };
 		961889B81A680D3800295A64 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889B71A680D3800295A64 /* LearnViewController.swift */; };
@@ -206,8 +204,6 @@
 		1A935E371A837B980059BCBC /* refresh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = refresh.wav; sourceTree = "<group>"; };
 		1A935E381A837B980059BCBC /* upvote.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = upvote.wav; sourceTree = "<group>"; };
 		1A935E3B1A837C640059BCBC /* SoundPlayer+DesignerNewsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+DesignerNewsApp.swift"; sourceTree = "<group>"; };
-		1AA7E1731AA369BE00762D75 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
-		1AAA95C11A79144000D5E8C8 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		1AB33B3F1A7660B300E3AB55 /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
 		1AED4A701A7BBCCA004C689E /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		961889B71A680D3800295A64 /* LearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
@@ -445,8 +441,6 @@
 			isa = PBXGroup;
 			children = (
 				1A9183081A75EE1900606F35 /* CoreTextView.swift */,
-				1AAA95C11A79144000D5E8C8 /* AsyncImageView.swift */,
-				1AA7E1731AA369BE00762D75 /* AsyncButton.swift */,
 				B790E5301A82C6BC0007B392 /* MenuControl.swift */,
 			);
 			name = Views;
@@ -715,13 +709,11 @@
 				B78F90411A6EFBAF00883A5B /* Story.swift in Sources */,
 				1A935E301A837A670059BCBC /* TPKeyboardAvoidingScrollView.m in Sources */,
 				96AF96171A5EABC9003926E2 /* StoryTableViewCell.swift in Sources */,
-				1AAA95C21A79144000D5E8C8 /* AsyncImageView.swift in Sources */,
 				1A9183091A75EE1900606F35 /* CoreTextView.swift in Sources */,
 				1A935E3C1A837C640059BCBC /* SoundPlayer+DesignerNewsApp.swift in Sources */,
 				B7E4D3371A719855001DC9B6 /* CommentTableViewCell.swift in Sources */,
 				1A2331D21A78E1AF002F8D80 /* StoriesLoader.swift in Sources */,
 				967CFD061A5C10700044B4E3 /* LoginViewController.swift in Sources */,
-				1AA7E1741AA369BE00762D75 /* AsyncButton.swift in Sources */,
 				9694F2051A5FF13900A6376A /* CommentsTableViewController.swift in Sources */,
 				B790E5311A82C6BC0007B392 /* MenuControl.swift in Sources */,
 			);
