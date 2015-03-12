@@ -3,7 +3,7 @@
 	url = https://github.com/Alamofire/Alamofire.git
 [submodule "Externals/Spring"]
 	path = Externals/Spring
-	url = git@github.com:MengTo/Spring.git
+	url = https://github.com/MengTo/Spring.git
 [submodule "Externals/DTCoreText"]
 	path = Externals/DTCoreText
-	url = git@github.com:JTExperiments/DTCoreText.git
+	url = https://github.com/JTExperiments/DTCoreText.git
