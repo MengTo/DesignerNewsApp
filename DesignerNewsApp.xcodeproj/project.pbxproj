@@ -25,6 +25,7 @@
 		1A935E3A1A837B980059BCBC /* upvote.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A935E381A837B980059BCBC /* upvote.wav */; };
 		1A935E3C1A837C640059BCBC /* SoundPlayer+DesignerNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A935E3B1A837C640059BCBC /* SoundPlayer+DesignerNewsApp.swift */; };
 		1AB33B591A7660E800E3AB55 /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB33B501A7660B300E3AB55 /* libDTCoreText.a */; };
+		1AB6351C1AB6D46900064D14 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6351B1AB6D46900064D14 /* ContainerViewController.swift */; };
 		1AED4A711A7BBCCA004C689E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AED4A701A7BBCCA004C689E /* Error.swift */; };
 		961889B81A680D3800295A64 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889B71A680D3800295A64 /* LearnViewController.swift */; };
 		964892151A62A84600214D53 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892141A62A84600214D53 /* ReplyViewController.swift */; };
@@ -205,6 +206,7 @@
 		1A935E381A837B980059BCBC /* upvote.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = upvote.wav; sourceTree = "<group>"; };
 		1A935E3B1A837C640059BCBC /* SoundPlayer+DesignerNewsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+DesignerNewsApp.swift"; sourceTree = "<group>"; };
 		1AB33B3F1A7660B300E3AB55 /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
+		1AB6351B1AB6D46900064D14 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		1AED4A701A7BBCCA004C689E /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		961889B71A680D3800295A64 /* LearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		964892141A62A84600214D53 /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 				964892661A63F5D900214D53 /* MenuViewController.swift */,
 				961889B71A680D3800295A64 /* LearnViewController.swift */,
 				966128541A4DA63100A54A23 /* AppDelegate.swift */,
+				1AB6351B1AB6D46900064D14 /* ContainerViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 			files = (
 				964892671A63F5D900214D53 /* MenuViewController.swift in Sources */,
 				961889B81A680D3800295A64 /* LearnViewController.swift in Sources */,
+				1AB6351C1AB6D46900064D14 /* ContainerViewController.swift in Sources */,
 				966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */,
 				B773D86F1A7BC101008E8A65 /* LocalStore.swift in Sources */,
 				1A7D78A01A70F8FE0061D6F6 /* DragDropBehavior.swift in Sources */,

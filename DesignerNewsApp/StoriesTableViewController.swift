@@ -16,6 +16,22 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     private var firstTime = true
     private var storiesLoader = StoriesLoader()
     private var selectedIndexPath : NSIndexPath?
+    var storySection : StoriesLoader.StorySection = .Default {
+        didSet {
+            storiesLoader = StoriesLoader(storySection)
+
+            switch (storySection) {
+            case .Default:
+                title = "Top Stories"
+            case .Recent:
+                title = "Recent Stories"
+            }
+
+            if self.isViewLoaded() {
+                loadStories()
+            }
+        }
+    }
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
     
@@ -81,15 +97,11 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     
     // MARK: MenuViewControllerDelegate
     func menuViewControllerDidSelectTopStories(controller: MenuViewController) {
-        title = "Top Stories"
-        storiesLoader = StoriesLoader(.Default)
-        loadStories()
+        self.storySection = .Default
     }
     
     func menuViewControllerDidSelectRecent(controller: MenuViewController) {
-        title = "Recent Stories"
-        storiesLoader = StoriesLoader(.Recent)
-        loadStories()
+        self.storySection = .Recent
     }
 
     func menuViewControllerDidSelectLogout(controller: MenuViewController) {
