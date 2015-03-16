@@ -1,0 +1,1288 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>BITAuthenticator Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">HockeySDK-iOS 3.6.2 </a></h1>
+				<a id="developerHome" href="../index.html">Bit Stadium GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">BITAuthenticator Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/authenticationSecret">&nbsp;&nbsp;&nbsp;&nbsp;authenticationSecret</option>
+	
+	<option value="//api/name/identificationType">&nbsp;&nbsp;&nbsp;&nbsp;identificationType</option>
+	
+	<option value="//api/name/identified">&nbsp;&nbsp;&nbsp;&nbsp;identified</option>
+	
+	<option value="//api/name/restrictApplicationUsage">&nbsp;&nbsp;&nbsp;&nbsp;restrictApplicationUsage</option>
+	
+	<option value="//api/name/restrictionEnforcementFrequency">&nbsp;&nbsp;&nbsp;&nbsp;restrictionEnforcementFrequency</option>
+	
+	<option value="//api/name/urlScheme">&nbsp;&nbsp;&nbsp;&nbsp;urlScheme</option>
+	
+	<option value="//api/name/validated">&nbsp;&nbsp;&nbsp;&nbsp;validated</option>
+	
+	<option value="//api/name/webpageURL">&nbsp;&nbsp;&nbsp;&nbsp;webpageURL</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/authenticateInstallation">&nbsp;&nbsp;&nbsp;&nbsp;- authenticateInstallation</option>
+	
+	<option value="//api/name/cleanupInternalStorage">&nbsp;&nbsp;&nbsp;&nbsp;- cleanupInternalStorage</option>
+	
+	<option value="//api/name/deviceAuthenticationURL">&nbsp;&nbsp;&nbsp;&nbsp;- deviceAuthenticationURL</option>
+	
+	<option value="//api/name/handleOpenURL:sourceApplication:annotation:">&nbsp;&nbsp;&nbsp;&nbsp;- handleOpenURL:sourceApplication:annotation:</option>
+	
+	<option value="//api/name/identifyWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- identifyWithCompletion:</option>
+	
+	<option value="//api/name/publicInstallationIdentifier">&nbsp;&nbsp;&nbsp;&nbsp;- publicInstallationIdentifier</option>
+	
+	<option value="//api/name/validateWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- validateWithCompletion:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Configuration">Configuration</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Device based identification">Device based identification</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Authentication">Authentication</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authenticationSecret">authenticationSecret</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/identificationType">identificationType</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/identified">identified</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/restrictApplicationUsage">restrictApplicationUsage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/restrictionEnforcementFrequency">restrictionEnforcementFrequency</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/urlScheme">urlScheme</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validated">validated</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webpageURL">webpageURL</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authenticateInstallation">authenticateInstallation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cleanupInternalStorage">cleanupInternalStorage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceAuthenticationURL">deviceAuthenticationURL</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleOpenURL:sourceApplication:annotation:">handleOpenURL:sourceApplication:annotation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/identifyWithCompletion:">identifyWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/publicInstallationIdentifier">publicInstallationIdentifier</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateWithCompletion:">validateWithCompletion:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="BITAuthenticator Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">BITAuthenticator Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/BITHockeyBaseManager.html">BITHockeyBaseManager</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">BITAuthenticator.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Identify and authenticate users of Ad-Hoc or Enterprise builds</p>
+
+<p><code>BITAuthenticator</code> serves 2 purposes:</p>
+
+<ol>
+<li><p>Identifying who is running your Ad-Hoc or Enterprise builds
+<code>BITAuthenticator</code> provides an identifier for the rest of the HockeySDK
+to work with, e.g. in-app update checks and crash reports.</p></li>
+<li><p>Optional regular checking if an <a href="#//api/name/identified">identified</a> user is still allowed
+to run this application. The <code>BITAuthenticator</code> can be used to make
+sure only users who are testers of your app are allowed to run it.</p></li>
+</ol>
+
+
+<p>This module automatically disables itself when running in an App Store build by default!</p><div class="warning"><p><strong>Warning:</strong> It is mandatory to call <a href="#//api/name/authenticateInstallation"><code>authenticateInstallation</code></a> somewhen after calling
+<code>[[BITHockeyManager sharedHockeyManager] startManager]</code> or fully customize the identification
+and validation workflow yourself.
+If your app shows a modal view on startup, make sure to call <a href="#//api/name/authenticateInstallation"><code>authenticateInstallation</code></a>
+either once your modal view is fully presented (e.g. its <code>viewDidLoad:</code> method is processed)
+or once your modal view is dismissed.</p></div>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Configuration" name="task_Configuration"></a>
+						<h3 class="subsubtitle task-title">Configuration</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/identificationType">&nbsp;&nbsp;identificationType</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/restrictApplicationUsage">&nbsp;&nbsp;restrictApplicationUsage</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/restrictionEnforcementFrequency">&nbsp;&nbsp;restrictionEnforcementFrequency</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/authenticationSecret">&nbsp;&nbsp;authenticationSecret</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Device based identification" name="task_Device based identification"></a>
+						<h3 class="subsubtitle task-title">Device based identification</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/webpageURL">&nbsp;&nbsp;webpageURL</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deviceAuthenticationURL">&ndash;&nbsp;deviceAuthenticationURL</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/urlScheme">&nbsp;&nbsp;urlScheme</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/handleOpenURL:sourceApplication:annotation:">&ndash;&nbsp;handleOpenURL:sourceApplication:annotation:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Authentication" name="task_Authentication"></a>
+						<h3 class="subsubtitle task-title">Authentication</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/authenticateInstallation">&ndash;&nbsp;authenticateInstallation</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/identifyWithCompletion:">&ndash;&nbsp;identifyWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/identified">&nbsp;&nbsp;identified</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateWithCompletion:">&ndash;&nbsp;validateWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validated">&nbsp;&nbsp;validated</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cleanupInternalStorage">&ndash;&nbsp;cleanupInternalStorage</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/publicInstallationIdentifier">&ndash;&nbsp;publicInstallationIdentifier</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/authenticationSecret" title="authenticationSecret"></a>
+	<h3 class="subsubtitle method-title">authenticationSecret</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The authentication secret from HockeyApp. To find the right secret,
+click on your app on the HockeyApp dashboard, then on Show next to
+&ldquo;Secret:&rdquo;.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *authenticationSecret</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This is only needed if <a href="#//api/name/identificationType"><code>identificationType</code></a> is set to <code>BITAuthenticatorIdentificationTypeHockeyAppEmail</code></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/identificationType">@property identificationType</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/identificationType" title="identificationType"></a>
+	<h3 class="subsubtitle method-title">identificationType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Defines the identification mechanism to be used</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BITAuthenticatorIdentificationType identificationType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><em>Default</em>: <code>BITAuthenticatorIdentificationTypeAnonymous</code></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Constants/BITAuthenticatorIdentificationType.html">BITAuthenticatorIdentificationType</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/identified" title="identified"></a>
+	<h3 class="subsubtitle method-title">identified</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns YES if this app is identified according to the setting in <a href="#//api/name/identificationType"><code>identificationType</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly, getter=isIdentified) BOOL identified</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Since the identification process is done asynchronously (contacting the server),
+you need to observe the value change via KVO.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/identificationType">@property identificationType</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/restrictApplicationUsage" title="restrictApplicationUsage"></a>
+	<h3 class="subsubtitle method-title">restrictApplicationUsage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enables or disables checking if the user is allowed to run this app</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL restrictApplicationUsage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If disabled, the Authenticator never validates, besides initial identification,
+if the user is allowed to run this application.</p>
+
+<p>If enabled, the Authenticator checks depending on <a href="#//api/name/restrictionEnforcementFrequency"><code>restrictionEnforcementFrequency</code></a>
+if the user is allowed to use this application.</p>
+
+<p>Enabling this property and setting <a href="#//api/name/identificationType"><code>identificationType</code></a> to <code>BITAuthenticatorIdentificationTypeHockeyAppEmail</code>,
+<code>BITAuthenticatorIdentificationTypeHockeyAppUser</code> or <code>BITAuthenticatorIdentificationTypeWebAuth</code> also allows
+to remove access for users by removing them from the app&rsquo;s users list on HockeyApp.</p>
+
+<p><em>Default</em>: <code>NO</code></p><div class="warning"><p><strong>Warning:</strong> if <a href="#//api/name/identificationType"><code>identificationType</code></a> is set to <code>BITAuthenticatorIdentificationTypeAnonymous</code>,
+this property has no effect.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Constants/BITAuthenticatorIdentificationType.html">BITAuthenticatorIdentificationType</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/restrictionEnforcementFrequency">@property restrictionEnforcementFrequency</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/restrictionEnforcementFrequency" title="restrictionEnforcementFrequency"></a>
+	<h3 class="subsubtitle method-title">restrictionEnforcementFrequency</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Defines how often the BITAuthenticator checks if the user is allowed
+to run this application</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BITAuthenticatorAppRestrictionEnforcementFrequency restrictionEnforcementFrequency</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This requires <a href="#//api/name/restrictApplicationUsage"><code>restrictApplicationUsage</code></a> to be enabled.</p>
+
+<p><em>Default</em>: <code>BITAuthenticatorAppRestrictionEnforcementOnFirstLaunch</code></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Constants/BITAuthenticatorAppRestrictionEnforcementFrequency.html">BITAuthenticatorAppRestrictionEnforcementFrequency</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/restrictApplicationUsage">@property restrictApplicationUsage</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/urlScheme" title="urlScheme"></a>
+	<h3 class="subsubtitle method-title">urlScheme</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The url-scheme used to idenfify via <code>BITAuthenticatorIdentificationTypeDevice</code></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *urlScheme</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Please make sure that the URL scheme is unique and not shared with other apps.</p>
+
+<p>If set to nil, the default scheme is used which is <code>ha&lt;APP_ID&gt;</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/identificationType">@property identificationType</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/handleOpenURL:sourceApplication:annotation:">- handleOpenURL:sourceApplication:annotation:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validated" title="validated"></a>
+	<h3 class="subsubtitle method-title">validated</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates if this installation is validated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly, getter=isValidated) BOOL validated</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/webpageURL" title="webpageURL"></a>
+	<h3 class="subsubtitle method-title">webpageURL</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The baseURL of the webpage the user is redirected to if <a href="#//api/name/identificationType"><code>identificationType</code></a> is
+set to <code>BITAuthenticatorIdentificationTypeDevice</code>; defaults to <a href="https://rink.hockeyapp.net.">https://rink.hockeyapp.net.</a></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSURL *webpageURL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/identificationType">@property identificationType</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/authenticateInstallation" title="authenticateInstallation"></a>
+	<h3 class="subsubtitle method-title">authenticateInstallation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked automatic identification and validation</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)authenticateInstallation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the <code>BITAuthenticator</code> is in automatic mode this will initiate identifying
+the current user according to the type specified in <a href="#//api/name/identificationType"><code>identificationType</code></a> and
+validate if the <a href="#//api/name/identified">identified</a> user is allowed to run this application.</p>
+
+<p>If the user is not yet <a href="#//api/name/identified">identified</a> it will present a modal view asking the user to
+provide the required information.</p>
+
+<p>If your app provides it&rsquo;s own startup modal screen, e.g. a guide or a login, then
+you might either call this method once that UI is fully presented or once
+the user e.g. did actually login already.</p><div class="warning"><p><strong>Warning:</strong> You need to call this method in your code even if automatic mode is enabled!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/identificationType">@property identificationType</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cleanupInternalStorage" title="cleanupInternalStorage"></a>
+	<h3 class="subsubtitle method-title">cleanupInternalStorage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes all previously stored authentication tokens, UDIDs, etc.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)cleanupInternalStorage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deviceAuthenticationURL" title="deviceAuthenticationURL"></a>
+	<h3 class="subsubtitle method-title">deviceAuthenticationURL</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>URL to query the device&rsquo;s id via external webpage
+Built with the baseURL set in <a href="#//api/name/webpageURL"><code>webpageURL</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSURL *)deviceAuthenticationURL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/handleOpenURL:sourceApplication:annotation:" title="handleOpenURL:sourceApplication:annotation:"></a>
+	<h3 class="subsubtitle method-title">handleOpenURL:sourceApplication:annotation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Should be used by the app-delegate to forward handle application:openURL:sourceApplication:annotation: calls.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)handleOpenURL:(NSURL *)<em>url</em> sourceApplication:(NSString *)<em>sourceApplication</em> annotation:(id)<em>annotation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>url</em></dt>
+			<dd><p>Param <code>url</code> that was passed to the app</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sourceApplication</em></dt>
+			<dd><p>Param <code>sourceApplication</code> that was passed to the app</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>annotation</em></dt>
+			<dd><p>Param <code>annotation</code> that was passed to the app</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the URL request was handled, NO if the URL could not be handled/<a href="#//api/name/identified">identified</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This is required if <a href="#//api/name/identificationType"><code>identificationType</code></a> is set to <code>BITAuthenticatorIdentificationTypeDevice</code>.
+Your app needs to implement the default <code>ha&lt;APP_ID&gt;</code> URL scheme or register its own scheme
+via <a href="#//api/name/urlScheme"><code>urlScheme</code></a>.
+BITAuthenticator checks if the given URL is actually meant to be parsed by it and will
+return NO if it doesn&rsquo;t think so. It does this by checking the &lsquo;host&rsquo;-part of the URL to be &lsquo;authorize&rsquo;, as well
+as checking the protocol part.
+Please make sure that if you&rsquo;re using a custom URL scheme, it does <em>not</em> conflict with BITAuthenticator&rsquo;s.
+If BITAuthenticator thinks the URL was meant to be an authorization URL, but could not find a valid token, it will
+reset the stored identification token and state.</p>
+
+<p>Sample usage (in AppDelegate):</p>
+
+<pre><code>- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+  if ([[BITHockeyManager sharedHockeyManager].authenticator handleOpenURL:url
+                                                        sourceApplication:sourceApplication
+                                                               annotation:annotation]) {
+    return YES;
+  } else {
+    //do your own URL handling, return appropriate value
+  }
+  return NO;
+}
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/identificationType">@property identificationType</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/urlScheme">@property urlScheme</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/identifyWithCompletion:" title="identifyWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">identifyWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Identifies the user according to the type specified in <a href="#//api/name/identificationType"><code>identificationType</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)identifyWithCompletion:(void ( ^ ) ( BOOL identified , NSError *error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block being executed once identification completed</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the <code>BITAuthenticator</code> is in manual mode, it&rsquo;s your responsibility to call
+this method. Depending on the <a href="#//api/name/identificationType"><code>identificationType</code></a>, this method
+might present a viewController to let the user enter his/her credentials.</p>
+
+<p>If the Authenticator is in auto-mode, this is called by the authenticator itself
+once needed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/identificationType">@property identificationType</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/authenticateInstallation">- authenticateInstallation</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/validateWithCompletion:">- validateWithCompletion:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/publicInstallationIdentifier" title="publicInstallationIdentifier"></a>
+	<h3 class="subsubtitle method-title">publicInstallationIdentifier</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns different values depending on <a href="#//api/name/identificationType"><code>identificationType</code></a>. This can be used
+by the application to identify the user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)publicInstallationIdentifier</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/identificationType">@property identificationType</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateWithCompletion:" title="validateWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">validateWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates if the <a href="#//api/name/identified">identified</a> user is allowed to run this application. This checks
+with the HockeyApp backend and calls the completion-block once completed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)validateWithCompletion:(void ( ^ ) ( BOOL validated , NSError *error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block being executed once validation completed</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the <code>BITAuthenticator</code> is in manual mode, it&rsquo;s your responsibility to call
+this method. If the application is not yet <a href="#//api/name/identified">identified</a>, validation is not possible
+and the completion-block is called with an error set.</p>
+
+<p>If the <code>BITAuthenticator</code> is in auto-mode, this is called by the authenticator itself
+once needed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/identificationType">@property identificationType</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/authenticateInstallation">- authenticateInstallation</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/identifyWithCompletion:">- identifyWithCompletion:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITAuthenticator.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Bit Stadium GmbH. All rights reserved. (Last updated: 2014-11-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

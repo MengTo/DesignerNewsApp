@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/BITFeedbackUserDataElement.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/BITFeedbackUserDataElement</TokenIdentifier>
+			<Abstract type="html">Defines behavior of the user data field</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="40"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackUserDataElementDontShow</TokenIdentifier>
+            <Abstract type="html">don&apos;t ask for this user data element at all
+   </Abstract>
+            <Declaration>BITFeedbackUserDataElementDontShow</Declaration>
+            
+            <DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+            
+            <NodeRef refid="40"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackUserDataElementOptional</TokenIdentifier>
+            <Abstract type="html">the user may provide it, but does not have to
+   </Abstract>
+            <Declaration>BITFeedbackUserDataElementOptional</Declaration>
+            
+            <DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+            
+            <NodeRef refid="40"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackUserDataElementRequired</TokenIdentifier>
+            <Abstract type="html">the user has to provide this to continue
+   </Abstract>
+            <Declaration>BITFeedbackUserDataElementRequired</Declaration>
+            
+            <DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+            
+            <NodeRef refid="40"/>
+        </Token>
+        
+	</File>
+</Tokens>

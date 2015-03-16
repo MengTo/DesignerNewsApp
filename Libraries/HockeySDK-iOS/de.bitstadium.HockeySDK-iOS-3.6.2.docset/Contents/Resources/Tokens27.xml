@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/BITFeedbackManagerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/BITFeedbackManagerDelegate</TokenIdentifier>
+			<Abstract type="html">	Delegate protocol which is notified about changes in the feedbackManager
+@TODO
+* move shouldShowUpdateAlert from feedbackManager here</Abstract>
+			<DeclaredIn>BITFeedbackManagerDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="27"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITFeedbackManagerDelegate/feedbackManagerDidReceiveNewFeedback:</TokenIdentifier>
+			<Abstract type="html">	can be implemented to know when new feedback from the server arrived</Abstract>
+			<DeclaredIn>BITFeedbackManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)feedbackManagerDidReceiveNewFeedback:(BITFeedbackManager *)feedbackManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>feedbackManager</Name>
+					<Abstract type="html">The feedbackManager which did detect the new messages</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/feedbackManagerDidReceiveNewFeedback:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

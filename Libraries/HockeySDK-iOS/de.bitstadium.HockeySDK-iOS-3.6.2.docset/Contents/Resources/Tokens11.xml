@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BITCrashAttachment.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BITCrashAttachment</TokenIdentifier>
+			<Abstract type="html">Deprecated: Provides support to add binary attachments to crash reports</Abstract>
+			<DeclaredIn>BITCrashAttachment.h</DeclaredIn>
+            
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/BITHockeyAttachment</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashAttachment/initWithFilename:crashAttachmentData:contentType:</TokenIdentifier>
+			<Abstract type="html">Create an BITCrashAttachment instance with a given filename and NSData object</Abstract>
+			<DeclaredIn>BITCrashAttachment.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithFilename:(NSString *)filename crashAttachmentData:(NSData *)crashAttachmentData contentType:(NSString *)contentType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filename</Name>
+					<Abstract type="html">The filename the attachment should get</Abstract>
+				</Parameter><Parameter>
+					<Name>crashAttachmentData</Name>
+					<Abstract type="html">The attachment data as NSData</Abstract>
+				</Parameter><Parameter>
+					<Name>contentType</Name>
+					<Abstract type="html">The content type of your data as MIME type</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instsance of BITCrashAttachment</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithFilename:crashAttachmentData:contentType:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

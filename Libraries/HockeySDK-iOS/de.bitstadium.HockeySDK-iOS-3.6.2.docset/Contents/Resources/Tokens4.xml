@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="docs/docs/Guide-Migration-Kits.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/doc/Guide-Migration-Kits</TokenIdentifier>
+			<Abstract type="html">## Introduction</Abstract>
+			<DeclaredIn>Guide-Migration-Kits-template.md</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

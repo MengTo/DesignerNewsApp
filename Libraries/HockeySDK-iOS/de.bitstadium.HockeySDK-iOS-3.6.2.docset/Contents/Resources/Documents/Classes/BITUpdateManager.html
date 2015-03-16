@@ -1,0 +1,897 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>BITUpdateManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">HockeySDK-iOS 3.6.2 </a></h1>
+				<a id="developerHome" href="../index.html">Bit Stadium GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">BITUpdateManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/alwaysShowUpdateReminder">&nbsp;&nbsp;&nbsp;&nbsp;alwaysShowUpdateReminder</option>
+	
+	<option value="//api/name/checkForUpdateOnLaunch">&nbsp;&nbsp;&nbsp;&nbsp;checkForUpdateOnLaunch</option>
+	
+	<option value="//api/name/disableUpdateCheckOptionWhenExpired">&nbsp;&nbsp;&nbsp;&nbsp;disableUpdateCheckOptionWhenExpired</option>
+	
+	<option value="//api/name/expiryDate">&nbsp;&nbsp;&nbsp;&nbsp;expiryDate</option>
+	
+	<option value="//api/name/showDirectInstallOption">&nbsp;&nbsp;&nbsp;&nbsp;showDirectInstallOption</option>
+	
+	<option value="//api/name/updateSetting">&nbsp;&nbsp;&nbsp;&nbsp;updateSetting</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/checkForUpdate">&nbsp;&nbsp;&nbsp;&nbsp;- checkForUpdate</option>
+	
+	<option value="//api/name/hockeyViewController:">&nbsp;&nbsp;&nbsp;&nbsp;- hockeyViewController:</option>
+	
+	<option value="//api/name/showUpdateView">&nbsp;&nbsp;&nbsp;&nbsp;- showUpdateView</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Update Checking">Update Checking</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Update Notification">Update Notification</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Expiry">Expiry</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_User Interface">User Interface</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/alwaysShowUpdateReminder">alwaysShowUpdateReminder</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/checkForUpdateOnLaunch">checkForUpdateOnLaunch</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disableUpdateCheckOptionWhenExpired">disableUpdateCheckOptionWhenExpired</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expiryDate">expiryDate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showDirectInstallOption">showDirectInstallOption</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateSetting">updateSetting</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/checkForUpdate">checkForUpdate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hockeyViewController:">hockeyViewController:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showUpdateView">showUpdateView</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="BITUpdateManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">BITUpdateManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/BITHockeyBaseManager.html">BITHockeyBaseManager</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">UIAlertViewDelegate</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">BITUpdateManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The update manager module.</p>
+
+<p>This is the HockeySDK module for handling app updates when using Ad-Hoc or Enterprise provisioning profiles.
+This modul handles version updates, presents update and version information in a App Store like user interface,
+collects usage information and provides additional authorization options when using Ad-Hoc provisioning profiles.</p>
+
+<p>This module automatically disables itself when running in an App Store build by default!</p>
+
+<p>The protocol <a href="../Protocols/BITUpdateManagerDelegate.html"><code>BITUpdateManagerDelegate</code></a> provides delegates to inform about events and adjust a few behaviors.</p>
+
+<p>To use the server side restriction feature, to provide updates only to specific users, you need to setup the
+<a href="../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a> class. This allows the update request to tell the server which user is using the app on the
+current device and then let the server decide which updates the device may see.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Update Checking" name="task_Update Checking"></a>
+						<h3 class="subsubtitle task-title">Update Checking</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateSetting">&nbsp;&nbsp;updateSetting</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/checkForUpdateOnLaunch">&nbsp;&nbsp;checkForUpdateOnLaunch</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/checkForUpdate">&ndash;&nbsp;checkForUpdate</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Update Notification" name="task_Update Notification"></a>
+						<h3 class="subsubtitle task-title">Update Notification</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/alwaysShowUpdateReminder">&nbsp;&nbsp;alwaysShowUpdateReminder</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showDirectInstallOption">&nbsp;&nbsp;showDirectInstallOption</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Expiry" name="task_Expiry"></a>
+						<h3 class="subsubtitle task-title">Expiry</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/expiryDate">&nbsp;&nbsp;expiryDate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disableUpdateCheckOptionWhenExpired">&nbsp;&nbsp;disableUpdateCheckOptionWhenExpired</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="User Interface" name="task_User Interface"></a>
+						<h3 class="subsubtitle task-title">User Interface</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showUpdateView">&ndash;&nbsp;showUpdateView</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hockeyViewController:">&ndash;&nbsp;hockeyViewController:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/alwaysShowUpdateReminder" title="alwaysShowUpdateReminder"></a>
+	<h3 class="subsubtitle method-title">alwaysShowUpdateReminder</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flag that determines if updates alert should be repeatedly shown</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL alwaysShowUpdateReminder</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If enabled the update alert shows on every startup and whenever the app becomes active,
+until the update is installed.
+If disabled the update alert is only shown once ever and it is up to you to provide an
+alternate way for the user to navigate to the update UI or update in another way.</p>
+
+<p>When running the app from the App Store, this setting is ignored.</p>
+
+<p><em>Default</em>: <em>YES</em></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITUpdateManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/checkForUpdateOnLaunch" title="checkForUpdateOnLaunch"></a>
+	<h3 class="subsubtitle method-title">checkForUpdateOnLaunch</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flag that determines whether the automatic update checks should be done.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, getter=isCheckForUpdateOnLaunch) BOOL checkForUpdateOnLaunch</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If this is enabled the update checks will be performed automatically depending on the
+<a href="#//api/name/updateSetting"><code>updateSetting</code></a> property. If this is disabled the <a href="#//api/name/updateSetting"><code>updateSetting</code></a> property will have
+no effect, and checking for updates is totally up to be done by yourself.</p>
+
+<p>When running the app from the App Store, this setting is ignored.</p>
+
+<p><em>Default</em>: <em>YES</em></p><div class="warning"><p><strong>Warning:</strong> When setting this to <code>NO</code> you need to invoke update checks yourself!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/updateSetting">@property updateSetting</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/checkForUpdate">- checkForUpdate</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITUpdateManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disableUpdateCheckOptionWhenExpired" title="disableUpdateCheckOptionWhenExpired"></a>
+	<h3 class="subsubtitle method-title">disableUpdateCheckOptionWhenExpired</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Disable the update check button from expiry screen or alerts</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL disableUpdateCheckOptionWhenExpired</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If do not want your users to be able to check for updates once a version is expired,
+then enable this property.</p>
+
+<p>If this is not enabled, the users will be able to check for updates and install them
+if any is available for the current device.</p>
+
+<p><em>Default</em>: NO</p><div class="warning"><p><strong>Warning:</strong> This only works when using Ad-Hoc provisioning profiles!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/expiryDate">@property expiryDate</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITUpdateManagerDelegate.html#//api/name/shouldDisplayExpiryAlertForUpdateManager:">[BITUpdateManagerDelegate shouldDisplayExpiryAlertForUpdateManager:]</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITUpdateManagerDelegate.html#//api/name/didDisplayExpiryAlertForUpdateManager:">[BITUpdateManagerDelegate didDisplayExpiryAlertForUpdateManager:]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITUpdateManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/expiryDate" title="expiryDate"></a>
+	<h3 class="subsubtitle method-title">expiryDate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Expiry date of the current app version</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDate *expiryDate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If set, the app will get unusable at the given date by presenting a blocking view on
+top of the apps UI so that no interaction is possible. To present a custom you, check
+the documentation of the
+<a href="../Protocols/BITUpdateManagerDelegate.html#//api/name/shouldDisplayExpiryAlertForUpdateManager:"><code>[BITUpdateManagerDelegate shouldDisplayExpiryAlertForUpdateManager:]</code></a> delegate.</p>
+
+<p>Once the expiry date is reached, the app will no longer check for updates or
+send any usage data to the server!</p>
+
+<p>When running the app from the App Store, this setting is ignored.</p>
+
+<p><em>Default</em>: nil</p><div class="warning"><p><strong>Warning:</strong> This only works when using Ad-Hoc provisioning profiles!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/disableUpdateCheckOptionWhenExpired">@property disableUpdateCheckOptionWhenExpired</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITUpdateManagerDelegate.html#//api/name/shouldDisplayExpiryAlertForUpdateManager:">[BITUpdateManagerDelegate shouldDisplayExpiryAlertForUpdateManager:]</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITUpdateManagerDelegate.html#//api/name/didDisplayExpiryAlertForUpdateManager:">[BITUpdateManagerDelegate didDisplayExpiryAlertForUpdateManager:]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITUpdateManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showDirectInstallOption" title="showDirectInstallOption"></a>
+	<h3 class="subsubtitle method-title">showDirectInstallOption</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flag that determines if the update alert should show an direct install option</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, getter=isShowingDirectInstallOption) BOOL showDirectInstallOption</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If enabled the update alert shows an additional option which allows to invoke the update
+installation process directly, instead of viewing the update UI first.
+By default the alert only shows a <code>Show</code> and <code>Ignore</code> option.</p>
+
+<p>When running the app from the App Store, this setting is ignored.</p>
+
+<p><em>Default</em>: <em>NO</em></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITUpdateManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateSetting" title="updateSetting"></a>
+	<h3 class="subsubtitle method-title">updateSetting</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>When to check for new updates.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BITUpdateSetting updateSetting</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Defines when a the SDK should check if there is a new update available on the
+server. This must be assigned one of the following, see <a href="../Constants/BITUpdateSetting.html"><code>BITUpdateSetting</code></a>:</p>
+
+<ul>
+<li><code>BITUpdateCheckStartup</code>: On every startup or or when the app comes to the foreground</li>
+<li><code>BITUpdateCheckDaily</code>: Once a day</li>
+<li><code>BITUpdateCheckManually</code>: Manually</li>
+</ul>
+
+
+<p>When running the app from the App Store, this setting is ignored.</p>
+
+<p><strong>Default</strong>: BITUpdateCheckStartup</p><div class="warning"><p><strong>Warning:</strong> When setting this to <code>BITUpdateCheckManually</code> you need to either
+invoke the update checking process yourself with <a href="#//api/name/checkForUpdate"><code>checkForUpdate</code></a> somehow, e.g. by
+proving an update check button for the user or integrating the Update View into your
+user interface.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Constants/BITUpdateSetting.html">BITUpdateSetting</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/checkForUpdateOnLaunch">@property checkForUpdateOnLaunch</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/checkForUpdate">- checkForUpdate</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITUpdateManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/checkForUpdate" title="checkForUpdate"></a>
+	<h3 class="subsubtitle method-title">checkForUpdate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Check for an update</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)checkForUpdate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Call this to trigger a check if there is a new update available on the HockeyApp servers.</p>
+
+<p>When running the app from the App Store, this setting is ignored.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/updateSetting">@property updateSetting</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/checkForUpdateOnLaunch">@property checkForUpdateOnLaunch</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITUpdateManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hockeyViewController:" title="hockeyViewController:"></a>
+	<h3 class="subsubtitle method-title">hockeyViewController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create an update view</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BITUpdateViewController *)hockeyViewController:(BOOL)<em>modal</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>modal</em></dt>
+			<dd><p>Return a view ready for modal presentation with integrated navigation bar</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BITUpdateViewController The update user interface view controller,
+e.g. to push it onto a navigation stack.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITUpdateManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showUpdateView" title="showUpdateView"></a>
+	<h3 class="subsubtitle method-title">showUpdateView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Present the modal update user interface.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)showUpdateView</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITUpdateManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Bit Stadium GmbH. All rights reserved. (Last updated: 2014-11-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>BITHockeyManagerDelegate Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">HockeySDK-iOS 3.6.2 </a></h1>
+				<a id="developerHome" href="../index.html">Bit Stadium GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">BITHockeyManagerDelegate Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/shouldUseLiveIdentifierForHockeyManager:">&nbsp;&nbsp;&nbsp;&nbsp;- shouldUseLiveIdentifierForHockeyManager:</option>
+	
+	<option value="//api/name/userEmailForHockeyManager:componentManager:">&nbsp;&nbsp;&nbsp;&nbsp;- userEmailForHockeyManager:componentManager:</option>
+	
+	<option value="//api/name/userIDForHockeyManager:componentManager:">&nbsp;&nbsp;&nbsp;&nbsp;- userIDForHockeyManager:componentManager:</option>
+	
+	<option value="//api/name/userNameForHockeyManager:componentManager:">&nbsp;&nbsp;&nbsp;&nbsp;- userNameForHockeyManager:componentManager:</option>
+	
+	<option value="//api/name/viewControllerForHockeyManager:componentManager:">&nbsp;&nbsp;&nbsp;&nbsp;- viewControllerForHockeyManager:componentManager:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_App Identifier usage">App Identifier usage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_UI presentation">UI presentation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Additional meta data">Additional meta data</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldUseLiveIdentifierForHockeyManager:">shouldUseLiveIdentifierForHockeyManager:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userEmailForHockeyManager:componentManager:">userEmailForHockeyManager:componentManager:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userIDForHockeyManager:componentManager:">userIDForHockeyManager:componentManager:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userNameForHockeyManager:componentManager:">userNameForHockeyManager:componentManager:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/viewControllerForHockeyManager:componentManager:">viewControllerForHockeyManager:componentManager:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="BITHockeyManagerDelegate Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">BITHockeyManagerDelegate Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">#<br /><a href="../Protocols/BITAuthenticatorDelegate.html">BITAuthenticatorDelegate</a><br /><a href="../Protocols/BITCrashManagerDelegate.html">BITCrashManagerDelegate</a><br /><a href="../Protocols/BITFeedbackManagerDelegate.html">BITFeedbackManagerDelegate</a><br /><a href="../Protocols/BITUpdateManagerDelegate.html">BITUpdateManagerDelegate</a><br />HOCKEYSDK_FEATURE_AUTHENTICATOR<br />HOCKEYSDK_FEATURE_CRASH_REPORTER<br />HOCKEYSDK_FEATURE_FEEDBACK<br />HOCKEYSDK_FEATURE_UPDATES<br />NSObject<br />endif<br />if</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">BITHockeyManagerDelegate.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>BITHockeyManagerDelegate</code> formal protocol defines methods further configuring
+  the behaviour of <a href="../Classes/BITHockeyManager.html"><code>BITHockeyManager</code></a>, as well as the delegate of the modules it manages.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="App Identifier usage" name="task_App Identifier usage"></a>
+						<h3 class="subsubtitle task-title">App Identifier usage</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shouldUseLiveIdentifierForHockeyManager:">&ndash;&nbsp;shouldUseLiveIdentifierForHockeyManager:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="UI presentation" name="task_UI presentation"></a>
+						<h3 class="subsubtitle task-title">UI presentation</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/viewControllerForHockeyManager:componentManager:">&ndash;&nbsp;viewControllerForHockeyManager:componentManager:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Additional meta data" name="task_Additional meta data"></a>
+						<h3 class="subsubtitle task-title">Additional meta data</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userIDForHockeyManager:componentManager:">&ndash;&nbsp;userIDForHockeyManager:componentManager:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userNameForHockeyManager:componentManager:">&ndash;&nbsp;userNameForHockeyManager:componentManager:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userEmailForHockeyManager:componentManager:">&ndash;&nbsp;userEmailForHockeyManager:componentManager:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/shouldUseLiveIdentifierForHockeyManager:" title="shouldUseLiveIdentifierForHockeyManager:"></a>
+	<h3 class="subsubtitle method-title">shouldUseLiveIdentifierForHockeyManager:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Implement to force the usage of the live identifier</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)shouldUseLiveIdentifierForHockeyManager:(BITHockeyManager *)<em>hockeyManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hockeyManager</em></dt>
+			<dd><p><a href="../Classes/BITHockeyManager.html">BITHockeyManager</a> instance</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This is useful if you are e.g. distributing an enterprise app inside your company
+and want to use the <code>liveIdentifier</code> for that even though it is not running from
+the App Store.</p>
+
+<p>Example:</p>
+
+<pre><code> - (BOOL)shouldUseLiveIdentifierForHockeyManager:(BITHockeyManager *)hockeyManager {
+ #ifdef (CONFIGURATION_AppStore)
+   return YES;
+ #endif
+   return NO;
+ }
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userEmailForHockeyManager:componentManager:" title="userEmailForHockeyManager:componentManager:"></a>
+	<h3 class="subsubtitle method-title">userEmailForHockeyManager:componentManager:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return the users email address that should used in the SDK components</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)userEmailForHockeyManager:(BITHockeyManager *)<em>hockeyManager</em> componentManager:(BITHockeyBaseManager *)<em>componentManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hockeyManager</em></dt>
+			<dd><p>The <a href="../Classes/BITHockeyManager.html"><code>BITHockeyManager</code></a> HockeyManager instance invoking this delegate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>componentManager</em></dt>
+			<dd><p>The <a href="../Classes/BITHockeyBaseManager.html"><code>BITHockeyBaseManager</code></a> component instance invoking this delegate, can be <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> or <a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Right now this is used by the <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> to attach to a crash report.
+<a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a> uses it too for assigning the user to a discussion thread.</p>
+
+<p>In addition, if this returns not nil for <a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a> the user will
+not be asked for any user details by the component, including useerName or userEmail.</p>
+
+<p>You can find out the component requesting the user email like this:</p>
+
+<pre><code>- (NSString *)userEmailForHockeyManager:(BITHockeyManager *)hockeyManager componentManager:(BITHockeyBaseManager *)componentManager {
+  if (componentManager == hockeyManager.feedbackManager) {
+    return UserEmailForFeedback;
+  } else if (componentManager == hockeyManager.crashManager) {
+    return UserEmailForCrashReports;
+   } else {
+    return nil;
+   }
+}
+</code></pre>
+
+<p>For crash reports, this delegate is invoked on the startup after the crash!</p>
+
+<p>Alternatively you can also use <a href="../Classes/BITHockeyManager.html#//api/name/userEmail"><code>[BITHockeyManager userEmail]</code></a> which will cache the value in the keychain.</p><div class="warning"><p><strong>Warning:</strong> When returning a non nil value for the <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> component, crash reports
+are not anonymous any more and the crash alerts will not show the word &ldquo;anonymous&rdquo;!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/userIDForHockeyManager:componentManager:">- userIDForHockeyManager:componentManager:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/userNameForHockeyManager:componentManager:">- userNameForHockeyManager:componentManager:</a></p></code></li>
+			
+			<li><code><p><a href="../Classes/BITHockeyManager.html#//api/name/userEmail">[BITHockeyManager userEmail]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userIDForHockeyManager:componentManager:" title="userIDForHockeyManager:componentManager:"></a>
+	<h3 class="subsubtitle method-title">userIDForHockeyManager:componentManager:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return the userid that should used in the SDK components</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)userIDForHockeyManager:(BITHockeyManager *)<em>hockeyManager</em> componentManager:(BITHockeyBaseManager *)<em>componentManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hockeyManager</em></dt>
+			<dd><p>The <a href="../Classes/BITHockeyManager.html"><code>BITHockeyManager</code></a> HockeyManager instance invoking this delegate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>componentManager</em></dt>
+			<dd><p>The <a href="../Classes/BITHockeyBaseManager.html"><code>BITHockeyBaseManager</code></a> component instance invoking this delegate, can be <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> or <a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Right now this is used by the <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> to attach to a crash report.
+<a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a> uses it too for assigning the user to a discussion thread.</p>
+
+<p>In addition, if this returns not nil for <a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a> the user will
+not be asked for any user details by the component, including useerName or userEmail.</p>
+
+<p>You can find out the component requesting the userID like this:</p>
+
+<pre><code>- (NSString *)userIDForHockeyManager:(BITHockeyManager *)hockeyManager componentManager:(BITHockeyBaseManager *)componentManager {
+  if (componentManager == hockeyManager.feedbackManager) {
+    return UserIDForFeedback;
+  } else if (componentManager == hockeyManager.crashManager) {
+    return UserIDForCrashReports;
+  } else {
+    return nil;
+  }
+}
+</code></pre>
+
+<p>For crash reports, this delegate is invoked on the startup after the crash!</p>
+
+<p>Alternatively you can also use <a href="../Classes/BITHockeyManager.html#//api/name/userID"><code>[BITHockeyManager userID]</code></a> which will cache the value in the keychain.</p><div class="warning"><p><strong>Warning:</strong> When returning a non nil value for the <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> component, crash reports
+are not anonymous any more and the crash alerts will not show the word &ldquo;anonymous&rdquo;!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/userNameForHockeyManager:componentManager:">- userNameForHockeyManager:componentManager:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/userEmailForHockeyManager:componentManager:">- userEmailForHockeyManager:componentManager:</a></p></code></li>
+			
+			<li><code><p><a href="../Classes/BITHockeyManager.html#//api/name/userID">[BITHockeyManager userID]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userNameForHockeyManager:componentManager:" title="userNameForHockeyManager:componentManager:"></a>
+	<h3 class="subsubtitle method-title">userNameForHockeyManager:componentManager:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return the user name that should used in the SDK components</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)userNameForHockeyManager:(BITHockeyManager *)<em>hockeyManager</em> componentManager:(BITHockeyBaseManager *)<em>componentManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hockeyManager</em></dt>
+			<dd><p>The <a href="../Classes/BITHockeyManager.html"><code>BITHockeyManager</code></a> HockeyManager instance invoking this delegate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>componentManager</em></dt>
+			<dd><p>The <a href="../Classes/BITHockeyBaseManager.html"><code>BITHockeyBaseManager</code></a> component instance invoking this delegate, can be <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> or <a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Right now this is used by the <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> to attach to a crash report.
+<a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a> uses it too for assigning the user to a discussion thread.</p>
+
+<p>In addition, if this returns not nil for <a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a> the user will
+not be asked for any user details by the component, including useerName or userEmail.</p>
+
+<p>You can find out the component requesting the user name like this:</p>
+
+<pre><code>- (NSString *)userNameForHockeyManager:(BITHockeyManager *)hockeyManager componentManager:(BITHockeyBaseManager *)componentManager {
+  if (componentManager == hockeyManager.feedbackManager) {
+    return UserNameForFeedback;
+  } else if (componentManager == hockeyManager.crashManager) {
+    return UserNameForCrashReports;
+  } else {
+    return nil;
+  }
+</code></pre>
+
+<p>}</p>
+
+<p>For crash reports, this delegate is invoked on the startup after the crash!</p>
+
+<p>Alternatively you can also use <a href="../Classes/BITHockeyManager.html#//api/name/userName"><code>[BITHockeyManager userName]</code></a> which will cache the value in the keychain.</p><div class="warning"><p><strong>Warning:</strong> When returning a non nil value for the <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> component, crash reports
+are not anonymous any more and the crash alerts will not show the word &ldquo;anonymous&rdquo;!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/userIDForHockeyManager:componentManager:">- userIDForHockeyManager:componentManager:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/userEmailForHockeyManager:componentManager:">- userEmailForHockeyManager:componentManager:</a></p></code></li>
+			
+			<li><code><p><a href="../Classes/BITHockeyManager.html#//api/name/userName">[BITHockeyManager userName]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/viewControllerForHockeyManager:componentManager:" title="viewControllerForHockeyManager:componentManager:"></a>
+	<h3 class="subsubtitle method-title">viewControllerForHockeyManager:componentManager:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return a custom parent view controller for presenting modal sheets</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (UIViewController *)viewControllerForHockeyManager:(BITHockeyManager *)<em>hockeyManager</em> componentManager:(BITHockeyBaseManager *)<em>componentManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hockeyManager</em></dt>
+			<dd><p>The <a href="../Classes/BITHockeyManager.html"><code>BITHockeyManager</code></a> HockeyManager instance invoking this delegate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>componentManager</em></dt>
+			<dd><p>The <a href="../Classes/BITHockeyBaseManager.html"><code>BITHockeyBaseManager</code></a> component instance invoking this delegate, can be <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> or <a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>By default the SDK is using the root UIWindow instance to present any required
+view controllers. Overwrite this if this doesn&rsquo;t result in a satisfying
+behavior or if you want to define any other parent view controller.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Bit Stadium GmbH. All rights reserved. (Last updated: 2014-11-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

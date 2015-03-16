@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/BITCrashManagerStatus.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/BITCrashManagerStatus</TokenIdentifier>
+			<Abstract type="html">Crash Manager status</Abstract>
+			<DeclaredIn>BITCrashManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="35"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITCrashManagerStatusDisabled</TokenIdentifier>
+            <Abstract type="html">	Crash reporting is disabled
+   </Abstract>
+            <Declaration>BITCrashManagerStatusDisabled</Declaration>
+            
+            <DeclaredIn>BITCrashManager.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITCrashManagerStatusAlwaysAsk</TokenIdentifier>
+            <Abstract type="html">	User is asked each time before sending
+   </Abstract>
+            <Declaration>BITCrashManagerStatusAlwaysAsk</Declaration>
+            
+            <DeclaredIn>BITCrashManager.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITCrashManagerStatusAutoSend</TokenIdentifier>
+            <Abstract type="html">	Each crash report is send automatically
+   </Abstract>
+            <Declaration>BITCrashManagerStatusAutoSend</Declaration>
+            
+            <DeclaredIn>BITCrashManager.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+	</File>
+</Tokens>

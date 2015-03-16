@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="docs/docs/Troubleshooting-Crash-Reporting-Not-Working.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/doc/Troubleshooting-Crash-Reporting-Not-Working</TokenIdentifier>
+			<Abstract type="html">## Crash Reporting is not working</Abstract>
+			<DeclaredIn>Troubleshooting-Crash-Reporting-Not-Working-template.md</DeclaredIn>
+            
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="docs/docs/Guide-Installation-Setup-Advanced.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/doc/Guide-Installation-Setup-Advanced</TokenIdentifier>
+			<Abstract type="html">## Version 3.6.2</Abstract>
+			<DeclaredIn>Guide-Installation-Setup-Advanced-template.md</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

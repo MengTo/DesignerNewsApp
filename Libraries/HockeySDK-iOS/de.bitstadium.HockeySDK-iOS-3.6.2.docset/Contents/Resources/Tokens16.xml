@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BITFeedbackComposeViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BITFeedbackComposeViewController</TokenIdentifier>
+			<Abstract type="html">View controller allowing the user to write and send new feedback</Abstract>
+			<DeclaredIn>BITFeedbackComposeViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="16"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackComposeViewController/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Sets the BITFeedbackComposeViewControllerDelegate delegate.</Abstract>
+			<DeclaredIn>BITFeedbackComposeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;BITFeedbackComposeViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackComposeViewController/delegate</TokenIdentifier>
+			<Abstract type="html">Sets the BITFeedbackComposeViewControllerDelegate delegate.</Abstract>
+			<DeclaredIn>BITFeedbackComposeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;BITFeedbackComposeViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackComposeViewController/delegate</TokenIdentifier>
+			<Abstract type="html">Sets the BITFeedbackComposeViewControllerDelegate delegate.</Abstract>
+			<DeclaredIn>BITFeedbackComposeViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;BITFeedbackComposeViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackComposeViewController/prepareWithItems:</TokenIdentifier>
+			<Abstract type="html">An array of data objects that should be used to prefill the compose view content</Abstract>
+			<DeclaredIn>BITFeedbackComposeViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)prepareWithItems:(NSArray *)items</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>items</Name>
+					<Abstract type="html">Array of data objects to prefill the feedback text message.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/prepareWithItems:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

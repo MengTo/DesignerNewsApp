@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/BITUpdateSetting.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/BITUpdateSetting</TokenIdentifier>
+			<Abstract type="html">Update check interval</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="44"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITUpdateCheckStartup</TokenIdentifier>
+            <Abstract type="html">On every startup or or when the app comes to the foreground
+   </Abstract>
+            <Declaration>BITUpdateCheckStartup</Declaration>
+            
+            <DeclaredIn>BITUpdateManager.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITUpdateCheckDaily</TokenIdentifier>
+            <Abstract type="html">Once a day
+   </Abstract>
+            <Declaration>BITUpdateCheckDaily</Declaration>
+            
+            <DeclaredIn>BITUpdateManager.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITUpdateCheckManually</TokenIdentifier>
+            <Abstract type="html">Manually
+   </Abstract>
+            <Declaration>BITUpdateCheckManually</Declaration>
+            
+            <DeclaredIn>BITUpdateManager.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+	</File>
+</Tokens>

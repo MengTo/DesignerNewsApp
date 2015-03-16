@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BITCrashMetaData.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BITCrashMetaData</TokenIdentifier>
+			<Abstract type="html">This class provides properties that can be attached to a crash report via a custom alert view flow</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+            
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashMetaData/setUserDescription:</TokenIdentifier>
+			<Abstract type="html">User provided description that should be attached to the crash report as plain text</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *userDescription</Declaration>
+			
+			
+			<Anchor>//api/name/userDescription</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashMetaData/userDescription</TokenIdentifier>
+			<Abstract type="html">User provided description that should be attached to the crash report as plain text</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *userDescription</Declaration>
+			
+			
+			<Anchor>//api/name/userDescription</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashMetaData/userDescription</TokenIdentifier>
+			<Abstract type="html">User provided description that should be attached to the crash report as plain text</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *userDescription</Declaration>
+			
+			
+			<Anchor>//api/name/userDescription</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashMetaData/setUserName:</TokenIdentifier>
+			<Abstract type="html">User name that should be attached to the crash report</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *userName</Declaration>
+			
+			
+			<Anchor>//api/name/userName</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashMetaData/userName</TokenIdentifier>
+			<Abstract type="html">User name that should be attached to the crash report</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *userName</Declaration>
+			
+			
+			<Anchor>//api/name/userName</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashMetaData/userName</TokenIdentifier>
+			<Abstract type="html">User name that should be attached to the crash report</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *userName</Declaration>
+			
+			
+			<Anchor>//api/name/userName</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashMetaData/setUserEmail:</TokenIdentifier>
+			<Abstract type="html">User email that should be attached to the crash report</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *userEmail</Declaration>
+			
+			
+			<Anchor>//api/name/userEmail</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashMetaData/userEmail</TokenIdentifier>
+			<Abstract type="html">User email that should be attached to the crash report</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *userEmail</Declaration>
+			
+			
+			<Anchor>//api/name/userEmail</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashMetaData/userEmail</TokenIdentifier>
+			<Abstract type="html">User email that should be attached to the crash report</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *userEmail</Declaration>
+			
+			
+			<Anchor>//api/name/userEmail</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashMetaData/setUserID:</TokenIdentifier>
+			<Abstract type="html">User ID that should be attached to the crash report</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *userID</Declaration>
+			
+			
+			<Anchor>//api/name/userID</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashMetaData/userID</TokenIdentifier>
+			<Abstract type="html">User ID that should be attached to the crash report</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *userID</Declaration>
+			
+			
+			<Anchor>//api/name/userID</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashMetaData/userID</TokenIdentifier>
+			<Abstract type="html">User ID that should be attached to the crash report</Abstract>
+			<DeclaredIn>BITCrashMetaData.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *userID</Declaration>
+			
+			
+			<Anchor>//api/name/userID</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

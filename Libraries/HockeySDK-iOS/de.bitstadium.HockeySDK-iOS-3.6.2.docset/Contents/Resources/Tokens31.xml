@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/BITAuthenticatorAppRestrictionEnforcementFrequency.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/BITAuthenticatorAppRestrictionEnforcementFrequency</TokenIdentifier>
+			<Abstract type="html">Restriction enforcement styles</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+            
+			
+			<NodeRef refid="31"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITAuthenticatorAppRestrictionEnforcementOnFirstLaunch</TokenIdentifier>
+            <Abstract type="html">Checks if the user is allowed to use the app at the first time a version is started
+   </Abstract>
+            <Declaration>BITAuthenticatorAppRestrictionEnforcementOnFirstLaunch</Declaration>
+            
+            <DeclaredIn>BITAuthenticator.h</DeclaredIn>
+            
+            <NodeRef refid="31"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITAuthenticatorAppRestrictionEnforcementOnAppActive</TokenIdentifier>
+            <Abstract type="html">Checks if the user is allowed to use the app everytime the app becomes active
+   </Abstract>
+            <Declaration>BITAuthenticatorAppRestrictionEnforcementOnAppActive</Declaration>
+            
+            <DeclaredIn>BITAuthenticator.h</DeclaredIn>
+            
+            <NodeRef refid="31"/>
+        </Token>
+        
+	</File>
+</Tokens>

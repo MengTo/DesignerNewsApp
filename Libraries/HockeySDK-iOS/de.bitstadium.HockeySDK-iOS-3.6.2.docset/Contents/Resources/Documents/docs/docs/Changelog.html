@@ -1,0 +1,1055 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>Changelog Document</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../../css/stylesPrint.css" />	
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../../index.html">HockeySDK-iOS 3.6.2 </a></h1>
+				<a id="developerHome" href="../../index.html">Bit Stadium GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode" id="pageTitleHeader">Changelog Document</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<a title="Changelog Document" name="top"></a>
+			<div id="overview_contents" role="main">
+				<div id="container">	
+					<h2>Version 3.6.2</h2>
+
+<ul>
+<li>[UPDATE] Store anonymous UUID asynchronously into the keychain to work around rare keychain blocking behavior</li>
+<li>[UPDATE] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Improved detecting app specific binary images in crash report for improved crash grouping on the server</li>
+<li>[UPDATE] <a href="../../Classes/BITUpdateManager.html"><code>BITUpdateManager</code></a>: Added new <code>updateManagerWillExitApp</code> delegate method</li>
+<li>[UPDATE] <a href="../../Classes/BITUpdateManager.html"><code>BITUpdateManager</code></a>: Don&rsquo;t save any file when app was installed from App Store</li>
+<li>[BUGFIX] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Fixed issues with sending crash reports for apps with xml tags in the app name</li>
+<li>[BUGFIX] <a href="../../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>: Fixed screenshot trigger issue not always fetching the last taken image</li>
+<li>[BUGFIX] <a href="../../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>: Fixed compose view issue with predefined text</li>
+<li>[BUGFIX] Fixed a warning when integrating the binary framework for only crash reporting</li>
+<li>[BUGFIX] Fixed compiler warnings</li>
+<li>[BUGFIX] Various additional fixes</li>
+</ul>
+
+
+<h2>Version 3.6.1</h2>
+
+<ul>
+<li>[BUGFIX] Fixed feedback compose view to correctly show the text in landscape on iOS 8</li>
+</ul>
+
+
+<h2>Version 3.6</h2>
+
+<ul>
+<li>[NEW] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Added support for iOS 8 Extensions</li>
+<li>[NEW] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Option to add a custom UI flow before sending a crash report, e.g. to ask users for more details (see <code>setAlertViewHandler:</code>)</li>
+<li>[NEW] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Provide details on a crash report (see <code>lastSessionCrashDetails</code> and <a href="../../Classes/BITCrashDetails.html"><code>BITCrashDetails</code></a>)</li>
+<li>[NEW] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Experimental support for detecting app kills triggered by iOS while the app is in foreground (see <code>enableAppNotTerminatingCleanlyDetection</code>)</li>
+<li>[NEW] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Added <code>didReceiveMemoryWarningInLastSession</code> which indicates if the last app session did get a memory warning by iOS</li>
+<li>[NEW] <a href="../../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>: Attach and annotate images and screenshots</li>
+<li>[NEW] <a href="../../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>: Attach any binary data to compose message view (see <code>showFeedbackComposeViewWithPreparedItems:</code>)</li>
+<li>[NEW] <a href="../../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>: Show a compose message with a screenshot image attached using predefined triggers (see <code>feedbackObservationMode</code>) or your own custom triggers (see <code>showFeedbackComposeViewWithGeneratedScreenshot</code>)</li>
+<li>[NEW] Minimum iOS Deployment version is now iOS 6.0</li>
+<li>[NEW] Requires to link additional frameworks: <code>AssetLibrary</code>, <code>MobileCoreServices</code>, <code>QuickLook</code></li>
+<li>[UPDATE] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Updated <code>setCrashCallbacks</code> handling now using <code>BITCrashManagerCallbacks</code> instead of <code>PLCrashReporterCallbacks</code> (which is no longer public)</li>
+<li>[UPDATE] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Crash reports are now sent individually if there are multiple pending</li>
+<li>[UPDATE] <a href="../../Classes/BITUpdateManager.html"><code>BITUpdateManager</code></a>: Improved algorithm for fetching an optimal sized app icon for the Update View</li>
+<li>[UPDATE] <a href="../../Classes/BITUpdateManager.html"><code>BITUpdateManager</code></a>: Properly consider paragraphs in release notes when presenting them in the Update view</li>
+<li>[UPDATE] Property <code>delegate</code> in all components is now private. Set the delegate on <a href="../../Classes/BITHockeyManager.html"><code>BITHockeyManager</code></a> only!</li>
+<li>[UPDATE] Removed support for Atlassian JMC</li>
+<li>[BUGFIX] Various additional fixes
+<br /><br/></li>
+</ul>
+
+
+<h2>Version 3.6.0 Beta 2</h2>
+
+<ul>
+<li>[NEW] <a href="../../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>: Screenshot feature is now part of the public API</li>
+<li>[UPDATE] <a href="../../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>: Various improvements for the screenshot feature</li>
+<li>[UPDATE] <a href="../../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>: Added <a href="../../Classes/BITHockeyAttachment.html"><code>BITHockeyAttachment</code></a> for more customizable attachments to feedback (<code>content-type</code>, <code>filename</code>)</li>
+<li>[UPDATE] <a href="../../Classes/BITUpdateManager.html"><code>BITUpdateManager</code></a>: Improved algorithm for fetching an optimal sized app icon for the Update View</li>
+<li>[UPDATE] <a href="../../Classes/BITUpdateManager.html"><code>BITUpdateManager</code></a>: Properly consider paragraphs in releases notes when presenting them in the Update View</li>
+<li>[UPDATE] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Updated PLCrashReporter to version 1.2</li>
+<li>[UPDATE] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Added <code>osVersion</code> and <code>osBuild</code> properties to <a href="../../Classes/BITCrashDetails.html"><code>BITCrashDetails</code></a></li>
+<li>[BUGFIX] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Use correct filename for crash report attachments</li>
+<li>[UPDATE] Property <code>delegate</code> in all components is now private. Set the delegate on <a href="../../Classes/BITHockeyManager.html"><code>BITHockeyManager</code></a> only!</li>
+<li>[BUGFIX] Various additional fixes
+<br /><br/></li>
+</ul>
+
+
+<h2>Version 3.6.0 Beta 1</h2>
+
+<ul>
+<li>[NEW] Minimum iOS Deployment version is now iOS 6.0</li>
+<li>[NEW] Requires to link additional frameworks: <code>AssetLibrary</code>, <code>MobileCoreServices</code>, <code>QuickLook</code></li>
+<li>[NEW] <a href="../../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>: Attach and annotate images and screenshots</li>
+<li>[NEW] <a href="../../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>: Attach any binary data to compose message view (see <code>showFeedbackComposeViewWithPreparedItems:</code>)</li>
+<li>[NEW] <a href="../../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>: Show a compose message with a screenshot image attached using predefined triggers (see <code>feedbackObservationMode</code>) or your own custom triggers (see <code>showFeedbackComposeViewWithGeneratedScreenshot</code>)</li>
+<li>[NEW] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Option to add a custom UI flow before sending a crash report, e.g. to ask users for more details (see <code>setAlertViewHandler:</code>)</li>
+<li>[NEW] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Provide details on a crash report (see <code>lastSessionCrashDetails</code>)</li>
+<li>[NEW] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Experimental support for detecting app kills triggered by iOS while the app is in foreground (see <code>enableAppNotTerminatingCleanlyDetection</code>)</li>
+<li>[NEW] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Added <code>didReceiveMemoryWarningInLastSession</code> which indicates if the last app session did get a memory warning by iOS</li>
+<li>[UPDATE] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Updated <code>setCrashCallbacks</code> handling now using <code>BITCrashManagerCallbacks</code> instead of <code>PLCrashReporterCallbacks</code> (which is no longer public)</li>
+<li>[UPDATE] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Crash reports are now send individually if there are multiple pending</li>
+<li>[UPDATE] Removed support for Atlassian JMC</li>
+<li>[BUGFIX] Fixed an incorrect submission warning about referencing non-public selector <code>attachmentData</code>
+<br /><br/></li>
+</ul>
+
+
+<h2>Version 3.5.7</h2>
+
+<ul>
+<li>[UPDATE] Easy Swift integration for binary distribution (No Objective-C bridging header required)</li>
+<li>[UPDATE] <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a>: Improved keychain handling</li>
+<li>[UPDATE] <a href="../../Classes/BITUpdateManager.html"><code>BITUpdateManager</code></a>: Improved iOS 8 In-App-Update process handling</li>
+<li>[BUGFIX] <a href="../../Classes/BITUpdateManager.html"><code>BITUpdateManager</code></a>: Fixed layout issue for resizable iOS layout</li>
+<li>[BUGFIX] Fixed an iTunes Connect warning for <code>attachmentData</code> property
+<br /><br/></li>
+</ul>
+
+
+<h2>Version 3.5.6</h2>
+
+<ul>
+<li>[UPDATE] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Updated PLCrashReporter to version 1.2</li>
+<li>[UPDATE] <a href="../../Classes/BITUpdateManager.html"><code>BITUpdateManager</code></a>: Improved algorithm to find the optimal app icon</li>
+<li>[BUGFIX] <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a>: Fixed problem with authorization and iOS 8</li>
+<li>[BUGFIX] Fixed a problem with integration test and iOS 8
+<br /><br/></li>
+</ul>
+
+
+<h2>Version 3.5.5</h2>
+
+<ul>
+<li>[NEW] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Added support for adding a binary attachment to crash reports</li>
+<li>[NEW] <a href="../../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Integrated PLCrashReporter 1.2 RC5 (with 2 more fixes)</li>
+<li>[BUGFIX] <a href="../../Classes/BITUpdateManager.html"><code>BITUpdateManager</code></a>: Fixed problem with <code>checkForUpdate</code> when <code>updateSetting</code> is set to <code>BITUpdateCheckManually</code></li>
+<li>[BUGFIX] <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a>: Fixed keychain warning alert showing app on launch if keychain is locked</li>
+<li>[BUGFIX] <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a>: Fixed a possible assertion problem with auto-authentication (when using custom SDK builds without assertions being disabled)</li>
+<li>[BUGFIX] <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a>: Added user email to crash report for beta builds if <a href="../../Classes/BITAuthenticator.html">BITAuthenticator</a> is set to BITAuthenticatorIdentificationTypeWebAuth</li>
+<li>[BUGFIX] Fixed more analyzer warnings
+<br /><br/></li>
+</ul>
+
+
+<h2>Version 3.5.4</h2>
+
+<ul>
+<li>[BUGFIX] Fix a possible crash before sending the crash report when the selector could not be found</li>
+<li>[BUGFIX] Fix a memory leak in keychain handling
+<br /><br/></li>
+</ul>
+
+
+<h2>Version 3.5.3</h2>
+
+<ul>
+<li>[NEW] Crash Reports now provide the selector name e.g. for crashes in <code>objc_MsgSend</code></li>
+<li>[NEW] Add setter for global <code>userID</code>, <code>userName</code>, <code>userEmail</code>. Can be used instead of the delegates.</li>
+<li>[UPDATE] On device symbolication is now optional, disabled by default</li>
+<li>[BUGFIX] Fix for automatic authentication not always working correctly</li>
+<li>[BUGFIX] <a href="../../Protocols/BITFeedbackComposeViewControllerDelegate.html"><code>BITFeedbackComposeViewControllerDelegate</code></a> now also works for compose view controller used by the feedback list view</li>
+<li>[BUGFIX] Fix typos in documentation
+<br /><br/></li>
+</ul>
+
+
+<h2>Version 3.5.2</h2>
+
+<ul>
+<li>[UPDATE] Make sure a log message appears in the console if the SDK is not setup on the main thread</li>
+<li>[BUGFIX] Fix usage time always being send as <code>0</code> instead of sending the actual usage time</li>
+<li>[BUGFIX] Fix &ldquo;Install&rdquo; button in the mandatory update alert not working and forcing users to use the &ldquo;show&rdquo; button and then install from the update view instead</li>
+<li>[BUGFIX] Fix possible unused function warnings</li>
+<li>[BUGFIX] Fix two warnings when <code>-Wshorten-64-to-32</code> is set.</li>
+<li>[BUGFIX] Fix typos in documentation
+<br /><br/></li>
+</ul>
+
+
+<h2>Version 3.5.1</h2>
+
+<ul>
+<li><p>General</p>
+
+<ul>
+<li>[NEW] Add new initialize to make the configuration easier: <a href="../../Classes/BITHockeyManager.html#//api/name/configureWithIdentifier:"><code>[BITHockeyManager configureWithIdentifier:]</code></a></li>
+<li>[NEW] Add <a href="../../Classes/BITHockeyManager.html#//api/name/testIdentifier"><code>[BITHockeyManager testIdentifier]</code></a> to check if the SDK reaches the server. The result is shown on the HockeyApp website on success.</li>
+<li>[UPDATE] <code>delegate</code> can now also be defined using the property directly (instead of using the configureWith methods)</li>
+<li>[UPDATE] Use system provided Base64 encoding implementation</li>
+<li>[UPDATE] Improved logic to choose the right <code>UIWindow</code> instance for dialogs</li>
+<li>[BUGFIX] Fix compile issues when excluding all modules but crash reporting</li>
+<li>[BUGFIX] Fix warning on implicit conversion from <code>CGImageAlphaInfo</code> to <code>CGBitmapInfo</code></li>
+<li>[BUGFIX] Fix warnings for implicit conversions of <code>UITextAlignment</code> and <code>UILineBreakMode</code></li>
+<li>[BUGFIX] Various additional smaller bug fixes
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Crash Reporting</p>
+
+<ul>
+<li>[NEW] Integrated PLCrashReporter 1.2 RC 2</li>
+<li>[NEW] Add <code>generateTestCrash</code> method to more quickly test the crash reporting (automatically disabled in App Store environment!)</li>
+<li>[NEW] Add PLCR header files to the public headers in the framework</li>
+<li>[NEW] Add the option to define callbacks that will be executed prior to program termination after a crash has occurred. Callback code has to be async-safe!</li>
+<li>[UPDATE] Change the default of <code>showAlwaysButton</code> property to <code>YES</code></li>
+<li>[BUGFIX] Always format date and timestamps in crash report in <code>en_US_POSIX</code> locale.
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Feedback</p>
+
+<ul>
+<li>[UPDATE] Use only one activity view controller per UIActivity</li>
+<li>[BUGFIX] Fix delete button appearance in feedback list view on iOS 7 when swiping a feedback message</li>
+<li>[BUGFIX] Comply to [UIActivity activityDidFinish:] requirements</li>
+<li>[BUGFIX] Use non-deprecated delegate method for <a href="../../Classes/BITFeedbackActivity.html"><code>BITFeedbackActivity</code></a>
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Authentication</p>
+
+<ul>
+<li>[NEW] Automatic authorization when app was installed over the air. This still requires to call <code>[</code>[BITAuthenticator authenticateInstallation]<code>](../../Classes/BITAuthenticator.html#//api/name/authenticateInstallation);</code> after calling <code>startManager</code>!</li>
+<li>[UPDATE] Set the tintColor in the auth view and modal views navigation controller on iOS 7</li>
+<li>[UPDATE] Show an alert if the authentication token could not be stored into the keychain</li>
+<li>[UPDATE] Use UTF8 encoding for auth data</li>
+<li>[UPDATE] Replace email placeholder texts</li>
+<li>[BUGFIX] Make sure the authentication window is always correctly dismissed</li>
+<li>[BUGFIX] Fixed memory issues
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Updates</p>
+
+<ul>
+<li>[NEW] Provide alert option to show mandatory update details</li>
+<li>[NEW] Add button to expired page (and alert) that lets the user check for a new version (can be disabled using <code>disableUpdateCheckOptionWhenExpired</code>)</li>
+<li>[UPDATE] Usage metrics are now stored in an independent file instead of using <code>NSUserDefaults</code>
+<br /><br/></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 3.5.0</h2>
+
+<ul>
+<li><p>General</p>
+
+<ul>
+<li>[NEW] Added support for iOS 7</li>
+<li>[NEW] Added support for arm64 architecture</li>
+<li>[NEW] Added <a href="../../Classes/BITStoreUpdateManager.html"><code>BITStoreUpdateManager</code></a> for alerting the user of available App Store updates (disabled by default)</li>
+<li>[NEW] Added <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a> class for authorizing installations (Ad-Hoc/Enterprise builds only!)</li>
+<li>[NEW] Added support for apps starting in the background</li>
+<li>[NEW] Added possibility to build custom frameworks including/excluding specific modules from the static library (see <code>HockeySDKFeatureConfig.h</code>)</li>
+<li>[NEW] Added public access to the anonymous UUID that the SDK generates per app installation</li>
+<li>[NEW] Added possibility to overwrite SDK specific localization strings in the apps localization files</li>
+<li>[UPDATE] Updated localizations provided by <a href="http://wordcrafts.de">Wordcrafts.de</a>:
+Chinese, Dutch, English, French, German, Hungarian, Italian, Japanese, Portuguese, Brazilian-Portuguese, Romanian, Russian, Spanish</li>
+<li>[UPDATE] User related data is now stored in the keychain instead of property files</li>
+<li>[UPDATE] SDK documentation improvements</li>
+<li>[BUGFIX] Fixed multiple compiler warnings</li>
+<li>[BUGFIX] Various UI updates and fixes
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Crash Reporting</p>
+
+<ul>
+<li>[NEW] Integrated PLCrashReporter 1.2 beta 3</li>
+<li>[NEW] Added optional support for Mach exceptions</li>
+<li>[NEW] Added support for arm64</li>
+<li>[UPDATE] PLCrashReporter build with <code>BIT</code> namespace to avoid collisions</li>
+<li>[UPDATE] Crash reporting is automatically disabled when the app is invoked with the debugger!</li>
+<li>[UPDATE] Automatically add the users UDID or email to crash reports in Ad-Hoc/Enterprise builds if they are provided by <a href="../../Classes/BITAuthenticator.html">BITAuthenticator</a>
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Feedback</p>
+
+<ul>
+<li>[NEW] New protocol to inform about incoming feedback messages, see <a href="../../Protocols/BITFeedbackManagerDelegate.html"><code>BITFeedbackManagerDelegate</code></a></li>
+<li>[UPDATE] Added method in <a href="../../Protocols/BITFeedbackComposeViewControllerDelegate.html"><code>BITFeedbackComposeViewControllerDelegate</code></a> to let the app know if the user submitted a new message or cancelled it
+<br /><br/></li>
+</ul>
+</li>
+<li><p>App Store Updates</p>
+
+<ul>
+<li>[NEW] Inform user when a new version is available in the App Store (optional, disabled by default)
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Authentication</p>
+
+<ul>
+<li>[NEW] <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a> identifies app installations, automatically disabled in App Store environments</li>
+<li>[NEW] <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a> can identify the user through:
+
+<ul>
+<li>The email address of their HockeyApp account</li>
+<li>Login with their HockeyApp account (does not work with Facebook accounts!)</li>
+<li>Installation of the HockeyApp web-clip to provide the UDID (requires the app to handle URL callbacks)</li>
+<li>Web based login with their HockeyApp account</li>
+</ul>
+</li>
+<li>[NEW] <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a> can require the authorization:
+
+<ul>
+<li>Never</li>
+<li>On first app version launch</li>
+<li>Whenever the app comes into foreground (requires the device to have a working internet connection)</li>
+</ul>
+</li>
+<li>[NEW] Option to customize the authentication flow</li>
+<li>[NEW] Possibility to use an existing URL scheme
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Updates</p>
+
+<ul>
+<li>[UPDATE] Removed delegate for getting the UDID, please migrate to the new <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a></li>
+<li>[NEW] In-app updates are now only offered if the device matches the minimum OS version requirement
+<br /><br/></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<h2>Version 3.5.0 RC 3</h2>
+
+<ul>
+<li><p>General</p>
+
+<ul>
+<li>[NEW] Added public access to the anonymous UUID that the SDK generates per app installation</li>
+<li>[NEW] Added possibility to overwrite SDK specific localization strings in the apps localization files</li>
+<li>[UPDATE] Podspec updates</li>
+<li>[BUGFIX] Fixed memory leaks</li>
+<li>[BUGFIX] Various minor bugfixes
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Crash Reporting</p>
+
+<ul>
+<li>[UPDATE] Integrated PLCrashReporter 1.2 beta 3</li>
+<li>[BUGFIX] Fixed crash if minimum OS version isn&rsquo;t provided</li>
+<li>[BUGFIX] Update private C function to use BIT namespace
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Feedback</p>
+
+<ul>
+<li>[BUGFIX] Fixed some layout issues in the user info screen
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Updates</p>
+
+<ul>
+<li>[BUGFIX] Fixed update view controller not showing updated content after using the check button</li>
+<li>[BUGFIX] Fixed usage value being reset on every app cold start
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Authentication</p>
+
+<ul>
+<li>[NEW] Added web based user authentication</li>
+<li>[UPDATE] IMPORTANT: You need to call <code>[[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];</code> yourself after startup when the authentication and/or verification should be performed and when it is safe to present a modal view controller!</li>
+<li>[UPDATE] Removed <code>automaticMode</code>. You now need to call <code>authenticateInstallation</code> when it is safe to do so or handle the complete process yourself.
+<br /><br/></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 3.5.0 RC 2</h2>
+
+<ul>
+<li><p>General</p>
+
+<ul>
+<li>[BUGFIX] Remove assertions from release build
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Updates</p>
+
+<ul>
+<li>[BUGFIX] Add new iOS 7 icon sizes detection and adjust corner radius
+<br /><br/></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 3.5.0 RC 1</h2>
+
+<ul>
+<li><p>General</p>
+
+<ul>
+<li>[UPDATE] Documentation improvements nearly everywhere
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Crash Reporting</p>
+
+<ul>
+<li>[UPDATE] Integrated PLCrashReporter 1.2 beta 2</li>
+<li>[UPDATE] 64 bit crash reports now contain the correct architecture string</li>
+<li>[UPDATE] Automatically add the users UDID or email to crash reports in Ad-Hoc/Enterprise builds if they are provided by <a href="../../Classes/BITAuthenticator.html">BITAuthenticator</a></li>
+<li>[BUGFIX] Fixed userName, userEmail and userID not being added to crash reports
+<br /><br/></li>
+</ul>
+</li>
+<li><p>App Store Updates</p>
+
+<ul>
+<li>[UPDATE] Changed default update check interval to weekly
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Authentication</p>
+
+<ul>
+<li>[NEW] Redesigned API for easier usage and more flexibility (please check the documentation!)</li>
+<li>[NEW] Added option to customize the authentication flow</li>
+<li>[NEW] Added option to provide a custom parentViewController for presenting the UI</li>
+<li>[NEW] Added possibility to use an existing URL scheme</li>
+<li>[BUGFIX] Fixed authentication UI appearing after updating apps without changing the authentication settings
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Updates</p>
+
+<ul>
+<li>[UPDATE] Don&rsquo;t add icon gloss to icons when running on iOS 7</li>
+<li>[BUGFIX] Fixed a few iOS 7 related UI problems in the update view
+<br /><br/></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 3.5.0 Beta 3</h2>
+
+<ul>
+<li><p>Feedback</p>
+
+<ul>
+<li>[BUGFIX] Fix a layout issue with the compose feedback UI on the iPad with iOS 7 in landscape orientation
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Authentication</p>
+
+<ul>
+<li>[BUGFIX] Fix a possible crash in iOS 5
+<br /><br/></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 3.5.0 Beta 2</h2>
+
+<ul>
+<li><p>General</p>
+
+<ul>
+<li>[NEW] Added support for apps starting in the background</li>
+<li>[UPDATE] Added updated CocoaSpec</li>
+<li>[BUGFIX] Various documentation improvements
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Authentication</p>
+
+<ul>
+<li>[BUGFIX] Fix duplicate count of installations
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Updates</p>
+
+<ul>
+<li>[BUGFIX] Update view not showing any versions</li>
+<li>[BUGFIX] Fix a crash presenting the update view on iOS 5 and iOS 6
+<br /><br/></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 3.5.0 Beta 1</h2>
+
+<ul>
+<li><p>General</p>
+
+<ul>
+<li>[NEW] Added support for iOS 7</li>
+<li>[NEW] Added experimental support for arm64 architecture</li>
+<li>[NEW] Added <a href="../../Classes/BITStoreUpdateManager.html"><code>BITStoreUpdateManager</code></a> for alerting the user of available App Store updates (disabled by default)</li>
+<li>[NEW] Added <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a> class for authorizing installations (Ad-Hoc/Enterprise builds only!)</li>
+<li>[NEW] Added possibility to build custom frameworks including/excluding specific modules from the static library (see <code>HockeySDKFeatureConfig.h</code>)</li>
+<li>[UPDATE] User related data is now stored in the keychain instead of property files</li>
+<li>[UPDATE] SDK documentation improvements</li>
+<li>[BUGFIX] Fixed multiple compiler warnings</li>
+<li>[BUGFIX] Fixed a few UI glitches, e.g. adjusting status bar style
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Crash Reporting</p>
+
+<ul>
+<li>[NEW] Integrated PLCrashReporter 1.2 beta 1</li>
+<li>[NEW] Added optional support for Mach exceptions</li>
+<li>[NEW] Experimental support for arm64 (will be tested and improved once devices are available)</li>
+<li>[UPDATE] PLCrashReporter build with <code>BIT</code> namespace to avoid collisions</li>
+<li>[UPDATE] Crash reporting is automatically disabled when the app is invoked with the debugger!
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Feedback</p>
+
+<ul>
+<li>[NEW] New protocol to inform about incoming feedback messages, see <a href="../../Protocols/BITFeedbackManagerDelegate.html"><code>BITFeedbackManagerDelegate</code></a></li>
+<li>[UPDATE] Added method in <a href="../../Protocols/BITFeedbackComposeViewControllerDelegate.html"><code>BITFeedbackComposeViewControllerDelegate</code></a> to let the app know if the user submitted a new message or cancelled it
+<br /><br/></li>
+</ul>
+</li>
+<li><p>App Store Updates</p>
+
+<ul>
+<li>[NEW] Inform user when a new version is available in the App Store (optional, disabled by default)
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Ad-Hoc/Enterprise Updates and Authentication</p>
+
+<ul>
+<li>[UPDATE] Removed delegate for getting the UDID, please migrate to the new <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a></li>
+<li>[NEW] In-app updates are now only offered if the device matches the minimum OS version requirement</li>
+<li>[NEW] <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a> identifies app installations, automatically disabled in App Store environments</li>
+<li>[NEW] <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a> can identify the user through:
+
+<ul>
+<li>The email address of his/her HockeyApp account</li>
+<li>Login with his/her HockeyApp account (does not work with Facebook accounts!)</li>
+<li>Installation of the HockeyApp web-clip to provide the UDID (requires the app to handle URL callbacks)</li>
+</ul>
+</li>
+<li>[NEW] <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a> can require the authorization:
+
+<ul>
+<li>Never</li>
+<li>Optionally, i.e. the user can skip the dialog</li>
+<li>On first app version launch</li>
+<li>Whenever the app comes into foreground (requires the device to have a working internet connection)
+<br /><br/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 3.0.0</h2>
+
+<ul>
+<li><p>General</p>
+
+<ul>
+<li>[NEW] Added new Feedback module</li>
+<li>[NEW] Minimum iOS Deployment version is now iOS 5.0</li>
+<li>[NEW] Migrated to use ARC</li>
+<li>[NEW] Added localizations provided by <a href="http://wordcrafts.de">Wordcrafts.de</a>:
+Chinese, English, French, German, Italian, Japanese, Portuguese, Brazilian-Portuguese, Russian, Spanish</li>
+<li>[NEW] Added Romanian, Hungarian localization</li>
+<li>[UPDATE] Updated integration and migration documentation
+
+<ul>
+<li><a href="http://www.hockeyapp.net/help/sdk/ios/3.0.0/docs/docs/Guide-Installation-Setup.html">Installation &amp; Setup</a> (Recommended)</li>
+<li><a href="http://www.hockeyapp.net/help/sdk/ios/3.0.0/docs/docs/Guide-Installation-Setup-Advanced.html">Installation &amp; Setup Advanced</a> (Using Git submodule and Xcode sub-project)</li>
+<li><a href="http://www.hockeyapp.net/help/sdk/ios/3.0.0/docs/docs/Guide-Migration-Kits.html">Migration from previous SDK Versions</a></li>
+</ul>
+</li>
+<li>[UPDATE] Using embedded.framework for binary distribution containing everything needed in one package</li>
+<li>[UPDATE] Improved Xcode project setup to only use one static library</li>
+<li>[UPDATE] Providing build settings as <code>HockeySDK.xcconfig</code> file for easier setup</li>
+<li>[UPDATE] Remove <code>-ObjC</code> from <code>Other Linker Flags</code>, since the SDK doesn&rsquo;t need it anymore</li>
+<li>[UPDATE] Improved documentation</li>
+<li>[UPDATE] Excluded binary UUID check from simulator builds, so unit test targets will work. But functionality based on binary UUID cannot be tested in the simulator, e.g. update without changing build version.</li>
+<li>[BUGFIX] Fixed some new compiler warnings</li>
+<li>[BUGFIX] Fixed some missing new lines at EOF</li>
+<li>[BUGFIX] Make sure sure JSON serialization doesn&rsquo;t crash if the string is nil</li>
+<li>[BUGFIX] Various additional minor fixes
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Crash Reporting</p>
+
+<ul>
+<li>[NEW] Added anonymous device ID to crash reports</li>
+<li>[UPDATE] The following delegates in <a href="../../Protocols/BITCrashManagerDelegate.html"><code>BITCrashManagerDelegate</code></a> moved to <a href="../../Protocols/BITHockeyManagerDelegate.html"><code>BITHockeyManagerDelegate</code></a>:</li>
+<li><code>- (NSString *)userNameForCrashManager:(</code>BITCrashManager<code> *)crashManager;</code> is now <code>- (NSString *)userNameForHockeyManager:(</code>BITHockeyManager<code> *)hockeyManager componentManager:(</code>BITHockeyBaseManager<code> *)componentManager;</code></li>
+<li><code>- (NSString *)userEmailForCrashManager:(</code>BITCrashManager<code> *)crashManager;</code> is now <code>- (NSString *)userEmailForHockeyManager:(</code>BITHockeyManager<code> *)hockeyManager componentManager:(</code>BITHockeyBaseManager<code> *)componentManager;</code></li>
+<li>[BUGFIX] Moved calculation of time interval between startup and crash further up in the code, so delegates can use this information e.g. to add it into a log file</li>
+<li>[BUGFIX] If a crash was detected but could not be read (if handling crashes on startup is implemented), the delegate is still called</li>
+<li>[BUGFIX] Timestamp in crash report is now always UTC in en_US locale</li>
+<li>[BUGFIX] Make sure crash reports incident identifier and key don&rsquo;t have special [] chars and some value
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Feedback</p>
+
+<ul>
+<li>[NEW] User feedback interface for direct communication with your users</li>
+<li>[NEW] iOS 6 UIActivity component for integrating feedback</li>
+<li>[NEW] When first opening the feedback list view, user details and show compose screen are automatically shown
+<br /><br/></li>
+</ul>
+</li>
+<li><p>Updating</p>
+
+<ul>
+<li>[NEW] Support for In-App updates without changing <code>CFBundleVersion</code></li>
+<li>[UPDATE] Update UI modified to be more iOS 6 alike</li>
+<li>[UPDATE] Update UI shows the company name next to the app name if defined in the backend</li>
+<li><p>[UPDATE] Updated integration and migration documentation: <a href="http://www.hockeyapp.net/help/sdk/ios/3.0.0/docs/docs/Guide-Installation-Setup.html">Installation &amp; Setup</a> (Recommended), <a href="http://www.hockeyapp.net/help/sdk/ios/3.0.0/docs/docs/Guide-Installation-Setup-Advanced.html">Installation &amp; Setup Advanced</a> (Using Git submodule and Xcode sub-project), <a href="http://www.hockeyapp.net/help/sdk/ios/3.0.0/docs/docs/Guide-Migration-Kits.html">Migration from previous SDK Versions</a></p></li>
+<li><p>[BUGFIX] Fixed a problem showing the update UI animated if there TTNavigator class is present even though not being used</p></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<h3>Version 3.0.0 RC 1</h3>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>[NEW] Added localizations provided by <a href="http://wordcrafts.de">Wordcrafts.de</a>:
+Chinese, English, French, German, Italian, Japanese, Portuguese, Brazilian-Portuguese, Russian, Spanish</li>
+<li>[NEW] Added Romanian localization</li>
+<li>[UPDATE] Documentation improvements</li>
+<li>[UPDATE] Exclude binary UUID check from simulator builds, so unit test targets will work. But functionality based on binary UUID cannot be tested in the simulator, e.g. update without changing build version.</li>
+<li>[BUGFIX] Cocoapods bugfix for preprocessor definitions</li>
+<li>[BUGFIX] Various additional minor fixes</li>
+</ul>
+</li>
+<li><p>Feedback:</p>
+
+<ul>
+<li>[UPDATE] Only push user details screen automatically onto the list view once</li>
+<li>[BUGFIX] Show proper missing user name or email instead of showing <code>(null)</code> in a button</li>
+<li>[BUGFIX] Various fixes to changing the <code>requireUserEmail</code> and <code>requireUserName</code> values</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Version 3.0.0b5</h3>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>[NEW] Remove <code>-ObjC</code> from <code>Other Linker Flags</code>, since the SDK doesn&rsquo;t need it</li>
+<li>[NEW] Update localizations (german, croatian)</li>
+<li>[BUGFIX] Fix some new compiler warnings</li>
+<li>[BUGFIX] Fix some missing new lines at EOF</li>
+<li>[BUGFIX] Make sure sure JSON serialization doesn&rsquo;t crash if the string is nil</li>
+</ul>
+</li>
+<li><p>Crash Reporting:</p>
+
+<ul>
+<li>[NEW] Add anonymous device ID to crash reports</li>
+<li>[BUGFIX] Move calculation of time interval between startup and crash further up in the code, so delegates can use this information e.g. to add it into a log file</li>
+<li>[BUGFIX] Call delegate also if a crash was detected but could not be read (if handling crashes on startup is implemented)</li>
+<li>[BUGFIX] Format timestamp in crash report to be always UTC in en_US locale</li>
+<li>[BUGFIX] Make sure crash reports incident identifier and key don&rsquo;t have special [] chars and some value</li>
+</ul>
+</li>
+<li><p>Feedback:</p>
+
+<ul>
+<li>[NEW] Ask user details and show compose screen automatically on first opening feedback list view</li>
+<li>[BUGFIX] Fix some users own messages re-appearing after deleting them</li>
+<li>[BUGFIX] Problems displaying feedback list view in a navigation hierarchy</li>
+</ul>
+</li>
+<li><p>Updating:</p>
+
+<ul>
+<li>[BUGFIX] Fix a problem showing the update UI animated if there TTNavigator class is present even though not being used</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Version 3.0.0b4</h3>
+
+<ul>
+<li><p>Crash Reporting:</p>
+
+<ul>
+<li>[BUGFIX] Fix a crash if <code>username</code>, <code>useremail</code> or <code>userid</code> delegate method returns <code>nil</code> and trying to send a crash report</li>
+</ul>
+</li>
+<li><p>Feedback:</p>
+
+<ul>
+<li>[BUGFIX] Fix user data UI not always being presented as a form sheet on the iPad</li>
+</ul>
+</li>
+<li><p>Updating:</p>
+
+<ul>
+<li>[BUGFIX] Fix a problem showing the update UI animated if there TTNavigator class is present even though not being used</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Version 3.0.0b3</h3>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>[BUGFIX] Exchange some more prefixes of TTTAttributedLabel class that have been missed out</li>
+<li>[BUGFIX] Fix some new compiler warnings</li>
+</ul>
+</li>
+<li><p>Crash Reporting:</p>
+
+<ul>
+<li>[BUGFIX] Format timestamp in crash report to be always UTC in en_US locale</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Version 3.0.0b2</h3>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>[BUGFIX] Add missing header files to the binary distribution</li>
+<li>[BUGFIX] Add missing new lines of two header files</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Version 3.0.0b1</h3>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>[NEW] Feedback component</li>
+<li>[NEW] Minimum iOS Deployment version is now iOS 5.0</li>
+<li>[NEW] Migrated to use ARC</li>
+<li>[UPDATE] Improved Xcode project setup to only use one static library</li>
+<li>[UPDATE] Providing build settings as <code>HockeySDK.xcconfig</code> file for easier setup</li>
+<li>[UPDATE] Using embedded.framework for binary distribution containing everything needed in one package</li>
+</ul>
+</li>
+<li><p>Feedback:</p>
+
+<ul>
+<li>[NEW] User feedback interface for direct communication with your users</li>
+<li>[NEW] iOS 6 UIActivity component for integrating feedback</li>
+</ul>
+</li>
+<li><p>Updating:</p>
+
+<ul>
+<li>[NEW] Support for In-App updates without changing <code>CFBundleVersion</code></li>
+<li>[UPDATE] Update UI modified to be more iOS 6 alike</li>
+<li>[UPDATE] Update UI shows the company name next to the app name if defined in the backend</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 2.5.5</h2>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>[BUGFIX] Fix some new compiler warnings</li>
+</ul>
+</li>
+<li><p>Crash Reporting:</p>
+
+<ul>
+<li>[NEW] Add anonymous device ID to crash reports</li>
+<li>[BUGFIX] Move calculation of time interval between startup and crash further up in the code, so delegates can use this information e.g. to add it into a log file</li>
+<li>[BUGFIX] Call delegate also if a crash was detected but could not be read (if handling crashes on startup is implemented)</li>
+<li>[BUGFIX] Format timestamp in crash report to be always UTC in en_US locale</li>
+<li>[BUGFIX] Make sure crash reports incident identifier and key don&rsquo;t have special [] chars and some value</li>
+</ul>
+</li>
+<li><p>Updating:</p>
+
+<ul>
+<li>[BUGFIX] Fix a problem showing the update UI animated if there TTNavigator class is present even though not being used</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 2.5.4</h2>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>Declared as final release, since everything in 2.5.4b3 is working as expected</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Version 2.5.4b3</h3>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>[NEW] Atlassian JMC support disabled (Use subproject integration if you want it)</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Version 2.5.4b2</h3>
+
+<ul>
+<li><p>Crash Reporting:</p>
+
+<ul>
+<li>[UPDATE] Migrate pre v2.5 auto send user setting</li>
+<li>[BUGFIX] The alert option &lsquo;Auto Send&rsquo; did not persist correctly</li>
+</ul>
+</li>
+<li><p>Updating:</p>
+
+<ul>
+<li>[BUGFIX] Authorization option did not persist correctly and caused authorization to re-appear on every cold app start</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Version 2.5.4b1</h3>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>[NEW] JMC support is removed from binary distribution, requires the compiler preprocessor definition <code>JIRA_MOBILE_CONNECT_SUPPORT_ENABLED=1</code> to be linked. Enabled when using the subproject</li>
+<li>[BUGFIX] Fix compiler warnings when using Cocoapods</li>
+</ul>
+</li>
+<li><p>Updating:</p>
+
+<ul>
+<li>[BUGFIX] <code>expiryDate</code> property not working correctly</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 2.5.3</h2>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>[BUGFIX] Fix checking validity of live identifier not working correctly</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 2.5.2</h2>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>Declared as final release, since everything in 2.5.2b2 is working as expected</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Version 2.5.2b2</h3>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>[NEW] Added support for armv7s architecture</li>
+</ul>
+</li>
+<li><p>Updating:</p>
+
+<ul>
+<li>[BUGFIX] Fix update checks not done when the app becomes active again</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Version 2.5.2b1</h3>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>[NEW] Replace categories with C functions, so the <code>Other Linker Flag</code> <code>-ObjC</code> and <code>-all_load</code> won&rsquo;t not be needed for integration</li>
+<li>[BUGFIX] Some code style fixes and missing new lines in headers at EOF</li>
+</ul>
+</li>
+<li><p>Crash Reporting:</p>
+
+<ul>
+<li>[NEW] PLCrashReporter framework now linked into the HockeySDK framework, so that won&rsquo;t be needed to be added separately any more</li>
+<li>[NEW] Add some error handler detection to optionally notify the developer of multiple handlers that could cause crashes not to be reported to HockeyApp</li>
+<li>[NEW] Show an error in the console if an older version of PLCrashReporter is linked</li>
+<li>[NEW] Make sure the app doesn&rsquo;t crash if the developer forgot to delete the old PLCrashReporter version and the framework search path is still pointing to it</li>
+</ul>
+</li>
+<li><p>Updating:</p>
+
+<ul>
+<li>[BUGFIX] Fix disabling usage tracking and expiry check not working if <code>checkForUpdateOnLaunch</code> is set to NO</li>
+<li>[BUGFIX] <code>disableUpdateManager</code> wasn&rsquo;t working correctly</li>
+<li>[BUGFIX] If the server doesn&rsquo;t return any app versions, don&rsquo;t handle this as an error, but show a warning in the console when <code>debugLogging</code> is enabled</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 2.5.1</h2>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li>[BUGFIX] Typo in delegate <code>shouldUseLiveIdentifier</code> of <code>BITHockeyManagerDelegate</code></li>
+<li>[BUGFIX] Default updateManager delegate wasn&rsquo;t set</li>
+</ul>
+</li>
+<li><p>Crash Reporting:</p>
+
+<ul>
+<li>[BUGFIX] Crash when developer sends the notification <code>BITHockeyNetworkDidBecomeReachableNotification</code></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Version 2.5</h2>
+
+<ul>
+<li><p>General:</p>
+
+<ul>
+<li><p>[NEW] Unified SDK for accessing HockeyApp on iOS</p>
+
+<ul>
+<li><p>Requires iOS 4.0 or newer</p></li>
+<li><p>Replaces the previous separate SDKs for iOS: HockeyKit and QuincyKit.</p>
+
+<p>The previous SDKs are still available and are still working. But future
+HockeyApp features will only be integrated in this new unified SDK.</p></li>
+<li><p>Integration either as framework or Xcode subproject using the sourcecode</p>
+
+<p>Check out <a href="../../docs/docs/Guide-Installation-Setup.html">Installation &amp; Setup</a></p></li>
+</ul>
+</li>
+<li><p>[NEW] Cleaned up public interfaces and internal processing all across the SDK</p></li>
+<li><p>[NEW] <a href="http://gentlebytes.com/appledoc/">AppleDoc</a> based documentation and HowTos</p>
+
+<p>  This allows the documentation to be generated into HTML or DocSet.</p></li>
+</ul>
+</li>
+<li><p>Crash Reporting:</p>
+
+<ul>
+<li><p>[NEW] Workflow to handle crashes that happen on startup.</p>
+
+<p>  Check out <a href="HowTo-Handle-Crashes-On-Startup">How to handle crashes on startup</a> for more details.</p></li>
+<li><p>[NEW] Symbolicate iOS calls async-safe on the device</p></li>
+<li><p>[NEW] Single property/option to deactivate, require user to agree submitting and autosubmit</p>
+
+<p>  E.g. implement a settings screen with the three options and set
+  <a href="../../Classes/BITCrashManager.html#//api/name/crashManagerStatus"><code>[BITCrashManager crashManagerStatus]</code></a> to the desired user value.</p></li>
+<li><p>[UPDATED] Updated <a href="https://code.google.com/p/plcrashreporter/">PLCrashReporter</a> with updates and bugfixes (source available on <a href="https://github.com/bitstadium/PLCrashReporter">GitHub</a>)</p></li>
+<li><p>[REMOVED] Feedback for Crash Groups Status</p>
+
+<p>  Please keep using QuincyKit for now if you want this feature. This feature needs to be
+  redesigned on SDK and server side to be more efficient and easier to use.</p></li>
+</ul>
+</li>
+<li><p>Updating:</p>
+
+<ul>
+<li><p>[NEW] Expire beta versions with a given date</p></li>
+<li><p>[REMOVED] Settings screen</p>
+
+<p>  If you want users to be able not to send analytics data, implement the
+  <a href="../../Protocols/BITUpdateManagerDelegate.html#//api/name/updateManagerShouldSendUsageData:"><code>[BITUpdateManagerDelegate updateManagerShouldSendUsageData:]</code></a> delegate and return
+  the value depending on what the user defines in your settings UI.</p></li>
+</ul>
+</li>
+</ul>
+
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Bit Stadium GmbH. All rights reserved. (Last updated: 2014-11-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					
+					</div>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

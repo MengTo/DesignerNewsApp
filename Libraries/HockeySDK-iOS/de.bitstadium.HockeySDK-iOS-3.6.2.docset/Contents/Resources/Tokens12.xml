@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BITCrashDetails.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BITCrashDetails</TokenIdentifier>
+			<Abstract type="html">Provides details about the crash that occured in the previous app session</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+            
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/setIncidentIdentifier:</TokenIdentifier>
+			<Abstract type="html">UUID for the crash report</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *incidentIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/incidentIdentifier</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/incidentIdentifier</TokenIdentifier>
+			<Abstract type="html">UUID for the crash report</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *incidentIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/incidentIdentifier</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashDetails/incidentIdentifier</TokenIdentifier>
+			<Abstract type="html">UUID for the crash report</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *incidentIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/incidentIdentifier</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/setReporterKey:</TokenIdentifier>
+			<Abstract type="html">UUID for the app installation on the device</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *reporterKey</Declaration>
+			
+			
+			<Anchor>//api/name/reporterKey</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/reporterKey</TokenIdentifier>
+			<Abstract type="html">UUID for the app installation on the device</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *reporterKey</Declaration>
+			
+			
+			<Anchor>//api/name/reporterKey</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashDetails/reporterKey</TokenIdentifier>
+			<Abstract type="html">UUID for the app installation on the device</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *reporterKey</Declaration>
+			
+			
+			<Anchor>//api/name/reporterKey</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/setSignal:</TokenIdentifier>
+			<Abstract type="html">Signal that caused the crash</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *signal</Declaration>
+			
+			
+			<Anchor>//api/name/signal</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/signal</TokenIdentifier>
+			<Abstract type="html">Signal that caused the crash</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *signal</Declaration>
+			
+			
+			<Anchor>//api/name/signal</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashDetails/signal</TokenIdentifier>
+			<Abstract type="html">Signal that caused the crash</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *signal</Declaration>
+			
+			
+			<Anchor>//api/name/signal</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/setExceptionName:</TokenIdentifier>
+			<Abstract type="html">Exception name that triggered the crash, nil if the crash was not caused by an exception</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *exceptionName</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/exceptionName</TokenIdentifier>
+			<Abstract type="html">Exception name that triggered the crash, nil if the crash was not caused by an exception</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *exceptionName</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashDetails/exceptionName</TokenIdentifier>
+			<Abstract type="html">Exception name that triggered the crash, nil if the crash was not caused by an exception</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *exceptionName</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionName</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/setExceptionReason:</TokenIdentifier>
+			<Abstract type="html">Exception reason, nil if the crash was not caused by an exception</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *exceptionReason</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionReason</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/exceptionReason</TokenIdentifier>
+			<Abstract type="html">Exception reason, nil if the crash was not caused by an exception</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *exceptionReason</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionReason</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashDetails/exceptionReason</TokenIdentifier>
+			<Abstract type="html">Exception reason, nil if the crash was not caused by an exception</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *exceptionReason</Declaration>
+			
+			
+			<Anchor>//api/name/exceptionReason</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/setAppStartTime:</TokenIdentifier>
+			<Abstract type="html">Date and time the app started, nil if unknown</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSDate *appStartTime</Declaration>
+			
+			
+			<Anchor>//api/name/appStartTime</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/appStartTime</TokenIdentifier>
+			<Abstract type="html">Date and time the app started, nil if unknown</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSDate *appStartTime</Declaration>
+			
+			
+			<Anchor>//api/name/appStartTime</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashDetails/appStartTime</TokenIdentifier>
+			<Abstract type="html">Date and time the app started, nil if unknown</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSDate *appStartTime</Declaration>
+			
+			
+			<Anchor>//api/name/appStartTime</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/setCrashTime:</TokenIdentifier>
+			<Abstract type="html">Date and time the crash occured, nil if unknown</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSDate *crashTime</Declaration>
+			
+			
+			<Anchor>//api/name/crashTime</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/crashTime</TokenIdentifier>
+			<Abstract type="html">Date and time the crash occured, nil if unknown</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSDate *crashTime</Declaration>
+			
+			
+			<Anchor>//api/name/crashTime</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashDetails/crashTime</TokenIdentifier>
+			<Abstract type="html">Date and time the crash occured, nil if unknown</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSDate *crashTime</Declaration>
+			
+			
+			<Anchor>//api/name/crashTime</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/setOsVersion:</TokenIdentifier>
+			<Abstract type="html">Operation System version string the app was running on when it crashed.</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *osVersion</Declaration>
+			
+			
+			<Anchor>//api/name/osVersion</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/osVersion</TokenIdentifier>
+			<Abstract type="html">Operation System version string the app was running on when it crashed.</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *osVersion</Declaration>
+			
+			
+			<Anchor>//api/name/osVersion</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashDetails/osVersion</TokenIdentifier>
+			<Abstract type="html">Operation System version string the app was running on when it crashed.</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *osVersion</Declaration>
+			
+			
+			<Anchor>//api/name/osVersion</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/setOsBuild:</TokenIdentifier>
+			<Abstract type="html">Operation System build string the app was running on when it crashed</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *osBuild</Declaration>
+			
+			
+			<Anchor>//api/name/osBuild</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/osBuild</TokenIdentifier>
+			<Abstract type="html">Operation System build string the app was running on when it crashed</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *osBuild</Declaration>
+			
+			
+			<Anchor>//api/name/osBuild</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashDetails/osBuild</TokenIdentifier>
+			<Abstract type="html">Operation System build string the app was running on when it crashed</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *osBuild</Declaration>
+			
+			
+			<Anchor>//api/name/osBuild</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/setAppBuild:</TokenIdentifier>
+			<Abstract type="html">CFBundleVersion value of the app that crashed</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *appBuild</Declaration>
+			
+			
+			<Anchor>//api/name/appBuild</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/appBuild</TokenIdentifier>
+			<Abstract type="html">CFBundleVersion value of the app that crashed</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *appBuild</Declaration>
+			
+			
+			<Anchor>//api/name/appBuild</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITCrashDetails/appBuild</TokenIdentifier>
+			<Abstract type="html">CFBundleVersion value of the app that crashed</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *appBuild</Declaration>
+			
+			
+			<Anchor>//api/name/appBuild</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITCrashDetails/isAppKill</TokenIdentifier>
+			<Abstract type="html">Indicates if the app was killed while being in foreground from the iOS</Abstract>
+			<DeclaredIn>BITCrashDetails.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITCrashManager/enableAppNotTerminatingCleanlyDetection</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITCrashManager/didReceiveMemoryWarningInLastSession</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)isAppKill</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the details represent an app kill instead of a crash</Abstract></ReturnValue>
+			<Anchor>//api/name/isAppKill</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

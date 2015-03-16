@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/BITAuthenticatorDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/BITAuthenticatorDelegate</TokenIdentifier>
+			<Abstract type="html">BITAuthenticator protocol</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+            
+			
+			<NodeRef refid="24"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITAuthenticatorDelegate/authenticator:willShowAuthenticationController:</TokenIdentifier>
+			<Abstract type="html">If the authentication (or validation) needs to identify the user,
+this delegate method is called with the viewController that we&apos;ll present.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+			<Declaration>- (void)authenticator:(BITAuthenticator *)authenticator willShowAuthenticationController:(UIViewController *)viewController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>authenticator</Name>
+					<Abstract type="html">BITAuthenticator object</Abstract>
+				</Parameter><Parameter>
+					<Name>viewController</Name>
+					<Abstract type="html">UIViewController used to identify the user</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/authenticator:willShowAuthenticationController:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

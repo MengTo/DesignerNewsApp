@@ -1,0 +1,1111 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>BITFeedbackManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">HockeySDK-iOS 3.6.2 </a></h1>
+				<a id="developerHome" href="../index.html">Bit Stadium GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">BITFeedbackManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/feedbackObservationMode">&nbsp;&nbsp;&nbsp;&nbsp;feedbackObservationMode</option>
+	
+	<option value="//api/name/requireUserEmail">&nbsp;&nbsp;&nbsp;&nbsp;requireUserEmail</option>
+	
+	<option value="//api/name/requireUserName">&nbsp;&nbsp;&nbsp;&nbsp;requireUserName</option>
+	
+	<option value="//api/name/showAlertOnIncomingMessages">&nbsp;&nbsp;&nbsp;&nbsp;showAlertOnIncomingMessages</option>
+	
+	<option value="//api/name/showFirstRequiredPresentationModal">&nbsp;&nbsp;&nbsp;&nbsp;showFirstRequiredPresentationModal</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/feedbackComposeViewController">&nbsp;&nbsp;&nbsp;&nbsp;- feedbackComposeViewController</option>
+	
+	<option value="//api/name/feedbackListViewController:">&nbsp;&nbsp;&nbsp;&nbsp;- feedbackListViewController:</option>
+	
+	<option value="//api/name/screenshot">&nbsp;&nbsp;&nbsp;&nbsp;- screenshot</option>
+	
+	<option value="//api/name/showFeedbackComposeView">&nbsp;&nbsp;&nbsp;&nbsp;- showFeedbackComposeView</option>
+	
+	<option value="//api/name/showFeedbackComposeViewWithGeneratedScreenshot">&nbsp;&nbsp;&nbsp;&nbsp;- showFeedbackComposeViewWithGeneratedScreenshot</option>
+	
+	<option value="//api/name/showFeedbackComposeViewWithPreparedItems:">&nbsp;&nbsp;&nbsp;&nbsp;- showFeedbackComposeViewWithPreparedItems:</option>
+	
+	<option value="//api/name/showFeedbackListView">&nbsp;&nbsp;&nbsp;&nbsp;- showFeedbackListView</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_General settings">General settings</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_User Interface">User Interface</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/feedbackObservationMode">feedbackObservationMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requireUserEmail">requireUserEmail</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requireUserName">requireUserName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAlertOnIncomingMessages">showAlertOnIncomingMessages</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showFirstRequiredPresentationModal">showFirstRequiredPresentationModal</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/feedbackComposeViewController">feedbackComposeViewController</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/feedbackListViewController:">feedbackListViewController:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/screenshot">screenshot</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showFeedbackComposeView">showFeedbackComposeView</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showFeedbackComposeViewWithGeneratedScreenshot">showFeedbackComposeViewWithGeneratedScreenshot</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showFeedbackComposeViewWithPreparedItems:">showFeedbackComposeViewWithPreparedItems:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showFeedbackListView">showFeedbackListView</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="BITFeedbackManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">BITFeedbackManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/BITHockeyBaseManager.html">BITHockeyBaseManager</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">BITFeedbackManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The feedback module.</p>
+
+<p>This is the HockeySDK module for letting your users communicate directly with you via
+the app and an integrated user interface. It provides a single threaded
+discussion with a user running your app.</p>
+
+<p>You should never create your own instance of <code>BITFeedbackManager</code> but use the one provided
+by the <a href="../Classes/BITHockeyManager.html#//api/name/sharedHockeyManager"><code>[BITHockeyManager sharedHockeyManager]</code></a>:</p>
+
+<pre><code> [BITHockeyManager sharedHockeyManager].feedbackManager
+</code></pre>
+
+<p>The user interface provides a list view than can be presented modally using
+<a href="#//api/name/showFeedbackListView"><code>[BITFeedbackManager showFeedbackListView]</code></a> or adding
+<a href="#//api/name/feedbackListViewController:"><code>[BITFeedbackManager feedbackListViewController:]</code></a> to push onto a navigation stack.
+This list integrates all features to load new messages, write new messages, view messages
+and ask the user for additional (optional) data like name and email.</p>
+
+<p>If the user provides the email address, all responses from the server will also be sent
+to the user via email and the user is also able to respond directly via email, too.</p>
+
+<p>The message list interface also contains options to locally delete single messages
+by swiping over them, or deleting all messages. This will not delete the messages
+on the server, though!</p>
+
+<p>It also integrates actions to invoke the user interface to compose a new message,
+reload the list content from the server and change the users name or email if these
+are allowed to be set.</p>
+
+<p>It is also possible to invoke the user interface to compose a new message in your
+own code, by calling <a href="#//api/name/showFeedbackComposeView"><code>[BITFeedbackManager showFeedbackComposeView]</code></a> modally or adding
+<a href="#//api/name/feedbackComposeViewController"><code>[BITFeedbackManager feedbackComposeViewController]</code></a> to push onto a navigation stack.</p>
+
+<p>If new messages are written while the device is offline, the SDK automatically retries to
+send them once the app starts again or gets active again, or if the notification
+<code>BITHockeyNetworkDidBecomeReachableNotification</code> is fired.</p>
+
+<p>A third option is to include the <a href="../Classes/BITFeedbackActivity.html"><code>BITFeedbackActivity</code></a> into an UIActivityViewController.
+This can be useful if you present some data that users can not only share but also
+report back to the developer because they have some problems, e.g. webcams not working
+any more. The activity provides a default title and image that can also be customized.</p>
+
+<p>New messages are automatically loaded on startup, when the app becomes active again
+or when the notification <code>BITHockeyNetworkDidBecomeReachableNotification</code> is fired. This
+only happens if the user ever did initiate a conversation by writing the first
+feedback message.</p>
+
+<p>Implementing the <a href="../Protocols/BITFeedbackManagerDelegate.html"><code>BITFeedbackManagerDelegate</code></a> protocol will notify your app when a new
+message was received from the server. The <a href="../Protocols/BITFeedbackComposeViewControllerDelegate.html"><code>BITFeedbackComposeViewControllerDelegate</code></a>
+protocol informs your app about events related to sending feedback messages.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="General settings" name="task_General settings"></a>
+						<h3 class="subsubtitle task-title">General settings</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requireUserName">&nbsp;&nbsp;requireUserName</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requireUserEmail">&nbsp;&nbsp;requireUserEmail</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showAlertOnIncomingMessages">&nbsp;&nbsp;showAlertOnIncomingMessages</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/feedbackObservationMode">&nbsp;&nbsp;feedbackObservationMode</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="User Interface" name="task_User Interface"></a>
+						<h3 class="subsubtitle task-title">User Interface</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showFirstRequiredPresentationModal">&nbsp;&nbsp;showFirstRequiredPresentationModal</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/screenshot">&ndash;&nbsp;screenshot</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showFeedbackListView">&ndash;&nbsp;showFeedbackListView</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/feedbackListViewController:">&ndash;&nbsp;feedbackListViewController:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showFeedbackComposeView">&ndash;&nbsp;showFeedbackComposeView</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showFeedbackComposeViewWithPreparedItems:">&ndash;&nbsp;showFeedbackComposeViewWithPreparedItems:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showFeedbackComposeViewWithGeneratedScreenshot">&ndash;&nbsp;showFeedbackComposeViewWithGeneratedScreenshot</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/feedbackComposeViewController">&ndash;&nbsp;feedbackComposeViewController</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/feedbackObservationMode" title="feedbackObservationMode"></a>
+	<h3 class="subsubtitle method-title">feedbackObservationMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Define the trigger that opens the feedback composer and attaches a <a href="#//api/name/screenshot">screenshot</a></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) BITFeedbackObservationMode feedbackObservationMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following modes are available:</p>
+
+<ul>
+<li><code>BITFeedbackObservationNone</code>: No SDK based trigger is active. You can implement your
+ own trigger and then call <code>[[BITHockeyManager sharedHockeyManager].feedbackManager showFeedbackComposeViewWithGeneratedScreenshot];</code> to handle your custom events
+ that should trigger this.</li>
+<li><code>BITFeedbackObservationModeOnScreenshot</code>: Triggers when the user takes a <a href="#//api/name/screenshot">screenshot</a>.
+  This will grab the latest image from the camera roll. Requires iOS 7 or later!</li>
+<li><code>BITFeedbackObservationModeThreeFingerTap</code>: Triggers when the user taps on the screen for three seconds with three fingers.</li>
+</ul>
+
+
+<p>Default is <code>BITFeedbackObservationNone</code></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/showFeedbackComposeViewWithGeneratedScreenshot">- showFeedbackComposeViewWithGeneratedScreenshot</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITFeedbackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requireUserEmail" title="requireUserEmail"></a>
+	<h3 class="subsubtitle method-title">requireUserEmail</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Define if an email address has to be provided by the user when providing feedback</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) BITFeedbackUserDataElement requireUserEmail</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the user provides the email address, all responses from the server will also be send
+to the user via email and the user is also able to respond directly via email too.</p>
+
+<ul>
+<li><code>BITFeedbackUserDataElementDontShow</code>: Don&rsquo;t ask for this user data element at all</li>
+<li><code>BITFeedbackUserDataElementOptional</code>: The user may provide it, but does not have to</li>
+<li><code>BITFeedbackUserDataElementRequired</code>: The user has to provide this to continue</li>
+</ul>
+
+
+<p>The default value is <code>BITFeedbackUserDataElementOptional</code>.</p><div class="warning"><p><strong>Warning:</strong> If you provide a non nil value for the <code>BITFeedbackManager</code> class via
+<a href="../Protocols/BITHockeyManagerDelegate.html#//api/name/userEmailForHockeyManager:componentManager:"><code>[BITHockeyManagerDelegate userEmailForHockeyManager:componentManager:]</code></a> then this
+property will automatically be set to <code>BITFeedbackUserDataElementDontShow</code></p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Constants/BITFeedbackUserDataElement.html">BITFeedbackUserDataElement</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/requireUserName">@property requireUserName</a></p></code></li>
+			
+			<li><code><p><code>[BITHockeyManagerDelegate userEmailForHockeyManager:componentManager:]</code></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITFeedbackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requireUserName" title="requireUserName"></a>
+	<h3 class="subsubtitle method-title">requireUserName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Define if a name has to be provided by the user when providing feedback</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) BITFeedbackUserDataElement requireUserName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li><code>BITFeedbackUserDataElementDontShow</code>: Don&rsquo;t ask for this user data element at all</li>
+<li><code>BITFeedbackUserDataElementOptional</code>: The user may provide it, but does not have to</li>
+<li><code>BITFeedbackUserDataElementRequired</code>: The user has to provide this to continue</li>
+</ul>
+
+
+<p>The default value is <code>BITFeedbackUserDataElementOptional</code>.</p><div class="warning"><p><strong>Warning:</strong> If you provide a non nil value for the <code>BITFeedbackManager</code> class via
+<a href="../Protocols/BITHockeyManagerDelegate.html#//api/name/userNameForHockeyManager:componentManager:"><code>[BITHockeyManagerDelegate userNameForHockeyManager:componentManager:]</code></a> then this
+property will automatically be set to <code>BITFeedbackUserDataElementDontShow</code></p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Constants/BITFeedbackUserDataElement.html">BITFeedbackUserDataElement</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/requireUserEmail">@property requireUserEmail</a></p></code></li>
+			
+			<li><code><p><code>[BITHockeyManagerDelegate userNameForHockeyManager:componentManager:]</code></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITFeedbackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showAlertOnIncomingMessages" title="showAlertOnIncomingMessages"></a>
+	<h3 class="subsubtitle method-title">showAlertOnIncomingMessages</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates if an alert should be shown when new messages have arrived</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) BOOL showAlertOnIncomingMessages</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This lets the user view the new feedback by choosing the appropriate option
+in the alert sheet, and the <a href="../Classes/BITFeedbackListViewController.html"><code>BITFeedbackListViewController</code></a> will be shown.</p>
+
+<p>The alert is only shown, if the newest message didn&rsquo;t originate from the current user.
+This requires the users email address to be present! The optional userid property
+cannot be used, because users could also answer via email and then this information
+is not available.</p>
+
+<p>Default is <code>YES</code></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/feedbackListViewController:">- feedbackListViewController:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/requireUserEmail">@property requireUserEmail</a></p></code></li>
+			
+			<li><code><p><code>[BITHockeyManagerDelegate userEmailForHockeyManager:componentManager:]</code></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITFeedbackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showFirstRequiredPresentationModal" title="showFirstRequiredPresentationModal"></a>
+	<h3 class="subsubtitle method-title">showFirstRequiredPresentationModal</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates if a forced user data UI presentation is shown modal</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) BOOL showFirstRequiredPresentationModal</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If <a href="#//api/name/requireUserName"><code>requireUserName</code></a> and/or <a href="#//api/name/requireUserEmail"><code>requireUserEmail</code></a> are enabled, the first presentation
+of <a href="#//api/name/feedbackListViewController:"><code>feedbackListViewController:</code></a> and subsequent <code>feedbackComposeViewController:</code>
+will automatically present a UI that lets the user provide this data and compose
+a message. By default this is shown (since SDK 3.1) as a modal sheet.</p>
+
+<p>If you want the SDK to push this UI onto the navigation stack in this specific scenario,
+then change the property to <code>NO</code>.</p><div class="warning"><p><strong>Warning:</strong> If you are presenting the <a href="../Classes/BITFeedbackListViewController.html"><code>BITFeedbackListViewController</code></a> in a popover, this property should not be changed!</p>
+
+<p>Default is <code>YES</code></p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/requireUserName">@property requireUserName</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/requireUserEmail">@property requireUserEmail</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/showFeedbackComposeView">- showFeedbackComposeView</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/feedbackComposeViewController">- feedbackComposeViewController</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/showFeedbackListView">- showFeedbackListView</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/feedbackListViewController:">- feedbackListViewController:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITFeedbackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/feedbackComposeViewController" title="feedbackComposeViewController"></a>
+	<h3 class="subsubtitle method-title">feedbackComposeViewController</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a feedback compose view</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BITFeedbackComposeViewController *)feedbackComposeViewController</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="../Classes/BITFeedbackComposeViewController.html"><code>BITFeedbackComposeViewController</code></a> The compose feedback view controller,
+e.g. to push it onto a navigation stack.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Example to show a modal feedback compose UI with prefilled text</p>
+
+<pre><code> BITFeedbackComposeViewController *feedbackCompose = [[BITHockeyManager sharedHockeyManager].feedbackManager feedbackComposeViewController];
+
+ [feedbackCompose prepareWithItems:
+     @[@"Adding some example default text and also adding a link.",
+     [NSURL URLWithString:@"http://hockeayyp.net/"]]];
+
+ UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:feedbackCompose];
+ navController.modalPresentationStyle = UIModalPresentationFormSheet;
+ [self presentViewController:navController animated:YES completion:nil];
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITFeedbackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/feedbackListViewController:" title="feedbackListViewController:"></a>
+	<h3 class="subsubtitle method-title">feedbackListViewController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create an feedback list view</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BITFeedbackListViewController *)feedbackListViewController:(BOOL)<em>modal</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>modal</em></dt>
+			<dd><p>Return a view ready for modal presentation with integrated navigation bar</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="../Classes/BITFeedbackListViewController.html"><code>BITFeedbackListViewController</code></a> The feedback list view controller,
+e.g. to push it onto a navigation stack.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITFeedbackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/screenshot" title="screenshot"></a>
+	<h3 class="subsubtitle method-title">screenshot</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return a screenshot UIImage intance from the current visiable screen</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (UIImage *)screenshot</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>UIImage instance containing a screenshot of the current screen</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITFeedbackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showFeedbackComposeView" title="showFeedbackComposeView"></a>
+	<h3 class="subsubtitle method-title">showFeedbackComposeView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Present the modal feedback compose message user interface.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)showFeedbackComposeView</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITFeedbackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showFeedbackComposeViewWithGeneratedScreenshot" title="showFeedbackComposeViewWithGeneratedScreenshot"></a>
+	<h3 class="subsubtitle method-title">showFeedbackComposeViewWithGeneratedScreenshot</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Presents a modal feedback compose interface with a <a href="#//api/name/screenshot">screenshot</a> attached which is taken at the time of calling this method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)showFeedbackComposeViewWithGeneratedScreenshot</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This should be used when your own trigger fires. The following code should be used:</p>
+
+<pre><code> [[BITHockeyManager sharedHockeyManager].feedbackManager showFeedbackComposeViewWithGeneratedScreenshot];
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/feedbackObservationMode">@property feedbackObservationMode</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITFeedbackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showFeedbackComposeViewWithPreparedItems:" title="showFeedbackComposeViewWithPreparedItems:"></a>
+	<h3 class="subsubtitle method-title">showFeedbackComposeViewWithPreparedItems:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Present the modal feedback compose message user interface with the items given.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)showFeedbackComposeViewWithPreparedItems:(NSArray *)<em>items</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>items</em></dt>
+			<dd><p>an NSArray with objects that should be attached</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>All NSString-Content in the array will be concatenated and result in the message,
+while all UIImage and NSData-instances will be turned into attachments.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><code>[BITFeedbackComposeViewController prepareWithItems:]</code></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITFeedbackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showFeedbackListView" title="showFeedbackListView"></a>
+	<h3 class="subsubtitle method-title">showFeedbackListView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Present the modal feedback list user interface.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)showFeedbackListView</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITFeedbackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Bit Stadium GmbH. All rights reserved. (Last updated: 2014-11-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
