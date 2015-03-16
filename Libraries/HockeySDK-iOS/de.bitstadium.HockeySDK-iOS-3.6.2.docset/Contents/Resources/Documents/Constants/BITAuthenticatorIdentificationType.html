@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>BITAuthenticatorIdentificationType Constants Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">HockeySDK-iOS 3.6.2 </a></h1>
+				<a id="developerHome" href="../index.html">Bit Stadium GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">BITAuthenticatorIdentificationType Constants Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="BITAuthenticatorIdentificationType Constants Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">BITAuthenticatorIdentificationType Constants Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">BITAuthenticator.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					
+					
+					
+                    
+                    
+                    <h3 class="subsubtitle method-title">BITAuthenticatorIdentificationType</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p>Identification Types</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSUInteger, BITAuthenticatorIdentificationType ) {<br/>
+                            
+                            &nbsp;&nbsp; <a href="">BITAuthenticatorIdentificationTypeAnonymous</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">BITAuthenticatorIdentificationTypeHockeyAppEmail</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">BITAuthenticatorIdentificationTypeHockeyAppUser</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">BITAuthenticatorIdentificationTypeDevice</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">BITAuthenticatorIdentificationTypeWebAuth</a>,<br/>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="BITAuthenticatorIdentificationTypeAnonymous"></a><code>BITAuthenticatorIdentificationTypeAnonymous</code></dt>
+<dd>
+
+
+<p>Assigns this app an anonymous user id.
+<br/><br/>
+The user will not be asked anything and an anonymous ID will be generated.
+This helps identifying this installation being unique but HockeyApp won&rsquo;t be able
+to identify who actually is running this installation and on which device
+the app is installed.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BITAuthenticator.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BITAuthenticatorIdentificationTypeHockeyAppEmail"></a><code>BITAuthenticatorIdentificationTypeHockeyAppEmail</code></dt>
+<dd>
+
+
+<p>Ask for the HockeyApp account email
+<br/><br/>
+This will present a user interface requesting the user to provide their
+HockeyApp user email address.
+<br/><br/>
+The provided email address has to match an email address of a registered
+HockeyApp user who is a member or tester of the app</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BITAuthenticator.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BITAuthenticatorIdentificationTypeHockeyAppUser"></a><code>BITAuthenticatorIdentificationTypeHockeyAppUser</code></dt>
+<dd>
+
+
+<p>Ask for the HockeyApp account by email and password
+<br/><br/>
+This will present a user interface requesting the user to provide their
+HockeyApp user credentials.
+<br/><br/>
+The provided user account has to match a registered HockeyApp user who is
+a member or tester of the app</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BITAuthenticator.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BITAuthenticatorIdentificationTypeDevice"></a><code>BITAuthenticatorIdentificationTypeDevice</code></dt>
+<dd>
+
+
+<p>Identifies the current device
+<br/><br/>
+This will open the HockeyApp web page on the device in Safari and request the user
+to submit the device&rsquo;s unique identifier to the app. If the web page session is not aware
+of the current devices UDID, it will request the user to install the HockeyApp web clip
+which will provide the UDID to users session in the browser.
+<br/><br/>
+This requires the app to register an URL scheme. See the linked property and methods
+for further documentation on this.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BITAuthenticator.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BITAuthenticatorIdentificationTypeWebAuth"></a><code>BITAuthenticatorIdentificationTypeWebAuth</code></dt>
+<dd>
+
+
+<p>Ask for the HockeyApp account email.
+<br/><br/>
+This will present a user interface requesting the user to start a Safari based
+flow to login to HockeyApp (if not already logged in) and to share the hockeyapp
+account&rsquo;s email.
+<br/><br/>
+If restrictApplicationUsage is enabled, the provided user account has to match a
+registered HockeyApp user who is a member or tester of the app.
+For identification purpose any HockeyApp user is allowed.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BITAuthenticator.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <code class="declared-in-ref">BITAuthenticator.h</code><br />
+                    </div>				
+                    
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Bit Stadium GmbH. All rights reserved. (Last updated: 2014-11-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BITFeedbackActivity.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BITFeedbackActivity</TokenIdentifier>
+			<Abstract type="html">UIActivity subclass allowing to use the feedback interface to share content with the developer</Abstract>
+			<DeclaredIn>BITFeedbackActivity.h</DeclaredIn>
+            
+			
+			<NodeRef refid="15"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackActivity/setCustomActivityImage:</TokenIdentifier>
+			<Abstract type="html">Define the image shown when using BITFeedbackActivity</Abstract>
+			<DeclaredIn>BITFeedbackActivity.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackActivity/customActivityTitle</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) UIImage *customActivityImage</Declaration>
+			
+			
+			<Anchor>//api/name/customActivityImage</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackActivity/customActivityImage</TokenIdentifier>
+			<Abstract type="html">Define the image shown when using BITFeedbackActivity</Abstract>
+			<DeclaredIn>BITFeedbackActivity.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackActivity/customActivityTitle</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) UIImage *customActivityImage</Declaration>
+			
+			
+			<Anchor>//api/name/customActivityImage</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackActivity/customActivityImage</TokenIdentifier>
+			<Abstract type="html">Define the image shown when using BITFeedbackActivity</Abstract>
+			<DeclaredIn>BITFeedbackActivity.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackActivity/customActivityTitle</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) UIImage *customActivityImage</Declaration>
+			
+			
+			<Anchor>//api/name/customActivityImage</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackActivity/setCustomActivityTitle:</TokenIdentifier>
+			<Abstract type="html">Define the title shown when using BITFeedbackActivity</Abstract>
+			<DeclaredIn>BITFeedbackActivity.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackActivity/customActivityImage</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSString *customActivityTitle</Declaration>
+			
+			
+			<Anchor>//api/name/customActivityTitle</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackActivity/customActivityTitle</TokenIdentifier>
+			<Abstract type="html">Define the title shown when using BITFeedbackActivity</Abstract>
+			<DeclaredIn>BITFeedbackActivity.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackActivity/customActivityImage</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSString *customActivityTitle</Declaration>
+			
+			
+			<Anchor>//api/name/customActivityTitle</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackActivity/customActivityTitle</TokenIdentifier>
+			<Abstract type="html">Define the title shown when using BITFeedbackActivity</Abstract>
+			<DeclaredIn>BITFeedbackActivity.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackActivity/customActivityImage</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSString *customActivityTitle</Declaration>
+			
+			
+			<Anchor>//api/name/customActivityTitle</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

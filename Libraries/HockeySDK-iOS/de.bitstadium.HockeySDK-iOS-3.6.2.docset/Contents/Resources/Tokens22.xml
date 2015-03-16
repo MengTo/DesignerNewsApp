@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BITStoreUpdateManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BITStoreUpdateManager</TokenIdentifier>
+			<Abstract type="html">The store update manager module.</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="22"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/setUpdateSetting:</TokenIdentifier>
+			<Abstract type="html">When to check for new updates.</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITStoreUpdateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/countryCode</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BITStoreUpdateSetting updateSetting</Declaration>
+			
+			
+			<Anchor>//api/name/updateSetting</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/updateSetting</TokenIdentifier>
+			<Abstract type="html">When to check for new updates.</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITStoreUpdateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/countryCode</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BITStoreUpdateSetting updateSetting</Declaration>
+			
+			
+			<Anchor>//api/name/updateSetting</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/updateSetting</TokenIdentifier>
+			<Abstract type="html">When to check for new updates.</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITStoreUpdateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/countryCode</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BITStoreUpdateSetting updateSetting</Declaration>
+			
+			
+			<Anchor>//api/name/updateSetting</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/setCountryCode:</TokenIdentifier>
+			<Abstract type="html">Defines the store country the app is always available in, otherwise uses the users locale</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/updateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSString *countryCode</Declaration>
+			
+			
+			<Anchor>//api/name/countryCode</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/countryCode</TokenIdentifier>
+			<Abstract type="html">Defines the store country the app is always available in, otherwise uses the users locale</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/updateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSString *countryCode</Declaration>
+			
+			
+			<Anchor>//api/name/countryCode</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/countryCode</TokenIdentifier>
+			<Abstract type="html">Defines the store country the app is always available in, otherwise uses the users locale</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/updateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSString *countryCode</Declaration>
+			
+			
+			<Anchor>//api/name/countryCode</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/setCheckForUpdateOnLaunch:</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether the automatic update checks should be done.</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/updateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/countryCode</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, getter=isCheckingForUpdateOnLaunch) BOOL checkForUpdateOnLaunch</Declaration>
+			
+			
+			<Anchor>//api/name/checkForUpdateOnLaunch</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/isCheckingForUpdateOnLaunch</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether the automatic update checks should be done.</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/updateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/countryCode</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, getter=isCheckingForUpdateOnLaunch) BOOL checkForUpdateOnLaunch</Declaration>
+			
+			
+			<Anchor>//api/name/checkForUpdateOnLaunch</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether the automatic update checks should be done.</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/updateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/countryCode</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, getter=isCheckingForUpdateOnLaunch) BOOL checkForUpdateOnLaunch</Declaration>
+			
+			
+			<Anchor>//api/name/checkForUpdateOnLaunch</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/setUpdateUIEnabled:</TokenIdentifier>
+			<Abstract type="html">Flag that determines if the integrated update alert should be used</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/updateSetting</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, getter=isUpdateUIEnabled) BOOL updateUIEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/updateUIEnabled</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/isUpdateUIEnabled</TokenIdentifier>
+			<Abstract type="html">Flag that determines if the integrated update alert should be used</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/updateSetting</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, getter=isUpdateUIEnabled) BOOL updateUIEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/updateUIEnabled</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/updateUIEnabled</TokenIdentifier>
+			<Abstract type="html">Flag that determines if the integrated update alert should be used</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/updateSetting</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, getter=isUpdateUIEnabled) BOOL updateUIEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/updateUIEnabled</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITStoreUpdateManager/checkForUpdate</TokenIdentifier>
+			<Abstract type="html">Check for an update</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/updateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/countryCode</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITStoreUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)checkForUpdate</Declaration>
+			
+			
+			<Anchor>//api/name/checkForUpdate</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

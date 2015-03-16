@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/BITHockeyErrorReason.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/BITHockeyErrorReason</TokenIdentifier>
+			<Abstract type="html">HockeySDK global error domain</Abstract>
+			<DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+			
+			<NodeRef refid="41"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITHockeyErrorUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown error
+   </Abstract>
+            <Declaration>BITHockeyErrorUnknown</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="41"/>
+        </Token>
+        
+	</File>
+</Tokens>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/BITCrashManagerUserInput.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/BITCrashManagerUserInput</TokenIdentifier>
+			<Abstract type="html">Crash Manager alert user input</Abstract>
+			<DeclaredIn>BITCrashManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="36"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITCrashManagerUserInputDontSend</TokenIdentifier>
+            <Abstract type="html">User chose not to send the crash report
+   </Abstract>
+            <Declaration>BITCrashManagerUserInputDontSend</Declaration>
+            
+            <DeclaredIn>BITCrashManager.h</DeclaredIn>
+            
+            <NodeRef refid="36"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITCrashManagerUserInputSend</TokenIdentifier>
+            <Abstract type="html">User wants the crash report to be sent
+   </Abstract>
+            <Declaration>BITCrashManagerUserInputSend</Declaration>
+            
+            <DeclaredIn>BITCrashManager.h</DeclaredIn>
+            
+            <NodeRef refid="36"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITCrashManagerUserInputAlwaysSend</TokenIdentifier>
+            <Abstract type="html">User chose to always send crash reports
+   </Abstract>
+            <Declaration>BITCrashManagerUserInputAlwaysSend</Declaration>
+            
+            <DeclaredIn>BITCrashManager.h</DeclaredIn>
+            
+            <NodeRef refid="36"/>
+        </Token>
+        
+	</File>
+</Tokens>

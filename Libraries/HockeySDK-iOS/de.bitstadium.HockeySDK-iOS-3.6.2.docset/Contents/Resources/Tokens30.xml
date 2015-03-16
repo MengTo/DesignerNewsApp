@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/BITUpdateManagerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/BITUpdateManagerDelegate</TokenIdentifier>
+			<Abstract type="html">The BITUpdateManagerDelegate formal protocol defines methods further configuring
+the behaviour of BITUpdateManager.</Abstract>
+			<DeclaredIn>BITUpdateManagerDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="30"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/shouldDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+			<Abstract type="html">Return if expiry alert should be shown if date is reached</Abstract>
+			<DeclaredIn>BITUpdateManagerDelegate.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/expiryDate</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/didDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)shouldDisplayExpiryAlertForUpdateManager:(BITUpdateManager *)updateManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>updateManager</Name>
+					<Abstract type="html">The BITUpdateManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/shouldDisplayExpiryAlertForUpdateManager:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/didDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+			<Abstract type="html">Invoked once a default expiry alert is shown</Abstract>
+			<DeclaredIn>BITUpdateManagerDelegate.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/expiryDate</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/shouldDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)didDisplayExpiryAlertForUpdateManager:(BITUpdateManager *)updateManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>updateManager</Name>
+					<Abstract type="html">The BITUpdateManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didDisplayExpiryAlertForUpdateManager:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/updateManagerShouldSendUsageData:</TokenIdentifier>
+			<Abstract type="html">Return NO if usage data should not be send</Abstract>
+			<DeclaredIn>BITUpdateManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)updateManagerShouldSendUsageData:(BITUpdateManager *)updateManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>updateManager</Name>
+					<Abstract type="html">The BITUpdateManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateManagerShouldSendUsageData:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/updateManagerWillExitApp:</TokenIdentifier>
+			<Abstract type="html">Invoked right before the app will exit to allow app update to start (&gt;= iOS8 only)</Abstract>
+			<DeclaredIn>BITUpdateManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)updateManagerWillExitApp:(BITUpdateManager *)updateManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>updateManager</Name>
+					<Abstract type="html">The BITUpdateManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateManagerWillExitApp:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/viewControllerForUpdateManager:</TokenIdentifier>
+			<Abstract type="html">Provide a parent view controller for the update user interface (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; Please use BITHockeyManagerDelegate viewControllerForHockeyManager:componentManager: instead&lt;/span&gt;)</Abstract>
+			<DeclaredIn>BITUpdateManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (UIViewController *)viewControllerForUpdateManager:(BITUpdateManager *)updateManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>updateManager</Name>
+					<Abstract type="html">The BITUpdateManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/viewControllerForUpdateManager:</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

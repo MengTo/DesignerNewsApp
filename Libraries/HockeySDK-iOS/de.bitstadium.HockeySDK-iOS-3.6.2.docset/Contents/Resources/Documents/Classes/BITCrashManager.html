@@ -1,0 +1,1281 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>BITCrashManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">HockeySDK-iOS 3.6.2 </a></h1>
+				<a id="developerHome" href="../index.html">Bit Stadium GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">BITCrashManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/crashManagerStatus">&nbsp;&nbsp;&nbsp;&nbsp;crashManagerStatus</option>
+	
+	<option value="//api/name/didCrashInLastSession">&nbsp;&nbsp;&nbsp;&nbsp;didCrashInLastSession</option>
+	
+	<option value="//api/name/didReceiveMemoryWarningInLastSession">&nbsp;&nbsp;&nbsp;&nbsp;didReceiveMemoryWarningInLastSession</option>
+	
+	<option value="//api/name/enableAppNotTerminatingCleanlyDetection">&nbsp;&nbsp;&nbsp;&nbsp;enableAppNotTerminatingCleanlyDetection</option>
+	
+	<option value="//api/name/enableMachExceptionHandler">&nbsp;&nbsp;&nbsp;&nbsp;enableMachExceptionHandler</option>
+	
+	<option value="//api/name/enableOnDeviceSymbolication">&nbsp;&nbsp;&nbsp;&nbsp;enableOnDeviceSymbolication</option>
+	
+	<option value="//api/name/lastSessionCrashDetails">&nbsp;&nbsp;&nbsp;&nbsp;lastSessionCrashDetails</option>
+	
+	<option value="//api/name/showAlwaysButton">&nbsp;&nbsp;&nbsp;&nbsp;showAlwaysButton</option>
+	
+	<option value="//api/name/timeintervalCrashInLastSessionOccured">&nbsp;&nbsp;&nbsp;&nbsp;timeintervalCrashInLastSessionOccured</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/generateTestCrash">&nbsp;&nbsp;&nbsp;&nbsp;- generateTestCrash</option>
+	
+	<option value="//api/name/handleUserInput:withUserProvidedMetaData:">&nbsp;&nbsp;&nbsp;&nbsp;- handleUserInput:withUserProvidedMetaData:</option>
+	
+	<option value="//api/name/isDebuggerAttached">&nbsp;&nbsp;&nbsp;&nbsp;- isDebuggerAttached</option>
+	
+	<option value="//api/name/setAlertViewHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- setAlertViewHandler:</option>
+	
+	<option value="//api/name/setCrashCallbacks:">&nbsp;&nbsp;&nbsp;&nbsp;- setCrashCallbacks:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Configuration">Configuration</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Crash Meta Information">Crash Meta Information</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Helper">Helper</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/crashManagerStatus">crashManagerStatus</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didCrashInLastSession">didCrashInLastSession</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didReceiveMemoryWarningInLastSession">didReceiveMemoryWarningInLastSession</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableAppNotTerminatingCleanlyDetection">enableAppNotTerminatingCleanlyDetection</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableMachExceptionHandler">enableMachExceptionHandler</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableOnDeviceSymbolication">enableOnDeviceSymbolication</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lastSessionCrashDetails">lastSessionCrashDetails</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAlwaysButton">showAlwaysButton</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timeintervalCrashInLastSessionOccured">timeintervalCrashInLastSessionOccured</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/generateTestCrash">generateTestCrash</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleUserInput:withUserProvidedMetaData:">handleUserInput:withUserProvidedMetaData:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isDebuggerAttached">isDebuggerAttached</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setAlertViewHandler:">setAlertViewHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCrashCallbacks:">setCrashCallbacks:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="BITCrashManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">BITCrashManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/BITHockeyBaseManager.html">BITHockeyBaseManager</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">BITCrashManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The crash reporting module.</p>
+
+<p>This is the HockeySDK module for handling crash reports, including when distributed via the App Store.
+As a foundation it is using the open source, reliable and async-safe crash reporting framework
+<a href="https://code.google.com/p/plcrashreporter/">PLCrashReporter</a>.</p>
+
+<p>This module works as a wrapper around the underlying crash reporting framework and provides functionality to
+detect new crashes, queues them if networking is not available, present a user interface to approve sending
+the reports to the HockeyApp servers and more.</p>
+
+<p>It also provides options to add additional meta information to each crash report, like <code>userName</code>, <code>userEmail</code>
+via <a href="../Protocols/BITHockeyManagerDelegate.html"><code>BITHockeyManagerDelegate</code></a> protocol, and additional textual log information via <a href="../Protocols/BITCrashManagerDelegate.html"><code>BITCrashManagerDelegate</code></a>
+protocol and a way to detect startup crashes so you can adjust your startup process to get these crash reports
+too and delay your app initialization.</p>
+
+<p>Crashes are send the next time the app starts. If <a href="#//api/name/crashManagerStatus"><code>crashManagerStatus</code></a> is set to <code>BITCrashManagerStatusAutoSend</code>,
+crashes will be send without any user interaction, otherwise an alert will appear allowing the users to decide
+whether they want to send the report or not. This module is not sending the reports right when the crash happens
+deliberately, because if is not safe to implement such a mechanism while being async-safe (any Objective-C code
+is <em>NOT</em> async-safe!) and not causing more danger like a deadlock of the device, than helping. We found that users
+do start the app again because most don&rsquo;t know what happened, and you will get by far most of the reports.</p>
+
+<p>Sending the reports on startup is done asynchronously (non-blocking). This is the only safe way to ensure
+that the app won&rsquo;t be possibly killed by the iOS watchdog process, because startup could take too long
+and the app could not react to any user input when network conditions are bad or connectivity might be
+very slow.</p>
+
+<p>It is possible to check upon startup if the app crashed before using <a href="#//api/name/didCrashInLastSession"><code>didCrashInLastSession</code></a> and also how much
+time passed between the app launch and the crash using <a href="#//api/name/timeintervalCrashInLastSessionOccured"><code>timeintervalCrashInLastSessionOccured</code></a>. This allows you
+to add additional code to your app delaying the app start until the crash has been successfully send if the crash
+occured within a critical startup timeframe, e.g. after 10 seconds. The <a href="../Protocols/BITCrashManagerDelegate.html"><code>BITCrashManagerDelegate</code></a> protocol provides
+various delegates to inform the app about it&rsquo;s current status so you can continue the remaining app startup setup
+after sending has been completed. The documentation contains a guide
+<a href="HowTo-Handle-Crashes-On-Startup">How to handle Crashes on startup</a> with an example on how to do that.</p>
+
+<p>More background information on this topic can be found in the following blog post by Landon Fuller, the
+developer of <a href="https://www.plcrashreporter.org">PLCrashReporter</a>, about writing reliable and
+safe crash reporting: <a href="http://goo.gl/WvTBR">Reliable Crash Reporting</a></p><div class="warning"><p><strong>Warning:</strong> If you start the app with the Xcode debugger attached, detecting crashes will <em>NOT</em> be enabled!</p></div>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Configuration" name="task_Configuration"></a>
+						<h3 class="subsubtitle task-title">Configuration</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/crashManagerStatus">&nbsp;&nbsp;crashManagerStatus</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableMachExceptionHandler">&nbsp;&nbsp;enableMachExceptionHandler</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableOnDeviceSymbolication">&nbsp;&nbsp;enableOnDeviceSymbolication</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableAppNotTerminatingCleanlyDetection">&nbsp;&nbsp;enableAppNotTerminatingCleanlyDetection</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCrashCallbacks:">&ndash;&nbsp;setCrashCallbacks:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showAlwaysButton">&nbsp;&nbsp;showAlwaysButton</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Crash Meta Information" name="task_Crash Meta Information"></a>
+						<h3 class="subsubtitle task-title">Crash Meta Information</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didCrashInLastSession">&nbsp;&nbsp;didCrashInLastSession</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/handleUserInput:withUserProvidedMetaData:">&ndash;&nbsp;handleUserInput:withUserProvidedMetaData:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setAlertViewHandler:">&ndash;&nbsp;setAlertViewHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lastSessionCrashDetails">&nbsp;&nbsp;lastSessionCrashDetails</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didReceiveMemoryWarningInLastSession">&nbsp;&nbsp;didReceiveMemoryWarningInLastSession</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/timeintervalCrashInLastSessionOccured">&nbsp;&nbsp;timeintervalCrashInLastSessionOccured</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Helper" name="task_Helper"></a>
+						<h3 class="subsubtitle task-title">Helper</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isDebuggerAttached">&ndash;&nbsp;isDebuggerAttached</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/generateTestCrash">&ndash;&nbsp;generateTestCrash</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/crashManagerStatus" title="crashManagerStatus"></a>
+	<h3 class="subsubtitle method-title">crashManagerStatus</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the default status of the Crash Manager</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BITCrashManagerStatus crashManagerStatus</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Defines if the crash reporting feature should be disabled, ask the user before
+sending each crash report or send crash reportings automatically without
+asking.</p>
+
+<p>The default value is <code>BITCrashManagerStatusAlwaysAsk</code>. The user can switch to
+<code>BITCrashManagerStatusAutoSend</code> by choosing &ldquo;Always&rdquo; in the dialog (since
+<a href="#//api/name/showAlwaysButton"><code>showAlwaysButton</code></a> default is <em>YES</em>).</p>
+
+<p>The current value is always stored in User Defaults with the key
+<a href="../Constants/BITCrashManagerStatus.html"><code>BITCrashManagerStatus</code></a>.</p>
+
+<p>If you intend to implement a user setting to let them enable or disable
+crash reporting, this delegate should be used to return that value. You also
+have to make sure the new value is stored in the UserDefaults with the key
+<a href="../Constants/BITCrashManagerStatus.html"><code>BITCrashManagerStatus</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Constants/BITCrashManagerStatus.html">BITCrashManagerStatus</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/showAlwaysButton">@property showAlwaysButton</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didCrashInLastSession" title="didCrashInLastSession"></a>
+	<h3 class="subsubtitle method-title">didCrashInLastSession</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates if the app crash in the previous session</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL didCrashInLastSession</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Use this on startup, to check if the app starts the first time after it crashed
+previously. You can use this also to disable specific events, like asking
+the user to rate your app.</p><div class="warning"><p><strong>Warning:</strong> This property only has a correct value, once <a href="../Classes/BITHockeyManager.html#//api/name/startManager"><code>[BITHockeyManager startManager]</code></a> was
+invoked!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/lastSessionCrashDetails">@property lastSessionCrashDetails</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didReceiveMemoryWarningInLastSession" title="didReceiveMemoryWarningInLastSession"></a>
+	<h3 class="subsubtitle method-title">didReceiveMemoryWarningInLastSession</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates if the app did receive a low memory warning in the last session</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL didReceiveMemoryWarningInLastSession</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>It may happen that low memory warning where send but couldn&rsquo;t be logged, since iOS
+killed the app before updating the flag in the filesystem did complete.</p>
+
+<p>This property may be true in case of low memory kills, but it doesn&rsquo;t have to be! Apps
+can also be killed without the app ever receiving a low memory warning.</p>
+
+<p>Also the app could have received a low memory warning, but the reason for being killed was
+actually different.</p><div class="warning"><p><strong>Warning:</strong> This property only has a correct value, once <a href="../Classes/BITHockeyManager.html#//api/name/startManager"><code>[BITHockeyManager startManager]</code></a> was
+invoked!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/enableAppNotTerminatingCleanlyDetection">@property enableAppNotTerminatingCleanlyDetection</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/lastSessionCrashDetails">@property lastSessionCrashDetails</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enableAppNotTerminatingCleanlyDetection" title="enableAppNotTerminatingCleanlyDetection"></a>
+	<h3 class="subsubtitle method-title">enableAppNotTerminatingCleanlyDetection</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>EXPERIMENTAL: Enable heuristics to detect the app not terminating cleanly</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, getter=isAppNotTerminatingCleanlyDetectionEnabled) BOOL enableAppNotTerminatingCleanlyDetection</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This allows it to get a crash report if the app got killed while being in the foreground
+because of now of the following reasons:
+- The main thread was blocked for too long
+- The app took too long to start up
+- The app tried to allocate too much memory. If iOS did send a memory warning before killing the app because of this reason, <a href="#//api/name/didReceiveMemoryWarningInLastSession"><code>didReceiveMemoryWarningInLastSession</code></a> returns <code>YES</code>.
+- Permitted background duration if main thread is running in an endless loop
+- App failed to resume in time if main thread is running in an endless loop
+- If <a href="#//api/name/enableMachExceptionHandler"><code>enableMachExceptionHandler</code></a> is not activated, crashed due to stackoverflow will also be reported</p>
+
+<p>The following kills can <em>NOT</em> be detected:
+- Terminating the app takes too long
+- Permitted background duration too long for all other cases
+- App failed to resume in time for all other cases
+- possibly more cases</p>
+
+<p>Crash reports triggered by this mechanisms do <em>NOT</em> contain any stack traces since the time of the kill
+cannot be intercepted and hence no stack trace of the time of the kill event can&rsquo;t be gathered.</p>
+
+<p>The heuristic is implemented as follows:
+If the app never gets a <code>UIApplicationDidEnterBackgroundNotification</code> or <code>UIApplicationWillTerminateNotification</code>
+notification, PLCrashReporter doesn&rsquo;t detect a crash itself, and the app starts up again, it is assumed that
+the app got either killed by iOS while being in foreground or a crash occured that couldn&rsquo;t be detected.</p>
+
+<p>Default: <em>NO</em></p><div class="warning"><p><strong>Warning:</strong> This is a heuristic and it <em>MAY</em> report false positives! It has been tested with iOS 6.1 and iOS 7.
+Depending on Apple changing notification events, new iOS version may cause more false positives!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/lastSessionCrashDetails">@property lastSessionCrashDetails</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/didReceiveMemoryWarningInLastSession">@property didReceiveMemoryWarningInLastSession</a></p></code></li>
+			
+			<li><code><p><code>BITCrashManagerDelegate considerAppNotTerminatedCleanlyReportForCrashManager:</code></p></code></li>
+			
+			<li><code><p><a href="https://developer.apple.com/library/ios/technotes/tn2151/_index.html">Apple Technical Note TN2151</a></p></code></li>
+			
+			<li><code><p><a href="https://developer.apple.com/library/ios/qa/qa1693/_index.html">Apple Technical Q&amp;A QA1693</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enableMachExceptionHandler" title="enableMachExceptionHandler"></a>
+	<h3 class="subsubtitle method-title">enableMachExceptionHandler</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Trap fatal signals via a Mach exception server.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, getter=isMachExceptionHandlerEnabled) BOOL enableMachExceptionHandler</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>By default the SDK is using the safe and proven in-process BSD Signals for catching crashes.
+This option provides an option to enable catching fatal signals via a Mach exception server
+instead.</p>
+
+<p>We strongly advice <em>NOT</em> to enable Mach exception handler in release versions of your apps!</p>
+
+<p>Default: <em>NO</em></p><div class="warning"><p><strong>Warning:</strong> The Mach exception handler executes in-process, and will interfere with debuggers when
+they attempt to suspend all active threads (which will include the Mach exception handler).
+Mach-based handling should <em>NOT</em> be used when a debugger is attached. The SDK will not
+enabled catching exceptions if the app is started with the debugger running. If you attach
+the debugger during runtime, this may cause issues the Mach exception handler is enabled!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/isDebuggerAttached">- isDebuggerAttached</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enableOnDeviceSymbolication" title="enableOnDeviceSymbolication"></a>
+	<h3 class="subsubtitle method-title">enableOnDeviceSymbolication</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enable on device symbolication for system symbols</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, getter=isOnDeviceSymbolicationEnabled) BOOL enableOnDeviceSymbolication</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>By default, the SDK does not symbolicate on the device, since this can
+take a few seconds at each crash. Also note that symbolication on the
+device might not be able to retrieve all symbols.</p>
+
+<p>Enable if you want to analyze crashes on unreleased OS versions.</p>
+
+<p>Default: <em>NO</em></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/lastSessionCrashDetails" title="lastSessionCrashDetails"></a>
+	<h3 class="subsubtitle method-title">lastSessionCrashDetails</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Provides details about the crash that occured in the last app session</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BITCrashDetails *lastSessionCrashDetails</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showAlwaysButton" title="showAlwaysButton"></a>
+	<h3 class="subsubtitle method-title">showAlwaysButton</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flag that determines if an &ldquo;Always&rdquo; option should be shown</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, getter=shouldShowAlwaysButton) BOOL showAlwaysButton</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If enabled the crash reporting alert will also present an &ldquo;Always&rdquo; option, so
+the user doesn&rsquo;t have to approve every single crash over and over again.</p>
+
+<p>If If <a href="#//api/name/crashManagerStatus"><code>crashManagerStatus</code></a> is set to <code>BITCrashManagerStatusAutoSend</code>, this property
+has no effect, since no alert will be presented.</p>
+
+<p>Default: <em>YES</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/crashManagerStatus">@property crashManagerStatus</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/timeintervalCrashInLastSessionOccured" title="timeintervalCrashInLastSessionOccured"></a>
+	<h3 class="subsubtitle method-title">timeintervalCrashInLastSessionOccured</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Provides the time between startup and crash in seconds</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSTimeInterval timeintervalCrashInLastSessionOccured</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Use this in together with <a href="#//api/name/didCrashInLastSession"><code>didCrashInLastSession</code></a> to detect if the app crashed very
+early after startup. This can be used to delay app initialization until the crash
+report has been sent to the server or if you want to do any other actions like
+cleaning up some cache data etc.</p>
+
+<p>Note that sending a crash reports starts as early as 1.5 seconds after the application
+did finish launching!</p>
+
+<p>The <a href="../Protocols/BITCrashManagerDelegate.html"><code>BITCrashManagerDelegate</code></a> protocol provides some delegates to inform if sending
+a crash report was finished successfully, ended in error or was cancelled by the user.</p>
+
+<p><em>Default</em>: <em>-1</em></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/didCrashInLastSession">@property didCrashInLastSession</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITCrashManagerDelegate.html">BITCrashManagerDelegate</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/generateTestCrash" title="generateTestCrash"></a>
+	<h3 class="subsubtitle method-title">generateTestCrash</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Lets the app crash for easy testing of the SDK</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)generateTestCrash</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The best way to use this is to trigger the crash with a button action.</p>
+
+<p>Make sure not to let the app crash in <code>applicationDidFinishLaunching</code> or any other
+startup method! Since otherwise the app would crash before the SDK could process it.</p>
+
+<p>Note that our SDK provides support for handling crashes that happen early on startup.
+Check the documentation for more information on how to use this.</p>
+
+<p>If the SDK detects an App Store environment, it will <em>NOT</em> cause the app to crash!</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/handleUserInput:withUserProvidedMetaData:" title="handleUserInput:withUserProvidedMetaData:"></a>
+	<h3 class="subsubtitle method-title">handleUserInput:withUserProvidedMetaData:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Provides an interface to pass user input from a custom alert to a crash report</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)handleUserInput:(BITCrashManagerUserInput)<em>userInput</em> withUserProvidedMetaData:(BITCrashMetaData *)<em>userProvidedMetaData</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInput</em></dt>
+			<dd><p>Defines the users action wether to send, always send, or not to send the crash report.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userProvidedMetaData</em></dt>
+			<dd><p>The content of this optional <a href="../Classes/BITCrashMetaData.html">BITCrashMetaData</a> instance will be attached to the crash report and allows to ask the user for e.g. additional comments or info.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns YES if the input is a valid option and successfully triggered further processing of the crash report</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Constants/BITCrashManagerUserInput.html">BITCrashManagerUserInput</a></p></code></li>
+			
+			<li><code><p><a href="../Classes/BITCrashMetaData.html">BITCrashMetaData</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isDebuggerAttached" title="isDebuggerAttached"></a>
+	<h3 class="subsubtitle method-title">isDebuggerAttached</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Detect if a debugger is attached to the app process</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isDebuggerAttached</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BOOL if the debugger is attached on app startup</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This is only invoked once on app startup and can not detect if the debugger is being
+attached during runtime!</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setAlertViewHandler:" title="setAlertViewHandler:"></a>
+	<h3 class="subsubtitle method-title">setAlertViewHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Lets you set a custom block which handles showing a custom UI and asking the user
+whether he wants to send the crash report.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setAlertViewHandler:(BITCustomAlertViewHandler)<em>alertViewHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>alertViewHandler</em></dt>
+			<dd><p>A block that is responsible for loading, presenting and and dismissing your custom user interface which prompts the user if he wants to send crash reports. The block is also responsible for triggering further processing of the crash reports.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This replaces the default alert the SDK would show!</p>
+
+<p>You can use this to present any kind of user interface which asks the user for additional information,
+e.g. what they did in the app before the app crashed.</p>
+
+<p>In addition to this you should always ask your users if they agree to send crash reports, send them
+always or not and return the result when calling <code>handleUserInput:withUserProvidedCrashDescription</code>.</p><div class="warning"><p><strong>Warning:</strong> Block needs to call the <a href="#//api/name/handleUserInput:withUserProvidedMetaData:"><code>[BITCrashManager handleUserInput:withUserProvidedMetaData:]</code></a> method!</p></div><div class="warning"><p><strong>Warning:</strong> This needs to be set before calling <a href="../Classes/BITHockeyManager.html#//api/name/startManager"><code>[BITHockeyManager startManager]</code></a>!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCrashCallbacks:" title="setCrashCallbacks:"></a>
+	<h3 class="subsubtitle method-title">setCrashCallbacks:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the callbacks that will be executed prior to program termination after a crash has occurred</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setCrashCallbacks:(BITCrashManagerCallbacks *)<em>callbacks</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callbacks</em></dt>
+			<dd><p>A pointer to an initialized PLCrashReporterCallback structure, see <a href="https://www.plcrashreporter.org/documentation/api/v1.2-rc2/struct">https://www.plcrashreporter.org/documentation/api/v1.2-rc2/struct</a>_p_l_crash_reporter_callbacks.html</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>PLCrashReporter provides support for executing an application specified function in the context
+of the crash reporter&rsquo;s signal handler, after the crash report has been written to disk.</p>
+
+<p>Writing code intended for execution inside of a signal handler is exceptionally difficult, and is <em>NOT</em> recommended!</p>
+
+<p><em>Program Flow and Signal Handlers</em></p>
+
+<p>When the signal handler is called the normal flow of the program is interrupted, and your program is an unknown state. Locks may be held, the heap may be corrupt (or in the process of being updated), and your signal handler may invoke a function that was being executed at the time of the signal. This may result in deadlocks, data corruption, and program termination.</p>
+
+<p><em>Async-Safe Functions</em></p>
+
+<p>A subset of functions are defined to be async-safe by the OS, and are safely callable from within a signal handler. If you do implement a custom post-crash handler, it must be async-safe. A table of POSIX-defined async-safe functions and additional information is available from the <a href="https://www.securecoding.cert.org/confluence/display/seccode/SIG30-C.+Call+only+asynchronous-safe+functions+within+signal+handlers">CERT programming guide - SIG30-C</a>.</p>
+
+<p>Most notably, the Objective-C runtime itself is not async-safe, and Objective-C may not be used within a signal handler.</p>
+
+<p>Documentation taken from PLCrashReporter: <a href="https://www.plcrashreporter.org/documentation/api/v1.2-rc2/async_safety.html">https://www.plcrashreporter.org/documentation/api/v1.2-rc2/async_safety.html</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Bit Stadium GmbH. All rights reserved. (Last updated: 2014-11-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

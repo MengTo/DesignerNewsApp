@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>Guide-Installation-Setup-Advanced Document</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../../css/stylesPrint.css" />	
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../../index.html">HockeySDK-iOS 3.6.2 </a></h1>
+				<a id="developerHome" href="../../index.html">Bit Stadium GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode" id="pageTitleHeader">Guide-Installation-Setup-Advanced Document</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<a title="Guide-Installation-Setup-Advanced Document" name="top"></a>
+			<div id="overview_contents" role="main">
+				<div id="container">	
+					<h2>Version 3.6.2</h2>
+
+<ul>
+<li><a href="http://www.hockeyapp.net/help/sdk/ios/3.6.2/docs/docs/Changelog.html">Changelog</a></li>
+</ul>
+
+
+<h2>Introduction</h2>
+
+<p>This article describes how to integrate HockeyApp into your iOS apps using a Git submodule and Xcode sub-projects. The SDK allows testers to update your app to another beta version right from within the application. It will notify the tester if a new update is available. The SDK also allows to send crash reports. If a crash has happened, it will ask the tester on the next start whether he wants to send information about the crash to the server.</p>
+
+<p>This document contains the following sections:</p>
+
+<ul>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#download">Set up Git submodule</a></li>
+<li><a href="#xcode">Set up Xcode</a></li>
+<li><a href="#modify">Modify Code</a></li>
+<li><a href="#extension">iOS 8 Extensions</a></li>
+<li><a href="#options">Additional Options</a></li>
+</ul>
+
+
+<p><a id="requirements"></a></p>
+
+<h2>Requirements</h2>
+
+<p>The SDK runs on devices with iOS 6.0 or higher.</p>
+
+<p><a id="download"></a></p>
+
+<h2>Set up Git submodule</h2>
+
+<ol>
+<li><p>Open a Terminal window</p></li>
+<li><p>Change to your projects directory `cd /path/to/MyProject'</p></li>
+<li><p>If this is a new project, initialize Git: <code>git init</code></p></li>
+<li><p>Add the submodule: <code>git submodule add git://github.com/bitstadium/HockeySDK-iOS.git Vendor/HockeySDK</code>. This would add the submodule into the <code>Vendor/HockeySDK</code> subfolder. Change this to the folder you prefer.</p></li>
+<li><p>Releases are always in the <code>master</code> branch while the <code>develop</code> branch provides the latest in development source code (Using the git flow branching concept). We recommend using the <code>master</code> branch!</p></li>
+</ol>
+
+
+<p><a id="xcode"></a></p>
+
+<h2>Set up Xcode</h2>
+
+<ol>
+<li><p>Find the <code>HockeySDK.xcodeproj</code> file inside of the cloned HockeySDK-iOS project directory.</p></li>
+<li><p>Drag &amp; Drop it into the <code>Project Navigator</code> (⌘+1).</p></li>
+<li><p>Select your project in the <code>Project Navigator</code> (⌘+1).</p></li>
+<li><p>Select your app target.</p></li>
+<li><p>Select the tab <code>Build Phases</code>.</p></li>
+<li><p>Expand <code>Link Binary With Libraries</code>.</p></li>
+<li><p>Add <code>libHockeySDK.a</code></p>
+
+<p> <img src="XcodeLinkBinariesLib_normal.png"/></p></li>
+<li><p>Select <code>Add Other...</code>.</p></li>
+<li><p>Select <code>CrashReporter.framework</code> from the <code>Vendor/HockeySDK/Vendor</code> folder</p>
+
+<p> <img src="XcodeFrameworks4_normal.png"/></p></li>
+<li><p>Add the following system frameworks, if they are missing:</p>
+
+<ul>
+<li><code>AssetsLibrary</code></li>
+<li><code>CoreText</code></li>
+<li><code>CoreGraphics</code></li>
+<li><code>Foundation</code></li>
+<li><code>MobileCoreServices</code></li>
+<li><code>QuartzCore</code></li>
+<li><code>QuickLook</code></li>
+<li><code>Security</code></li>
+<li><code>SystemConfiguration</code></li>
+<li><code>UIKit</code></li>
+</ul>
+</li>
+<li><p>Expand <code>Copy Bundle Resource</code>.</p></li>
+<li><p>Drag <code>HockeySDKResources.bundle</code> from the <code>HockeySDK</code> sub-projects <code>Products</code> folder and drop into the <code>Copy Bundle Resource</code> section</p></li>
+<li><p>Select <code>Build Settings</code></p></li>
+<li><p>Add the following <code>Header Search Path</code></p>
+
+<p><code>$(SRCROOT)/Vendor/HockeySDK/Classes</code></p></li>
+</ol>
+
+
+<p><a id="modify"></a></p>
+
+<h2>Modify Code</h2>
+
+<h3>Objective-C</h3>
+
+<ol>
+<li><p>Open your <code>AppDelegate.m</code> file.</p></li>
+<li><p>Add the following line at the top of the file below your own #import statements:</p>
+
+<pre><code> #import &lt;HockeySDK/HockeySDK.h&gt;
+</code></pre></li>
+<li><p>Search for the method <code>application:didFinishLaunchingWithOptions:</code></p></li>
+<li><p>Add the following lines:</p>
+
+<pre><code> [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"APP_IDENTIFIER"];
+ [[BITHockeyManager sharedHockeyManager] startManager];
+ [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
+</code></pre></li>
+<li><p>Continue with <a href="#generalcode">General subsection</a></p></li>
+</ol>
+
+
+<h3>Swift</h3>
+
+<ol>
+<li><p>Add the following line to your <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html">Objective-C bridging header</a> file:</p>
+
+<pre><code> #import &lt;HockeySDK/HockeySDK.h&gt;
+</code></pre></li>
+<li><p>Open your <code>AppDelegate.swift</code> file.</p></li>
+<li><p>Search for the method <code>application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool</code></p></li>
+<li><p>Add the following lines:</p>
+
+<pre><code> BITHockeyManager.sharedHockeyManager().configureWithIdentifier("APP_IDENTIFIER");
+ BITHockeyManager.sharedHockeyManager().startManager();
+ BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation();
+</code></pre></li>
+<li><p>Continue with <a href="#generalcode">General subsection</a></p></li>
+</ol>
+
+
+<p><a id="generalcode"></a></p>
+
+<h3>General</h3>
+
+<ol>
+<li><p>Replace <code>APP_IDENTIFIER</code> with the app identifier of your beta app. If you don&rsquo;t know what the app identifier is or how to find it, please read <a href="http://support.hockeyapp.net/kb/how-tos/how-to-find-the-app-identifier">this how-to</a>.</p></li>
+<li><p>If you want to see beta analytics, use the beta distribution feature with in-app updates, restrict versions to specific users, or want to know who is actually testing your app, you need to follow the instructions on our guide <a href="../../docs/docs/HowTo-Authenticating-Users-on-iOS.html">Identify and authenticate users of Ad-Hoc or Enterprise builds</a></p></li>
+</ol>
+
+
+<p><em>Note:</em> The SDK is optimized to defer everything possible to a later time while making sure e.g. crashes on startup can also be caught and each module executes other code with a delay some seconds. This ensures that applicationDidFinishLaunching will process as fast as possible and the SDK will not block the startup sequence resulting in a possible kill by the watchdog process.</p>
+
+<p><a id="extensions"></a></p>
+
+<h2>iOS 8 Extensions</h2>
+
+<p>The following points need to be considered to use HockeySDK with iOS 8 Extensions:</p>
+
+<ol>
+<li>Each extension is required to use the same values for version (<code>CFBundleShortVersionString</code>) and build number (<code>CFBundleVersion</code>) as the main app uses. (This is required only if you are using the same APP_IDENTIFIER for your app and extensions).</li>
+<li><p>You need to make sure the SDK setup code is only invoked once. Since there is no <code>applicationDidFinishLaunching:</code> equivalent and <code>viewDidLoad</code> can run multiple times, you need to use a setup like the following example:</p>
+
+<pre><code> @interface TodayViewController () &lt;NCWidgetProviding&gt;
+
+ @property (nonatomic, assign) BOOL didSetupHockeySDK;
+
+ @end
+
+ @implementation TodayViewController
+
+ - (void)viewDidLoad {
+   [super viewDidLoad];
+   if (!self.didSetupHockeySDK) {
+     [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"APP_IDENTIFIER"];
+     [[BITHockeyManager sharedHockeyManager] startManager];
+     self.didSetupHockeySDK = YES;
+   }
+ }
+</code></pre></li>
+</ol>
+
+
+<p><a id="options"></a></p>
+
+<h2>Additional Options</h2>
+
+<h3>Xcode Documentation</h3>
+
+<p>This documentation provides integrated help in Xcode for all public APIs and a set of additional tutorials and how-tos.</p>
+
+<ol>
+<li><p>Download the <a href="http://hockeyapp.net/releases/">HockeySDK-iOS documentation</a>.</p></li>
+<li><p>Unzip the file. A new folder <code>HockeySDK-iOS-documentation</code> is created.</p></li>
+<li><p>Copy the content into ~<code>/Library/Developer/Shared/Documentation/DocSets</code></p></li>
+</ol>
+
+
+<p>The documentation is also available via the following URL: <a href="http://hockeyapp.net/help/sdk/ios/3.6.2/">http://hockeyapp.net/help/sdk/ios/3.6.2/</a></p>
+
+<h3>Set up with xcconfig</h3>
+
+<p>Instead of manually adding the missing frameworks, you can also use our bundled xcconfig file.</p>
+
+<ol>
+<li><p>Create a new <code>Project.xcconfig</code> file, if you don&rsquo;t already have one (You can give it any name)</p>
+
+<p> <strong>Note:</strong> You can also add the required frameworks manually to your targets <code>Build Phases</code> an continue with step <code>4.</code> instead.</p>
+
+<ol type="a">
+<li><p>Select your project in the <code>Project Navigator</code> (⌘+1).</p></li>
+<li><p>Select the tab <code>Info</code>.</p></li>
+<li><p>Expand <code>Configurations</code>.</p></li>
+<li><p>Select <code>Project.xcconfig</code> for all your configurations</p>
+
+<p> <img src="XcodeFrameworks1_normal.png"/></p></li>
+</ol>
+</li>
+<li><p>Open <code>Project.xcconfig</code> in the editor</p></li>
+<li><p>Add the following line:</p>
+
+<p> <code>#include "../Vendor/HockeySDK/Support/HockeySDK.xcconfig"</code></p>
+
+<p> (Adjust the path depending where the <code>Project.xcconfig</code> file is located related to the Xcode project package)</p>
+
+<p> <strong>Important note:</strong> Check if you overwrite any of the build settings and add a missing <code>$(inherited)</code> entry on the projects build settings level, so the <code>HockeySDK.xcconfig</code> settings will be passed through successfully.</p></li>
+<li><p>If you are getting build warnings, then the <code>.xcconfig</code> setting wasn&rsquo;t included successfully or its settings in <code>Other Linker Flags</code> get ignored because <code>$(inherited)</code> is missing on project or target level. Either add <code>$(inherited)</code> or link the following frameworks manually in <code>Link Binary With Libraries</code> under <code>Build Phases</code>:</p>
+
+<ul>
+<li><code>AssetsLibrary</code></li>
+<li><code>CoreText</code></li>
+<li><code>CoreGraphics</code></li>
+<li><code>Foundation</code></li>
+<li><code>MobileCoreServices</code></li>
+<li><code>QuartzCore</code></li>
+<li><code>QuickLook</code></li>
+<li><code>Security</code></li>
+<li><code>SystemConfiguration</code></li>
+<li><code>UIKit</code></li>
+</ul>
+</li>
+</ol>
+
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Bit Stadium GmbH. All rights reserved. (Last updated: 2014-11-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					
+					</div>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

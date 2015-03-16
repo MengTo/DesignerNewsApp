@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BITAuthenticator.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BITAuthenticator</TokenIdentifier>
+			<Abstract type="html">Identify and authenticate users of Ad-Hoc or Enterprise builds</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/setIdentificationType:</TokenIdentifier>
+			<Abstract type="html">Defines the identification mechanism to be used</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITAuthenticatorIdentificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BITAuthenticatorIdentificationType identificationType</Declaration>
+			
+			
+			<Anchor>//api/name/identificationType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/identificationType</TokenIdentifier>
+			<Abstract type="html">Defines the identification mechanism to be used</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITAuthenticatorIdentificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BITAuthenticatorIdentificationType identificationType</Declaration>
+			
+			
+			<Anchor>//api/name/identificationType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+			<Abstract type="html">Defines the identification mechanism to be used</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITAuthenticatorIdentificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BITAuthenticatorIdentificationType identificationType</Declaration>
+			
+			
+			<Anchor>//api/name/identificationType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/setRestrictApplicationUsage:</TokenIdentifier>
+			<Abstract type="html">Enables or disables checking if the user is allowed to run this app</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITAuthenticatorIdentificationType</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/restrictionEnforcementFrequency</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BOOL restrictApplicationUsage</Declaration>
+			
+			
+			<Anchor>//api/name/restrictApplicationUsage</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/restrictApplicationUsage</TokenIdentifier>
+			<Abstract type="html">Enables or disables checking if the user is allowed to run this app</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITAuthenticatorIdentificationType</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/restrictionEnforcementFrequency</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BOOL restrictApplicationUsage</Declaration>
+			
+			
+			<Anchor>//api/name/restrictApplicationUsage</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/restrictApplicationUsage</TokenIdentifier>
+			<Abstract type="html">Enables or disables checking if the user is allowed to run this app</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITAuthenticatorIdentificationType</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/restrictionEnforcementFrequency</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BOOL restrictApplicationUsage</Declaration>
+			
+			
+			<Anchor>//api/name/restrictApplicationUsage</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/setRestrictionEnforcementFrequency:</TokenIdentifier>
+			<Abstract type="html">Defines how often the BITAuthenticator checks if the user is allowed
+to run this application</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITAuthenticatorAppRestrictionEnforcementFrequency</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/restrictApplicationUsage</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BITAuthenticatorAppRestrictionEnforcementFrequency restrictionEnforcementFrequency</Declaration>
+			
+			
+			<Anchor>//api/name/restrictionEnforcementFrequency</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/restrictionEnforcementFrequency</TokenIdentifier>
+			<Abstract type="html">Defines how often the BITAuthenticator checks if the user is allowed
+to run this application</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITAuthenticatorAppRestrictionEnforcementFrequency</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/restrictApplicationUsage</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BITAuthenticatorAppRestrictionEnforcementFrequency restrictionEnforcementFrequency</Declaration>
+			
+			
+			<Anchor>//api/name/restrictionEnforcementFrequency</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/restrictionEnforcementFrequency</TokenIdentifier>
+			<Abstract type="html">Defines how often the BITAuthenticator checks if the user is allowed
+to run this application</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITAuthenticatorAppRestrictionEnforcementFrequency</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/restrictApplicationUsage</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BITAuthenticatorAppRestrictionEnforcementFrequency restrictionEnforcementFrequency</Declaration>
+			
+			
+			<Anchor>//api/name/restrictionEnforcementFrequency</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/setAuthenticationSecret:</TokenIdentifier>
+			<Abstract type="html">The authentication secret from HockeyApp. To find the right secret,
+click on your app on the HockeyApp dashboard, then on Show next to
+&quot;Secret:&quot;.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, copy) NSString *authenticationSecret</Declaration>
+			
+			
+			<Anchor>//api/name/authenticationSecret</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/authenticationSecret</TokenIdentifier>
+			<Abstract type="html">The authentication secret from HockeyApp. To find the right secret,
+click on your app on the HockeyApp dashboard, then on Show next to
+&quot;Secret:&quot;.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, copy) NSString *authenticationSecret</Declaration>
+			
+			
+			<Anchor>//api/name/authenticationSecret</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/authenticationSecret</TokenIdentifier>
+			<Abstract type="html">The authentication secret from HockeyApp. To find the right secret,
+click on your app on the HockeyApp dashboard, then on Show next to
+&quot;Secret:&quot;.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, copy) NSString *authenticationSecret</Declaration>
+			
+			
+			<Anchor>//api/name/authenticationSecret</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/setWebpageURL:</TokenIdentifier>
+			<Abstract type="html">The baseURL of the webpage the user is redirected to if identificationType is
+set to BITAuthenticatorIdentificationTypeDevice; defaults to https://rink.hockeyapp.net.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSURL *webpageURL</Declaration>
+			
+			
+			<Anchor>//api/name/webpageURL</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/webpageURL</TokenIdentifier>
+			<Abstract type="html">The baseURL of the webpage the user is redirected to if identificationType is
+set to BITAuthenticatorIdentificationTypeDevice; defaults to https://rink.hockeyapp.net.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSURL *webpageURL</Declaration>
+			
+			
+			<Anchor>//api/name/webpageURL</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/webpageURL</TokenIdentifier>
+			<Abstract type="html">The baseURL of the webpage the user is redirected to if identificationType is
+set to BITAuthenticatorIdentificationTypeDevice; defaults to https://rink.hockeyapp.net.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSURL *webpageURL</Declaration>
+			
+			
+			<Anchor>//api/name/webpageURL</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/deviceAuthenticationURL</TokenIdentifier>
+			<Abstract type="html">URL to query the device&apos;s id via external webpage
+Built with the baseURL set in webpageURL.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+			<Declaration>- (NSURL *)deviceAuthenticationURL</Declaration>
+			
+			
+			<Anchor>//api/name/deviceAuthenticationURL</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/setUrlScheme:</TokenIdentifier>
+			<Abstract type="html">The url-scheme used to idenfify via BITAuthenticatorIdentificationTypeDevice</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/handleOpenURL:sourceApplication:annotation:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSString *urlScheme</Declaration>
+			
+			
+			<Anchor>//api/name/urlScheme</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/urlScheme</TokenIdentifier>
+			<Abstract type="html">The url-scheme used to idenfify via BITAuthenticatorIdentificationTypeDevice</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/handleOpenURL:sourceApplication:annotation:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSString *urlScheme</Declaration>
+			
+			
+			<Anchor>//api/name/urlScheme</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/urlScheme</TokenIdentifier>
+			<Abstract type="html">The url-scheme used to idenfify via BITAuthenticatorIdentificationTypeDevice</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/handleOpenURL:sourceApplication:annotation:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSString *urlScheme</Declaration>
+			
+			
+			<Anchor>//api/name/urlScheme</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/handleOpenURL:sourceApplication:annotation:</TokenIdentifier>
+			<Abstract type="html">Should be used by the app-delegate to forward handle application:openURL:sourceApplication:annotation: calls.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/urlScheme</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)handleOpenURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">Param url that was passed to the app</Abstract>
+				</Parameter><Parameter>
+					<Name>sourceApplication</Name>
+					<Abstract type="html">Param sourceApplication that was passed to the app</Abstract>
+				</Parameter><Parameter>
+					<Name>annotation</Name>
+					<Abstract type="html">Param annotation that was passed to the app</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the URL request was handled, NO if the URL could not be handled/identified.</Abstract></ReturnValue>
+			<Anchor>//api/name/handleOpenURL:sourceApplication:annotation:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/authenticateInstallation</TokenIdentifier>
+			<Abstract type="html">Invoked automatic identification and validation</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)authenticateInstallation</Declaration>
+			
+			
+			<Anchor>//api/name/authenticateInstallation</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/identifyWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Identifies the user according to the type specified in identificationType.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/authenticateInstallation</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/validateWithCompletion:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)identifyWithCompletion:(void ( ^ ) ( BOOL identified , NSError *error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Block being executed once identification completed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/identifyWithCompletion:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/setIdentified:</TokenIdentifier>
+			<Abstract type="html">Returns YES if this app is identified according to the setting in identificationType.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, readonly, getter=isIdentified) BOOL identified</Declaration>
+			
+			
+			<Anchor>//api/name/identified</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/isIdentified</TokenIdentifier>
+			<Abstract type="html">Returns YES if this app is identified according to the setting in identificationType.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, readonly, getter=isIdentified) BOOL identified</Declaration>
+			
+			
+			<Anchor>//api/name/identified</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identified</TokenIdentifier>
+			<Abstract type="html">Returns YES if this app is identified according to the setting in identificationType.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, readonly, getter=isIdentified) BOOL identified</Declaration>
+			
+			
+			<Anchor>//api/name/identified</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/validateWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Validates if the identified user is allowed to run this application. This checks
+with the HockeyApp backend and calls the completion-block once completed.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/authenticateInstallation</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/identifyWithCompletion:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)validateWithCompletion:(void ( ^ ) ( BOOL validated , NSError *error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Block being executed once validation completed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/validateWithCompletion:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/setValidated:</TokenIdentifier>
+			<Abstract type="html">Indicates if this installation is validated.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly, getter=isValidated) BOOL validated</Declaration>
+			
+			
+			<Anchor>//api/name/validated</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/isValidated</TokenIdentifier>
+			<Abstract type="html">Indicates if this installation is validated.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly, getter=isValidated) BOOL validated</Declaration>
+			
+			
+			<Anchor>//api/name/validated</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/validated</TokenIdentifier>
+			<Abstract type="html">Indicates if this installation is validated.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly, getter=isValidated) BOOL validated</Declaration>
+			
+			
+			<Anchor>//api/name/validated</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/cleanupInternalStorage</TokenIdentifier>
+			<Abstract type="html">Removes all previously stored authentication tokens, UDIDs, etc.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+			<Declaration>- (void)cleanupInternalStorage</Declaration>
+			
+			
+			<Anchor>//api/name/cleanupInternalStorage</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITAuthenticator/publicInstallationIdentifier</TokenIdentifier>
+			<Abstract type="html">Returns different values depending on identificationType. This can be used
+by the application to identify the user.</Abstract>
+			<DeclaredIn>BITAuthenticator.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITAuthenticator/identificationType</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSString *)publicInstallationIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/publicInstallationIdentifier</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

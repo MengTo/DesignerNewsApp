@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BITUpdateManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BITUpdateManager</TokenIdentifier>
+			<Abstract type="html">The update manager module.</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="23"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/setUpdateSetting:</TokenIdentifier>
+			<Abstract type="html">When to check for new updates.</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITUpdateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BITUpdateSetting updateSetting</Declaration>
+			
+			
+			<Anchor>//api/name/updateSetting</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/updateSetting</TokenIdentifier>
+			<Abstract type="html">When to check for new updates.</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITUpdateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BITUpdateSetting updateSetting</Declaration>
+			
+			
+			<Anchor>//api/name/updateSetting</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/updateSetting</TokenIdentifier>
+			<Abstract type="html">When to check for new updates.</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITUpdateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) BITUpdateSetting updateSetting</Declaration>
+			
+			
+			<Anchor>//api/name/updateSetting</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/setCheckForUpdateOnLaunch:</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether the automatic update checks should be done.</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/updateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, getter=isCheckForUpdateOnLaunch) BOOL checkForUpdateOnLaunch</Declaration>
+			
+			
+			<Anchor>//api/name/checkForUpdateOnLaunch</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/isCheckForUpdateOnLaunch</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether the automatic update checks should be done.</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/updateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, getter=isCheckForUpdateOnLaunch) BOOL checkForUpdateOnLaunch</Declaration>
+			
+			
+			<Anchor>//api/name/checkForUpdateOnLaunch</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+			<Abstract type="html">Flag that determines whether the automatic update checks should be done.</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/updateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/checkForUpdate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign, getter=isCheckForUpdateOnLaunch) BOOL checkForUpdateOnLaunch</Declaration>
+			
+			
+			<Anchor>//api/name/checkForUpdateOnLaunch</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/checkForUpdate</TokenIdentifier>
+			<Abstract type="html">Check for an update</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/updateSetting</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/checkForUpdateOnLaunch</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)checkForUpdate</Declaration>
+			
+			
+			<Anchor>//api/name/checkForUpdate</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/setAlwaysShowUpdateReminder:</TokenIdentifier>
+			<Abstract type="html">Flag that determines if updates alert should be repeatedly shown</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL alwaysShowUpdateReminder</Declaration>
+			
+			
+			<Anchor>//api/name/alwaysShowUpdateReminder</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/alwaysShowUpdateReminder</TokenIdentifier>
+			<Abstract type="html">Flag that determines if updates alert should be repeatedly shown</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL alwaysShowUpdateReminder</Declaration>
+			
+			
+			<Anchor>//api/name/alwaysShowUpdateReminder</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/alwaysShowUpdateReminder</TokenIdentifier>
+			<Abstract type="html">Flag that determines if updates alert should be repeatedly shown</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL alwaysShowUpdateReminder</Declaration>
+			
+			
+			<Anchor>//api/name/alwaysShowUpdateReminder</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/setShowDirectInstallOption:</TokenIdentifier>
+			<Abstract type="html">Flag that determines if the update alert should show an direct install option</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isShowingDirectInstallOption) BOOL showDirectInstallOption</Declaration>
+			
+			
+			<Anchor>//api/name/showDirectInstallOption</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/isShowingDirectInstallOption</TokenIdentifier>
+			<Abstract type="html">Flag that determines if the update alert should show an direct install option</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isShowingDirectInstallOption) BOOL showDirectInstallOption</Declaration>
+			
+			
+			<Anchor>//api/name/showDirectInstallOption</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/showDirectInstallOption</TokenIdentifier>
+			<Abstract type="html">Flag that determines if the update alert should show an direct install option</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isShowingDirectInstallOption) BOOL showDirectInstallOption</Declaration>
+			
+			
+			<Anchor>//api/name/showDirectInstallOption</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/setExpiryDate:</TokenIdentifier>
+			<Abstract type="html">Expiry date of the current app version</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/disableUpdateCheckOptionWhenExpired</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/shouldDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/didDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSDate *expiryDate</Declaration>
+			
+			
+			<Anchor>//api/name/expiryDate</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/expiryDate</TokenIdentifier>
+			<Abstract type="html">Expiry date of the current app version</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/disableUpdateCheckOptionWhenExpired</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/shouldDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/didDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSDate *expiryDate</Declaration>
+			
+			
+			<Anchor>//api/name/expiryDate</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/expiryDate</TokenIdentifier>
+			<Abstract type="html">Expiry date of the current app version</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/disableUpdateCheckOptionWhenExpired</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/shouldDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/didDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong) NSDate *expiryDate</Declaration>
+			
+			
+			<Anchor>//api/name/expiryDate</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/setDisableUpdateCheckOptionWhenExpired:</TokenIdentifier>
+			<Abstract type="html">Disable the update check button from expiry screen or alerts</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/expiryDate</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/shouldDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/didDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic) BOOL disableUpdateCheckOptionWhenExpired</Declaration>
+			
+			
+			<Anchor>//api/name/disableUpdateCheckOptionWhenExpired</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/disableUpdateCheckOptionWhenExpired</TokenIdentifier>
+			<Abstract type="html">Disable the update check button from expiry screen or alerts</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/expiryDate</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/shouldDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/didDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic) BOOL disableUpdateCheckOptionWhenExpired</Declaration>
+			
+			
+			<Anchor>//api/name/disableUpdateCheckOptionWhenExpired</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/disableUpdateCheckOptionWhenExpired</TokenIdentifier>
+			<Abstract type="html">Disable the update check button from expiry screen or alerts</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITUpdateManager/expiryDate</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/shouldDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITUpdateManagerDelegate/didDisplayExpiryAlertForUpdateManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic) BOOL disableUpdateCheckOptionWhenExpired</Declaration>
+			
+			
+			<Anchor>//api/name/disableUpdateCheckOptionWhenExpired</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/showUpdateView</TokenIdentifier>
+			<Abstract type="html">Present the modal update user interface.</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+			<Declaration>- (void)showUpdateView</Declaration>
+			
+			
+			<Anchor>//api/name/showUpdateView</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITUpdateManager/hockeyViewController:</TokenIdentifier>
+			<Abstract type="html">Create an update view</Abstract>
+			<DeclaredIn>BITUpdateManager.h</DeclaredIn>
+			
+			<Declaration>- (BITUpdateViewController *)hockeyViewController:(BOOL)modal</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>modal</Name>
+					<Abstract type="html">Return a view ready for modal presentation with integrated navigation bar</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BITUpdateViewController The update user interface view controller,
+e.g. to push it onto a navigation stack.</Abstract></ReturnValue>
+			<Anchor>//api/name/hockeyViewController:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

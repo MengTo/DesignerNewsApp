@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>Guide-Migration-Kits Document</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../../css/stylesPrint.css" />	
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../../index.html">HockeySDK-iOS 3.6.2 </a></h1>
+				<a id="developerHome" href="../../index.html">Bit Stadium GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode" id="pageTitleHeader">Guide-Migration-Kits Document</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<a title="Guide-Migration-Kits Document" name="top"></a>
+			<div id="overview_contents" role="main">
+				<div id="container">	
+					<h2>Introduction</h2>
+
+<p>This guide will help you migrate from QuincyKit, HockeyKit or an older version of HockeySDK-iOS to the latest release of the unified HockeySDK for iOS.</p>
+
+<p>First of all we will cleanup the obsolete installation files and then convert your existing code to the new API calls.</p>
+
+<h2>Cleanup</h2>
+
+<p>First of all you should remove all files from prior versions of either QuincyKit, HockeyKit or HockeySDK-iOS. If you not sure which files you added, here are a few easy steps for each SDK.</p>
+
+<h3>QuincyKit</h3>
+
+<p>In Xcode open the <code>Project Navigator</code> (⌘+1). In the search field at the bottom enter &ldquo;Quincy&rdquo;. QuincyKit is installed, if search finds the following files:</p>
+
+<ul>
+<li>BWQuincyManager.h</li>
+<li>BWQuincyManager.m</li>
+<li>Quincy.bundle</li>
+</ul>
+
+
+<p>Delete them all (&ldquo;Move to Trash&rdquo;). Or if you have them grouped into a folder (for example Vendor/QuincyKit) delete the folder.</p>
+
+<h3>HockeyKit</h3>
+
+<p>In Xcode open the <code>Project Navigator</code> (⌘+1). In the search field at the bottom enter &ldquo;Hockey&rdquo;. HockeyKit is installed, if search finds for example:</p>
+
+<ul>
+<li>BWHockeyManager.h</li>
+<li>Hockey.bundle</li>
+</ul>
+
+
+<p>All of them should be in one folder/group in Xcode. Remove that folder.</p>
+
+<h3>HockeySDK-iOS before v2.5</h3>
+
+<p>In Xcode open the <code>Project Navigator</code> (⌘+1). In the search field at the bottom enter &ldquo;CNSHockeyManager&rdquo;. If search returns any results you have the first release of our unified SDK added to your project. Even if you added it as a git submodule we would suggest you remove it first.</p>
+
+<h3>HockeySDK-iOS v2.5.x</h3>
+
+<p>In Xcode open the <code>Project Navigator</code> (⌘+1). In the search field at the bottom enter <code>HockeySDK.framework</code>. If search returns any results you have the first release of our unified SDK added to your project. Even if you added it as a git submodule we would suggest you remove it first. Repeat the same for <code>CrashReporter.framework</code> and <code>HockeySDKResources.bundle</code>.</p>
+
+<h3>HockeySDK-iOS v3.0.x</h3>
+
+<p>In Xcode open the <code>Project Navigator</code> (⌘+1). In the search field at the bottom enter <code>HockeySDK.embeddedFramework</code>. If search returns any results you have the first release of our unified SDK added to your project. Even if you added it as a git submodule we would suggest you remove it first.</p>
+
+<h3>Final Steps</h3>
+
+<p>Search again in the <code>Project Navigator</code> (⌘+1) for &ldquo;CrashReporter.framework&rdquo;. You shouldn&rsquo;t get any results now. If not, remove the CrashReporter.framework from your project.</p>
+
+<h2>Installation</h2>
+
+<p>Follow the steps in our installation guide for either <a href="http://support.hockeyapp.net/kb/client-integration/hockeyapp-for-ios-hockeysdk#framework">Installation with binary framework distribution</a> (Recommended) or <a href="http://support.hockeyapp.net/kb/client-integration/hockeyapp-for-ios-hockeysdk#subproject">Installation as a subproject</a></p>
+
+<p>After you finished the steps for either of the installation procedures, we have to migrate your existing code.</p>
+
+<h2>Setup</h2>
+
+<h3>QuincyKit / HockeyKit</h3>
+
+<p>In your application delegate (for example <code>AppDelegate.m</code>) search for the following lines:</p>
+
+<pre><code>[[BWQuincyManager sharedQuincyManager] setAppIdentifier:@"0123456789abcdef"];
+
+[[BWHockeyManager sharedHockeyManager] setAppIdentifier:@"0123456789abcdef"];
+[[BWHockeyManager sharedHockeyManager] setUpdateURL:@"https://rink.hockeyapp.net/"];
+</code></pre>
+
+<p>If you use (as recommended) different identifiers for beta and store distribution some lines may be wrapped with compiler macros like this:</p>
+
+<pre><code>#if defined (CONFIGURATION_Beta)
+  [[BWQuincyManager sharedQuincyManager] setAppIdentifier:@"BETA_IDENTIFIER"];
+#endif
+
+#if defined (CONFIGURATION_Distribution)
+  [[BWQuincyManager sharedQuincyManager] setAppIdentifier:@"LIVE_IDENTIFIER"];
+#endif
+</code></pre>
+
+<p>For now comment out all lines with either <code>[BWQuincyManager sharedQuincyManager]</code> or <code>[BWHockeyManager sharedHockeyManager]</code>.</p>
+
+<p>Open the header file of your application delegate (for example <code>AppDelegate.m</code>) or just press ^ + ⌘ + ↑ there should be a line like this (AppDelegate should match the name of the file)</p>
+
+<pre><code>@interface AppDelegate : NSObject &lt;UIApplicationDelegate, UITabBarControllerDelegate, BWHockeyManagerDelegate&gt; {  
+</code></pre>
+
+<p>Remove the <code>BWHockeyManagerDelegate</code>. Also look for the following line:</p>
+
+<pre><code>#import "BWHockeyManager.h"
+</code></pre>
+
+<p>And remove it too. (This line may have a #if macro around it, remove that too)</p>
+
+<p>Now follow the steps described in our <a href="http://support.hockeyapp.net/kb/client-integration/hockeyapp-for-ios-hockeysdk#setup">setup guide</a> The values for <code>LIVE_IDENTIFIER</code> and <code>BETA_IDENTIFIER</code> are used in the setup guide.</p>
+
+<p>After you have finished the setup guide make sure everything works as expected and then delete the out commented lines from above.</p>
+
+<h3>HockeySDK-iOS before 2.5</h3>
+
+<p>In your application delegate (for example <code>AppDelegate.m</code>) search for the following lines:</p>
+
+<pre><code>[[CNSHockeyManager sharedHockeyManager] configureWithBetaIdentifier:BETA_IDENTIFIER 
+                                                   liveIdentifier:LIVE_IDENTIFIER
+                                                         delegate:self];
+</code></pre>
+
+<p>For now comment out all lines with <code>[CNSHockeyManager sharedHockeyManager]</code>. Open the header file of your application delegate by pressing ^ + ⌘ + ↑. There should be a line like this:</p>
+
+<pre><code>@interface AppDelegate : NSObject &lt;UIApplicationDelegate, CNSHockeyManagerDelegate&gt; {
+</code></pre>
+
+<p>Remove <code>CNSHockeyManagerDelegate</code>, also look for this line:</p>
+
+<pre><code>#import "CNSHockeyManager.h"
+</code></pre>
+
+<p>And remove that too.</p>
+
+<p>Now follow the steps described in our <a href="http://support.hockeyapp.net/kb/client-integration/hockeyapp-for-ios-hockeysdk#setup">setup guide</a> The values for <code>LIVE_IDENTIFIER</code> and <code>BETA_IDENTIFIER</code> are used in the setup guide.</p>
+
+<p>After you have finished the setup guide make sure everything works as expected and then delete the out commented lines from above.</p>
+
+<h3>HockeySDK-iOS 2.5.x</h3>
+
+<p>There are no changes to the SDK setup code required. Some delegates methods are deprecated and should be replaced as soon as feasible.</p>
+
+<p>The following delegates in <a href="../../Protocols/BITCrashManagerDelegate.html"><code>BITCrashManagerDelegate</code></a> moved to <a href="../../Protocols/BITHockeyManagerDelegate.html"><code>BITHockeyManagerDelegate</code></a>:</p>
+
+<ul>
+<li><code>- (NSString *)userNameForCrashManager:(</code>BITCrashManager<code> *)crashManager;</code> is now <code>- (NSString *)userNameForHockeyManager:(</code>BITHockeyManager<code> *)hockeyManager componentManager:(</code>BITHockeyBaseManager<code> *)componentManager;</code></li>
+<li><code>- (NSString *)userEmailForCrashManager:(</code>BITCrashManager<code> *)crashManager;</code> is now <code>- (NSString *)userEmailForHockeyManager:(</code>BITHockeyManager<code> *)hockeyManager componentManager:(</code>BITHockeyBaseManager<code> *)componentManager;</code></li>
+</ul>
+
+
+<h3>HockeySDK-iOS 3.0.x</h3>
+
+<p>Instead of implementing the individual protocols in your app delegate, you can now simply add <a href="../../Protocols/BITHockeyManagerDelegate.html"><code>BITHockeyManagerDelegate</code></a> alone, e.g.:</p>
+
+<pre><code>@interface BITAppDelegate () BITHockeyManagerDelegate {}
+
+@end
+</code></pre>
+
+<p>The delegate <code>-(NSString *)customDeviceIdentifierForUpdateManager:(</code>BITUpdateManager<code> *)updateManager</code> has been removed. To identify the installation please use the new <a href="../../Classes/BITAuthenticator.html"><code>BITAuthenticator</code></a> class.</p>
+
+<h3>HockeySDK-iOS 3.5.x</h3>
+
+<p>If you are using <code>PLCrashReporterCallbacks</code>, you now have to use <code>BITCrashManagerCallbacks</code> instead. This <code>struct</code> doesn&rsquo;t contain <code>version</code> any longer, so you have to remove that. Otherwise everything is the same.</p>
+
+<p>If you did set the delegate per component, e.g. <code>[[BITHockeyManager sharedHockeyManager].crashManager setDelegate:self]</code>, you need to remove these and set the delegate this way only: <code>[[BITHockeyManager sharedHockeyManager] setDelegate:self]</code>. This will propagate the delegate to all SDK components. Make sure to set it before calling <code>startManager</code>!</p>
+
+<p>In addition you need to make sure all of these frameworks are linked:</p>
+
+<ul>
+<li><code>AssetsLibrary</code></li>
+<li><code>CoreText</code></li>
+<li><code>CoreGraphics</code></li>
+<li><code>Foundation</code></li>
+<li><code>MobileCoreServices</code></li>
+<li><code>QuartzCore</code></li>
+<li><code>QuickLook</code></li>
+<li><code>Security</code></li>
+<li><code>SystemConfiguration</code></li>
+<li><code>UIKit</code></li>
+</ul>
+
+
+<h2>Troubleshooting</h2>
+
+<h3>ld: warning: directory not found for option &lsquo;&hellip;.QuincyKit&hellip;..&rsquo;</h3>
+
+<p>This warning means there is still a <code>Framework Search Path</code> pointing to the folder of the old SDK. Open the <code>Project Navigator</code> (⌘+1) and go to the tab <code>Build Settings</code>. In the search field enter the name of the folder mentioned in the warning (for example &ldquo;QuincyKit&rdquo;) . If the search finds something in <code>Framework Search Paths</code> you should double click that entry and remove the line which points to the old folder.</p>
+
+<h2>Advanced Migration</h2>
+
+<p>If you used any optional API calls, for example adding a custom description to a crash report, migrating those would exceed the scope of this guide. Please have a look at the <a href="http://hockeyapp.net/releases/">API documentation</a>.</p>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Bit Stadium GmbH. All rights reserved. (Last updated: 2014-11-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					
+					</div>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/BITCrashManagerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/BITCrashManagerDelegate</TokenIdentifier>
+			<Abstract type="html">The BITCrashManagerDelegate formal protocol defines methods further configuring
+the behaviour of BITCrashManager.</Abstract>
+			<DeclaredIn>BITCrashManagerDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="25"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/applicationLogForCrashManager:</TokenIdentifier>
+			<Abstract type="html">Return any log string based data the crash report being processed should contain</Abstract>
+			<DeclaredIn>BITCrashManagerDelegate.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/attachmentForCrashManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/userNameForCrashManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/userEmailForCrashManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSString *)applicationLogForCrashManager:(BITCrashManager *)crashManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crashManager</Name>
+					<Abstract type="html">The BITCrashManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/applicationLogForCrashManager:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/attachmentForCrashManager:</TokenIdentifier>
+			<Abstract type="html">Return a BITHockeyAttachment object providing an NSData object the crash report
+being processed should contain</Abstract>
+			<DeclaredIn>BITCrashManagerDelegate.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/BITHockeyAttachment</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/applicationLogForCrashManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/userNameForCrashManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/userEmailForCrashManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BITHockeyAttachment *)attachmentForCrashManager:(BITCrashManager *)crashManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crashManager</Name>
+					<Abstract type="html">The BITCrashManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/attachmentForCrashManager:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/userNameForCrashManager:</TokenIdentifier>
+			<Abstract type="html">Return the user name or userid that should be send along each crash report (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; Please use BITHockeyManagerDelegate userNameForHockeyManager:componentManager: instead&lt;/span&gt;)</Abstract>
+			<DeclaredIn>BITCrashManagerDelegate.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/applicationLogForCrashManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/attachmentForCrashManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/userEmailForCrashManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSString *)userNameForCrashManager:(BITCrashManager *)crashManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crashManager</Name>
+					<Abstract type="html">The BITCrashManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/userNameForCrashManager:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/userEmailForCrashManager:</TokenIdentifier>
+			<Abstract type="html">Return the users email address that should be send along each crash report (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; Please use BITHockeyManagerDelegate userEmailForHockeyManager:componentManager: instead&lt;/span&gt;)</Abstract>
+			<DeclaredIn>BITCrashManagerDelegate.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/applicationLogForCrashManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/attachmentForCrashManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/userNameForCrashManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSString *)userEmailForCrashManager:(BITCrashManager *)crashManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crashManager</Name>
+					<Abstract type="html">The BITCrashManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/userEmailForCrashManager:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/crashManagerWillShowSubmitCrashReportAlert:</TokenIdentifier>
+			<Abstract type="html">Invoked before the user is asked to send a crash report, so you can do additional actions.
+E.g. to make sure not to ask the user for an app rating :)</Abstract>
+			<DeclaredIn>BITCrashManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)crashManagerWillShowSubmitCrashReportAlert:(BITCrashManager *)crashManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crashManager</Name>
+					<Abstract type="html">The BITCrashManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/crashManagerWillShowSubmitCrashReportAlert:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/crashManagerWillCancelSendingCrashReport:</TokenIdentifier>
+			<Abstract type="html">Invoked after the user did choose NOT to send a crash in the alert</Abstract>
+			<DeclaredIn>BITCrashManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)crashManagerWillCancelSendingCrashReport:(BITCrashManager *)crashManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crashManager</Name>
+					<Abstract type="html">The BITCrashManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/crashManagerWillCancelSendingCrashReport:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/crashManagerWillSendCrashReportsAlways:</TokenIdentifier>
+			<Abstract type="html">Invoked after the user did choose to send crashes always in the alert</Abstract>
+			<DeclaredIn>BITCrashManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)crashManagerWillSendCrashReportsAlways:(BITCrashManager *)crashManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crashManager</Name>
+					<Abstract type="html">The BITCrashManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/crashManagerWillSendCrashReportsAlways:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/crashManagerWillSendCrashReport:</TokenIdentifier>
+			<Abstract type="html">Invoked right before sending crash reports will start</Abstract>
+			<DeclaredIn>BITCrashManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)crashManagerWillSendCrashReport:(BITCrashManager *)crashManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crashManager</Name>
+					<Abstract type="html">The BITCrashManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/crashManagerWillSendCrashReport:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/crashManager:didFailWithError:</TokenIdentifier>
+			<Abstract type="html">Invoked after sending crash reports failed</Abstract>
+			<DeclaredIn>BITCrashManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)crashManager:(BITCrashManager *)crashManager didFailWithError:(NSError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crashManager</Name>
+					<Abstract type="html">The BITCrashManager instance invoking this delegate</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error returned from the NSURLConnection call or kBITCrashErrorDomain
+with reason of type BITCrashErrorReason.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/crashManager:didFailWithError:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/crashManagerDidFinishSendingCrashReport:</TokenIdentifier>
+			<Abstract type="html">Invoked after sending crash reports succeeded</Abstract>
+			<DeclaredIn>BITCrashManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)crashManagerDidFinishSendingCrashReport:(BITCrashManager *)crashManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crashManager</Name>
+					<Abstract type="html">The BITCrashManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/crashManagerDidFinishSendingCrashReport:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITCrashManagerDelegate/considerAppNotTerminatedCleanlyReportForCrashManager:</TokenIdentifier>
+			<Abstract type="html">Define if a report should be considered as a crash report</Abstract>
+			<DeclaredIn>BITCrashManagerDelegate.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITCrashManager/didReceiveMemoryWarningInLastSession</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BOOL)considerAppNotTerminatedCleanlyReportForCrashManager:(BITCrashManager *)crashManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>crashManager</Name>
+					<Abstract type="html">The BITCrashManager instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the heuristic based detected report should be reported, otherwise NO</Abstract></ReturnValue>
+			<Anchor>//api/name/considerAppNotTerminatedCleanlyReportForCrashManager:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

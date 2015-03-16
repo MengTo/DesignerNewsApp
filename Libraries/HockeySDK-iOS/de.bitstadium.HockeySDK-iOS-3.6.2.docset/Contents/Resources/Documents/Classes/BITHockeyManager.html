@@ -1,0 +1,2014 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>BITHockeyManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">HockeySDK-iOS 3.6.2 </a></h1>
+				<a id="developerHome" href="../index.html">Bit Stadium GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">BITHockeyManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/appStoreEnvironment">&nbsp;&nbsp;&nbsp;&nbsp;appStoreEnvironment</option>
+	
+	<option value="//api/name/authenticator">&nbsp;&nbsp;&nbsp;&nbsp;authenticator</option>
+	
+	<option value="//api/name/crashManager">&nbsp;&nbsp;&nbsp;&nbsp;crashManager</option>
+	
+	<option value="//api/name/debugLogEnabled">&nbsp;&nbsp;&nbsp;&nbsp;debugLogEnabled</option>
+	
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
+	
+	<option value="//api/name/disableCrashManager">&nbsp;&nbsp;&nbsp;&nbsp;disableCrashManager</option>
+	
+	<option value="//api/name/disableFeedbackManager">&nbsp;&nbsp;&nbsp;&nbsp;disableFeedbackManager</option>
+	
+	<option value="//api/name/disableUpdateManager">&nbsp;&nbsp;&nbsp;&nbsp;disableUpdateManager</option>
+	
+	<option value="//api/name/enableStoreUpdateManager">&nbsp;&nbsp;&nbsp;&nbsp;enableStoreUpdateManager</option>
+	
+	<option value="//api/name/feedbackManager">&nbsp;&nbsp;&nbsp;&nbsp;feedbackManager</option>
+	
+	<option value="//api/name/installString">&nbsp;&nbsp;&nbsp;&nbsp;installString</option>
+	
+	<option value="//api/name/serverURL">&nbsp;&nbsp;&nbsp;&nbsp;serverURL</option>
+	
+	<option value="//api/name/storeUpdateManager">&nbsp;&nbsp;&nbsp;&nbsp;storeUpdateManager</option>
+	
+	<option value="//api/name/updateManager">&nbsp;&nbsp;&nbsp;&nbsp;updateManager</option>
+	
+	<option value="//api/name/userEmail">&nbsp;&nbsp;&nbsp;&nbsp;userEmail</option>
+	
+	<option value="//api/name/userID">&nbsp;&nbsp;&nbsp;&nbsp;userID</option>
+	
+	<option value="//api/name/userName">&nbsp;&nbsp;&nbsp;&nbsp;userName</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sharedHockeyManager">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedHockeyManager</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/build">&nbsp;&nbsp;&nbsp;&nbsp;- build</option>
+	
+	<option value="//api/name/configureWithBetaIdentifier:liveIdentifier:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;- configureWithBetaIdentifier:liveIdentifier:delegate:</option>
+	
+	<option value="//api/name/configureWithIdentifier:">&nbsp;&nbsp;&nbsp;&nbsp;- configureWithIdentifier:</option>
+	
+	<option value="//api/name/configureWithIdentifier:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;- configureWithIdentifier:delegate:</option>
+	
+	<option value="//api/name/startManager">&nbsp;&nbsp;&nbsp;&nbsp;- startManager</option>
+	
+	<option value="//api/name/testIdentifier">&nbsp;&nbsp;&nbsp;&nbsp;- testIdentifier</option>
+	
+	<option value="//api/name/version">&nbsp;&nbsp;&nbsp;&nbsp;- version</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initialization">Initialization</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Modules">Modules</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Environment">Environment</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Debug Logging">Debug Logging</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Integration test">Integration test</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Additional meta data">Additional meta data</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_SDK meta data">SDK meta data</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appStoreEnvironment">appStoreEnvironment</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authenticator">authenticator</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/crashManager">crashManager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/debugLogEnabled">debugLogEnabled</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disableCrashManager">disableCrashManager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disableFeedbackManager">disableFeedbackManager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disableUpdateManager">disableUpdateManager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableStoreUpdateManager">enableStoreUpdateManager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/feedbackManager">feedbackManager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/installString">installString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serverURL">serverURL</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/storeUpdateManager">storeUpdateManager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateManager">updateManager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userEmail">userEmail</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userID">userID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userName">userName</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedHockeyManager">sharedHockeyManager</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/build">build</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/configureWithBetaIdentifier:liveIdentifier:delegate:">configureWithBetaIdentifier:liveIdentifier:delegate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/configureWithIdentifier:">configureWithIdentifier:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/configureWithIdentifier:delegate:">configureWithIdentifier:delegate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startManager">startManager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testIdentifier">testIdentifier</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/version">version</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="BITHockeyManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">BITHockeyManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">BITHockeyManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The HockeySDK manager. Responsible for setup and management of all components</p>
+
+<p>This is the principal SDK class. It represents the entry point for the HockeySDK. The main promises of the class are initializing the SDK modules, providing access to global properties and to all modules. Initialization is divided into several distinct phases:</p>
+
+<ol>
+<li>Setup the <a href="http://hockeyapp.net/">HockeyApp</a> app identifier and the optional delegate: This is the least required information on setting up the SDK and using it. It does some simple validation of the app identifier and checks if the app is running from the App Store or not.</li>
+<li>Provides access to the SDK modules <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>, <a href="../Classes/BITUpdateManager.html"><code>BITUpdateManager</code></a>, and <a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>. This way all modules can be further configured to personal needs, if the defaults don&rsquo;t fit the requirements.</li>
+<li>Configure each module.</li>
+<li>Start up all modules.</li>
+</ol>
+
+
+<p>The SDK is optimized to defer everything possible to a later time while making sure e.g. crashes on startup can also be caught and each module executes other code with a delay some seconds. This ensures that applicationDidFinishLaunching will process as fast as possible and the SDK will not block the startup sequence resulting in a possible kill by the watchdog process.</p>
+
+<p>All modules do <strong>NOT</strong> show any user interface if the module is not activated or not integrated.
+<a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>: Shows an alert on startup asking the user if he/she agrees on sending the crash report, if <a href="../Classes/BITCrashManager.html#//api/name/crashManagerStatus"><code>[BITCrashManager crashManagerStatus]</code></a> is set to <code>BITCrashManagerStatusAlwaysAsk</code> (default)
+<a href="../Classes/BITUpdateManager.html"><code>BITUpdateManager</code></a>: Is automatically deactivated when the SDK detects it is running from a <a href="#//api/name/build">build</a> distributed via the App Store. Otherwise if it is not deactivated manually, it will show an alert after startup informing the user about a pending update, if one is available. If the user then decides to view the update another screen is presented with further details and an option to install the update.
+<a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a>: If this module is deactivated or the user interface is nowhere added into the app, this module will not do anything. It will not fetch the server for data or show any user interface. If it is integrated, activated, and the user already used it to provide feedback, it will show an alert after startup if a new answer has been received from the server with the option to view it.</p>
+
+<p>Example:</p>
+
+<pre><code>[[BITHockeyManager sharedHockeyManager]
+  configureWithIdentifier:@"&lt;AppIdentifierFromHockeyApp&gt;"
+                 delegate:nil];
+[[BITHockeyManager sharedHockeyManager] startManager];
+</code></pre><div class="warning"><p><strong>Warning:</strong> The SDK is <strong>NOT</strong> thread safe and has to be set up on the main thread!</p></div><div class="warning"><p><strong>Warning:</strong> Most properties of all components require to be set <strong>BEFORE</strong> calling<a href="#//api/name/startManager"><code>startManager</code></a>!</p></div>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Initialization" name="task_Initialization"></a>
+						<h3 class="subsubtitle task-title">Initialization</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedHockeyManager">+&nbsp;sharedHockeyManager</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/configureWithIdentifier:">&ndash;&nbsp;configureWithIdentifier:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/configureWithIdentifier:delegate:">&ndash;&nbsp;configureWithIdentifier:delegate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/configureWithBetaIdentifier:liveIdentifier:delegate:">&ndash;&nbsp;configureWithBetaIdentifier:liveIdentifier:delegate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startManager">&ndash;&nbsp;startManager</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Modules" name="task_Modules"></a>
+						<h3 class="subsubtitle task-title">Modules</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serverURL">&nbsp;&nbsp;serverURL</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/crashManager">&nbsp;&nbsp;crashManager</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disableCrashManager">&nbsp;&nbsp;disableCrashManager</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateManager">&nbsp;&nbsp;updateManager</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disableUpdateManager">&nbsp;&nbsp;disableUpdateManager</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/storeUpdateManager">&nbsp;&nbsp;storeUpdateManager</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableStoreUpdateManager">&nbsp;&nbsp;enableStoreUpdateManager</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/feedbackManager">&nbsp;&nbsp;feedbackManager</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disableFeedbackManager">&nbsp;&nbsp;disableFeedbackManager</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/authenticator">&nbsp;&nbsp;authenticator</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Environment" name="task_Environment"></a>
+						<h3 class="subsubtitle task-title">Environment</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/appStoreEnvironment">&nbsp;&nbsp;appStoreEnvironment</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/installString">&nbsp;&nbsp;installString</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Debug Logging" name="task_Debug Logging"></a>
+						<h3 class="subsubtitle task-title">Debug Logging</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/debugLogEnabled">&nbsp;&nbsp;debugLogEnabled</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Integration test" name="task_Integration test"></a>
+						<h3 class="subsubtitle task-title">Integration test</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testIdentifier">&ndash;&nbsp;testIdentifier</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Additional meta data" name="task_Additional meta data"></a>
+						<h3 class="subsubtitle task-title">Additional meta data</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userID">&nbsp;&nbsp;userID</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userName">&nbsp;&nbsp;userName</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userEmail">&nbsp;&nbsp;userEmail</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="SDK meta data" name="task_SDK meta data"></a>
+						<h3 class="subsubtitle task-title">SDK meta data</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/version">&ndash;&nbsp;version</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/build">&ndash;&nbsp;build</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/appStoreEnvironment" title="appStoreEnvironment"></a>
+	<h3 class="subsubtitle method-title">appStoreEnvironment</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flag that determines whether the application is installed and running
+from an App Store installation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isAppStoreEnvironment) BOOL appStoreEnvironment</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns <em>YES</em> if the app is installed and running from the App Store
+Returns <em>NO</em> if the app is installed via debug, ad-hoc or enterprise distribution</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/authenticator" title="authenticator"></a>
+	<h3 class="subsubtitle method-title">authenticator</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reference to the initialized <a href="../Classes/BITAuthenticator.html">BITAuthenticator</a> module</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) BITAuthenticator *authenticator</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the <a href="../Classes/BITAuthenticator.html">BITAuthenticator</a> instance initialized by BITHockeyManager</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/configureWithIdentifier:delegate:">- configureWithIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/configureWithBetaIdentifier:liveIdentifier:delegate:">- configureWithBetaIdentifier:liveIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/startManager">- startManager</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/crashManager" title="crashManager"></a>
+	<h3 class="subsubtitle method-title">crashManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reference to the initialized <a href="../Classes/BITCrashManager.html">BITCrashManager</a> module</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) BITCrashManager *crashManager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the <a href="../Classes/BITCrashManager.html">BITCrashManager</a> instance initialized by BITHockeyManager</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/configureWithIdentifier:delegate:">- configureWithIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/configureWithBetaIdentifier:liveIdentifier:delegate:">- configureWithBetaIdentifier:liveIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/startManager">- startManager</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/disableCrashManager">@property disableCrashManager</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/debugLogEnabled" title="debugLogEnabled"></a>
+	<h3 class="subsubtitle method-title">debugLogEnabled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flag that determines whether additional logging output should be generated
+by the manager and all modules.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, getter=isDebugLogEnabled) BOOL debugLogEnabled</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This is ignored if the app is running in the App Store and reverts to the
+default value in that case.</p><div class="warning"><p><strong>Warning:</strong> This property needs to be set before calling <a href="#//api/name/startManager"><code>startManager</code></a></p>
+
+<p><em>Default</em>: <em>NO</em></p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the delegate</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;BITHockeyManagerDelegate&gt; delegate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Defines the class that implements the optional protocol <a href="../Protocols/BITHockeyManagerDelegate.html"><code>BITHockeyManagerDelegate</code></a>.</p>
+
+<p>The delegate will automatically be propagated to all components. There is no need to set the delegate
+for each component individually.</p><div class="warning"><p><strong>Warning:</strong> This property needs to be set before calling <a href="#//api/name/startManager"><code>startManager</code></a></p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Protocols/BITHockeyManagerDelegate.html">BITHockeyManagerDelegate</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITCrashManagerDelegate.html">BITCrashManagerDelegate</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITUpdateManagerDelegate.html">BITUpdateManagerDelegate</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITFeedbackManagerDelegate.html">BITFeedbackManagerDelegate</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disableCrashManager" title="disableCrashManager"></a>
+	<h3 class="subsubtitle method-title">disableCrashManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flag the determines whether the Crash Manager should be disabled</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isCrashManagerDisabled) BOOL disableCrashManager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If this flag is enabled, then crash reporting is disabled and no crashes will
+be send.</p>
+
+<p>Please note that the Crash Manager instance will be initialized anyway, but crash report
+handling (signal and uncaught exception handlers) will <strong>not</strong> be registered.</p><div class="warning"><p><strong>Warning:</strong> This property needs to be set before calling <a href="#//api/name/startManager"><code>startManager</code></a></p>
+
+<p><em>Default</em>: <em>NO</em></p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/crashManager">@property crashManager</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disableFeedbackManager" title="disableFeedbackManager"></a>
+	<h3 class="subsubtitle method-title">disableFeedbackManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flag the determines whether the Feedback Manager should be disabled</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isFeedbackManagerDisabled) BOOL disableFeedbackManager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If this flag is enabled, then letting the user give feedback and
+get responses will be turned off!</p>
+
+<p>Please note that the Feedback Manager instance will be initialized anyway!</p><div class="warning"><p><strong>Warning:</strong> This property needs to be set before calling <a href="#//api/name/startManager"><code>startManager</code></a></p>
+
+<p><em>Default</em>: <em>NO</em></p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/feedbackManager">@property feedbackManager</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disableUpdateManager" title="disableUpdateManager"></a>
+	<h3 class="subsubtitle method-title">disableUpdateManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flag the determines whether the Update Manager should be disabled</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isUpdateManagerDisabled) BOOL disableUpdateManager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If this flag is enabled, then checking for updates and submitting beta usage
+analytics will be turned off!</p>
+
+<p>Please note that the Update Manager instance will be initialized anyway!</p><div class="warning"><p><strong>Warning:</strong> This property needs to be set before calling <a href="#//api/name/startManager"><code>startManager</code></a></p>
+
+<p><em>Default</em>: <em>NO</em></p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/updateManager">@property updateManager</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enableStoreUpdateManager" title="enableStoreUpdateManager"></a>
+	<h3 class="subsubtitle method-title">enableStoreUpdateManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flag the determines whether the App Store Update Manager should be enabled</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, getter=isStoreUpdateManagerEnabled) BOOL enableStoreUpdateManager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If this flag is enabled, then checking for updates when the app runs from the
+app store will be turned on!</p>
+
+<p>Please note that the Store Update Manager instance will be initialized anyway!</p><div class="warning"><p><strong>Warning:</strong> This property needs to be set before calling <a href="#//api/name/startManager"><code>startManager</code></a></p>
+
+<p><em>Default</em>: <em>NO</em></p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/storeUpdateManager">@property storeUpdateManager</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/feedbackManager" title="feedbackManager"></a>
+	<h3 class="subsubtitle method-title">feedbackManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reference to the initialized <a href="../Classes/BITFeedbackManager.html">BITFeedbackManager</a> module</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) BITFeedbackManager *feedbackManager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the <a href="../Classes/BITFeedbackManager.html">BITFeedbackManager</a> instance initialized by BITHockeyManager</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/configureWithIdentifier:delegate:">- configureWithIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/configureWithBetaIdentifier:liveIdentifier:delegate:">- configureWithBetaIdentifier:liveIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/startManager">- startManager</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/disableFeedbackManager">@property disableFeedbackManager</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/installString" title="installString"></a>
+	<h3 class="subsubtitle method-title">installString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the app installation specific anonymous UUID</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *installString</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The value returned by this method is unique and persisted per app installation
+in the keychain.  It is also being used in crash reports as <code>CrashReporter Key</code>
+and internally when sending crash reports and feedback messages.</p>
+
+<p>This is not identical to the <code>[ASIdentifierManager advertisingIdentifier]</code> or
+the <code>[UIDevice identifierForVendor]</code>!</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serverURL" title="serverURL"></a>
+	<h3 class="subsubtitle method-title">serverURL</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Defines the server URL to send data to or request data from</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *serverURL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>By default this is set to the HockeyApp servers and there rarely should be a
+need to modify that.</p><div class="warning"><p><strong>Warning:</strong> This property needs to be set before calling <a href="#//api/name/startManager"><code>startManager</code></a></p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/storeUpdateManager" title="storeUpdateManager"></a>
+	<h3 class="subsubtitle method-title">storeUpdateManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reference to the initialized <a href="../Classes/BITStoreUpdateManager.html">BITStoreUpdateManager</a> module</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) BITStoreUpdateManager *storeUpdateManager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the <a href="../Classes/BITStoreUpdateManager.html">BITStoreUpdateManager</a> instance initialized by BITHockeyManager</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/configureWithIdentifier:delegate:">- configureWithIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/configureWithBetaIdentifier:liveIdentifier:delegate:">- configureWithBetaIdentifier:liveIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/startManager">- startManager</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/enableStoreUpdateManager">@property enableStoreUpdateManager</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateManager" title="updateManager"></a>
+	<h3 class="subsubtitle method-title">updateManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reference to the initialized <a href="../Classes/BITUpdateManager.html">BITUpdateManager</a> module</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) BITUpdateManager *updateManager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the <a href="../Classes/BITUpdateManager.html">BITUpdateManager</a> instance initialized by BITHockeyManager</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/configureWithIdentifier:delegate:">- configureWithIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/configureWithBetaIdentifier:liveIdentifier:delegate:">- configureWithBetaIdentifier:liveIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/startManager">- startManager</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/disableUpdateManager">@property disableUpdateManager</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userEmail" title="userEmail"></a>
+	<h3 class="subsubtitle method-title">userEmail</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the users email address that should used in the SDK components</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *userEmail</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Right now this is used by the <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> to attach to a crash report.
+<a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a> uses it too for assigning the user to a discussion thread.</p>
+
+<p>The value can be set at any time and will be stored in the keychain on the current
+device only! To delete the value from the keychain set the value to <code>nil</code>.</p>
+
+<p>This property is optional and can be used as an alternative to the <a href="#//api/name/delegate">delegate</a>. If you
+want to define specific data for each component, use the <a href="#//api/name/delegate">delegate</a> instead which does
+overwrite the values set by this property.</p><div class="warning"><p><strong>Warning:</strong> When returning a non nil value, crash reports are not anonymous any more
+and the crash alerts will not show the word &ldquo;anonymous&rdquo;!</p></div><div class="warning"><p><strong>Warning:</strong> This property needs to be set before calling <a href="#//api/name/startManager"><code>startManager</code></a> to be considered
+for being added to crash reports as meta data.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/userID">@property userID</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/userName">@property userName</a></p></code></li>
+			
+			<li><code><p><code>[BITHockeyManagerDelegate userEmailForHockeyManager:componentManager:]</code></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userID" title="userID"></a>
+	<h3 class="subsubtitle method-title">userID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the userid that should used in the SDK components</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *userID</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Right now this is used by the <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> to attach to a crash report.
+<a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a> uses it too for assigning the user to a discussion thread.</p>
+
+<p>The value can be set at any time and will be stored in the keychain on the current
+device only! To delete the value from the keychain set the value to <code>nil</code>.</p>
+
+<p>This property is optional and can be used as an alternative to the <a href="#//api/name/delegate">delegate</a>. If you
+want to define specific data for each component, use the <a href="#//api/name/delegate">delegate</a> instead which does
+overwrite the values set by this property.</p><div class="warning"><p><strong>Warning:</strong> When returning a non nil value, crash reports are not anonymous any more
+and the crash alerts will not show the word &ldquo;anonymous&rdquo;!</p></div><div class="warning"><p><strong>Warning:</strong> This property needs to be set before calling <a href="#//api/name/startManager"><code>startManager</code></a> to be considered
+for being added to crash reports as meta data.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/userName">@property userName</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/userEmail">@property userEmail</a></p></code></li>
+			
+			<li><code><p><code>[BITHockeyManagerDelegate userIDForHockeyManager:componentManager:]</code></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userName" title="userName"></a>
+	<h3 class="subsubtitle method-title">userName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the user name that should used in the SDK components</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *userName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Right now this is used by the <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> to attach to a crash report.
+<a href="../Classes/BITFeedbackManager.html"><code>BITFeedbackManager</code></a> uses it too for assigning the user to a discussion thread.</p>
+
+<p>The value can be set at any time and will be stored in the keychain on the current
+device only! To delete the value from the keychain set the value to <code>nil</code>.</p>
+
+<p>This property is optional and can be used as an alternative to the <a href="#//api/name/delegate">delegate</a>. If you
+want to define specific data for each component, use the <a href="#//api/name/delegate">delegate</a> instead which does
+overwrite the values set by this property.</p><div class="warning"><p><strong>Warning:</strong> When returning a non nil value, crash reports are not anonymous any more
+and the crash alerts will not show the word &ldquo;anonymous&rdquo;!</p></div><div class="warning"><p><strong>Warning:</strong> This property needs to be set before calling <a href="#//api/name/startManager"><code>startManager</code></a> to be considered
+for being added to crash reports as meta data.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/userID">@property userID</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/userEmail">@property userEmail</a></p></code></li>
+			
+			<li><code><p><code>[BITHockeyManagerDelegate userNameForHockeyManager:componentManager:]</code></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedHockeyManager" title="sharedHockeyManager"></a>
+	<h3 class="subsubtitle method-title">sharedHockeyManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a shared BITHockeyManager object</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BITHockeyManager *)sharedHockeyManager</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A singleton BITHockeyManager instance ready use</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/build" title="build"></a>
+	<h3 class="subsubtitle method-title">build</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the SDK Build (CFBundleVersion) as a string.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)build</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/configureWithBetaIdentifier:liveIdentifier:delegate:" title="configureWithBetaIdentifier:liveIdentifier:delegate:"></a>
+	<h3 class="subsubtitle method-title">configureWithBetaIdentifier:liveIdentifier:delegate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes the manager with an app identifier for beta, one for live usage and <a href="#//api/name/delegate">delegate</a></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)configureWithBetaIdentifier:(NSString *)<em>betaIdentifier</em> liveIdentifier:(NSString *)<em>liveIdentifier</em> delegate:(id&lt;BITHockeyManagerDelegate&gt;)<em>delegate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>betaIdentifier</em></dt>
+			<dd><p>The app identifier for the <em>non</em> app store (beta) configurations</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>liveIdentifier</em></dt>
+			<dd><p>The app identifier for the app store configurations.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p><code>nil</code> or the class implementing the optional protocols</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initialize the manager with different HockeyApp app identifiers for beta and live usage.
+All modules will automatically detect if the app is running in the App Store and use
+the live app identifier for that. In all other cases it will use the beta app identifier.
+And also assign the class that implements the optional protocols <a href="../Protocols/BITHockeyManagerDelegate.html"><code>BITHockeyManagerDelegate</code></a>,
+<a href="../Protocols/BITCrashManagerDelegate.html"><code>BITCrashManagerDelegate</code></a> or <a href="../Protocols/BITUpdateManagerDelegate.html"><code>BITUpdateManagerDelegate</code></a></p>
+
+<pre><code>[[BITHockeyManager sharedHockeyManager]
+  configureWithBetaIdentifier:@"&lt;AppIdentifierForBetaAppFromHockeyApp&gt;"
+               liveIdentifier:@"&lt;AppIdentifierForLiveAppFromHockeyApp&gt;"
+                     delegate:nil];
+</code></pre>
+
+<p>We recommend using one app entry on HockeyApp for your beta versions and another one for
+your live versions. The reason is that you will have way more beta versions than live
+versions, but on the other side get way more crash reports on the live <a href="#//api/name/version">version</a>. Separating
+them into two different app entries makes it easier to work with the data. In addition
+you will likely end up having the same <a href="#//api/name/version">version</a> number for a beta and live <a href="#//api/name/version">version</a> which
+would mix different data into the same <a href="#//api/name/version">version</a>. Also the live <a href="#//api/name/version">version</a> does not require
+you to upload any IPA files, uploading only the dSYM package for crash reporting is
+just fine.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/configureWithIdentifier:">- configureWithIdentifier:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/configureWithIdentifier:delegate:">- configureWithIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/startManager">- startManager</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITHockeyManagerDelegate.html">BITHockeyManagerDelegate</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITCrashManagerDelegate.html">BITCrashManagerDelegate</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITUpdateManagerDelegate.html">BITUpdateManagerDelegate</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITFeedbackManagerDelegate.html">BITFeedbackManagerDelegate</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/configureWithIdentifier:" title="configureWithIdentifier:"></a>
+	<h3 class="subsubtitle method-title">configureWithIdentifier:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes the manager with a particular app identifier</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)configureWithIdentifier:(NSString *)<em>appIdentifier</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appIdentifier</em></dt>
+			<dd><p>The app identifier that should be used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initialize the manager with a HockeyApp app identifier.</p>
+
+<pre><code>[[BITHockeyManager sharedHockeyManager]
+  configureWithIdentifier:@"&lt;AppIdentifierFromHockeyApp&gt;"];
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/configureWithIdentifier:delegate:">- configureWithIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/configureWithBetaIdentifier:liveIdentifier:delegate:">- configureWithBetaIdentifier:liveIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/startManager">- startManager</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/configureWithIdentifier:delegate:" title="configureWithIdentifier:delegate:"></a>
+	<h3 class="subsubtitle method-title">configureWithIdentifier:delegate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes the manager with a particular app identifier and <a href="#//api/name/delegate">delegate</a></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)configureWithIdentifier:(NSString *)<em>appIdentifier</em> delegate:(id&lt;BITHockeyManagerDelegate&gt;)<em>delegate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appIdentifier</em></dt>
+			<dd><p>The app identifier that should be used.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p><code>nil</code> or the class implementing the option protocols</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initialize the manager with a HockeyApp app identifier and assign the class that
+implements the optional protocols <a href="../Protocols/BITHockeyManagerDelegate.html"><code>BITHockeyManagerDelegate</code></a>, <a href="../Protocols/BITCrashManagerDelegate.html"><code>BITCrashManagerDelegate</code></a> or
+<a href="../Protocols/BITUpdateManagerDelegate.html"><code>BITUpdateManagerDelegate</code></a>.</p>
+
+<pre><code>[[BITHockeyManager sharedHockeyManager]
+  configureWithIdentifier:@"&lt;AppIdentifierFromHockeyApp&gt;"
+                 delegate:nil];
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/configureWithIdentifier:">- configureWithIdentifier:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/configureWithBetaIdentifier:liveIdentifier:delegate:">- configureWithBetaIdentifier:liveIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/startManager">- startManager</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITHockeyManagerDelegate.html">BITHockeyManagerDelegate</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITCrashManagerDelegate.html">BITCrashManagerDelegate</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITUpdateManagerDelegate.html">BITUpdateManagerDelegate</a></p></code></li>
+			
+			<li><code><p><a href="../Protocols/BITFeedbackManagerDelegate.html">BITFeedbackManagerDelegate</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startManager" title="startManager"></a>
+	<h3 class="subsubtitle method-title">startManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts the manager and runs all modules</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startManager</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Call this after configuring the manager and setting up all modules.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/configureWithIdentifier:delegate:">- configureWithIdentifier:delegate:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/configureWithBetaIdentifier:liveIdentifier:delegate:">- configureWithBetaIdentifier:liveIdentifier:delegate:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testIdentifier" title="testIdentifier"></a>
+	<h3 class="subsubtitle method-title">testIdentifier</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Pings the server with the HockeyApp app identifiers used for initialization</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)testIdentifier</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Call this method once for debugging purposes to test if your SDK setup code
+reaches the server successfully.</p>
+
+<p>Once invoked, check the apps page on HockeyApp for a verification.</p>
+
+<p>If you setup the SDK with a beta and live identifier, a call to both app IDs will be done.</p>
+
+<p>This call is ignored if the app is running in the App Store!.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/version" title="version"></a>
+	<h3 class="subsubtitle method-title">version</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the SDK Version (CFBundleShortVersionString).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)version</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITHockeyManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Bit Stadium GmbH. All rights reserved. (Last updated: 2014-11-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

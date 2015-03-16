@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/BITAuthenticatorReason.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/BITAuthenticatorReason</TokenIdentifier>
+			<Abstract type="html">HockeySDK Authenticator error domain</Abstract>
+			<DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+			
+			<NodeRef refid="33"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITAuthenticatorErrorUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown error
+   </Abstract>
+            <Declaration>BITAuthenticatorErrorUnknown</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITAuthenticatorNetworkError</TokenIdentifier>
+            <Abstract type="html">Network error
+   </Abstract>
+            <Declaration>BITAuthenticatorNetworkError</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITAuthenticatorAPIServerReturnedInvalidResponse</TokenIdentifier>
+            <Abstract type="html">API Server returned invalid response
+   </Abstract>
+            <Declaration>BITAuthenticatorAPIServerReturnedInvalidResponse</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITAuthenticatorNotAuthorized</TokenIdentifier>
+            <Abstract type="html">Not Authorized
+   </Abstract>
+            <Declaration>BITAuthenticatorNotAuthorized</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITAuthenticatorUnknownApplicationID</TokenIdentifier>
+            <Abstract type="html">Unknown Application ID (configuration error)
+   </Abstract>
+            <Declaration>BITAuthenticatorUnknownApplicationID</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITAuthenticatorAuthorizationSecretMissing</TokenIdentifier>
+            <Abstract type="html">Authorization secret missing
+   </Abstract>
+            <Declaration>BITAuthenticatorAuthorizationSecretMissing</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITAuthenticatorNotIdentified</TokenIdentifier>
+            <Abstract type="html">Not yet identified
+   </Abstract>
+            <Declaration>BITAuthenticatorNotIdentified</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+	</File>
+</Tokens>

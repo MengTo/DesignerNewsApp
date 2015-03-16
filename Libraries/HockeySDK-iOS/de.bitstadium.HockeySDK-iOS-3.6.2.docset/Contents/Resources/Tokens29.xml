@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/BITStoreUpdateManagerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/BITStoreUpdateManagerDelegate</TokenIdentifier>
+			<Abstract type="html">The BITStoreUpdateManagerDelegate formal protocol defines methods for
+more interaction with BITStoreUpdateManager.</Abstract>
+			<DeclaredIn>BITStoreUpdateManagerDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="29"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITStoreUpdateManagerDelegate/detectedUpdateFromStoreUpdateManager:newVersion:storeURL:</TokenIdentifier>
+			<Abstract type="html">Informs which new version has been reported to be available</Abstract>
+			<DeclaredIn>BITStoreUpdateManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)detectedUpdateFromStoreUpdateManager:(BITStoreUpdateManager *)storeUpdateManager newVersion:(NSString *)newVersion storeURL:(NSURL *)storeURL</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>storeUpdateManager</Name>
+					<Abstract type="html">The BITStoreUpdateManager instance invoking this delegate</Abstract>
+				</Parameter><Parameter>
+					<Name>newVersion</Name>
+					<Abstract type="html">The new version string reported by the App Store</Abstract>
+				</Parameter><Parameter>
+					<Name>storeURL</Name>
+					<Abstract type="html">The App Store URL for this app that could be invoked to let them perform the update.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/detectedUpdateFromStoreUpdateManager:newVersion:storeURL:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/BITFeedbackObservationMode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/BITFeedbackObservationMode</TokenIdentifier>
+			<Abstract type="html">Available modes for opening the feedback compose interface with a screenshot attached</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="39"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackObservationNone</TokenIdentifier>
+            <Abstract type="html">No SDK provided trigger is active.
+   </Abstract>
+            <Declaration>BITFeedbackObservationNone</Declaration>
+            
+            <DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+            
+            <NodeRef refid="39"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackObservationModeOnScreenshot</TokenIdentifier>
+            <Abstract type="html">Triggers when the user takes a screenshot. This will grab the latest image from the camera roll. Requires iOS 7 or later!
+   </Abstract>
+            <Declaration>BITFeedbackObservationModeOnScreenshot</Declaration>
+            
+            <DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+            
+            <NodeRef refid="39"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackObservationModeThreeFingerTap</TokenIdentifier>
+            <Abstract type="html">Triggers when the user taps with three fingers on the screen.
+   </Abstract>
+            <Declaration>BITFeedbackObservationModeThreeFingerTap</Declaration>
+            
+            <DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+            
+            <NodeRef refid="39"/>
+        </Token>
+        
+	</File>
+</Tokens>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/BITFeedbackComposeResult.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/BITFeedbackComposeResult</TokenIdentifier>
+			<Abstract type="html">The users action when composing a message</Abstract>
+			<DeclaredIn>BITFeedbackComposeViewControllerDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="37"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackComposeResultCancelled</TokenIdentifier>
+            <Abstract type="html">user hit cancel
+   </Abstract>
+            <Declaration>BITFeedbackComposeResultCancelled</Declaration>
+            
+            <DeclaredIn>BITFeedbackComposeViewControllerDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="37"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackComposeResultSubmitted</TokenIdentifier>
+            <Abstract type="html">user hit submit
+   </Abstract>
+            <Declaration>BITFeedbackComposeResultSubmitted</Declaration>
+            
+            <DeclaredIn>BITFeedbackComposeViewControllerDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="37"/>
+        </Token>
+        
+	</File>
+</Tokens>

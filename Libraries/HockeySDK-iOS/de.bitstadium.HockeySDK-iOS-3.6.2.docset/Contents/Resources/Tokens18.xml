@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BITFeedbackManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BITFeedbackManager</TokenIdentifier>
+			<Abstract type="html">The feedback module.</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="18"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/setRequireUserName:</TokenIdentifier>
+			<Abstract type="html">Define if a name has to be provided by the user when providing feedback</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITFeedbackUserDataElement</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserEmail</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userNameForHockeyManager:componentManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BITFeedbackUserDataElement requireUserName</Declaration>
+			
+			
+			<Anchor>//api/name/requireUserName</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/requireUserName</TokenIdentifier>
+			<Abstract type="html">Define if a name has to be provided by the user when providing feedback</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITFeedbackUserDataElement</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserEmail</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userNameForHockeyManager:componentManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BITFeedbackUserDataElement requireUserName</Declaration>
+			
+			
+			<Anchor>//api/name/requireUserName</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserName</TokenIdentifier>
+			<Abstract type="html">Define if a name has to be provided by the user when providing feedback</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITFeedbackUserDataElement</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserEmail</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userNameForHockeyManager:componentManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BITFeedbackUserDataElement requireUserName</Declaration>
+			
+			
+			<Anchor>//api/name/requireUserName</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/setRequireUserEmail:</TokenIdentifier>
+			<Abstract type="html">Define if an email address has to be provided by the user when providing feedback</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITFeedbackUserDataElement</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserName</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userEmailForHockeyManager:componentManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BITFeedbackUserDataElement requireUserEmail</Declaration>
+			
+			
+			<Anchor>//api/name/requireUserEmail</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/requireUserEmail</TokenIdentifier>
+			<Abstract type="html">Define if an email address has to be provided by the user when providing feedback</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITFeedbackUserDataElement</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserName</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userEmailForHockeyManager:componentManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BITFeedbackUserDataElement requireUserEmail</Declaration>
+			
+			
+			<Anchor>//api/name/requireUserEmail</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserEmail</TokenIdentifier>
+			<Abstract type="html">Define if an email address has to be provided by the user when providing feedback</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/c/tdef/BITFeedbackUserDataElement</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserName</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userEmailForHockeyManager:componentManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BITFeedbackUserDataElement requireUserEmail</Declaration>
+			
+			
+			<Anchor>//api/name/requireUserEmail</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/setShowAlertOnIncomingMessages:</TokenIdentifier>
+			<Abstract type="html">Indicates if an alert should be shown when new messages have arrived</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/feedbackListViewController:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserEmail</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userEmailForHockeyManager:componentManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BOOL showAlertOnIncomingMessages</Declaration>
+			
+			
+			<Anchor>//api/name/showAlertOnIncomingMessages</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showAlertOnIncomingMessages</TokenIdentifier>
+			<Abstract type="html">Indicates if an alert should be shown when new messages have arrived</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/feedbackListViewController:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserEmail</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userEmailForHockeyManager:componentManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BOOL showAlertOnIncomingMessages</Declaration>
+			
+			
+			<Anchor>//api/name/showAlertOnIncomingMessages</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/showAlertOnIncomingMessages</TokenIdentifier>
+			<Abstract type="html">Indicates if an alert should be shown when new messages have arrived</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/feedbackListViewController:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserEmail</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userEmailForHockeyManager:componentManager:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BOOL showAlertOnIncomingMessages</Declaration>
+			
+			
+			<Anchor>//api/name/showAlertOnIncomingMessages</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/setFeedbackObservationMode:</TokenIdentifier>
+			<Abstract type="html">Define the trigger that opens the feedback composer and attaches a screenshot</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackComposeViewWithGeneratedScreenshot</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BITFeedbackObservationMode feedbackObservationMode</Declaration>
+			
+			
+			<Anchor>//api/name/feedbackObservationMode</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/feedbackObservationMode</TokenIdentifier>
+			<Abstract type="html">Define the trigger that opens the feedback composer and attaches a screenshot</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackComposeViewWithGeneratedScreenshot</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BITFeedbackObservationMode feedbackObservationMode</Declaration>
+			
+			
+			<Anchor>//api/name/feedbackObservationMode</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/feedbackObservationMode</TokenIdentifier>
+			<Abstract type="html">Define the trigger that opens the feedback composer and attaches a screenshot</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackComposeViewWithGeneratedScreenshot</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BITFeedbackObservationMode feedbackObservationMode</Declaration>
+			
+			
+			<Anchor>//api/name/feedbackObservationMode</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/setShowFirstRequiredPresentationModal:</TokenIdentifier>
+			<Abstract type="html">Indicates if a forced user data UI presentation is shown modal</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserName</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserEmail</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackComposeView</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/feedbackComposeViewController</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackListView</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/feedbackListViewController:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BOOL showFirstRequiredPresentationModal</Declaration>
+			
+			
+			<Anchor>//api/name/showFirstRequiredPresentationModal</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFirstRequiredPresentationModal</TokenIdentifier>
+			<Abstract type="html">Indicates if a forced user data UI presentation is shown modal</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserName</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserEmail</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackComposeView</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/feedbackComposeViewController</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackListView</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/feedbackListViewController:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BOOL showFirstRequiredPresentationModal</Declaration>
+			
+			
+			<Anchor>//api/name/showFirstRequiredPresentationModal</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/showFirstRequiredPresentationModal</TokenIdentifier>
+			<Abstract type="html">Indicates if a forced user data UI presentation is shown modal</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserName</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/requireUserEmail</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackComposeView</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/feedbackComposeViewController</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackListView</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/feedbackListViewController:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readwrite) BOOL showFirstRequiredPresentationModal</Declaration>
+			
+			
+			<Anchor>//api/name/showFirstRequiredPresentationModal</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/screenshot</TokenIdentifier>
+			<Abstract type="html">Return a screenshot UIImage intance from the current visiable screen</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+			<Declaration>- (UIImage *)screenshot</Declaration>
+			
+			<ReturnValue><Abstract type="html">UIImage instance containing a screenshot of the current screen</Abstract></ReturnValue>
+			<Anchor>//api/name/screenshot</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackListView</TokenIdentifier>
+			<Abstract type="html">Present the modal feedback list user interface.</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+			<Declaration>- (void)showFeedbackListView</Declaration>
+			
+			
+			<Anchor>//api/name/showFeedbackListView</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/feedbackListViewController:</TokenIdentifier>
+			<Abstract type="html">Create an feedback list view</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+			<Declaration>- (BITFeedbackListViewController *)feedbackListViewController:(BOOL)modal</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>modal</Name>
+					<Abstract type="html">Return a view ready for modal presentation with integrated navigation bar</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BITFeedbackListViewController The feedback list view controller,
+e.g. to push it onto a navigation stack.</Abstract></ReturnValue>
+			<Anchor>//api/name/feedbackListViewController:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackComposeView</TokenIdentifier>
+			<Abstract type="html">Present the modal feedback compose message user interface.</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+			<Declaration>- (void)showFeedbackComposeView</Declaration>
+			
+			
+			<Anchor>//api/name/showFeedbackComposeView</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackComposeViewWithPreparedItems:</TokenIdentifier>
+			<Abstract type="html">Present the modal feedback compose message user interface with the items given.</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackComposeViewController/prepareWithItems:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)showFeedbackComposeViewWithPreparedItems:(NSArray *)items</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>items</Name>
+					<Abstract type="html">an NSArray with objects that should be attached</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showFeedbackComposeViewWithPreparedItems:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/showFeedbackComposeViewWithGeneratedScreenshot</TokenIdentifier>
+			<Abstract type="html">Presents a modal feedback compose interface with a screenshot attached which is taken at the time of calling this method.</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/BITFeedbackManager/feedbackObservationMode</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)showFeedbackComposeViewWithGeneratedScreenshot</Declaration>
+			
+			
+			<Anchor>//api/name/showFeedbackComposeViewWithGeneratedScreenshot</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITFeedbackManager/feedbackComposeViewController</TokenIdentifier>
+			<Abstract type="html">Create a feedback compose view</Abstract>
+			<DeclaredIn>BITFeedbackManager.h</DeclaredIn>
+			
+			<Declaration>- (BITFeedbackComposeViewController *)feedbackComposeViewController</Declaration>
+			
+			<ReturnValue><Abstract type="html">BITFeedbackComposeViewController The compose feedback view controller,
+e.g. to push it onto a navigation stack.</Abstract></ReturnValue>
+			<Anchor>//api/name/feedbackComposeViewController</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

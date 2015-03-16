@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BITHockeyAttachment.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BITHockeyAttachment</TokenIdentifier>
+			<Abstract type="html">Provides support to add binary attachments to crash reports and feedback messages</Abstract>
+			<DeclaredIn>BITHockeyAttachment.h</DeclaredIn>
+            
+			
+			<NodeRef refid="19"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITHockeyAttachment/setFilename:</TokenIdentifier>
+			<Abstract type="html">The filename the attachment should get</Abstract>
+			<DeclaredIn>BITHockeyAttachment.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *filename</Declaration>
+			
+			
+			<Anchor>//api/name/filename</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITHockeyAttachment/filename</TokenIdentifier>
+			<Abstract type="html">The filename the attachment should get</Abstract>
+			<DeclaredIn>BITHockeyAttachment.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *filename</Declaration>
+			
+			
+			<Anchor>//api/name/filename</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITHockeyAttachment/filename</TokenIdentifier>
+			<Abstract type="html">The filename the attachment should get</Abstract>
+			<DeclaredIn>BITHockeyAttachment.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *filename</Declaration>
+			
+			
+			<Anchor>//api/name/filename</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITHockeyAttachment/setHockeyAttachmentData:</TokenIdentifier>
+			<Abstract type="html">The attachment data as NSData object</Abstract>
+			<DeclaredIn>BITHockeyAttachment.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSData *hockeyAttachmentData</Declaration>
+			
+			
+			<Anchor>//api/name/hockeyAttachmentData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITHockeyAttachment/hockeyAttachmentData</TokenIdentifier>
+			<Abstract type="html">The attachment data as NSData object</Abstract>
+			<DeclaredIn>BITHockeyAttachment.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSData *hockeyAttachmentData</Declaration>
+			
+			
+			<Anchor>//api/name/hockeyAttachmentData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITHockeyAttachment/hockeyAttachmentData</TokenIdentifier>
+			<Abstract type="html">The attachment data as NSData object</Abstract>
+			<DeclaredIn>BITHockeyAttachment.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSData *hockeyAttachmentData</Declaration>
+			
+			
+			<Anchor>//api/name/hockeyAttachmentData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITHockeyAttachment/setContentType:</TokenIdentifier>
+			<Abstract type="html">The content type of your data as MIME type</Abstract>
+			<DeclaredIn>BITHockeyAttachment.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *contentType</Declaration>
+			
+			
+			<Anchor>//api/name/contentType</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITHockeyAttachment/contentType</TokenIdentifier>
+			<Abstract type="html">The content type of your data as MIME type</Abstract>
+			<DeclaredIn>BITHockeyAttachment.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *contentType</Declaration>
+			
+			
+			<Anchor>//api/name/contentType</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BITHockeyAttachment/contentType</TokenIdentifier>
+			<Abstract type="html">The content type of your data as MIME type</Abstract>
+			<DeclaredIn>BITHockeyAttachment.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) NSString *contentType</Declaration>
+			
+			
+			<Anchor>//api/name/contentType</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BITHockeyAttachment/initWithFilename:hockeyAttachmentData:contentType:</TokenIdentifier>
+			<Abstract type="html">Create an BITHockeyAttachment instance with a given filename and NSData object</Abstract>
+			<DeclaredIn>BITHockeyAttachment.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithFilename:(NSString *)filename hockeyAttachmentData:(NSData *)hockeyAttachmentData contentType:(NSString *)contentType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filename</Name>
+					<Abstract type="html">The filename the attachment should get. If nil will get a automatically generated filename</Abstract>
+				</Parameter><Parameter>
+					<Name>hockeyAttachmentData</Name>
+					<Abstract type="html">The attachment data as NSData. The instance will be ignore if this is set to nil!</Abstract>
+				</Parameter><Parameter>
+					<Name>contentType</Name>
+					<Abstract type="html">The content type of your data as MIME type. If nil will be set to &quot;application/octet-stream&quot;</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instsance of BITHockeyAttachment.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithFilename:hockeyAttachmentData:contentType:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

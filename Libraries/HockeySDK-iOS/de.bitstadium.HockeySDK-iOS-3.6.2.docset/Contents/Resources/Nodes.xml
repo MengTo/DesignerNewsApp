@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocSetNodes version="1.0">
+    <TOC>
+        <Node type="folder">
+            <Name>HockeySDK-iOS 3.6.2</Name>
+            <Path>index.html</Path>
+			<Subnodes>
+                
+				<Node type="folder">
+					<Name>Programming Guides</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="1"/>
+						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
+						<NodeRef refid="9"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				<Node type="folder">
+					<Name>Classes</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="10"/>
+						<NodeRef refid="11"/>
+						<NodeRef refid="12"/>
+						<NodeRef refid="13"/>
+						<NodeRef refid="14"/>
+						<NodeRef refid="15"/>
+						<NodeRef refid="16"/>
+						<NodeRef refid="17"/>
+						<NodeRef refid="18"/>
+						<NodeRef refid="19"/>
+						<NodeRef refid="20"/>
+						<NodeRef refid="21"/>
+						<NodeRef refid="22"/>
+						<NodeRef refid="23"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+                
+				<Node>
+					<Name>Protocols</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="24"/>
+						<NodeRef refid="25"/>
+						<NodeRef refid="26"/>
+						<NodeRef refid="27"/>
+						<NodeRef refid="28"/>
+						<NodeRef refid="29"/>
+						<NodeRef refid="30"/>
+						
+					</Subnodes>
+				</Node>
+				
+                
+				<Node>
+					<Name>Constants</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="31"/>
+						<NodeRef refid="32"/>
+						<NodeRef refid="33"/>
+						<NodeRef refid="34"/>
+						<NodeRef refid="35"/>
+						<NodeRef refid="36"/>
+						<NodeRef refid="37"/>
+						<NodeRef refid="38"/>
+						<NodeRef refid="39"/>
+						<NodeRef refid="40"/>
+						<NodeRef refid="41"/>
+						<NodeRef refid="42"/>
+						<NodeRef refid="43"/>
+						<NodeRef refid="44"/>
+						
+					</Subnodes>
+				</Node>
+				
+			</Subnodes>
+        </Node>
+    </TOC>
+	<Library>
+		<Node id="1" type="section">
+            <Name>Changelog</Name>
+            <Path>docs/docs/Changelog.html</Path>
+            
+        </Node>
+		<Node id="2" type="section">
+            <Name>Guide-Installation-Setup</Name>
+            <Path>docs/docs/Guide-Installation-Setup.html</Path>
+            
+        </Node>
+		<Node id="3" type="section">
+            <Name>Guide-Installation-Setup-Advanced</Name>
+            <Path>docs/docs/Guide-Installation-Setup-Advanced.html</Path>
+            
+        </Node>
+		<Node id="4" type="section">
+            <Name>Guide-Migration-Kits</Name>
+            <Path>docs/docs/Guide-Migration-Kits.html</Path>
+            
+        </Node>
+		<Node id="5" type="section">
+            <Name>HowTo-App-Versioning</Name>
+            <Path>docs/docs/HowTo-App-Versioning.html</Path>
+            
+        </Node>
+		<Node id="6" type="section">
+            <Name>HowTo-Authenticating-Users-on-iOS</Name>
+            <Path>docs/docs/HowTo-Authenticating-Users-on-iOS.html</Path>
+            
+        </Node>
+		<Node id="7" type="section">
+            <Name>HowTo-Set-Custom-AlertViewHandler</Name>
+            <Path>docs/docs/HowTo-Set-Custom-AlertViewHandler.html</Path>
+            
+        </Node>
+		<Node id="8" type="section">
+            <Name>HowTo-Upload-Symbols</Name>
+            <Path>docs/docs/HowTo-Upload-Symbols.html</Path>
+            
+        </Node>
+		<Node id="9" type="section">
+            <Name>Troubleshooting-Crash-Reporting-Not-Working</Name>
+            <Path>docs/docs/Troubleshooting-Crash-Reporting-Not-Working.html</Path>
+            
+        </Node>
+		
+		<Node id="10" type="file" documentType="reference">
+            <Name>BITAuthenticator</Name>
+            <Path>Classes/BITAuthenticator.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITAuthenticator.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITAuthenticator.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BITAuthenticator.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/BITAuthenticator.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="11" type="file" documentType="reference">
+            <Name>BITCrashAttachment</Name>
+            <Path>Classes/BITCrashAttachment.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITCrashAttachment.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITCrashAttachment.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/BITCrashAttachment.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="12" type="file" documentType="reference">
+            <Name>BITCrashDetails</Name>
+            <Path>Classes/BITCrashDetails.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITCrashDetails.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITCrashDetails.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BITCrashDetails.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/BITCrashDetails.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="13" type="file" documentType="reference">
+            <Name>BITCrashManager</Name>
+            <Path>Classes/BITCrashManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITCrashManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITCrashManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BITCrashManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/BITCrashManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="14" type="file" documentType="reference">
+            <Name>BITCrashMetaData</Name>
+            <Path>Classes/BITCrashMetaData.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITCrashMetaData.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITCrashMetaData.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BITCrashMetaData.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="15" type="file" documentType="reference">
+            <Name>BITFeedbackActivity</Name>
+            <Path>Classes/BITFeedbackActivity.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITFeedbackActivity.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITFeedbackActivity.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BITFeedbackActivity.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="16" type="file" documentType="reference">
+            <Name>BITFeedbackComposeViewController</Name>
+            <Path>Classes/BITFeedbackComposeViewController.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITFeedbackComposeViewController.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITFeedbackComposeViewController.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BITFeedbackComposeViewController.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/BITFeedbackComposeViewController.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="17" type="file" documentType="reference">
+            <Name>BITFeedbackListViewController</Name>
+            <Path>Classes/BITFeedbackListViewController.html</Path>
+            
+        </Node>
+		<Node id="18" type="file" documentType="reference">
+            <Name>BITFeedbackManager</Name>
+            <Path>Classes/BITFeedbackManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITFeedbackManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITFeedbackManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BITFeedbackManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/BITFeedbackManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="19" type="file" documentType="reference">
+            <Name>BITHockeyAttachment</Name>
+            <Path>Classes/BITHockeyAttachment.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITHockeyAttachment.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITHockeyAttachment.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BITHockeyAttachment.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/BITHockeyAttachment.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="20" type="file" documentType="reference">
+            <Name>BITHockeyBaseManager</Name>
+            <Path>Classes/BITHockeyBaseManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITHockeyBaseManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITHockeyBaseManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BITHockeyBaseManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="21" type="file" documentType="reference">
+            <Name>BITHockeyManager</Name>
+            <Path>Classes/BITHockeyManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITHockeyManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITHockeyManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BITHockeyManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/BITHockeyManager.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/BITHockeyManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="22" type="file" documentType="reference">
+            <Name>BITStoreUpdateManager</Name>
+            <Path>Classes/BITStoreUpdateManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITStoreUpdateManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITStoreUpdateManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BITStoreUpdateManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/BITStoreUpdateManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="23" type="file" documentType="reference">
+            <Name>BITUpdateManager</Name>
+            <Path>Classes/BITUpdateManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/BITUpdateManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/BITUpdateManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/BITUpdateManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/BITUpdateManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		
+		
+        <Node id="24" type="file" documentType="reference">
+            <Name>BITAuthenticatorDelegate</Name>
+            <Path>Protocols/BITAuthenticatorDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/BITAuthenticatorDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/BITAuthenticatorDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/BITAuthenticatorDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="25" type="file" documentType="reference">
+            <Name>BITCrashManagerDelegate</Name>
+            <Path>Protocols/BITCrashManagerDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/BITCrashManagerDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/BITCrashManagerDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/BITCrashManagerDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="26" type="file" documentType="reference">
+            <Name>BITFeedbackComposeViewControllerDelegate</Name>
+            <Path>Protocols/BITFeedbackComposeViewControllerDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/BITFeedbackComposeViewControllerDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/BITFeedbackComposeViewControllerDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/BITFeedbackComposeViewControllerDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="27" type="file" documentType="reference">
+            <Name>BITFeedbackManagerDelegate</Name>
+            <Path>Protocols/BITFeedbackManagerDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/BITFeedbackManagerDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/BITFeedbackManagerDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/BITFeedbackManagerDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="28" type="file" documentType="reference">
+            <Name>BITHockeyManagerDelegate</Name>
+            <Path>Protocols/BITHockeyManagerDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/BITHockeyManagerDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/BITHockeyManagerDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/BITHockeyManagerDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="29" type="file" documentType="reference">
+            <Name>BITStoreUpdateManagerDelegate</Name>
+            <Path>Protocols/BITStoreUpdateManagerDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/BITStoreUpdateManagerDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/BITStoreUpdateManagerDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/BITStoreUpdateManagerDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="30" type="file" documentType="reference">
+            <Name>BITUpdateManagerDelegate</Name>
+            <Path>Protocols/BITUpdateManagerDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/BITUpdateManagerDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/BITUpdateManagerDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/BITUpdateManagerDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		
+        <Node id="31" type="file" documentType="reference">
+            <Name>BITAuthenticatorAppRestrictionEnforcementFrequency</Name>
+            <Path>Constants/BITAuthenticatorAppRestrictionEnforcementFrequency.html</Path>
+            
+        </Node>
+		<Node id="32" type="file" documentType="reference">
+            <Name>BITAuthenticatorIdentificationType</Name>
+            <Path>Constants/BITAuthenticatorIdentificationType.html</Path>
+            
+        </Node>
+		<Node id="33" type="file" documentType="reference">
+            <Name>BITAuthenticatorReason</Name>
+            <Path>Constants/BITAuthenticatorReason.html</Path>
+            
+        </Node>
+		<Node id="34" type="file" documentType="reference">
+            <Name>BITCrashErrorReason</Name>
+            <Path>Constants/BITCrashErrorReason.html</Path>
+            
+        </Node>
+		<Node id="35" type="file" documentType="reference">
+            <Name>BITCrashManagerStatus</Name>
+            <Path>Constants/BITCrashManagerStatus.html</Path>
+            
+        </Node>
+		<Node id="36" type="file" documentType="reference">
+            <Name>BITCrashManagerUserInput</Name>
+            <Path>Constants/BITCrashManagerUserInput.html</Path>
+            
+        </Node>
+		<Node id="37" type="file" documentType="reference">
+            <Name>BITFeedbackComposeResult</Name>
+            <Path>Constants/BITFeedbackComposeResult.html</Path>
+            
+        </Node>
+		<Node id="38" type="file" documentType="reference">
+            <Name>BITFeedbackErrorReason</Name>
+            <Path>Constants/BITFeedbackErrorReason.html</Path>
+            
+        </Node>
+		<Node id="39" type="file" documentType="reference">
+            <Name>BITFeedbackObservationMode</Name>
+            <Path>Constants/BITFeedbackObservationMode.html</Path>
+            
+        </Node>
+		<Node id="40" type="file" documentType="reference">
+            <Name>BITFeedbackUserDataElement</Name>
+            <Path>Constants/BITFeedbackUserDataElement.html</Path>
+            
+        </Node>
+		<Node id="41" type="file" documentType="reference">
+            <Name>BITHockeyErrorReason</Name>
+            <Path>Constants/BITHockeyErrorReason.html</Path>
+            
+        </Node>
+		<Node id="42" type="file" documentType="reference">
+            <Name>BITStoreUpdateSetting</Name>
+            <Path>Constants/BITStoreUpdateSetting.html</Path>
+            
+        </Node>
+		<Node id="43" type="file" documentType="reference">
+            <Name>BITUpdateErrorReason</Name>
+            <Path>Constants/BITUpdateErrorReason.html</Path>
+            
+        </Node>
+		<Node id="44" type="file" documentType="reference">
+            <Name>BITUpdateSetting</Name>
+            <Path>Constants/BITUpdateSetting.html</Path>
+            
+        </Node>
+		
+	</Library>
+</DocSetNodes>

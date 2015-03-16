@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/BITHockeyManagerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/BITHockeyManagerDelegate</TokenIdentifier>
+			<Abstract type="html">The BITHockeyManagerDelegate formal protocol defines methods further configuring
+  the behaviour of BITHockeyManager, as well as the delegate of the modules it manages.</Abstract>
+			<DeclaredIn>BITHockeyManagerDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="28"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/shouldUseLiveIdentifierForHockeyManager:</TokenIdentifier>
+			<Abstract type="html">Implement to force the usage of the live identifier</Abstract>
+			<DeclaredIn>BITHockeyManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)shouldUseLiveIdentifierForHockeyManager:(BITHockeyManager *)hockeyManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>hockeyManager</Name>
+					<Abstract type="html">BITHockeyManager instance</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/shouldUseLiveIdentifierForHockeyManager:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/viewControllerForHockeyManager:componentManager:</TokenIdentifier>
+			<Abstract type="html">Return a custom parent view controller for presenting modal sheets</Abstract>
+			<DeclaredIn>BITHockeyManagerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (UIViewController *)viewControllerForHockeyManager:(BITHockeyManager *)hockeyManager componentManager:(BITHockeyBaseManager *)componentManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>hockeyManager</Name>
+					<Abstract type="html">The BITHockeyManager HockeyManager instance invoking this delegate</Abstract>
+				</Parameter><Parameter>
+					<Name>componentManager</Name>
+					<Abstract type="html">The BITHockeyBaseManager component instance invoking this delegate, can be BITCrashManager or BITFeedbackManager</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/viewControllerForHockeyManager:componentManager:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userIDForHockeyManager:componentManager:</TokenIdentifier>
+			<Abstract type="html">Return the userid that should used in the SDK components</Abstract>
+			<DeclaredIn>BITHockeyManagerDelegate.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userNameForHockeyManager:componentManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userEmailForHockeyManager:componentManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITHockeyManager/userID</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSString *)userIDForHockeyManager:(BITHockeyManager *)hockeyManager componentManager:(BITHockeyBaseManager *)componentManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>hockeyManager</Name>
+					<Abstract type="html">The BITHockeyManager HockeyManager instance invoking this delegate</Abstract>
+				</Parameter><Parameter>
+					<Name>componentManager</Name>
+					<Abstract type="html">The BITHockeyBaseManager component instance invoking this delegate, can be BITCrashManager or BITFeedbackManager</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/userIDForHockeyManager:componentManager:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userNameForHockeyManager:componentManager:</TokenIdentifier>
+			<Abstract type="html">Return the user name that should used in the SDK components</Abstract>
+			<DeclaredIn>BITHockeyManagerDelegate.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userIDForHockeyManager:componentManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userEmailForHockeyManager:componentManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITHockeyManager/userName</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSString *)userNameForHockeyManager:(BITHockeyManager *)hockeyManager componentManager:(BITHockeyBaseManager *)componentManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>hockeyManager</Name>
+					<Abstract type="html">The BITHockeyManager HockeyManager instance invoking this delegate</Abstract>
+				</Parameter><Parameter>
+					<Name>componentManager</Name>
+					<Abstract type="html">The BITHockeyBaseManager component instance invoking this delegate, can be BITCrashManager or BITFeedbackManager</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/userNameForHockeyManager:componentManager:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userEmailForHockeyManager:componentManager:</TokenIdentifier>
+			<Abstract type="html">Return the users email address that should used in the SDK components</Abstract>
+			<DeclaredIn>BITHockeyManagerDelegate.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userIDForHockeyManager:componentManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/intfm/BITHockeyManagerDelegate/userNameForHockeyManager:componentManager:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/BITHockeyManager/userEmail</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (NSString *)userEmailForHockeyManager:(BITHockeyManager *)hockeyManager componentManager:(BITHockeyBaseManager *)componentManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>hockeyManager</Name>
+					<Abstract type="html">The BITHockeyManager HockeyManager instance invoking this delegate</Abstract>
+				</Parameter><Parameter>
+					<Name>componentManager</Name>
+					<Abstract type="html">The BITHockeyBaseManager component instance invoking this delegate, can be BITCrashManager or BITFeedbackManager</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/userEmailForHockeyManager:componentManager:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

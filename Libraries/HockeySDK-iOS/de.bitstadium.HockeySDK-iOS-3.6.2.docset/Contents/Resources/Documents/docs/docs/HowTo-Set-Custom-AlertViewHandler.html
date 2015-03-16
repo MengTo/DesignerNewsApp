@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>HowTo-Set-Custom-AlertViewHandler Document</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../../css/stylesPrint.css" />	
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../../index.html">HockeySDK-iOS 3.6.2 </a></h1>
+				<a id="developerHome" href="../../index.html">Bit Stadium GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode" id="pageTitleHeader">HowTo-Set-Custom-AlertViewHandler Document</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<a title="HowTo-Set-Custom-AlertViewHandler Document" name="top"></a>
+			<div id="overview_contents" role="main">
+				<div id="container">	
+					<h2>Introduction</h2>
+
+<p>HockeySDK lets the user decide wether to send a crash report or lets the developer send crash reports automatically without user interaction. In addition it is possible to attach more data like logs, a binary, or the users name, email or a user ID if this is already known.</p>
+
+<p>Starting HockeySDK version 3.6 it is now possible to customize this even further and implement your own flow to e.g. ask the user for more details about what happened or his name and email address if your app doesn&rsquo;t know that yet.</p>
+
+<p>The following example shows how this could be implemented. We&rsquo;ll present a custom UIAlertView asking the user for more details and attaching that to the crash report.</p>
+
+<h2>HowTo</h2>
+
+<ol>
+<li>Setup the SDK</li>
+<li>Configure HockeySDK to use your custom alertview handler using the <code>[[BITHockeyManager sharedHockeyManager].crashManager setAlertViewHandler:(BITCustomAlertViewHandler)alertViewHandler;</code> method in your AppDelegate.</li>
+<li>Implement your handler in a way that it calls <code>[[BITHockeyManager sharedHockeyManager].crashManagerhandleUserInput:(</code>BITCrashManagerUserInput<code>)userInput withUserProvidedMetaData:(</code>BITCrashMetaData<code> *)userProvidedMetaData]</code> with the input provided by the user.</li>
+<li>Dismiss your custom view.</li>
+</ol>
+
+
+<h2>Example</h2>
+
+<pre><code>@interface BITAppDelegate () &lt;UIAlertViewDelegate&gt;
+@end
+
+
+@implementation BITAppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [self.window makeKeyAndVisible];
+
+  [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"&lt;&gt;"
+                                                         delegate:nil];
+
+  // optionally enable logging to get more information about states.
+  [BITHockeyManager sharedHockeyManager].debugLogEnabled = YES;
+
+  [[BITHockeyManager sharedHockeyManager].crashManager setAlertViewHandler:^(){
+    NSString *exceptionReason = [[BITHockeyManager sharedHockeyManager].crashManager lastSessionCrashDetails].exceptionReason;
+    UIAlertView *customAlertView = [[UIAlertView alloc] initWithTitle: @"Oh no! The App crashed"
+                                                              message: nil
+                                                             delegate: self
+                                                    cancelButtonTitle: @"Don't send"
+                                                    otherButtonTitles: @"Send", @"Always send", nil];
+    if (exceptionReason) {
+        customAlertView.message = @"We would like to send a crash report to the developers. Please enter a short description of what happened:";
+        customAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    } else {
+        customAlertView.message = @"We would like to send a crash report to the developers";
+    }
+
+    [customAlertView show];
+  }];
+
+  [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
+
+  return YES;
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    BITCrashMetaData *crashMetaData = [BITCrashMetaData new];
+    if (alertView.alertViewStyle != UIAlertViewStyleDefault) {
+        crashMetaData.userDescription = [alertView textFieldAtIndex:0].text;
+    }
+    switch (buttonIndex) {
+        case 0:
+            [[BITHockeyManager sharedHockeyManager].crashManager handleUserInput:BITCrashManagerUserInputDontSend withUserProvidedMetaData:nil];
+            break;
+        case 1:
+            [[BITHockeyManager sharedHockeyManager].crashManager handleUserInput:BITCrashManagerUserInputSend withUserProvidedMetaData:crashMetaData];
+            break;
+        case 2:
+            [[BITHockeyManager sharedHockeyManager].crashManager handleUserInput:BITCrashManagerUserInputAlwaysSend withUserProvidedMetaData:crashMetaData];
+            break;
+    }
+}
+
+@end
+</code></pre>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Bit Stadium GmbH. All rights reserved. (Last updated: 2014-11-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					
+					</div>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

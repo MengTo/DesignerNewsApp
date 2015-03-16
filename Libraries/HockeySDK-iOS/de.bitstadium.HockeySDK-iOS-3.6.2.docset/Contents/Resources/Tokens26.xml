@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/BITFeedbackComposeViewControllerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/BITFeedbackComposeViewControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The BITFeedbackComposeViewControllerDelegate formal protocol defines methods further configuring
+the behaviour of BITFeedbackComposeViewController.</Abstract>
+			<DeclaredIn>BITFeedbackComposeViewControllerDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="26"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITFeedbackComposeViewControllerDelegate/feedbackComposeViewController:didFinishWithResult:</TokenIdentifier>
+			<Abstract type="html">Invoked once the compose screen is finished via send or cancel</Abstract>
+			<DeclaredIn>BITFeedbackComposeViewControllerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)feedbackComposeViewController:(BITFeedbackComposeViewController *)composeViewController didFinishWithResult:(BITFeedbackComposeResult)composeResult</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>composeViewController</Name>
+					<Abstract type="html">The BITFeedbackComposeViewController instance invoking this delegate</Abstract>
+				</Parameter><Parameter>
+					<Name>composeResult</Name>
+					<Abstract type="html">The user action the lead to closing the compose view</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/feedbackComposeViewController:didFinishWithResult:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BITFeedbackComposeViewControllerDelegate/feedbackComposeViewControllerDidFinish:</TokenIdentifier>
+			<Abstract type="html">This method is deprecated. If feedbackComposeViewController:didFinishWithResult: is implemented, this will not be called</Abstract>
+			<DeclaredIn>BITFeedbackComposeViewControllerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)feedbackComposeViewControllerDidFinish:(BITFeedbackComposeViewController *)composeViewController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>composeViewController</Name>
+					<Abstract type="html">The BITFeedbackComposeViewController instance invoking this delegate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/feedbackComposeViewControllerDidFinish:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

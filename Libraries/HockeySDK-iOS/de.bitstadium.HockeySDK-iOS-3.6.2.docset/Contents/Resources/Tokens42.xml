@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/BITStoreUpdateSetting.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/BITStoreUpdateSetting</TokenIdentifier>
+			<Abstract type="html">Defines the update check intervals</Abstract>
+			<DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="42"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITStoreUpdateCheckDaily</TokenIdentifier>
+            <Abstract type="html">Check every day
+   </Abstract>
+            <Declaration>BITStoreUpdateCheckDaily</Declaration>
+            
+            <DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITStoreUpdateCheckWeekly</TokenIdentifier>
+            <Abstract type="html">Check every week
+   </Abstract>
+            <Declaration>BITStoreUpdateCheckWeekly</Declaration>
+            
+            <DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITStoreUpdateCheckManually</TokenIdentifier>
+            <Abstract type="html">Check manually
+   </Abstract>
+            <Declaration>BITStoreUpdateCheckManually</Declaration>
+            
+            <DeclaredIn>BITStoreUpdateManager.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+	</File>
+</Tokens>

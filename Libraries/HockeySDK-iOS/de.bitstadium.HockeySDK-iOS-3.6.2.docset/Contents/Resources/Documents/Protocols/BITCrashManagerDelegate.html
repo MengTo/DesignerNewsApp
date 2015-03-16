@@ -1,0 +1,1025 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>BITCrashManagerDelegate Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">HockeySDK-iOS 3.6.2 </a></h1>
+				<a id="developerHome" href="../index.html">Bit Stadium GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">BITCrashManagerDelegate Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/applicationLogForCrashManager:">&nbsp;&nbsp;&nbsp;&nbsp;- applicationLogForCrashManager:</option>
+	
+	<option value="//api/name/attachmentForCrashManager:">&nbsp;&nbsp;&nbsp;&nbsp;- attachmentForCrashManager:</option>
+	
+	<option value="//api/name/considerAppNotTerminatedCleanlyReportForCrashManager:">&nbsp;&nbsp;&nbsp;&nbsp;- considerAppNotTerminatedCleanlyReportForCrashManager:</option>
+	
+	<option value="//api/name/crashManager:didFailWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- crashManager:didFailWithError:</option>
+	
+	<option value="//api/name/crashManagerDidFinishSendingCrashReport:">&nbsp;&nbsp;&nbsp;&nbsp;- crashManagerDidFinishSendingCrashReport:</option>
+	
+	<option value="//api/name/crashManagerWillCancelSendingCrashReport:">&nbsp;&nbsp;&nbsp;&nbsp;- crashManagerWillCancelSendingCrashReport:</option>
+	
+	<option value="//api/name/crashManagerWillSendCrashReport:">&nbsp;&nbsp;&nbsp;&nbsp;- crashManagerWillSendCrashReport:</option>
+	
+	<option value="//api/name/crashManagerWillSendCrashReportsAlways:">&nbsp;&nbsp;&nbsp;&nbsp;- crashManagerWillSendCrashReportsAlways:</option>
+	
+	<option value="//api/name/crashManagerWillShowSubmitCrashReportAlert:">&nbsp;&nbsp;&nbsp;&nbsp;- crashManagerWillShowSubmitCrashReportAlert:</option>
+	
+	<option value="//api/name/userEmailForCrashManager:">&nbsp;&nbsp;&nbsp;&nbsp;- userEmailForCrashManager:</option>
+	
+	<option value="//api/name/userNameForCrashManager:">&nbsp;&nbsp;&nbsp;&nbsp;- userNameForCrashManager:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Additional meta data">Additional meta data</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Alert">Alert</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Networking">Networking</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Experimental">Experimental</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/applicationLogForCrashManager:">applicationLogForCrashManager:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/attachmentForCrashManager:">attachmentForCrashManager:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/considerAppNotTerminatedCleanlyReportForCrashManager:">considerAppNotTerminatedCleanlyReportForCrashManager:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/crashManager:didFailWithError:">crashManager:didFailWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/crashManagerDidFinishSendingCrashReport:">crashManagerDidFinishSendingCrashReport:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/crashManagerWillCancelSendingCrashReport:">crashManagerWillCancelSendingCrashReport:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/crashManagerWillSendCrashReport:">crashManagerWillSendCrashReport:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/crashManagerWillSendCrashReportsAlways:">crashManagerWillSendCrashReportsAlways:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/crashManagerWillShowSubmitCrashReportAlert:">crashManagerWillShowSubmitCrashReportAlert:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userEmailForCrashManager:">userEmailForCrashManager:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userNameForCrashManager:">userNameForCrashManager:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="BITCrashManagerDelegate Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">BITCrashManagerDelegate Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">BITCrashManagerDelegate.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>BITCrashManagerDelegate</code> formal protocol defines methods further configuring
+the behaviour of <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a>.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Additional meta data" name="task_Additional meta data"></a>
+						<h3 class="subsubtitle task-title">Additional meta data</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/applicationLogForCrashManager:">&ndash;&nbsp;applicationLogForCrashManager:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/attachmentForCrashManager:">&ndash;&nbsp;attachmentForCrashManager:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userNameForCrashManager:">&ndash;&nbsp;userNameForCrashManager:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userEmailForCrashManager:">&ndash;&nbsp;userEmailForCrashManager:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Alert" name="task_Alert"></a>
+						<h3 class="subsubtitle task-title">Alert</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/crashManagerWillShowSubmitCrashReportAlert:">&ndash;&nbsp;crashManagerWillShowSubmitCrashReportAlert:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/crashManagerWillCancelSendingCrashReport:">&ndash;&nbsp;crashManagerWillCancelSendingCrashReport:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/crashManagerWillSendCrashReportsAlways:">&ndash;&nbsp;crashManagerWillSendCrashReportsAlways:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Networking" name="task_Networking"></a>
+						<h3 class="subsubtitle task-title">Networking</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/crashManagerWillSendCrashReport:">&ndash;&nbsp;crashManagerWillSendCrashReport:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/crashManager:didFailWithError:">&ndash;&nbsp;crashManager:didFailWithError:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/crashManagerDidFinishSendingCrashReport:">&ndash;&nbsp;crashManagerDidFinishSendingCrashReport:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Experimental" name="task_Experimental"></a>
+						<h3 class="subsubtitle task-title">Experimental</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/considerAppNotTerminatedCleanlyReportForCrashManager:">&ndash;&nbsp;considerAppNotTerminatedCleanlyReportForCrashManager:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/applicationLogForCrashManager:" title="applicationLogForCrashManager:"></a>
+	<h3 class="subsubtitle method-title">applicationLogForCrashManager:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return any log string based data the crash report being processed should contain</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)applicationLogForCrashManager:(BITCrashManager *)<em>crashManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>crashManager</em></dt>
+			<dd><p>The <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> instance invoking this delegate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/attachmentForCrashManager:">- attachmentForCrashManager:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/userNameForCrashManager:">- userNameForCrashManager:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/userEmailForCrashManager:">- userEmailForCrashManager:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/attachmentForCrashManager:" title="attachmentForCrashManager:"></a>
+	<h3 class="subsubtitle method-title">attachmentForCrashManager:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return a <a href="../Classes/BITHockeyAttachment.html">BITHockeyAttachment</a> object providing an NSData object the crash report
+being processed should contain</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BITHockeyAttachment *)attachmentForCrashManager:(BITCrashManager *)<em>crashManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>crashManager</em></dt>
+			<dd><p>The <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> instance invoking this delegate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Please limit your attachments to reasonable files to avoid high traffic costs for your users.</p>
+
+<p>Example implementation:</p>
+
+<pre><code> - (BITHockeyAttachment *)attachmentForCrashManager:(BITCrashManager *)crashManager {
+   NSData *data = [NSData dataWithContentsOfURL:@"mydatafile"];
+
+   BITHockeyAttachment *attachment = [[BITHockeyAttachment alloc] initWithFilename:@"myfile.data"
+                                                              hockeyAttachmentData:data
+                                                                       contentType:@"'application/octet-stream"];
+   return attachment;
+ }
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Classes/BITHockeyAttachment.html">BITHockeyAttachment</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/applicationLogForCrashManager:">- applicationLogForCrashManager:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/userNameForCrashManager:">- userNameForCrashManager:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/userEmailForCrashManager:">- userEmailForCrashManager:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/considerAppNotTerminatedCleanlyReportForCrashManager:" title="considerAppNotTerminatedCleanlyReportForCrashManager:"></a>
+	<h3 class="subsubtitle method-title">considerAppNotTerminatedCleanlyReportForCrashManager:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Define if a report should be considered as a crash report</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)considerAppNotTerminatedCleanlyReportForCrashManager:(BITCrashManager *)<em>crashManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>crashManager</em></dt>
+			<dd><p>The <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> instance invoking this delegate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the heuristic based detected report should be reported, otherwise <code>NO</code></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Due to the risk, that these reports may be false positives, this delegates allows the
+developer to influence which reports detected by the heuristic should actually be reported.</p>
+
+<p>The developer can use the following property to get more information about the crash scenario:
+- <a href="../Classes/BITCrashManager.html#//api/name/didReceiveMemoryWarningInLastSession"><code>[BITCrashManager didReceiveMemoryWarningInLastSession]</code></a>: Did the app receive a low memory warning</p>
+
+<p>This allows only reports to be considered where at least one low memory warning notification was
+received by the app to reduce to possibility of having false positives.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><code>[BITCrashManager didReceiveMemoryWarningInLastSession]</code></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/crashManager:didFailWithError:" title="crashManager:didFailWithError:"></a>
+	<h3 class="subsubtitle method-title">crashManager:didFailWithError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked after sending crash reports failed</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)crashManager:(BITCrashManager *)<em>crashManager</em> didFailWithError:(NSError *)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>crashManager</em></dt>
+			<dd><p>The <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> instance invoking this delegate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>The error returned from the NSURLConnection call or <code>kBITCrashErrorDomain</code>
+with reason of type <a href="../Constants/BITCrashErrorReason.html"><code>BITCrashErrorReason</code></a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/crashManagerDidFinishSendingCrashReport:" title="crashManagerDidFinishSendingCrashReport:"></a>
+	<h3 class="subsubtitle method-title">crashManagerDidFinishSendingCrashReport:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked after sending crash reports succeeded</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)crashManagerDidFinishSendingCrashReport:(BITCrashManager *)<em>crashManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>crashManager</em></dt>
+			<dd><p>The <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> instance invoking this delegate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/crashManagerWillCancelSendingCrashReport:" title="crashManagerWillCancelSendingCrashReport:"></a>
+	<h3 class="subsubtitle method-title">crashManagerWillCancelSendingCrashReport:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked after the user did choose <em>NOT</em> to send a crash in the alert</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)crashManagerWillCancelSendingCrashReport:(BITCrashManager *)<em>crashManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>crashManager</em></dt>
+			<dd><p>The <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> instance invoking this delegate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/crashManagerWillSendCrashReport:" title="crashManagerWillSendCrashReport:"></a>
+	<h3 class="subsubtitle method-title">crashManagerWillSendCrashReport:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked right before sending crash reports will start</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)crashManagerWillSendCrashReport:(BITCrashManager *)<em>crashManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>crashManager</em></dt>
+			<dd><p>The <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> instance invoking this delegate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/crashManagerWillSendCrashReportsAlways:" title="crashManagerWillSendCrashReportsAlways:"></a>
+	<h3 class="subsubtitle method-title">crashManagerWillSendCrashReportsAlways:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked after the user did choose to send crashes always in the alert</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)crashManagerWillSendCrashReportsAlways:(BITCrashManager *)<em>crashManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>crashManager</em></dt>
+			<dd><p>The <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> instance invoking this delegate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/crashManagerWillShowSubmitCrashReportAlert:" title="crashManagerWillShowSubmitCrashReportAlert:"></a>
+	<h3 class="subsubtitle method-title">crashManagerWillShowSubmitCrashReportAlert:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked before the user is asked to send a crash report, so you can do additional actions.
+E.g. to make sure not to ask the user for an app rating :)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)crashManagerWillShowSubmitCrashReportAlert:(BITCrashManager *)<em>crashManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>crashManager</em></dt>
+			<dd><p>The <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> instance invoking this delegate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userEmailForCrashManager:" title="userEmailForCrashManager:"></a>
+	<h3 class="subsubtitle method-title">userEmailForCrashManager:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return the users email address that should be send along each crash report (<b class="deprecated">Deprecated:</b><span class="deprecated"> Please use <code>BITHockeyManagerDelegate userEmailForHockeyManager:componentManager:</code> instead</span>)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)userEmailForCrashManager:(BITCrashManager *)<em>crashManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>crashManager</em></dt>
+			<dd><p>The <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> instance invoking this delegate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> When returning a non nil value, crash reports are not anonymous any
+more and the alerts will not show the &ldquo;anonymous&rdquo; word!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/applicationLogForCrashManager:">- applicationLogForCrashManager:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/attachmentForCrashManager:">- attachmentForCrashManager:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/userNameForCrashManager:">- userNameForCrashManager:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userNameForCrashManager:" title="userNameForCrashManager:"></a>
+	<h3 class="subsubtitle method-title">userNameForCrashManager:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return the user name or userid that should be send along each crash report (<b class="deprecated">Deprecated:</b><span class="deprecated"> Please use <code>BITHockeyManagerDelegate userNameForHockeyManager:componentManager:</code> instead</span>)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)userNameForCrashManager:(BITCrashManager *)<em>crashManager</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>crashManager</em></dt>
+			<dd><p>The <a href="../Classes/BITCrashManager.html"><code>BITCrashManager</code></a> instance invoking this delegate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> When returning a non nil value, crash reports are not anonymous any
+more and the alerts will not show the &ldquo;anonymous&rdquo; word!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/applicationLogForCrashManager:">- applicationLogForCrashManager:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/attachmentForCrashManager:">- attachmentForCrashManager:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/userEmailForCrashManager:">- userEmailForCrashManager:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BITCrashManagerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Bit Stadium GmbH. All rights reserved. (Last updated: 2014-11-25)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

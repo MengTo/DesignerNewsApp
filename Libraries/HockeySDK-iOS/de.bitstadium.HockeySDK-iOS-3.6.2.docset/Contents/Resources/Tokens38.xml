@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/BITFeedbackErrorReason.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/BITFeedbackErrorReason</TokenIdentifier>
+			<Abstract type="html">HockeySDK Feedback error domain</Abstract>
+			<DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+			
+			<NodeRef refid="38"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackErrorUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown error
+   </Abstract>
+            <Declaration>BITFeedbackErrorUnknown</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="38"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackAPIServerReturnedInvalidStatus</TokenIdentifier>
+            <Abstract type="html">API Server returned invalid status
+   </Abstract>
+            <Declaration>BITFeedbackAPIServerReturnedInvalidStatus</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="38"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackAPIServerReturnedInvalidData</TokenIdentifier>
+            <Abstract type="html">API Server returned invalid data
+   </Abstract>
+            <Declaration>BITFeedbackAPIServerReturnedInvalidData</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="38"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackAPIServerReturnedEmptyResponse</TokenIdentifier>
+            <Abstract type="html">API Server returned empty response
+   </Abstract>
+            <Declaration>BITFeedbackAPIServerReturnedEmptyResponse</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="38"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackAPIClientAuthorizationMissingSecret</TokenIdentifier>
+            <Abstract type="html">Authorization secret missing
+   </Abstract>
+            <Declaration>BITFeedbackAPIClientAuthorizationMissingSecret</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="38"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITFeedbackAPIClientCannotCreateConnection</TokenIdentifier>
+            <Abstract type="html">No internet connection
+   </Abstract>
+            <Declaration>BITFeedbackAPIClientCannotCreateConnection</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="38"/>
+        </Token>
+        
+	</File>
+</Tokens>

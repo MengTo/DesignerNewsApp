@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/BITCrashErrorReason.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/BITCrashErrorReason</TokenIdentifier>
+			<Abstract type="html">HockeySDK Crash Reporter error domain</Abstract>
+			<DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+			
+			<NodeRef refid="34"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITCrashErrorUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown error
+   </Abstract>
+            <Declaration>BITCrashErrorUnknown</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="34"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITCrashAPIAppVersionRejected</TokenIdentifier>
+            <Abstract type="html">API Server rejected app version
+   </Abstract>
+            <Declaration>BITCrashAPIAppVersionRejected</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="34"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITCrashAPIReceivedEmptyResponse</TokenIdentifier>
+            <Abstract type="html">API Server returned empty response
+   </Abstract>
+            <Declaration>BITCrashAPIReceivedEmptyResponse</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="34"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/BITCrashAPIErrorWithStatusCode</TokenIdentifier>
+            <Abstract type="html">Connection error with status code
+   </Abstract>
+            <Declaration>BITCrashAPIErrorWithStatusCode</Declaration>
+            
+            <DeclaredIn>HockeySDK.h</DeclaredIn>
+            
+            <NodeRef refid="34"/>
+        </Token>
+        
+	</File>
+</Tokens>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="docs/docs/Changelog.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/doc/Changelog</TokenIdentifier>
+			<Abstract type="html">## Version 3.6.2</Abstract>
+			<DeclaredIn>Changelog-template.md</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>
