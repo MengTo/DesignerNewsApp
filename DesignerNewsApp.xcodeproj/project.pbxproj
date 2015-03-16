@@ -410,13 +410,13 @@
 		966128511A4DA63100A54A23 /* DesignerNewsApp */ = {
 			isa = PBXGroup;
 			children = (
-				B779F6A41AB7553B00DDF3AA /* Activities */,
 				966128581A4DA63100A54A23 /* Main.storyboard */,
 				B78F903F1A6EFB9800883A5B /* Models */,
 				B70191151A76566700ED4D3D /* Views */,
 				B70190FA1A754DC900ED4D3D /* View Controllers */,
 				B70190FF1A754DE300ED4D3D /* Services */,
 				B7E4D3311A719831001DC9B6 /* Cells */,
+				B779F6A41AB7553B00DDF3AA /* Activities */,
 				B70191001A7550B600ED4D3D /* Behaviours */,
 				B70191221A7656AF00ED4D3D /* Bridging */,
 				966128521A4DA63100A54A23 /* Supporting Files */,
