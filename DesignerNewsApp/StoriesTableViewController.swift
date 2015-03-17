@@ -42,6 +42,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if firstTime {
+            view.showLoading()
             loadStories()
             firstTime = false
         }
@@ -53,9 +54,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
     
     func loadStories() {
-
-        view.showLoading()
-
         storiesLoader.load(completion: { [unowned self] stories in
             self.stories = stories
             self.tableView.reloadData()
@@ -84,12 +82,14 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         title = "Top Stories"
         storiesLoader = StoriesLoader(.Default)
         loadStories()
+        view.showLoading()
     }
     
     func menuViewControllerDidSelectRecent(controller: MenuViewController) {
         title = "Recent Stories"
         storiesLoader = StoriesLoader(.Recent)
         loadStories()
+        view.showLoading()
     }
 
     func menuViewControllerDidSelectLogout(controller: MenuViewController) {
@@ -131,11 +131,13 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     // MARK: Misc
     func loginCompleted() {
         loadStories()
+        view.showLoading()
     }
 
     func logout() {
         LocalStore.deleteAccessToken()
         loadStories()
+        view.showLoading()
     }
 
     // MARK: TableViewDelegate
