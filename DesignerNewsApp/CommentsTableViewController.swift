@@ -29,7 +29,14 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         super.viewDidAppear(animated)
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
     }
-    
+
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        coordinator.animateAlongsideTransition(nil, completion: { (context) -> Void in
+            self.tableView.reloadData()
+        })
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ReplySegue" {
 
