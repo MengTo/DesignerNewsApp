@@ -47,6 +47,10 @@ class ContainerViewController: UIPageViewController {
         for vc in _controllers {
             // Fix login button for the other vc after login/logout
             vc.refreshLoginState()
+
+            // Fix scroll to top when more than one scroll view on screen
+            vc.tableView.scrollsToTop = controller === vc
+        }
     }
 
 }
