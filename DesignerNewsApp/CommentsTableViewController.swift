@@ -62,9 +62,9 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
     
     @IBAction func shareBarButtonPressed(sender: AnyObject) {
-        var shareString = story.title
-        var shareURL = NSURL(string: story.url)!
-        let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: nil)
+        let shareString = story.title
+        let shareURL = NSURL(string: story.url)!
+        let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: [SafariActivity(), ChromeActivity()])
         activityViewController.setValue(shareString, forKey: "subject")
         activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
         presentViewController(activityViewController, animated: true, completion: nil)
