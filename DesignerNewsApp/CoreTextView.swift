@@ -20,6 +20,12 @@ class CoreTextView: DTAttributedTextContentView, DTAttributedTextContentViewDele
     weak var linkDelegate : CoreTextViewDelegate?
     private var imageViews = [DTLazyImageView]()
 
+    override var bounds : CGRect {
+        didSet {
+            self.relayoutText()
+        }
+    }
+
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.delegate = self
