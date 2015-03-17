@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-class WebViewController: UIViewController, UIWebViewDelegate {
+class WebViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var webView: UIWebView!
@@ -18,6 +18,36 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     var url : NSURL!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var closeButton: SpringButton!
+    @IBOutlet weak var backButton: DesignableButton!
+    @IBOutlet weak var forwardButton: DesignableButton!
+    var pointNow: CGPoint!
+    
+    @IBAction func backButtonDidTouch(sender: AnyObject) {
+        webView.goBack()
+    }
+    
+    @IBAction func forwardButtonDidTouch(sender: AnyObject) {
+        webView.goForward()
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        pointNow = scrollView.contentOffset
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < pointNow.y {
+            spring(0.5) {
+                self.backButton.alpha = 1
+                self.forwardButton.alpha = 1
+            }
+        }
+        if scrollView.contentOffset.y > pointNow.y {
+            spring(0.5) {
+                self.backButton.alpha = 0
+                self.forwardButton.alpha = 0
+            }
+        }
+    }
     
     @IBAction func shareButtonPressed(sender: AnyObject) {
         let shareString = self.shareTitle ?? ""
@@ -34,6 +64,8 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         let request = NSURLRequest(URL: url!)
         webView.loadRequest(request)
         webView.delegate = self
+        
+        webView.scrollView.delegate = self
     }
 
     func webViewDidStartLoad(webView: UIWebView) {

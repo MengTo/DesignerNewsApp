@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D98g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -530,6 +530,42 @@
                                     <action selector="shareButtonPressed:" destination="d4v-hq-Ei2" eventType="touchUpInside" id="PRL-DX-GYz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKK-W8-XHx" customClass="DesignableButton" customModule="Spring">
+                                <rect key="frame" x="536" y="536" width="44" height="44"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.1960784314" blue="0.23529411759999999" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4la-V8-N6I"/>
+                                    <constraint firstAttribute="width" constant="44" id="UoG-ct-MLA"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="icon-forward"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="forwardButtonDidTouch:" destination="d4v-hq-Ei2" eventType="touchUpInside" id="SOZ-Pf-uCf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQa-sM-fEJ" customClass="DesignableButton" customModule="Spring">
+                                <rect key="frame" x="472" y="536" width="44" height="44"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.1960784314" blue="0.23529411759999999" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Bow-ir-kjR"/>
+                                    <constraint firstAttribute="width" constant="44" id="l1X-SI-8xn"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="icon-back"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backButtonDidTouch:" destination="d4v-hq-Ei2" eventType="touchUpInside" id="3xA-IF-QN0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -537,13 +573,17 @@
                             <constraint firstItem="xPf-Is-W8A" firstAttribute="top" secondItem="3Ar-Xp-zRy" secondAttribute="bottom" constant="22" id="3OH-el-VlV"/>
                             <constraint firstItem="40T-Ab-wCU" firstAttribute="top" secondItem="doe-yo-c8f" secondAttribute="bottom" constant="20" id="5Kp-vn-YD0"/>
                             <constraint firstItem="weA-Ht-NmR" firstAttribute="top" secondItem="xPf-Is-W8A" secondAttribute="bottom" constant="-3" id="9H2-WZ-k9Q"/>
+                            <constraint firstItem="40T-Ab-wCU" firstAttribute="top" secondItem="yKK-W8-XHx" secondAttribute="bottom" constant="20" id="DxZ-gs-H4O"/>
                             <constraint firstItem="xPf-Is-W8A" firstAttribute="leading" secondItem="6Fw-jD-FeC" secondAttribute="leading" id="G11-Mi-65h"/>
+                            <constraint firstItem="yKK-W8-XHx" firstAttribute="leading" secondItem="HQa-sM-fEJ" secondAttribute="trailing" constant="20" id="GqY-PQ-MSr"/>
                             <constraint firstAttribute="trailing" secondItem="weA-Ht-NmR" secondAttribute="trailing" id="Itn-nS-4mY"/>
                             <constraint firstItem="xPf-Is-W8A" firstAttribute="leading" secondItem="6Fw-jD-FeC" secondAttribute="leading" id="PBI-mB-Elm"/>
                             <constraint firstItem="weA-Ht-NmR" firstAttribute="top" secondItem="3Ar-Xp-zRy" secondAttribute="bottom" id="QXn-5G-m3o"/>
                             <constraint firstItem="40T-Ab-wCU" firstAttribute="top" secondItem="hHb-EQ-22x" secondAttribute="bottom" constant="20" id="SJp-J5-bQN"/>
                             <constraint firstItem="weA-Ht-NmR" firstAttribute="leading" secondItem="6Fw-jD-FeC" secondAttribute="leading" id="VNe-dI-9yi"/>
+                            <constraint firstItem="40T-Ab-wCU" firstAttribute="top" secondItem="HQa-sM-fEJ" secondAttribute="bottom" constant="20" id="b5f-Jk-ZFQ"/>
                             <constraint firstItem="doe-yo-c8f" firstAttribute="leading" secondItem="hHb-EQ-22x" secondAttribute="trailing" constant="20" id="c9k-Vw-m5C"/>
+                            <constraint firstAttribute="trailing" secondItem="yKK-W8-XHx" secondAttribute="trailing" constant="20" id="gkh-O1-C1z"/>
                             <constraint firstItem="xPf-Is-W8A" firstAttribute="top" secondItem="weA-Ht-NmR" secondAttribute="top" id="heU-Hs-FzQ"/>
                             <constraint firstItem="40T-Ab-wCU" firstAttribute="top" secondItem="xPf-Is-W8A" secondAttribute="bottom" id="l7z-ew-BPK"/>
                             <constraint firstItem="hHb-EQ-22x" firstAttribute="leading" secondItem="6Fw-jD-FeC" secondAttribute="leadingMargin" constant="4" id="mb8-7U-XeF"/>
@@ -560,7 +600,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="HQa-sM-fEJ" id="Zf1-d7-gQf"/>
                         <outlet property="closeButton" destination="hHb-EQ-22x" id="3Ix-hy-WXU"/>
+                        <outlet property="forwardButton" destination="yKK-W8-XHx" id="pDZ-NH-xEV"/>
                         <outlet property="progressView" destination="xPf-Is-W8A" id="kJe-z8-mPi"/>
                         <outlet property="webView" destination="weA-Ht-NmR" id="xFo-Mx-cX5"/>
                     </connections>
@@ -1062,7 +1104,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nG4-aS-hFF" id="mwj-X7-b1i">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                      <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CkY-NW-Xvu" customClass="AsyncImageView" customModule="Spring">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CkY-NW-Xvu" customClass="AsyncImageView" customModule="Spring">
                                             <rect key="frame" x="8" y="10" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="VNm-oL-mtT"/>
@@ -1312,10 +1354,12 @@
         <image name="big-login" width="38" height="38"/>
         <image name="big-recent" width="36" height="36"/>
         <image name="big-top" width="41" height="39"/>
+        <image name="icon-back" width="11" height="20"/>
         <image name="icon-book" width="125" height="122"/>
         <image name="icon-close" width="19" height="20"/>
         <image name="icon-comment" width="17" height="15"/>
         <image name="icon-comment-active" width="17" height="15"/>
+        <image name="icon-forward" width="11" height="20"/>
         <image name="icon-mail" width="26" height="18"/>
         <image name="icon-password" width="25" height="25"/>
         <image name="icon-reply" width="20" height="15"/>
