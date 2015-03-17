@@ -29,7 +29,7 @@ class ContainerViewController: UIPageViewController {
         self.delegate = self
 
         let firstViewController = _controllers[0]
-        self.configureNavigationItemWithViewController(firstViewController)
+        self.configureForDisplayingViewController(firstViewController)
         self.setViewControllers([firstViewController],
             direction: UIPageViewControllerNavigationDirection.Forward,
             animated: true) { (completion) -> Void in
@@ -37,11 +37,16 @@ class ContainerViewController: UIPageViewController {
         }
     }
 
-    func configureNavigationItemWithViewController(controller: UIViewController) {
+    func configureForDisplayingViewController(controller: StoriesTableViewController) {
         self.navigationItem.leftBarButtonItem = controller.navigationItem.leftBarButtonItem
         self.navigationItem.titleView = controller.navigationItem.titleView
         self.navigationItem.rightBarButtonItem = controller.navigationItem.rightBarButtonItem
         self.navigationItem.title = controller.navigationItem.title
+
+
+        for vc in _controllers {
+            // Fix login button for the other vc after login/logout
+            vc.refreshLoginState()
     }
 
 }
@@ -75,13 +80,12 @@ extension ContainerViewController : UIPageViewControllerDataSource {
 extension ContainerViewController : UIPageViewControllerDelegate {
 
     func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
-        self.configureNavigationItemWithViewController(pendingViewControllers.first as UIViewController)
-
+        self.configureForDisplayingViewController(pendingViewControllers.first as StoriesTableViewController)
     }
 
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
         if !completed {
-            self.configureNavigationItemWithViewController(previousViewControllers.first as UIViewController)
+            self.configureForDisplayingViewController(previousViewControllers.first as StoriesTableViewController)
         }
     }
 

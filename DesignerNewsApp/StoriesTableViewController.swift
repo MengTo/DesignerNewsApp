@@ -79,19 +79,23 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             self.refreshControl?.endRefreshing()
         })
 
-        if LocalStore.accessToken() == nil {
-            loginButton.title = "Login"
-            loginButton.enabled = true
-        } else {
-            loginButton.title = ""
-            loginButton.enabled = false
-        }
+        refreshLoginState()
     }
 
     func loadMoreStories() {
         storiesLoader.next { [unowned self] stories in
             self.stories += stories
             self.tableView.reloadData()
+        }
+    }
+
+    func refreshLoginState() {
+        if LocalStore.accessToken() == nil {
+            loginButton.title = "Login"
+            loginButton.enabled = true
+        } else {
+            loginButton.title = ""
+            loginButton.enabled = false
         }
     }
     
