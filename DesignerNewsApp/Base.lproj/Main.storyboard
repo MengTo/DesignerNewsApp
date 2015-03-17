@@ -809,7 +809,7 @@
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-Ms-d8p" customClass="DesignableView" customModule="Spring">
                                             <rect key="frame" x="160" y="160" width="280" height="280"/>
                                             <subviews>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bg-credits + low-poly-texture-3" translatesAutoresizingMaskIntoConstraints="NO" id="XBV-xJ-PCT" customClass="SpringImageView" customModule="Spring">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bg-credits" translatesAutoresizingMaskIntoConstraints="NO" id="XBV-xJ-PCT" customClass="SpringImageView" customModule="Spring">
                                                     <rect key="frame" x="0.0" y="0.0" width="280" height="140"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeIn"/>
@@ -1349,7 +1349,7 @@
     </scenes>
     <resources>
         <image name="action-share" width="19" height="27"/>
-        <image name="bg-credits + low-poly-texture-3" width="280" height="140"/>
+        <image name="bg-credits" width="280" height="140"/>
         <image name="big-credits" width="47" height="44"/>
         <image name="big-login" width="38" height="38"/>
         <image name="big-recent" width="36" height="36"/>
