@@ -267,9 +267,17 @@
                                 </connections>
                             </view>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="uej-tB-xeq">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="loginButtonPressed:" destination="Hk8-Sl-9f6" id="B6A-HX-sJd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="loginButton" destination="uej-tB-xeq" id="60g-I8-Sk7"/>
                         <segue destination="G2J-Ma-fKq" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="cCn-3h-med"/>
+                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="gYg-Tj-m7u"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMl-vV-eSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -439,14 +447,7 @@
                             <outlet property="delegate" destination="VA5-Ik-jqO" id="n0W-Q9-DHi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Top Stories" id="JGT-YY-uoi">
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="uej-tB-xeq">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="loginButtonPressed:" destination="VA5-Ik-jqO" id="3H0-DK-seP"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Top Stories" id="JGT-YY-uoi"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="jrj-W6-HAL">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
@@ -455,11 +456,10 @@
                         </connections>
                     </refreshControl>
                     <connections>
-                        <outlet property="loginButton" destination="uej-tB-xeq" id="f8E-KV-P3z"/>
                         <segue destination="HBs-bl-KVv" kind="show" identifier="CommentsSegue" id="3HB-vO-v5a"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="Jya-5Y-T44"/>
-                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="4dT-jd-Noy"/>
                         <segue destination="G2J-Ma-fKq" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="hNl-2w-BvP"/>
+                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="VhH-Aa-bkq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py4-Yi-ebA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1343,7 +1343,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jya-5Y-T44"/>
-        <segue reference="4dT-jd-Noy"/>
+        <segue reference="gYg-Tj-m7u"/>
         <segue reference="cCn-3h-med"/>
     </inferredMetricsTieBreakers>
 </document>

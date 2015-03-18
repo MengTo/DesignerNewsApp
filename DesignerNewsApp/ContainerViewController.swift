@@ -10,6 +10,8 @@ import UIKit
 
 class ContainerViewController: UIPageViewController {
 
+    @IBOutlet weak var loginButton: UIBarButtonItem!
+
     lazy var _controllers : [StoriesTableViewController] = {
         let topStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as StoriesTableViewController
 
@@ -25,6 +27,9 @@ class ContainerViewController: UIPageViewController {
         if segue.identifier == "MenuSegue" {
             let menuViewController = segue.destinationViewController as MenuViewController
             menuViewController.delegate = self
+        } else if segue.identifier == "LoginSegue" {
+            let loginViewController = segue.destinationViewController as LoginViewController
+            loginViewController.delegate = self
         }
     }
 
@@ -35,20 +40,16 @@ class ContainerViewController: UIPageViewController {
         self.dataSource = self
         self.delegate = self
 
+        self.loginButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
+
         self.turnToPage(0)
     }
 
     func configureForDisplayingViewController(controller: StoriesTableViewController) {
-//        self.navigationItem.leftBarButtonItem = controller.navigationItem.leftBarButtonItem
         self.navigationItem.titleView = controller.navigationItem.titleView
-        self.navigationItem.rightBarButtonItem = controller.navigationItem.rightBarButtonItem
         self.navigationItem.title = controller.navigationItem.title
 
-
         for vc in _controllers {
-            // Fix login button for the other vc after login/logout
-            vc.refreshLoginState()
-
             // Fix scroll to top when more than one scroll view on screen
             vc.tableView.scrollsToTop = controller === vc
         }
@@ -67,7 +68,6 @@ class ContainerViewController: UIPageViewController {
             }
         }
 
-
         self.configureForDisplayingViewController(controller)
         self.setViewControllers([controller],
             direction: direction,
@@ -76,16 +76,40 @@ class ContainerViewController: UIPageViewController {
         }
     }
 
-//    func loginCompleted() {
-//    }
-//
-//    func logout() {
-//        LocalStore.deleteAccessToken()
-//    }
+    func loginCompleted() {
+        if LocalStore.accessToken() == nil {
+            loginButton.title = "Login"
+            loginButton.enabled = true
+        } else {
+            loginButton.title = ""
+            loginButton.enabled = false
+        }
+    }
+
+    func logout() {
+        LocalStore.logout()
+    }
 
     // MARK: Action
     @IBAction func menuButtonTouched(sender: AnyObject) {
         performSegueWithIdentifier("MenuSegue", sender: sender)
+    }
+
+    @IBAction func loginButtonPressed(sender: AnyObject) {
+        if LocalStore.accessToken() == nil {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        } else {
+            logout()
+        }
+    }
+
+}
+
+extension ContainerViewController : LoginViewControllerDelegate {
+
+    // MARK: LoginViewControllerDelegate
+    func loginViewControllerDidLogin(controller: LoginViewController) {
+        loginCompleted()
     }
 }
 
@@ -142,10 +166,13 @@ extension  ContainerViewController : MenuViewControllerDelegate {
 
     func menuViewControllerDidSelectLogout(controller: MenuViewController) {
 //        logout()
+
+        println("didSelect logout")
     }
 
     func menuViewControllerDidSelectLogin(controller: MenuViewController) {
 //        loginCompleted()
+        println("didSelect login")
     }
 
     func menuViewControllerDidSelectCloseMenu(controller: MenuViewController) {

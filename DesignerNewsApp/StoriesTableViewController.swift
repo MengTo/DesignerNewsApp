@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, LoginViewControllerDelegate {
+class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate {
     
     private let transitionManager = TransitionManager()
     private var stories = [Story]()
@@ -32,8 +32,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             }
         }
     }
-
-    @IBOutlet weak var loginButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +40,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         tableView.rowHeight = UITableViewAutomaticDimension
         
         navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
-        
-        loginButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -78,8 +74,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             self.view.hideLoading()
             self.refreshControl?.endRefreshing()
         })
-
-        refreshLoginState()
     }
 
     func loadMoreStories() {
@@ -89,42 +83,8 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         }
     }
 
-    func refreshLoginState() {
-        if LocalStore.accessToken() == nil {
-            loginButton.title = "Login"
-            loginButton.enabled = true
-        } else {
-            loginButton.title = ""
-            loginButton.enabled = false
-        }
-    }
-
-    // MARK: LoginViewControllerDelegate
-    func loginViewControllerDidLogin(controller: LoginViewController) {
-        loginCompleted()
-    }
-
-    // MARK: Action
-    @IBAction func loginButtonPressed(sender: AnyObject) {
-        if LocalStore.accessToken() == nil {
-            performSegueWithIdentifier("LoginSegue", sender: self)
-        } else {
-            logout()
-        }
-    }
-
     @IBAction func refreshControlValueChanged(sender: AnyObject) {
         self.loadStories()
-    }
-
-    // MARK: Misc
-    func loginCompleted() {
-        loadStories()
-    }
-
-    func logout() {
-        LocalStore.deleteAccessToken()
-        loadStories()
     }
 
     // MARK: TableViewDelegate
@@ -218,10 +178,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             webViewController.transitioningDelegate = self.transitionManager
             
             UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
-        }
-        else if segue.identifier == "LoginSegue" {
-            let loginViewController = segue.destinationViewController as LoginViewController
-            loginViewController.delegate = self
         }
     }
 
