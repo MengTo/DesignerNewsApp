@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate {
+class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, LoginViewControllerDelegate {
     
     private let transitionManager = TransitionManager()
     private var stories = [Story]()
@@ -98,29 +98,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             loginButton.enabled = false
         }
     }
-    
-    // MARK: MenuViewControllerDelegate
-    func menuViewControllerDidSelectTopStories(controller: MenuViewController) {
-        self.storySection = .Default
-    }
-    
-    func menuViewControllerDidSelectRecent(controller: MenuViewController) {
-        self.storySection = .Recent
-    }
-
-    func menuViewControllerDidSelectLogout(controller: MenuViewController) {
-        logout()
-    }
-
-    func menuViewControllerDidSelectLogin(controller: MenuViewController) {
-        loginCompleted()
-    }
-
-    func menuViewControllerDidSelectCloseMenu(controller: MenuViewController) {
-        if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
-            button.menuAnimation()
-        }
-    }
 
     // MARK: LoginViewControllerDelegate
     func loginViewControllerDidLogin(controller: LoginViewController) {
@@ -134,10 +111,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         } else {
             logout()
         }
-    }
-
-    @IBAction func menuButtonTouched(sender: AnyObject) {
-        performSegueWithIdentifier("MenuSegue", sender: sender)
     }
 
     @IBAction func refreshControlValueChanged(sender: AnyObject) {
@@ -249,10 +222,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         else if segue.identifier == "LoginSegue" {
             let loginViewController = segue.destinationViewController as LoginViewController
             loginViewController.delegate = self
-        }
-        else if segue.identifier == "MenuSegue" {
-            let menuViewController = segue.destinationViewController as MenuViewController
-            menuViewController.delegate = self
         }
     }
 

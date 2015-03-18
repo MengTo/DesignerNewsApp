@@ -21,6 +21,13 @@ class ContainerViewController: UIPageViewController {
         return [topStories, recentStories]
         }()
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "MenuSegue" {
+            let menuViewController = segue.destinationViewController as MenuViewController
+            menuViewController.delegate = self
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
@@ -28,17 +35,11 @@ class ContainerViewController: UIPageViewController {
         self.dataSource = self
         self.delegate = self
 
-        let firstViewController = _controllers[0]
-        self.configureForDisplayingViewController(firstViewController)
-        self.setViewControllers([firstViewController],
-            direction: UIPageViewControllerNavigationDirection.Forward,
-            animated: true) { (completion) -> Void in
-
-        }
+        self.turnToPage(0)
     }
 
     func configureForDisplayingViewController(controller: StoriesTableViewController) {
-        self.navigationItem.leftBarButtonItem = controller.navigationItem.leftBarButtonItem
+//        self.navigationItem.leftBarButtonItem = controller.navigationItem.leftBarButtonItem
         self.navigationItem.titleView = controller.navigationItem.titleView
         self.navigationItem.rightBarButtonItem = controller.navigationItem.rightBarButtonItem
         self.navigationItem.title = controller.navigationItem.title
@@ -53,6 +54,39 @@ class ContainerViewController: UIPageViewController {
         }
     }
 
+    func turnToPage(index: Int) {
+        let controller = _controllers[index]
+
+        var direction = UIPageViewControllerNavigationDirection.Forward
+
+        if let currentViewController = self.viewControllers.first as? UIViewController {
+            let currentIndex = (_controllers as NSArray).indexOfObject(currentViewController)
+
+            if currentIndex > index {
+                direction = UIPageViewControllerNavigationDirection.Reverse
+            }
+        }
+
+
+        self.configureForDisplayingViewController(controller)
+        self.setViewControllers([controller],
+            direction: direction,
+            animated: true) { (completion) -> Void in
+
+        }
+    }
+
+//    func loginCompleted() {
+//    }
+//
+//    func logout() {
+//        LocalStore.deleteAccessToken()
+//    }
+
+    // MARK: Action
+    @IBAction func menuButtonTouched(sender: AnyObject) {
+        performSegueWithIdentifier("MenuSegue", sender: sender)
+    }
 }
 
 extension ContainerViewController : UIPageViewControllerDataSource {
@@ -90,6 +124,33 @@ extension ContainerViewController : UIPageViewControllerDelegate {
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
         if !completed {
             self.configureForDisplayingViewController(previousViewControllers.first as StoriesTableViewController)
+        }
+    }
+
+}
+
+extension  ContainerViewController : MenuViewControllerDelegate {
+
+    // MARK: MenuViewControllerDelegate
+    func menuViewControllerDidSelectTopStories(controller: MenuViewController) {
+        self.turnToPage(0)
+    }
+
+    func menuViewControllerDidSelectRecent(controller: MenuViewController) {
+        self.turnToPage(1)
+    }
+
+    func menuViewControllerDidSelectLogout(controller: MenuViewController) {
+//        logout()
+    }
+
+    func menuViewControllerDidSelectLogin(controller: MenuViewController) {
+//        loginCompleted()
+    }
+
+    func menuViewControllerDidSelectCloseMenu(controller: MenuViewController) {
+        if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
+            button.menuAnimation()
         }
     }
 
