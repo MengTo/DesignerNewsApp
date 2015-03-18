@@ -65,6 +65,10 @@ class LoginStateHandler : NSObject {
         handler(isLoggedIn ? .LoggedIn : .LoggedOut)
     }
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
     func loginNotification(notification: NSNotification) {
         changeHandler?(.LoggedIn)
     }
