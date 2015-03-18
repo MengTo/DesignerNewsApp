@@ -12,8 +12,8 @@ class ContainerViewController: UIPageViewController {
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
 
-    var loginAction : LoginAction?
-    var loginStateChange : LoginStateHandler?
+    private var loginAction : LoginAction?
+    private var loginStateChange : LoginStateHandler?
 
     lazy var _controllers : [StoriesTableViewController] = {
         let topStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as StoriesTableViewController

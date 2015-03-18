@@ -25,8 +25,8 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var recentLabel: UILabel!
     @IBOutlet weak var creditsLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
-    var loginAction : LoginAction?
-    var loginStateHandler: LoginStateHandler?
+    private var loginAction : LoginAction?
+    private var loginStateHandler: LoginStateHandler?
     
     override func viewDidLoad() {
         super.viewDidLoad()

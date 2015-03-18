@@ -13,7 +13,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     var story: Story!
     private let transitionManager = TransitionManager()
-    var loginAction: LoginAction?
+    private var loginAction: LoginAction?
 
     override func viewDidLoad() {
         super.viewDidLoad()
