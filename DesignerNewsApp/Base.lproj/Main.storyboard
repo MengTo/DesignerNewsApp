@@ -8,7 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="Gna-wh-cmr">
             <objects>
-                <viewController id="maI-eQ-OKD" customClass="LoginViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="maI-eQ-OKD" customClass="LoginViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FLK-WL-idC"/>
                         <viewControllerLayoutGuide type="bottom" id="kND-C6-oR4"/>
@@ -277,7 +277,6 @@
                     <connections>
                         <outlet property="loginButton" destination="uej-tB-xeq" id="60g-I8-Sk7"/>
                         <segue destination="G2J-Ma-fKq" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="cCn-3h-med"/>
-                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="gYg-Tj-m7u"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMl-vV-eSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -459,7 +458,6 @@
                         <segue destination="HBs-bl-KVv" kind="show" identifier="CommentsSegue" id="3HB-vO-v5a"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="Jya-5Y-T44"/>
                         <segue destination="G2J-Ma-fKq" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="hNl-2w-BvP"/>
-                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="VhH-Aa-bkq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py4-Yi-ebA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -745,7 +743,6 @@
                         <outlet property="loginLabel" destination="9fv-eC-1JO" id="0hL-qt-uhk"/>
                         <outlet property="recentLabel" destination="8hj-pg-WtG" id="gIc-VZ-Ln5"/>
                         <outlet property="topLabel" destination="JaA-rV-WKv" id="k8O-NT-LDT"/>
-                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalTransitionStyle="crossDissolve" animates="NO" id="k70-GR-7l8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ght-xt-R2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1207,7 +1204,6 @@
                     <connections>
                         <segue destination="Ud9-EQ-k4v" kind="presentation" identifier="ReplySegue" id="AAA-ja-nOX"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="WYa-K1-lob"/>
-                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="Sm2-a6-0WS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pxf-D7-GjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1343,7 +1339,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jya-5Y-T44"/>
-        <segue reference="gYg-Tj-m7u"/>
         <segue reference="cCn-3h-med"/>
     </inferredMetricsTieBreakers>
 </document>

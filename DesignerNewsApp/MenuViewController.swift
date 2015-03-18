@@ -17,7 +17,7 @@ protocol MenuViewControllerDelegate : class {
     func menuViewControllerDidSelectCloseMenu(controller:MenuViewController)
 }
 
-class MenuViewController: UIViewController, LoginViewControllerDelegate {
+class MenuViewController: UIViewController {
     
     weak var delegate: MenuViewControllerDelegate?
     @IBOutlet weak var dialogView: SpringView!
@@ -25,6 +25,8 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     @IBOutlet weak var recentLabel: UILabel!
     @IBOutlet weak var creditsLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
+    var loginAction : LoginAction?
+    var loginStateHandler: LoginStateHandler?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,29 +64,26 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
     
     @IBAction func loginButtonPressed(sender: AnyObject) {
         animateView()
-        
         if LocalStore.accessToken() == nil {
-            performSegueWithIdentifier("LoginSegue", sender: self)
+            loginAction = LoginAction(viewController: self, completion: { [weak self] () -> () in
+                if let strongSelf = self {
+                    strongSelf.dismissViewControllerAnimated(true, completion: nil)
+                    strongSelf.delegate?.menuViewControllerDidSelectLogin(strongSelf)
+                }
+            })
         } else {
-            delegate?.menuViewControllerDidSelectCloseMenu(self)
+            LogoutAction()
             delegate?.menuViewControllerDidSelectLogout(self)
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
-    
+
     @IBAction func closeButtonPressed(sender: AnyObject) {
         delegate?.menuViewControllerDidSelectCloseMenu(self)
         dialogView.animation = "fall"
         dialogView.animateNext {
             self.dismissViewControllerAnimated(false, completion: nil)
         }
-    }
-    
-    // MARK: LoginViewControllerDelegate
-    func loginViewControllerDidLogin(controller: LoginViewController) {
-        delegate?.menuViewControllerDidSelectCloseMenu(self)
-        delegate?.menuViewControllerDidSelectLogin(self)
-        dismissViewControllerAnimated(true, completion: nil)
     }
 
     // MARK: Misc
@@ -93,11 +92,5 @@ class MenuViewController: UIViewController, LoginViewControllerDelegate {
         dialogView.animation = "pop"
         dialogView.animate()
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "LoginSegue" {
-            let loginViewController = segue.destinationViewController as LoginViewController
-            loginViewController.delegate = self
-        }
-    }
+
 }

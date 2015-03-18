@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A2331C41A78DFAF002F8D80 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2331C31A78DFAF002F8D80 /* LoadingTableViewCell.swift */; };
 		1A2331D21A78E1AF002F8D80 /* StoriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2331D11A78E1AF002F8D80 /* StoriesLoader.swift */; };
+		1A2849971AB9D3F900940CE3 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2849961AB9D3F900940CE3 /* LoginService.swift */; };
 		1A7D78A01A70F8FE0061D6F6 /* DragDropBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */; };
 		1A8D9C811A75E3000032DA0F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C801A75E3000032DA0F /* ImageIO.framework */; };
 		1A8D9C841A75E30F0032DA0F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C831A75E30F0032DA0F /* QuartzCore.framework */; };
@@ -184,6 +185,7 @@
 /* Begin PBXFileReference section */
 		1A2331C31A78DFAF002F8D80 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		1A2331D11A78E1AF002F8D80 /* StoriesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesLoader.swift; sourceTree = "<group>"; };
+		1A2849961AB9D3F900940CE3 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		1A4FDA211A6E43FE0099D309 /* SpringApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SpringApp.xcodeproj; path = Spring/SpringApp.xcodeproj; sourceTree = "<group>"; };
 		1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragDropBehavior.swift; sourceTree = "<group>"; };
 		1A8D9C801A75E3000032DA0F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
@@ -427,6 +429,7 @@
 				B78F90371A6EF75800883A5B /* DesignerNewsService.swift */,
 				1A2331D11A78E1AF002F8D80 /* StoriesLoader.swift */,
 				B773D86E1A7BC101008E8A65 /* LocalStore.swift */,
+				1A2849961AB9D3F900940CE3 /* LoginService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 			files = (
 				964892671A63F5D900214D53 /* MenuViewController.swift in Sources */,
 				961889B81A680D3800295A64 /* LearnViewController.swift in Sources */,
+				1A2849971AB9D3F900940CE3 /* LoginService.swift in Sources */,
 				1AB6351C1AB6D46900064D14 /* ContainerViewController.swift in Sources */,
 				966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */,
 				B773D86F1A7BC101008E8A65 /* LocalStore.swift in Sources */,

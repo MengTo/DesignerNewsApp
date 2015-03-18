@@ -12,6 +12,9 @@ class ContainerViewController: UIPageViewController {
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
 
+    var loginAction : LoginAction?
+    var loginStateChange : LoginStateHandler?
+
     lazy var _controllers : [StoriesTableViewController] = {
         let topStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as StoriesTableViewController
 
@@ -27,9 +30,6 @@ class ContainerViewController: UIPageViewController {
         if segue.identifier == "MenuSegue" {
             let menuViewController = segue.destinationViewController as MenuViewController
             menuViewController.delegate = self
-        } else if segue.identifier == "LoginSegue" {
-            let loginViewController = segue.destinationViewController as LoginViewController
-            loginViewController.delegate = self
         }
     }
 
@@ -41,6 +41,16 @@ class ContainerViewController: UIPageViewController {
         self.delegate = self
 
         self.loginButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
+
+        self.loginStateChange = LoginStateHandler(handler: { [weak self] (state) -> () in
+            if state == .LoggedIn {
+                self?.loginButton.title = ""
+                self?.loginButton.enabled = false
+            } else {
+                self?.loginButton.title = "Login"
+                self?.loginButton.enabled = true
+            }
+        })
 
         self.turnToPage(0)
     }
@@ -76,18 +86,10 @@ class ContainerViewController: UIPageViewController {
         }
     }
 
-    func loginCompleted() {
-        if LocalStore.accessToken() == nil {
-            loginButton.title = "Login"
-            loginButton.enabled = true
-        } else {
-            loginButton.title = ""
-            loginButton.enabled = false
+    func animateMenuButton() {
+        if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
+            button.menuAnimation()
         }
-    }
-
-    func logout() {
-        LocalStore.logout()
     }
 
     // MARK: Action
@@ -97,20 +99,12 @@ class ContainerViewController: UIPageViewController {
 
     @IBAction func loginButtonPressed(sender: AnyObject) {
         if LocalStore.accessToken() == nil {
-            performSegueWithIdentifier("LoginSegue", sender: self)
+            self.loginAction = LoginAction(viewController:self, completion: nil)
         } else {
-            logout()
+            LogoutAction()
         }
     }
 
-}
-
-extension ContainerViewController : LoginViewControllerDelegate {
-
-    // MARK: LoginViewControllerDelegate
-    func loginViewControllerDidLogin(controller: LoginViewController) {
-        loginCompleted()
-    }
 }
 
 extension ContainerViewController : UIPageViewControllerDataSource {
@@ -164,21 +158,16 @@ extension  ContainerViewController : MenuViewControllerDelegate {
         self.turnToPage(1)
     }
 
-    func menuViewControllerDidSelectLogout(controller: MenuViewController) {
-//        logout()
-
-        println("didSelect logout")
+    func menuViewControllerDidSelectCloseMenu(controller: MenuViewController) {
+        self.animateMenuButton()
     }
 
     func menuViewControllerDidSelectLogin(controller: MenuViewController) {
-//        loginCompleted()
-        println("didSelect login")
+        self.animateMenuButton()
     }
 
-    func menuViewControllerDidSelectCloseMenu(controller: MenuViewController) {
-        if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
-            button.menuAnimation()
-        }
+    func menuViewControllerDidSelectLogout(controller: MenuViewController) {
+        self.animateMenuButton()
     }
 
 }

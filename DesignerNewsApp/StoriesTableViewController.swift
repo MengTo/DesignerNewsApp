@@ -16,6 +16,9 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     private var firstTime = true
     private var storiesLoader = StoriesLoader()
     private var selectedIndexPath : NSIndexPath?
+    private var loginStateHandler : LoginStateHandler!
+    private var loginAction : LoginAction?
+
     var storySection : StoriesLoader.StorySection = .Default {
         didSet {
             storiesLoader = StoriesLoader(storySection)
@@ -40,6 +43,10 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         tableView.rowHeight = UITableViewAutomaticDimension
         
         navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
+
+        self.loginStateHandler = LoginStateHandler(handler: { [weak self] (state) -> () in
+            self?.loadStories()
+        })
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -140,7 +147,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
                 }
             }
         } else {
-            performSegueWithIdentifier("LoginSegue", sender: self)
+            self.loginAction = LoginAction(viewController: self, completion: nil)
         }
     }
 
