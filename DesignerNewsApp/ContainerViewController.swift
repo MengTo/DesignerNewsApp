@@ -35,14 +35,14 @@ class ContainerViewController: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.whiteColor()
 
-        self.dataSource = self
-        self.delegate = self
+        dataSource = self
+        delegate = self
 
-        self.loginButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
+        loginButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
 
-        self.loginStateChange = LoginStateHandler(handler: { [weak self] (state) -> () in
+        loginStateChange = LoginStateHandler(handler: { [weak self] (state) -> () in
             if state == .LoggedIn {
                 self?.loginButton.title = ""
                 self?.loginButton.enabled = false
@@ -52,12 +52,12 @@ class ContainerViewController: UIPageViewController {
             }
         })
 
-        self.turnToPage(0)
+        turnToPage(0)
     }
 
     func configureForDisplayingViewController(controller: StoriesTableViewController) {
-        self.navigationItem.titleView = controller.navigationItem.titleView
-        self.navigationItem.title = controller.navigationItem.title
+        navigationItem.titleView = controller.navigationItem.titleView
+        navigationItem.title = controller.navigationItem.title
 
         for vc in _controllers {
             // Fix scroll to top when more than one scroll view on screen
@@ -70,7 +70,7 @@ class ContainerViewController: UIPageViewController {
 
         var direction = UIPageViewControllerNavigationDirection.Forward
 
-        if let currentViewController = self.viewControllers.first as? UIViewController {
+        if let currentViewController = viewControllers.first as? UIViewController {
             let currentIndex = (_controllers as NSArray).indexOfObject(currentViewController)
 
             if currentIndex > index {
@@ -78,8 +78,8 @@ class ContainerViewController: UIPageViewController {
             }
         }
 
-        self.configureForDisplayingViewController(controller)
-        self.setViewControllers([controller],
+        configureForDisplayingViewController(controller)
+        setViewControllers([controller],
             direction: direction,
             animated: true) { (completion) -> Void in
 
@@ -99,7 +99,7 @@ class ContainerViewController: UIPageViewController {
 
     @IBAction func loginButtonPressed(sender: AnyObject) {
         if LocalStore.accessToken() == nil {
-            self.loginAction = LoginAction(viewController:self, completion: nil)
+            loginAction = LoginAction(viewController:self, completion: nil)
         } else {
             LogoutAction()
         }
@@ -136,12 +136,12 @@ extension ContainerViewController : UIPageViewControllerDataSource {
 extension ContainerViewController : UIPageViewControllerDelegate {
 
     func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
-        self.configureForDisplayingViewController(pendingViewControllers.first as StoriesTableViewController)
+        configureForDisplayingViewController(pendingViewControllers.first as StoriesTableViewController)
     }
 
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
         if !completed {
-            self.configureForDisplayingViewController(previousViewControllers.first as StoriesTableViewController)
+            configureForDisplayingViewController(previousViewControllers.first as StoriesTableViewController)
         }
     }
 
@@ -151,23 +151,23 @@ extension  ContainerViewController : MenuViewControllerDelegate {
 
     // MARK: MenuViewControllerDelegate
     func menuViewControllerDidSelectTopStories(controller: MenuViewController) {
-        self.turnToPage(0)
+        turnToPage(0)
     }
 
     func menuViewControllerDidSelectRecent(controller: MenuViewController) {
-        self.turnToPage(1)
+        turnToPage(1)
     }
 
     func menuViewControllerDidSelectCloseMenu(controller: MenuViewController) {
-        self.animateMenuButton()
+        animateMenuButton()
     }
 
     func menuViewControllerDidSelectLogin(controller: MenuViewController) {
-        self.animateMenuButton()
+        animateMenuButton()
     }
 
     func menuViewControllerDidSelectLogout(controller: MenuViewController) {
-        self.animateMenuButton()
+        animateMenuButton()
     }
 
 }

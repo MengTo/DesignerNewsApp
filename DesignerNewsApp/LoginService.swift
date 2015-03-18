@@ -19,7 +19,7 @@ class LoginAction : NSObject, LoginViewControllerDelegate {
 
     init(viewController: UIViewController, completion: LoginHandler?) {
         super.init()
-        self.loginHandler = completion
+        loginHandler = completion
         let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as LoginViewController
         loginViewController.modalPresentationStyle = .OverCurrentContext
         loginViewController.modalTransitionStyle = .CrossDissolve
