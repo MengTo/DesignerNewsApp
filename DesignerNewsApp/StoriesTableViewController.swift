@@ -45,7 +45,9 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
 
         self.loginStateHandler = LoginStateHandler(handler: { [weak self] (state) -> () in
-            self?.loadStories()
+            if let strongSelf = self {
+                strongSelf.loadStories()
+            }
         })
     }
 
