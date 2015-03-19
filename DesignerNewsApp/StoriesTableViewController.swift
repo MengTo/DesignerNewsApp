@@ -9,15 +9,32 @@
 import UIKit
 import Spring
 
-class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, LoginViewControllerDelegate, MenuViewControllerDelegate {
+class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate {
     
     private let transitionManager = TransitionManager()
     private var stories = [Story]()
     private var firstTime = true
     private var storiesLoader = StoriesLoader()
     private var selectedIndexPath : NSIndexPath?
+    private var loginStateHandler : LoginStateHandler!
+    private var loginAction : LoginAction?
 
-    @IBOutlet weak var loginButton: UIBarButtonItem!
+    var storySection : StoriesLoader.StorySection = .Default {
+        didSet {
+            storiesLoader = StoriesLoader(storySection)
+
+            switch (storySection) {
+            case .Default:
+                title = "Top Stories"
+            case .Recent:
+                title = "Recent Stories"
+            }
+
+            if self.isViewLoaded() {
+                loadStories()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +43,12 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         tableView.rowHeight = UITableViewAutomaticDimension
         
         navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
-        
-        loginButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
+
+        self.loginStateHandler = LoginStateHandler(handler: { [weak self] (state) -> () in
+            if let strongSelf = self {
+                strongSelf.loadStories()
+            }
+        })
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -60,14 +81,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             self.view.hideLoading()
             self.refreshControl?.endRefreshing()
         })
-
-        if LocalStore.accessToken() == nil {
-            loginButton.title = "Login"
-            loginButton.enabled = true
-        } else {
-            loginButton.title = ""
-            loginButton.enabled = false
-        }
     }
 
     func loadMoreStories() {
@@ -76,68 +89,9 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             self.tableView.reloadData()
         }
     }
-    
-    // MARK: MenuViewControllerDelegate
-    func menuViewControllerDidSelectTopStories(controller: MenuViewController) {
-        title = "Top Stories"
-        storiesLoader = StoriesLoader(.Default)
-        loadStories()
-        view.showLoading()
-    }
-    
-    func menuViewControllerDidSelectRecent(controller: MenuViewController) {
-        title = "Recent Stories"
-        storiesLoader = StoriesLoader(.Recent)
-        loadStories()
-        view.showLoading()
-    }
-
-    func menuViewControllerDidSelectLogout(controller: MenuViewController) {
-        logout()
-    }
-
-    func menuViewControllerDidSelectLogin(controller: MenuViewController) {
-        loginCompleted()
-    }
-
-    func menuViewControllerDidSelectCloseMenu(controller: MenuViewController) {
-        if let button = navigationItem.leftBarButtonItem?.customView as? MenuControl {
-            button.menuAnimation()
-        }
-    }
-
-    // MARK: LoginViewControllerDelegate
-    func loginViewControllerDidLogin(controller: LoginViewController) {
-        loginCompleted()
-    }
-
-    // MARK: Action
-    @IBAction func loginButtonPressed(sender: AnyObject) {
-        if LocalStore.accessToken() == nil {
-            performSegueWithIdentifier("LoginSegue", sender: self)
-        } else {
-            logout()
-        }
-    }
-
-    @IBAction func menuButtonTouched(sender: AnyObject) {
-        performSegueWithIdentifier("MenuSegue", sender: sender)
-    }
 
     @IBAction func refreshControlValueChanged(sender: AnyObject) {
         self.loadStories()
-    }
-
-    // MARK: Misc
-    func loginCompleted() {
-        loadStories()
-        view.showLoading()
-    }
-
-    func logout() {
-        LocalStore.deleteAccessToken()
-        loadStories()
-        view.showLoading()
     }
 
     // MARK: TableViewDelegate
@@ -193,7 +147,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
                 }
             }
         } else {
-            performSegueWithIdentifier("LoginSegue", sender: self)
+            self.loginAction = LoginAction(viewController: self, completion: nil)
         }
     }
 
@@ -231,14 +185,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             webViewController.transitioningDelegate = self.transitionManager
             
             UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
-        }
-        else if segue.identifier == "LoginSegue" {
-            let loginViewController = segue.destinationViewController as LoginViewController
-            loginViewController.delegate = self
-        }
-        else if segue.identifier == "MenuSegue" {
-            let menuViewController = segue.destinationViewController as MenuViewController
-            menuViewController.delegate = self
         }
     }
 

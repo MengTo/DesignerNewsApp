@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D98g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="Gna-wh-cmr">
             <objects>
-                <viewController id="maI-eQ-OKD" customClass="LoginViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="maI-eQ-OKD" customClass="LoginViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FLK-WL-idC"/>
                         <viewControllerLayoutGuide type="bottom" id="kND-C6-oR4"/>
@@ -39,7 +39,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bh-8f-iPL" customClass="SpringView" customModule="Spring">
                                                     <rect key="frame" x="160" y="160" width="280" height="280"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iX-v0-KfP">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Log in to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iX-v0-KfP">
                                                             <rect key="frame" x="100" y="25" width="80" height="28"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -246,10 +246,47 @@
             </objects>
             <point key="canvasLocation" x="-445" y="2499"/>
         </scene>
+        <!--Container View Controller-->
+        <scene sceneID="jFr-pz-fev">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Hk8-Sl-9f6" customClass="ContainerViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="Ize-65-uX8">
+                        <barButtonItem key="leftBarButtonItem" id="ttR-gz-v7X">
+                            <view key="customView" contentMode="scaleToFill" id="OcC-gl-EFu" customClass="MenuControl" customModule="DesignerNewsApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="5" width="26" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="menuButtonTouched:" destination="Hk8-Sl-9f6" eventType="touchUpInside" id="kGf-XR-OOr"/>
+                                </connections>
+                            </view>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="uej-tB-xeq">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="loginButtonPressed:" destination="Hk8-Sl-9f6" id="B6A-HX-sJd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="loginButton" destination="uej-tB-xeq" id="60g-I8-Sk7"/>
+                        <segue destination="G2J-Ma-fKq" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="cCn-3h-med"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMl-vV-eSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="246" y="1714"/>
+        </scene>
         <!--Top Stories-->
         <scene sceneID="Q2e-Ny-1C0">
             <objects>
-                <tableViewController id="VA5-Ik-jqO" customClass="StoriesTableViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StoriesTableViewController" id="VA5-Ik-jqO" customClass="StoriesTableViewController" customModule="DesignerNewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="0v6-GZ-Lmr">
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -388,8 +425,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vq3-1F-uVG" id="6te-PW-AQw">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Of0-IL-gkm">
-                                            <rect key="frame" x="290" y="20" width="20" height="20.5"/>
+                                        <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Of0-IL-gkm">
+                                            <rect key="frame" x="290" y="20" width="20" height="21"/>
                                         </activityIndicatorView>
                                     </subviews>
                                     <constraints>
@@ -409,29 +446,7 @@
                             <outlet property="delegate" destination="VA5-Ik-jqO" id="n0W-Q9-DHi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Top Stories" id="JGT-YY-uoi">
-                        <barButtonItem key="leftBarButtonItem" id="ttR-gz-v7X">
-                            <view key="customView" contentMode="scaleToFill" id="OcC-gl-EFu" customClass="MenuControl" customModule="DesignerNewsApp" customModuleProvider="target">
-                                <rect key="frame" x="16" y="5" width="26" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="menuButtonTouched:" destination="VA5-Ik-jqO" eventType="touchUpInside" id="1PT-Bh-H4r"/>
-                                </connections>
-                            </view>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="uej-tB-xeq">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="loginButtonPressed:" destination="VA5-Ik-jqO" id="3H0-DK-seP"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Top Stories" id="JGT-YY-uoi"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="jrj-W6-HAL">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
@@ -440,10 +455,8 @@
                         </connections>
                     </refreshControl>
                     <connections>
-                        <outlet property="loginButton" destination="uej-tB-xeq" id="f8E-KV-P3z"/>
                         <segue destination="HBs-bl-KVv" kind="show" identifier="CommentsSegue" id="3HB-vO-v5a"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="Jya-5Y-T44"/>
-                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="4dT-jd-Noy"/>
                         <segue destination="G2J-Ma-fKq" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="hNl-2w-BvP"/>
                     </connections>
                 </tableViewController>
@@ -773,7 +786,6 @@
                         <outlet property="loginLabel" destination="9fv-eC-1JO" id="0hL-qt-uhk"/>
                         <outlet property="recentLabel" destination="8hj-pg-WtG" id="gIc-VZ-Ln5"/>
                         <outlet property="topLabel" destination="JaA-rV-WKv" id="k8O-NT-LDT"/>
-                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalTransitionStyle="crossDissolve" animates="NO" id="k70-GR-7l8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ght-xt-R2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -992,7 +1004,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="4h" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Uc-qd-Y6d">
-                                            <rect key="frame" x="560" y="11" width="32" height="20.5"/>
+                                            <rect key="frame" x="560" y="11" width="32" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" priority="999" constant="32" id="y48-wy-Hvh"/>
                                             </constraints>
@@ -1113,7 +1125,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLN-xj-Mqg">
-                                            <rect key="frame" x="35" y="10" width="520" height="19.5"/>
+                                            <rect key="frame" x="35" y="10" width="520" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="19.5" id="2Cr-Rc-eqV"/>
                                             </constraints>
@@ -1121,7 +1133,7 @@
                                             <color key="textColor" red="0.58823529411764708" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-ww-iWK" customClass="SpringButton" customModule="Spring">
+                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-ww-iWK" customClass="SpringButton" customModule="Spring">
                                             <rect key="frame" x="25" y="28" width="60" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="Z9x-Kz-88e"/>
@@ -1139,7 +1151,7 @@
                                                 <action selector="upvoteButtonPressed:" destination="nG4-aS-hFF" eventType="touchUpInside" id="MfG-6l-wFb"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGU-1m-Bb5" customClass="SpringButton" customModule="Spring">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGU-1m-Bb5" customClass="SpringButton" customModule="Spring">
                                             <rect key="frame" x="85" y="28" width="80" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="0ZW-iM-6PG"/>
@@ -1157,7 +1169,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nu-Cg-qpV">
-                                            <rect key="frame" x="574" y="10" width="17.5" height="20.5"/>
+                                            <rect key="frame" x="574" y="10" width="18" height="21"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                             <color key="textColor" red="0.58823529411764708" green="0.65098039215686276" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1175,8 +1187,8 @@
                                                 </mask>
                                             </variation>
                                         </view>
-                                        <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="zRo-Ar-eV4" customClass="CoreTextView" customModule="DesignerNewsApp" customModuleProvider="target">
-                                            <rect key="frame" x="35" y="64" width="550" height="35.5"/>
+                                        <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="749" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zRo-Ar-eV4" customClass="CoreTextView" customModule="DesignerNewsApp" customModuleProvider="target">
+                                            <rect key="frame" x="35" y="64" width="550" height="36"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
@@ -1235,7 +1247,6 @@
                     <connections>
                         <segue destination="Ud9-EQ-k4v" kind="presentation" identifier="ReplySegue" id="AAA-ja-nOX"/>
                         <segue destination="d4v-hq-Ei2" kind="presentation" identifier="WebSegue" id="WYa-K1-lob"/>
-                        <segue destination="maI-eQ-OKD" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="Sm2-a6-0WS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pxf-D7-GjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1340,12 +1351,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="VA5-Ik-jqO" kind="relationship" relationship="rootViewController" id="XPw-9U-khN"/>
+                        <segue destination="Hk8-Sl-9f6" kind="relationship" relationship="rootViewController" id="ulD-Mj-Auz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0C4-1R-y3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246" y="1714"/>
+            <point key="canvasLocation" x="-445" y="1713"/>
         </scene>
     </scenes>
     <resources>
@@ -1373,6 +1384,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jya-5Y-T44"/>
-        <segue reference="4dT-jd-Noy"/>
+        <segue reference="cCn-3h-med"/>
     </inferredMetricsTieBreakers>
 </document>

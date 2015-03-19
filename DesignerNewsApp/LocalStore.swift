@@ -61,7 +61,7 @@ struct LocalStore {
         userDefaults.synchronize()
     }
 
-    static func deleteAccessToken() {
+    private static func deleteAccessToken() {
         userDefaults.removeObjectForKey(accessTokenKey)
         userDefaults.synchronize()
     }
@@ -74,6 +74,10 @@ struct LocalStore {
 
     static func accessToken() -> String? {
         return userDefaults.stringForKey(accessTokenKey)
+    }
+
+    static func logout() {
+        self.deleteAccessToken()
     }
 
     // MARK: Helper

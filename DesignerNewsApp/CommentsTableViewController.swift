@@ -13,6 +13,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 
     var story: Story!
     private let transitionManager = TransitionManager()
+    private var loginAction: LoginAction?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,13 +97,13 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             }
 
         } else {
-            performSegueWithIdentifier("LoginSegue", sender: self)
+            self.loginAction = LoginAction(viewController: self, completion: nil)
         }
     }
 
     func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject) {
         if LocalStore.accessToken() == nil {
-            performSegueWithIdentifier("LoginSegue", sender: self)
+            self.loginAction = LoginAction(viewController: self, completion: nil)
         } else {
             performSegueWithIdentifier("ReplySegue", sender: cell)
         }
@@ -121,7 +122,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     // MARK: CommentTableViewCellDelegate
     func commentTableViewCell(cell: CommentTableViewCell, replyButtonPressed sender: AnyObject) {
         if LocalStore.accessToken() == nil {
-            performSegueWithIdentifier("LoginSegue", sender: self)
+            self.loginAction = LoginAction(viewController: self, completion: nil)
         } else {
             performSegueWithIdentifier("ReplySegue", sender: cell)
         }
@@ -146,7 +147,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             }
 
         } else {
-            performSegueWithIdentifier("LoginSegue", sender: self)
+            self.loginAction = LoginAction(viewController: self, completion: nil)
         }
     }
 
