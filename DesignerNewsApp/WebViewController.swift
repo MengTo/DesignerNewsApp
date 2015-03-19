@@ -20,7 +20,8 @@ class WebViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelega
     @IBOutlet weak var closeButton: SpringButton!
     @IBOutlet weak var backButton: DesignableButton!
     @IBOutlet weak var forwardButton: DesignableButton!
-    var pointNow: CGPoint!
+    @IBOutlet weak var shareButton: SpringButton!
+    var pointNow = CGPoint()
     
     @IBAction func backButtonDidTouch(sender: AnyObject) {
         webView.goBack()
@@ -39,12 +40,16 @@ class WebViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelega
             spring(0.5) {
                 self.backButton.alpha = 1
                 self.forwardButton.alpha = 1
+                self.shareButton.alpha = 1
+                self.closeButton.alpha = 1
             }
         }
         if scrollView.contentOffset.y > pointNow.y {
             spring(0.5) {
                 self.backButton.alpha = 0
                 self.forwardButton.alpha = 0
+                self.shareButton.alpha = 0
+                self.closeButton.alpha = 0
             }
         }
     }

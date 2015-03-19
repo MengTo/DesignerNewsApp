@@ -604,6 +604,7 @@
                         <outlet property="closeButton" destination="hHb-EQ-22x" id="3Ix-hy-WXU"/>
                         <outlet property="forwardButton" destination="yKK-W8-XHx" id="pDZ-NH-xEV"/>
                         <outlet property="progressView" destination="xPf-Is-W8A" id="kJe-z8-mPi"/>
+                        <outlet property="shareButton" destination="doe-yo-c8f" id="FoR-hr-T5O"/>
                         <outlet property="webView" destination="weA-Ht-NmR" id="xFo-Mx-cX5"/>
                     </connections>
                 </viewController>
