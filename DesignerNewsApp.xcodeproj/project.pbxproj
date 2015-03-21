@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A2331C41A78DFAF002F8D80 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2331C31A78DFAF002F8D80 /* LoadingTableViewCell.swift */; };
 		1A2331D21A78E1AF002F8D80 /* StoriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2331D11A78E1AF002F8D80 /* StoriesLoader.swift */; };
+		1A2849971AB9D3F900940CE3 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2849961AB9D3F900940CE3 /* LoginService.swift */; };
 		1A6D23BD1AB6AD2E000F080A /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D23B91AB6AD2E000F080A /* HockeySDK.framework */; };
 		1A6D23BE1AB6AD2E000F080A /* HockeySDK.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1A6D23BB1AB6AD2E000F080A /* HockeySDK.xcconfig */; };
 		1A6D23BF1AB6AD2E000F080A /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1A6D23BC1AB6AD2E000F080A /* HockeySDKResources.bundle */; };
@@ -19,7 +20,6 @@
 		1A6D23D51AB6AD89000F080A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D23D41AB6AD89000F080A /* Security.framework */; };
 		1A6D23D71AB6AD93000F080A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D23D61AB6AD93000F080A /* SystemConfiguration.framework */; };
 		1A6D23D91AB6AD9C000F080A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D23D81AB6AD9C000F080A /* UIKit.framework */; };
-		1A2849971AB9D3F900940CE3 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2849961AB9D3F900940CE3 /* LoginService.swift */; };
 		1A7D78A01A70F8FE0061D6F6 /* DragDropBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */; };
 		1A8D9C811A75E3000032DA0F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C801A75E3000032DA0F /* ImageIO.framework */; };
 		1A8D9C841A75E30F0032DA0F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C831A75E30F0032DA0F /* QuartzCore.framework */; };
@@ -602,10 +602,11 @@
 				TargetAttributes = {
 					9661284E1A4DA63100A54A23 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 68WS2M23VC;
 					};
 					966128631A4DA63100A54A23 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 78BJD4M4CR;
+						DevelopmentTeam = 68WS2M23VC;
 						TestTargetID = 9661284E1A4DA63100A54A23;
 					};
 				};
