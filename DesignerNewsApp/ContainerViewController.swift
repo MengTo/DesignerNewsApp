@@ -11,6 +11,8 @@ import UIKit
 class ContainerViewController: UIPageViewController {
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
+    @IBOutlet weak var navTitleLabel: UILabel!
+    @IBOutlet weak var pageImageView: UIImageView!
 
     private var loginAction : LoginAction?
     private var loginStateChange : LoginStateHandler?
@@ -18,13 +20,12 @@ class ContainerViewController: UIPageViewController {
     lazy var _controllers : [StoriesTableViewController] = {
         let topStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as StoriesTableViewController
 
-
         let recentStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as StoriesTableViewController
 
         recentStories.storySection = .Recent
 
         return [topStories, recentStories]
-        }()
+    }()
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "MenuSegue" {
@@ -56,9 +57,15 @@ class ContainerViewController: UIPageViewController {
     }
 
     func configureForDisplayingViewController(controller: StoriesTableViewController) {
-        navigationItem.titleView = controller.navigationItem.titleView
-        navigationItem.title = controller.navigationItem.title
-
+        let title = controller.navigationItem.title
+        navTitleLabel.text = title
+        
+        if title == "Top Stories" {
+            pageImageView.image = UIImage(named: "pagecontrol-1")
+        } else {
+            pageImageView.image = UIImage(named: "pagecontrol-2")
+        }
+        
         for vc in _controllers {
             // Fix scroll to top when more than one scroll view on screen
             vc.tableView.scrollsToTop = controller === vc
@@ -112,7 +119,7 @@ extension ContainerViewController : UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
 
         let index = (_controllers as NSArray).indexOfObject(viewController)
-
+        
         if index > 0 {
             return _controllers[index - 1]
         }
@@ -123,7 +130,7 @@ extension ContainerViewController : UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
 
         let index = (_controllers as NSArray).indexOfObject(viewController)
-
+        
         if index < _controllers.count - 1 {
             return _controllers[index + 1]
         }
