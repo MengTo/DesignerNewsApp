@@ -37,11 +37,17 @@ class WebViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelega
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView.contentOffset.y < pointNow.y {
+            
             spring(0.5) {
                 self.backButton.alpha = 1
                 self.forwardButton.alpha = 1
                 self.shareButton.alpha = 1
                 self.closeButton.alpha = 1
+                
+                self.backButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                self.forwardButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                self.shareButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                self.closeButton.transform = CGAffineTransformMakeTranslation(0, 0)
             }
         }
         if scrollView.contentOffset.y > pointNow.y {
@@ -50,6 +56,11 @@ class WebViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelega
                 self.forwardButton.alpha = 0
                 self.shareButton.alpha = 0
                 self.closeButton.alpha = 0
+                
+                self.backButton.transform = CGAffineTransformMakeTranslation(0, 10)
+                self.forwardButton.transform = CGAffineTransformMakeTranslation(0, 10)
+                self.shareButton.transform = CGAffineTransformMakeTranslation(0, 10)
+                self.closeButton.transform = CGAffineTransformMakeTranslation(0, 10)
             }
         }
     }
