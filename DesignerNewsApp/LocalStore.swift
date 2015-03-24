@@ -16,6 +16,14 @@ struct LocalStore {
     private static let accessTokenKey = "accessTokenKey"
     private static let userDefaults = NSUserDefaults.standardUserDefaults()
 
+    static func setIntroAsVisited() {
+        userDefaults.setObject(true, forKey: "introKey")
+    }
+    
+    static func isIntroVisited() -> Bool {
+        return userDefaults.boolForKey("introKey")
+    }
+    
     static func setStoryAsReplied(storyId: Int) {
         appendId(storyId, toKey: repliedStoriesKey)
     }

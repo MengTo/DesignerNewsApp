@@ -39,6 +39,7 @@
 		1AB6351C1AB6D46900064D14 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6351B1AB6D46900064D14 /* ContainerViewController.swift */; };
 		1AED4A711A7BBCCA004C689E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AED4A701A7BBCCA004C689E /* Error.swift */; };
 		961889B81A680D3800295A64 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889B71A680D3800295A64 /* LearnViewController.swift */; };
+		9631F5A81AC1A9A800418E0E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631F5A71AC1A9A800418E0E /* IntroViewController.swift */; };
 		964892151A62A84600214D53 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892141A62A84600214D53 /* ReplyViewController.swift */; };
 		964892671A63F5D900214D53 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892661A63F5D900214D53 /* MenuViewController.swift */; };
 		966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966128541A4DA63100A54A23 /* AppDelegate.swift */; };
@@ -233,6 +234,7 @@
 		1AB6351B1AB6D46900064D14 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		1AED4A701A7BBCCA004C689E /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		961889B71A680D3800295A64 /* LearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
+		9631F5A71AC1A9A800418E0E /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		964892141A62A84600214D53 /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 		964892661A63F5D900214D53 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9661284F1A4DA63100A54A23 /* DesignerNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignerNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -478,6 +480,7 @@
 				961889B71A680D3800295A64 /* LearnViewController.swift */,
 				966128541A4DA63100A54A23 /* AppDelegate.swift */,
 				1AB6351B1AB6D46900064D14 /* ContainerViewController.swift */,
+				9631F5A71AC1A9A800418E0E /* IntroViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				9694F2051A5FF13900A6376A /* CommentsTableViewController.swift in Sources */,
 				B790E5311A82C6BC0007B392 /* MenuControl.swift in Sources */,
 				B779F6B41AB7570700DDF3AA /* ChromeActivity.swift in Sources */,
+				9631F5A81AC1A9A800418E0E /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -886,6 +890,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -921,6 +926,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

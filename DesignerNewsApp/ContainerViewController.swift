@@ -54,6 +54,11 @@ class ContainerViewController: UIPageViewController {
         })
 
         turnToPage(0)
+        
+        if !LocalStore.isIntroVisited() {
+            performSegueWithIdentifier("IntroSegue", sender: self)
+            LocalStore.setIntroAsVisited()
+        }
     }
 
     func configureForDisplayingViewController(controller: StoriesTableViewController) {
@@ -62,8 +67,18 @@ class ContainerViewController: UIPageViewController {
         
         if title == "Top Stories" {
             pageImageView.image = UIImage(named: "pagecontrol-1")
+            
+            pageImageView.alpha = 0
+            UIView.animateWithDuration(0.5, animations: {
+                self.pageImageView.alpha = 1
+            })
         } else {
             pageImageView.image = UIImage(named: "pagecontrol-2")
+            
+            pageImageView.alpha = 0
+            UIView.animateWithDuration(0.5, animations: {
+                self.pageImageView.alpha = 1
+            })
         }
         
         for vc in _controllers {
