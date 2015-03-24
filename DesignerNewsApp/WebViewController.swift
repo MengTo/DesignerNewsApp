@@ -84,6 +84,26 @@ class WebViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelega
         webView.scrollView.delegate = self
     }
 
+    override func didReceiveMemoryWarning() {
+        if webView.loading {
+            webView.stopLoading()
+
+            let alert = UIAlertController(title: "Stopped Loading", message: "The webpage is quite memory intensive and might cause crash anytime, so we stopped it from loading.", preferredStyle: UIAlertControllerStyle.Alert)
+
+            alert.addAction(UIAlertAction(title: "Dismiss",
+                style: UIAlertActionStyle.Cancel, handler: { (action) -> Void in
+            }))
+
+            alert.addAction(UIAlertAction(title: "Open in Safari",
+                style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                    UIApplication.sharedApplication().openURL(self.url)
+                    return
+            }))
+
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+
     func webViewDidStartLoad(webView: UIWebView) {
         hasFinishLoading = false
         updateProgress()
