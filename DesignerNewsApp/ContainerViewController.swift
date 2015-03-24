@@ -67,24 +67,25 @@ class ContainerViewController: UIPageViewController {
         
         if title == "Top Stories" {
             pageImageView.image = UIImage(named: "pagecontrol-1")
-            
-            pageImageView.alpha = 0
-            UIView.animateWithDuration(0.5, animations: {
-                self.pageImageView.alpha = 1
-            })
+            animateTitle()
         } else {
             pageImageView.image = UIImage(named: "pagecontrol-2")
-            
-            pageImageView.alpha = 0
-            UIView.animateWithDuration(0.5, animations: {
-                self.pageImageView.alpha = 1
-            })
+            animateTitle()
         }
         
         for vc in _controllers {
             // Fix scroll to top when more than one scroll view on screen
             vc.tableView.scrollsToTop = controller === vc
         }
+    }
+    
+    func animateTitle() {
+        pageImageView.alpha = 0
+        navTitleLabel.alpha = 0
+        UIView.animateWithDuration(0.5, animations: {
+            self.pageImageView.alpha = 1
+            self.navTitleLabel.alpha = 1
+        })
     }
 
     func turnToPage(index: Int) {

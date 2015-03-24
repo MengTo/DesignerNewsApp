@@ -270,8 +270,8 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the bubble icon to view the discussions. " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyk-FV-Hgr" customClass="SpringLabel" customModule="Spring">
-                                                        <rect key="frame" x="180" y="17" width="240" height="50"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip: tap the bubble icon to view the discussions. " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyk-FV-Hgr" customClass="SpringLabel" customModule="Spring">
+                                                        <rect key="frame" x="180" y="46" width="240" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="aZe-Yx-7Rt"/>
                                                             <constraint firstAttribute="width" constant="240" id="ga3-Ke-Hws"/>
@@ -304,9 +304,9 @@
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="180-M7-q45">
-                                            <rect key="frame" x="158" y="58" width="283" height="485"/>
+                                            <rect key="frame" x="158" y="87" width="283" height="485"/>
                                             <subviews>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="intro-phone" translatesAutoresizingMaskIntoConstraints="NO" id="mpT-vf-lgd" customClass="SpringImageView" customModule="Spring">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" image="intro-phone" translatesAutoresizingMaskIntoConstraints="NO" id="mpT-vf-lgd" customClass="SpringImageView" customModule="Spring">
                                                     <rect key="frame" x="20" y="20" width="243" height="445"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="243" id="nrs-KQ-YaV"/>
@@ -320,7 +320,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2y-g7-Qia" customClass="SpringView" customModule="Spring">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2y-g7-Qia" customClass="SpringView" customModule="Spring">
                                                     <rect key="frame" x="84" y="117" width="95" height="95"/>
                                                     <subviews>
                                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="intro-circle" translatesAutoresizingMaskIntoConstraints="NO" id="52u-iG-k1S" customClass="SpringImageView" customModule="Spring">
@@ -376,6 +376,7 @@
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstItem="V2y-g7-Qia" firstAttribute="leading" secondItem="180-M7-q45" secondAttribute="leading" constant="84" id="6eT-ML-xjK"/>
                                                 <constraint firstItem="5OS-SB-DlC" firstAttribute="top" secondItem="180-M7-q45" secondAttribute="top" constant="130" id="8tx-hx-wdI"/>
@@ -385,23 +386,70 @@
                                                 <constraint firstAttribute="centerX" secondItem="mpT-vf-lgd" secondAttribute="centerX" id="dqK-wh-7kr"/>
                                                 <constraint firstAttribute="height" constant="485" id="iNj-rP-wT5"/>
                                                 <constraint firstItem="V2y-g7-Qia" firstAttribute="top" secondItem="180-M7-q45" secondAttribute="top" constant="117" id="kmh-z1-SD8"/>
+                                                <constraint firstItem="mpT-vf-lgd" firstAttribute="centerY" secondItem="180-M7-q45" secondAttribute="centerY" id="sPd-WT-5mR"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="sPd-WT-5mR"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=compact">
+                                                <mask key="constraints">
+                                                    <exclude reference="Kj7-lb-gtr"/>
+                                                    <include reference="sPd-WT-5mR"/>
+                                                </mask>
+                                            </variation>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" red="0.32549019610000002" green="0.33725490200000002" blue="0.37254901959999998" alpha="0.5" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="FQE-8a-1EJ" firstAttribute="leading" secondItem="u9g-Xt-OTE" secondAttribute="leading" id="5Em-Iw-LuP"/>
                                         <constraint firstAttribute="trailing" secondItem="FQE-8a-1EJ" secondAttribute="trailing" id="8qZ-Vg-YVw"/>
+                                        <constraint firstAttribute="centerX" secondItem="180-M7-q45" secondAttribute="centerX" id="HHj-yI-o9M"/>
+                                        <constraint firstItem="xyk-FV-Hgr" firstAttribute="top" secondItem="180-M7-q45" secondAttribute="top" constant="-41" id="JXK-x8-saA"/>
                                         <constraint firstItem="mpT-vf-lgd" firstAttribute="top" secondItem="xyk-FV-Hgr" secondAttribute="bottom" constant="11" id="Ohs-pX-6vA"/>
+                                        <constraint firstAttribute="centerY" secondItem="180-M7-q45" secondAttribute="centerY" id="Ot9-a2-m9X"/>
                                         <constraint firstAttribute="centerX" secondItem="180-M7-q45" secondAttribute="centerX" id="QbI-U2-s3Y"/>
-                                        <constraint firstAttribute="centerY" secondItem="180-M7-q45" secondAttribute="centerY" id="Sw0-Hf-kvq"/>
+                                        <constraint firstAttribute="centerY" secondItem="180-M7-q45" secondAttribute="centerY" constant="-29.5" id="Sw0-Hf-kvq"/>
+                                        <constraint firstItem="180-M7-q45" firstAttribute="top" secondItem="u9g-Xt-OTE" secondAttribute="top" constant="100" id="XMI-BE-1I8"/>
                                         <constraint firstItem="2g3-dy-Mow" firstAttribute="top" secondItem="u9g-Xt-OTE" secondAttribute="top" id="cZ6-MK-Mpq"/>
                                         <constraint firstItem="2g3-dy-Mow" firstAttribute="leading" secondItem="u9g-Xt-OTE" secondAttribute="leading" id="d8o-kw-JHW"/>
+                                        <constraint firstItem="180-M7-q45" firstAttribute="top" secondItem="u9g-Xt-OTE" secondAttribute="top" constant="100" id="fHX-0Z-rDF"/>
                                         <constraint firstItem="FQE-8a-1EJ" firstAttribute="top" secondItem="u9g-Xt-OTE" secondAttribute="top" id="h2w-pV-o9g"/>
+                                        <constraint firstItem="180-M7-q45" firstAttribute="top" secondItem="u9g-Xt-OTE" secondAttribute="top" constant="100" id="qRn-1M-0ZJ"/>
                                         <constraint firstAttribute="trailing" secondItem="2g3-dy-Mow" secondAttribute="trailing" id="t7Q-SO-Odu"/>
                                         <constraint firstAttribute="bottom" secondItem="FQE-8a-1EJ" secondAttribute="bottom" id="wSn-5X-r0x"/>
                                         <constraint firstAttribute="bottom" secondItem="2g3-dy-Mow" secondAttribute="bottom" id="yJ1-P2-64i"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="HHj-yI-o9M"/>
+                                            <exclude reference="Ot9-a2-m9X"/>
+                                            <exclude reference="XMI-BE-1I8"/>
+                                            <exclude reference="fHX-0Z-rDF"/>
+                                            <exclude reference="qRn-1M-0ZJ"/>
+                                            <exclude reference="JXK-x8-saA"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact">
+                                        <mask key="constraints">
+                                            <exclude reference="Sw0-Hf-kvq"/>
+                                            <include reference="XMI-BE-1I8"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="HHj-yI-o9M"/>
+                                            <exclude reference="Ot9-a2-m9X"/>
+                                            <exclude reference="QbI-U2-s3Y"/>
+                                            <exclude reference="Sw0-Hf-kvq"/>
+                                            <exclude reference="XMI-BE-1I8"/>
+                                            <include reference="fHX-0Z-rDF"/>
+                                            <exclude reference="qRn-1M-0ZJ"/>
+                                            <exclude reference="Ohs-pX-6vA"/>
+                                            <include reference="JXK-x8-saA"/>
+                                        </mask>
+                                    </variation>
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
@@ -414,6 +462,9 @@
                             <constraint firstItem="DMc-0E-ldJ" firstAttribute="top" secondItem="Oqw-8c-5No" secondAttribute="bottom" id="sO0-vC-Yrz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textLabel" destination="xyk-FV-Hgr" id="z3t-Aj-FZY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWF-hY-A9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jLH-GA-gx2" userLabel="Exit" sceneMemberID="exit"/>
