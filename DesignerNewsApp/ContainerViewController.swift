@@ -21,10 +21,12 @@ class ContainerViewController: UIPageViewController {
         let topStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as StoriesTableViewController
 
         let recentStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as StoriesTableViewController
-
         recentStories.storySection = .Recent
 
-        return [topStories, recentStories]
+        let searchStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as StoriesTableViewController
+        searchStories.storySection = .Search("")
+
+        return [topStories, recentStories, searchStories]
     }()
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

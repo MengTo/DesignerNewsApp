@@ -32,7 +32,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             case .Recent:
                 title = "Recent Stories"
             default:
-                title = "Default"
+                title = "Search"
             }
 
             if self.isViewLoaded() {
@@ -104,14 +104,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     func clearSearch() {
         keyword = ""
         searchBar?.text = nil
-
-        switch (self.lastStorySection) {
-        case .Recent:
-            title = "Recent Stories"
-        case .Default:
-            title = "Top Stories"
-        default: break
-        }
     }
 
     // MARK: TableViewDelegate
@@ -152,6 +144,14 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
 
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        switch (storySection) {
+        case .Search(_):
+            break
+        default:
+            return nil
+        }
+
         if searchBar == nil {
             searchBar = UISearchBar(frame: CGRectMake(0, 0, tableView.frame.size.width, 44))
             searchBar?.text = self.keyword
@@ -162,7 +162,13 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
 
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 45;
+
+        switch (storySection) {
+        case .Search(_):
+            return 45
+        default:
+            return 0
+        }
     }
     
     // MARK: StoriesTableViewCellDelegate
@@ -260,11 +266,8 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         searchBar.setShowsCancelButton(false, animated: true)
 
         if keyword.length > 0 {
-            title = "Search Results"
             storiesLoader = StoriesLoader(.Search(keyword))
-            loadStories()
-        } else {
-            storiesLoader = StoriesLoader(self.lastStorySection)
+            view.showLoading()
             loadStories()
         }
         return true
