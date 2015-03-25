@@ -42,6 +42,14 @@ class Comment : Replyable, Equatable {
     func downvote() {
         voteCount--
     }
+
+    func hasKeyword(keyword: String) -> Bool {
+        if self.bodyHTML.lowercaseString.rangeOfString(keyword) != nil || self.userDisplayName.lowercaseString.rangeOfString(keyword) != nil {
+            return true
+        }
+
+        return false
+    }
 }
 
 func ==(lhs: Comment, rhs: Comment) -> Bool {

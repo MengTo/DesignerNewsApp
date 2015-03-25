@@ -10,30 +10,56 @@ import Foundation
 
 class StoriesLoader {
 
-    enum StorySection : String {
-        case Default = ""
-        case Recent = "recent"
+    typealias StoriesLoaderCompletion = (stories:[Story]) ->()
+
+    enum StorySection : Printable {
+        case Default
+        case Recent
+        case Search(_ : String)
+
+        var description : String {
+            switch (self) {
+
+            case .Default: return ""
+            case .Recent: return "recent"
+            case .Search(_): return "search"
+            }
+        }
     }
 
     private (set) var hasMore : Bool = false
     private var page : Int = 1
     private var isLoading : Bool = false
     private let section : StorySection
+    private let keyword : String?
 
     init(_ section: StorySection = .Default) {
         self.section = section
+        switch (section) {
+        case let .Search(keyword):
+            self.keyword = keyword
+        default: break
+        }
     }
 
-    func load(page: Int = 1, completion: (stories:[Story]) ->()) {
+    func load(page: Int = 1, completion: StoriesLoaderCompletion) {
         if isLoading {
             return
         }
 
         isLoading = true
-        DesignerNewsService.storiesForSection(self.section.rawValue, page: page) { stories in
-            self.hasMore = stories.count > 0
-            self.isLoading = false
-            completion(stories: stories)
+        DesignerNewsService.storiesForSection(self.section.description, page: page, keyword: self.keyword) { [weak self] stories in
+
+            if let strongSelf = self {
+                switch (strongSelf.section) {
+                case .Search(_):
+                    strongSelf.hasMore = false
+                default:
+                    strongSelf.hasMore = stories.count > 0
+                }
+                strongSelf.isLoading = false
+                completion(stories: stories)
+            }
         }
     }
 

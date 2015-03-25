@@ -9,13 +9,16 @@
 import UIKit
 import Spring
 
-class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate {
-    
+class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, UISearchBarDelegate {
+
     private let transitionManager = TransitionManager()
     private var stories = [Story]()
     private var firstTime = true
-    private var storiesLoader = StoriesLoader()
+    private var keyword : String = ""
+    private var lastStorySection : StoriesLoader.StorySection = .Default
+    private var storiesLoader = StoriesLoader(.Default)
     private var selectedIndexPath : NSIndexPath?
+    private var searchBar : UISearchBar?
     private var loginStateHandler : LoginStateHandler!
     private var loginAction : LoginAction?
 
@@ -28,6 +31,8 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
                 title = "Top Stories"
             case .Recent:
                 title = "Recent Stories"
+            default:
+                title = "Search"
             }
 
             if self.isViewLoaded() {
@@ -62,16 +67,27 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if firstTime {
-            view.showLoading()
-            loadStories()
-            firstTime = false
-        }
+
+
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
 
         // Reload Data is important because we need
         // to have our upvote and visited state updated
         self.tableView.reloadData()
+
+        switch (storySection) {
+        case .Search(_):
+            if stories.count == 0 {
+                self.searchBar!.becomeFirstResponder()
+            }
+            break
+        default:
+            if firstTime {
+                view.showLoading()
+                loadStories()
+            }
+            firstTime = false
+        }
     }
     
     func loadStories() {
@@ -103,7 +119,11 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         if indexPath.row == stories.count {
-            let cell = tableView.dequeueReusableCellWithIdentifier("loadingCell") as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("loadingCell") as LoadingTableViewCell
+
+            if keyword.length > 0 {
+                cell.stopAnimating()
+            }
             return cell
         }
 
@@ -122,8 +142,36 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
 
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == self.stories.count {
+        if indexPath.row == self.stories.count && self.keyword.length == 0 {
             self.loadMoreStories()
+        }
+    }
+
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        switch (storySection) {
+        case .Search(_):
+            break
+        default:
+            return nil
+        }
+
+        if searchBar == nil {
+            searchBar = UISearchBar(frame: CGRectMake(0, 0, tableView.frame.size.width, 44))
+            searchBar?.text = self.keyword
+            searchBar?.delegate = self
+//            searchBar?.showsCancelButton = true
+        }
+        return searchBar
+    }
+
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+
+        switch (storySection) {
+        case .Search(_):
+            return 45
+        default:
+            return 0
         }
     }
     
@@ -199,5 +247,36 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     func reloadRowAtIndexPath(indexPath: NSIndexPath) {
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+    }
+
+    // MARK: UISearchBarDelegate
+
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        if searchBar.text.length == 0 {
+            keyword = ""
+            stories = []
+            tableView.reloadData()
+        }
+    }
+
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        keyword = searchBar.text
+        if keyword.length > 0 {
+            storiesLoader = StoriesLoader(.Search(keyword))
+            view.showLoading()
+            loadStories()
+        }
+        searchBar.resignFirstResponder()
+    }
+
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+        searchBar.setShowsCancelButton(true, animated: true)
+        return true
+    }
+
+    func searchBarShouldEndEditing(searchBar: UISearchBar) -> Bool {
+        searchBar.setShowsCancelButton(false, animated: true)
+        return true
     }
 }

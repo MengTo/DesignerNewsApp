@@ -36,13 +36,14 @@ struct DesignerNewsService {
         }
     }
 
-    static func storiesForSection(section: String, page: Int, response: ([Story]) -> ()) {
+    static func storiesForSection(section: String, page: Int, keyword: String? = nil, response: ([Story]) -> ()) {
         let urlString = baseURL + ResourcePath.Stories.description + "/" + section
-        let parameters = [
+        var parameters : [String:AnyObject] = [
             "page": toString(page),
             "client_id": clientID
         ]
-        Alamofire.request(.GET, urlString, parameters: parameters).response { (_, _, data, _) in
+        parameters["query"] = keyword
+        Alamofire.request(.GET, urlString, parameters: parameters).response { (request, res, data, error) in
             let stories = JSONParser.parseStories(data as? NSData)
             response(stories)
         }

@@ -13,6 +13,16 @@ struct JSONParser {
         return self.dictionariesFromData(data)?.map(self.parseStory) ?? []
     }
 
+    static func parseStoriesArray(data: NSData?) -> [Story] {
+        if let data = data {
+            if let array = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) as? [NSDictionary] {
+                return array.map(self.parseStory) ?? []
+            }
+        }
+        return []
+    }
+
+
     private static func parseStory(story: NSDictionary) -> Story {
         let id = story["id"] as? Int ?? 0
         let title = story["title"] as? String ?? ""

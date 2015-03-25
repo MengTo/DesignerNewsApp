@@ -17,4 +17,12 @@ class LoadingTableViewCell: UITableViewCell {
         self.loadingIndicator.startAnimating()
     }
 
+    func startAnimating() {
+        self.loadingIndicator.startAnimating()
+    }
+
+    func stopAnimating() {
+        self.loadingIndicator.stopAnimating()
+    }
+
 }

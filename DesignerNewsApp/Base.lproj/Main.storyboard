@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D98g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tth-uE-yGl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -446,8 +446,8 @@
                                             <exclude reference="XMI-BE-1I8"/>
                                             <include reference="fHX-0Z-rDF"/>
                                             <exclude reference="qRn-1M-0ZJ"/>
-                                            <exclude reference="Ohs-pX-6vA"/>
                                             <include reference="JXK-x8-saA"/>
+                                            <exclude reference="Ohs-pX-6vA"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -510,19 +510,15 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pagecontrol-1" translatesAutoresizingMaskIntoConstraints="NO" id="xuL-2x-FU5">
-                                    <rect key="frame" x="113" y="26" width="13" height="4"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="13" id="Tcu-LS-oZJ"/>
-                                        <constraint firstAttribute="height" constant="4" id="tJW-be-TTA"/>
-                                    </constraints>
-                                </imageView>
+                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zu2-k1-uLq">
+                                    <rect key="frame" x="100" y="10" width="39" height="37"/>
+                                </pageControl>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="xuL-2x-FU5" firstAttribute="top" secondItem="nfi-jo-r67" secondAttribute="bottom" constant="1" id="CKE-m4-h24"/>
-                                <constraint firstAttribute="centerX" secondItem="xuL-2x-FU5" secondAttribute="centerX" id="Ouz-TL-Jwg"/>
                                 <constraint firstItem="nfi-jo-r67" firstAttribute="top" secondItem="Kqq-py-Lw2" secondAttribute="top" id="bvw-ek-M8s"/>
+                                <constraint firstAttribute="centerX" secondItem="Zu2-k1-uLq" secondAttribute="centerX" constant="0.5" id="ehw-ls-Zgm"/>
+                                <constraint firstItem="Zu2-k1-uLq" firstAttribute="top" secondItem="Kqq-py-Lw2" secondAttribute="top" constant="10" id="qNp-vq-bOQ"/>
                                 <constraint firstAttribute="centerX" secondItem="nfi-jo-r67" secondAttribute="centerX" id="vsU-Cv-fjH"/>
                             </constraints>
                         </view>
@@ -536,7 +532,7 @@
                     <connections>
                         <outlet property="loginButton" destination="uej-tB-xeq" id="60g-I8-Sk7"/>
                         <outlet property="navTitleLabel" destination="nfi-jo-r67" id="LMX-Vb-q8F"/>
-                        <outlet property="pageImageView" destination="xuL-2x-FU5" id="4AV-RS-QpZ"/>
+                        <outlet property="pageIndicator" destination="Zu2-k1-uLq" id="v2C-V7-7Ar"/>
                         <segue destination="G2J-Ma-fKq" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" animates="NO" id="cCn-3h-med"/>
                         <segue destination="CCs-u8-Xdg" kind="presentation" identifier="IntroSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="5yC-qW-sNg"/>
                     </connections>
@@ -1645,10 +1641,9 @@
         <image name="input-outline" width="250" height="44"/>
         <image name="intro-circle" width="55" height="55"/>
         <image name="intro-phone" width="243" height="445"/>
-        <image name="pagecontrol-1" width="13" height="4"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hNl-2w-BvP"/>
+        <segue reference="cCn-3h-med"/>
         <segue reference="WYa-K1-lob"/>
     </inferredMetricsTieBreakers>
 </document>
