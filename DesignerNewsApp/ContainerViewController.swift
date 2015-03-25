@@ -12,7 +12,7 @@ class ContainerViewController: UIPageViewController {
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
     @IBOutlet weak var navTitleLabel: UILabel!
-    @IBOutlet weak var pageImageView: UIImageView!
+    @IBOutlet weak var pageIndicator: UIPageControl!
 
     private var loginAction : LoginAction?
     private var loginStateChange : LoginStateHandler?
@@ -61,31 +61,35 @@ class ContainerViewController: UIPageViewController {
             performSegueWithIdentifier("IntroSegue", sender: self)
             LocalStore.setIntroAsVisited()
         }
+
+        pageIndicator.numberOfPages = _controllers.count
+        pageIndicator.transform = CGAffineTransformMakeScale(0.6, 0.6)
     }
 
     func configureForDisplayingViewController(controller: StoriesTableViewController) {
         let title = controller.navigationItem.title
         navTitleLabel.text = title
-        
-        if title == "Top Stories" {
-            pageImageView.image = UIImage(named: "pagecontrol-1")
-            animateTitle()
-        } else {
-            pageImageView.image = UIImage(named: "pagecontrol-2")
-            animateTitle()
-        }
-        
-        for vc in _controllers {
-            // Fix scroll to top when more than one scroll view on screen
-            vc.tableView.scrollsToTop = controller === vc
+
+        for (index, vc) in enumerate(_controllers) {
+            // when more than one scroll view on screen
+            // 1. Fix scroll to top
+            // 2. Update page indicator
+            if controller === vc {
+                vc.tableView.scrollsToTop = true
+                pageIndicator.currentPage = index
+                animateTitle()
+            } else {
+                vc.tableView.scrollsToTop = false
+            }
+
         }
     }
     
     func animateTitle() {
-        pageImageView.alpha = 0
+        pageIndicator.alpha = 0
         navTitleLabel.alpha = 0
         UIView.animateWithDuration(0.5, animations: {
-            self.pageImageView.alpha = 1
+            self.pageIndicator.alpha = 1
             self.navTitleLabel.alpha = 1
         })
     }
