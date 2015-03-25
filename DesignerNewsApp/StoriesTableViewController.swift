@@ -110,13 +110,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         self.loadStories()
     }
 
-    // MARK: Misc
-
-    func clearSearch() {
-        keyword = ""
-        searchBar?.text = nil
-    }
-
     // MARK: TableViewDelegate
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -259,8 +252,12 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     // MARK: UISearchBarDelegate
 
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        clearSearch()
         searchBar.resignFirstResponder()
+        if searchBar.text.length == 0 {
+            keyword = ""
+            stories = []
+            tableView.reloadData()
+        }
     }
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
