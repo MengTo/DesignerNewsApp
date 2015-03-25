@@ -67,16 +67,27 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if firstTime {
-            view.showLoading()
-            loadStories()
-            firstTime = false
-        }
+
+
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
 
         // Reload Data is important because we need
         // to have our upvote and visited state updated
         self.tableView.reloadData()
+
+        switch (storySection) {
+        case .Search(_):
+            if stories.count == 0 {
+                self.searchBar!.becomeFirstResponder()
+            }
+            break
+        default:
+            if firstTime {
+                view.showLoading()
+                loadStories()
+            }
+            firstTime = false
+        }
     }
     
     func loadStories() {
@@ -254,6 +265,11 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         keyword = searchBar.text
+        if keyword.length > 0 {
+            storiesLoader = StoriesLoader(.Search(keyword))
+            view.showLoading()
+            loadStories()
+        }
         searchBar.resignFirstResponder()
     }
 
@@ -264,12 +280,6 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 
     func searchBarShouldEndEditing(searchBar: UISearchBar) -> Bool {
         searchBar.setShowsCancelButton(false, animated: true)
-
-        if keyword.length > 0 {
-            storiesLoader = StoriesLoader(.Search(keyword))
-            view.showLoading()
-            loadStories()
-        }
         return true
     }
 }
