@@ -205,6 +205,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         }
     }
 
+    /*
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if searchBar == nil {
             searchBar = UISearchBar(frame: CGRectMake(0, 0, tableView.frame.size.width, 44))
@@ -217,6 +218,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45;
     }
+    */
 
     // MARK: Misc
 
