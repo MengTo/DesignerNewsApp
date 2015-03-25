@@ -160,6 +160,8 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             searchBar = UISearchBar(frame: CGRectMake(0, 0, tableView.frame.size.width, 44))
             searchBar?.text = self.keyword
             searchBar?.delegate = self
+            searchBar?.backgroundColor = UIColor(hex: "EBF0F5")
+            searchBar?.searchBarStyle = UISearchBarStyle.Minimal
 //            searchBar?.showsCancelButton = true
         }
         return searchBar
