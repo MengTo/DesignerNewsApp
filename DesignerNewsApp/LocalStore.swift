@@ -16,6 +16,14 @@ struct LocalStore {
     private static let accessTokenKey = "accessTokenKey"
     private static let userDefaults = NSUserDefaults.standardUserDefaults()
 
+    static func setIntroAsVisited() {
+        userDefaults.setObject(true, forKey: "introKey")
+    }
+    
+    static func isIntroVisited() -> Bool {
+        return userDefaults.boolForKey("introKey")
+    }
+    
     static func setStoryAsReplied(storyId: Int) {
         appendId(storyId, toKey: repliedStoriesKey)
     }
@@ -61,7 +69,7 @@ struct LocalStore {
         userDefaults.synchronize()
     }
 
-    static func deleteAccessToken() {
+    private static func deleteAccessToken() {
         userDefaults.removeObjectForKey(accessTokenKey)
         userDefaults.synchronize()
     }
@@ -74,6 +82,10 @@ struct LocalStore {
 
     static func accessToken() -> String? {
         return userDefaults.stringForKey(accessTokenKey)
+    }
+
+    static func logout() {
+        self.deleteAccessToken()
     }
 
     // MARK: Helper

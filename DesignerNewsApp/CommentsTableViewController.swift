@@ -27,6 +27,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
     private var keyword : String = ""
     private let transitionManager = TransitionManager()
+    private var loginAction: LoginAction?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,14 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         super.viewDidAppear(animated)
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
     }
-    
+
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        coordinator.animateAlongsideTransition(nil, completion: { (context) -> Void in
+            self.tableView.reloadData()
+        })
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ReplySegue" {
 
@@ -76,9 +84,9 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     }
     
     @IBAction func shareBarButtonPressed(sender: AnyObject) {
-        var shareString = story.title
-        var shareURL = NSURL(string: story.url)!
-        let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: nil)
+        let shareString = story.title
+        let shareURL = NSURL(string: story.url)!
+        let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: [SafariActivity(), ChromeActivity()])
         activityViewController.setValue(shareString, forKey: "subject")
         activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
         presentViewController(activityViewController, animated: true, completion: nil)
@@ -103,13 +111,13 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             }
 
         } else {
-            performSegueWithIdentifier("LoginSegue", sender: self)
+            self.loginAction = LoginAction(viewController: self, completion: nil)
         }
     }
 
     func storyTableViewCell(cell: StoryTableViewCell, replyButtonPressed sender: AnyObject) {
         if LocalStore.accessToken() == nil {
-            performSegueWithIdentifier("LoginSegue", sender: self)
+            self.loginAction = LoginAction(viewController: self, completion: nil)
         } else {
             performSegueWithIdentifier("ReplySegue", sender: cell)
         }
@@ -128,7 +136,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     // MARK: CommentTableViewCellDelegate
     func commentTableViewCell(cell: CommentTableViewCell, replyButtonPressed sender: AnyObject) {
         if LocalStore.accessToken() == nil {
-            performSegueWithIdentifier("LoginSegue", sender: self)
+            self.loginAction = LoginAction(viewController: self, completion: nil)
         } else {
             performSegueWithIdentifier("ReplySegue", sender: cell)
         }
@@ -153,7 +161,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
             }
 
         } else {
-            performSegueWithIdentifier("LoginSegue", sender: self)
+            self.loginAction = LoginAction(viewController: self, completion: nil)
         }
     }
 

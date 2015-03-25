@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-class WebViewController: UIViewController, UIWebViewDelegate {
+class WebViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var webView: UIWebView!
@@ -18,11 +18,57 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     var url : NSURL!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var closeButton: SpringButton!
+    @IBOutlet weak var backButton: DesignableButton!
+    @IBOutlet weak var forwardButton: DesignableButton!
+    @IBOutlet weak var shareButton: SpringButton!
+    var pointNow = CGPoint()
+    
+    @IBAction func backButtonDidTouch(sender: AnyObject) {
+        webView.goBack()
+    }
+    
+    @IBAction func forwardButtonDidTouch(sender: AnyObject) {
+        webView.goForward()
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        pointNow = scrollView.contentOffset
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < pointNow.y {
+            
+            spring(0.5) {
+                self.backButton.alpha = 1
+                self.forwardButton.alpha = 1
+                self.shareButton.alpha = 1
+                self.closeButton.alpha = 1
+                
+                self.backButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                self.forwardButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                self.shareButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                self.closeButton.transform = CGAffineTransformMakeTranslation(0, 0)
+            }
+        }
+        if scrollView.contentOffset.y > pointNow.y {
+            spring(0.5) {
+                self.backButton.alpha = 0
+                self.forwardButton.alpha = 0
+                self.shareButton.alpha = 0
+                self.closeButton.alpha = 0
+                
+                self.backButton.transform = CGAffineTransformMakeTranslation(0, 10)
+                self.forwardButton.transform = CGAffineTransformMakeTranslation(0, 10)
+                self.shareButton.transform = CGAffineTransformMakeTranslation(0, 10)
+                self.closeButton.transform = CGAffineTransformMakeTranslation(0, 10)
+            }
+        }
+    }
     
     @IBAction func shareButtonPressed(sender: AnyObject) {
-        var shareString = self.shareTitle ?? ""
-        var shareURL = self.url
-        let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: nil)
+        let shareString = self.shareTitle ?? ""
+        let shareURL = self.url
+        let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: [SafariActivity(), ChromeActivity()])
         activityViewController.setValue(shareString, forKey: "subject")
         activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
         presentViewController(activityViewController, animated: true, completion: nil)
@@ -34,6 +80,28 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         let request = NSURLRequest(URL: url!)
         webView.loadRequest(request)
         webView.delegate = self
+        
+        webView.scrollView.delegate = self
+    }
+
+    override func didReceiveMemoryWarning() {
+        if webView.loading {
+            webView.stopLoading()
+        }
+        
+        let alert = UIAlertController(title: "Stopped Loading", message: "This site is memory intensive and may cause a crash. Please use a browser instead.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismiss",
+            style: UIAlertActionStyle.Cancel, handler: { (action) -> Void in
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Open in Safari",
+            style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                UIApplication.sharedApplication().openURL(self.url)
+                return
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 
     func webViewDidStartLoad(webView: UIWebView) {

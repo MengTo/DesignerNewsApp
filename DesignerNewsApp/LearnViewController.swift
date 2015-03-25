@@ -17,11 +17,25 @@ class LearnViewController: UIViewController, DragDropBehaviorDelegate {
     @IBOutlet weak var sketchImageView: SpringImageView!
     @IBOutlet weak var dialogView: DesignableView!
     
+    @IBAction func learnButtonDidTouch(sender: AnyObject) {
+        openUrl("http://designcode.io")
+    }
+    
+    @IBAction func twitterButtonDidTouch(sender: AnyObject) {
+        openUrl("http://twitter.com/mengto")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     func dragDropBehavior(behavior: DragDropBehavior, viewDidDrop view: UIView) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func openUrl(url:String!) {
+        let targetURL = NSURL(string: url)
+        let application = UIApplication.sharedApplication()
+        application.openURL(targetURL!)
     }
 }

@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		1A2331C41A78DFAF002F8D80 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2331C31A78DFAF002F8D80 /* LoadingTableViewCell.swift */; };
 		1A2331D21A78E1AF002F8D80 /* StoriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2331D11A78E1AF002F8D80 /* StoriesLoader.swift */; };
+		1A2849971AB9D3F900940CE3 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2849961AB9D3F900940CE3 /* LoginService.swift */; };
+		1A6D23BD1AB6AD2E000F080A /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D23B91AB6AD2E000F080A /* HockeySDK.framework */; };
+		1A6D23BE1AB6AD2E000F080A /* HockeySDK.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1A6D23BB1AB6AD2E000F080A /* HockeySDK.xcconfig */; };
+		1A6D23BF1AB6AD2E000F080A /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1A6D23BC1AB6AD2E000F080A /* HockeySDKResources.bundle */; };
+		1A6D23CD1AB6AD69000F080A /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D23CC1AB6AD69000F080A /* AssetsLibrary.framework */; };
+		1A6D23CF1AB6AD73000F080A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D23CE1AB6AD73000F080A /* CoreGraphics.framework */; };
+		1A6D23D11AB6AD78000F080A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D23D01AB6AD78000F080A /* Foundation.framework */; };
+		1A6D23D31AB6AD83000F080A /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D23D21AB6AD83000F080A /* QuickLook.framework */; };
+		1A6D23D51AB6AD89000F080A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D23D41AB6AD89000F080A /* Security.framework */; };
+		1A6D23D71AB6AD93000F080A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D23D61AB6AD93000F080A /* SystemConfiguration.framework */; };
+		1A6D23D91AB6AD9C000F080A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D23D81AB6AD9C000F080A /* UIKit.framework */; };
 		1A7D78A01A70F8FE0061D6F6 /* DragDropBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */; };
 		1A8D9C811A75E3000032DA0F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C801A75E3000032DA0F /* ImageIO.framework */; };
 		1A8D9C841A75E30F0032DA0F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D9C831A75E30F0032DA0F /* QuartzCore.framework */; };
@@ -17,14 +28,18 @@
 		1A908E471A74A44600F30022 /* Replyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A908E461A74A44600F30022 /* Replyable.swift */; };
 		1A908E671A753B6C00F30022 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A908E661A753B6C00F30022 /* libxml2.dylib */; };
 		1A9183091A75EE1900606F35 /* CoreTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9183081A75EE1900606F35 /* CoreTextView.swift */; };
-		1AAA95C21A79144000D5E8C8 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAA95C11A79144000D5E8C8 /* AsyncImageView.swift */; };
+		1A935E2F1A837A670059BCBC /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A935E281A837A670059BCBC /* TPKeyboardAvoidingCollectionView.m */; };
+		1A935E301A837A670059BCBC /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A935E2A1A837A670059BCBC /* TPKeyboardAvoidingScrollView.m */; };
+		1A935E311A837A670059BCBC /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A935E2C1A837A670059BCBC /* TPKeyboardAvoidingTableView.m */; };
+		1A935E321A837A670059BCBC /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A935E2E1A837A670059BCBC /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		1A935E391A837B980059BCBC /* refresh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A935E371A837B980059BCBC /* refresh.wav */; };
+		1A935E3A1A837B980059BCBC /* upvote.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A935E381A837B980059BCBC /* upvote.wav */; };
+		1A935E3C1A837C640059BCBC /* SoundPlayer+DesignerNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A935E3B1A837C640059BCBC /* SoundPlayer+DesignerNewsApp.swift */; };
 		1AB33B591A7660E800E3AB55 /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB33B501A7660B300E3AB55 /* libDTCoreText.a */; };
+		1AB6351C1AB6D46900064D14 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6351B1AB6D46900064D14 /* ContainerViewController.swift */; };
 		1AED4A711A7BBCCA004C689E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AED4A701A7BBCCA004C689E /* Error.swift */; };
-		961889B21A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AB1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m */; };
-		961889B31A67F15900295A64 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AD1A67F15900295A64 /* TPKeyboardAvoidingScrollView.m */; };
-		961889B41A67F15900295A64 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889AF1A67F15900295A64 /* TPKeyboardAvoidingTableView.m */; };
-		961889B51A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 961889B11A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		961889B81A680D3800295A64 /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961889B71A680D3800295A64 /* LearnViewController.swift */; };
+		9631F5A81AC1A9A800418E0E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9631F5A71AC1A9A800418E0E /* IntroViewController.swift */; };
 		964892151A62A84600214D53 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892141A62A84600214D53 /* ReplyViewController.swift */; };
 		964892671A63F5D900214D53 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964892661A63F5D900214D53 /* MenuViewController.swift */; };
 		966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966128541A4DA63100A54A23 /* AppDelegate.swift */; };
@@ -40,6 +55,8 @@
 		96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */; };
 		96AF96171A5EABC9003926E2 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF96161A5EABC9003926E2 /* StoryTableViewCell.swift */; };
 		B773D86F1A7BC101008E8A65 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B773D86E1A7BC101008E8A65 /* LocalStore.swift */; };
+		B779F6B41AB7570700DDF3AA /* ChromeActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779F6B31AB7570700DDF3AA /* ChromeActivity.swift */; };
+		B779F6C61AB7851100DDF3AA /* SafariActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779F6C51AB7851100DDF3AA /* SafariActivity.swift */; };
 		B78F90381A6EF75800883A5B /* DesignerNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F90371A6EF75800883A5B /* DesignerNewsService.swift */; };
 		B78F903E1A6EFAAA00883A5B /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F903D1A6EFAAA00883A5B /* JSONParser.swift */; };
 		B78F90411A6EFBAF00883A5B /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F90401A6EFBAF00883A5B /* Story.swift */; };
@@ -181,7 +198,18 @@
 /* Begin PBXFileReference section */
 		1A2331C31A78DFAF002F8D80 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		1A2331D11A78E1AF002F8D80 /* StoriesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesLoader.swift; sourceTree = "<group>"; };
+		1A2849961AB9D3F900940CE3 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		1A4FDA211A6E43FE0099D309 /* SpringApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SpringApp.xcodeproj; path = Spring/SpringApp.xcodeproj; sourceTree = "<group>"; };
+		1A6D23B91AB6AD2E000F080A /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		1A6D23BB1AB6AD2E000F080A /* HockeySDK.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = HockeySDK.xcconfig; sourceTree = "<group>"; };
+		1A6D23BC1AB6AD2E000F080A /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
+		1A6D23CC1AB6AD69000F080A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		1A6D23CE1AB6AD73000F080A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1A6D23D01AB6AD78000F080A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1A6D23D21AB6AD83000F080A /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		1A6D23D41AB6AD89000F080A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1A6D23D61AB6AD93000F080A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1A6D23D81AB6AD9C000F080A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragDropBehavior.swift; sourceTree = "<group>"; };
 		1A8D9C801A75E3000032DA0F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		1A8D9C831A75E30F0032DA0F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -191,18 +219,22 @@
 		1A908E611A75382200F30022 /* DesignerNewsApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignerNewsApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		1A908E661A753B6C00F30022 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		1A9183081A75EE1900606F35 /* CoreTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextView.swift; sourceTree = "<group>"; };
-		1AAA95C11A79144000D5E8C8 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		1A935E271A837A670059BCBC /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		1A935E281A837A670059BCBC /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		1A935E291A837A670059BCBC /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		1A935E2A1A837A670059BCBC /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		1A935E2B1A837A670059BCBC /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		1A935E2C1A837A670059BCBC /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		1A935E2D1A837A670059BCBC /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		1A935E2E1A837A670059BCBC /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		1A935E371A837B980059BCBC /* refresh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = refresh.wav; sourceTree = "<group>"; };
+		1A935E381A837B980059BCBC /* upvote.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = upvote.wav; sourceTree = "<group>"; };
+		1A935E3B1A837C640059BCBC /* SoundPlayer+DesignerNewsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundPlayer+DesignerNewsApp.swift"; sourceTree = "<group>"; };
 		1AB33B3F1A7660B300E3AB55 /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
+		1AB6351B1AB6D46900064D14 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		1AED4A701A7BBCCA004C689E /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		961889AA1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
-		961889AB1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
-		961889AC1A67F15900295A64 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
-		961889AD1A67F15900295A64 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		961889AE1A67F15900295A64 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
-		961889AF1A67F15900295A64 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
-		961889B01A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
-		961889B11A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		961889B71A680D3800295A64 /* LearnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
+		9631F5A71AC1A9A800418E0E /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		964892141A62A84600214D53 /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 		964892661A63F5D900214D53 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9661284F1A4DA63100A54A23 /* DesignerNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignerNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +253,8 @@
 		96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTableViewController.swift; sourceTree = "<group>"; };
 		96AF96161A5EABC9003926E2 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
 		B773D86E1A7BC101008E8A65 /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
+		B779F6B31AB7570700DDF3AA /* ChromeActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromeActivity.swift; sourceTree = "<group>"; };
+		B779F6C51AB7851100DDF3AA /* SafariActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariActivity.swift; sourceTree = "<group>"; };
 		B78F90371A6EF75800883A5B /* DesignerNewsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerNewsService.swift; sourceTree = "<group>"; };
 		B78F903D1A6EFAAA00883A5B /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		B78F90401A6EFBAF00883A5B /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
@@ -234,12 +268,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A6D23D91AB6AD9C000F080A /* UIKit.framework in Frameworks */,
+				1A6D23D71AB6AD93000F080A /* SystemConfiguration.framework in Frameworks */,
+				1A6D23D51AB6AD89000F080A /* Security.framework in Frameworks */,
+				1A6D23D31AB6AD83000F080A /* QuickLook.framework in Frameworks */,
+				1A6D23D11AB6AD78000F080A /* Foundation.framework in Frameworks */,
+				1A6D23CF1AB6AD73000F080A /* CoreGraphics.framework in Frameworks */,
+				1A6D23CD1AB6AD69000F080A /* AssetsLibrary.framework in Frameworks */,
 				1AB33B591A7660E800E3AB55 /* libDTCoreText.a in Frameworks */,
 				1A8D9C8A1A75E33E0032DA0F /* CoreText.framework in Frameworks */,
 				1A8D9C871A75E31B0032DA0F /* MobileCoreServices.framework in Frameworks */,
 				1A8D9C841A75E30F0032DA0F /* QuartzCore.framework in Frameworks */,
 				1A8D9C811A75E3000032DA0F /* ImageIO.framework in Frameworks */,
 				1A908E671A753B6C00F30022 /* libxml2.dylib in Frameworks */,
+				1A6D23BD1AB6AD2E000F080A /* HockeySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +306,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1A6D23B81AB6AD2E000F080A /* HockeySDK.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				1A6D23B91AB6AD2E000F080A /* HockeySDK.framework */,
+				1A6D23BA1AB6AD2E000F080A /* Resources */,
+			);
+			name = HockeySDK.embeddedframework;
+			path = "HockeySDK-iOS/HockeySDK.embeddedframework";
+			sourceTree = "<group>";
+		};
+		1A6D23BA1AB6AD2E000F080A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1A6D23BB1AB6AD2E000F080A /* HockeySDK.xcconfig */,
+				1A6D23BC1AB6AD2E000F080A /* HockeySDKResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1A8D9C7F1A75E2A70032DA0F /* Externals */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +338,13 @@
 		1A8D9C881A75E31F0032DA0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A6D23D81AB6AD9C000F080A /* UIKit.framework */,
+				1A6D23D61AB6AD93000F080A /* SystemConfiguration.framework */,
+				1A6D23D41AB6AD89000F080A /* Security.framework */,
+				1A6D23D21AB6AD83000F080A /* QuickLook.framework */,
+				1A6D23D01AB6AD78000F080A /* Foundation.framework */,
+				1A6D23CE1AB6AD73000F080A /* CoreGraphics.framework */,
+				1A6D23CC1AB6AD69000F080A /* AssetsLibrary.framework */,
 				1A8D9C891A75E33E0032DA0F /* CoreText.framework */,
 				1A8D9C861A75E31B0032DA0F /* MobileCoreServices.framework */,
 				1A8D9C831A75E30F0032DA0F /* QuartzCore.framework */,
@@ -284,6 +352,30 @@
 				1A908E661A753B6C00F30022 /* libxml2.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A935E251A837A670059BCBC /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1A6D23B81AB6AD2E000F080A /* HockeySDK.embeddedframework */,
+				1A935E261A837A670059BCBC /* TPKeyboardAvoiding */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		1A935E261A837A670059BCBC /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				1A935E271A837A670059BCBC /* TPKeyboardAvoidingCollectionView.h */,
+				1A935E281A837A670059BCBC /* TPKeyboardAvoidingCollectionView.m */,
+				1A935E291A837A670059BCBC /* TPKeyboardAvoidingScrollView.h */,
+				1A935E2A1A837A670059BCBC /* TPKeyboardAvoidingScrollView.m */,
+				1A935E2B1A837A670059BCBC /* TPKeyboardAvoidingTableView.h */,
+				1A935E2C1A837A670059BCBC /* TPKeyboardAvoidingTableView.m */,
+				1A935E2D1A837A670059BCBC /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				1A935E2E1A837A670059BCBC /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 		1AB33B401A7660B300E3AB55 /* Products */ = {
@@ -300,34 +392,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		961889A91A67F15900295A64 /* TPKeyboardAvoiding */ = {
-			isa = PBXGroup;
-			children = (
-				961889AA1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.h */,
-				961889AB1A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m */,
-				961889AC1A67F15900295A64 /* TPKeyboardAvoidingScrollView.h */,
-				961889AD1A67F15900295A64 /* TPKeyboardAvoidingScrollView.m */,
-				961889AE1A67F15900295A64 /* TPKeyboardAvoidingTableView.h */,
-				961889AF1A67F15900295A64 /* TPKeyboardAvoidingTableView.m */,
-				961889B01A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
-				961889B11A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
-			);
-			name = TPKeyboardAvoiding;
-			sourceTree = "<group>";
-		};
-		961889B61A67F93800295A64 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				961889A91A67F15900295A64 /* TPKeyboardAvoiding */,
-			);
-			name = Libraries;
-			path = TPKeyboardAvoiding;
-			sourceTree = "<group>";
-		};
 		966128461A4DA63100A54A23 = {
 			isa = PBXGroup;
 			children = (
 				966128511A4DA63100A54A23 /* DesignerNewsApp */,
+				1A935E251A837A670059BCBC /* Libraries */,
 				1A8D9C7F1A75E2A70032DA0F /* Externals */,
 				1A8D9C881A75E31F0032DA0F /* Frameworks */,
 				966128671A4DA63100A54A23 /* DesignerNewsAppTests */,
@@ -353,8 +422,8 @@
 				B70190FA1A754DC900ED4D3D /* View Controllers */,
 				B70190FF1A754DE300ED4D3D /* Services */,
 				B7E4D3311A719831001DC9B6 /* Cells */,
+				B779F6A41AB7553B00DDF3AA /* Activities */,
 				B70191001A7550B600ED4D3D /* Behaviours */,
-				961889B61A67F93800295A64 /* Libraries */,
 				B70191221A7656AF00ED4D3D /* Bridging */,
 				966128521A4DA63100A54A23 /* Supporting Files */,
 			);
@@ -364,6 +433,8 @@
 		966128521A4DA63100A54A23 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1A935E371A837B980059BCBC /* refresh.wav */,
+				1A935E381A837B980059BCBC /* upvote.wav */,
 				9661285D1A4DA63100A54A23 /* LaunchScreen.xib */,
 				9661285B1A4DA63100A54A23 /* Images.xcassets */,
 				966128531A4DA63100A54A23 /* Info.plist */,
@@ -408,6 +479,8 @@
 				964892661A63F5D900214D53 /* MenuViewController.swift */,
 				961889B71A680D3800295A64 /* LearnViewController.swift */,
 				966128541A4DA63100A54A23 /* AppDelegate.swift */,
+				1AB6351B1AB6D46900064D14 /* ContainerViewController.swift */,
+				9631F5A71AC1A9A800418E0E /* IntroViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -419,6 +492,7 @@
 				B78F90371A6EF75800883A5B /* DesignerNewsService.swift */,
 				1A2331D11A78E1AF002F8D80 /* StoriesLoader.swift */,
 				B773D86E1A7BC101008E8A65 /* LocalStore.swift */,
+				1A2849961AB9D3F900940CE3 /* LoginService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -427,6 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				1A7D789F1A70F8FE0061D6F6 /* DragDropBehavior.swift */,
+				1A935E3B1A837C640059BCBC /* SoundPlayer+DesignerNewsApp.swift */,
 			);
 			name = Behaviours;
 			sourceTree = "<group>";
@@ -435,7 +510,6 @@
 			isa = PBXGroup;
 			children = (
 				1A9183081A75EE1900606F35 /* CoreTextView.swift */,
-				1AAA95C11A79144000D5E8C8 /* AsyncImageView.swift */,
 				B790E5301A82C6BC0007B392 /* MenuControl.swift */,
 			);
 			name = Views;
@@ -447,6 +521,15 @@
 				1A908E611A75382200F30022 /* DesignerNewsApp-Bridging-Header.h */,
 			);
 			name = Bridging;
+			sourceTree = "<group>";
+		};
+		B779F6A41AB7553B00DDF3AA /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				B779F6C51AB7851100DDF3AA /* SafariActivity.swift */,
+				B779F6B31AB7570700DDF3AA /* ChromeActivity.swift */,
+			);
+			name = Activities;
 			sourceTree = "<group>";
 		};
 		B78F903F1A6EFB9800883A5B /* Models */ = {
@@ -522,6 +605,7 @@
 				TargetAttributes = {
 					9661284E1A4DA63100A54A23 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 68WS2M23VC;
 					};
 					966128631A4DA63100A54A23 = {
 						CreatedOnToolsVersion = 6.2;
@@ -662,8 +746,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A6D23BE1AB6AD2E000F080A /* HockeySDK.xcconfig in Resources */,
 				9661285A1A4DA63100A54A23 /* Main.storyboard in Resources */,
+				1A6D23BF1AB6AD2E000F080A /* HockeySDKResources.bundle in Resources */,
 				9661285F1A4DA63100A54A23 /* LaunchScreen.xib in Resources */,
+				1A935E391A837B980059BCBC /* refresh.wav in Resources */,
+				1A935E3A1A837B980059BCBC /* upvote.wav in Resources */,
 				9661285C1A4DA63100A54A23 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,31 +772,36 @@
 			files = (
 				964892671A63F5D900214D53 /* MenuViewController.swift in Sources */,
 				961889B81A680D3800295A64 /* LearnViewController.swift in Sources */,
+				1A2849971AB9D3F900940CE3 /* LoginService.swift in Sources */,
+				1AB6351C1AB6D46900064D14 /* ContainerViewController.swift in Sources */,
 				966128551A4DA63100A54A23 /* AppDelegate.swift in Sources */,
 				B773D86F1A7BC101008E8A65 /* LocalStore.swift in Sources */,
-				961889B21A67F15900295A64 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				1A7D78A01A70F8FE0061D6F6 /* DragDropBehavior.swift in Sources */,
-				961889B31A67F15900295A64 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				1A935E311A837A670059BCBC /* TPKeyboardAvoidingTableView.m in Sources */,
 				1AED4A711A7BBCCA004C689E /* Error.swift in Sources */,
 				B78F903E1A6EFAAA00883A5B /* JSONParser.swift in Sources */,
 				1A908E471A74A44600F30022 /* Replyable.swift in Sources */,
 				964892151A62A84600214D53 /* ReplyViewController.swift in Sources */,
 				1A2331C41A78DFAF002F8D80 /* LoadingTableViewCell.swift in Sources */,
-				961889B51A67F15900295A64 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				1A935E2F1A837A670059BCBC /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				B78F90431A6EFF2100883A5B /* Comment.swift in Sources */,
+				1A935E321A837A670059BCBC /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */,
 				B78F90381A6EF75800883A5B /* DesignerNewsService.swift in Sources */,
 				9694F20B1A6123D000A6376A /* WebViewController.swift in Sources */,
 				B78F90411A6EFBAF00883A5B /* Story.swift in Sources */,
+				1A935E301A837A670059BCBC /* TPKeyboardAvoidingScrollView.m in Sources */,
 				96AF96171A5EABC9003926E2 /* StoryTableViewCell.swift in Sources */,
-				1AAA95C21A79144000D5E8C8 /* AsyncImageView.swift in Sources */,
 				1A9183091A75EE1900606F35 /* CoreTextView.swift in Sources */,
+				1A935E3C1A837C640059BCBC /* SoundPlayer+DesignerNewsApp.swift in Sources */,
 				B7E4D3371A719855001DC9B6 /* CommentTableViewCell.swift in Sources */,
-				961889B41A67F15900295A64 /* TPKeyboardAvoidingTableView.m in Sources */,
 				1A2331D21A78E1AF002F8D80 /* StoriesLoader.swift in Sources */,
 				967CFD061A5C10700044B4E3 /* LoginViewController.swift in Sources */,
+				B779F6C61AB7851100DDF3AA /* SafariActivity.swift in Sources */,
 				9694F2051A5FF13900A6376A /* CommentsTableViewController.swift in Sources */,
 				B790E5311A82C6BC0007B392 /* MenuControl.swift in Sources */,
+				B779F6B41AB7570700DDF3AA /* ChromeActivity.swift in Sources */,
+				9631F5A81AC1A9A800418E0E /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,6 +890,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -832,6 +926,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -845,6 +940,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -873,6 +972,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

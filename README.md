@@ -2,7 +2,7 @@
 
 ![](Screenshots/designer-news-app.jpg)
 
-Simple iOS client for [Designer News][], by the creator of [Design+Code][] and the team, written in Swift.
+Simple [iOS client](https://itunes.apple.com/us/app/designer-news-app/id879990495?ls=1&mt=8) for [Designer News][], by the creator of [Design+Code][] and the team, written in Swift.
 
 ## Usage
 
