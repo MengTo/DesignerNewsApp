@@ -44,13 +44,8 @@ struct DesignerNewsService {
         ]
         parameters["query"] = keyword
         Alamofire.request(.GET, urlString, parameters: parameters).response { (request, res, data, error) in
-            if keyword == nil {
-                let stories = JSONParser.parseStories(data as? NSData)
-                response(stories)
-            } else {
-                let stories = JSONParser.parseStoriesArray(data as? NSData)
-                response(stories)
-            }
+            let stories = JSONParser.parseStories(data as? NSData)
+            response(stories)
         }
     }
 
