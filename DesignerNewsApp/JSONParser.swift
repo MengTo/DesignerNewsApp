@@ -38,7 +38,7 @@ struct JSONParser {
 
         let unparsedComments = story["comments"] as? [NSDictionary] ?? []
         let parsedComments = unparsedComments.map(flattenedComments)
-        let flattenedParsedComments = parsedComments.reduce([], +)
+        let flattenedParsedComments = parsedComments.reduce([], combine: +)
 
         return Story(id: id, title: title, url: url, commentHTML: commentHTML, userDisplayName: userDisplayName, userJob: userJob, voteCount: voteCount, commentCount: commentCount, createdAt: createdAt, badge: badge, userPortraitUrl: userPortraitUrl, comments: flattenedParsedComments)
     }

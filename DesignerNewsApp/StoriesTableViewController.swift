@@ -119,7 +119,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         if indexPath.row == stories.count {
-            let cell = tableView.dequeueReusableCellWithIdentifier("loadingCell") as LoadingTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("loadingCell") as! LoadingTableViewCell
 
             if keyword.length > 0 {
                 cell.stopAnimating()
@@ -127,7 +127,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             return cell
         }
 
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as StoryTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! StoryTableViewCell
         cell.frame = tableView.bounds
 
         configureCell(cell, atIndexPath:indexPath)
@@ -212,17 +212,17 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     // MARK: Misc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CommentsSegue" {
-            let indexPath = tableView.indexPathForCell(sender as UITableViewCell)
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let story = stories[indexPath!.row]
-            let commentsViewController = segue.destinationViewController as CommentsTableViewController
+            let commentsViewController = segue.destinationViewController as! CommentsTableViewController
             commentsViewController.story = story
             self.selectedIndexPath = indexPath
         }
         else if segue.identifier == "WebSegue" {
 
-            let webViewController = segue.destinationViewController as WebViewController
+            let webViewController = segue.destinationViewController as! WebViewController
 
-            if let indexPath = tableView.indexPathForCell(sender as UITableViewCell) {
+            if let indexPath = tableView.indexPathForCell(sender as! UITableViewCell) {
                 let story = stories[indexPath.row]
                 webViewController.shareTitle = story.title
                 webViewController.url = NSURL(string: story.url)

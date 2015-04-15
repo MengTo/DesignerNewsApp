@@ -55,7 +55,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ReplySegue" {
 
-            let toView = segue.destinationViewController as ReplyViewController
+            let toView = segue.destinationViewController as! ReplyViewController
 
             if let cell = sender as? CommentTableViewCell {
                 let indexPath = self.tableView.indexPathForCell(cell)
@@ -71,7 +71,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         else if segue.identifier == "WebSegue" {
             UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
 
-            let webViewController = segue.destinationViewController as WebViewController
+            let webViewController = segue.destinationViewController as! WebViewController
 
             if let url = sender as? NSURL {
                 webViewController.url = url
@@ -188,7 +188,7 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
         
         let identifier = indexPath.row == 0 ? "StoryCell" : "CommentCell"
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! UITableViewCell
 
         // In order to make sure the cell have correct size while dequeuing,
         // manually set the frame to it's parent's bounds

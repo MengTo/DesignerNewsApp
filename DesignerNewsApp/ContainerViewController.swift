@@ -18,12 +18,12 @@ class ContainerViewController: UIPageViewController {
     private var loginStateChange : LoginStateHandler?
 
     lazy var _controllers : [StoriesTableViewController] = {
-        let topStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as StoriesTableViewController
+        let topStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as! StoriesTableViewController
 
-        let recentStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as StoriesTableViewController
+        let recentStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as! StoriesTableViewController
         recentStories.storySection = .Recent
 
-        let searchStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as StoriesTableViewController
+        let searchStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as! StoriesTableViewController
         searchStories.storySection = .Search("")
 
         return [topStories, recentStories, searchStories]
@@ -31,7 +31,7 @@ class ContainerViewController: UIPageViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "MenuSegue" {
-            let menuViewController = segue.destinationViewController as MenuViewController
+            let menuViewController = segue.destinationViewController as! MenuViewController
             menuViewController.delegate = self
         }
     }
@@ -165,12 +165,12 @@ extension ContainerViewController : UIPageViewControllerDataSource {
 extension ContainerViewController : UIPageViewControllerDelegate {
 
     func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
-        configureForDisplayingViewController(pendingViewControllers.first as StoriesTableViewController)
+        configureForDisplayingViewController(pendingViewControllers.first as! StoriesTableViewController)
     }
 
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
         if !completed {
-            configureForDisplayingViewController(previousViewControllers.first as StoriesTableViewController)
+            configureForDisplayingViewController(previousViewControllers.first as! StoriesTableViewController)
         }
     }
 
