@@ -31,7 +31,7 @@ $ open DesignerNewsApp.xcodeproj
 
 # Requirements
 
-- Xcode 6.1
+- Xcode 6.3
 - iOS 8
 
 # Credits
