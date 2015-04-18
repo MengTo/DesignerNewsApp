@@ -12,7 +12,7 @@ import Spring
 class IntroViewController: UIViewController, DragDropBehaviorDelegate {
     @IBOutlet weak var textLabel: SpringLabel!
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.textLabel.animation = "flash"
         self.textLabel.animate()
         self.textLabel.text = "Drag down to dismiss."

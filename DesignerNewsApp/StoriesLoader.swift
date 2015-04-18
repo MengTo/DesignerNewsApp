@@ -38,7 +38,8 @@ class StoriesLoader {
         switch (section) {
         case let .Search(keyword):
             self.keyword = keyword
-        default: break
+        default:
+            self.keyword = nil
         }
     }
 
@@ -69,7 +70,7 @@ class StoriesLoader {
         }
 
         ++page
-        load(page: page, completion)
+        load(page: page, completion: completion)
     }
 }
 
