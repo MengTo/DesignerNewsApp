@@ -67,7 +67,7 @@ class WebViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelega
     
     @IBAction func shareButtonPressed(sender: AnyObject) {
         let shareString = self.shareTitle ?? ""
-        let shareURL = self.url
+        let shareURL = webView.request!.URL!
         let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: [SafariActivity(), ChromeActivity()])
         activityViewController.setValue(shareString, forKey: "subject")
         activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
