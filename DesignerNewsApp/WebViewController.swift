@@ -67,7 +67,7 @@ class WebViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelega
     
     @IBAction func shareButtonPressed(sender: AnyObject) {
         let shareString = self.shareTitle ?? ""
-        let shareURL = webView.request!.URL!
+        let shareURL = self.url
         let activityViewController = UIActivityViewController(activityItems: [shareString, shareURL], applicationActivities: [SafariActivity(), ChromeActivity()])
         activityViewController.setValue(shareString, forKey: "subject")
         activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
@@ -111,6 +111,7 @@ class WebViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelega
 
     func webViewDidFinishLoad(webView: UIWebView) {
         shareTitle = webView.stringByEvaluatingJavaScriptFromString("document.title");
+        url = webView.request!.URL!
         delay(1) { [weak self] in
             if let _self = self {
                 _self.hasFinishLoading = true
