@@ -111,6 +111,7 @@ class WebViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelega
 
     func webViewDidFinishLoad(webView: UIWebView) {
         shareTitle = webView.stringByEvaluatingJavaScriptFromString("document.title");
+        url = webView.request!.URL!
         delay(1) { [weak self] in
             if let _self = self {
                 _self.hasFinishLoading = true
