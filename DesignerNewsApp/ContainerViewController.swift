@@ -36,6 +36,10 @@ class ContainerViewController: UIPageViewController {
         }
     }
 
+    @IBAction func pageControlValueChanged(sender: UIPageControl) {
+        turnToPage(sender.currentPage)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
