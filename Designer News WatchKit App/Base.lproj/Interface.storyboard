@@ -29,13 +29,33 @@
                                                     <label alignment="left" text="Title" numberOfLines="0" id="xe6-H2-mXy"/>
                                                 </items>
                                             </group>
+                                            <group width="1" alignment="left" id="7gP-2U-3pJ">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="upvotes:" id="2Ao-wK-dxO">
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                                    </label>
+                                                    <label alignment="left" verticalAlignment="center" text="12" id="zkD-dF-iMl"/>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" id="UmV-ue-JiC">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="comments:" id="hDJ-Hu-Anb">
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                                    </label>
+                                                    <label alignment="left" verticalAlignment="center" text="2" id="VgZ-ce-qqE"/>
+                                                </items>
+                                            </group>
                                         </items>
                                         <edgeInsets key="margins" left="6" right="6" top="6" bottom="6"/>
                                     </group>
                                     <connections>
                                         <outlet property="authorLabel" destination="CVp-gB-gQe" id="M7C-ax-n8j"/>
                                         <outlet property="badgeImage" destination="VyL-WG-MO4" id="4Ua-KI-fmF"/>
+                                        <outlet property="commentCountLabel" destination="VgZ-ce-qqE" id="b4n-WB-sLD"/>
                                         <outlet property="titleLabel" destination="xe6-H2-mXy" id="2Ab-iP-hRq"/>
+                                        <outlet property="upvoteCountLabel" destination="zkD-dF-iMl" id="cYk-nK-Hh0"/>
                                     </connections>
                                 </tableRow>
                             </items>

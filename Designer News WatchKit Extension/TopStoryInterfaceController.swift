@@ -32,6 +32,8 @@ class TopStoryInterfaceController: WKInterfaceController {
         if let row = self.table.rowControllerAtIndex(index) as? StoryRowController {
             row.titleLabel.setText(story.title)
             row.authorLabel.setText(story.userDisplayName)
+            row.commentCountLabel.setText(story.commentCount.description)
+            row.upvoteCountLabel.setText(story.voteCount.description)
             if !story.badge.isEmpty {
                 row.badgeImage.setImageNamed("badge-\(story.badge)")
             }

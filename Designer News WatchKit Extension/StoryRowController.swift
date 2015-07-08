@@ -12,4 +12,6 @@ class StoryRowController: NSObject {
     @IBOutlet weak var titleLabel: WKInterfaceLabel!
     @IBOutlet weak var authorLabel: WKInterfaceLabel!
     @IBOutlet weak var badgeImage: WKInterfaceImage!
+    @IBOutlet weak var upvoteCountLabel: WKInterfaceLabel!
+    @IBOutlet weak var commentCountLabel: WKInterfaceLabel!
 }
