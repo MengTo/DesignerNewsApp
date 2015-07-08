@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import DesignerNewsKit
 
 class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, UISearchBarDelegate {
 

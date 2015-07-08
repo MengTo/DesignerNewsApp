@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct DesignerNewsService {
+public struct DesignerNewsService {
 
     // Designer News API Doc: http://developers.news.layervault.com
     //                    V2: https://github.com/metalabdesign/dn_api_v2
@@ -37,7 +37,7 @@ struct DesignerNewsService {
         }
     }
 
-    static func storiesForSection(section: String, page: Int, keyword: String? = nil, response: ([Story]) -> ()) {
+    public static func storiesForSection(section: String, page: Int, keyword: String? = nil, response: ([Story]) -> ()) {
         let urlString = baseURL + ResourcePath.Stories.description + "/" + section
         var parameters : [String:AnyObject] = [
             "page": toString(page),
@@ -50,7 +50,7 @@ struct DesignerNewsService {
         }
     }
 
-    static func loginWithEmail(email: String, password: String, response: (token: String?) -> ()) {
+    public static func loginWithEmail(email: String, password: String, response: (token: String?) -> ()) {
         let urlString = baseURL + ResourcePath.Login.description
         let parameters = [
             "grant_type": "password",
@@ -68,22 +68,22 @@ struct DesignerNewsService {
         }
     }
 
-    static func upvoteStoryWithId(storyId: Int, token: String, response: (successful: Bool) -> ()) {
+    public static func upvoteStoryWithId(storyId: Int, token: String, response: (successful: Bool) -> ()) {
         let resourcePath = ResourcePath.StoryUpvote(storyId: storyId)
         upvoteWithResourcePath(resourcePath, token: token, response: response)
     }
 
-    static func upvoteCommentWithId(commentId: Int, token: String, response: (successful: Bool) -> ()) {
+    public static func upvoteCommentWithId(commentId: Int, token: String, response: (successful: Bool) -> ()) {
         let resourcePath = ResourcePath.CommentUpvote(commentId: commentId)
         upvoteWithResourcePath(resourcePath, token: token, response: response)
     }
 
-    static func replyStoryWithId(storyId: Int, token: String, body: String, response: (comment: Comment?, error: Error?) -> ()) {
+    public static func replyStoryWithId(storyId: Int, token: String, body: String, response: (comment: Comment?, error: Error?) -> ()) {
         let resourcePath = ResourcePath.StoryReply(storyId: storyId)
         replyWithResourcePath(resourcePath, token: token, body: body, response: response)
     }
 
-    static func replyCommentWithId(commentId: Int, token: String, body: String, response: (comment: Comment?, error: Error?) -> ()) {
+    public static func replyCommentWithId(commentId: Int, token: String, body: String, response: (comment: Comment?, error: Error?) -> ()) {
         let resourcePath = ResourcePath.CommentReply(commentId: commentId)
         replyWithResourcePath(resourcePath, token: token, body: body, response: response)
     }

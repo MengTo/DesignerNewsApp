@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Error {
-    let message : String
+public struct Error {
+    public let message : String
     let code : Int
 }

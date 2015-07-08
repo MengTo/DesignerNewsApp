@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import DesignerNewsKit
 
 @objc protocol CommentTableViewCellDelegate: class {
     func commentTableViewCell(cell: CommentTableViewCell, upvoteButtonPressed sender: AnyObject)

@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Meng To. All rights reserved.
 //
 
-class Comment : Replyable, Equatable {
+public class Comment : Replyable, Equatable {
 
-    let id: Int
-    let bodyHTML: String
-    let depth: Int
-    let userDisplayName: String
-    let userJob: String
-    private (set) var voteCount: Int
-    let createdAt: String
-    let userPortraitUrl: String?
+    public let id: Int
+    public let bodyHTML: String
+    public let depth: Int
+    public let userDisplayName: String
+    public let userJob: String
+    private (set) public var voteCount: Int
+    public let createdAt: String
+    public let userPortraitUrl: String?
 
     init(id: Int,
         bodyHTML: String,
@@ -35,15 +35,15 @@ class Comment : Replyable, Equatable {
             self.userPortraitUrl = userPortraitUrl
     }
 
-    func upvote() {
+    public func upvote() {
         voteCount++
     }
 
-    func downvote() {
+    public func downvote() {
         voteCount--
     }
 
-    func hasKeyword(keyword: String) -> Bool {
+    public func hasKeyword(keyword: String) -> Bool {
         if self.bodyHTML.lowercaseString.rangeOfString(keyword) != nil || self.userDisplayName.lowercaseString.rangeOfString(keyword) != nil {
             return true
         }
@@ -52,6 +52,6 @@ class Comment : Replyable, Equatable {
     }
 }
 
-func ==(lhs: Comment, rhs: Comment) -> Bool {
+public func ==(lhs: Comment, rhs: Comment) -> Bool {
     return lhs.id == rhs.id
 }
