@@ -23,9 +23,7 @@ class TopStoryInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         DesignerNewsService.storiesForSection("", page: 1, keyword: nil) { [unowned self] stories in
             self.table.setNumberOfRows(stories.count, withRowType: "StoryRowController")
-            for (index, story) in enumerate(stories) {
-                self.configureRowAtIndex(index, withStory: story)
-            }
+            map(enumerate(stories), self.configureRowAtIndex)
         }
         super.willActivate()
     }
@@ -33,6 +31,9 @@ class TopStoryInterfaceController: WKInterfaceController {
     private func configureRowAtIndex(index: Int, withStory story: Story) {
         if let row = self.table.rowControllerAtIndex(index) as? StoryRowController {
             row.textLabel.setText(story.title)
+            if !story.badge.isEmpty {
+                row.badgeImage.setImageNamed("badge-\(story.badge)")
+            }
         }
     }
 

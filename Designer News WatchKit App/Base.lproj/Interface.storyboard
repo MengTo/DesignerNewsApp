@@ -13,12 +13,23 @@
                         <table alignment="left" id="ilo-Ad-4YG">
                             <items>
                                 <tableRow identifier="StoryRowController" id="epb-uf-1UQ" customClass="StoryRowController" customModule="Designer_News_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="iRd-E0-dHv">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="iRd-E0-dHv">
                                         <items>
-                                            <label alignment="left" text="Label" numberOfLines="0" id="xe6-H2-mXy"/>
+                                            <group width="1" alignment="left" id="UE9-bb-ueW">
+                                                <items>
+                                                    <imageView width="24" height="24" alignment="left" id="VyL-WG-MO4"/>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" spacing="0.0" id="Nb8-oD-zw4">
+                                                <items>
+                                                    <label alignment="left" text="Label" numberOfLines="0" id="xe6-H2-mXy"/>
+                                                </items>
+                                            </group>
                                         </items>
+                                        <edgeInsets key="margins" left="6" right="6" top="6" bottom="6"/>
                                     </group>
                                     <connections>
+                                        <outlet property="badgeImage" destination="VyL-WG-MO4" id="4Ua-KI-fmF"/>
                                         <outlet property="textLabel" destination="xe6-H2-mXy" id="CYT-gq-TZs"/>
                                     </connections>
                                 </tableRow>

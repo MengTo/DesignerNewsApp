@@ -10,4 +10,5 @@ import WatchKit
 
 class StoryRowController: NSObject {
     @IBOutlet weak var textLabel: WKInterfaceLabel!
+    @IBOutlet weak var badgeImage: WKInterfaceImage!
 }
