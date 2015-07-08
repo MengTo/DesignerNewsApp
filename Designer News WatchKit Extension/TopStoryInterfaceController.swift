@@ -30,7 +30,8 @@ class TopStoryInterfaceController: WKInterfaceController {
 
     private func configureRowAtIndex(index: Int, withStory story: Story) {
         if let row = self.table.rowControllerAtIndex(index) as? StoryRowController {
-            row.textLabel.setText(story.title)
+            row.titleLabel.setText(story.title)
+            row.authorLabel.setText(story.userDisplayName)
             if !story.badge.isEmpty {
                 row.badgeImage.setImageNamed("badge-\(story.badge)")
             }
