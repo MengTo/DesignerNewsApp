@@ -5,12 +5,32 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Top Stories-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Designer_News_WatchKit_App" customModuleProvider="target"/>
+                <controller title="Top Stories" id="AgC-eL-Hgc" customClass="TopStoryInterfaceController" customModule="Designer_News_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="ilo-Ad-4YG">
+                            <items>
+                                <tableRow identifier="StoryRowController" id="epb-uf-1UQ" customClass="StoryRowController" customModule="Designer_News_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="iRd-E0-dHv">
+                                        <items>
+                                            <label alignment="left" text="Label" numberOfLines="0" id="xe6-H2-mXy"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="textLabel" destination="xe6-H2-mXy" id="CYT-gq-TZs"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="ilo-Ad-4YG" id="9fj-Oc-8z9"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="605" y="446"/>
+            <point key="canvasLocation" x="602" y="460"/>
         </scene>
     </scenes>
 </document>

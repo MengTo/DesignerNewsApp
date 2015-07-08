@@ -51,10 +51,11 @@
 		96AEB7431A5E5C3F005989F4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96A5800B1A5E4DF500FDE099 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96AF96151A5EAA41003926E2 /* StoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */; };
 		96AF96171A5EABC9003926E2 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF96161A5EABC9003926E2 /* StoryTableViewCell.swift */; };
+		B711C6881B4D5E0500CA8D28 /* StoryRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B711C6871B4D5E0500CA8D28 /* StoryRowController.swift */; };
 		B773D86F1A7BC101008E8A65 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B773D86E1A7BC101008E8A65 /* LocalStore.swift */; };
 		B779F6B41AB7570700DDF3AA /* ChromeActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779F6B31AB7570700DDF3AA /* ChromeActivity.swift */; };
 		B779F6C61AB7851100DDF3AA /* SafariActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779F6C51AB7851100DDF3AA /* SafariActivity.swift */; };
-		B78071B61B4D244D00A7F728 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78071B51B4D244D00A7F728 /* InterfaceController.swift */; };
+		B78071B61B4D244D00A7F728 /* TopStoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78071B51B4D244D00A7F728 /* TopStoryInterfaceController.swift */; };
 		B78071B81B4D244D00A7F728 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78071B71B4D244D00A7F728 /* Images.xcassets */; };
 		B78071BC1B4D244D00A7F728 /* Designer News WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = B78071BB1B4D244D00A7F728 /* Designer News WatchKit App.app */; };
 		B78071C41B4D244D00A7F728 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78071C21B4D244D00A7F728 /* Interface.storyboard */; };
@@ -323,12 +324,13 @@
 		96A580051A5E4DF400FDE099 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		96AF96141A5EAA41003926E2 /* StoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTableViewController.swift; sourceTree = "<group>"; };
 		96AF96161A5EABC9003926E2 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
+		B711C6871B4D5E0500CA8D28 /* StoryRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryRowController.swift; sourceTree = "<group>"; };
 		B773D86E1A7BC101008E8A65 /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		B779F6B31AB7570700DDF3AA /* ChromeActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromeActivity.swift; sourceTree = "<group>"; };
 		B779F6C51AB7851100DDF3AA /* SafariActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariActivity.swift; sourceTree = "<group>"; };
 		B78071B11B4D244D00A7F728 /* Designer News WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Designer News WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78071B41B4D244D00A7F728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B78071B51B4D244D00A7F728 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		B78071B51B4D244D00A7F728 /* TopStoryInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoryInterfaceController.swift; sourceTree = "<group>"; };
 		B78071B71B4D244D00A7F728 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B78071BB1B4D244D00A7F728 /* Designer News WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Designer News WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78071C11B4D244D00A7F728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -651,9 +653,10 @@
 		B78071B21B4D244D00A7F728 /* Designer News WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				B78071B51B4D244D00A7F728 /* InterfaceController.swift */,
+				B78071B51B4D244D00A7F728 /* TopStoryInterfaceController.swift */,
 				B78071B71B4D244D00A7F728 /* Images.xcassets */,
 				B78071B31B4D244D00A7F728 /* Supporting Files */,
+				B711C6871B4D5E0500CA8D28 /* StoryRowController.swift */,
 			);
 			path = "Designer News WatchKit Extension";
 			sourceTree = "<group>";
@@ -1171,7 +1174,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B78071B61B4D244D00A7F728 /* InterfaceController.swift in Sources */,
+				B711C6881B4D5E0500CA8D28 /* StoryRowController.swift in Sources */,
+				B78071B61B4D244D00A7F728 /* TopStoryInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
