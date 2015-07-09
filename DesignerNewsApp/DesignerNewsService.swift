@@ -37,13 +37,37 @@ public struct DesignerNewsService {
         }
     }
 
-    public static func storiesForSection(section: String, page: Int, keyword: String? = nil, response: ([Story]) -> ()) {
-        let urlString = baseURL + ResourcePath.Stories.description + "/" + section
+    public enum StorySection: Printable {
+        case Default
+        case Recent
+        case Search(query: String)
+
+        public var description : String {
+            switch (self) {
+
+            case .Default: return ""
+            case .Recent: return "recent"
+            case .Search(_): return "search"
+            }
+        }
+    }
+
+    public static func storiesForSection(section: StorySection, page: Int, response: ([Story]) -> ()) {
+        let urlString = baseURL + ResourcePath.Stories.description + "/" + section.description
         var parameters : [String:AnyObject] = [
             "page": toString(page),
             "client_id": clientID
         ]
-        parameters["query"] = keyword
+
+        let query: String?
+        switch (section) {
+        case let .Search(keyword):
+            query = keyword
+        default:
+            query = nil
+        }
+
+        parameters["query"] = query
         Alamofire.request(.GET, urlString, parameters: parameters).response { (request, res, data, error) in
             let stories = JSONParser.parseStories(data as? NSData)
             response(stories)

@@ -13,18 +13,24 @@ import DesignerNewsKit
 class StoryInterfaceController: WKInterfaceController {
 
     @IBOutlet weak var table: WKInterfaceTable!
+    private var storySection: DesignerNewsService.StorySection = .Default
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         if let title = context as? String {
             setTitle(title)
+            switch title {
+            case "Top": storySection = .Default
+            case "Recent": storySection = .Recent
+            default: break
+            }
         }
         // Configure interface objects here.
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        DesignerNewsService.storiesForSection("", page: 1, keyword: nil) { [weak self] stories in
+        DesignerNewsService.storiesForSection(storySection, page: 1) { [weak self] stories in
             if let strongSelf = self {
                 strongSelf.table.setNumberOfRows(stories.count, withRowType: .StoryRowController)
                 map(enumerate(stories), strongSelf.configureRowAtIndex)
