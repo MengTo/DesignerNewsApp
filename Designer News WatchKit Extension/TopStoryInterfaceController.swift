@@ -10,6 +10,16 @@ import WatchKit
 import Foundation
 import DesignerNewsKit
 
+extension WKInterfaceTable {
+    enum RowType: String {
+        case StoryRowController = "StoryRowController"
+    }
+
+    func setNumberOfRows(numberOfRows: Int, withRowType rowType: RowType) {
+        setNumberOfRows(numberOfRows, withRowType: rowType.rawValue)
+    }
+}
+
 class TopStoryInterfaceController: WKInterfaceController {
 
     @IBOutlet weak var table: WKInterfaceTable!
@@ -22,7 +32,7 @@ class TopStoryInterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         DesignerNewsService.storiesForSection("", page: 1, keyword: nil) { [unowned self] stories in
-            self.table.setNumberOfRows(stories.count, withRowType: "StoryRowController")
+            self.table.setNumberOfRows(stories.count, withRowType: .StoryRowController)
             map(enumerate(stories), self.configureRowAtIndex)
         }
         super.willActivate()
