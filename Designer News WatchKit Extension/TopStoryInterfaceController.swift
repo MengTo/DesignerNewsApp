@@ -10,16 +10,6 @@ import WatchKit
 import Foundation
 import DesignerNewsKit
 
-extension WKInterfaceTable {
-    enum RowType: String {
-        case StoryRowController = "StoryRowController"
-    }
-
-    func setNumberOfRows(numberOfRows: Int, withRowType rowType: RowType) {
-        setNumberOfRows(numberOfRows, withRowType: rowType.rawValue)
-    }
-}
-
 class TopStoryInterfaceController: WKInterfaceController {
 
     @IBOutlet weak var table: WKInterfaceTable!
