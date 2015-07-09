@@ -55,7 +55,7 @@
 		B773D86F1A7BC101008E8A65 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B773D86E1A7BC101008E8A65 /* LocalStore.swift */; };
 		B779F6B41AB7570700DDF3AA /* ChromeActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779F6B31AB7570700DDF3AA /* ChromeActivity.swift */; };
 		B779F6C61AB7851100DDF3AA /* SafariActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B779F6C51AB7851100DDF3AA /* SafariActivity.swift */; };
-		B78071B61B4D244D00A7F728 /* TopStoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78071B51B4D244D00A7F728 /* TopStoryInterfaceController.swift */; };
+		B78071B61B4D244D00A7F728 /* StoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78071B51B4D244D00A7F728 /* StoryInterfaceController.swift */; };
 		B78071B81B4D244D00A7F728 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78071B71B4D244D00A7F728 /* Images.xcassets */; };
 		B78071BC1B4D244D00A7F728 /* Designer News WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = B78071BB1B4D244D00A7F728 /* Designer News WatchKit App.app */; };
 		B78071C41B4D244D00A7F728 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78071C21B4D244D00A7F728 /* Interface.storyboard */; };
@@ -74,6 +74,7 @@
 		B78D1DAE1B4D31730031591E /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F903D1A6EFAAA00883A5B /* JSONParser.swift */; };
 		B790E5311A82C6BC0007B392 /* MenuControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B790E5301A82C6BC0007B392 /* MenuControl.swift */; };
 		B7C1F7AD1B4EED170077D4B4 /* WKInterfaceTableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1F7AC1B4EED170077D4B4 /* WKInterfaceTableExtension.swift */; };
+		B7C1F7AF1B4EFC070077D4B4 /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1F7AE1B4EFC070077D4B4 /* MainInterfaceController.swift */; };
 		B7E4D3371A719855001DC9B6 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4D3361A719855001DC9B6 /* CommentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -331,7 +332,7 @@
 		B779F6C51AB7851100DDF3AA /* SafariActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariActivity.swift; sourceTree = "<group>"; };
 		B78071B11B4D244D00A7F728 /* Designer News WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Designer News WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78071B41B4D244D00A7F728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B78071B51B4D244D00A7F728 /* TopStoryInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoryInterfaceController.swift; sourceTree = "<group>"; };
+		B78071B51B4D244D00A7F728 /* StoryInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryInterfaceController.swift; sourceTree = "<group>"; };
 		B78071B71B4D244D00A7F728 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B78071BB1B4D244D00A7F728 /* Designer News WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Designer News WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78071C11B4D244D00A7F728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -349,6 +350,7 @@
 		B78F90421A6EFF2100883A5B /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = ../DesignerNewsApp/Comment.swift; sourceTree = "<group>"; };
 		B790E5301A82C6BC0007B392 /* MenuControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuControl.swift; sourceTree = "<group>"; };
 		B7C1F7AC1B4EED170077D4B4 /* WKInterfaceTableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKInterfaceTableExtension.swift; sourceTree = "<group>"; };
+		B7C1F7AE1B4EFC070077D4B4 /* MainInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceController.swift; sourceTree = "<group>"; };
 		B7E4D3361A719855001DC9B6 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -764,7 +766,8 @@
 		B7C1F79B1B4EECE40077D4B4 /* Interface Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B78071B51B4D244D00A7F728 /* TopStoryInterfaceController.swift */,
+				B78071B51B4D244D00A7F728 /* StoryInterfaceController.swift */,
+				B7C1F7AE1B4EFC070077D4B4 /* MainInterfaceController.swift */,
 			);
 			name = "Interface Controller";
 			sourceTree = "<group>";
@@ -1201,8 +1204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7C1F7AF1B4EFC070077D4B4 /* MainInterfaceController.swift in Sources */,
 				B711C6881B4D5E0500CA8D28 /* StoryRowController.swift in Sources */,
-				B78071B61B4D244D00A7F728 /* TopStoryInterfaceController.swift in Sources */,
+				B78071B61B4D244D00A7F728 /* StoryInterfaceController.swift in Sources */,
 				B7C1F7AD1B4EED170077D4B4 /* WKInterfaceTableExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,20 +10,25 @@ import WatchKit
 import Foundation
 import DesignerNewsKit
 
-class TopStoryInterfaceController: WKInterfaceController {
+class StoryInterfaceController: WKInterfaceController {
 
     @IBOutlet weak var table: WKInterfaceTable!
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        if let title = context as? String {
+            setTitle(title)
+        }
         // Configure interface objects here.
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        DesignerNewsService.storiesForSection("", page: 1, keyword: nil) { [unowned self] stories in
-            self.table.setNumberOfRows(stories.count, withRowType: .StoryRowController)
-            map(enumerate(stories), self.configureRowAtIndex)
+        DesignerNewsService.storiesForSection("", page: 1, keyword: nil) { [weak self] stories in
+            if let strongSelf = self {
+                strongSelf.table.setNumberOfRows(stories.count, withRowType: .StoryRowController)
+                map(enumerate(stories), strongSelf.configureRowAtIndex)
+            }
         }
         super.willActivate()
     }
