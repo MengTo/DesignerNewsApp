@@ -15,7 +15,7 @@
         <!--Top-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="StoryController" title="Top" spacing="0.0" id="AgC-eL-Hgc" customClass="StoryInterfaceController" customModule="Designer_News_WatchKit_Extension">
+                <controller identifier="StoriesInterfaceController" title="Top" spacing="0.0" id="AgC-eL-Hgc" customClass="StoriesInterfaceController" customModule="Designer_News_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="ilo-Ad-4YG">
                             <items>
@@ -63,6 +63,7 @@
                                         <outlet property="commentCountLabel" destination="VgZ-ce-qqE" id="b4n-WB-sLD"/>
                                         <outlet property="titleLabel" destination="xe6-H2-mXy" id="2Ab-iP-hRq"/>
                                         <outlet property="upvoteCountLabel" destination="zkD-dF-iMl" id="cYk-nK-Hh0"/>
+                                        <segue destination="cKl-bI-9tF" kind="modal" id="TfK-Z1-w97"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -74,6 +75,20 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="668" y="459"/>
+        </scene>
+        <!--StoryInterfaceController-->
+        <scene sceneID="GB5-QP-CjN">
+            <objects>
+                <controller identifier="StoryInterfaceController" id="cKl-bI-9tF" customClass="StoryInterfaceController" customModule="Designer_News_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" id="pZK-J7-pao"/>
+                    </items>
+                    <connections>
+                        <outlet property="storyLabel" destination="pZK-J7-pao" id="Fhw-pD-PGG"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="907" y="459"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>

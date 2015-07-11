@@ -13,7 +13,7 @@ class MainInterfaceController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         WKInterfaceController.reloadRootControllersWithNames(
-            ["StoryController", "StoryController"],
+            ["StoriesInterfaceController", "StoriesInterfaceController"],
             contexts: ["Top","Recent"]
         )
     }
