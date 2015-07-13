@@ -20,7 +20,7 @@
                         <table alignment="left" id="ilo-Ad-4YG">
                             <items>
                                 <tableRow identifier="StoryRowController" id="epb-uf-1UQ" customClass="StoryRowController" customModule="Designer_News_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="iRd-E0-dHv">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="6" id="iRd-E0-dHv">
                                         <items>
                                             <group width="1" alignment="left" spacing="6" id="UE9-bb-ueW">
                                                 <items>
@@ -36,22 +36,24 @@
                                                     <label alignment="left" text="Title" numberOfLines="0" id="xe6-H2-mXy"/>
                                                 </items>
                                             </group>
-                                            <group width="1" alignment="left" id="7gP-2U-3pJ">
+                                            <group width="1" alignment="left" id="QWj-Sf-X5J">
                                                 <items>
-                                                    <label alignment="left" verticalAlignment="center" text="upvotes:" id="2Ao-wK-dxO">
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
-                                                    </label>
-                                                    <label alignment="left" verticalAlignment="center" text="12" id="zkD-dF-iMl"/>
-                                                </items>
-                                            </group>
-                                            <group width="1" alignment="left" id="UmV-ue-JiC">
-                                                <items>
-                                                    <label alignment="left" verticalAlignment="center" text="comments:" id="hDJ-Hu-Anb">
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
-                                                    </label>
-                                                    <label alignment="left" verticalAlignment="center" text="2" id="VgZ-ce-qqE"/>
+                                                    <button alignment="left" id="hKb-4C-SYb">
+                                                        <group key="contentGroup" width="0.5" alignment="left" id="5Vr-qg-zdn">
+                                                            <items>
+                                                                <imageView width="24" height="24" alignment="left" verticalAlignment="center" id="FQa-Kq-11f"/>
+                                                                <label alignment="left" verticalAlignment="center" text="12" id="zkD-dF-iMl"/>
+                                                            </items>
+                                                        </group>
+                                                    </button>
+                                                    <button alignment="left" id="AKR-pv-FrQ">
+                                                        <group key="contentGroup" width="0.5" alignment="left" id="LYg-3l-D8U">
+                                                            <items>
+                                                                <imageView width="24" height="24" alignment="left" verticalAlignment="center" id="Ugb-EV-kdw"/>
+                                                                <label alignment="left" verticalAlignment="center" text="2" id="VgZ-ce-qqE"/>
+                                                            </items>
+                                                        </group>
+                                                    </button>
                                                 </items>
                                             </group>
                                         </items>
@@ -63,7 +65,6 @@
                                         <outlet property="commentCountLabel" destination="VgZ-ce-qqE" id="b4n-WB-sLD"/>
                                         <outlet property="titleLabel" destination="xe6-H2-mXy" id="2Ab-iP-hRq"/>
                                         <outlet property="upvoteCountLabel" destination="zkD-dF-iMl" id="cYk-nK-Hh0"/>
-                                        <segue destination="cKl-bI-9tF" kind="modal" id="TfK-Z1-w97"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -75,20 +76,6 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="668" y="459"/>
-        </scene>
-        <!--StoryInterfaceController-->
-        <scene sceneID="GB5-QP-CjN">
-            <objects>
-                <controller identifier="StoryInterfaceController" id="cKl-bI-9tF" customClass="StoryInterfaceController" customModule="Designer_News_WatchKit_Extension">
-                    <items>
-                        <label alignment="left" text="Label" id="pZK-J7-pao"/>
-                    </items>
-                    <connections>
-                        <outlet property="storyLabel" destination="pZK-J7-pao" id="Fhw-pD-PGG"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="907" y="459"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>

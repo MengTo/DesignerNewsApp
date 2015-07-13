@@ -41,10 +41,6 @@ class StoriesInterfaceController: WKInterfaceController {
         super.willActivate()
     }
 
-    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
-        return stories[rowIndex]
-    }
-
     private func configureRowAtIndex(index: Int, withStory story: Story) {
         if let row = self.table.rowControllerAtIndex(index) as? StoryRowController {
             row.titleLabel.setText(story.title)

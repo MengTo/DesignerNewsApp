@@ -7,7 +7,7 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1EB55E8E-587E-4698-8839-EC213CD1E4ED</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>DesignerNewsApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2CC69C7EFC439AC727F09E33B49EFBD1D2365CBA</key>
@@ -22,7 +22,7 @@
 		<string>https://github.com/Cocoanetics/DTFoundation.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DesignerNewsApp.xcodeproj/project.xcworkspace</string>
+	<string>DesignerNewsApp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2CC69C7EFC439AC727F09E33B49EFBD1D2365CBA</key>
