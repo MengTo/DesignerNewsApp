@@ -19,7 +19,7 @@
                     <items>
                         <table alignment="left" id="ilo-Ad-4YG">
                             <items>
-                                <tableRow identifier="StoryRowController" id="epb-uf-1UQ" customClass="StoryRowController" customModule="Designer_News_WatchKit_Extension">
+                                <tableRow identifier="StoryRowController" selectable="NO" id="epb-uf-1UQ" customClass="StoryRowController" customModule="Designer_News_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="6" id="iRd-E0-dHv">
                                         <items>
                                             <group width="1" alignment="left" spacing="6" id="UE9-bb-ueW">
