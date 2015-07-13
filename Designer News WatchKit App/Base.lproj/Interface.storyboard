@@ -24,16 +24,18 @@
                                         <items>
                                             <group width="1" alignment="left" spacing="6" id="UE9-bb-ueW">
                                                 <items>
-                                                    <imageView width="24" height="24" alignment="left" id="VyL-WG-MO4"/>
+                                                    <imageView alignment="left" id="VyL-WG-MO4"/>
                                                     <label alignment="left" verticalAlignment="center" text="Author" id="CVp-gB-gQe">
-                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                     </label>
                                                 </items>
                                             </group>
                                             <group width="1" alignment="left" spacing="0.0" id="Nb8-oD-zw4">
                                                 <items>
-                                                    <label alignment="left" text="Title" numberOfLines="0" id="xe6-H2-mXy"/>
+                                                    <label alignment="left" text="Title" numberOfLines="0" id="xe6-H2-mXy">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
                                                 </items>
                                             </group>
                                             <group width="1" alignment="left" id="QWj-Sf-X5J">
