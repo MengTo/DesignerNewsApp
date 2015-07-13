@@ -39,19 +39,26 @@
                                             <group width="1" alignment="left" id="QWj-Sf-X5J">
                                                 <items>
                                                     <button alignment="left" id="hKb-4C-SYb">
-                                                        <group key="contentGroup" width="0.5" alignment="left" id="5Vr-qg-zdn">
+                                                        <group key="contentGroup" width="0.5" alignment="left" spacing="6" id="5Vr-qg-zdn">
                                                             <items>
-                                                                <imageView width="24" height="24" alignment="left" verticalAlignment="center" id="FQa-Kq-11f"/>
-                                                                <label alignment="left" verticalAlignment="center" text="12" id="zkD-dF-iMl"/>
+                                                                <imageView alignment="left" verticalAlignment="center" image="watch-upvote" id="FQa-Kq-11f"/>
+                                                                <label alignment="left" verticalAlignment="center" text="12" id="zkD-dF-iMl">
+                                                                    <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                                </label>
                                                             </items>
+                                                            <edgeInsets key="margins" left="0.0" right="0.0" top="4" bottom="4"/>
                                                         </group>
                                                     </button>
                                                     <button alignment="left" id="AKR-pv-FrQ">
-                                                        <group key="contentGroup" width="0.5" alignment="left" id="LYg-3l-D8U">
+                                                        <group key="contentGroup" width="0.5" alignment="left" spacing="6" id="LYg-3l-D8U">
                                                             <items>
-                                                                <imageView width="24" height="24" alignment="left" verticalAlignment="center" id="Ugb-EV-kdw"/>
-                                                                <label alignment="left" verticalAlignment="center" text="2" id="VgZ-ce-qqE"/>
+                                                                <imageView alignment="left" verticalAlignment="center" image="watch-comment" id="Ugb-EV-kdw"/>
+                                                                <label alignment="left" verticalAlignment="center" text="2" id="VgZ-ce-qqE">
+                                                                    <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </label>
                                                             </items>
+                                                            <edgeInsets key="margins" left="0.0" right="0.0" top="4" bottom="4"/>
                                                         </group>
                                                     </button>
                                                 </items>
