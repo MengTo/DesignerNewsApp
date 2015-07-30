@@ -33,12 +33,15 @@ class StoriesInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         DesignerNewsService.storiesForSection(storySection, page: 1) { [weak self] stories in
             if let strongSelf = self {
-                strongSelf.stories = stories
-                strongSelf.table.setNumberOfRows(stories.count, withRowType: .StoryRowController)
-                map(enumerate(stories), strongSelf.configureRowAtIndex)
+                if let firstRequestedStory = stories.first, let firstLocalStory = strongSelf.stories.first where firstRequestedStory == firstLocalStory {
+                    return
+                } else {
+                    strongSelf.stories = stories
+                    strongSelf.table.setNumberOfRows(stories.count, withRowType: .StoryRowController)
+                    map(enumerate(stories), strongSelf.configureRowAtIndex)
+                }
             }
         }
-        super.willActivate()
     }
 
     private func configureRowAtIndex(index: Int, withStory story: Story) {
