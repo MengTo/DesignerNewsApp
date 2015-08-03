@@ -17,8 +17,8 @@
             <objects>
                 <controller identifier="StoriesInterfaceController" title="Top" spacing="0.0" id="AgC-eL-Hgc" customClass="StoriesInterfaceController" customModule="Designer_News_WatchKit_Extension">
                     <items>
-                        <label alignment="center" verticalAlignment="center" text="Loading..." textAlignment="center" numberOfLines="0" id="uHS-rc-zY5">
-                            <color key="textColor" red="0.14117647059999999" green="0.35294117650000001" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <label alignment="center" verticalAlignment="center" text="Loading..." id="uHS-rc-zY5">
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                         </label>
                         <table alignment="left" id="ilo-Ad-4YG">
