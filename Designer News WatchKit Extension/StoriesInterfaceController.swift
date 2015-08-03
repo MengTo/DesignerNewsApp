@@ -30,7 +30,6 @@ class StoriesInterfaceController: WKInterfaceController {
             default: break
             }
         }
-        // Configure interface objects here.
     }
 
     override func willActivate() {
