@@ -16,6 +16,9 @@ class StoriesInterfaceController: WKInterfaceController {
     private var storySection: DesignerNewsService.StorySection = .Default
     private var stories = [Story]()
 
+    private var needsRendering = false
+    private var tableRowsAreRedered = false
+
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         if let title = context as? String {
@@ -30,18 +33,19 @@ class StoriesInterfaceController: WKInterfaceController {
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
+        tableRowsAreRedered = false
         DesignerNewsService.storiesForSection(storySection, page: 1) { [weak self] stories in
             if let strongSelf = self {
-                if let firstRequestedStory = stories.first, let firstLocalStory = strongSelf.stories.first where firstRequestedStory == firstLocalStory {
+                strongSelf.tableRowsAreRedered = true
+                if let firstRequestedStory = stories.first, let firstLocalStory = strongSelf.stories.first where firstRequestedStory == firstLocalStory && !strongSelf.needsRendering {
                     return
-                } else {
-                    strongSelf.stories = stories
-                    strongSelf.table.setNumberOfRows(stories.count, withRowType: .StoryRowController)
-                    map(enumerate(stories), strongSelf.configureRowAtIndex)
                 }
+                strongSelf.table.setNumberOfRows(stories.count, withRowType: .StoryRowController)
+                map(enumerate(stories), strongSelf.configureRowAtIndex)
+                strongSelf.stories = stories
             }
         }
+        super.willActivate()
     }
 
     private func configureRowAtIndex(index: Int, withStory story: Story) {
@@ -57,7 +61,7 @@ class StoriesInterfaceController: WKInterfaceController {
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
+        needsRendering = !tableRowsAreRedered
         super.didDeactivate()
     }
 
