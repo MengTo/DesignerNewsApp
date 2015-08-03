@@ -12,6 +12,7 @@ import DesignerNewsKit
 
 class StoriesInterfaceController: WKInterfaceController {
 
+    @IBOutlet weak var loadingLabel: WKInterfaceLabel!
     @IBOutlet weak var table: WKInterfaceTable!
     private var storySection: DesignerNewsService.StorySection = .Default
     private var stories = [Story]()
@@ -33,6 +34,12 @@ class StoriesInterfaceController: WKInterfaceController {
     }
 
     override func willActivate() {
+        loadingLabel.setText("Loading...")
+        loadStories()
+        super.willActivate()
+    }
+
+    private func loadStories() {
         tableRowsAreRedered = false
         DesignerNewsService.storiesForSection(storySection, page: 1) { [weak self] stories in
             if let strongSelf = self {
@@ -43,9 +50,9 @@ class StoriesInterfaceController: WKInterfaceController {
                 strongSelf.table.setNumberOfRows(stories.count, withRowType: .StoryRowController)
                 map(enumerate(stories), strongSelf.configureRowAtIndex)
                 strongSelf.stories = stories
+                strongSelf.loadingLabel.setHidden(true)
             }
         }
-        super.willActivate()
     }
 
     private func configureRowAtIndex(index: Int, withStory story: Story) {

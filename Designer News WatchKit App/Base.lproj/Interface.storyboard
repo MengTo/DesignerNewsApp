@@ -17,6 +17,10 @@
             <objects>
                 <controller identifier="StoriesInterfaceController" title="Top" spacing="0.0" id="AgC-eL-Hgc" customClass="StoriesInterfaceController" customModule="Designer_News_WatchKit_Extension">
                     <items>
+                        <label alignment="center" verticalAlignment="center" text="Loading..." textAlignment="center" numberOfLines="0" id="uHS-rc-zY5">
+                            <color key="textColor" red="0.14117647059999999" green="0.35294117650000001" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
                         <table alignment="left" id="ilo-Ad-4YG">
                             <items>
                                 <tableRow identifier="StoryRowController" selectable="NO" id="epb-uf-1UQ" customClass="StoryRowController" customModule="Designer_News_WatchKit_Extension">
@@ -80,6 +84,7 @@
                         </table>
                     </items>
                     <connections>
+                        <outlet property="loadingLabel" destination="uHS-rc-zY5" id="sJS-xI-fOp"/>
                         <outlet property="table" destination="ilo-Ad-4YG" id="9fj-Oc-8z9"/>
                     </connections>
                 </controller>
