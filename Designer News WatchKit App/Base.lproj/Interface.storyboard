@@ -44,7 +44,7 @@
                                             </group>
                                             <group width="1" alignment="left" id="QWj-Sf-X5J">
                                                 <items>
-                                                    <button alignment="left" id="hKb-4C-SYb">
+                                                    <button alignment="left" enabled="NO" id="hKb-4C-SYb">
                                                         <group key="contentGroup" width="0.5" alignment="left" spacing="6" id="5Vr-qg-zdn">
                                                             <items>
                                                                 <imageView alignment="left" verticalAlignment="center" image="watch-upvote" id="FQa-Kq-11f"/>
@@ -56,7 +56,7 @@
                                                             <edgeInsets key="margins" left="0.0" right="0.0" top="4" bottom="4"/>
                                                         </group>
                                                     </button>
-                                                    <button alignment="left" id="AKR-pv-FrQ">
+                                                    <button alignment="left" enabled="NO" id="AKR-pv-FrQ">
                                                         <group key="contentGroup" width="0.5" alignment="left" spacing="6" id="LYg-3l-D8U">
                                                             <items>
                                                                 <imageView alignment="left" verticalAlignment="center" image="watch-comment" id="Ugb-EV-kdw"/>
