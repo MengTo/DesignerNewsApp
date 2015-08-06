@@ -60,6 +60,7 @@ class StoriesInterfaceController: WKInterfaceController {
             row.authorLabel.setText(story.userDisplayName)
             row.commentCountLabel.setText(story.commentCount.description)
             row.upvoteCountLabel.setText(story.voteCount.description)
+            row.badgeImage.setHidden(story.badge.isEmpty)
             if !story.badge.isEmpty {
                 row.badgeImage.setImageNamed("badge-\(story.badge)")
             }
