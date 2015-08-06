@@ -57,11 +57,6 @@ class StoryTableViewCell: UITableViewCell, CoreTextViewDelegate {
         layer.animate()
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.titleLabel.preferredMaxLayoutWidth = self.titleLabel.frame.size.width
-    }
-
     // MARK: CoreTextViewDelegate
     func coreTextView(textView: CoreTextView, linkDidTap link: NSURL) {
         self.delegate?.storyTableViewCell?(self, linkDidPress: link)
