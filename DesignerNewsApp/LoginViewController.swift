@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import DesignerNewsKit
 
 protocol LoginViewControllerDelegate : class {
     func loginViewControllerDidLogin(controller:LoginViewController)

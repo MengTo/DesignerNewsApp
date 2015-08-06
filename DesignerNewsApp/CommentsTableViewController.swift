@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import DesignerNewsKit
 
 class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate, ReplyViewControllerDelegate, UISearchBarDelegate {
 

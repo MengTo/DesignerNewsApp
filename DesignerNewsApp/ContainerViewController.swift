@@ -24,7 +24,7 @@ class ContainerViewController: UIPageViewController {
         recentStories.storySection = .Recent
 
         let searchStories = self.storyboard?.instantiateViewControllerWithIdentifier("StoriesTableViewController") as! StoriesTableViewController
-        searchStories.storySection = .Search("")
+        searchStories.storySection = .Search(query: "")
 
         return [topStories, recentStories, searchStories]
     }()

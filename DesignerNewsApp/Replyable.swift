@@ -6,6 +6,6 @@
 //  Copyright (c) 2015 Meng To. All rights reserved.
 //
 
-protocol Replyable {
+public protocol Replyable {
    
 }

@@ -6,19 +6,19 @@
 //  Copyright (c) 2015 Meng To. All rights reserved.
 //
 
-class Story : Replyable {
-    let id: Int
-    let title: String
-    let url: String
-    let commentHTML: String
-    let userDisplayName: String
-    let userJob: String
-    private (set) var voteCount: Int
-    private (set) var commentCount: Int
-    let createdAt: String
-    let badge: String
-    let userPortraitUrl: String?
-    private (set) var comments: [Comment]
+public class Story : Replyable {
+    public let id: Int
+    public let title: String
+    public let url: String
+    public let commentHTML: String
+    public let userDisplayName: String
+    public let userJob: String
+    private (set) public var voteCount: Int
+    private (set) public var commentCount: Int
+    public let createdAt: String
+    public let badge: String
+    public let userPortraitUrl: String?
+    private (set) public var comments: [Comment]
 
     init (id: Int,
         title: String,
@@ -46,16 +46,16 @@ class Story : Replyable {
             self.comments = comments
     }
 
-    func insertComment(comment: Comment, atIndex: Int) {
+    public func insertComment(comment: Comment, atIndex: Int) {
         comments.insert(comment, atIndex: atIndex)
         commentCount++
     }
 
-    func upvote() {
+    public func upvote() {
         voteCount++
     }
 
-    func downvote() {
+    public func downvote() {
         voteCount--
     }
 
@@ -66,4 +66,20 @@ class Story : Replyable {
 
         return false
     }
+}
+
+extension Story: Equatable {}
+
+public func == (left: Story, right: Story) -> Bool {
+    return left.id == right.id &&
+    left.title == right.title &&
+    left.url == right.url &&
+    left.commentHTML == right.commentHTML &&
+    left.userDisplayName == right.userDisplayName &&
+    left.userJob == right.userJob &&
+    left.voteCount == right.voteCount &&
+    left.commentCount == right.commentCount &&
+    left.createdAt == right.createdAt &&
+    left.badge == right.badge &&
+    left.userPortraitUrl == right.userPortraitUrl
 }

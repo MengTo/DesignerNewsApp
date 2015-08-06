@@ -26,15 +26,15 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2CC69C7EFC439AC727F09E33B49EFBD1D2365CBA</key>
-		<string>../../DTCoreText</string>
+		<string>../..Externals/DTCoreText/</string>
 		<key>30465C3FE587DE41DC8D7C50D84E40C5B622D54F</key>
 		<string>../..</string>
 		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
-		<string>../..Alamofire</string>
+		<string>../..Externals/Alamofire/</string>
 		<key>71F5D8D885CFF6BD7151066D7BFF25CC48A5235E</key>
-		<string>../../../Shots-Assets/Spring</string>
+		<string>../..Externals/Spring/</string>
 		<key>F501F6253A6AEB746530F92C6B0EA8E3AD06410B</key>
-		<string>../../DTCoreText/Externals/DTFoundation</string>
+		<string>../..Externals/DTCoreText/Externals/DTFoundation/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/MengTo/DesignerNewsApp.git</string>
@@ -48,17 +48,17 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>30465C3FE587DE41DC8D7C50D84E40C5B622D54F</string>
+			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
 			<key>IDESourceControlWCCName</key>
-			<string>DesignerNewsApp</string>
+			<string>Alamofire</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
+			<string>30465C3FE587DE41DC8D7C50D84E40C5B622D54F</string>
 			<key>IDESourceControlWCCName</key>
-			<string>DesignerNewsAppAlamofire</string>
+			<string>DesignerNewsApp</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

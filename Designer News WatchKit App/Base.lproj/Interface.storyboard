@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="d8w-sc-hZK">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Main Interface Controller-->
+        <scene sceneID="hbs-RH-t4N">
+            <objects>
+                <controller id="d8w-sc-hZK" customClass="MainInterfaceController" customModule="Designer_News_WatchKit_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="471" y="459"/>
+        </scene>
+        <!--Top-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="StoriesInterfaceController" title="Top" spacing="0.0" id="AgC-eL-Hgc" customClass="StoriesInterfaceController" customModule="Designer_News_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Loading..." id="uHS-rc-zY5">
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
+                        <table alignment="left" id="ilo-Ad-4YG">
+                            <items>
+                                <tableRow identifier="StoryRowController" selectable="NO" id="epb-uf-1UQ" customClass="StoryRowController" customModule="Designer_News_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="6" id="iRd-E0-dHv">
+                                        <items>
+                                            <group width="1" alignment="left" spacing="6" id="UE9-bb-ueW">
+                                                <items>
+                                                    <imageView alignment="left" id="VyL-WG-MO4"/>
+                                                    <label alignment="left" verticalAlignment="center" text="Author" id="CVp-gB-gQe">
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" spacing="0.0" id="Nb8-oD-zw4">
+                                                <items>
+                                                    <label alignment="left" text="Title" numberOfLines="0" id="xe6-H2-mXy">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" id="QWj-Sf-X5J">
+                                                <items>
+                                                    <button alignment="left" enabled="NO" id="hKb-4C-SYb">
+                                                        <group key="contentGroup" width="0.5" alignment="left" spacing="6" id="5Vr-qg-zdn">
+                                                            <items>
+                                                                <imageView alignment="left" verticalAlignment="center" image="watch-upvote" id="FQa-Kq-11f"/>
+                                                                <label alignment="left" verticalAlignment="center" text="12" id="zkD-dF-iMl">
+                                                                    <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                                </label>
+                                                            </items>
+                                                            <edgeInsets key="margins" left="0.0" right="0.0" top="4" bottom="4"/>
+                                                        </group>
+                                                    </button>
+                                                    <button alignment="left" enabled="NO" id="AKR-pv-FrQ">
+                                                        <group key="contentGroup" width="0.5" alignment="left" spacing="6" id="LYg-3l-D8U">
+                                                            <items>
+                                                                <imageView alignment="left" verticalAlignment="center" image="watch-comment" id="Ugb-EV-kdw"/>
+                                                                <label alignment="left" verticalAlignment="center" text="2" id="VgZ-ce-qqE">
+                                                                    <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </label>
+                                                            </items>
+                                                            <edgeInsets key="margins" left="0.0" right="0.0" top="4" bottom="4"/>
+                                                        </group>
+                                                    </button>
+                                                </items>
+                                            </group>
+                                        </items>
+                                        <edgeInsets key="margins" left="6" right="6" top="6" bottom="6"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="authorLabel" destination="CVp-gB-gQe" id="M7C-ax-n8j"/>
+                                        <outlet property="badgeImage" destination="VyL-WG-MO4" id="4Ua-KI-fmF"/>
+                                        <outlet property="commentCountLabel" destination="VgZ-ce-qqE" id="b4n-WB-sLD"/>
+                                        <outlet property="titleLabel" destination="xe6-H2-mXy" id="2Ab-iP-hRq"/>
+                                        <outlet property="upvoteCountLabel" destination="zkD-dF-iMl" id="cYk-nK-Hh0"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="loadingLabel" destination="uHS-rc-zY5" id="sJS-xI-fOp"/>
+                        <outlet property="table" destination="ilo-Ad-4YG" id="9fj-Oc-8z9"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="668" y="459"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.14117647058823529" green="0.35294117647058826" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+</document>

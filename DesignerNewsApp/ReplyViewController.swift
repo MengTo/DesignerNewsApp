@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import DesignerNewsKit
 
 protocol ReplyViewControllerDelegate : class {
     func replyViewController(controller: ReplyViewController, didReplyComment comment:Comment, onReplyable replyable:Replyable)

@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import DesignerNewsKit
 
 class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, UISearchBarDelegate {
 
@@ -15,14 +16,14 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     private var stories = [Story]()
     private var firstTime = true
     private var keyword : String = ""
-    private var lastStorySection : StoriesLoader.StorySection = .Default
+    private var lastStorySection : DesignerNewsService.StorySection = .Default
     private var storiesLoader = StoriesLoader(.Default)
     private var selectedIndexPath : NSIndexPath?
     private var searchBar : UISearchBar?
     private var loginStateHandler : LoginStateHandler!
     private var loginAction : LoginAction?
 
-    var storySection : StoriesLoader.StorySection = .Default {
+    var storySection : DesignerNewsService.StorySection = .Default {
         didSet {
             storiesLoader = StoriesLoader(storySection)
 
@@ -265,7 +266,7 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         keyword = searchBar.text
         if keyword.length > 0 {
-            storiesLoader = StoriesLoader(.Search(keyword))
+            storiesLoader = StoriesLoader(.Search(query: keyword))
             view.showLoading()
             loadStories()
         }
