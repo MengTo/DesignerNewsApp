@@ -30,7 +30,7 @@
                                                 <items>
                                                     <imageView alignment="left" id="VyL-WG-MO4"/>
                                                     <label alignment="left" verticalAlignment="center" text="Author" id="CVp-gB-gQe">
-                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                     </label>
                                                 </items>
