@@ -172,12 +172,6 @@ extension ContainerViewController : UIPageViewControllerDelegate {
         configureForDisplayingViewController(pendingViewControllers.first as! StoriesTableViewController)
     }
 
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
-        if !completed {
-            configureForDisplayingViewController(previousViewControllers.first as! StoriesTableViewController)
-        }
-    }
-
 }
 
 extension  ContainerViewController : MenuViewControllerDelegate {
