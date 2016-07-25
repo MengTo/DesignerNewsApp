@@ -13,7 +13,7 @@ $ git clone https://github.com/MengTo/DesignerNewsApp.git
 $ cd DesignerNewsApp
 ```
     
-2) Initialize submodule dependancies
+2) Initialize submodule dependencies
 
 ```
 $ git submodule update --init --recursive
