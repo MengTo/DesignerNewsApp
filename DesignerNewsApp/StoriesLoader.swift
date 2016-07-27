@@ -37,6 +37,7 @@ class StoriesLoader {
                     strongSelf.hasMore = stories.count > 0
                 }
                 strongSelf.isLoading = false
+                strongSelf.page = page
                 completion(stories: stories)
             }
         }
